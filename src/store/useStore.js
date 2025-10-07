@@ -71,6 +71,23 @@ export const useStore = create((set, get) => ({
     await db.updateTask({ ...task, status: 'completed', completedAt: new Date().toISOString() });
     await get().loadTasks();
   },
+  moveTaskToToday: async (taskId) => {
+    await db.moveTaskToToday(taskId);
+    await get().loadTasks();
+  },
+  moveTaskToBacklog: async (taskId) => {
+    await db.moveTaskToBacklog(taskId);
+    await get().loadTasks();
+  },
+  getTodayTasks: () => {
+    return get().tasks.filter(t => t.status === 'today');
+  },
+  getBacklogTasks: () => {
+    return get().tasks.filter(t => t.status === 'backlog');
+  },
+  getCompletedTasks: () => {
+    return get().tasks.filter(t => t.status === 'completed');
+  },
 
   // Sessions
   sessions: [],
@@ -154,13 +171,30 @@ export const useStore = create((set, get) => ({
   },
 
   // UI State
-  currentPillar: 'self',
-  currentSelfView: 'plan',
+  currentPage: 'flow',
+  currentSetupSection: 'overview',
   isInFocusMode: false,
-  setCurrentPillar: (pillar) => set({ currentPillar: pillar }),
-  setCurrentSelfView: (view) => set({ currentSelfView: view }),
+  setCurrentPage: (page) => set({ currentPage: page }),
+  setCurrentSetupSection: (section) => set({ currentSetupSection: section }),
   enterFocusMode: () => set({ isInFocusMode: true }),
   exitFocusMode: () => set({ isInFocusMode: false }),
+
+  // Setup Completion
+  getSetupCompletion: () => {
+    const { profile, goals, settings } = get();
+
+    const spiritComplete = profile?.selectedValues?.length >= 3;
+    const storyComplete = goals.filter(g => g.status === 'active').length > 0;
+    const spaceComplete = !!settings.timerDuration;
+
+    return {
+      spirit: spiritComplete,
+      story: storyComplete,
+      space: spaceComplete,
+      total: [spiritComplete, storyComplete, spaceComplete].filter(Boolean).length,
+      outOf: 3,
+    };
+  },
 
   // Initialize all data
   initializeApp: async () => {

@@ -148,6 +148,24 @@ export const db = {
     return database.delete('tasks', id);
   },
 
+  async getTasksByStatus(status) {
+    const database = await initDB();
+    const allTasks = await database.getAll('tasks');
+    return allTasks.filter(t => t.status === status);
+  },
+
+  async moveTaskToToday(taskId) {
+    const database = await initDB();
+    const task = await database.get('tasks', taskId);
+    return database.put('tasks', { ...task, status: 'today' });
+  },
+
+  async moveTaskToBacklog(taskId) {
+    const database = await initDB();
+    const task = await database.get('tasks', taskId);
+    return database.put('tasks', { ...task, status: 'backlog' });
+  },
+
   // Sessions
   async getAllSessions() {
     const database = await initDB();
