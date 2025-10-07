@@ -15,16 +15,9 @@ const Self = () => {
 
   return (
     <div className="pb-20 md:pb-6">
-      {/* Self Navigation */}
-      <div className="sticky top-0 bg-white border-b border-gray-200 z-40 py-4">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="flex justify-center mb-4">
-            <img
-              src="/logos/SELF - Section Logo.png"
-              alt="Self"
-              className="h-16"
-            />
-          </div>
+      {/* Compact Self Navigation - no logo duplication */}
+      <div className="sticky top-0 bg-white border-b border-gray-200 z-40 py-2">
+        <div className="max-w-4xl mx-auto px-4">
           <SelfNav />
         </div>
       </div>

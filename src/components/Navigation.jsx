@@ -15,16 +15,16 @@ const Navigation = () => {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:relative md:border-0 z-50">
-      <div className="flex justify-around items-center h-16 md:h-auto md:flex-col md:space-y-2 md:p-4 max-w-4xl mx-auto">
+      <div className="flex justify-around items-center h-14 md:h-auto md:flex-col md:space-y-1 md:p-3 max-w-4xl mx-auto">
         {pillars.map((pillar) => (
           <button
             key={pillar.id}
             onClick={() => setCurrentPillar(pillar.id)}
             className={`
-              flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3 p-2 md:p-3 rounded-lg
-              transition-all duration-300 flex-1 md:w-full
+              flex flex-col md:flex-row items-center justify-center gap-0.5 md:gap-2 p-1 md:p-2 rounded-lg
+              transition-all flex-1 md:w-full text-xs
               ${currentPillar === pillar.id
-                ? `bg-${pillar.color} text-white shadow-lg scale-105`
+                ? `bg-${pillar.color} text-white shadow-lg`
                 : 'text-gray-600 hover:bg-gray-100'
               }
             `}
@@ -33,13 +33,13 @@ const Navigation = () => {
           >
             <img
               src={pillar.icon}
-              alt={`${pillar.label} icon`}
-              className="w-6 h-6 md:w-8 md:h-8"
+              alt=""
+              className="w-5 h-5 md:w-6 md:h-6"
               style={{
                 filter: currentPillar === pillar.id ? 'brightness(0) invert(1)' : 'none'
               }}
             />
-            <span className="text-xs md:text-sm font-medium">{pillar.label}</span>
+            <span className="text-[10px] md:text-xs font-medium">{pillar.label}</span>
           </button>
         ))}
       </div>

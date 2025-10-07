@@ -13,13 +13,13 @@ const SelfNav = () => {
   ];
 
   return (
-    <div className="flex gap-2 justify-center mb-6">
+    <div className="flex gap-2 justify-center">
       {views.map((view) => (
         <button
           key={view.id}
           onClick={() => setCurrentSelfView(view.id)}
           className={`
-            px-6 py-2 rounded-lg font-semibold transition-all
+            px-4 py-1.5 rounded-lg text-xs font-semibold transition-all
             ${currentSelfView === view.id
               ? 'bg-self text-white shadow-md'
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
