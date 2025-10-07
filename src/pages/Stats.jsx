@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useStore } from '../store/useStore';
 
-const SelfReview = () => {
+const Stats = () => {
   const { sessions, loadSessions, tasks, goals } = useStore();
   const [todaySessions, setTodaySessions] = useState([]);
   const [weekSessions, setWeekSessions] = useState([]);
@@ -234,4 +234,4 @@ const SelfReview = () => {
   );
 };
 
-export default SelfReview;
+export default Stats;

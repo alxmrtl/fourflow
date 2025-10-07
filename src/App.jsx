@@ -2,17 +2,23 @@ import { useEffect } from 'react';
 import { useStore } from './store/useStore';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
-import Spirit from './pages/Spirit';
-import Story from './pages/Story';
-import Space from './pages/Space';
-import Self from './pages/Self';
+import Flow from './pages/Flow';
+import Stats from './pages/Stats';
+import Setup from './pages/Setup';
+import About from './pages/About';
+import FocusMode from './pages/FocusMode';
 
 function App() {
-  const { currentPillar, initializeApp } = useStore();
+  const { currentPage, isInFocusMode, initializeApp } = useStore();
 
   useEffect(() => {
     initializeApp();
   }, [initializeApp]);
+
+  // Full-screen focus mode
+  if (isInFocusMode) {
+    return <FocusMode />;
+  }
 
   return (
     <div className="min-h-screen bg-ivory">
@@ -26,10 +32,10 @@ function App() {
 
         {/* Main Content */}
         <main className="flex-1">
-          {currentPillar === 'spirit' && <Spirit />}
-          {currentPillar === 'story' && <Story />}
-          {currentPillar === 'space' && <Space />}
-          {currentPillar === 'self' && <Self />}
+          {currentPage === 'flow' && <Flow />}
+          {currentPage === 'stats' && <Stats />}
+          {currentPage === 'setup' && <Setup />}
+          {currentPage === 'about' && <About />}
         </main>
       </div>
 
