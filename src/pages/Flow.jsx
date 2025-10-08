@@ -259,8 +259,6 @@ const Flow = () => {
           )}
         </div>
 
-        </div>
-
         {/* Setup Indicator */}
         {setupCompletion.total < 3 && (
           <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
