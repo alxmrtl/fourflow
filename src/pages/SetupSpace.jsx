@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useStore } from '../store/useStore';
+import BreathworkEngine from '../components/BreathworkEngine';
+import { BREATHWORK_PATTERNS } from '../utils/breathworkPatterns';
 
 const SetupSpace = () => {
   const { settings, loadSettings, updateSettings } = useStore();
   const [localSettings, setLocalSettings] = useState(settings);
   const [showBreathwork, setShowBreathwork] = useState(false);
+  const [activeBreathwork, setActiveBreathwork] = useState(null);
 
   useEffect(() => {
     loadSettings();
@@ -200,48 +203,84 @@ const SetupSpace = () => {
         Save Settings
       </button>
 
-      {/* Breathwork Practice Modal */}
-      {showBreathwork && (
+      {/* Breathwork Selection Modal */}
+      {showBreathwork && !activeBreathwork && (
         <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-6 space-y-4">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4">
             <div className="flex justify-between items-start">
-              <h3 className="text-xl font-semibold text-space">Breathwork Practice</h3>
+              <div>
+                <h3 className="text-xl font-semibold text-space">Try Breathwork</h3>
+                <p className="text-sm text-gray-600">Choose a guided breathing exercise</p>
+              </div>
               <button
                 onClick={() => setShowBreathwork(false)}
-                className="text-gray-500 hover:text-gray-700"
+                className="text-gray-500 hover:text-gray-700 text-xl"
               >
                 ✕
               </button>
             </div>
 
-            <div className="text-center space-y-4 py-4">
-              <p className="text-sm text-gray-600">
-                This is a simple box breathing exercise to prepare your mind for deep work.
-              </p>
+            <div className="space-y-3">
+              {/* Pre-Flow */}
+              <button
+                onClick={() => setActiveBreathwork(BREATHWORK_PATTERNS.PRE_FLOW)}
+                className="w-full bg-gradient-to-br from-self/20 to-space/20 hover:from-self/30 hover:to-space/30 border-2 border-self/30 rounded-xl p-4 text-left space-y-1 transition-all"
+              >
+                <h4 className="font-semibold text-gray-800">{BREATHWORK_PATTERNS.PRE_FLOW.name}</h4>
+                <p className="text-xs text-gray-600">{BREATHWORK_PATTERNS.PRE_FLOW.description}</p>
+                <div className="text-xs text-gray-500">
+                  {BREATHWORK_PATTERNS.PRE_FLOW.cycles} cycles • Activation
+                </div>
+              </button>
 
-              <div className="bg-space/10 rounded-lg p-4 space-y-2 text-left">
-                <p className="text-sm font-semibold text-space">4-4-4-4 Box Breathing</p>
-                <ol className="text-xs text-gray-700 space-y-1 list-decimal list-inside">
-                  <li>Breathe in through your nose for 4 counts</li>
-                  <li>Hold your breath for 4 counts</li>
-                  <li>Exhale through your mouth for 4 counts</li>
-                  <li>Hold empty for 4 counts</li>
-                  <li>Repeat for 3-5 rounds</li>
-                </ol>
-              </div>
+              {/* Post-Flow */}
+              <button
+                onClick={() => setActiveBreathwork(BREATHWORK_PATTERNS.POST_FLOW)}
+                className="w-full bg-gradient-to-br from-space/20 to-story/20 hover:from-space/30 hover:to-story/30 border-2 border-space/30 rounded-xl p-4 text-left space-y-1 transition-all"
+              >
+                <h4 className="font-semibold text-gray-800">{BREATHWORK_PATTERNS.POST_FLOW.name}</h4>
+                <p className="text-xs text-gray-600">{BREATHWORK_PATTERNS.POST_FLOW.description}</p>
+                <div className="text-xs text-gray-500">
+                  {BREATHWORK_PATTERNS.POST_FLOW.cycles} cycles • Recovery
+                </div>
+              </button>
 
-              <p className="text-xs text-gray-600">
-                Full breathwork practice feature coming soon. For now, follow the instructions above manually.
-              </p>
+              {/* Four Layer */}
+              <button
+                onClick={() => setActiveBreathwork(BREATHWORK_PATTERNS.FOUR_LAYER)}
+                className="w-full bg-gradient-to-br from-story/20 to-spirit/20 hover:from-story/30 hover:to-spirit/30 border-2 border-spirit/30 rounded-xl p-4 text-left space-y-1 transition-all"
+              >
+                <h4 className="font-semibold text-gray-800">{BREATHWORK_PATTERNS.FOUR_LAYER.name}</h4>
+                <p className="text-xs text-gray-600">{BREATHWORK_PATTERNS.FOUR_LAYER.description}</p>
+                <div className="text-xs text-gray-500">
+                  {BREATHWORK_PATTERNS.FOUR_LAYER.cycles} cycles • Integration
+                </div>
+              </button>
             </div>
-
-            <button
-              onClick={() => setShowBreathwork(false)}
-              className="w-full bg-space text-white py-2 rounded-lg text-sm font-semibold"
-            >
-              Got it
-            </button>
           </div>
+        </div>
+      )}
+
+      {/* Breathwork Practice - Full Screen */}
+      {activeBreathwork && (
+        <div className="fixed inset-0 bg-black z-50">
+          <button
+            onClick={() => {
+              setActiveBreathwork(null);
+              setShowBreathwork(false);
+            }}
+            className="absolute top-4 right-4 z-50 text-white/70 hover:text-white text-2xl w-10 h-10 flex items-center justify-center"
+          >
+            ✕
+          </button>
+          <BreathworkEngine
+            pattern={activeBreathwork}
+            onComplete={() => {
+              setActiveBreathwork(null);
+              setShowBreathwork(false);
+            }}
+            autoStart={false}
+          />
         </div>
       )}
     </div>

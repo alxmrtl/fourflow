@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BreathworkEngine from '../components/BreathworkEngine';
+import { BREATHWORK_PATTERNS } from '../utils/breathworkPatterns';
 
 const About = () => {
+  const [activeBreathwork, setActiveBreathwork] = useState(null);
+
+  if (activeBreathwork) {
+    return (
+      <div className="min-h-screen bg-black relative">
+        <button
+          onClick={() => setActiveBreathwork(null)}
+          className="absolute top-4 right-4 z-50 text-white/70 hover:text-white text-2xl w-10 h-10 flex items-center justify-center"
+        >
+          ✕
+        </button>
+        <BreathworkEngine
+          pattern={activeBreathwork}
+          onComplete={() => setActiveBreathwork(null)}
+          autoStart={false}
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-8">
+    <div className="max-w-4xl mx-auto p-6 space-y-8 pb-24 md:pb-8">
       {/* Header */}
       <div>
         <h1 className="text-3xl font-display font-bold text-gray-800">About FlowSpace</h1>
@@ -118,6 +140,52 @@ const About = () => {
         <p className="text-gray-700 leading-relaxed">
           Over time, those pulls will come less often. Your endurance will grow. That's the practice.
         </p>
+      </div>
+
+      {/* Breathwork Exercises */}
+      <div className="space-y-4">
+        <h2 className="text-2xl font-semibold text-gray-800">Breathwork Exercises</h2>
+        <p className="text-gray-600 text-sm">
+          Use these guided breathing exercises to prepare for focus, recover after sessions, or align with the Four Pillars framework.
+        </p>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {/* Pre-Flow */}
+          <button
+            onClick={() => setActiveBreathwork(BREATHWORK_PATTERNS.PRE_FLOW)}
+            className="bg-gradient-to-br from-self/20 to-space/20 hover:from-self/30 hover:to-space/30 border-2 border-self/30 rounded-xl p-5 text-left space-y-2 transition-all"
+          >
+            <h3 className="text-lg font-semibold text-gray-800">{BREATHWORK_PATTERNS.PRE_FLOW.name}</h3>
+            <p className="text-sm text-gray-600">{BREATHWORK_PATTERNS.PRE_FLOW.description}</p>
+            <div className="text-xs text-gray-500">
+              {BREATHWORK_PATTERNS.PRE_FLOW.cycles} cycles • Activation
+            </div>
+          </button>
+
+          {/* Post-Flow */}
+          <button
+            onClick={() => setActiveBreathwork(BREATHWORK_PATTERNS.POST_FLOW)}
+            className="bg-gradient-to-br from-space/20 to-story/20 hover:from-space/30 hover:to-story/30 border-2 border-space/30 rounded-xl p-5 text-left space-y-2 transition-all"
+          >
+            <h3 className="text-lg font-semibold text-gray-800">{BREATHWORK_PATTERNS.POST_FLOW.name}</h3>
+            <p className="text-sm text-gray-600">{BREATHWORK_PATTERNS.POST_FLOW.description}</p>
+            <div className="text-xs text-gray-500">
+              {BREATHWORK_PATTERNS.POST_FLOW.cycles} cycles • Recovery
+            </div>
+          </button>
+
+          {/* Four Layer */}
+          <button
+            onClick={() => setActiveBreathwork(BREATHWORK_PATTERNS.FOUR_LAYER)}
+            className="bg-gradient-to-br from-story/20 to-spirit/20 hover:from-story/30 hover:to-spirit/30 border-2 border-spirit/30 rounded-xl p-5 text-left space-y-2 transition-all"
+          >
+            <h3 className="text-lg font-semibold text-gray-800">{BREATHWORK_PATTERNS.FOUR_LAYER.name}</h3>
+            <p className="text-sm text-gray-600">{BREATHWORK_PATTERNS.FOUR_LAYER.description}</p>
+            <div className="text-xs text-gray-500">
+              {BREATHWORK_PATTERNS.FOUR_LAYER.cycles} cycles • Integration
+            </div>
+          </button>
+        </div>
       </div>
 
       {/* Privacy */}

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useStore } from '../store/useStore';
+import BreathworkEngine from '../components/BreathworkEngine';
+import { BREATHWORK_PATTERNS } from '../utils/breathworkPatterns';
 
 const FocusMode = () => {
   const {
     currentSession,
     tasks,
+    settings,
     pauseSession,
     resumeSession,
     incrementReps,
@@ -17,14 +20,26 @@ const FocusMode = () => {
   const [timeRemaining, setTimeRemaining] = useState(currentSession?.timeRemaining || 0);
   const [showEndModal, setShowEndModal] = useState(false);
   const [feltFlow, setFeltFlow] = useState(false);
+  const [showPreFlowBreathwork, setShowPreFlowBreathwork] = useState(false);
+  const [showPostFlowBreathwork, setShowPostFlowBreathwork] = useState(false);
+  const [sessionStarted, setSessionStarted] = useState(false);
 
   const task = tasks.find(t => t.id === currentSession?.taskId);
   const totalSeconds = currentSession?.duration * 60 || 0;
   const progress = totalSeconds > 0 ? ((totalSeconds - timeRemaining) / totalSeconds) * 100 : 0;
   const circumference = 2 * Math.PI * 120;
 
+  // Check if we should show pre-flow breathwork on mount
   useEffect(() => {
-    if (!currentSession || currentSession.isPaused) return;
+    if (settings.breathworkBefore && !sessionStarted) {
+      setShowPreFlowBreathwork(true);
+    } else {
+      setSessionStarted(true);
+    }
+  }, [settings.breathworkBefore, sessionStarted]);
+
+  useEffect(() => {
+    if (!currentSession || currentSession.isPaused || !sessionStarted) return;
 
     const interval = setInterval(() => {
       setTimeRemaining((prev) => {
@@ -33,7 +48,12 @@ const FocusMode = () => {
 
         if (newTime <= 0) {
           clearInterval(interval);
-          setShowEndModal(true);
+          // Check if we should show post-flow breathwork
+          if (settings.breathworkAfter) {
+            setShowPostFlowBreathwork(true);
+          } else {
+            setShowEndModal(true);
+          }
         }
 
         return newTime;
@@ -41,7 +61,7 @@ const FocusMode = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [currentSession?.isPaused]);
+  }, [currentSession?.isPaused, sessionStarted, settings.breathworkAfter]);
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -60,6 +80,38 @@ const FocusMode = () => {
       exitFocusMode();
     }
   };
+
+  // Pre-Flow Breathwork
+  if (showPreFlowBreathwork) {
+    return (
+      <div className="min-h-screen bg-black">
+        <BreathworkEngine
+          pattern={BREATHWORK_PATTERNS.PRE_FLOW}
+          onComplete={() => {
+            setShowPreFlowBreathwork(false);
+            setSessionStarted(true);
+          }}
+          autoStart={false}
+        />
+      </div>
+    );
+  }
+
+  // Post-Flow Breathwork
+  if (showPostFlowBreathwork) {
+    return (
+      <div className="min-h-screen bg-black">
+        <BreathworkEngine
+          pattern={BREATHWORK_PATTERNS.POST_FLOW}
+          onComplete={() => {
+            setShowPostFlowBreathwork(false);
+            setShowEndModal(true);
+          }}
+          autoStart={false}
+        />
+      </div>
+    );
+  }
 
   if (!currentSession) {
     return (
