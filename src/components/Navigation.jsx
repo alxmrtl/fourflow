@@ -14,8 +14,8 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:relative md:border-0 z-50">
-      <div className="flex justify-around items-center h-14 md:h-auto md:flex-col md:space-y-1 md:p-3 max-w-4xl mx-auto">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:relative md:border-0 z-50 pb-safe">
+      <div className="flex justify-around items-center h-16 md:h-auto md:flex-col md:space-y-1 md:p-3 max-w-4xl mx-auto">
         {pages.map((page) => (
           <button
             key={page.id}

@@ -72,10 +72,10 @@ const Flow = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-8rem)] overflow-hidden pb-20 md:pb-6">
-      <div className="max-w-4xl mx-auto px-4 py-3 h-full flex flex-col">
+    <div className="max-w-4xl mx-auto p-6 pb-24 md:pb-6">
+      <div className="space-y-4">
         {/* Header Stats */}
-        <div className="mb-4">
+        <div>
           <h1 className="text-2xl font-bold text-self mb-1">FLOW</h1>
           <div className="flex gap-4 text-xs text-gray-600">
             <span>{todayReps} reps</span>
@@ -85,7 +85,7 @@ const Flow = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 overflow-y-auto space-y-4">
+        <div className="space-y-4">
           {/* Ready to Focus */}
           <div className="space-y-2">
             <div className="flex items-center justify-between">
@@ -259,9 +259,11 @@ const Flow = () => {
           )}
         </div>
 
+        </div>
+
         {/* Setup Indicator */}
         {setupCompletion.total < 3 && (
-          <div className="mt-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
+          <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
             <p className="text-xs text-gray-600 mb-1">
               Setup: {setupCompletion.total}/3 complete
             </p>

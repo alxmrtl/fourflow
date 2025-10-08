@@ -28,21 +28,19 @@ const Setup = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-8rem)] overflow-hidden pb-20 md:pb-6">
-      <div className="max-w-4xl mx-auto px-4 py-3 h-full flex flex-col">
-        {/* Header */}
-        <div className="mb-4">
-          <h1 className="text-2xl font-bold text-gray-800">SETUP</h1>
-          <p className="text-sm text-gray-600">Build your foundation for flow</p>
-        </div>
+    <div className="max-w-4xl mx-auto p-6 pb-24 md:pb-6 space-y-6">
+      {/* Header */}
+      <div>
+        <h1 className="text-2xl font-bold text-gray-800">SETUP</h1>
+        <p className="text-sm text-gray-600">Build your foundation for flow</p>
+      </div>
 
-        {/* Setup Navigation */}
-        <SetupNav />
+      {/* Setup Navigation */}
+      <SetupNav />
 
-        {/* Content */}
-        <div className="flex-1 overflow-y-auto mt-4">
-          {renderSection()}
-        </div>
+      {/* Content */}
+      <div>
+        {renderSection()}
       </div>
     </div>
   );

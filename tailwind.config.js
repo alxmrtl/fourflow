@@ -61,6 +61,9 @@ export default {
           '50%': { transform: 'scale(1.1)' },
         },
       },
+      padding: {
+        'safe': 'env(safe-area-inset-bottom)',
+      },
     },
   },
   plugins: [],
