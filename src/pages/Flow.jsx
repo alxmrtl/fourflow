@@ -214,8 +214,8 @@ const Flow = () => {
 
       {/* Backlog Selection Modal */}
       {showBacklog && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-end md:items-center md:justify-center">
-          <div className="bg-white w-full md:max-w-2xl md:rounded-lg max-h-[80vh] flex flex-col">
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white w-full md:max-w-2xl rounded-lg max-h-[70vh] flex flex-col">
             <div className="p-4 border-b flex items-center justify-between">
               <h3 className="text-lg font-semibold">Select Action</h3>
               <button
