@@ -20,6 +20,7 @@ const FocusMode = () => {
   const [timeRemaining, setTimeRemaining] = useState(currentSession?.timeRemaining || 0);
   const [showEndModal, setShowEndModal] = useState(false);
   const [feltFlow, setFeltFlow] = useState(false);
+  const [taskCompleted, setTaskCompleted] = useState(false);
   const [showPreFlowBreathwork, setShowPreFlowBreathwork] = useState(false);
   const [showPostFlowBreathwork, setShowPostFlowBreathwork] = useState(false);
   const [sessionStarted, setSessionStarted] = useState(false);
@@ -71,6 +72,19 @@ const FocusMode = () => {
 
   const handleEndSession = async () => {
     await endSession({ feltFlow });
+
+    // Mark task as completed if user indicated so
+    if (taskCompleted && currentSession?.taskId) {
+      const { completeTask, dailyQueue, removeTaskFromQueue } = useStore.getState();
+      await completeTask(currentSession.taskId);
+
+      // Remove from queue after completion
+      const slot = dailyQueue?.slots.find(s => s.taskId === currentSession.taskId);
+      if (slot) {
+        await removeTaskFromQueue(slot.id);
+      }
+    }
+
     exitFocusMode();
   };
 
@@ -140,6 +154,16 @@ const FocusMode = () => {
           </div>
 
           <div className="space-y-3">
+            <label className="flex items-center gap-3 p-4 bg-white/5 rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
+              <input
+                type="checkbox"
+                checked={taskCompleted}
+                onChange={(e) => setTaskCompleted(e.target.checked)}
+                className="w-5 h-5 accent-green-500"
+              />
+              <span className="text-left">Was this action completed?</span>
+            </label>
+
             <label className="flex items-center gap-3 p-4 bg-white/5 rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
               <input
                 type="checkbox"

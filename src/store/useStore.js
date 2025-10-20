@@ -170,29 +170,75 @@ export const useStore = create((set, get) => ({
     set({ settings });
   },
 
+  // Daily Queue
+  dailyQueue: null,
+  loadDailyQueue: async () => {
+    const queue = await db.getDailyQueue();
+    set({ dailyQueue: queue });
+  },
+  updateDailyQueue: async (queue) => {
+    await db.saveDailyQueue(queue);
+    set({ dailyQueue: queue });
+  },
+  addTaskToQueue: async (slotId, taskId) => {
+    const queue = get().dailyQueue;
+    const updatedSlots = queue.slots.map(slot =>
+      slot.id === slotId ? { ...slot, taskId } : slot
+    );
+    await get().updateDailyQueue({ ...queue, slots: updatedSlots });
+  },
+  removeTaskFromQueue: async (slotId) => {
+    const queue = get().dailyQueue;
+    const updatedSlots = queue.slots.map(slot =>
+      slot.id === slotId ? { ...slot, taskId: null } : slot
+    );
+    await get().updateDailyQueue({ ...queue, slots: updatedSlots });
+  },
+  addQueueSlot: async () => {
+    const queue = get().dailyQueue;
+    const newSlot = { id: queue.slots.length + 1, taskId: null };
+    await get().updateDailyQueue({ ...queue, slots: [...queue.slots, newSlot] });
+  },
+  removeQueueSlot: async (slotId) => {
+    const queue = get().dailyQueue;
+    const updatedSlots = queue.slots.filter(slot => slot.id !== slotId);
+    await get().updateDailyQueue({ ...queue, slots: updatedSlots });
+  },
+
   // UI State
   currentPage: 'flow',
-  currentSetupSection: 'overview',
+  currentSetupSection: 'actions',
+  currentAlignSection: 'actions',
   isInFocusMode: false,
   setCurrentPage: (page) => set({ currentPage: page }),
   setCurrentSetupSection: (section) => set({ currentSetupSection: section }),
+  setCurrentAlignSection: (section) => set({ currentAlignSection: section }),
   enterFocusMode: () => set({ isInFocusMode: true }),
   exitFocusMode: () => set({ isInFocusMode: false }),
 
-  // Setup Completion
-  getSetupCompletion: () => {
-    const { profile, goals, settings } = get();
+  // Alignment Completion
+  getAlignmentStatus: () => {
+    const { profile, goals, tasks, settings } = get();
 
-    const spiritComplete = profile?.selectedValues?.length >= 3;
-    const storyComplete = goals.filter(g => g.status === 'active').length > 0;
-    const spaceComplete = !!settings.timerDuration;
+    const visionComplete = profile?.selectedValues?.length >= 3;
+    const goalsComplete = goals.filter(g => g.status === 'active').length > 0;
+    const setupComplete = !!settings.timerDuration;
+    const actionsComplete = tasks.filter(t => t.status === 'backlog').length > 0;
+
+    const allComplete = visionComplete && goalsComplete && setupComplete && actionsComplete;
 
     return {
-      spirit: spiritComplete,
-      story: storyComplete,
-      space: spaceComplete,
-      total: [spiritComplete, storyComplete, spaceComplete].filter(Boolean).length,
-      outOf: 3,
+      vision: visionComplete,
+      goals: goalsComplete,
+      setup: setupComplete,
+      actions: actionsComplete,
+      isAligned: allComplete,
+      items: [
+        { key: 'vision', label: 'Vision & Values Set', complete: visionComplete },
+        { key: 'goals', label: 'Active Goals Defined', complete: goalsComplete },
+        { key: 'setup', label: 'Default Setup Configured', complete: setupComplete },
+        { key: 'actions', label: 'Actions in Backlog', complete: actionsComplete },
+      ]
     };
   },
 
@@ -205,6 +251,7 @@ export const useStore = create((set, get) => ({
       get().loadTasks(),
       get().loadSessions(),
       get().loadSettings(),
+      get().loadDailyQueue(),
     ]);
   },
 }));

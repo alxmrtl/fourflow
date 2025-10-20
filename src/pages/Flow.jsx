@@ -5,275 +5,277 @@ const Flow = () => {
   const {
     tasks,
     goals,
-    sessions,
     settings,
+    dailyQueue,
     loadTasks,
     loadGoals,
-    loadSessions,
-    addTask,
-    moveTaskToToday,
+    loadDailyQueue,
+    addTaskToQueue,
+    removeTaskFromQueue,
+    addQueueSlot,
+    removeQueueSlot,
     completeTask,
-    deleteTask,
     startSession,
     enterFocusMode,
-    getSetupCompletion,
     setCurrentPage,
   } = useStore();
 
-  const [showQuickTask, setShowQuickTask] = useState(false);
   const [showBacklog, setShowBacklog] = useState(false);
-  const [newTask, setNewTask] = useState({ title: '', goalId: null });
+  const [selectedSlotId, setSelectedSlotId] = useState(null);
 
   useEffect(() => {
     loadTasks();
     loadGoals();
-    loadSessions();
-  }, [loadTasks, loadGoals, loadSessions]);
+    loadDailyQueue();
+  }, [loadTasks, loadGoals, loadDailyQueue]);
 
-  const todayTasks = tasks.filter(t => t.status === 'today');
   const backlogTasks = tasks.filter(t => t.status === 'backlog');
-  const completedToday = tasks.filter(t => {
-    if (t.status !== 'completed') return false;
-    const today = new Date().toISOString().split('T')[0];
-    const completedDate = t.completedAt?.split('T')[0];
-    return completedDate === today;
-  });
 
-  const todaySessions = sessions.filter(s => {
-    const today = new Date().toISOString().split('T')[0];
-    return s.date === today;
-  });
-
-  const todayReps = todaySessions.reduce((sum, s) => sum + (s.reps || 0), 0);
-  const todayTime = todaySessions.reduce((sum, s) => sum + (s.actualDuration || 0), 0);
-  const streak = 7; // TODO: Calculate actual streak
-
-  const setupCompletion = getSetupCompletion();
-
-  const handleQuickTask = async () => {
-    if (newTask.title.trim()) {
-      await addTask({ ...newTask, status: 'today' });
-      setNewTask({ title: '', goalId: null });
-      setShowQuickTask(false);
-    }
-  };
-
-  const handlePullFromBacklog = async (taskId) => {
-    await moveTaskToToday(taskId);
-  };
-
-  const handleStartSession = (taskId) => {
-    startSession(taskId, settings.timerDuration);
-    enterFocusMode();
+  const getTaskById = (taskId) => {
+    return tasks.find(t => t.id === taskId);
   };
 
   const getGoalForTask = (goalId) => {
     return goals.find(g => g.id === goalId);
   };
 
+  const handleSelectTask = async (taskId) => {
+    if (selectedSlotId) {
+      await addTaskToQueue(selectedSlotId, taskId);
+      setShowBacklog(false);
+      setSelectedSlotId(null);
+    }
+  };
+
+  const handleStartFlow = (task) => {
+    if (!task) return;
+    const duration = task.duration || settings.timerDuration || 25;
+    startSession(task.id, duration);
+    enterFocusMode();
+  };
+
+  const handleMarkComplete = async (taskId) => {
+    await completeTask(taskId);
+    // Remove from queue after completion
+    const slot = dailyQueue?.slots.find(s => s.taskId === taskId);
+    if (slot) {
+      await removeTaskFromQueue(slot.id);
+    }
+  };
+
+  const handleRemoveFromQueue = async (slotId) => {
+    await removeTaskFromQueue(slotId);
+  };
+
+  if (!dailyQueue) {
+    return <div className="max-w-4xl mx-auto p-6">Loading...</div>;
+  }
+
   return (
     <div className="max-w-4xl mx-auto p-6 pb-24 md:pb-6">
-      <div className="space-y-4">
-        {/* Header Stats */}
+      <div className="space-y-6">
+        {/* Header */}
         <div>
-          <h1 className="text-2xl font-bold text-self mb-1">FLOW</h1>
-          <div className="flex gap-4 text-xs text-gray-600">
-            <span>{todayReps} reps</span>
-            <span>{todayTime} min</span>
-            <span>{streak} day streak</span>
-          </div>
+          <h1 className="text-3xl font-bold text-self mb-2">FLOW</h1>
+          <p className="text-sm text-gray-600">Your daily flow execution hub</p>
         </div>
 
-        {/* Main Content */}
-        <div className="space-y-4">
-          {/* Ready to Focus */}
-          <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <h2 className="text-base font-semibold text-gray-800">Ready to Focus</h2>
-              <span className="text-xs text-gray-500">{todayTasks.length} tasks</span>
+        {/* Today's Queue */}
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-gray-800">Today's Queue</h2>
+            <div className="flex gap-2">
+              <button
+                onClick={() => addQueueSlot()}
+                className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-lg font-semibold transition-colors"
+              >
+                + Slot
+              </button>
             </div>
+          </div>
 
-            {todayTasks.length === 0 && !showQuickTask && (
-              <div className="text-center py-8 text-gray-500 text-sm">
-                <p className="mb-3">No tasks for today</p>
-                <p className="text-xs">Add a quick task or pull from your backlog</p>
-              </div>
-            )}
+          {/* Queue Slots */}
+          <div className="space-y-3">
+            {dailyQueue.slots.map((slot) => {
+              const task = getTaskById(slot.taskId);
+              const goal = task ? getGoalForTask(task.goalId) : null;
 
-            {todayTasks.map(task => {
-              const goal = getGoalForTask(task.goalId);
               return (
                 <div
-                  key={task.id}
-                  className="bg-white border-2 border-gray-200 rounded-lg p-3"
+                  key={slot.id}
+                  className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-self/30 transition-colors"
                 >
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-sm font-semibold text-gray-800">
-                        {task.title}
-                      </h3>
-                      {goal && (
-                        <p className="text-xs text-story mt-0.5">
-                          → {goal.title}
-                        </p>
-                      )}
+                  {!task ? (
+                    // Empty Slot
+                    <div className="flex items-center justify-between">
+                      <div className="flex-1">
+                        <p className="text-sm text-gray-400">Empty slot</p>
+                      </div>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => {
+                            setSelectedSlotId(slot.id);
+                            setShowBacklog(true);
+                          }}
+                          className="bg-self text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-self/90 transition-colors"
+                        >
+                          + Add Action
+                        </button>
+                        {dailyQueue.slots.length > 1 && (
+                          <button
+                            onClick={() => removeQueueSlot(slot.id)}
+                            className="bg-gray-100 text-gray-600 px-3 py-2 rounded-lg text-xs font-semibold hover:bg-gray-200 transition-colors"
+                          >
+                            Remove Slot
+                          </button>
+                        )}
+                      </div>
                     </div>
-                    <button
-                      onClick={() => handleStartSession(task.id)}
-                      className="bg-self text-white px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap flex-shrink-0"
-                    >
-                      START
-                    </button>
-                  </div>
+                  ) : (
+                    // Task in Slot
+                    <div className="space-y-3">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-base font-semibold text-gray-800 mb-1">
+                            {task.title}
+                          </h3>
+                          <div className="flex items-center gap-3 text-xs text-gray-500">
+                            <span>{task.duration || 25} min</span>
+                            {goal && (
+                              <button
+                                className="flex items-center gap-1 hover:text-story transition-colors"
+                                title={goal.title}
+                              >
+                                <span className="text-base">{goal.emoji || '🎯'}</span>
+                                <span className="text-story font-medium">{goal.title}</span>
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => handleRemoveFromQueue(slot.id)}
+                          className="text-gray-400 hover:text-red-600 text-sm transition-colors"
+                        >
+                          ✕
+                        </button>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleStartFlow(task)}
+                          className="flex-1 bg-self text-white py-2 rounded-lg text-sm font-semibold hover:bg-self/90 transition-colors"
+                        >
+                          Start Flow
+                        </button>
+                        <button
+                          onClick={() => handleMarkComplete(task.id)}
+                          className="bg-green-50 text-green-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-100 border border-green-200 transition-colors"
+                        >
+                          ✓ Complete
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })}
           </div>
-
-          {/* Add Task Buttons */}
-          <div className="flex gap-2">
-            <button
-              onClick={() => setShowQuickTask(true)}
-              className="flex-1 bg-self text-white py-2 rounded-lg text-xs font-semibold"
-            >
-              + Quick Task
-            </button>
-            <button
-              onClick={() => setShowBacklog(true)}
-              className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-xs font-semibold"
-            >
-              📋 Pull from Backlog ({backlogTasks.length})
-            </button>
-          </div>
-
-          {/* Quick Task Form */}
-          {showQuickTask && (
-            <div className="bg-white border-2 border-self rounded-lg p-3 space-y-2">
-              <input
-                type="text"
-                value={newTask.title}
-                onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-                placeholder="Task title..."
-                className="w-full p-2 text-sm border-2 border-gray-200 rounded-lg focus:border-self focus:outline-none"
-                autoFocus
-              />
-              <select
-                value={newTask.goalId || ''}
-                onChange={(e) => setNewTask({ ...newTask, goalId: e.target.value ? parseInt(e.target.value) : null })}
-                className="w-full p-2 text-sm border-2 border-gray-200 rounded-lg focus:border-self focus:outline-none"
-              >
-                <option value="">No goal (optional)</option>
-                {goals.filter(g => g.status === 'active').map(goal => (
-                  <option key={goal.id} value={goal.id}>{goal.title}</option>
-                ))}
-              </select>
-              <div className="flex gap-2">
-                <button
-                  onClick={handleQuickTask}
-                  className="flex-1 bg-self text-white py-1.5 rounded-lg text-xs font-semibold"
-                >
-                  Add to Today
-                </button>
-                <button
-                  onClick={() => {
-                    setShowQuickTask(false);
-                    setNewTask({ title: '', goalId: null });
-                  }}
-                  className="flex-1 bg-gray-200 text-gray-700 py-1.5 rounded-lg text-xs font-semibold"
-                >
-                  Cancel
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Backlog Sheet */}
-          {showBacklog && (
-            <div className="fixed inset-0 bg-black/50 z-50 flex items-end md:items-center md:justify-center">
-              <div className="bg-white w-full md:max-w-2xl md:rounded-lg max-h-[80vh] flex flex-col">
-                <div className="p-4 border-b flex items-center justify-between">
-                  <h3 className="text-lg font-semibold">Backlog</h3>
-                  <button
-                    onClick={() => setShowBacklog(false)}
-                    className="text-gray-500 hover:text-gray-700"
-                  >
-                    ✕
-                  </button>
-                </div>
-                <div className="flex-1 overflow-y-auto p-4 space-y-2">
-                  {backlogTasks.length === 0 ? (
-                    <p className="text-center text-gray-500 py-8 text-sm">
-                      No backlog tasks. Add tasks in Setup → SELF
-                    </p>
-                  ) : (
-                    backlogTasks.map(task => {
-                      const goal = getGoalForTask(task.goalId);
-                      return (
-                        <div
-                          key={task.id}
-                          className="bg-gray-50 border border-gray-200 rounded-lg p-3 flex items-start justify-between gap-2"
-                        >
-                          <div className="flex-1">
-                            <h4 className="text-sm font-semibold">{task.title}</h4>
-                            {goal && (
-                              <p className="text-xs text-story mt-0.5">→ {goal.title}</p>
-                            )}
-                          </div>
-                          <button
-                            onClick={() => {
-                              handlePullFromBacklog(task.id);
-                              setShowBacklog(false);
-                            }}
-                            className="bg-self text-white px-3 py-1 rounded text-xs font-semibold whitespace-nowrap"
-                          >
-                            + Add Today
-                          </button>
-                        </div>
-                      );
-                    })
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Completed Today */}
-          {completedToday.length > 0 && (
-            <div className="space-y-2">
-              <h3 className="text-sm font-semibold text-gray-600">✓ Completed Today</h3>
-              {completedToday.map(task => {
-                const goal = getGoalForTask(task.goalId);
-                return (
-                  <div
-                    key={task.id}
-                    className="bg-gray-50 border border-gray-200 rounded-lg p-2 opacity-75"
-                  >
-                    <h4 className="text-sm text-gray-600 line-through">{task.title}</h4>
-                    {goal && (
-                      <p className="text-xs text-gray-500">→ {goal.title}</p>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          )}
         </div>
 
-        {/* Setup Indicator */}
-        {setupCompletion.total < 3 && (
-          <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
-            <p className="text-xs text-gray-600 mb-1">
-              Setup: {setupCompletion.total}/3 complete
-            </p>
-            <button
-              onClick={() => setCurrentPage('setup')}
-              className="text-xs text-self font-semibold hover:underline"
-            >
-              Complete setup →
-            </button>
-          </div>
-        )}
+        {/* Space Configuration Display */}
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <button
+            onClick={() => setCurrentPage('align')}
+            className="w-full flex items-center justify-between hover:bg-gray-100 -m-4 p-4 rounded-lg transition-colors"
+          >
+            <div>
+              <h3 className="text-sm font-semibold text-gray-800 mb-1">Space Configuration</h3>
+              <div className="flex items-center gap-4 text-xs text-gray-600">
+                <span>Sound: {settings.sound === 'silence' ? 'Silence' : settings.sound}</span>
+                <span>Breathwork: {settings.breathworkBefore ? 'Enabled' : 'Disabled'}</span>
+              </div>
+            </div>
+            <span className="text-gray-400 text-xs">Edit in ALIGN →</span>
+          </button>
+        </div>
+
+        {/* Quick Actions */}
+        <div className="flex gap-2">
+          <button
+            onClick={() => {
+              setCurrentPage('align');
+            }}
+            className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 rounded-lg text-xs font-semibold transition-colors"
+          >
+            + Add More Actions
+          </button>
+        </div>
       </div>
+
+      {/* Backlog Selection Modal */}
+      {showBacklog && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-end md:items-center md:justify-center">
+          <div className="bg-white w-full md:max-w-2xl md:rounded-lg max-h-[80vh] flex flex-col">
+            <div className="p-4 border-b flex items-center justify-between">
+              <h3 className="text-lg font-semibold">Select Action</h3>
+              <button
+                onClick={() => {
+                  setShowBacklog(false);
+                  setSelectedSlotId(null);
+                }}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-4 space-y-2">
+              {backlogTasks.length === 0 ? (
+                <div className="text-center py-8">
+                  <p className="text-sm text-gray-500 mb-3">
+                    No actions in backlog
+                  </p>
+                  <button
+                    onClick={() => {
+                      setShowBacklog(false);
+                      setSelectedSlotId(null);
+                      setCurrentPage('align');
+                    }}
+                    className="text-xs text-self font-semibold hover:underline"
+                  >
+                    Add actions in ALIGN →
+                  </button>
+                </div>
+              ) : (
+                backlogTasks.map(task => {
+                  const goal = getGoalForTask(task.goalId);
+                  return (
+                    <button
+                      key={task.id}
+                      onClick={() => handleSelectTask(task.id)}
+                      className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-left hover:border-self hover:bg-self/5 transition-colors"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-semibold text-gray-800">{task.title}</h4>
+                          <div className="flex items-center gap-2 mt-1 text-xs text-gray-500">
+                            <span>{task.duration || 25} min</span>
+                            {goal && (
+                              <span className="text-story">
+                                {goal.emoji ? `${goal.emoji} ` : '→ '}{goal.title}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        <span className="text-self text-xs font-semibold">Select</span>
+                      </div>
+                    </button>
+                  );
+                })
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

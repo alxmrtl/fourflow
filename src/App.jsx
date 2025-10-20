@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Flow from './pages/Flow';
 import Stats from './pages/Stats';
-import Setup from './pages/Setup';
+import Align from './pages/Align';
 import About from './pages/About';
 import FocusMode from './pages/FocusMode';
 
@@ -33,8 +33,8 @@ function App() {
         {/* Main Content */}
         <main className="flex-1">
           {currentPage === 'flow' && <Flow />}
+          {currentPage === 'align' && <Align />}
           {currentPage === 'stats' && <Stats />}
-          {currentPage === 'setup' && <Setup />}
           {currentPage === 'about' && <About />}
         </main>
       </div>

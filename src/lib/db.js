@@ -1,7 +1,7 @@
 import { openDB } from 'idb';
 
 const DB_NAME = 'flowspace-db';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 export const initDB = async () => {
   return openDB(DB_NAME, DB_VERSION, {
@@ -49,6 +49,11 @@ export const initDB = async () => {
       // Settings store
       if (!db.objectStoreNames.contains('settings')) {
         db.createObjectStore('settings', { keyPath: 'id' });
+      }
+
+      // Daily Queue store (new in v2)
+      if (!db.objectStoreNames.contains('dailyQueue')) {
+        db.createObjectStore('dailyQueue', { keyPath: 'id' });
       }
     },
   });
@@ -227,5 +232,25 @@ export const db = {
   async saveSettings(settings) {
     const database = await initDB();
     return database.put('settings', { ...settings, id: 'app-settings' });
+  },
+
+  // Daily Queue
+  async getDailyQueue() {
+    const database = await initDB();
+    const queue = await database.get('dailyQueue', 'today-queue');
+    return queue || {
+      id: 'today-queue',
+      date: new Date().toISOString().split('T')[0],
+      slots: [
+        { id: 1, taskId: null },
+        { id: 2, taskId: null },
+        { id: 3, taskId: null }
+      ]
+    };
+  },
+
+  async saveDailyQueue(queue) {
+    const database = await initDB();
+    return database.put('dailyQueue', { ...queue, id: 'today-queue' });
   },
 };
