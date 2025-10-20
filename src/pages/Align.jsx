@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStore } from '../store/useStore';
 import AlignNav from '../components/AlignNav';
-import AlignDashboard from './AlignDashboard';
 import AlignActions from './AlignActions';
 import AlignSetup from './AlignSetup';
 import AlignGoals from './AlignGoals';
@@ -32,9 +31,6 @@ const Align = () => {
         <h1 className="text-2xl font-bold text-gray-800">ALIGN</h1>
         <p className="text-sm text-gray-600">Configure your foundation for flow</p>
       </div>
-
-      {/* Alignment Status Dashboard */}
-      <AlignDashboard />
 
       {/* Secondary Navigation */}
       <AlignNav />
