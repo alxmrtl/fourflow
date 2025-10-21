@@ -118,17 +118,17 @@ const AlignGoals = () => {
           </div>
 
           {/* Selected Goal Display */}
-          <div className="flex-1 flex items-center justify-between min-w-0 py-3 pr-3">
+          <div className="flex-1 flex items-center justify-between py-3 pr-3">
             {selectedGoal ? (
               <>
-                <div className="flex items-center gap-2 min-w-0 flex-1">
-                  <span className="text-base font-semibold text-story truncate">
+                <div className="flex items-center gap-2 flex-1">
+                  <span className="text-sm font-semibold text-story break-words line-clamp-2">
                     {selectedGoal.title}
                   </span>
                 </div>
                 <button
                   onClick={() => setShowManageModal(true)}
-                  className="text-xs text-gray-500 hover:text-story flex-shrink-0 ml-2"
+                  className="text-xs text-gray-500 hover:text-story flex-shrink-0 ml-2 whitespace-nowrap"
                 >
                   manage
                 </button>

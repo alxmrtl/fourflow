@@ -52,23 +52,37 @@ const AlignSetup = () => {
             </button>
 
             {showSoundPicker && (
-              <div className="absolute z-20 left-0 top-full mt-1 bg-white border-2 border-space rounded-lg shadow-xl min-w-[140px]">
-                {SOUND_OPTIONS.map((option) => (
-                  <button
-                    key={option.value}
-                    onClick={() => {
-                      updateSetting('sound', option.value);
-                      setShowSoundPicker(false);
-                    }}
-                    className={`w-full flex items-center gap-2 px-3 py-2 text-xs hover:bg-space/10 transition-colors first:rounded-t-lg last:rounded-b-lg ${
-                      localSettings.sound === option.value ? 'bg-space/20 font-semibold' : ''
-                    }`}
-                  >
-                    <span>{option.emoji}</span>
-                    <span>{option.label}</span>
-                  </button>
-                ))}
-              </div>
+              <>
+                {/* Backdrop */}
+                <div
+                  className="fixed inset-0 bg-black/20 z-[99]"
+                  onClick={() => setShowSoundPicker(false)}
+                />
+                {/* Menu */}
+                <div className="fixed z-[100] bg-white border-2 border-space rounded-lg shadow-xl min-w-[140px]"
+                  style={{
+                    left: '50%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)'
+                  }}
+                >
+                  {SOUND_OPTIONS.map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => {
+                        updateSetting('sound', option.value);
+                        setShowSoundPicker(false);
+                      }}
+                      className={`w-full flex items-center gap-2 px-3 py-2 text-xs hover:bg-space/10 transition-colors first:rounded-t-lg last:rounded-b-lg ${
+                        localSettings.sound === option.value ? 'bg-space/20 font-semibold' : ''
+                      }`}
+                    >
+                      <span>{option.emoji}</span>
+                      <span>{option.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </>
             )}
           </div>
         </div>
