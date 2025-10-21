@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply text-base antialiased;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-ivory text-charcoal font-sans;
+  }
+}
+
+@layer utilities {
+  .transition-focus-mode {
+    transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+}
