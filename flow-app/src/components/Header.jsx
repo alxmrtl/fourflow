@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStore } from '../store/useStore';
 
-const VERSION = 'v1.2.0';
+const VERSION = 'v1.2.0'; // Updated: 2025-10-21
 
 const Header = () => {
   const { isInFocusMode } = useStore();
@@ -18,9 +18,9 @@ const Header = () => {
             className="h-8"
           />
         </div>
-        <div className="flex items-center gap-3 text-xs text-gray-500">
-          <span className="font-semibold text-self">{VERSION}</span>
-          <span>
+        <div className="flex items-center gap-3">
+          <span className="text-sm font-bold text-white bg-self px-2 py-1 rounded">{VERSION}</span>
+          <span className="text-xs text-gray-500">
             {new Date().toLocaleDateString('en-US', {
               month: 'short',
               day: 'numeric'
