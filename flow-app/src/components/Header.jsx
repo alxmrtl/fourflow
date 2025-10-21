@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStore } from '../store/useStore';
 
-const VERSION = 'v1.2.0'; // Updated: 2025-10-21
+const VERSION = 'v1.2.1';
 
 const Header = () => {
   const { isInFocusMode } = useStore();
