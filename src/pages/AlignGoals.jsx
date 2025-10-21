@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useStore } from '../store/useStore';
+import AutoSaveIndicator from '../components/AutoSaveIndicator';
 
 const EMOJI_SUGGESTIONS = ['🎯', '💪', '🚀', '📚', '💼', '🏃', '🎨', '💰', '🌱', '⭐', '🔥', '💡', '🎓', '❤️', '🌟'];
 
@@ -8,6 +9,8 @@ const AlignGoals = () => {
   const [showAddGoal, setShowAddGoal] = useState(false);
   const [newGoal, setNewGoal] = useState({ title: '', why: '', emoji: '🎯' });
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const [editingGoalId, setEditingGoalId] = useState(null);
+  const [saveCounter, setSaveCounter] = useState(0);
 
   useEffect(() => {
     loadGoals();
@@ -16,9 +19,38 @@ const AlignGoals = () => {
 
   const handleAddGoal = async () => {
     if (newGoal.title.trim()) {
+      // Check goal limit
+      const activeGoals = goals.filter(g => g.status === 'active');
+      if (activeGoals.length >= 5) {
+        alert('Maximum 5 active goals allowed');
+        return;
+      }
+
       await addGoal(newGoal);
       setNewGoal({ title: '', why: '', emoji: '🎯' });
       setShowAddGoal(false);
+      setSaveCounter(prev => prev + 1);
+    }
+  };
+
+  const handleUpdateGoal = async (goalId, updates) => {
+    const goal = goals.find(g => g.id === goalId);
+    if (!goal) return;
+
+    if (updates.title?.trim() === '') {
+      alert('Goal title cannot be empty');
+      return;
+    }
+
+    await updateGoal({ ...goal, ...updates });
+    setSaveCounter(prev => prev + 1);
+  };
+
+  const handleDeleteGoal = async (goalId) => {
+    if (window.confirm('Delete this goal? All linked actions will remain in the backlog.')) {
+      await deleteGoal(goalId);
+      setEditingGoalId(null);
+      setSaveCounter(prev => prev + 1);
     }
   };
 
@@ -33,9 +65,12 @@ const AlignGoals = () => {
   return (
     <div className="space-y-4">
       {/* Header */}
-      <div>
-        <h2 className="text-xl font-semibold text-story">GOALS - Define Your Aims</h2>
-        <p className="text-sm text-gray-600">Create meaningful goals with visual identifiers</p>
+      <div className="flex items-start justify-between">
+        <div>
+          <h2 className="text-xl font-semibold text-story">GOALS - Define Your Aims</h2>
+          <p className="text-sm text-gray-600">Create meaningful goals with visual identifiers</p>
+        </div>
+        <AutoSaveIndicator trigger={saveCounter} />
       </div>
 
       {/* Add Goal Button */}
@@ -127,16 +162,37 @@ const AlignGoals = () => {
           activeGoals.map((goal) => {
             const progress = getGoalProgress(goal.id);
             const percentage = progress.total > 0 ? (progress.completed / progress.total) * 100 : 0;
+            const isEditing = editingGoalId === goal.id;
 
             return (
               <div
                 key={goal.id}
-                className="bg-white border-2 border-gray-200 rounded-lg p-3"
+                className="bg-white border-2 border-gray-200 rounded-lg p-3 hover:border-story/30 transition-colors group"
               >
                 <div className="flex items-start gap-3">
                   <span className="text-2xl flex-shrink-0">{goal.emoji || '🎯'}</span>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-semibold text-story mb-1">{goal.title}</h3>
+                    {isEditing ? (
+                      <input
+                        type="text"
+                        value={goal.title}
+                        onChange={(e) => handleUpdateGoal(goal.id, { title: e.target.value })}
+                        onBlur={() => setEditingGoalId(null)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') setEditingGoalId(null);
+                          if (e.key === 'Escape') setEditingGoalId(null);
+                        }}
+                        autoFocus
+                        className="text-sm font-semibold text-story mb-1 w-full border-b-2 border-story focus:outline-none"
+                      />
+                    ) : (
+                      <h3
+                        onClick={() => setEditingGoalId(goal.id)}
+                        className="text-sm font-semibold text-story mb-1 cursor-text hover:bg-gray-50 rounded px-1 -mx-1"
+                      >
+                        {goal.title}
+                      </h3>
+                    )}
                     {goal.why && (
                       <p className="text-xs text-gray-600 mb-2">{goal.why}</p>
                     )}
@@ -153,6 +209,13 @@ const AlignGoals = () => {
                       </div>
                     </div>
                   </div>
+                  <button
+                    onClick={() => handleDeleteGoal(goal.id)}
+                    className="text-gray-300 hover:text-red-600 text-lg transition-colors opacity-0 group-hover:opacity-100 flex-shrink-0"
+                    title="Delete goal"
+                  >
+                    ×
+                  </button>
                 </div>
               </div>
             );

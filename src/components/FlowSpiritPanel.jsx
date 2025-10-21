@@ -42,7 +42,7 @@ const FlowSpiritPanel = () => {
 
           {/* Vision Statement */}
           {hasVision ? (
-            <p className="text-xs text-gray-700 line-clamp-1">
+            <p className="text-xs text-gray-700 leading-relaxed">
               {profile.vision}
             </p>
           ) : (
