@@ -25,8 +25,8 @@ const FlowSpiritPanel = () => {
 
   return (
     <div
-      className={`border border-spirit/20 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
-        isEditing ? 'border-spirit/60' : ''
+      className={`border-2 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
+        isEditing ? 'border-spirit' : 'border-spirit/30'
       }`}
       style={{
         maxHeight: isEditing ? '300px' : '60px',
@@ -37,31 +37,14 @@ const FlowSpiritPanel = () => {
         disabled={isEditing}
         className="w-full text-left hover:bg-spirit/5 transition-colors"
       >
-        <div className="flex items-stretch">
-          {/* Left Label Box */}
-          <div className="bg-spirit text-white px-3 py-2 flex items-center justify-center min-w-[80px]">
-            <p className="text-xs font-bold tracking-tight">VISION</p>
-          </div>
-
-          {/* Right Content Area */}
-          <div className="flex-1 px-3 py-2 flex items-center justify-between gap-2 bg-gradient-to-r from-spirit/5 to-spirit/10">
-            <div className="flex-1 min-w-0">
-              {hasVision ? (
-                <p className="text-xs text-gray-700 leading-snug truncate">
-                  {profile.vision}
-                </p>
-              ) : (
-                <p className="text-xs text-gray-400 italic">Set your vision statement</p>
-              )}
-            </div>
-
-            {/* Edit Icon */}
-            {!isEditing && (
-              <div className="flex-shrink-0 text-spirit/40 text-sm">
-                ✏️
-              </div>
-            )}
-          </div>
+        <div className="px-3 py-2 bg-gradient-to-r from-spirit/5 to-spirit/10">
+          {hasVision ? (
+            <p className="text-sm text-gray-700 leading-snug truncate">
+              {profile.vision}
+            </p>
+          ) : (
+            <p className="text-sm text-gray-400 italic">Set your vision statement</p>
+          )}
         </div>
       </button>
 

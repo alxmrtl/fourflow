@@ -42,8 +42,8 @@ const FlowSetupPanel = () => {
 
   return (
     <div
-      className={`border border-space/20 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
-        isEditing ? 'border-space/60' : ''
+      className={`border-2 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
+        isEditing ? 'border-space' : 'border-space/30'
       }`}
       style={{
         maxHeight: isEditing ? '400px' : '60px',
@@ -54,35 +54,18 @@ const FlowSetupPanel = () => {
         disabled={isEditing}
         className="w-full text-left hover:bg-space/5 transition-colors"
       >
-        <div className="flex items-stretch">
-          {/* Left Label Box */}
-          <div className="bg-space text-white px-3 py-2 flex items-center justify-center min-w-[80px]">
-            <p className="text-xs font-bold tracking-tight">SETUP</p>
-          </div>
+        <div className="px-3 py-2 flex items-center gap-2 flex-wrap bg-space/5">
+          {/* Sound Pill */}
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-space text-white text-xs font-semibold rounded-full">
+            <span>🔊</span>
+            <span>{getSoundLabel(settings.sound)}</span>
+          </span>
 
-          {/* Right Content Area */}
-          <div className="flex-1 px-3 py-2 flex items-center justify-between gap-2 bg-space/5">
-            <div className="flex items-center gap-2 flex-wrap flex-1">
-              {/* Sound Pill */}
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-space text-white text-xs font-semibold rounded-full">
-                <span>🔊</span>
-                <span>{getSoundLabel(settings.sound)}</span>
-              </span>
-
-              {/* Breathwork Pill */}
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-space text-white text-xs font-semibold rounded-full">
-                <span>🫁</span>
-                <span>{settings.breathworkBefore ? 'Breathwork' : 'No Breathwork'}</span>
-              </span>
-            </div>
-
-            {/* Edit Icon */}
-            {!isEditing && (
-              <div className="flex-shrink-0 text-space/40 text-sm">
-                ✏️
-              </div>
-            )}
-          </div>
+          {/* Breathwork Pill */}
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-space text-white text-xs font-semibold rounded-full">
+            <span>🫁</span>
+            <span>{settings.breathworkBefore ? 'Breathwork' : 'No Breathwork'}</span>
+          </span>
         </div>
       </button>
 
