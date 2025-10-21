@@ -82,14 +82,74 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
 
   if (activeGoals.length === 0) {
     return (
-      <div className="bg-story/5 border border-story/20 rounded-lg p-3">
-        <button
-          onClick={() => setShowAddGoal(true)}
-          className="w-full text-sm text-gray-500 hover:text-story transition-colors"
-        >
-          + Add your first goal
-        </button>
-      </div>
+      <>
+        <div className="border border-story/20 rounded-lg overflow-hidden">
+          <div className="flex items-stretch">
+            {/* Left Label Box */}
+            <div className="bg-story text-white px-3 py-2 flex items-center justify-center min-w-[80px]">
+              <p className="text-xs font-bold tracking-tight">GOALS</p>
+            </div>
+
+            {/* Right Content Area */}
+            <div className="flex-1 px-3 py-2 bg-story/5">
+              <button
+                onClick={() => setShowAddGoal(true)}
+                className="text-xs text-gray-500 hover:text-story transition-colors"
+              >
+                + Add your first goal
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Add New Goal Modal */}
+        {showAddGoal && (
+          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-lg p-4 w-full max-w-md space-y-3">
+              <h3 className="text-lg font-semibold text-story">Add New Goal</h3>
+              <div>
+                <label className="text-xs text-gray-600 block mb-1">Emoji</label>
+                <input
+                  type="text"
+                  value={newGoal.emoji}
+                  onChange={(e) => setNewGoal({ ...newGoal, emoji: e.target.value.slice(0, 2) })}
+                  className="w-full p-2 text-2xl text-center border-2 border-gray-200 rounded-lg focus:border-story focus:outline-none"
+                  maxLength={2}
+                />
+              </div>
+              <div>
+                <label className="text-xs text-gray-600 block mb-1">Goal Title</label>
+                <input
+                  type="text"
+                  value={newGoal.title}
+                  onChange={(e) => setNewGoal({ ...newGoal, title: e.target.value })}
+                  placeholder="Enter goal title..."
+                  className="w-full p-2 text-sm border-2 border-gray-200 rounded-lg focus:border-story focus:outline-none"
+                  autoFocus
+                />
+              </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={handleAddNewGoal}
+                  disabled={!newGoal.title.trim()}
+                  className="flex-1 bg-story text-white py-2 rounded-lg text-sm font-semibold hover:bg-story/90 transition-colors disabled:opacity-50"
+                >
+                  Add Goal
+                </button>
+                <button
+                  onClick={() => {
+                    setShowAddGoal(false);
+                    setNewGoal({ title: '', emoji: '🎯' });
+                  }}
+                  className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300 transition-colors"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </>
     );
   }
 
