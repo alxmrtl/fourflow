@@ -19,6 +19,7 @@ import { CSS } from '@dnd-kit/utilities';
 import FlowSpiritPanel from '../components/FlowSpiritPanel';
 import FlowGoalFilter from '../components/FlowGoalFilter';
 import FlowSetupPanel from '../components/FlowSetupPanel';
+import QuickAddAction from '../components/QuickAddAction';
 
 // Sortable Action Card Component
 const SortableActionCard = ({ task, goal, onStartFlow, onRemove }) => {
@@ -128,6 +129,8 @@ const Flow = () => {
     getTopActionsForGoal,
     startSession,
     enterFocusMode,
+    updateTask,
+    deleteTask,
   } = useStore();
 
   const [selectedGoalId, setSelectedGoalId] = useState(null);
@@ -225,21 +228,37 @@ const Flow = () => {
     return goals.find(g => g.id === goalId);
   };
 
-  const backlogTasks = tasks.filter(
-    t => t.status === 'backlog' &&
-    t.goalId === selectedGoalId &&
-    !queuedActions.find(qa => qa.id === t.id)
-  );
+  const allGoalTasks = tasks
+    .filter(t => t.status === 'backlog' && t.goalId === selectedGoalId)
+    .sort((a, b) => (a.order || 0) - (b.order || 0));
 
-  // Fill empty slots
-  const slots = [];
-  for (let i = 0; i < 3; i++) {
-    if (queuedActions[i]) {
-      slots.push({ type: 'task', task: queuedActions[i] });
-    } else {
-      slots.push({ type: 'empty', id: `empty-${i}` });
+  const nextUpTask = allGoalTasks.length > 0 ? allGoalTasks[0] : null;
+  const backlogTasks = allGoalTasks.slice(1);
+
+  const handleDeleteTask = async (taskId) => {
+    if (window.confirm('Delete this action?')) {
+      await deleteTask(taskId);
+      await loadTasks();
     }
-  }
+  };
+
+  const handleDragEndBacklog = async (event) => {
+    const { active, over } = event;
+
+    if (active.id !== over?.id) {
+      const oldIndex = allGoalTasks.findIndex(a => a.id === active.id);
+      const newIndex = allGoalTasks.findIndex(a => a.id === over.id);
+
+      const reorderedActions = arrayMove(allGoalTasks, oldIndex, newIndex);
+
+      // Update order for all affected actions
+      for (let i = 0; i < reorderedActions.length; i++) {
+        await updateTask({ ...reorderedActions[i], order: i });
+      }
+
+      await loadTasks();
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-auto p-6 pb-24 md:pb-6">
@@ -258,43 +277,83 @@ const Flow = () => {
 
         {/* Next Up Actions */}
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-gray-800">Next Up</h2>
+          <h2 className="text-lg font-semibold text-self">SELF · ACTIONS</h2>
 
           {selectedGoalId ? (
-            <DndContext
-              sensors={sensors}
-              collisionDetection={closestCenter}
-              onDragEnd={handleDragEnd}
-            >
-              <SortableContext
-                items={queuedActions.map(a => a.id)}
-                strategy={verticalListSortingStrategy}
-              >
-                <div className="space-y-3">
-                  {slots.map((slot, idx) => {
-                    if (slot.type === 'task') {
-                      const goal = getGoalForTask(slot.task.goalId);
-                      return (
-                        <SortableActionCard
-                          key={slot.task.id}
-                          task={slot.task}
-                          goal={goal}
-                          onStartFlow={() => handleStartFlow(slot.task)}
-                          onRemove={() => handleRemoveFromQueue(slot.task.id)}
-                        />
-                      );
-                    } else {
-                      return (
-                        <EmptySlot
-                          key={slot.id}
-                          onAddAction={() => setShowBacklog(true)}
-                        />
-                      );
-                    }
-                  })}
+            <div className="space-y-4">
+              {/* Primary Action - Next Up */}
+              {nextUpTask && (
+                <div>
+                  <p className="text-xs font-semibold text-gray-600 mb-2">Next Up</p>
+                  <DndContext
+                    sensors={sensors}
+                    collisionDetection={closestCenter}
+                    onDragEnd={handleDragEndBacklog}
+                  >
+                    <SortableContext
+                      items={allGoalTasks.map(a => a.id)}
+                      strategy={verticalListSortingStrategy}
+                    >
+                      <SortableActionCard
+                        task={nextUpTask}
+                        goal={getGoalForTask(nextUpTask.goalId)}
+                        onStartFlow={() => handleStartFlow(nextUpTask)}
+                        onRemove={() => handleDeleteTask(nextUpTask.id)}
+                      />
+                    </SortableContext>
+                  </DndContext>
                 </div>
-              </SortableContext>
-            </DndContext>
+              )}
+
+              {/* Quick Add Action */}
+              <div>
+                <p className="text-xs font-semibold text-gray-600 mb-2">Quick Add</p>
+                <QuickAddAction
+                  selectedGoalId={selectedGoalId}
+                  onActionAdded={loadTasks}
+                />
+              </div>
+
+              {/* Backlog */}
+              {backlogTasks.length > 0 && (
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-xs font-semibold text-gray-600">Backlog</p>
+                    <span className="text-xs text-gray-400">{backlogTasks.length} action{backlogTasks.length !== 1 ? 's' : ''}</span>
+                  </div>
+                  <DndContext
+                    sensors={sensors}
+                    collisionDetection={closestCenter}
+                    onDragEnd={handleDragEndBacklog}
+                  >
+                    <SortableContext
+                      items={allGoalTasks.map(a => a.id)}
+                      strategy={verticalListSortingStrategy}
+                    >
+                      <div className="space-y-2">
+                        {backlogTasks.slice(0, 5).map(task => (
+                          <SortableActionCard
+                            key={task.id}
+                            task={task}
+                            goal={getGoalForTask(task.goalId)}
+                            onStartFlow={() => handleStartFlow(task)}
+                            onRemove={() => handleDeleteTask(task.id)}
+                          />
+                        ))}
+                      </div>
+                    </SortableContext>
+                  </DndContext>
+                  {backlogTasks.length > 5 && (
+                    <button
+                      onClick={() => setShowBacklog(true)}
+                      className="w-full mt-2 py-2 text-xs text-self hover:text-self/80 font-medium transition-colors"
+                    >
+                      Show {backlogTasks.length - 5} more...
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
           ) : (
             <div className="text-center py-8 bg-gray-50 rounded-lg border border-gray-200">
               <p className="text-sm text-gray-500">Select a goal to see actions</p>

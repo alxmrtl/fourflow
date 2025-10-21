@@ -35,6 +35,7 @@ export default {
       animation: {
         'fade-in': 'fadeIn 0.3s ease-in-out',
         'fade-out': 'fadeOut 0.3s ease-in-out',
+        'slide-in': 'slideIn 0.2s ease-out',
         'settle': 'settle 2.5s ease-out',
         'ripple': 'ripple 0.6s ease-out',
         'breathe': 'breathe 4s ease-in-out infinite',
@@ -47,6 +48,10 @@ export default {
         fadeOut: {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' },
+        },
+        slideIn: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         settle: {
           '0%': { opacity: '1', filter: 'saturate(1.5)' },
