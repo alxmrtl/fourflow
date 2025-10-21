@@ -214,12 +214,10 @@ export const useStore = create((set, get) => ({
   // UI State
   currentPage: 'flow',
   currentSetupSection: 'actions',
-  currentAlignSection: 'actions',
   isInFocusMode: false,
   lastSelectedGoalId: null,
   setCurrentPage: (page) => set({ currentPage: page }),
   setCurrentSetupSection: (section) => set({ currentSetupSection: section }),
-  setCurrentAlignSection: (section) => set({ currentAlignSection: section }),
   enterFocusMode: () => set({ isInFocusMode: true }),
   exitFocusMode: () => set({ isInFocusMode: false }),
   setLastSelectedGoal: (goalId) => {
@@ -235,32 +233,6 @@ export const useStore = create((set, get) => ({
         set({ lastSelectedGoalId: parseInt(goalId) });
       }
     }
-  },
-
-  // Alignment Completion
-  getAlignmentStatus: () => {
-    const { profile, goals, tasks, settings } = get();
-
-    const visionComplete = profile?.selectedValues?.length >= 3;
-    const goalsComplete = goals.filter(g => g.status === 'active').length > 0;
-    const setupComplete = !!settings.timerDuration;
-    const actionsComplete = tasks.filter(t => t.status === 'backlog').length > 0;
-
-    const allComplete = visionComplete && goalsComplete && setupComplete && actionsComplete;
-
-    return {
-      vision: visionComplete,
-      goals: goalsComplete,
-      setup: setupComplete,
-      actions: actionsComplete,
-      isAligned: allComplete,
-      items: [
-        { key: 'vision', label: 'Vision & Values Set', complete: visionComplete },
-        { key: 'goals', label: 'Active Goals Defined', complete: goalsComplete },
-        { key: 'setup', label: 'Default Setup Configured', complete: setupComplete },
-        { key: 'actions', label: 'Actions in Backlog', complete: actionsComplete },
-      ]
-    };
   },
 
   // Initialize all data

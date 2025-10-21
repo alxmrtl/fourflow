@@ -32,7 +32,6 @@ function App() {
         {/* Main Content */}
         <main className="flex-1">
           {currentPage === 'flow' && <Flow />}
-          {currentPage === 'align' && <Flow />}
           {currentPage === 'stats' && <Stats />}
           {currentPage === 'about' && <About />}
         </main>
