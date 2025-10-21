@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd flow-app && npm run build",
+  "outputDirectory": "flow-app/dist",
+  "devCommand": "cd flow-app && npm run dev",
+  "installCommand": "cd flow-app && npm install",
+  "framework": "vite"
+}
