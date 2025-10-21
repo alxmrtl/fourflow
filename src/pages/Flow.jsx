@@ -1,49 +1,204 @@
 import React, { useState, useEffect } from 'react';
 import { useStore } from '../store/useStore';
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import FlowSpiritPanel from '../components/FlowSpiritPanel';
+import FlowGoalFilter from '../components/FlowGoalFilter';
+import FlowSetupPanel from '../components/FlowSetupPanel';
+
+// Sortable Action Card Component
+const SortableActionCard = ({ task, goal, onStartFlow, onRemove }) => {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: task.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-self/30 transition-colors"
+    >
+      <div className="flex items-start gap-3">
+        {/* Drag Handle */}
+        <button
+          {...attributes}
+          {...listeners}
+          className="flex-shrink-0 text-gray-400 hover:text-gray-600 cursor-grab active:cursor-grabbing mt-1"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <circle cx="5" cy="3" r="1.5" />
+            <circle cx="11" cy="3" r="1.5" />
+            <circle cx="5" cy="8" r="1.5" />
+            <circle cx="11" cy="8" r="1.5" />
+            <circle cx="5" cy="13" r="1.5" />
+            <circle cx="11" cy="13" r="1.5" />
+          </svg>
+        </button>
+
+        {/* Task Content */}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-start justify-between gap-2 mb-3">
+            <div className="flex-1 min-w-0">
+              <h3 className="text-base font-semibold text-gray-800 mb-1">
+                {task.title}
+              </h3>
+              <div className="flex items-center gap-3 text-xs text-gray-500">
+                <span>{task.duration || 25} min</span>
+                {goal && (
+                  <span className="flex items-center gap-1 text-story">
+                    <span className="text-base">{goal.emoji || '🎯'}</span>
+                    <span className="font-medium">{goal.title}</span>
+                  </span>
+                )}
+              </div>
+            </div>
+            <button
+              onClick={onRemove}
+              className="text-gray-400 hover:text-red-600 text-sm transition-colors"
+            >
+              ✕
+            </button>
+          </div>
+
+          {/* Start Flow Button */}
+          <button
+            onClick={onStartFlow}
+            className="w-full bg-self text-white py-2 rounded-lg text-sm font-semibold hover:bg-self/90 transition-colors"
+          >
+            Start Flow
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Empty Slot Component
+const EmptySlot = ({ onAddAction }) => {
+  return (
+    <div className="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-4">
+      <button
+        onClick={onAddAction}
+        className="w-full text-center text-sm text-gray-500 hover:text-self transition-colors"
+      >
+        + Add Action
+      </button>
+    </div>
+  );
+};
 
 const Flow = () => {
   const {
     tasks,
     goals,
     settings,
-    dailyQueue,
+    profile,
+    lastSelectedGoalId,
     loadTasks,
     loadGoals,
-    loadDailyQueue,
-    addTaskToQueue,
-    removeTaskFromQueue,
-    addQueueSlot,
-    removeQueueSlot,
-    completeTask,
+    loadSettings,
+    loadProfile,
+    loadLastSelectedGoal,
+    setLastSelectedGoal,
+    getTopActionsForGoal,
     startSession,
     enterFocusMode,
-    setCurrentPage,
   } = useStore();
 
+  const [selectedGoalId, setSelectedGoalId] = useState(null);
+  const [queuedActions, setQueuedActions] = useState([]);
   const [showBacklog, setShowBacklog] = useState(false);
-  const [selectedSlotId, setSelectedSlotId] = useState(null);
 
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  // Load data on mount
   useEffect(() => {
-    loadTasks();
-    loadGoals();
-    loadDailyQueue();
-  }, [loadTasks, loadGoals, loadDailyQueue]);
+    const initialize = async () => {
+      await Promise.all([
+        loadTasks(),
+        loadGoals(),
+        loadSettings(),
+        loadProfile(),
+      ]);
+      loadLastSelectedGoal();
+    };
+    initialize();
+  }, [loadTasks, loadGoals, loadSettings, loadProfile, loadLastSelectedGoal]);
 
-  const backlogTasks = tasks.filter(t => t.status === 'backlog');
+  // Set initial goal selection
+  useEffect(() => {
+    const activeGoals = goals.filter(g => g.status === 'active');
 
-  const getTaskById = (taskId) => {
-    return tasks.find(t => t.id === taskId);
+    if (activeGoals.length === 0) {
+      setSelectedGoalId(null);
+      setQueuedActions([]);
+      return;
+    }
+
+    // Use last selected goal if it exists and is still active
+    if (lastSelectedGoalId && activeGoals.find(g => g.id === lastSelectedGoalId)) {
+      setSelectedGoalId(lastSelectedGoalId);
+    } else {
+      // Otherwise use first active goal
+      setSelectedGoalId(activeGoals[0].id);
+      setLastSelectedGoal(activeGoals[0].id);
+    }
+  }, [goals, lastSelectedGoalId, setLastSelectedGoal]);
+
+  // Auto-fill queue when goal changes
+  useEffect(() => {
+    if (selectedGoalId) {
+      const topActions = getTopActionsForGoal(selectedGoalId, 3);
+      setQueuedActions(topActions);
+    } else {
+      setQueuedActions([]);
+    }
+  }, [selectedGoalId, tasks, getTopActionsForGoal]);
+
+  const handleGoalSelect = (goalId) => {
+    setSelectedGoalId(goalId);
+    setLastSelectedGoal(goalId);
   };
 
-  const getGoalForTask = (goalId) => {
-    return goals.find(g => g.id === goalId);
-  };
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
 
-  const handleSelectTask = async (taskId) => {
-    if (selectedSlotId) {
-      await addTaskToQueue(selectedSlotId, taskId);
-      setShowBacklog(false);
-      setSelectedSlotId(null);
+    if (active.id !== over.id) {
+      setQueuedActions((items) => {
+        const oldIndex = items.findIndex((item) => item.id === active.id);
+        const newIndex = items.findIndex((item) => item.id === over.id);
+        return arrayMove(items, oldIndex, newIndex);
+      });
     }
   };
 
@@ -54,161 +209,97 @@ const Flow = () => {
     enterFocusMode();
   };
 
-  const handleMarkComplete = async (taskId) => {
-    await completeTask(taskId);
-    // Remove from queue after completion
-    const slot = dailyQueue?.slots.find(s => s.taskId === taskId);
-    if (slot) {
-      await removeTaskFromQueue(slot.id);
+  const handleRemoveFromQueue = (taskId) => {
+    setQueuedActions(prev => prev.filter(t => t.id !== taskId));
+  };
+
+  const handleAddFromBacklog = (taskId) => {
+    const task = tasks.find(t => t.id === taskId);
+    if (task && queuedActions.length < 3) {
+      setQueuedActions(prev => [...prev, task]);
+      setShowBacklog(false);
     }
   };
 
-  const handleRemoveFromQueue = async (slotId) => {
-    await removeTaskFromQueue(slotId);
+  const getGoalForTask = (goalId) => {
+    return goals.find(g => g.id === goalId);
   };
 
-  if (!dailyQueue) {
-    return <div className="max-w-4xl mx-auto p-6">Loading...</div>;
+  const backlogTasks = tasks.filter(
+    t => t.status === 'backlog' &&
+    t.goalId === selectedGoalId &&
+    !queuedActions.find(qa => qa.id === t.id)
+  );
+
+  // Fill empty slots
+  const slots = [];
+  for (let i = 0; i < 3; i++) {
+    if (queuedActions[i]) {
+      slots.push({ type: 'task', task: queuedActions[i] });
+    } else {
+      slots.push({ type: 'empty', id: `empty-${i}` });
+    }
   }
 
   return (
     <div className="max-w-4xl mx-auto p-6 pb-24 md:pb-6">
-      <div className="space-y-6">
-        {/* Header */}
-        <div>
-          <h1 className="text-3xl font-bold text-self mb-2">FLOW</h1>
-          <p className="text-sm text-gray-600">Your daily flow execution hub</p>
-        </div>
+      <div className="space-y-4">
+        {/* SPIRIT Panel */}
+        <FlowSpiritPanel />
 
-        {/* Today's Queue */}
+        {/* GOAL Filter */}
+        <FlowGoalFilter
+          selectedGoalId={selectedGoalId}
+          onGoalSelect={handleGoalSelect}
+        />
+
+        {/* SETUP Panel */}
+        <FlowSetupPanel />
+
+        {/* Next Up Actions */}
         <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-gray-800">Today's Queue</h2>
-            <div className="flex gap-2">
-              <button
-                onClick={() => addQueueSlot()}
-                className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-lg font-semibold transition-colors"
+          <h2 className="text-lg font-semibold text-gray-800">Next Up</h2>
+
+          {selectedGoalId ? (
+            <DndContext
+              sensors={sensors}
+              collisionDetection={closestCenter}
+              onDragEnd={handleDragEnd}
+            >
+              <SortableContext
+                items={queuedActions.map(a => a.id)}
+                strategy={verticalListSortingStrategy}
               >
-                + Slot
-              </button>
-            </div>
-          </div>
-
-          {/* Queue Slots */}
-          <div className="space-y-3">
-            {dailyQueue.slots.map((slot) => {
-              const task = getTaskById(slot.taskId);
-              const goal = task ? getGoalForTask(task.goalId) : null;
-
-              return (
-                <div
-                  key={slot.id}
-                  className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-self/30 transition-colors"
-                >
-                  {!task ? (
-                    // Empty Slot
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1">
-                        <p className="text-sm text-gray-400">Empty slot</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <button
-                          onClick={() => {
-                            setSelectedSlotId(slot.id);
-                            setShowBacklog(true);
-                          }}
-                          className="bg-self text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-self/90 transition-colors"
-                        >
-                          + Add Action
-                        </button>
-                        {dailyQueue.slots.length > 1 && (
-                          <button
-                            onClick={() => removeQueueSlot(slot.id)}
-                            className="bg-gray-100 text-gray-600 px-3 py-2 rounded-lg text-xs font-semibold hover:bg-gray-200 transition-colors"
-                          >
-                            Remove Slot
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  ) : (
-                    // Task in Slot
-                    <div className="space-y-3">
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="flex-1 min-w-0">
-                          <h3 className="text-base font-semibold text-gray-800 mb-1">
-                            {task.title}
-                          </h3>
-                          <div className="flex items-center gap-3 text-xs text-gray-500">
-                            <span>{task.duration || 25} min</span>
-                            {goal && (
-                              <button
-                                className="flex items-center gap-1 hover:text-story transition-colors"
-                                title={goal.title}
-                              >
-                                <span className="text-base">{goal.emoji || '🎯'}</span>
-                                <span className="text-story font-medium">{goal.title}</span>
-                              </button>
-                            )}
-                          </div>
-                        </div>
-                        <button
-                          onClick={() => handleRemoveFromQueue(slot.id)}
-                          className="text-gray-400 hover:text-red-600 text-sm transition-colors"
-                        >
-                          ✕
-                        </button>
-                      </div>
-
-                      <div className="flex gap-2">
-                        <button
-                          onClick={() => handleStartFlow(task)}
-                          className="flex-1 bg-self text-white py-2 rounded-lg text-sm font-semibold hover:bg-self/90 transition-colors"
-                        >
-                          Start Flow
-                        </button>
-                        <button
-                          onClick={() => handleMarkComplete(task.id)}
-                          className="bg-green-50 text-green-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-100 border border-green-200 transition-colors"
-                        >
-                          ✓ Complete
-                        </button>
-                      </div>
-                    </div>
-                  )}
+                <div className="space-y-3">
+                  {slots.map((slot, idx) => {
+                    if (slot.type === 'task') {
+                      const goal = getGoalForTask(slot.task.goalId);
+                      return (
+                        <SortableActionCard
+                          key={slot.task.id}
+                          task={slot.task}
+                          goal={goal}
+                          onStartFlow={() => handleStartFlow(slot.task)}
+                          onRemove={() => handleRemoveFromQueue(slot.task.id)}
+                        />
+                      );
+                    } else {
+                      return (
+                        <EmptySlot
+                          key={slot.id}
+                          onAddAction={() => setShowBacklog(true)}
+                        />
+                      );
+                    }
+                  })}
                 </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Space Configuration Display */}
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-          <button
-            onClick={() => setCurrentPage('align')}
-            className="w-full flex items-center justify-between hover:bg-gray-100 -m-4 p-4 rounded-lg transition-colors"
-          >
-            <div>
-              <h3 className="text-sm font-semibold text-gray-800 mb-1">Space Configuration</h3>
-              <div className="flex items-center gap-4 text-xs text-gray-600">
-                <span>Sound: {settings.sound === 'silence' ? 'Silence' : settings.sound}</span>
-                <span>Breathwork: {settings.breathworkBefore ? 'Enabled' : 'Disabled'}</span>
-              </div>
+              </SortableContext>
+            </DndContext>
+          ) : (
+            <div className="text-center py-8 bg-gray-50 rounded-lg border border-gray-200">
+              <p className="text-sm text-gray-500">Select a goal to see actions</p>
             </div>
-            <span className="text-gray-400 text-xs">Edit in ALIGN →</span>
-          </button>
-        </div>
-
-        {/* Quick Actions */}
-        <div className="flex gap-2">
-          <button
-            onClick={() => {
-              setCurrentPage('align');
-            }}
-            className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 rounded-lg text-xs font-semibold transition-colors"
-          >
-            + Add More Actions
-          </button>
+          )}
         </div>
       </div>
 
@@ -217,12 +308,9 @@ const Flow = () => {
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white w-full md:max-w-2xl rounded-lg max-h-[70vh] flex flex-col">
             <div className="p-4 border-b flex items-center justify-between">
-              <h3 className="text-lg font-semibold">Select Action</h3>
+              <h3 className="text-lg font-semibold">Add from Backlog</h3>
               <button
-                onClick={() => {
-                  setShowBacklog(false);
-                  setSelectedSlotId(null);
-                }}
+                onClick={() => setShowBacklog(false)}
                 className="text-gray-500 hover:text-gray-700"
               >
                 ✕
@@ -231,19 +319,9 @@ const Flow = () => {
             <div className="flex-1 overflow-y-auto p-4 space-y-2">
               {backlogTasks.length === 0 ? (
                 <div className="text-center py-8">
-                  <p className="text-sm text-gray-500 mb-3">
-                    No actions in backlog
+                  <p className="text-sm text-gray-500">
+                    No more actions available for this goal
                   </p>
-                  <button
-                    onClick={() => {
-                      setShowBacklog(false);
-                      setSelectedSlotId(null);
-                      setCurrentPage('align');
-                    }}
-                    className="text-xs text-self font-semibold hover:underline"
-                  >
-                    Add actions in ALIGN →
-                  </button>
                 </div>
               ) : (
                 backlogTasks.map(task => {
@@ -251,7 +329,7 @@ const Flow = () => {
                   return (
                     <button
                       key={task.id}
-                      onClick={() => handleSelectTask(task.id)}
+                      onClick={() => handleAddFromBacklog(task.id)}
                       className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-left hover:border-self hover:bg-self/5 transition-colors"
                     >
                       <div className="flex items-start justify-between gap-2">
@@ -266,7 +344,7 @@ const Flow = () => {
                             )}
                           </div>
                         </div>
-                        <span className="text-self text-xs font-semibold">Select</span>
+                        <span className="text-self text-xs font-semibold">Add</span>
                       </div>
                     </button>
                   );

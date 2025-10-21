@@ -88,6 +88,12 @@ export const useStore = create((set, get) => ({
   getCompletedTasks: () => {
     return get().tasks.filter(t => t.status === 'completed');
   },
+  getTopActionsForGoal: (goalId, limit = 3) => {
+    const { tasks } = get();
+    return tasks
+      .filter(t => t.status === 'backlog' && t.goalId === goalId)
+      .slice(0, limit);
+  },
 
   // Sessions
   sessions: [],
@@ -210,11 +216,26 @@ export const useStore = create((set, get) => ({
   currentSetupSection: 'actions',
   currentAlignSection: 'actions',
   isInFocusMode: false,
+  lastSelectedGoalId: null,
   setCurrentPage: (page) => set({ currentPage: page }),
   setCurrentSetupSection: (section) => set({ currentSetupSection: section }),
   setCurrentAlignSection: (section) => set({ currentAlignSection: section }),
   enterFocusMode: () => set({ isInFocusMode: true }),
   exitFocusMode: () => set({ isInFocusMode: false }),
+  setLastSelectedGoal: (goalId) => {
+    set({ lastSelectedGoalId: goalId });
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('lastSelectedGoalId', String(goalId));
+    }
+  },
+  loadLastSelectedGoal: () => {
+    if (typeof window !== 'undefined') {
+      const goalId = localStorage.getItem('lastSelectedGoalId');
+      if (goalId) {
+        set({ lastSelectedGoalId: parseInt(goalId) });
+      }
+    }
+  },
 
   // Alignment Completion
   getAlignmentStatus: () => {
