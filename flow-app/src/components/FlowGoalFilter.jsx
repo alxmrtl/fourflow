@@ -220,7 +220,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
         borderWidth: '3px',
       }}
     >
-      {/* Header with Logo and Title */}
+      {/* Header with Logo, Title, and Emoji Picker */}
       <div className="px-3 py-2 flex items-center gap-3 bg-story/5">
         <img
           src="/WORTHY MISSION.png"
@@ -228,63 +228,59 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
           className="w-8 h-8 object-contain flex-shrink-0"
         />
         <h2 className="text-sm font-semibold text-story">MISSION</h2>
+
+        {/* Emoji Picker Section */}
+        <div className="ml-auto flex items-center gap-1.5 pl-3 border-l-2 border-story/20">
+          {activeGoals.map((goal) => {
+            const isSelected = selectedGoalId === goal.id;
+            return (
+              <button
+                key={goal.id}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (!isEditing && !showAddGoal) onGoalSelect(goal.id);
+                }}
+                disabled={isEditing || showAddGoal}
+                className={`
+                  text-base p-1 rounded transition-all flex-shrink-0
+                  ${isSelected
+                    ? 'bg-story text-white shadow-sm'
+                    : 'bg-white hover:bg-story/10 border border-story/20'
+                  }
+                  ${isEditing || showAddGoal ? 'opacity-50 cursor-not-allowed' : ''}
+                `}
+                title={goal.title}
+              >
+                {goal.emoji || '🎯'}
+              </button>
+            );
+          })}
+          {activeGoals.length < 5 && !isEditing && !showAddGoal && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowAddGoal(true);
+              }}
+              className="text-xs p-1 rounded bg-white border border-dashed border-story/30 hover:border-story/60 text-story/40 hover:text-story transition-all flex-shrink-0"
+              title="Add goal"
+            >
+              +
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* Content */}
+      {/* Content - Mission Title */}
       <button
         onClick={!isEditing && !showAddGoal && selectedGoal ? handleEdit : undefined}
         disabled={isEditing || showAddGoal}
-        className="w-full text-left hover:bg-story/5 transition-colors disabled:cursor-default bg-white px-3 py-2"
+        className="w-full text-left hover:bg-story/5 transition-colors disabled:cursor-default bg-white px-3 py-3"
       >
-        <div className="flex-1 min-w-0 space-y-1">
-          {/* Top Row: Emojis */}
-          <div className="flex items-center gap-1.5 flex-wrap">
-            {/* Goal Emoji Buttons */}
-            {activeGoals.map((goal) => {
-              const isSelected = selectedGoalId === goal.id;
-              return (
-                <button
-                  key={goal.id}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (!isEditing && !showAddGoal) onGoalSelect(goal.id);
-                  }}
-                  disabled={isEditing || showAddGoal}
-                  className={`
-                    text-base p-1 rounded transition-all flex-shrink-0
-                    ${isSelected
-                      ? 'bg-story text-white shadow-sm'
-                      : 'bg-white hover:bg-story/10 border border-story/20'
-                    }
-                    ${isEditing || showAddGoal ? 'opacity-50 cursor-not-allowed' : ''}
-                  `}
-                  title={goal.title}
-                >
-                  {goal.emoji || '🎯'}
-                </button>
-              );
-            })}
-            {activeGoals.length < 5 && !isEditing && !showAddGoal && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setShowAddGoal(true);
-                }}
-                className="text-xs p-1 rounded bg-white border border-dashed border-story/30 hover:border-story/60 text-story/40 hover:text-story transition-all flex-shrink-0"
-                title="Add goal"
-              >
-                +
-              </button>
-            )}
-          </div>
-
-          {/* Bottom Row: Selected Goal Title */}
-          {selectedGoal && !isEditing && !showAddGoal && (
-            <p className="text-sm font-semibold text-story truncate">
-              {selectedGoal.title}
-            </p>
-          )}
-        </div>
+        {selectedGoal && !isEditing && !showAddGoal && (
+          <p className="text-sm font-semibold text-story">
+            {selectedGoal.title}
+          </p>
+        )}
       </button>
 
       {/* Expandable Edit Section */}
