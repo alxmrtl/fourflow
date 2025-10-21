@@ -117,22 +117,25 @@ const AlignActions = () => {
     loadGoals();
   }, [loadTasks, loadGoals]);
 
-  // Set initial selected mission
+  // Sync with lastSelectedGoalId from GOALS section
   useEffect(() => {
     const activeGoals = goals.filter(g => g.status === 'active');
-    if (activeGoals.length > 0 && !selectedMissionId) {
-      // Use last selected goal or first active goal
-      const initialGoal = lastSelectedGoalId && activeGoals.find(g => g.id === lastSelectedGoalId)
+    if (activeGoals.length > 0) {
+      // Sync with lastSelectedGoalId or use first goal
+      const goalToSelect = lastSelectedGoalId && activeGoals.find(g => g.id === lastSelectedGoalId)
         ? lastSelectedGoalId
         : activeGoals[0].id;
-      setSelectedMissionId(initialGoal);
+
+      if (goalToSelect !== selectedMissionId) {
+        setSelectedMissionId(goalToSelect);
+      }
     }
-  }, [goals, selectedMissionId, lastSelectedGoalId]);
+  }, [goals, lastSelectedGoalId]);
 
   // Auto-focus title input
   useEffect(() => {
     if (titleInputRef.current) {
-      titleInputRef.current.focus();
+      titleInputRef.current.focus({ preventScroll: true });
     }
   }, [selectedMissionId]);
 
@@ -199,9 +202,9 @@ const AlignActions = () => {
       // Increment session counter
       setActionCount(prev => prev + 1);
 
-      // Refocus title input
+      // Refocus title input without scrolling
       if (titleInputRef.current) {
-        titleInputRef.current.focus();
+        titleInputRef.current.focus({ preventScroll: true });
       }
     }
   };
@@ -253,49 +256,28 @@ const AlignActions = () => {
   const selectedMission = activeGoals.find(g => g.id === selectedMissionId);
 
   return (
-    <div className="space-y-4 pb-6">
-      {/* Header */}
-      <div>
-        <h2 className="text-xl font-semibold text-self">ACTIONS</h2>
-        <p className="text-sm text-gray-600">
-          {actionCount > 0
-            ? `${actionCount} action${actionCount > 1 ? 's' : ''} added this session 🔥`
-            : 'Build your backlog, mission by mission'
-          }
-        </p>
+    <div className="space-y-3 pb-6">
+      {/* Header - Compact */}
+      <div className="bg-white border-2 border-gray-200 rounded-lg p-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <h2 className="text-sm font-bold text-self">ACTIONS</h2>
+            {selectedMission && (
+              <span className="text-xs text-gray-500">
+                for {selectedMission.emoji} {selectedMission.title}
+              </span>
+            )}
+          </div>
+          {actionCount > 0 && (
+            <span className="text-xs text-gray-500">
+              +{actionCount} this session
+            </span>
+          )}
+        </div>
       </div>
 
-      {/* Mission Filter Tabs */}
-      {activeGoals.length > 0 ? (
-        <div
-          ref={tabScrollRef}
-          className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {activeGoals.map(goal => {
-            const count = getActionCountForGoal(goal.id);
-            const isActive = selectedMissionId === goal.id;
-
-            return (
-              <button
-                key={goal.id}
-                onClick={() => handleMissionSwitch(goal.id)}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap flex items-center gap-2 transition-all ${
-                  isActive
-                    ? 'bg-story text-white shadow-md scale-105'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                <span>{goal.emoji || '🎯'}</span>
-                <span>{goal.title}</span>
-                <span className={`text-xs ${isActive ? 'text-white/80' : 'text-gray-400'}`}>
-                  ({count})
-                </span>
-              </button>
-            );
-          })}
-        </div>
-      ) : (
+      {/* Warning if no goals */}
+      {activeGoals.length === 0 && (
         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-sm text-yellow-800">
           ⚠️ Create at least one goal in the <strong>GOALS</strong> section first
         </div>
@@ -348,20 +330,9 @@ const AlignActions = () => {
       {/* Actions List */}
       {selectedMissionId && (
         <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <h3 className="text-sm font-semibold text-gray-700">
-              {selectedMission?.emoji} {selectedMission?.title}
-            </h3>
-            <span className="text-xs text-gray-500">
-              {currentMissionActions.length} action{currentMissionActions.length !== 1 ? 's' : ''}
-            </span>
-          </div>
-
           {currentMissionActions.length === 0 ? (
-            <div className="text-center py-8 bg-gray-50 rounded-lg border border-gray-200">
-              <p className="text-sm text-gray-500 mb-1">
-                No actions for {selectedMission?.title} yet
-              </p>
+            <div className="text-center py-6 bg-gray-50 rounded-lg border border-gray-200">
+              <p className="text-sm text-gray-500">No actions yet</p>
               <p className="text-xs text-gray-400">Add your first action above ↑</p>
             </div>
           ) : (
@@ -389,15 +360,6 @@ const AlignActions = () => {
           )}
         </div>
       )}
-
-      {/* Help Text */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-xs text-gray-600">
-        <p className="font-semibold mb-1">💡 Tips:</p>
-        <p>• Switch missions using the tabs above</p>
-        <p>• Press Enter to quickly add actions</p>
-        <p>• Long-press and drag to reorder</p>
-        <p>• Pull actions to the FLOW page when ready</p>
-      </div>
     </div>
   );
 };

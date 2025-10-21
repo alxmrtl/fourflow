@@ -4,6 +4,7 @@ import { useStore } from '../store/useStore';
 const AlignSetup = () => {
   const { settings, loadSettings, updateSettings } = useStore();
   const [localSettings, setLocalSettings] = useState(settings);
+  const [showSoundPicker, setShowSoundPicker] = useState(false);
 
   useEffect(() => {
     loadSettings();
@@ -13,109 +14,79 @@ const AlignSetup = () => {
     setLocalSettings(settings);
   }, [settings]);
 
-  const handleSave = async () => {
-    await updateSettings(localSettings);
-  };
-
-  const updateSetting = (key, value) => {
-    setLocalSettings({ ...localSettings, [key]: value });
+  const updateSetting = async (key, value) => {
+    const newSettings = { ...localSettings, [key]: value };
+    setLocalSettings(newSettings);
+    await updateSettings(newSettings);
   };
 
   const SOUND_OPTIONS = [
-    { value: 'silence', label: 'Silence' },
-    { value: 'white-noise', label: 'White Noise' },
-    { value: 'rain', label: 'Rain' },
-    { value: 'cafe', label: 'Café' },
-    { value: 'binaural', label: 'Binaural' },
+    { value: 'silence', label: 'Silence', emoji: '🔇' },
+    { value: 'white-noise', label: 'White Noise', emoji: '📻' },
+    { value: 'rain', label: 'Rain', emoji: '🌧️' },
+    { value: 'cafe', label: 'Café', emoji: '☕' },
+    { value: 'binaural', label: 'Binaural', emoji: '🎧' },
   ];
 
+  const selectedSound = SOUND_OPTIONS.find(opt => opt.value === localSettings.sound) || SOUND_OPTIONS[0];
+
   return (
-    <div className="space-y-4">
-      {/* Header */}
-      <div>
-        <h2 className="text-xl font-semibold text-space">SETUP - Default Configuration</h2>
-        <p className="text-sm text-gray-600">Set your default space configuration</p>
-      </div>
+    <div className="bg-white border-2 border-gray-200 rounded-lg p-3">
+      {/* Single Row Layout */}
+      <div className="flex items-center gap-3">
+        {/* Label */}
+        <div className="text-sm font-bold text-space whitespace-nowrap w-20 flex-shrink-0">
+          SETUP
+        </div>
 
-      {/* Content */}
-      <div className="space-y-3">
-        {/* Environment Settings */}
-        <div className="bg-white border-2 border-gray-200 rounded-lg p-3 space-y-3">
-          <h3 className="text-base font-semibold text-space">Environment Defaults</h3>
+        {/* Sound Choice */}
+        <div className="flex items-center gap-2 flex-1">
+          <span className="text-xs text-gray-600 whitespace-nowrap">Sound:</span>
+          <div className="relative">
+            <button
+              onClick={() => setShowSoundPicker(!showSoundPicker)}
+              className="flex items-center gap-1 px-2 py-1 text-xs font-medium border-2 border-gray-200 rounded-lg hover:border-space transition-colors"
+            >
+              <span>{selectedSound.emoji}</span>
+              <span>{selectedSound.label}</span>
+            </button>
 
-          {/* Sound Selection */}
-          <div>
-            <label className="block text-xs font-medium text-gray-700 mb-2">
-              Background Sound
-            </label>
-            <div className="grid grid-cols-3 gap-2">
-              {SOUND_OPTIONS.map((option) => (
-                <button
-                  key={option.value}
-                  onClick={() => updateSetting('sound', option.value)}
-                  className={`
-                    p-1.5 rounded-lg border-2 transition-all text-xs
-                    ${localSettings.sound === option.value
-                      ? 'border-space bg-space text-white'
-                      : 'border-gray-200 hover:border-space/50'
-                    }
-                  `}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Volume Control */}
-          {localSettings.sound !== 'silence' && (
-            <div>
-              <label className="block text-xs font-medium text-gray-700 mb-1">
-                Volume: {Math.round(localSettings.volume * 100)}%
-              </label>
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.1"
-                value={localSettings.volume}
-                onChange={(e) => updateSetting('volume', parseFloat(e.target.value))}
-                className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-space"
-              />
-            </div>
-          )}
-
-          {/* Breathwork Settings */}
-          <div className="space-y-2">
-            <h4 className="text-xs font-medium text-gray-700">Breathwork</h4>
-
-            <label className="flex items-center gap-2 p-2 border border-gray-200 rounded-lg cursor-pointer text-xs">
-              <input
-                type="checkbox"
-                checked={localSettings.breathworkBefore}
-                onChange={(e) => updateSetting('breathworkBefore', e.target.checked)}
-                className="w-4 h-4 accent-space"
-              />
-              <span>Enable breathwork before flow sessions</span>
-            </label>
+            {showSoundPicker && (
+              <div className="absolute z-20 left-0 top-full mt-1 bg-white border-2 border-space rounded-lg shadow-xl min-w-[140px]">
+                {SOUND_OPTIONS.map((option) => (
+                  <button
+                    key={option.value}
+                    onClick={() => {
+                      updateSetting('sound', option.value);
+                      setShowSoundPicker(false);
+                    }}
+                    className={`w-full flex items-center gap-2 px-3 py-2 text-xs hover:bg-space/10 transition-colors first:rounded-t-lg last:rounded-b-lg ${
+                      localSettings.sound === option.value ? 'bg-space/20 font-semibold' : ''
+                    }`}
+                  >
+                    <span>{option.emoji}</span>
+                    <span>{option.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
-      </div>
 
-      {/* Save Button */}
-      <button
-        onClick={handleSave}
-        className="w-full bg-space text-white py-2 rounded-lg text-sm font-semibold hover:bg-space-dark transition-colors"
-      >
-        Save Default Settings
-      </button>
-
-      {/* Help Text */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-xs text-gray-600">
-        <p className="font-semibold mb-1">Default configuration:</p>
-        <p>• Applies to all flow sessions unless overridden</p>
-        <p>• Can be adjusted per-session on the FLOW page</p>
-        <p>• Breathwork runs before timer if enabled</p>
+        {/* Breathwork Choice */}
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <span className="text-xs text-gray-600 whitespace-nowrap">Breath:</span>
+          <button
+            onClick={() => updateSetting('breathworkBefore', !localSettings.breathworkBefore)}
+            className={`px-2 py-1 text-xs font-medium rounded-lg transition-all ${
+              localSettings.breathworkBefore
+                ? 'bg-space text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            {localSettings.breathworkBefore ? 'ON' : 'OFF'}
+          </button>
+        </div>
       </div>
     </div>
   );
