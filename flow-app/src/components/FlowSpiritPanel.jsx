@@ -25,43 +25,49 @@ const FlowSpiritPanel = () => {
 
   return (
     <div
-      className={`bg-gradient-to-r from-spirit/5 to-spirit/10 border border-spirit/20 rounded-lg overflow-hidden transition-all duration-200 ${
+      className={`border border-spirit/20 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
         isEditing ? 'border-spirit/60' : ''
       }`}
       style={{
-        maxHeight: isEditing ? '300px' : '100px',
+        maxHeight: isEditing ? '300px' : '60px',
       }}
     >
       <button
         onClick={isEditing ? undefined : handleEdit}
         disabled={isEditing}
-        className="w-full p-3 text-left hover:border-spirit/40 transition-colors"
+        className="w-full text-left hover:bg-spirit/5 transition-colors"
       >
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex-1 min-w-0">
-            <p className="text-xs font-semibold text-spirit mb-1">SPIRIT · VISION</p>
-            {/* Vision Statement */}
-            {hasVision ? (
-              <p className="text-xs text-gray-700 leading-relaxed">
-                {profile.vision}
-              </p>
-            ) : (
-              <p className="text-xs text-gray-400">Set your vision</p>
-            )}
+        <div className="flex items-stretch">
+          {/* Left Label Box */}
+          <div className="bg-spirit text-white px-3 py-2 flex items-center justify-center min-w-[80px]">
+            <p className="text-xs font-bold tracking-tight">VISION</p>
           </div>
 
-          {/* Edit Icon */}
-          {!isEditing && (
-            <div className="flex-shrink-0 text-spirit/40 text-sm">
-              ✏️
+          {/* Right Content Area */}
+          <div className="flex-1 px-3 py-2 flex items-center justify-between gap-2 bg-gradient-to-r from-spirit/5 to-spirit/10">
+            <div className="flex-1 min-w-0">
+              {hasVision ? (
+                <p className="text-xs text-gray-700 leading-snug truncate">
+                  {profile.vision}
+                </p>
+              ) : (
+                <p className="text-xs text-gray-400 italic">Set your vision statement</p>
+              )}
             </div>
-          )}
+
+            {/* Edit Icon */}
+            {!isEditing && (
+              <div className="flex-shrink-0 text-spirit/40 text-sm">
+                ✏️
+              </div>
+            )}
+          </div>
         </div>
       </button>
 
       {/* Expandable Edit Section */}
       {isEditing && (
-        <div className="px-3 pb-3 space-y-2 animate-fade-in">
+        <div className="px-3 pb-3 space-y-2 border-t border-spirit/20 pt-3 bg-white transition-opacity duration-300 ease-in-out opacity-100">
           <textarea
             value={editedVision}
             onChange={(e) => setEditedVision(e.target.value)}

@@ -95,73 +95,81 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
 
   return (
     <div
-      className={`bg-story/5 border border-story/20 rounded-lg overflow-hidden transition-all duration-200 ${
+      className={`border border-story/20 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
         isEditing ? 'border-story/60' : ''
       }`}
       style={{
-        maxHeight: isEditing ? '600px' : '200px',
+        maxHeight: isEditing ? '600px' : '60px',
       }}
     >
-      <div className="p-3">
-        {/* Header Section */}
-        <div className="flex items-center justify-between mb-2">
-          <p className="text-xs font-semibold text-story">STORY · MISSION</p>
-          {!isEditing && selectedGoal && (
-            <button
-              onClick={handleEdit}
-              className="text-story/40 hover:text-story text-sm transition-colors"
-            >
-              ✏️
-            </button>
-          )}
+      <div className="flex items-stretch">
+        {/* Left Label Box */}
+        <div className="bg-story text-white px-3 py-2 flex items-center justify-center min-w-[80px]">
+          <p className="text-xs font-bold tracking-tight">GOALS</p>
         </div>
 
-        {/* Emoji Selector */}
-        <div className="flex items-center gap-2 mb-3">
-          {activeGoals.map((goal) => {
-            const isSelected = selectedGoalId === goal.id;
-            return (
+        {/* Right Content Area */}
+        <div className="flex-1 px-3 py-2 bg-story/5 hover:bg-story/10 transition-colors">
+          <div className="flex items-center justify-between gap-3">
+            {/* Emoji Selector + Goal Title */}
+            <div className="flex items-center gap-2 flex-1 min-w-0">
+              {/* Goal Emoji Buttons */}
+              {activeGoals.map((goal) => {
+                const isSelected = selectedGoalId === goal.id;
+                return (
+                  <button
+                    key={goal.id}
+                    onClick={() => !isEditing && onGoalSelect(goal.id)}
+                    disabled={isEditing}
+                    className={`
+                      text-lg p-1.5 rounded transition-all flex-shrink-0
+                      ${isSelected
+                        ? 'bg-story text-white shadow-sm'
+                        : 'bg-white hover:bg-story/10 border border-story/20'
+                      }
+                      ${isEditing ? 'opacity-50 cursor-not-allowed' : ''}
+                    `}
+                    title={goal.title}
+                  >
+                    {goal.emoji || '🎯'}
+                  </button>
+                );
+              })}
+              {activeGoals.length < 5 && !isEditing && (
+                <button
+                  onClick={() => setShowAddGoal(true)}
+                  className="text-sm p-1.5 rounded bg-white border border-dashed border-story/30 hover:border-story/60 text-story/40 hover:text-story transition-all flex-shrink-0"
+                  title="Add goal"
+                >
+                  +
+                </button>
+              )}
+
+              {/* Selected Goal Title (inline) */}
+              {selectedGoal && !isEditing && (
+                <div className="ml-2 flex-1 min-w-0">
+                  <p className="text-xs font-semibold text-story truncate">{selectedGoal.title}</p>
+                  <p className="text-xs text-gray-500">{getGoalActionCount(selectedGoal.id)} actions</p>
+                </div>
+              )}
+            </div>
+
+            {/* Edit Icon */}
+            {!isEditing && selectedGoal && (
               <button
-                key={goal.id}
-                onClick={() => !isEditing && onGoalSelect(goal.id)}
-                disabled={isEditing}
-                className={`
-                  text-2xl p-2 rounded-lg transition-all
-                  ${isSelected
-                    ? 'bg-story shadow-sm scale-110'
-                    : 'bg-white hover:bg-story/10 border border-story/20'
-                  }
-                  ${isEditing ? 'opacity-50 cursor-not-allowed' : ''}
-                `}
-                title={goal.title}
+                onClick={handleEdit}
+                className="text-story/40 hover:text-story text-sm transition-colors flex-shrink-0"
               >
-                {goal.emoji || '🎯'}
+                ✏️
               </button>
-            );
-          })}
-          {activeGoals.length < 5 && !isEditing && (
-            <button
-              onClick={() => setShowAddGoal(true)}
-              className="text-xl p-2 rounded-lg bg-white border-2 border-dashed border-story/30 hover:border-story/60 text-story/40 hover:text-story transition-all"
-              title="Add goal"
-            >
-              +
-            </button>
-          )}
-        </div>
-
-        {/* Selected Goal Title */}
-        {selectedGoal && !isEditing && (
-          <div>
-            <h3 className="text-sm font-semibold text-story">{selectedGoal.title}</h3>
-            <p className="text-xs text-gray-500 mt-1">{getGoalActionCount(selectedGoal.id)} actions</p>
+            )}
           </div>
-        )}
+        </div>
       </div>
 
       {/* Expandable Edit Section */}
       {isEditing && editedGoal && (
-        <div className="px-3 pb-3 space-y-3 animate-fade-in border-t border-story/20 pt-3">
+        <div className="px-3 pb-3 space-y-3 border-t border-story/20 pt-3 bg-white transition-opacity duration-300 ease-in-out opacity-100">
           {/* Goal Title */}
           <div>
             <label className="text-xs text-gray-600 block mb-1">Goal Title</label>
