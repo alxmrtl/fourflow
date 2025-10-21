@@ -79,44 +79,46 @@ const AlignGoals = () => {
 
   return (
     <>
-      <div className="bg-white border-2 border-gray-200 rounded-lg p-3">
+      <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden">
         {/* Single Row Layout */}
         <div className="flex items-center gap-3">
-          {/* Label */}
-          <div className="text-sm font-bold text-story whitespace-nowrap w-20 flex-shrink-0">
+          {/* Colored Left Section */}
+          <div className="bg-story text-white text-xs font-bold px-3 py-3 flex items-center justify-center whitespace-nowrap">
             GOALS
           </div>
 
           {/* Compact Emoji Picker Grid - 2 rows */}
-          <div className="grid grid-cols-5 gap-1 flex-shrink-0">
-            {activeGoals.slice(0, 10).map((goal) => (
-              <button
-                key={goal.id}
-                onClick={() => handleSelectGoal(goal.id)}
-                className={`text-xl p-1 rounded transition-all ${
-                  selectedGoal?.id === goal.id
-                    ? 'bg-story/20 scale-110 ring-2 ring-story'
-                    : 'hover:bg-gray-100'
-                }`}
-                title={goal.title}
-              >
-                {goal.emoji || '🎯'}
-              </button>
-            ))}
-            {/* Add button if less than 10 goals */}
-            {activeGoals.length < 10 && (
-              <button
-                onClick={() => setShowManageModal(true)}
-                className="text-xl p-1 rounded hover:bg-story/10 text-story"
-                title="Add goal"
-              >
-                +
-              </button>
-            )}
+          <div className="py-3">
+            <div className="grid grid-cols-5 gap-1 flex-shrink-0">
+              {activeGoals.slice(0, 10).map((goal) => (
+                <button
+                  key={goal.id}
+                  onClick={() => handleSelectGoal(goal.id)}
+                  className={`text-xl p-1 rounded transition-all ${
+                    selectedGoal?.id === goal.id
+                      ? 'bg-story/20 scale-110 ring-2 ring-story'
+                      : 'hover:bg-gray-100'
+                  }`}
+                  title={goal.title}
+                >
+                  {goal.emoji || '🎯'}
+                </button>
+              ))}
+              {/* Add button if less than 10 goals */}
+              {activeGoals.length < 10 && (
+                <button
+                  onClick={() => setShowManageModal(true)}
+                  className="text-xl p-1 rounded hover:bg-story/10 text-story font-bold"
+                  title="Add goal"
+                >
+                  +
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Selected Goal Display */}
-          <div className="flex-1 flex items-center justify-between min-w-0">
+          <div className="flex-1 flex items-center justify-between min-w-0 py-3 pr-3">
             {selectedGoal ? (
               <>
                 <div className="flex items-center gap-2 min-w-0 flex-1">
@@ -145,7 +147,7 @@ const AlignGoals = () => {
 
       {/* Manage Goals Modal */}
       {showManageModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4">
           <div className="bg-white rounded-lg max-w-md w-full max-h-[80vh] overflow-y-auto">
             <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex items-center justify-between">
               <h3 className="text-lg font-bold text-story">Manage Goals</h3>

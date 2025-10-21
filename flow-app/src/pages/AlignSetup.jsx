@@ -31,16 +31,16 @@ const AlignSetup = () => {
   const selectedSound = SOUND_OPTIONS.find(opt => opt.value === localSettings.sound) || SOUND_OPTIONS[0];
 
   return (
-    <div className="bg-white border-2 border-gray-200 rounded-lg p-3">
+    <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden">
       {/* Single Row Layout */}
       <div className="flex items-center gap-3">
-        {/* Label */}
-        <div className="text-sm font-bold text-space whitespace-nowrap w-20 flex-shrink-0">
+        {/* Colored Left Section */}
+        <div className="bg-space text-white text-xs font-bold px-3 py-3 flex items-center justify-center whitespace-nowrap">
           SETUP
         </div>
 
         {/* Sound Choice */}
-        <div className="flex items-center gap-2 flex-1">
+        <div className="flex items-center gap-2 flex-1 py-3">
           <span className="text-xs text-gray-600 whitespace-nowrap">Sound:</span>
           <div className="relative">
             <button
@@ -74,7 +74,7 @@ const AlignSetup = () => {
         </div>
 
         {/* Breathwork Choice */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-2 flex-shrink-0 py-3 pr-3">
           <span className="text-xs text-gray-600 whitespace-nowrap">Breath:</span>
           <button
             onClick={() => updateSetting('breathworkBefore', !localSettings.breathworkBefore)}

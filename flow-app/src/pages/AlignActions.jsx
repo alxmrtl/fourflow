@@ -258,21 +258,27 @@ const AlignActions = () => {
   return (
     <div className="space-y-3 pb-6">
       {/* Header - Compact */}
-      <div className="bg-white border-2 border-gray-200 rounded-lg p-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <h2 className="text-sm font-bold text-self">ACTIONS</h2>
-            {selectedMission && (
+      <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden">
+        <div className="flex items-center gap-3">
+          {/* Colored Left Section */}
+          <div className="bg-self text-white text-xs font-bold px-3 py-3 flex items-center justify-center whitespace-nowrap">
+            ACTIONS
+          </div>
+
+          <div className="flex-1 flex items-center justify-between py-3 pr-3">
+            <div className="flex items-center gap-2">
+              {selectedMission && (
+                <span className="text-sm font-semibold text-gray-700">
+                  {selectedMission.emoji} {selectedMission.title}
+                </span>
+              )}
+            </div>
+            {actionCount > 0 && (
               <span className="text-xs text-gray-500">
-                for {selectedMission.emoji} {selectedMission.title}
+                +{actionCount} this session
               </span>
             )}
           </div>
-          {actionCount > 0 && (
-            <span className="text-xs text-gray-500">
-              +{actionCount} this session
-            </span>
-          )}
         </div>
       </div>
 
