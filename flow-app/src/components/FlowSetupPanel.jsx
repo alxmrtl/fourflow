@@ -42,11 +42,12 @@ const FlowSetupPanel = () => {
 
   return (
     <div
-      className={`border-2 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
-        isEditing ? 'border-space' : 'border-space/30'
+      className={`border-3 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
+        isEditing ? 'border-space shadow-lg shadow-space/20' : 'border-space'
       }`}
       style={{
         maxHeight: isEditing ? '400px' : '60px',
+        borderWidth: '3px',
       }}
     >
       <button
@@ -54,18 +55,25 @@ const FlowSetupPanel = () => {
         disabled={isEditing}
         className="w-full text-left hover:bg-space/5 transition-colors"
       >
-        <div className="px-3 py-2 flex items-center gap-2 flex-wrap bg-space/5">
-          {/* Sound Pill */}
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-space text-white text-xs font-semibold rounded-full">
-            <span>🔊</span>
-            <span>{getSoundLabel(settings.sound)}</span>
-          </span>
+        <div className="px-3 py-2 flex items-center gap-3 bg-space/5">
+          <img
+            src="/OPTIMIZED TOOLS.png"
+            alt="Setup"
+            className="w-8 h-8 object-contain flex-shrink-0"
+          />
+          <div className="flex items-center gap-2 flex-wrap flex-1">
+            {/* Sound Pill */}
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-space text-white text-xs font-semibold rounded-full">
+              <span>🔊</span>
+              <span>{getSoundLabel(settings.sound)}</span>
+            </span>
 
-          {/* Breathwork Pill */}
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-space text-white text-xs font-semibold rounded-full">
-            <span>🫁</span>
-            <span>{settings.breathworkBefore ? 'Breathwork' : 'No Breathwork'}</span>
-          </span>
+            {/* Breathwork Pill */}
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-space text-white text-xs font-semibold rounded-full">
+              <span>🫁</span>
+              <span>{settings.breathworkBefore ? 'Breathwork' : 'No Breathwork'}</span>
+            </span>
+          </div>
         </div>
       </button>
 

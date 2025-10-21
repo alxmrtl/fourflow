@@ -25,11 +25,12 @@ const FlowSpiritPanel = () => {
 
   return (
     <div
-      className={`border-2 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
-        isEditing ? 'border-spirit' : 'border-spirit/30'
+      className={`border-3 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
+        isEditing ? 'border-spirit shadow-lg shadow-spirit/20' : 'border-spirit'
       }`}
       style={{
         maxHeight: isEditing ? '300px' : '60px',
+        borderWidth: '3px',
       }}
     >
       <button
@@ -37,14 +38,21 @@ const FlowSpiritPanel = () => {
         disabled={isEditing}
         className="w-full text-left hover:bg-spirit/5 transition-colors"
       >
-        <div className="px-3 py-2 bg-gradient-to-r from-spirit/5 to-spirit/10">
-          {hasVision ? (
-            <p className="text-sm text-gray-700 leading-snug truncate">
-              {profile.vision}
-            </p>
-          ) : (
-            <p className="text-sm text-gray-400 italic">Set your vision statement</p>
-          )}
+        <div className="px-3 py-2 bg-gradient-to-r from-spirit/5 to-spirit/10 flex items-center gap-3">
+          <img
+            src="/VISUALIZED VISION.png"
+            alt="Vision"
+            className="w-8 h-8 object-contain flex-shrink-0"
+          />
+          <div className="flex-1 min-w-0">
+            {hasVision ? (
+              <p className="text-sm text-gray-700 leading-snug truncate">
+                {profile.vision}
+              </p>
+            ) : (
+              <p className="text-sm text-gray-400 italic">Set your vision statement</p>
+            )}
+          </div>
         </div>
       </button>
 
