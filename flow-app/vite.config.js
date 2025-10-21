@@ -10,9 +10,10 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['logos/*.png'],
       manifest: {
-        name: 'FlowSpace - Focus & Flow Tracker',
-        short_name: 'FlowSpace',
+        name: 'FourFlow - Focus & Flow Tracker',
+        short_name: 'FourFlow',
         description: 'Train your focus muscle and cultivate flow states',
+        version: '1.2.0',
         theme_color: '#FF6F61',
         background_color: '#F5F5F5',
         display: 'standalone',
