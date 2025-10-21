@@ -1,7 +1,25 @@
 import React, { useState } from 'react';
 import { useStore } from '../store/useStore';
 
-const EMOJI_SUGGESTIONS = ['🎯', '💪', '🚀', '📚', '💼', '🏃', '🎨', '💰', '🌱', '⭐', '🔥', '💡', '🎓', '❤️', '🌟', '🏆', '✨', '🎭', '🌈', '⚡'];
+// 50+ goal and mission-related emojis organized by category
+const EMOJI_SUGGESTIONS = [
+  // Achievement & Success
+  '🎯', '🏆', '🥇', '🥈', '🥉', '🏅', '⭐', '🌟', '✨', '💫', '🎖️',
+  // Growth & Progress
+  '🚀', '📈', '🌱', '🌿', '🌳', '🔥', '💪', '⚡', '💥', '🎆',
+  // Learning & Education
+  '📚', '📖', '✏️', '📝', '🎓', '🧠', '💡', '🔬', '🔭', '🎯',
+  // Work & Career
+  '💼', '💻', '⚙️', '🛠️', '🏗️', '📊', '📈', '💰', '💵', '💎',
+  // Health & Fitness
+  '🏃', '🏋️', '🧘', '🚴', '🏊', '⚽', '🏀', '🎾', '🥊', '🤸',
+  // Creativity & Arts
+  '🎨', '🎭', '🎬', '🎤', '🎸', '🎹', '📷', '✍️', '🖌️', '🎪',
+  // Life & Mindset
+  '❤️', '💚', '🧡', '💙', '💜', '🌈', '☀️', '🌍', '🦋', '🌸',
+  // Focus & Time
+  '⏰', '⏳', '🎯', '🔔', '📅', '🗓️'
+];
 
 const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
   const { goals, updateGoal, addGoal, deleteGoal, tasks } = useStore();
@@ -10,6 +28,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [showAddGoal, setShowAddGoal] = useState(false);
   const [newGoal, setNewGoal] = useState({ title: '', emoji: '🎯' });
+  const [showNewGoalEmojiPicker, setShowNewGoalEmojiPicker] = useState(false);
 
   const activeGoals = goals.filter(g => g.status === 'active');
   const selectedGoal = activeGoals.find(g => g.id === selectedGoalId);
@@ -57,10 +76,21 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
 
   const handleAddNewGoal = async () => {
     if (newGoal.title.trim() && activeGoals.length < 5) {
-      await addGoal({ ...newGoal, status: 'active' });
+      const addedGoal = await addGoal({ ...newGoal, status: 'active' });
       setNewGoal({ title: '', emoji: '🎯' });
       setShowAddGoal(false);
+      setShowNewGoalEmojiPicker(false);
+      // Select the newly added goal if it's the first one
+      if (activeGoals.length === 0 && addedGoal) {
+        onGoalSelect(addedGoal.id);
+      }
     }
+  };
+
+  const handleCancelAddGoal = () => {
+    setShowAddGoal(false);
+    setNewGoal({ title: '', emoji: '🎯' });
+    setShowNewGoalEmojiPicker(false);
   };
 
   const handleDeleteGoal = async () => {
@@ -82,8 +112,18 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
 
   if (activeGoals.length === 0) {
     return (
-      <>
-        <div className="border border-story/20 rounded-lg overflow-hidden">
+      <div
+        className={`border border-story/20 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
+          showAddGoal ? 'border-story/60' : ''
+        }`}
+        style={{
+          maxHeight: showAddGoal ? '400px' : '60px',
+        }}
+      >
+        <button
+          onClick={() => setShowAddGoal(!showAddGoal)}
+          className="w-full text-left hover:bg-story/5 transition-colors"
+        >
           <div className="flex items-stretch">
             {/* Left Label Box */}
             <div className="bg-story text-white px-3 py-2 flex items-center justify-center min-w-[80px]">
@@ -91,75 +131,93 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
             </div>
 
             {/* Right Content Area */}
-            <div className="flex-1 px-3 py-2 bg-story/5">
+            <div className="flex-1 px-3 py-2 bg-story/5 flex items-center justify-between">
+              <span className="text-xs text-gray-500">
+                {showAddGoal ? 'Adding new goal...' : '+ Add your first goal'}
+              </span>
+              {!showAddGoal && (
+                <span className="text-story/40 text-sm">✏️</span>
+              )}
+            </div>
+          </div>
+        </button>
+
+        {/* Expandable Add Goal Form */}
+        {showAddGoal && (
+          <div className="px-3 pb-3 space-y-3 border-t border-story/20 pt-3 bg-white transition-opacity duration-300 ease-in-out opacity-100">
+            {/* Emoji Picker */}
+            <div>
+              <label className="text-xs text-gray-600 block mb-1">Emoji</label>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setShowNewGoalEmojiPicker(!showNewGoalEmojiPicker)}
+                  className="w-full p-2 text-2xl border-2 border-story/30 rounded-lg hover:border-story focus:border-story focus:outline-none text-center"
+                >
+                  {newGoal.emoji || '🎯'}
+                </button>
+                {showNewGoalEmojiPicker && (
+                  <div className="absolute z-10 mt-1 w-full bg-white border-2 border-story/30 rounded-lg p-2 grid grid-cols-8 gap-1 shadow-lg max-h-48 overflow-y-auto">
+                    {EMOJI_SUGGESTIONS.map((emoji, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => {
+                          setNewGoal({ ...newGoal, emoji });
+                          setShowNewGoalEmojiPicker(false);
+                        }}
+                        className="text-xl hover:bg-story/10 rounded p-1 transition-colors"
+                      >
+                        {emoji}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Goal Title */}
+            <div>
+              <label className="text-xs text-gray-600 block mb-1">Goal Title</label>
+              <input
+                type="text"
+                value={newGoal.title}
+                onChange={(e) => setNewGoal({ ...newGoal, title: e.target.value })}
+                placeholder="Enter goal title..."
+                className="w-full p-2 border-2 border-story/30 rounded-lg focus:border-story focus:outline-none"
+                autoFocus
+              />
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex gap-2">
               <button
-                onClick={() => setShowAddGoal(true)}
-                className="text-xs text-gray-500 hover:text-story transition-colors"
+                onClick={handleAddNewGoal}
+                disabled={!newGoal.title.trim()}
+                className="flex-1 bg-story text-white py-2 rounded-lg text-sm font-semibold hover:bg-story/90 transition-colors disabled:opacity-50"
               >
-                + Add your first goal
+                Add Goal
+              </button>
+              <button
+                onClick={handleCancelAddGoal}
+                className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300 transition-colors"
+              >
+                Cancel
               </button>
             </div>
           </div>
-        </div>
-
-        {/* Add New Goal Modal */}
-        {showAddGoal && (
-          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg p-4 w-full max-w-md space-y-3">
-              <h3 className="text-lg font-semibold text-story">Add New Goal</h3>
-              <div>
-                <label className="text-xs text-gray-600 block mb-1">Emoji</label>
-                <input
-                  type="text"
-                  value={newGoal.emoji}
-                  onChange={(e) => setNewGoal({ ...newGoal, emoji: e.target.value.slice(0, 2) })}
-                  className="w-full p-2 text-2xl text-center border-2 border-gray-200 rounded-lg focus:border-story focus:outline-none"
-                  maxLength={2}
-                />
-              </div>
-              <div>
-                <label className="text-xs text-gray-600 block mb-1">Goal Title</label>
-                <input
-                  type="text"
-                  value={newGoal.title}
-                  onChange={(e) => setNewGoal({ ...newGoal, title: e.target.value })}
-                  placeholder="Enter goal title..."
-                  className="w-full p-2 text-sm border-2 border-gray-200 rounded-lg focus:border-story focus:outline-none"
-                  autoFocus
-                />
-              </div>
-              <div className="flex gap-2">
-                <button
-                  onClick={handleAddNewGoal}
-                  disabled={!newGoal.title.trim()}
-                  className="flex-1 bg-story text-white py-2 rounded-lg text-sm font-semibold hover:bg-story/90 transition-colors disabled:opacity-50"
-                >
-                  Add Goal
-                </button>
-                <button
-                  onClick={() => {
-                    setShowAddGoal(false);
-                    setNewGoal({ title: '', emoji: '🎯' });
-                  }}
-                  className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300 transition-colors"
-                >
-                  Cancel
-                </button>
-              </div>
-            </div>
-          </div>
         )}
-      </>
+      </div>
     );
   }
 
   return (
     <div
       className={`border border-story/20 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
-        isEditing ? 'border-story/60' : ''
+        isEditing || showAddGoal ? 'border-story/60' : ''
       }`}
       style={{
-        maxHeight: isEditing ? '600px' : '60px',
+        maxHeight: isEditing || showAddGoal ? '600px' : '60px',
       }}
     >
       <div className="flex items-stretch">
@@ -253,16 +311,16 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
                 {editedGoal.emoji || '🎯'}
               </button>
               {showEmojiPicker && (
-                <div className="absolute z-10 mt-1 w-full bg-white border-2 border-story/30 rounded-lg p-2 grid grid-cols-6 gap-2 shadow-lg max-h-32 overflow-y-auto">
-                  {EMOJI_SUGGESTIONS.map((emoji) => (
+                <div className="absolute z-10 mt-1 w-full bg-white border-2 border-story/30 rounded-lg p-2 grid grid-cols-8 gap-1 shadow-lg max-h-48 overflow-y-auto">
+                  {EMOJI_SUGGESTIONS.map((emoji, idx) => (
                     <button
-                      key={emoji}
+                      key={idx}
                       type="button"
                       onClick={() => {
                         setEditedGoal({ ...editedGoal, emoji });
                         setShowEmojiPicker(false);
                       }}
-                      className="text-2xl hover:bg-story/10 rounded p-1"
+                      className="text-xl hover:bg-story/10 rounded p-1 transition-colors"
                     >
                       {emoji}
                     </button>
@@ -330,50 +388,70 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
         </div>
       )}
 
-      {/* Add New Goal Modal */}
-      {showAddGoal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg p-4 w-full max-w-md space-y-3">
-            <h3 className="text-lg font-semibold text-story">Add New Goal</h3>
-            <div>
-              <label className="text-xs text-gray-600 block mb-1">Emoji</label>
-              <input
-                type="text"
-                value={newGoal.emoji}
-                onChange={(e) => setNewGoal({ ...newGoal, emoji: e.target.value.slice(0, 2) })}
-                className="w-full p-2 text-2xl text-center border-2 border-gray-200 rounded-lg focus:border-story focus:outline-none"
-                maxLength={2}
-              />
-            </div>
-            <div>
-              <label className="text-xs text-gray-600 block mb-1">Goal Title</label>
-              <input
-                type="text"
-                value={newGoal.title}
-                onChange={(e) => setNewGoal({ ...newGoal, title: e.target.value })}
-                placeholder="Enter goal title..."
-                className="w-full p-2 text-sm border-2 border-gray-200 rounded-lg focus:border-story focus:outline-none"
-                autoFocus
-              />
-            </div>
-            <div className="flex gap-2">
+      {/* Expandable Add New Goal Form */}
+      {showAddGoal && !isEditing && (
+        <div className="px-3 pb-3 space-y-3 border-t border-story/20 pt-3 bg-white transition-opacity duration-300 ease-in-out opacity-100">
+          <p className="text-sm font-semibold text-story">Add New Goal</p>
+
+          {/* Emoji Picker */}
+          <div>
+            <label className="text-xs text-gray-600 block mb-1">Emoji</label>
+            <div className="relative">
               <button
-                onClick={handleAddNewGoal}
-                disabled={!newGoal.title.trim()}
-                className="flex-1 bg-story text-white py-2 rounded-lg text-sm font-semibold hover:bg-story/90 transition-colors disabled:opacity-50"
+                type="button"
+                onClick={() => setShowNewGoalEmojiPicker(!showNewGoalEmojiPicker)}
+                className="w-full p-2 text-2xl border-2 border-story/30 rounded-lg hover:border-story focus:border-story focus:outline-none text-center"
               >
-                Add Goal
+                {newGoal.emoji || '🎯'}
               </button>
-              <button
-                onClick={() => {
-                  setShowAddGoal(false);
-                  setNewGoal({ title: '', emoji: '🎯' });
-                }}
-                className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300 transition-colors"
-              >
-                Cancel
-              </button>
+              {showNewGoalEmojiPicker && (
+                <div className="absolute z-10 mt-1 w-full bg-white border-2 border-story/30 rounded-lg p-2 grid grid-cols-8 gap-1 shadow-lg max-h-48 overflow-y-auto">
+                  {EMOJI_SUGGESTIONS.map((emoji, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => {
+                        setNewGoal({ ...newGoal, emoji });
+                        setShowNewGoalEmojiPicker(false);
+                      }}
+                      className="text-xl hover:bg-story/10 rounded p-1 transition-colors"
+                    >
+                      {emoji}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
+          </div>
+
+          {/* Goal Title */}
+          <div>
+            <label className="text-xs text-gray-600 block mb-1">Goal Title</label>
+            <input
+              type="text"
+              value={newGoal.title}
+              onChange={(e) => setNewGoal({ ...newGoal, title: e.target.value })}
+              placeholder="Enter goal title..."
+              className="w-full p-2 border-2 border-story/30 rounded-lg focus:border-story focus:outline-none"
+              autoFocus
+            />
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex gap-2">
+            <button
+              onClick={handleAddNewGoal}
+              disabled={!newGoal.title.trim()}
+              className="flex-1 bg-story text-white py-2 rounded-lg text-sm font-semibold hover:bg-story/90 transition-colors disabled:opacity-50"
+            >
+              Add Goal
+            </button>
+            <button
+              onClick={handleCancelAddGoal}
+              className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300 transition-colors"
+            >
+              Cancel
+            </button>
           </div>
         </div>
       )}
