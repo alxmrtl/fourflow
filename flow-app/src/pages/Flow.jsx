@@ -22,7 +22,7 @@ import FlowSetupPanel from '../components/FlowSetupPanel';
 import QuickAddAction from '../components/QuickAddAction';
 
 // Sortable Action Card Component
-const SortableActionCard = ({ task, goal, onStartFlow, onRemove }) => {
+const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = false, isNextUp = false }) => {
   const {
     attributes,
     listeners,
@@ -42,14 +42,16 @@ const SortableActionCard = ({ task, goal, onStartFlow, onRemove }) => {
     <div
       ref={setNodeRef}
       style={style}
-      className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-self/30 transition-colors"
+      className={`bg-white border-2 rounded-lg p-3 hover:border-self/30 transition-colors ${
+        isNextUp ? 'border-self shadow-md shadow-self/20' : 'border-gray-200'
+      }`}
     >
-      <div className="flex items-start gap-3">
+      <div className="flex items-center gap-3">
         {/* Drag Handle */}
         <button
           {...attributes}
           {...listeners}
-          className="flex-shrink-0 text-gray-400 hover:text-gray-600 cursor-grab active:cursor-grabbing mt-1"
+          className="flex-shrink-0 text-gray-400 hover:text-gray-600 cursor-grab active:cursor-grabbing"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
             <circle cx="5" cy="3" r="1.5" />
@@ -63,38 +65,32 @@ const SortableActionCard = ({ task, goal, onStartFlow, onRemove }) => {
 
         {/* Task Content */}
         <div className="flex-1 min-w-0">
-          <div className="flex items-start justify-between gap-2 mb-3">
-            <div className="flex-1 min-w-0">
-              <h3 className="text-base font-semibold text-gray-800 mb-1">
-                {task.title}
-              </h3>
-              <div className="flex items-center gap-3 text-xs text-gray-500">
-                <span>{task.duration || 25} min</span>
-                {goal && (
-                  <span className="flex items-center gap-1 text-story">
-                    <span className="text-base">{goal.emoji || '🎯'}</span>
-                    <span className="font-medium">{goal.title}</span>
-                  </span>
-                )}
-              </div>
+          <div className="flex items-center justify-between gap-2">
+            <h3 className="text-sm font-semibold text-gray-800 truncate">
+              {task.title}
+            </h3>
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <span className="text-xs text-gray-500">{task.duration || 25} min</span>
+              <button
+                onClick={onRemove}
+                className="text-gray-400 hover:text-red-600 text-sm transition-colors"
+              >
+                ✕
+              </button>
             </div>
-            <button
-              onClick={onRemove}
-              className="text-gray-400 hover:text-red-600 text-sm transition-colors"
-            >
-              ✕
-            </button>
           </div>
-
-          {/* Start Flow Button */}
-          <button
-            onClick={onStartFlow}
-            className="w-full bg-self text-white py-2 rounded-lg text-sm font-semibold hover:bg-self/90 transition-colors"
-          >
-            Start Flow
-          </button>
         </div>
       </div>
+
+      {/* Start Flow Button - Only for Next Up */}
+      {showStartButton && (
+        <button
+          onClick={onStartFlow}
+          className="w-full bg-self text-white py-2 rounded-lg text-sm font-semibold hover:bg-self/90 transition-colors mt-3"
+        >
+          Start Flow
+        </button>
+      )}
     </div>
   );
 };
@@ -224,10 +220,6 @@ const Flow = () => {
     }
   };
 
-  const getGoalForTask = (goalId) => {
-    return goals.find(g => g.id === goalId);
-  };
-
   const allGoalTasks = tasks
     .filter(t => t.status === 'backlog' && t.goalId === selectedGoalId)
     .sort((a, b) => (a.order || 0) - (b.order || 0));
@@ -275,90 +267,106 @@ const Flow = () => {
         {/* SETUP Panel */}
         <FlowSetupPanel />
 
-        {/* Next Up Actions */}
-        <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-self">SELF · ACTIONS</h2>
+        {/* ACTION Panel */}
+        <div
+          className="border-3 rounded-lg overflow-hidden border-self"
+          style={{ borderWidth: '3px' }}
+        >
+          {/* Header with Logo and Title */}
+          <div className="px-3 py-2 flex items-center gap-3 bg-self/5">
+            <img
+              src="/FOCUSED BODY.png"
+              alt="Action"
+              className="w-8 h-8 object-contain flex-shrink-0"
+            />
+            <h2 className="text-sm font-semibold text-self">ACTION</h2>
+          </div>
 
-          {selectedGoalId ? (
-            <div className="space-y-4">
-              {/* Primary Action - Next Up */}
-              {nextUpTask && (
-                <div>
-                  <p className="text-xs font-semibold text-gray-600 mb-2">Next Up</p>
-                  <DndContext
-                    sensors={sensors}
-                    collisionDetection={closestCenter}
-                    onDragEnd={handleDragEndBacklog}
-                  >
-                    <SortableContext
-                      items={allGoalTasks.map(a => a.id)}
-                      strategy={verticalListSortingStrategy}
-                    >
-                      <SortableActionCard
-                        task={nextUpTask}
-                        goal={getGoalForTask(nextUpTask.goalId)}
-                        onStartFlow={() => handleStartFlow(nextUpTask)}
-                        onRemove={() => handleDeleteTask(nextUpTask.id)}
-                      />
-                    </SortableContext>
-                  </DndContext>
-                </div>
-              )}
-
-              {/* Quick Add Action */}
-              <div>
-                <p className="text-xs font-semibold text-gray-600 mb-2">Quick Add</p>
+          {/* Content */}
+          <div className="p-3 space-y-3 bg-white">
+            {selectedGoalId ? (
+              <>
+                {/* Quick Add Action - Narrow Expandable */}
                 <QuickAddAction
                   selectedGoalId={selectedGoalId}
                   onActionAdded={loadTasks}
                 />
-              </div>
 
-              {/* Backlog */}
-              {backlogTasks.length > 0 && (
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <p className="text-xs font-semibold text-gray-600">Backlog</p>
-                    <span className="text-xs text-gray-400">{backlogTasks.length} action{backlogTasks.length !== 1 ? 's' : ''}</span>
+                {/* Next Up - First in Queue */}
+                {nextUpTask && (
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-2 h-2 rounded-full bg-self animate-pulse"></div>
+                      <p className="text-xs font-bold text-self uppercase tracking-wide">Next Up</p>
+                    </div>
+                    <DndContext
+                      sensors={sensors}
+                      collisionDetection={closestCenter}
+                      onDragEnd={handleDragEndBacklog}
+                    >
+                      <SortableContext
+                        items={allGoalTasks.map(a => a.id)}
+                        strategy={verticalListSortingStrategy}
+                      >
+                        <SortableActionCard
+                          task={nextUpTask}
+                          onStartFlow={() => handleStartFlow(nextUpTask)}
+                          onRemove={() => handleDeleteTask(nextUpTask.id)}
+                          showStartButton={true}
+                          isNextUp={true}
+                        />
+                      </SortableContext>
+                    </DndContext>
                   </div>
-                  <DndContext
-                    sensors={sensors}
-                    collisionDetection={closestCenter}
-                    onDragEnd={handleDragEndBacklog}
-                  >
-                    <SortableContext
-                      items={allGoalTasks.map(a => a.id)}
-                      strategy={verticalListSortingStrategy}
+                )}
+
+                {/* Backlog */}
+                {backlogTasks.length > 0 && (
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Backlog</p>
+                      <span className="text-xs text-gray-400">{backlogTasks.length} action{backlogTasks.length !== 1 ? 's' : ''}</span>
+                    </div>
+                    <DndContext
+                      sensors={sensors}
+                      collisionDetection={closestCenter}
+                      onDragEnd={handleDragEndBacklog}
                     >
-                      <div className="space-y-2">
-                        {backlogTasks.slice(0, 5).map(task => (
-                          <SortableActionCard
-                            key={task.id}
-                            task={task}
-                            goal={getGoalForTask(task.goalId)}
-                            onStartFlow={() => handleStartFlow(task)}
-                            onRemove={() => handleDeleteTask(task.id)}
-                          />
-                        ))}
-                      </div>
-                    </SortableContext>
-                  </DndContext>
-                  {backlogTasks.length > 5 && (
-                    <button
-                      onClick={() => setShowBacklog(true)}
-                      className="w-full mt-2 py-2 text-xs text-self hover:text-self/80 font-medium transition-colors"
-                    >
-                      Show {backlogTasks.length - 5} more...
-                    </button>
-                  )}
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="text-center py-8 bg-gray-50 rounded-lg border border-gray-200">
-              <p className="text-sm text-gray-500">Select a goal to see actions</p>
-            </div>
-          )}
+                      <SortableContext
+                        items={allGoalTasks.map(a => a.id)}
+                        strategy={verticalListSortingStrategy}
+                      >
+                        <div className="space-y-2">
+                          {backlogTasks.slice(0, 5).map(task => (
+                            <SortableActionCard
+                              key={task.id}
+                              task={task}
+                              onStartFlow={() => handleStartFlow(task)}
+                              onRemove={() => handleDeleteTask(task.id)}
+                              showStartButton={false}
+                              isNextUp={false}
+                            />
+                          ))}
+                        </div>
+                      </SortableContext>
+                    </DndContext>
+                    {backlogTasks.length > 5 && (
+                      <button
+                        onClick={() => setShowBacklog(true)}
+                        className="w-full mt-2 py-2 text-xs text-self hover:text-self/80 font-medium transition-colors"
+                      >
+                        Show {backlogTasks.length - 5} more...
+                      </button>
+                    )}
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="text-center py-8">
+                <p className="text-sm text-gray-500">Select a goal to see actions</p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -383,31 +391,23 @@ const Flow = () => {
                   </p>
                 </div>
               ) : (
-                backlogTasks.map(task => {
-                  const goal = getGoalForTask(task.goalId);
-                  return (
-                    <button
-                      key={task.id}
-                      onClick={() => handleAddFromBacklog(task.id)}
-                      className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-left hover:border-self hover:bg-self/5 transition-colors"
-                    >
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex-1 min-w-0">
-                          <h4 className="text-sm font-semibold text-gray-800">{task.title}</h4>
-                          <div className="flex items-center gap-2 mt-1 text-xs text-gray-500">
-                            <span>{task.duration || 25} min</span>
-                            {goal && (
-                              <span className="text-story">
-                                {goal.emoji ? `${goal.emoji} ` : '→ '}{goal.title}
-                              </span>
-                            )}
-                          </div>
+                backlogTasks.map(task => (
+                  <button
+                    key={task.id}
+                    onClick={() => handleAddFromBacklog(task.id)}
+                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-left hover:border-self hover:bg-self/5 transition-colors"
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-sm font-semibold text-gray-800">{task.title}</h4>
+                        <div className="flex items-center gap-2 mt-1 text-xs text-gray-500">
+                          <span>{task.duration || 25} min</span>
                         </div>
-                        <span className="text-self text-xs font-semibold">Add</span>
                       </div>
-                    </button>
-                  );
-                })
+                      <span className="text-self text-xs font-semibold">Add</span>
+                    </div>
+                  </button>
+                ))
               )}
             </div>
           </div>

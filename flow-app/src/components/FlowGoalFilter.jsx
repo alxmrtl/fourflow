@@ -325,12 +325,12 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
           </div>
 
           {/* Missions */}
-          <div>
-            <div className="flex items-center justify-between mb-1">
-              <label className="text-xs text-gray-600">Missions (Optional)</label>
+          <div className="bg-story/5 border-2 border-story/20 rounded-lg p-3">
+            <div className="flex items-center justify-between mb-3">
+              <label className="text-sm font-semibold text-story">Missions (Optional)</label>
               <button
                 onClick={handleAddMission}
-                className="text-xs text-story hover:text-story/80"
+                className="text-xs text-story hover:text-story/80 font-medium"
               >
                 + Add
               </button>
@@ -343,7 +343,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
                     value={mission}
                     onChange={(e) => handleUpdateMission(idx, e.target.value)}
                     placeholder="Mission description..."
-                    className="flex-1 p-2 text-sm border-2 border-gray-200 rounded-lg focus:border-story focus:outline-none"
+                    className="flex-1 p-2 text-sm border-2 border-gray-200 rounded-lg focus:border-story focus:outline-none bg-white"
                   />
                   <button
                     onClick={() => handleDeleteMission(idx)}
