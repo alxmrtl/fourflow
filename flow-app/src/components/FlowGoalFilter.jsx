@@ -113,7 +113,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
   if (activeGoals.length === 0) {
     return (
       <div
-        className="overflow-hidden transition-all duration-300 ease-in-out"
+        className="overflow-hidden transition-all duration-300 ease-in-out shadow-md"
         style={{
           background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(96, 165, 250, 0.05) 100%)',
         }}
@@ -209,7 +209,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
 
   return (
     <div
-      className="overflow-hidden transition-all duration-300 ease-in-out"
+      className="overflow-hidden transition-all duration-300 ease-in-out shadow-md"
       style={{
         background: isEditing || showAddGoal
           ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(96, 165, 250, 0.08) 100%)'

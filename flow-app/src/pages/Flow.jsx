@@ -42,16 +42,16 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = fal
     <div
       ref={setNodeRef}
       style={style}
-      className={`bg-white/90 backdrop-blur-sm border rounded-lg p-2 hover:border-self/40 transition-all ${
-        isNextUp ? 'border-self shadow-md shadow-self/20' : 'border-gray-300'
+      className={`group/item rounded-lg transition-all ${
+        isNextUp ? 'bg-white/90 backdrop-blur-sm border border-self shadow-md shadow-self/20 p-2' : 'py-2 px-3 hover:bg-self/5'
       }`}
     >
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-3">
         {/* Drag Handle */}
         <button
           {...attributes}
           {...listeners}
-          className="flex-shrink-0 text-gray-400 hover:text-gray-600 cursor-grab active:cursor-grabbing"
+          className="flex-shrink-0 text-gray-400 hover:text-gray-600 cursor-grab active:cursor-grabbing opacity-0 group-hover/item:opacity-100 transition-opacity"
         >
           <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
             <circle cx="5" cy="3" r="1.5" />
@@ -63,17 +63,20 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = fal
           </svg>
         </button>
 
+        {/* Bullet Point for non-next-up items */}
+        {!isNextUp && <span className="text-sm text-self">•</span>}
+
         {/* Task Content */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2">
-            <h3 className="text-xs font-medium text-gray-800 truncate">
+            <h3 className="text-sm font-normal text-gray-800 truncate">
               {task.title}
             </h3>
             <div className="flex items-center gap-2 flex-shrink-0">
-              <span className="text-[10px] text-gray-500 font-medium">{task.duration || 25}m</span>
+              <span className="text-xs text-self/60">[{task.duration || 25}min]</span>
               <button
                 onClick={onRemove}
-                className="text-gray-400 hover:text-red-600 text-xs transition-colors"
+                className="text-gray-400 hover:text-red-600 text-xs transition-colors opacity-0 group-hover/item:opacity-100"
               >
                 ✕
               </button>
@@ -273,7 +276,7 @@ const Flow = () => {
 
         {/* ACTION Panel */}
         <div
-          className="overflow-hidden -mx-6"
+          className="overflow-hidden -mx-6 shadow-sm"
           style={{
             background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.10) 50%, rgba(234, 88, 12, 0.08) 100%)',
           }}
@@ -285,7 +288,16 @@ const Flow = () => {
               alt="Action"
               className="w-6 h-6 object-contain flex-shrink-0"
             />
-            <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
+            <h2 className="text-xs font-semibold tracking-wide text-self uppercase">
+              {selectedGoalId && goals.find(g => g.id === selectedGoalId) ? (
+                <>
+                  {goals.find(g => g.id === selectedGoalId).emoji}{' '}
+                  {goals.find(g => g.id === selectedGoalId).title}
+                </>
+              ) : (
+                'Action'
+              )}
+            </h2>
           </div>
 
           {/* Content */}
@@ -330,8 +342,7 @@ const Flow = () => {
                 {backlogTasks.length > 0 && (
                   <div>
                     <div className="flex items-center justify-between mb-1.5">
-                      <p className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">Backlog</p>
-                      <span className="text-[10px] text-gray-400">{backlogTasks.length}</span>
+                      <p className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">TODO ({backlogTasks.length})</p>
                     </div>
                     <DndContext
                       sensors={sensors}
@@ -369,7 +380,7 @@ const Flow = () => {
               </>
             ) : (
               <div className="text-center py-8">
-                <p className="text-sm text-gray-500">Select a goal to see actions</p>
+                <p className="text-sm text-gray-500">← Select a mission to view actions</p>
               </div>
             )}
           </div>

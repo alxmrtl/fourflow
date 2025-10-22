@@ -67,7 +67,7 @@ const FlowSpiritPanel = () => {
 
   return (
     <div
-      className="overflow-hidden transition-all duration-300 ease-in-out relative group -mx-6"
+      className="overflow-hidden transition-all duration-300 ease-in-out relative group -mx-6 shadow-lg"
       style={{
         background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(168, 85, 247, 0.05) 100%)',
       }}
