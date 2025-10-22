@@ -73,13 +73,13 @@ const FlowSpiritPanel = () => {
               onClick={handleEdit}
               className="w-full text-left group/vision transition-all duration-200"
             >
-              <div className="px-3 py-1.5 rounded-full bg-spirit-dark hover:bg-spirit transition-all">
+              <div className="px-3 py-1.5 rounded-full bg-spirit-dark hover:bg-spirit transition-all h-8 flex items-center">
                 {hasVision ? (
-                  <p className="text-xs leading-relaxed text-white italic truncate">
+                  <p className="text-xs leading-tight text-white italic truncate">
                     {profile.vision}
                   </p>
                 ) : (
-                  <p className="text-xs text-white/70 italic">
+                  <p className="text-xs leading-tight text-white/70 italic">
                     Click to set your vision...
                   </p>
                 )}
@@ -94,11 +94,8 @@ const FlowSpiritPanel = () => {
                 onKeyDown={handleKeyDown}
                 onBlur={handleBlur}
                 placeholder="Your aspirational vision for daily action..."
-                className="w-full px-3 py-1.5 text-xs leading-relaxed border border-spirit rounded-full focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all"
+                className="w-full px-3 py-1.5 text-xs leading-tight border border-spirit rounded-full focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all h-8"
                 rows={1}
-                style={{
-                  minHeight: '2rem',
-                }}
               />
               {/* Helper text when editing */}
               <div className="absolute -bottom-4 right-0 text-[10px] text-spirit/60">
