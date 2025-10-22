@@ -282,16 +282,13 @@ const Flow = () => {
               alt="Action"
               className="w-6 h-6 object-contain flex-shrink-0"
             />
-            <h2 className="text-xs font-semibold tracking-wide text-self uppercase">
-              {selectedGoalId && goals.find(g => g.id === selectedGoalId) ? (
-                <>
-                  {goals.find(g => g.id === selectedGoalId).emoji}{' '}
-                  {goals.find(g => g.id === selectedGoalId).title}
-                </>
-              ) : (
-                'Action'
-              )}
-            </h2>
+            <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
+            {selectedGoalId && goals.find(g => g.id === selectedGoalId) && (
+              <div className="ml-2 px-3 py-1 bg-story text-white rounded-full text-xs font-medium flex items-center gap-1.5 shadow-sm">
+                <span>{goals.find(g => g.id === selectedGoalId).emoji}</span>
+                <span>{goals.find(g => g.id === selectedGoalId).title}</span>
+              </div>
+            )}
           </div>
 
           {/* Content */}
