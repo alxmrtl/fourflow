@@ -75,11 +75,11 @@ const FlowSpiritPanel = () => {
             >
               <div className="px-3 py-1.5 rounded-full bg-spirit-dark hover:bg-spirit transition-all h-8 flex items-center">
                 {hasVision ? (
-                  <p className="text-xs leading-tight text-white italic truncate">
+                  <p className="leading-tight text-white italic truncate" style={{ fontSize: '16px' }}>
                     {profile.vision}
                   </p>
                 ) : (
-                  <p className="text-xs leading-tight text-white/70 italic">
+                  <p className="leading-tight text-white/70 italic" style={{ fontSize: '16px' }}>
                     Click to set your vision...
                   </p>
                 )}
@@ -94,10 +94,10 @@ const FlowSpiritPanel = () => {
                 onKeyDown={handleKeyDown}
                 onBlur={handleBlur}
                 placeholder="Your aspirational vision for daily action..."
-                className="w-full px-3 py-1.5 text-xs leading-tight border border-spirit rounded-full focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all h-8"
+                className="w-full px-3 py-1.5 leading-tight border border-spirit rounded-full focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all h-8"
                 rows={1}
                 style={{
-                  fontSize: '0.75rem',
+                  fontSize: '16px',
                   fontFamily: 'inherit',
                 }}
               />
