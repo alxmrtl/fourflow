@@ -18,7 +18,6 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 import FlowSpiritPanel from '../components/FlowSpiritPanel';
 import FlowGoalFilter from '../components/FlowGoalFilter';
-import FlowSetupPanel from '../components/FlowSetupPanel';
 import QuickAddAction from '../components/QuickAddAction';
 
 // Sortable Action Card Component
@@ -261,17 +260,12 @@ const Flow = () => {
         {/* SPIRIT Panel */}
         <FlowSpiritPanel />
 
-        {/* Row 2: MISSION (75%) and SETUP (25%) */}
-        <div className="flex gap-0 -mx-6">
-          <div className="flex-[3]">
-            <FlowGoalFilter
-              selectedGoalId={selectedGoalId}
-              onGoalSelect={handleGoalSelect}
-            />
-          </div>
-          <div className="flex-1">
-            <FlowSetupPanel />
-          </div>
+        {/* MISSION Panel */}
+        <div className="-mx-6">
+          <FlowGoalFilter
+            selectedGoalId={selectedGoalId}
+            onGoalSelect={handleGoalSelect}
+          />
         </div>
 
         {/* ACTION Panel */}

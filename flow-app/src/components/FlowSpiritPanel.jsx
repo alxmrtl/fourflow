@@ -94,7 +94,7 @@ const FlowSpiritPanel = () => {
             >
               <div className="px-3 py-1.5 rounded-full bg-spirit-dark hover:bg-spirit transition-all min-h-[32px] flex items-center">
                 {hasVision ? (
-                  <p className="leading-tight text-white italic truncate" style={{ fontSize: '14px' }}>
+                  <p className="leading-tight text-white italic break-words" style={{ fontSize: '14px' }}>
                     {profile.vision}
                   </p>
                 ) : (

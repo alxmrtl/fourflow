@@ -8,6 +8,7 @@ const Navigation = () => {
 
   const pages = [
     { id: 'flow', label: 'FLOW', emoji: '⚡' },
+    { id: 'setup', label: 'SETUP', emoji: '⚙️' },
     { id: 'stats', label: 'STATS', emoji: '📊' },
     { id: 'about', label: 'ABOUT', emoji: 'ℹ️' },
   ];
