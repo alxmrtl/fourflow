@@ -21,8 +21,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <Header />
-
       <div className="flex flex-col md:flex-row">
         {/* Sidebar Navigation (Desktop) */}
         <aside className="hidden md:block md:w-64 md:sticky md:top-0 md:h-screen border-r border-gray-200">

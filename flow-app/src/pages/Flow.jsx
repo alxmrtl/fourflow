@@ -42,18 +42,18 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = fal
     <div
       ref={setNodeRef}
       style={style}
-      className={`bg-white border-2 rounded-lg p-3 hover:border-self/30 transition-colors ${
-        isNextUp ? 'border-self shadow-md shadow-self/20' : 'border-gray-200'
+      className={`bg-white/90 backdrop-blur-sm border rounded-lg p-2 hover:border-self/40 transition-all ${
+        isNextUp ? 'border-self shadow-md shadow-self/20' : 'border-gray-300'
       }`}
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2">
         {/* Drag Handle */}
         <button
           {...attributes}
           {...listeners}
           className="flex-shrink-0 text-gray-400 hover:text-gray-600 cursor-grab active:cursor-grabbing"
         >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
             <circle cx="5" cy="3" r="1.5" />
             <circle cx="11" cy="3" r="1.5" />
             <circle cx="5" cy="8" r="1.5" />
@@ -66,14 +66,14 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = fal
         {/* Task Content */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2">
-            <h3 className="text-sm font-semibold text-gray-800 truncate">
+            <h3 className="text-xs font-medium text-gray-800 truncate">
               {task.title}
             </h3>
             <div className="flex items-center gap-2 flex-shrink-0">
-              <span className="text-xs text-gray-500">{task.duration || 25} min</span>
+              <span className="text-[10px] text-gray-500 font-medium">{task.duration || 25}m</span>
               <button
                 onClick={onRemove}
-                className="text-gray-400 hover:text-red-600 text-sm transition-colors"
+                className="text-gray-400 hover:text-red-600 text-xs transition-colors"
               >
                 ✕
               </button>
@@ -86,7 +86,7 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = fal
       {showStartButton && (
         <button
           onClick={onStartFlow}
-          className="w-full bg-self text-white py-2 rounded-lg text-sm font-semibold hover:bg-self/90 transition-colors mt-3"
+          className="w-full bg-self text-white py-2 rounded-lg text-xs font-semibold hover:bg-self/90 transition-colors mt-2"
         >
           Start Flow
         </button>
@@ -254,7 +254,7 @@ const Flow = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6 pb-24 md:pb-6">
-      <div className="space-y-4">
+      <div className="space-y-0">
         {/* SPIRIT Panel */}
         <FlowSpiritPanel />
 
@@ -269,21 +269,23 @@ const Flow = () => {
 
         {/* ACTION Panel */}
         <div
-          className="border-3 rounded-lg overflow-hidden border-self"
-          style={{ borderWidth: '3px' }}
+          className="overflow-hidden -mx-6"
+          style={{
+            background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.10) 50%, rgba(234, 88, 12, 0.08) 100%)',
+          }}
         >
           {/* Header with Logo and Title */}
-          <div className="px-3 py-2 flex items-center gap-3 bg-self/5">
+          <div className="px-6 py-2 flex items-center gap-2">
             <img
               src="/FOCUSED BODY.png"
               alt="Action"
-              className="w-8 h-8 object-contain flex-shrink-0"
+              className="w-6 h-6 object-contain flex-shrink-0"
             />
-            <h2 className="text-sm font-semibold text-self">ACTION</h2>
+            <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
           </div>
 
           {/* Content */}
-          <div className="p-3 space-y-3 bg-white">
+          <div className="px-6 pb-3 space-y-3">
             {selectedGoalId ? (
               <>
                 {/* Quick Add Action - Narrow Expandable */}
@@ -295,9 +297,9 @@ const Flow = () => {
                 {/* Next Up - First in Queue */}
                 {nextUpTask && (
                   <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-2 h-2 rounded-full bg-self animate-pulse"></div>
-                      <p className="text-xs font-bold text-self uppercase tracking-wide">Next Up</p>
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
+                      <p className="text-[10px] font-bold text-self uppercase tracking-wider">Next Up</p>
                     </div>
                     <DndContext
                       sensors={sensors}
@@ -323,9 +325,9 @@ const Flow = () => {
                 {/* Backlog */}
                 {backlogTasks.length > 0 && (
                   <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Backlog</p>
-                      <span className="text-xs text-gray-400">{backlogTasks.length} action{backlogTasks.length !== 1 ? 's' : ''}</span>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <p className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">Backlog</p>
+                      <span className="text-[10px] text-gray-400">{backlogTasks.length}</span>
                     </div>
                     <DndContext
                       sensors={sensors}
@@ -336,7 +338,7 @@ const Flow = () => {
                         items={allGoalTasks.map(a => a.id)}
                         strategy={verticalListSortingStrategy}
                       >
-                        <div className="space-y-2">
+                        <div className="space-y-1.5">
                           {backlogTasks.slice(0, 5).map(task => (
                             <SortableActionCard
                               key={task.id}
@@ -353,9 +355,9 @@ const Flow = () => {
                     {backlogTasks.length > 5 && (
                       <button
                         onClick={() => setShowBacklog(true)}
-                        className="w-full mt-2 py-2 text-xs text-self hover:text-self/80 font-medium transition-colors"
+                        className="w-full mt-1.5 py-1.5 text-[10px] text-self/70 hover:text-self font-medium transition-colors"
                       >
-                        Show {backlogTasks.length - 5} more...
+                        +{backlogTasks.length - 5} more
                       </button>
                     )}
                   </div>

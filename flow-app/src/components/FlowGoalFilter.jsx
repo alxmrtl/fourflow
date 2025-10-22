@@ -113,30 +113,27 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
   if (activeGoals.length === 0) {
     return (
       <div
-        className={`border-3 rounded-lg overflow-hidden transition-all duration-300 ease-in-out border-story ${
-          showAddGoal ? 'shadow-lg shadow-story/20' : ''
-        }`}
+        className="overflow-hidden transition-all duration-300 ease-in-out -mx-6"
         style={{
-          maxHeight: showAddGoal ? '400px' : 'none',
-          borderWidth: '3px',
+          background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(96, 165, 250, 0.05) 100%)',
         }}
       >
         {/* Header with Logo and Title */}
-        <div className="px-3 py-2 flex items-center gap-3 bg-story/5">
+        <div className="px-6 py-2 flex items-center gap-2">
           <img
             src="/WORTHY MISSION.png"
             alt="Goals"
-            className="w-8 h-8 object-contain flex-shrink-0"
+            className="w-6 h-6 object-contain flex-shrink-0"
           />
-          <h2 className="text-sm font-semibold text-story">MISSION</h2>
+          <h2 className="text-xs font-semibold tracking-wide text-story uppercase">Mission</h2>
         </div>
 
         {/* Content */}
         <button
           onClick={() => setShowAddGoal(!showAddGoal)}
-          className="w-full text-left hover:bg-story/5 transition-colors bg-white px-3 py-2"
+          className="w-full text-left px-6 pb-2"
         >
-          <span className="text-sm text-gray-500">
+          <span className="text-xs text-gray-500">
             {showAddGoal ? 'Adding new goal...' : '+ Add your first goal'}
           </span>
         </button>
@@ -212,25 +209,26 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
 
   return (
     <div
-      className={`border-3 rounded-lg overflow-hidden transition-all duration-300 ease-in-out border-story ${
-        isEditing || showAddGoal ? 'shadow-lg shadow-story/20' : ''
-      }`}
+      className="overflow-hidden transition-all duration-300 ease-in-out -mx-6"
       style={{
-        maxHeight: isEditing || showAddGoal ? '600px' : 'none',
-        borderWidth: '3px',
+        background: isEditing || showAddGoal
+          ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(96, 165, 250, 0.08) 100%)'
+          : 'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(96, 165, 250, 0.05) 100%)',
       }}
     >
-      {/* Header with Logo, Title, and Emoji Picker */}
-      <div className="px-3 py-2 flex items-center gap-3 bg-story/5">
+      {/* Header with Logo and Title */}
+      <div className="px-6 py-2 flex items-center gap-2">
         <img
           src="/WORTHY MISSION.png"
           alt="Goals"
-          className="w-8 h-8 object-contain flex-shrink-0"
+          className="w-6 h-6 object-contain flex-shrink-0"
         />
-        <h2 className="text-sm font-semibold text-story">MISSION</h2>
+        <h2 className="text-xs font-semibold tracking-wide text-story uppercase">Mission</h2>
+      </div>
 
-        {/* Emoji Picker Section */}
-        <div className="ml-auto flex items-center gap-1.5 pl-3 border-l-2 border-story/20">
+      {/* Pills Section - Horizontal scroll with missions */}
+      <div className="px-6 pb-2">
+        <div className="flex items-center gap-2 flex-wrap">
           {activeGoals.map((goal) => {
             const isSelected = selectedGoalId === goal.id;
             return (
@@ -240,18 +238,23 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
                   e.stopPropagation();
                   if (!isEditing && !showAddGoal) onGoalSelect(goal.id);
                 }}
+                onDoubleClick={(e) => {
+                  e.stopPropagation();
+                  if (isSelected && !isEditing && !showAddGoal) handleEdit();
+                }}
                 disabled={isEditing || showAddGoal}
                 className={`
-                  text-base p-1 rounded transition-all flex-shrink-0
+                  text-[11px] px-3 py-1.5 rounded-full transition-all flex-shrink-0 font-medium
                   ${isSelected
                     ? 'bg-story text-white shadow-sm'
-                    : 'bg-white hover:bg-story/10 border border-story/20'
+                    : 'bg-white/60 hover:bg-white text-story border border-story/30'
                   }
                   ${isEditing || showAddGoal ? 'opacity-50 cursor-not-allowed' : ''}
                 `}
-                title={goal.title}
+                title={`${goal.emoji || '🎯'} ${goal.title}`}
               >
-                {goal.emoji || '🎯'}
+                <span className="mr-1">{goal.emoji || '🎯'}</span>
+                {goal.title}
               </button>
             );
           })}
@@ -261,27 +264,14 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
                 e.stopPropagation();
                 setShowAddGoal(true);
               }}
-              className="text-xs p-1 rounded bg-white border border-dashed border-story/30 hover:border-story/60 text-story/40 hover:text-story transition-all flex-shrink-0"
+              className="text-[11px] px-3 py-1.5 rounded-full bg-white/60 border border-dashed border-story/40 hover:border-story text-story/60 hover:text-story transition-all flex-shrink-0 font-medium"
               title="Add goal"
             >
-              +
+              + Add
             </button>
           )}
         </div>
       </div>
-
-      {/* Content - Mission Title */}
-      <button
-        onClick={!isEditing && !showAddGoal && selectedGoal ? handleEdit : undefined}
-        disabled={isEditing || showAddGoal}
-        className="w-full text-left hover:bg-story/5 transition-colors disabled:cursor-default bg-white px-3 py-3"
-      >
-        {selectedGoal && !isEditing && !showAddGoal && (
-          <p className="text-sm font-semibold text-story">
-            {selectedGoal.title}
-          </p>
-        )}
-      </button>
 
       {/* Expandable Edit Section */}
       {isEditing && editedGoal && (

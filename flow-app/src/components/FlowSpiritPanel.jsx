@@ -48,44 +48,39 @@ const FlowSpiritPanel = () => {
 
   return (
     <div
-      className="border-3 rounded-lg overflow-hidden transition-all duration-300 ease-in-out relative group"
+      className="overflow-hidden transition-all duration-300 ease-in-out relative group -mx-6"
       style={{
-        borderWidth: '3px',
-        background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(168, 85, 247, 0.03) 100%)',
-        borderColor: isEditing ? 'rgb(139, 92, 246)' : 'rgba(139, 92, 246, 0.4)',
-        boxShadow: isEditing
-          ? '0 0 20px rgba(139, 92, 246, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)'
-          : '0 0 0 rgba(139, 92, 246, 0)',
+        background: isEditing
+          ? 'linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(168, 85, 247, 0.08) 100%)'
+          : 'linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(168, 85, 247, 0.05) 100%)',
       }}
     >
       {/* Header with Logo and Title */}
-      <div className="px-3 py-2 flex items-center gap-3 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-spirit/8 via-spirit/5 to-transparent"></div>
+      <div className="px-6 py-2 flex items-center gap-2">
         <img
           src="/VISUALIZED VISION.png"
           alt="Vision"
-          className="w-8 h-8 object-contain flex-shrink-0 relative z-10 drop-shadow-sm"
+          className="w-6 h-6 object-contain flex-shrink-0"
         />
-        <h2 className="text-sm font-bold tracking-wider text-spirit relative z-10 flex items-center gap-2">
-          VISION STATEMENT
-          <span className="text-xs font-normal opacity-60">✦</span>
+        <h2 className="text-xs font-semibold tracking-wide text-spirit uppercase">
+          Spirit
         </h2>
       </div>
 
       {/* Inline Editable Content */}
-      <div className="px-3 py-3 bg-white/60 backdrop-blur-sm relative">
+      <div className="px-6 pb-2 relative">
         {!isEditing ? (
           <button
             onClick={handleEdit}
-            className="w-full text-left group/vision transition-all duration-200 rounded-md px-2 py-1 -mx-2 -my-1 hover:bg-spirit/5"
+            className="w-full text-left group/vision transition-all duration-200"
           >
             <div className="flex-1 min-w-0 relative">
               {hasVision ? (
-                <p className="text-sm leading-relaxed text-gray-800 font-medium italic tracking-wide">
+                <p className="text-xs leading-relaxed text-gray-700 italic">
                   {profile.vision}
                 </p>
               ) : (
-                <p className="text-sm text-gray-400 italic">
+                <p className="text-xs text-gray-400 italic">
                   Click to set your vision statement...
                 </p>
               )}
@@ -103,29 +98,20 @@ const FlowSpiritPanel = () => {
             onKeyDown={handleKeyDown}
             onBlur={handleBlur}
             placeholder="Your aspirational vision for daily action..."
-            className="w-full p-2 text-sm leading-relaxed border-2 border-spirit/40 rounded-md focus:border-spirit focus:outline-none resize-none bg-white/80 font-medium italic tracking-wide text-gray-800 transition-all"
-            rows={3}
+            className="w-full p-2 text-xs leading-relaxed border border-spirit/40 rounded focus:border-spirit focus:outline-none resize-none bg-white/80 italic text-gray-700 transition-all"
+            rows={2}
             style={{
-              minHeight: '4rem',
-              boxShadow: '0 2px 8px rgba(139, 92, 246, 0.1)',
+              minHeight: '3rem',
             }}
           />
         )}
       </div>
 
-      {/* Inspirational accent line */}
-      <div
-        className="h-1 bg-gradient-to-r from-transparent via-spirit/30 to-transparent transition-opacity duration-300"
-        style={{
-          opacity: isEditing ? 1 : 0.3,
-        }}
-      ></div>
-
       {/* Helper text when editing */}
       {isEditing && (
-        <div className="px-3 py-1.5 text-xs text-spirit/60 bg-spirit/5 flex justify-between items-center">
-          <span className="italic">Your north star guiding daily actions</span>
-          <span>⌘+Enter to save • Esc to cancel</span>
+        <div className="px-6 pb-2 text-[10px] text-spirit/60 flex justify-between items-center">
+          <span className="italic">Your north star</span>
+          <span>⌘+Enter • Esc</span>
         </div>
       )}
     </div>

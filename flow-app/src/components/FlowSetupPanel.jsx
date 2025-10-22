@@ -42,44 +42,29 @@ const FlowSetupPanel = () => {
 
   return (
     <div
-      className={`border-3 rounded-lg overflow-hidden transition-all duration-300 ease-in-out border-space ${
-        isEditing ? 'shadow-lg shadow-space/20' : ''
-      }`}
+      className="overflow-hidden transition-all duration-300 ease-in-out -mx-6"
       style={{
-        maxHeight: isEditing ? '400px' : 'none',
-        borderWidth: '3px',
+        background: isEditing
+          ? 'linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(74, 222, 128, 0.08) 100%)'
+          : 'linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(74, 222, 128, 0.05) 100%)',
       }}
     >
       {/* Header with Logo and Title */}
-      <div className="px-3 py-2 flex items-center gap-3 bg-space/5">
+      <div className="px-6 py-2 flex items-center gap-2">
         <img
           src="/OPTIMIZED TOOLS.png"
           alt="Setup"
-          className="w-8 h-8 object-contain flex-shrink-0"
+          className="w-6 h-6 object-contain flex-shrink-0"
         />
-        <h2 className="text-sm font-semibold text-space">SETUP</h2>
+        <h2 className="text-xs font-semibold tracking-wide text-space uppercase">Setup</h2>
+        <button
+          onClick={isEditing ? undefined : handleEdit}
+          disabled={isEditing}
+          className="ml-auto text-[10px] px-2 py-1 rounded bg-white/60 border border-space/30 hover:bg-white text-space font-medium transition-all"
+        >
+          {isEditing ? 'Editing...' : 'Settings'}
+        </button>
       </div>
-
-      {/* Content */}
-      <button
-        onClick={isEditing ? undefined : handleEdit}
-        disabled={isEditing}
-        className="w-full text-left hover:bg-space/5 transition-colors bg-white px-3 py-2"
-      >
-        <div className="flex items-center gap-2 flex-wrap flex-1">
-          {/* Sound Pill */}
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-space text-white text-xs font-semibold rounded-full">
-            <span>🔊</span>
-            <span>{getSoundLabel(settings.sound)}</span>
-          </span>
-
-          {/* Breathwork Pill */}
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-space text-white text-xs font-semibold rounded-full">
-            <span>🫁</span>
-            <span>{settings.breathworkBefore ? 'Breathwork' : 'No Breathwork'}</span>
-          </span>
-        </div>
-      </button>
 
       {/* Expandable Edit Section */}
       {isEditing && (
