@@ -258,14 +258,18 @@ const Flow = () => {
         {/* SPIRIT Panel */}
         <FlowSpiritPanel />
 
-        {/* GOAL Filter */}
-        <FlowGoalFilter
-          selectedGoalId={selectedGoalId}
-          onGoalSelect={handleGoalSelect}
-        />
-
-        {/* SETUP Panel */}
-        <FlowSetupPanel />
+        {/* Row 2: MISSION (75%) and SETUP (25%) */}
+        <div className="flex gap-0 -mx-6">
+          <div className="flex-[3]">
+            <FlowGoalFilter
+              selectedGoalId={selectedGoalId}
+              onGoalSelect={handleGoalSelect}
+            />
+          </div>
+          <div className="flex-1">
+            <FlowSetupPanel />
+          </div>
+        </div>
 
         {/* ACTION Panel */}
         <div

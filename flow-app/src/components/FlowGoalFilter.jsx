@@ -113,7 +113,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
   if (activeGoals.length === 0) {
     return (
       <div
-        className="overflow-hidden transition-all duration-300 ease-in-out -mx-6"
+        className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{
           background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(96, 165, 250, 0.05) 100%)',
         }}
@@ -209,7 +209,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
 
   return (
     <div
-      className="overflow-hidden transition-all duration-300 ease-in-out -mx-6"
+      className="overflow-hidden transition-all duration-300 ease-in-out"
       style={{
         background: isEditing || showAddGoal
           ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(96, 165, 250, 0.08) 100%)'
@@ -258,17 +258,52 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
               </button>
             );
           })}
-          {activeGoals.length < 5 && !isEditing && !showAddGoal && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowAddGoal(true);
-              }}
-              className="text-[11px] px-3 py-1.5 rounded-full bg-white/60 border border-dashed border-story/40 hover:border-story text-story/60 hover:text-story transition-all flex-shrink-0 font-medium"
-              title="Add goal"
-            >
-              + Add
-            </button>
+          {activeGoals.length < 5 && (
+            showAddGoal ? (
+              <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white border border-story">
+                <input
+                  type="text"
+                  value={newGoal.title}
+                  onChange={(e) => setNewGoal({ ...newGoal, title: e.target.value })}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                      handleAddNewGoal();
+                    } else if (e.key === 'Escape') {
+                      handleCancelAddGoal();
+                    }
+                  }}
+                  placeholder="Goal name..."
+                  className="w-32 text-[11px] px-1 py-0.5 border-none outline-none bg-transparent font-medium text-story"
+                  autoFocus
+                />
+                <button
+                  onClick={handleAddNewGoal}
+                  disabled={!newGoal.title.trim()}
+                  className="text-[10px] text-story hover:text-story/70 disabled:opacity-30"
+                >
+                  ✓
+                </button>
+                <button
+                  onClick={handleCancelAddGoal}
+                  className="text-[10px] text-gray-400 hover:text-gray-600"
+                >
+                  ✕
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (!isEditing) setShowAddGoal(true);
+                }}
+                disabled={isEditing}
+                className={`text-[11px] px-3 py-1.5 rounded-full bg-white/30 border border-dashed border-story/30 text-story/40 transition-all flex-shrink-0 font-medium ${isEditing ? 'opacity-30 cursor-not-allowed' : 'hover:border-story hover:text-story hover:bg-white/60'}`}
+                title="Add goal"
+              >
+                +
+              </button>
+            )
           )}
         </div>
       </div>
@@ -376,73 +411,6 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
         </div>
       )}
 
-      {/* Expandable Add New Goal Form */}
-      {showAddGoal && !isEditing && (
-        <div className="px-3 pb-3 space-y-3 border-t border-story/20 pt-3 bg-white transition-opacity duration-300 ease-in-out opacity-100">
-          <p className="text-sm font-semibold text-story">Add New Goal</p>
-
-          {/* Emoji Picker */}
-          <div>
-            <label className="text-xs text-gray-600 block mb-1">Emoji</label>
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => setShowNewGoalEmojiPicker(!showNewGoalEmojiPicker)}
-                className="w-full p-2 text-2xl border-2 border-story/30 rounded-lg hover:border-story focus:border-story focus:outline-none text-center"
-              >
-                {newGoal.emoji || '🎯'}
-              </button>
-              {showNewGoalEmojiPicker && (
-                <div className="absolute z-10 mt-1 w-full bg-white border-2 border-story/30 rounded-lg p-2 grid grid-cols-8 gap-1 shadow-lg max-h-48 overflow-y-auto">
-                  {EMOJI_SUGGESTIONS.map((emoji, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => {
-                        setNewGoal({ ...newGoal, emoji });
-                        setShowNewGoalEmojiPicker(false);
-                      }}
-                      className="text-xl hover:bg-story/10 rounded p-1 transition-colors"
-                    >
-                      {emoji}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Goal Title */}
-          <div>
-            <label className="text-xs text-gray-600 block mb-1">Goal Title</label>
-            <input
-              type="text"
-              value={newGoal.title}
-              onChange={(e) => setNewGoal({ ...newGoal, title: e.target.value })}
-              placeholder="Enter goal title..."
-              className="w-full p-2 border-2 border-story/30 rounded-lg focus:border-story focus:outline-none"
-              autoFocus
-            />
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex gap-2">
-            <button
-              onClick={handleAddNewGoal}
-              disabled={!newGoal.title.trim()}
-              className="flex-1 bg-story text-white py-2 rounded-lg text-sm font-semibold hover:bg-story/90 transition-colors disabled:opacity-50"
-            >
-              Add Goal
-            </button>
-            <button
-              onClick={handleCancelAddGoal}
-              className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300 transition-colors"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
