@@ -96,6 +96,10 @@ const FlowSpiritPanel = () => {
                 placeholder="Your aspirational vision for daily action..."
                 className="w-full px-3 py-1.5 text-xs leading-tight border border-spirit rounded-full focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all h-8"
                 rows={1}
+                style={{
+                  fontSize: '0.75rem',
+                  fontFamily: 'inherit',
+                }}
               />
               {/* Helper text when editing */}
               <div className="absolute -bottom-4 right-0 text-[10px] text-spirit/60">
