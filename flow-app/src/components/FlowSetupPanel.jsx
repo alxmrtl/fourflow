@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useStore } from '../store/useStore';
+import Modal from './Modal';
 
 const FlowSetupPanel = () => {
   const { settings, updateSettings } = useStore();
@@ -8,16 +9,15 @@ const FlowSetupPanel = () => {
   const [hasChanges, setHasChanges] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
 
-  const toggleOpen = () => {
-    if (isOpen) {
-      // Closing, reset to current settings
-      setEditedSettings({ ...settings });
-      setHasChanges(false);
-    } else {
-      // Opening, load current settings
-      setEditedSettings({ ...settings });
-    }
-    setIsOpen(!isOpen);
+  const handleOpen = () => {
+    setEditedSettings({ ...settings });
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setEditedSettings({ ...settings });
+    setHasChanges(false);
+    setIsOpen(false);
   };
 
   const handleSettingChange = async (newSettings) => {
@@ -33,17 +33,6 @@ const FlowSetupPanel = () => {
     }, 500);
   };
 
-  const getSoundLabel = (sound) => {
-    const soundMap = {
-      'silence': 'Silence',
-      'white-noise': 'White Noise',
-      'rain': 'Rain',
-      'cafe': 'Café',
-      'binaural': 'Binaural',
-    };
-    return soundMap[sound] || 'Silence';
-  };
-
   const SOUND_OPTIONS = [
     { value: 'silence', label: 'Silence', icon: '🔇' },
     { value: 'white-noise', label: 'White Noise', icon: '🌊' },
@@ -53,18 +42,16 @@ const FlowSetupPanel = () => {
   ];
 
   return (
-    <div
-      className="overflow-hidden transition-all duration-300 ease-in-out"
-      style={{
-        background: isOpen
-          ? 'linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(74, 222, 128, 0.08) 100%)'
-          : 'linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(74, 222, 128, 0.05) 100%)',
-      }}
-    >
+    <>
       {/* Setup Button */}
-      <div className="px-6 py-2">
+      <div
+        className="px-6 py-2"
+        style={{
+          background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(74, 222, 128, 0.05) 100%)',
+        }}
+      >
         <button
-          onClick={toggleOpen}
+          onClick={handleOpen}
           className="w-full flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-white/60 border border-space/30 hover:bg-white text-space font-medium transition-all"
         >
           <img
@@ -79,32 +66,38 @@ const FlowSetupPanel = () => {
           {isSaving && (
             <span className="text-[9px] text-space/60">Saving...</span>
           )}
-          <span className={`text-[10px] text-space/60 transition-transform ${isOpen ? 'rotate-180' : ''}`}>▼</span>
         </button>
       </div>
 
-      {/* Expandable Settings Panel */}
-      {isOpen && (
-        <div className="px-6 pb-3 space-y-3 pt-2 bg-white/30 transition-opacity duration-300 ease-in-out opacity-100">
+      {/* Settings Modal */}
+      <Modal
+        isOpen={isOpen}
+        onClose={handleClose}
+        title={{
+          icon: '/OPTIMIZED TOOLS.png',
+          text: 'Flow Setup'
+        }}
+      >
+        <div className="space-y-5">
           {/* Sound Selection */}
           <div>
-            <label className="text-[10px] text-gray-600 block mb-1.5 font-medium">Background Sound</label>
-            <div className="grid grid-cols-3 gap-1.5">
+            <label className="text-sm text-gray-700 font-semibold block mb-2.5">Background Sound</label>
+            <div className="grid grid-cols-3 gap-2">
               {SOUND_OPTIONS.map((option) => (
                 <button
                   key={option.value}
                   onClick={() => handleSettingChange({ ...editedSettings, sound: option.value })}
                   className={`
-                    p-1.5 rounded-lg border transition-all text-[10px] font-medium
+                    p-3 rounded-xl border-2 transition-all text-xs font-medium
                     ${editedSettings.sound === option.value
-                      ? 'border-space bg-space text-white'
-                      : 'border-gray-200 bg-white hover:border-space/50'
+                      ? 'border-space bg-space text-white shadow-lg scale-105'
+                      : 'border-gray-200 bg-white hover:border-space/50 hover:shadow-md'
                     }
                   `}
                 >
-                  <div className="flex flex-col items-center gap-0.5">
-                    <span className="text-sm">{option.icon}</span>
-                    <span>{option.label}</span>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <span className="text-2xl">{option.icon}</span>
+                    <span className="text-[11px]">{option.label}</span>
                   </div>
                 </button>
               ))}
@@ -114,7 +107,7 @@ const FlowSetupPanel = () => {
           {/* Volume Control */}
           {editedSettings.sound !== 'silence' && (
             <div>
-              <label className="text-[10px] text-gray-600 block mb-1 font-medium">
+              <label className="text-sm text-gray-700 font-semibold block mb-2">
                 Volume: {Math.round(editedSettings.volume * 100)}%
               </label>
               <input
@@ -124,27 +117,38 @@ const FlowSetupPanel = () => {
                 step="0.1"
                 value={editedSettings.volume}
                 onChange={(e) => handleSettingChange({ ...editedSettings, volume: parseFloat(e.target.value) })}
-                className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-space"
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-space"
               />
+              <div className="flex justify-between text-xs text-gray-500 mt-1">
+                <span>0%</span>
+                <span>100%</span>
+              </div>
             </div>
           )}
 
           {/* Breathwork Settings */}
           <div>
-            <label className="text-[10px] text-gray-600 block mb-1.5 font-medium">Breathwork</label>
-            <label className="flex items-center gap-2 p-1.5 border border-gray-200 rounded-lg cursor-pointer text-[10px] hover:border-space/50 transition-colors bg-white">
+            <label className="text-sm text-gray-700 font-semibold block mb-2.5">Breathwork</label>
+            <label className="flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl cursor-pointer text-sm hover:border-space/50 transition-all bg-white hover:shadow-md">
               <input
                 type="checkbox"
                 checked={editedSettings.breathworkBefore}
                 onChange={(e) => handleSettingChange({ ...editedSettings, breathworkBefore: e.target.checked })}
-                className="w-3 h-3 accent-space"
+                className="w-4 h-4 accent-space"
               />
-              <span>Enable breathwork before flow sessions</span>
+              <span className="flex-1">Enable breathwork before flow sessions</span>
             </label>
           </div>
+
+          {/* Save Status */}
+          {isSaving && (
+            <div className="text-center text-sm text-space font-medium">
+              Saving changes...
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </Modal>
+    </>
   );
 };
 
