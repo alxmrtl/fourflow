@@ -266,7 +266,7 @@ const Flow = () => {
             className="w-8 h-8 object-contain flex-shrink-0"
           />
           <h1 className="text-sm font-medium text-ivory leading-tight">
-            Align <span className="font-semibold text-spirit" style={{ textShadow: '0 0 8px rgba(255, 255, 255, 0.6)' }}>VISION</span>, <span className="font-semibold text-story" style={{ textShadow: '0 0 8px rgba(255, 255, 255, 0.6)' }}>MISSION</span>, <span className="font-semibold text-space" style={{ textShadow: '0 0 8px rgba(255, 255, 255, 0.6)' }}>SETUP</span> and <span className="font-semibold text-self" style={{ textShadow: '0 0 8px rgba(255, 255, 255, 0.6)' }}>ACTION</span> into <span className="font-bold text-ivory">FLOW</span>.
+            Align <span className="font-semibold text-spirit" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(122, 77, 164, 0.4)' }}>VISION</span>, <span className="font-semibold text-story" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(91, 132, 177, 0.4)' }}>MISSION</span>, <span className="font-semibold text-space" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(107, 162, 146, 0.4)' }}>SETUP</span> and <span className="font-semibold text-self" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(255, 111, 97, 0.4)' }}>ACTION</span> into <span className="font-bold text-ivory">FLOW</span>.
           </h1>
         </div>
 
