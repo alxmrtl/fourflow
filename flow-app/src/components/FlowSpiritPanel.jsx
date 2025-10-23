@@ -73,7 +73,7 @@ const FlowSpiritPanel = () => {
       }}
     >
       {/* Header with Logo, Title, and Vision Pill */}
-      <div className="px-6 py-2 flex items-center gap-3">
+      <div className="px-6 py-2.5 flex items-center gap-3">
         <div className="flex items-center gap-2">
           <img
             src="/VISUALIZED VISION.png"
@@ -94,11 +94,11 @@ const FlowSpiritPanel = () => {
             >
               <div className="px-3 py-1.5 rounded-full bg-spirit-dark hover:bg-spirit transition-all min-h-[32px] flex items-center">
                 {hasVision ? (
-                  <p className="leading-tight text-white italic break-words" style={{ fontSize: '14px' }}>
+                  <p className="leading-tight text-white italic break-words" style={{ fontSize: '12px' }}>
                     {profile.vision}
                   </p>
                 ) : (
-                  <p className="leading-tight text-white/70 italic" style={{ fontSize: '14px' }}>
+                  <p className="leading-tight text-white/70 italic" style={{ fontSize: '12px' }}>
                     Click to set your vision...
                   </p>
                 )}
@@ -116,7 +116,7 @@ const FlowSpiritPanel = () => {
                 className="flex-1 px-3 py-1.5 leading-tight border border-spirit rounded-full focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all overflow-hidden"
                 rows={1}
                 style={{
-                  fontSize: '14px',
+                  fontSize: '12px',
                   fontFamily: 'inherit',
                   minHeight: '32px',
                 }}

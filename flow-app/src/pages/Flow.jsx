@@ -69,11 +69,11 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = fal
         {/* Task Content */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2">
-            <h3 className="text-sm font-normal text-gray-800 truncate">
+            <h3 className="text-xs font-normal text-gray-800 truncate">
               {task.title}
             </h3>
             <div className="flex items-center gap-2 flex-shrink-0">
-              <span className="text-xs text-self/60">[{task.duration || 25}min]</span>
+              <span className="text-[10px] text-self/60">[{task.duration || 25}min]</span>
               <button
                 onClick={onRemove}
                 className="text-gray-400 hover:text-red-600 text-xs transition-colors opacity-0 group-hover/item:opacity-100"
@@ -282,7 +282,7 @@ const Flow = () => {
           }}
         >
           {/* Header with Logo and Title */}
-          <div className="px-6 py-2 flex items-center gap-2">
+          <div className="px-6 py-2.5 flex items-center gap-2">
             <img
               src="/FOCUSED BODY.png"
               alt="Action"
@@ -312,7 +312,7 @@ const Flow = () => {
                   <div>
                     <div className="flex items-center gap-2 mb-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
-                      <p className="text-[10px] font-bold text-self uppercase tracking-wider">Next Up</p>
+                      <p className="text-[9px] font-bold text-self uppercase tracking-wider">Next Up</p>
                     </div>
                     <DndContext
                       sensors={sensors}
@@ -339,7 +339,7 @@ const Flow = () => {
                 {backlogTasks.length > 0 && (
                   <div>
                     <div className="flex items-center justify-between mb-1.5">
-                      <p className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">TODO ({backlogTasks.length})</p>
+                      <p className="text-[9px] font-semibold text-gray-600 uppercase tracking-wider">TODO ({backlogTasks.length})</p>
                     </div>
                     <DndContext
                       sensors={sensors}

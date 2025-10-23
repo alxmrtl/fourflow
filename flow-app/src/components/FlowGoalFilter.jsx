@@ -217,7 +217,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
       }}
     >
       {/* Header with Logo, Title and Pills - Single Row */}
-      <div className="px-6 py-2 flex items-center gap-3">
+      <div className="px-6 py-2.5 flex items-center gap-3">
         <img
           src="/WORTHY MISSION.png"
           alt="Goals"
