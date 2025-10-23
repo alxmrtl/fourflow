@@ -28,12 +28,12 @@ const SetupBar = () => {
 
   // Sound options
   const SOUND_OPTIONS = [
-    { value: 'none', label: 'None' },
-    { value: 'white-noise', label: 'White Noise' },
-    { value: 'forest', label: 'Forest' },
-    { value: 'waves', label: 'Waves' },
-    { value: 'rain', label: 'Rain' },
-    { value: 'binaural', label: 'Binaural Beats' },
+    { value: 'none', label: 'None', emoji: '' },
+    { value: 'white-noise', label: 'White Noise', emoji: '🌫️' },
+    { value: 'forest', label: 'Forest', emoji: '🏞️' },
+    { value: 'waves', label: 'Waves', emoji: '🌊' },
+    { value: 'rain', label: 'Rain', emoji: '🌧️' },
+    { value: 'binaural', label: 'Binaural Beats', emoji: '🎧' },
   ];
 
   // Breathwork options - Before
@@ -50,10 +50,15 @@ const SetupBar = () => {
     { value: 'grounding-breath', label: 'Grounding Breath', pattern: BREATHWORK_PATTERNS.GROUNDING_BREATH },
   ];
 
-  // Get background sound text
+  // Get background sound text and emoji
   const getSoundText = () => {
     const option = SOUND_OPTIONS.find(opt => opt.value === settings.backgroundSound);
     return option ? option.label : 'None';
+  };
+
+  const getSoundEmoji = () => {
+    const option = SOUND_OPTIONS.find(opt => opt.value === settings.backgroundSound);
+    return option?.emoji || '';
   };
 
   // Get breathwork text - simplified to Enabled/Disabled
@@ -92,6 +97,7 @@ const SetupBar = () => {
   };
 
   const soundText = getSoundText();
+  const soundEmoji = getSoundEmoji();
   const breathworkText = getBreathworkText();
 
   return (
@@ -127,6 +133,7 @@ const SetupBar = () => {
                 }`}
               >
                 <span className="text-[9px] font-semibold text-space uppercase tracking-wide">Sound</span>
+                {soundEmoji && <span className="text-sm">{soundEmoji}</span>}
                 <span className="text-[9px] text-gray-700 truncate flex-1">{soundText}</span>
               </button>
 
