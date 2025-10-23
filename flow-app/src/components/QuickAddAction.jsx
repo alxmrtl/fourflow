@@ -50,7 +50,7 @@ const QuickAddAction = ({ selectedGoalId, onActionAdded, compact = false }) => {
 
   const inputTextSize = compact ? "text-[10px]" : "text-xs";
   const inputPadding = compact ? "px-1.5 py-1" : "px-2 py-1.5";
-  const placeholder = compact ? "add actions to support mission below..." : "Quick add action...";
+  const placeholder = compact ? "next action..." : "Quick add action...";
 
   return (
     <form onSubmit={handleAddAction} className={containerClass}>
