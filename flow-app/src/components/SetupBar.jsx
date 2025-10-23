@@ -101,13 +101,13 @@ const SetupBar = () => {
   return (
     <>
       <div
-        className="overflow-hidden -mx-6 shadow-sm"
+        className="overflow-visible -mx-6 shadow-sm"
         style={{
           background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(22, 163, 74, 0.10) 50%, rgba(21, 128, 61, 0.08) 100%)',
         }}
       >
         {/* Header with Logo and Title */}
-        <div className="px-6 py-2 flex items-center gap-3">
+        <div className="px-6 py-2 flex items-center gap-2">
           <img
             src="/OPTIMIZED TOOLS.png"
             alt="Setup"
@@ -116,7 +116,7 @@ const SetupBar = () => {
           <h2 className="text-xs font-semibold tracking-wide text-space uppercase">Setup</h2>
 
           {/* Configuration Display */}
-          <div className="flex items-center gap-2 ml-auto pr-1 relative">
+          <div className="flex items-center gap-2 ml-2 relative">
             {/* Sound Pill - Clickable */}
             <div ref={soundRef} className="relative">
               <button
