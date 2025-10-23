@@ -6,35 +6,35 @@ const SetupBar = () => {
   const { settings } = useStore();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Get background sound emoji and label
-  const getSoundDisplay = () => {
+  // Get background sound text
+  const getSoundText = () => {
     switch (settings.backgroundSound) {
       case 'whitenoise':
-        return { emoji: '🔊', label: 'White Noise' };
+        return 'White Noise';
       case 'binaural':
-        return { emoji: '🎧', label: 'Binaural' };
+        return 'Binaural';
       default:
-        return { emoji: '🔇', label: 'Silence' };
+        return 'Silence';
     }
   };
 
-  // Get breathwork display
-  const getBreathworkDisplay = () => {
+  // Get breathwork text
+  const getBreathworkText = () => {
     const { breathworkBefore, breathworkAfter } = settings;
 
     if (breathworkBefore && breathworkAfter) {
-      return { emoji: '✅', label: 'BOTH' };
+      return 'Both';
     } else if (breathworkBefore) {
-      return { emoji: '✅', label: 'BEFORE' };
+      return 'Before';
     } else if (breathworkAfter) {
-      return { emoji: '✅', label: 'AFTER' };
+      return 'After';
     } else {
-      return { emoji: '❌', label: '' };
+      return 'Off';
     }
   };
 
-  const soundDisplay = getSoundDisplay();
-  const breathworkDisplay = getBreathworkDisplay();
+  const soundText = getSoundText();
+  const breathworkText = getBreathworkText();
 
   return (
     <>
@@ -45,36 +45,35 @@ const SetupBar = () => {
         }}
       >
         {/* Header with Logo and Title */}
-        <div className="px-6 py-2 flex items-center gap-3">
+        <div className="px-6 py-2 flex items-center gap-2">
           <img
             src="/OPTIMIZED TOOLS.png"
             alt="Setup"
-            className="w-5 h-5 object-contain flex-shrink-0"
+            className="w-6 h-6 object-contain flex-shrink-0"
           />
-          <h2 className="text-[10px] font-semibold tracking-wide text-space uppercase">Setup</h2>
+          <h2 className="text-xs font-semibold tracking-wide text-space uppercase">Setup</h2>
 
           {/* Configuration Display */}
-          <div className="flex items-center gap-4 ml-auto">
-            {/* Background Sound */}
-            <div className="flex flex-col items-center">
-              <span className="text-lg">{soundDisplay.emoji}</span>
-              <span className="text-[9px] text-gray-600 uppercase tracking-wide">{soundDisplay.label}</span>
+          <div className="flex items-center gap-2 ml-auto pr-1">
+            {/* Sound Pill */}
+            <div className="flex items-center gap-1.5 px-3 py-1 bg-white/60 rounded-full border border-space/30">
+              <span className="text-[9px] font-semibold text-space uppercase tracking-wide">Sound</span>
+              <span className="text-[9px] text-gray-700">{soundText}</span>
             </div>
 
-            {/* Breathwork */}
-            <div className="flex flex-col items-center">
-              <span className="text-lg">{breathworkDisplay.emoji}</span>
-              {breathworkDisplay.label && (
-                <span className="text-[9px] text-gray-600 uppercase tracking-wide">{breathworkDisplay.label}</span>
-              )}
+            {/* Breathwork Pill */}
+            <div className="flex items-center gap-1.5 px-3 py-1 bg-white/60 rounded-full border border-space/30">
+              <span className="text-[9px] font-semibold text-space uppercase tracking-wide">Breathwork</span>
+              <span className="text-[9px] text-gray-700">{breathworkText}</span>
             </div>
 
-            {/* Edit Button */}
+            {/* Edit Button - Circular subtle style */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="ml-2 px-3 py-1.5 bg-space text-white rounded-lg text-[10px] font-semibold hover:bg-space/90 transition-colors shadow-sm"
+              className="w-7 h-7 rounded-full bg-space/10 border-2 border-dashed border-space/40 text-space transition-all flex items-center justify-center hover:border-space hover:bg-space/20 hover:scale-105"
+              title="Edit setup"
             >
-              EDIT
+              ⚙️
             </button>
           </div>
         </div>
