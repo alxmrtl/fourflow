@@ -71,26 +71,35 @@ const FlowSpiritPanel = () => {
         </div>
 
         {/* Vision Pill Container */}
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 flex items-center gap-2">
           {!isEditing ? (
-            <button
-              onClick={handleEdit}
-              className="w-full text-left group/vision transition-all duration-200"
-            >
-              <div className="px-3 py-1.5 rounded-lg bg-spirit-dark hover:bg-spirit transition-all min-h-[32px] flex items-center">
+            <>
+              <div
+                onClick={handleEdit}
+                className="flex-1 cursor-pointer px-3 py-1.5 rounded-lg bg-spirit-dark hover:bg-spirit transition-all h-[32px] flex items-center overflow-hidden"
+              >
                 {hasVision ? (
-                  <p className="leading-tight text-white italic break-words" style={{ fontSize: '12px' }}>
+                  <p className="text-12px leading-tight text-white italic truncate" style={{ fontFamily: 'inherit', lineHeight: '1.25' }}>
                     {profile.vision}
                   </p>
                 ) : (
-                  <p className="leading-tight text-white/70 italic" style={{ fontSize: '12px' }}>
+                  <p className="text-12px leading-tight text-white/70 italic" style={{ fontFamily: 'inherit', lineHeight: '1.25' }}>
                     Click to set your vision...
                   </p>
                 )}
               </div>
-            </button>
+              <button
+                onClick={handleEdit}
+                className="flex-shrink-0 w-7 h-7 rounded-full bg-spirit hover:bg-spirit-dark transition-all flex items-center justify-center text-white"
+                aria-label="Edit vision"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                  <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                </svg>
+              </button>
+            </>
           ) : (
-            <div className="relative flex items-center gap-2">
+            <>
               <textarea
                 ref={textareaRef}
                 value={editedVision}
@@ -98,7 +107,7 @@ const FlowSpiritPanel = () => {
                 onKeyDown={handleKeyDown}
                 onBlur={handleBlur}
                 placeholder="Your aspirational vision for daily action..."
-                className="text-12px flex-1 px-3 py-1.5 leading-tight border border-spirit rounded-lg focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all overflow-y-auto"
+                className="text-12px flex-1 px-3 py-1.5 leading-tight border border-spirit rounded-lg focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all scrollbar-hide"
                 rows={1}
                 style={{
                   fontFamily: 'inherit',
@@ -117,11 +126,7 @@ const FlowSpiritPanel = () => {
                   <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                 </svg>
               </button>
-              {/* Helper text when editing */}
-              <div className="absolute -bottom-4 right-0 text-[10px] text-spirit/60">
-                <span>⌘+Enter • Esc</span>
-              </div>
-            </div>
+            </>
           )}
         </div>
       </div>
