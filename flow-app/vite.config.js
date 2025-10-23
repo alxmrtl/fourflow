@@ -14,7 +14,7 @@ export default defineConfig({
         short_name: 'FourFlow',
         description: 'Train your focus muscle and cultivate flow states',
         version: '1.2.0',
-        theme_color: '#FF6F61',
+        theme_color: '#333333',
         background_color: '#F5F5F5',
         display: 'standalone',
         orientation: 'portrait',

@@ -256,10 +256,10 @@ const Flow = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 pb-24 md:pb-6">
+    <div className="max-w-4xl mx-auto pb-24 md:pb-6">
       <div className="space-y-0">
         {/* FourFlow Header */}
-        <div className="flex items-center gap-4 mb-3 -mx-6 px-6 py-1.5 bg-charcoal shadow-md">
+        <div className="flex items-center gap-4 px-6 py-1.5 bg-charcoal shadow-md">
           <img
             src="/logos/FOURFLOW - MAIN LOGO.png"
             alt="FourFlow"
@@ -270,25 +270,27 @@ const Flow = () => {
           </h1>
         </div>
 
-        {/* SPIRIT Panel */}
-        <FlowSpiritPanel />
+        {/* Content Area with Padding */}
+        <div className="p-6">
+          {/* SPIRIT Panel */}
+          <FlowSpiritPanel />
 
-        {/* MISSION Panel */}
-        <div className="-mx-6">
-          <FlowGoalFilter
-            selectedGoalId={selectedGoalId}
-            onGoalSelect={handleGoalSelect}
-          />
-        </div>
+          {/* MISSION Panel */}
+          <div className="-mx-6">
+            <FlowGoalFilter
+              selectedGoalId={selectedGoalId}
+              onGoalSelect={handleGoalSelect}
+            />
+          </div>
 
-        {/* SETUP Bar */}
-        <div className="-mx-6">
-          <SetupBar />
-        </div>
+          {/* SETUP Bar */}
+          <div className="-mx-6">
+            <SetupBar />
+          </div>
 
-        {/* ACTION Panel */}
-        <div
-          className="overflow-hidden -mx-6 shadow-sm"
+          {/* ACTION Panel */}
+          <div
+            className="overflow-hidden -mx-6 shadow-sm"
           style={{
             background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.10) 50%, rgba(234, 88, 12, 0.08) 100%)',
           }}
@@ -393,6 +395,7 @@ const Flow = () => {
               </div>
             )}
           </div>
+        </div>
         </div>
       </div>
 
