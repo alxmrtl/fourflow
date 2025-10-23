@@ -289,7 +289,12 @@ const Flow = () => {
           </div>
 
           {/* ACTION Panel */}
-          <div className="bg-self overflow-hidden -mx-6 shadow-sm">
+          <div
+            className="overflow-hidden -mx-6 shadow-sm"
+          style={{
+            background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.10) 50%, rgba(234, 88, 12, 0.08) 100%)',
+          }}
+        >
           {/* Header with Logo, Title, and Mission */}
           <div className="px-6 py-2.5">
             <div className="flex items-center justify-between gap-3">
@@ -305,9 +310,9 @@ const Flow = () => {
 
               {/* Right: Mission Pill (inline) */}
               {selectedGoalId && goals.find(g => g.id === selectedGoalId) && (
-                <div className="inline-flex px-2.5 py-0.5 bg-story/10 border border-story rounded-full text-[10px] font-medium flex items-center gap-1.5">
+                <div className="inline-flex px-2.5 py-0.5 bg-story rounded-full text-[10px] font-medium flex items-center gap-1.5">
                   <span>{goals.find(g => g.id === selectedGoalId).emoji}</span>
-                  <span className="text-story">{goals.find(g => g.id === selectedGoalId).title}</span>
+                  <span className="text-white">{goals.find(g => g.id === selectedGoalId).title}</span>
                 </div>
               )}
             </div>
