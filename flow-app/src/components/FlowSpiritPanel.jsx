@@ -81,8 +81,8 @@ const FlowSpiritPanel = () => {
                   fontFamily: 'inherit',
                   fontSize: '12px',
                   lineHeight: '1.25',
-                  height: '32px',
-                  maxHeight: '32px',
+                  minHeight: '40px',
+                  maxHeight: '60px',
                 }}
               >
                 {hasVision ? profile.vision : 'Click to set your vision...'}
@@ -112,8 +112,8 @@ const FlowSpiritPanel = () => {
                   fontFamily: 'inherit',
                   fontSize: '12px',
                   lineHeight: '1.25',
-                  height: '32px',
-                  maxHeight: '32px',
+                  minHeight: '40px',
+                  maxHeight: '60px',
                 }}
               />
               <button
