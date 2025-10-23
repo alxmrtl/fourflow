@@ -118,6 +118,7 @@ const FlowSpiritPanel = () => {
                 style={{
                   fontSize: '12px',
                   fontFamily: 'inherit',
+                  lineHeight: '1.25',
                   minHeight: '32px',
                 }}
               />
