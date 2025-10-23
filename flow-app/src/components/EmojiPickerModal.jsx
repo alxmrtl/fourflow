@@ -1,44 +1,51 @@
 import React, { useState } from 'react';
 
-// Emojis organized by Four Pillars
+// Emojis organized by Four Pillars - 24 emojis each (6x4 grid)
 const EMOJI_CATEGORIES = {
-  ALL: {
-    label: 'All',
-    color: 'gray-600',
-    emojis: []
-  },
   SPIRIT: {
     label: 'Spirit',
-    color: 'purple-600',
-    emojis: ['🧠', '💡', '🎯', '⭐', '🌟', '✨', '💫', '🧘', '🦋', '🌈', '☀️', '🔥', '⚡']
+    color: '#7A4DA4',
+    emojis: [
+      '🧠', '💡', '🎯', '⭐', '🌟', '✨',
+      '💫', '🧘', '🦋', '🌈', '☀️', '🔥',
+      '⚡', '🌙', '✝️', '☮️', '🕉️', '☯️',
+      '🙏', '🔮', '💭', '🌌', '🪬', '🕊️'
+    ]
   },
   STORY: {
     label: 'Story',
-    color: 'blue-600',
-    emojis: ['🏆', '🥇', '🥈', '🥉', '🏅', '🎖️', '🚀', '📈', '💪', '💥', '🎆', '🎓', '💎']
+    color: '#5B84B1',
+    emojis: [
+      '🏆', '🥇', '🥈', '🥉', '🏅', '🎖️',
+      '🚀', '📈', '💪', '💥', '🎆', '🎓',
+      '💎', '👑', '🗝️', '📜', '🎯', '🏁',
+      '⚔️', '🛡️', '🎪', '🎭', '📚', '✍️'
+    ]
   },
   SPACE: {
     label: 'Space',
-    color: 'green-600',
-    emojis: ['💼', '💻', '⚙️', '🛠️', '🏗️', '📊', '📚', '📖', '✏️', '📝', '🔬', '🔭', '📅', '🗓️', '⏰', '⏳', '🔔']
+    color: '#6BA292',
+    emojis: [
+      '💼', '💻', '⚙️', '🛠️', '🏗️', '📊',
+      '📚', '📖', '✏️', '📝', '🔬', '🔭',
+      '📅', '🗓️', '⏰', '⏳', '🔔', '📌',
+      '📍', '🗂️', '📋', '🖥️', '⌨️', '🖱️'
+    ]
   },
   SELF: {
     label: 'Self',
-    color: 'orange-600',
-    emojis: ['❤️', '💚', '🧡', '💙', '💜', '🏃', '🏋️', '🚴', '🏊', '⚽', '🏀', '🎾', '🥊', '🤸', '🎨', '🎭', '🎬', '🎤', '🎸', '🎹', '📷', '✍️', '🖌️', '🎪', '🌱', '🌿', '🌳', '🌸', '🌍']
+    color: '#FF6F61',
+    emojis: [
+      '❤️', '💚', '🧡', '💙', '💜', '🏃',
+      '🏋️', '🚴', '🏊', '⚽', '🏀', '🎾',
+      '🥊', '🤸', '🎨', '🎭', '🎬', '🎤',
+      '🎸', '🎹', '📷', '🌱', '🌿', '🌸'
+    ]
   }
 };
 
-// Populate ALL with all emojis
-EMOJI_CATEGORIES.ALL.emojis = [
-  ...EMOJI_CATEGORIES.SPIRIT.emojis,
-  ...EMOJI_CATEGORIES.STORY.emojis,
-  ...EMOJI_CATEGORIES.SPACE.emojis,
-  ...EMOJI_CATEGORIES.SELF.emojis
-];
-
 const EmojiPickerModal = ({ isOpen, onClose, onSelect, currentEmoji }) => {
-  const [selectedCategory, setSelectedCategory] = useState('ALL');
+  const [selectedCategory, setSelectedCategory] = useState('SPIRIT');
 
   if (!isOpen) return null;
 
@@ -80,34 +87,39 @@ const EmojiPickerModal = ({ isOpen, onClose, onSelect, currentEmoji }) => {
 
           {/* Category Filter Buttons */}
           <div className="flex gap-2 mt-4">
-            {Object.entries(EMOJI_CATEGORIES).map(([key, category]) => (
-              <button
-                key={key}
-                onClick={() => setSelectedCategory(key)}
-                className={`
-                  px-3 py-1.5 rounded-lg text-xs font-semibold transition-all
-                  ${selectedCategory === key
-                    ? `bg-${category.color} text-white shadow-md`
-                    : `bg-gray-100 text-gray-600 hover:bg-gray-200`
+            {Object.entries(EMOJI_CATEGORIES).map(([key, category]) => {
+              const isSelected = selectedCategory === key;
+              return (
+                <button
+                  key={key}
+                  onClick={() => setSelectedCategory(key)}
+                  className="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all"
+                  style={
+                    isSelected
+                      ? {
+                          backgroundColor: category.color,
+                          color: 'white',
+                          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                          border: 'none'
+                        }
+                      : {
+                          backgroundColor: '#F5F5F5',
+                          color: '#6B7280',
+                          border: `2px solid ${category.color}`,
+                          boxShadow: 'none'
+                        }
                   }
-                `}
-                style={selectedCategory === key ? {
-                  backgroundColor: key === 'ALL' ? '#4b5563' :
-                    key === 'SPIRIT' ? '#7c3aed' :
-                    key === 'STORY' ? '#2563eb' :
-                    key === 'SPACE' ? '#16a34a' :
-                    '#ea580c'
-                } : {}}
-              >
-                {category.label}
-              </button>
-            ))}
+                >
+                  {category.label}
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* Emoji Grid */}
+        {/* Emoji Grid - 6x4 */}
         <div className="px-6 py-5">
-          <div className="grid grid-cols-8 gap-2">
+          <div className="grid grid-cols-6 gap-2">
             {currentCategoryEmojis.map((emoji, idx) => (
               <button
                 key={idx}
