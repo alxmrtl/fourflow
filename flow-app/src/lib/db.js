@@ -105,6 +105,7 @@ export const db = {
       ...goal,
       createdAt: new Date().toISOString(),
       status: 'active',
+      dailyActionCount: goal.dailyActionCount || 3, // Default to 3 daily actions
     });
   },
 

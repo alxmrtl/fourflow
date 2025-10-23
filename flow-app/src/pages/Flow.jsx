@@ -22,7 +22,7 @@ import QuickAddAction from '../components/QuickAddAction';
 import SetupBar from '../components/SetupBar';
 
 // Sortable Action Card Component
-const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = false, isNextUp = false }) => {
+const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false }) => {
   const {
     attributes,
     listeners,
@@ -43,10 +43,12 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = fal
       ref={setNodeRef}
       style={style}
       className={`group/item rounded-lg transition-all ${
-        isNextUp ? 'bg-white/90 backdrop-blur-sm border border-self shadow-md shadow-self/20 p-2' : 'bg-white/70 border border-gray-200 py-2 px-3 hover:border-self/40 hover:bg-self/5'
+        isInToday
+          ? 'bg-white/90 backdrop-blur-sm border-2 border-self/60 shadow-lg shadow-self/10'
+          : 'bg-white/70 border border-gray-200 hover:border-self/40 hover:bg-self/5'
       }`}
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 p-2.5">
         {/* Drag Handle */}
         <button
           {...attributes}
@@ -63,17 +65,16 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = fal
           </svg>
         </button>
 
-        {/* Bullet Point for non-next-up items */}
-        {!isNextUp && <span className="text-sm text-self">•</span>}
-
         {/* Task Content */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2">
-            <h3 className="text-xs font-normal text-gray-800 truncate">
+            <h3 className="text-xs font-medium text-gray-800 truncate">
               {task.title}
             </h3>
             <div className="flex items-center gap-2 flex-shrink-0">
-              <span className="text-[10px] text-self/60">[{task.duration || 25}min]</span>
+              <span className={`text-xs font-semibold ${isInToday ? 'text-self' : 'text-self/70'}`}>
+                {task.duration || 25}min
+              </span>
               <button
                 onClick={onRemove}
                 className="text-gray-400 hover:text-red-600 text-xs transition-colors opacity-0 group-hover/item:opacity-100"
@@ -84,30 +85,15 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = fal
           </div>
         </div>
       </div>
-
-      {/* Start Flow Button - Only for Next Up */}
-      {showStartButton && (
-        <button
-          onClick={onStartFlow}
-          className="w-full bg-self text-white py-2 rounded-lg text-xs font-semibold hover:bg-self/90 transition-colors mt-2"
-        >
-          Start Flow
-        </button>
-      )}
     </div>
   );
 };
 
-// Empty Slot Component
-const EmptySlot = ({ onAddAction }) => {
+// Empty TODAY Slot Component
+const EmptyTodaySlot = ({ slotIndex }) => {
   return (
-    <div className="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-4">
-      <button
-        onClick={onAddAction}
-        className="w-full text-center text-sm text-gray-500 hover:text-self transition-colors"
-      >
-        + Add Action
-      </button>
+    <div className="bg-gradient-to-br from-self/5 to-self/10 border-2 border-dashed border-self/30 rounded-lg p-4 min-h-[60px] flex items-center justify-center transition-all hover:border-self/50 hover:bg-self/15">
+      <p className="text-xs text-self/60 font-medium">Drag action here</p>
     </div>
   );
 };
@@ -130,10 +116,11 @@ const Flow = () => {
     enterFocusMode,
     updateTask,
     deleteTask,
+    updateGoalDailyActionCount,
   } = useStore();
 
   const [selectedGoalId, setSelectedGoalId] = useState(null);
-  const [queuedActions, setQueuedActions] = useState([]);
+  const [todayActions, setTodayActions] = useState([]);
   const [showBacklog, setShowBacklog] = useState(false);
 
   const sensors = useSensors(
@@ -177,31 +164,23 @@ const Flow = () => {
     }
   }, [goals, lastSelectedGoalId, setLastSelectedGoal]);
 
-  // Auto-fill queue when goal changes
+  // Get selected goal
+  const selectedGoal = goals.find(g => g.id === selectedGoalId);
+  const dailyActionCount = selectedGoal?.dailyActionCount || 3;
+
+  // Auto-fill TODAY slots when goal changes
   useEffect(() => {
     if (selectedGoalId) {
-      const topActions = getTopActionsForGoal(selectedGoalId, 3);
-      setQueuedActions(topActions);
+      const topActions = getTopActionsForGoal(selectedGoalId, dailyActionCount);
+      setTodayActions(topActions);
     } else {
-      setQueuedActions([]);
+      setTodayActions([]);
     }
-  }, [selectedGoalId, tasks, getTopActionsForGoal]);
+  }, [selectedGoalId, tasks, getTopActionsForGoal, dailyActionCount]);
 
   const handleGoalSelect = (goalId) => {
     setSelectedGoalId(goalId);
     setLastSelectedGoal(goalId);
-  };
-
-  const handleDragEnd = (event) => {
-    const { active, over } = event;
-
-    if (active.id !== over.id) {
-      setQueuedActions((items) => {
-        const oldIndex = items.findIndex((item) => item.id === active.id);
-        const newIndex = items.findIndex((item) => item.id === over.id);
-        return arrayMove(items, oldIndex, newIndex);
-      });
-    }
   };
 
   const handleStartFlow = (task) => {
@@ -211,48 +190,77 @@ const Flow = () => {
     enterFocusMode();
   };
 
-  const handleRemoveFromQueue = (taskId) => {
-    setQueuedActions(prev => prev.filter(t => t.id !== taskId));
-  };
-
-  const handleAddFromBacklog = (taskId) => {
-    const task = tasks.find(t => t.id === taskId);
-    if (task && queuedActions.length < 3) {
-      setQueuedActions(prev => [...prev, task]);
-      setShowBacklog(false);
+  const handleDailyActionCountChange = async (newCount) => {
+    if (selectedGoalId) {
+      await updateGoalDailyActionCount(selectedGoalId, newCount);
+      // Adjust todayActions if needed
+      if (newCount < todayActions.length) {
+        setTodayActions(prev => prev.slice(0, newCount));
+      }
     }
   };
 
+  // Get all tasks for the selected goal
   const allGoalTasks = tasks
     .filter(t => t.status === 'backlog' && t.goalId === selectedGoalId)
     .sort((a, b) => (a.order || 0) - (b.order || 0));
 
-  const nextUpTask = allGoalTasks.length > 0 ? allGoalTasks[0] : null;
-  const backlogTasks = allGoalTasks.slice(1);
+  // Separate TODAY from TO-DO
+  const todayTaskIds = new Set(todayActions.map(t => t.id));
+  const todoTasks = allGoalTasks.filter(t => !todayTaskIds.has(t.id));
+  const firstTodayAction = todayActions[0];
 
   const handleDeleteTask = async (taskId) => {
     if (window.confirm('Delete this action?')) {
       await deleteTask(taskId);
       await loadTasks();
+      // Also remove from todayActions if present
+      setTodayActions(prev => prev.filter(t => t.id !== taskId));
     }
   };
 
-  const handleDragEndBacklog = async (event) => {
+  const handleDragEndToday = (event) => {
     const { active, over } = event;
 
-    if (active.id !== over?.id) {
-      const oldIndex = allGoalTasks.findIndex(a => a.id === active.id);
-      const newIndex = allGoalTasks.findIndex(a => a.id === over.id);
+    if (!over) return;
 
-      const reorderedActions = arrayMove(allGoalTasks, oldIndex, newIndex);
-
-      // Update order for all affected actions
-      for (let i = 0; i < reorderedActions.length; i++) {
-        await updateTask({ ...reorderedActions[i], order: i });
-      }
-
-      await loadTasks();
+    if (active.id !== over.id) {
+      setTodayActions((items) => {
+        const oldIndex = items.findIndex((item) => item.id === active.id);
+        const newIndex = items.findIndex((item) => item.id === over.id);
+        return arrayMove(items, oldIndex, newIndex);
+      });
     }
+  };
+
+  const handleDragEndTodo = async (event) => {
+    const { active, over } = event;
+
+    if (!over || active.id === over.id) return;
+
+    const oldIndex = todoTasks.findIndex(a => a.id === active.id);
+    const newIndex = todoTasks.findIndex(a => a.id === over.id);
+
+    const reorderedActions = arrayMove(todoTasks, oldIndex, newIndex);
+
+    // Update order for all todo actions
+    for (let i = 0; i < reorderedActions.length; i++) {
+      await updateTask({ ...reorderedActions[i], order: i + todayActions.length });
+    }
+
+    await loadTasks();
+  };
+
+  const handleMoveToToday = (taskId) => {
+    if (todayActions.length >= dailyActionCount) return;
+    const task = todoTasks.find(t => t.id === taskId);
+    if (task) {
+      setTodayActions(prev => [...prev, task]);
+    }
+  };
+
+  const handleMoveToTodo = (taskId) => {
+    setTodayActions(prev => prev.filter(t => t.id !== taskId));
   };
 
   return (
@@ -291,159 +299,166 @@ const Flow = () => {
           {/* ACTION Panel */}
           <div
             className="overflow-hidden -mx-6 shadow-sm"
-          style={{
-            background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.10) 50%, rgba(234, 88, 12, 0.08) 100%)',
-          }}
-        >
-          {/* Header with Logo, Title, and Mission */}
-          <div className="px-6 py-2.5">
-            <div className="flex items-center gap-3">
-              {/* Left: ACTION Header */}
-              <div className="flex items-center gap-2 flex-shrink-0">
-                <img
-                  src="/FOCUSED BODY.png"
-                  alt="Action"
-                  className="w-6 h-6 object-contain flex-shrink-0"
-                />
-                <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
+            style={{
+              background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.10) 50%, rgba(234, 88, 12, 0.08) 100%)',
+            }}
+          >
+            {/* Header with Logo, Title, and Mission */}
+            <div className="px-6 py-2.5">
+              <div className="flex items-center gap-3">
+                {/* Left: ACTION Header */}
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <img
+                    src="/FOCUSED BODY.png"
+                    alt="Action"
+                    className="w-6 h-6 object-contain flex-shrink-0"
+                  />
+                  <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
+                </div>
+
+                {/* Mission Pill */}
+                {selectedGoalId && selectedGoal && (
+                  <div className="inline-flex px-2.5 py-0.5 bg-story rounded-full text-[10px] font-medium flex items-center gap-1.5">
+                    <span>{selectedGoal.emoji}</span>
+                    <span className="text-white">{selectedGoal.title}</span>
+                  </div>
+                )}
+
+                {/* Daily Action Count Setting */}
+                {selectedGoalId && (
+                  <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/60 rounded-lg border border-space/30 hover:border-space/50 transition-all">
+                    <span className="text-[9px] font-semibold text-space uppercase tracking-wide">Daily</span>
+                    <div className="flex gap-0.5">
+                      {[1, 2, 3].map(num => (
+                        <button
+                          key={num}
+                          onClick={() => handleDailyActionCountChange(num)}
+                          className={`w-5 h-5 text-[10px] font-bold rounded transition-all ${
+                            dailyActionCount === num
+                              ? 'bg-space text-white'
+                              : 'bg-white text-gray-400 hover:bg-gray-100 hover:text-space'
+                          }`}
+                        >
+                          {num}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {/* Mission Pill (left-aligned, close to Action) */}
-              {selectedGoalId && goals.find(g => g.id === selectedGoalId) && (
-                <div className="inline-flex px-2.5 py-0.5 bg-story rounded-full text-[10px] font-medium flex items-center gap-1.5">
-                  <span>{goals.find(g => g.id === selectedGoalId).emoji}</span>
-                  <span className="text-white">{goals.find(g => g.id === selectedGoalId).title}</span>
+              {/* Quick Add Action */}
+              {selectedGoalId && (
+                <div className="mt-2">
+                  <QuickAddAction
+                    selectedGoalId={selectedGoalId}
+                    onActionAdded={loadTasks}
+                    compact={true}
+                  />
                 </div>
               )}
             </div>
 
-            {/* Quick Add Action - New Row Below */}
-            {selectedGoalId && (
-              <div className="mt-2">
-                <QuickAddAction
-                  selectedGoalId={selectedGoalId}
-                  onActionAdded={loadTasks}
-                  compact={true}
-                />
-              </div>
-            )}
-          </div>
-
-          {/* Content */}
-          <div className="px-6 pb-3 space-y-3">
-            {selectedGoalId ? (
-              <>
-                {/* Unified Drag and Drop Context for Next Up and TO-DO */}
-                <DndContext
-                  sensors={sensors}
-                  collisionDetection={closestCenter}
-                  onDragEnd={handleDragEndBacklog}
-                >
-                  <SortableContext
-                    items={allGoalTasks.map(a => a.id)}
-                    strategy={verticalListSortingStrategy}
-                  >
-                    {/* Next Up - First in Queue */}
-                    {nextUpTask && (
-                      <div>
-                        <div className="flex items-center gap-2 mb-1.5">
-                          <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
-                          <p className="text-[9px] font-bold text-self uppercase tracking-wider">Move Mission Forward</p>
-                        </div>
-                        <SortableActionCard
-                          task={nextUpTask}
-                          onStartFlow={() => handleStartFlow(nextUpTask)}
-                          onRemove={() => handleDeleteTask(nextUpTask.id)}
-                          showStartButton={true}
-                          isNextUp={true}
-                        />
+            {/* Content */}
+            <div className="px-6 pb-3">
+              {selectedGoalId ? (
+                <div className="space-y-4">
+                  {/* TODAY Section */}
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
+                        <p className="text-[10px] font-bold text-self uppercase tracking-wider">Today</p>
                       </div>
-                    )}
+                      {firstTodayAction && (
+                        <button
+                          onClick={() => handleStartFlow(firstTodayAction)}
+                          className="px-3 py-1 bg-self text-white rounded-lg text-[10px] font-bold hover:bg-self/90 transition-colors uppercase tracking-wide shadow-md"
+                        >
+                          Start Flow
+                        </button>
+                      )}
+                    </div>
 
-                    {/* Backlog */}
-                    {backlogTasks.length > 0 && (
-                      <div>
-                        <div className="flex items-center justify-between mb-1.5">
-                          <p className="text-[9px] font-semibold text-gray-600 uppercase tracking-wider">TODO ({backlogTasks.length})</p>
+                    {/* TODAY Slots with Drag and Drop */}
+                    <DndContext
+                      sensors={sensors}
+                      collisionDetection={closestCenter}
+                      onDragEnd={handleDragEndToday}
+                    >
+                      <SortableContext
+                        items={todayActions.map(a => a.id)}
+                        strategy={verticalListSortingStrategy}
+                      >
+                        <div className="space-y-2">
+                          {Array.from({ length: dailyActionCount }).map((_, index) => {
+                            const action = todayActions[index];
+                            return action ? (
+                              <SortableActionCard
+                                key={action.id}
+                                task={action}
+                                onStartFlow={() => handleStartFlow(action)}
+                                onRemove={() => handleMoveToTodo(action.id)}
+                                isInToday={true}
+                              />
+                            ) : (
+                              <EmptyTodaySlot key={`empty-${index}`} slotIndex={index} />
+                            );
+                          })}
                         </div>
-                        <div className="space-y-1.5">
-                          {backlogTasks.slice(0, 5).map(task => (
-                            <SortableActionCard
-                              key={task.id}
-                              task={task}
-                              onStartFlow={() => handleStartFlow(task)}
-                              onRemove={() => handleDeleteTask(task.id)}
-                              showStartButton={false}
-                              isNextUp={false}
-                            />
-                          ))}
-                        </div>
-                        {backlogTasks.length > 5 && (
-                          <button
-                            onClick={() => setShowBacklog(true)}
-                            className="w-full mt-1.5 py-1.5 text-[10px] text-self/70 hover:text-self font-medium transition-colors"
-                          >
-                            +{backlogTasks.length - 5} more
-                          </button>
-                        )}
+                      </SortableContext>
+                    </DndContext>
+                  </div>
+
+                  {/* TO-DO Section */}
+                  {todoTasks.length > 0 && (
+                    <div>
+                      <div className="flex items-center gap-2 mb-2 pb-1.5 border-t border-self/20 pt-3">
+                        <p className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">
+                          To-Do ({todoTasks.length})
+                        </p>
                       </div>
-                    )}
-                  </SortableContext>
-                </DndContext>
-              </>
-            ) : (
-              <div className="text-center py-8">
-                <p className="text-sm text-gray-500">← Select a mission to view actions</p>
-              </div>
-            )}
+
+                      <DndContext
+                        sensors={sensors}
+                        collisionDetection={closestCenter}
+                        onDragEnd={handleDragEndTodo}
+                      >
+                        <SortableContext
+                          items={todoTasks.map(a => a.id)}
+                          strategy={verticalListSortingStrategy}
+                        >
+                          <div className="space-y-1.5 max-h-[300px] overflow-y-auto pr-1">
+                            {todoTasks.map(task => (
+                              <div
+                                key={task.id}
+                                onClick={() => handleMoveToToday(task.id)}
+                                className={todayActions.length >= dailyActionCount ? 'cursor-not-allowed opacity-60' : 'cursor-pointer'}
+                              >
+                                <SortableActionCard
+                                  task={task}
+                                  onStartFlow={() => handleStartFlow(task)}
+                                  onRemove={() => handleDeleteTask(task.id)}
+                                  isInToday={false}
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </SortableContext>
+                      </DndContext>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="text-center py-8">
+                  <p className="text-sm text-gray-500">← Select a mission to view actions</p>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
         </div>
       </div>
 
-      {/* Backlog Selection Modal */}
-      {showBacklog && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white w-full md:max-w-2xl rounded-lg max-h-[70vh] flex flex-col">
-            <div className="p-4 border-b flex items-center justify-between">
-              <h3 className="text-lg font-semibold">Add from Backlog</h3>
-              <button
-                onClick={() => setShowBacklog(false)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="flex-1 overflow-y-auto p-4 space-y-2">
-              {backlogTasks.length === 0 ? (
-                <div className="text-center py-8">
-                  <p className="text-sm text-gray-500">
-                    No more actions available for this goal
-                  </p>
-                </div>
-              ) : (
-                backlogTasks.map(task => (
-                  <button
-                    key={task.id}
-                    onClick={() => handleAddFromBacklog(task.id)}
-                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-left hover:border-self hover:bg-self/5 transition-colors"
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-semibold text-gray-800">{task.title}</h4>
-                        <div className="flex items-center gap-2 mt-1 text-xs text-gray-500">
-                          <span>{task.duration || 25} min</span>
-                        </div>
-                      </div>
-                      <span className="text-self text-xs font-semibold">Add</span>
-                    </div>
-                  </button>
-                ))
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

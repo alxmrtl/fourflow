@@ -47,6 +47,13 @@ export const useStore = create((set, get) => ({
     await db.deleteGoal(id);
     await get().loadGoals();
   },
+  updateGoalDailyActionCount: async (goalId, count) => {
+    const goal = get().goals.find(g => g.id === goalId);
+    if (goal) {
+      await db.updateGoal({ ...goal, dailyActionCount: count });
+      await get().loadGoals();
+    }
+  },
 
   // Tasks
   tasks: [],
