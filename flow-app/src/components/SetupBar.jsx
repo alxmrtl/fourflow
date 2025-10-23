@@ -126,7 +126,7 @@ const SetupBar = () => {
                   setShowSoundDropdown(!showSoundDropdown);
                   setShowBreathworkDropdown(false);
                 }}
-                className={`flex items-center gap-1.5 px-3 py-1 bg-white/60 rounded-lg border transition-all w-[150px] ${
+                className={`flex items-center gap-1.5 px-3 py-1 bg-white/60 rounded-lg border transition-all ${
                   showSoundDropdown || saveAnimation === 'sound'
                     ? 'border-space bg-white shadow-md scale-105'
                     : 'border-space/30 hover:border-space/50 hover:bg-white/80'
@@ -134,7 +134,6 @@ const SetupBar = () => {
               >
                 <span className="text-[9px] font-semibold text-space uppercase tracking-wide">Sound</span>
                 {soundEmoji && <span className="text-sm">{soundEmoji}</span>}
-                <span className="text-[9px] text-gray-700 truncate flex-1">{soundText}</span>
               </button>
 
               {/* Sound Dropdown */}
