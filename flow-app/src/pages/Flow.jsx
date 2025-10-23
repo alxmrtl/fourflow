@@ -356,28 +356,6 @@ const Flow = () => {
                     <span className="text-white">{selectedGoal.title}</span>
                   </div>
                 )}
-
-                {/* Daily Action Count Setting */}
-                {selectedGoalId && (
-                  <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/60 rounded-lg border border-space/30 hover:border-space/50 transition-all">
-                    <span className="text-[9px] font-semibold text-space uppercase tracking-wide">Daily</span>
-                    <div className="flex gap-0.5">
-                      {[1, 2, 3].map(num => (
-                        <button
-                          key={num}
-                          onClick={() => handleDailyActionCountChange(num)}
-                          className={`w-5 h-5 text-[10px] font-bold rounded transition-all ${
-                            dailyActionCount === num
-                              ? 'bg-space text-white'
-                              : 'bg-white text-gray-400 hover:bg-gray-100 hover:text-space'
-                          }`}
-                        >
-                          {num}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Quick Add Action */}
@@ -408,14 +386,37 @@ const Flow = () => {
                           <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
                           <p className="text-[10px] font-bold text-self uppercase tracking-wider">Today</p>
                         </div>
-                        {firstTodayAction && (
-                          <button
-                            onClick={() => handleStartFlow(firstTodayAction)}
-                            className="px-3 py-1 bg-self text-white rounded-lg text-[10px] font-bold hover:bg-self/90 transition-colors uppercase tracking-wide shadow-md"
-                          >
-                            Start Flow
-                          </button>
-                        )}
+                        <div className="flex items-center gap-2">
+                          {/* Daily Action Count Setting */}
+                          {selectedGoalId && (
+                            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/60 rounded-lg border border-space/30 hover:border-space/50 transition-all">
+                              <span className="text-[9px] font-semibold text-space uppercase tracking-wide">Daily</span>
+                              <div className="flex gap-0.5">
+                                {[1, 2, 3].map(num => (
+                                  <button
+                                    key={num}
+                                    onClick={() => handleDailyActionCountChange(num)}
+                                    className={`w-5 h-5 text-[10px] font-bold rounded transition-all ${
+                                      dailyActionCount === num
+                                        ? 'bg-space text-white'
+                                        : 'bg-white text-gray-400 hover:bg-gray-100 hover:text-space'
+                                    }`}
+                                  >
+                                    {num}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          {firstTodayAction && (
+                            <button
+                              onClick={() => handleStartFlow(firstTodayAction)}
+                              className="px-3 py-1 bg-self text-white rounded-lg text-[10px] font-bold hover:bg-self/90 transition-colors uppercase tracking-wide shadow-md"
+                            >
+                              Start Flow
+                            </button>
+                          )}
+                        </div>
                       </div>
 
                       {/* TODAY Slots with Drag and Drop */}
