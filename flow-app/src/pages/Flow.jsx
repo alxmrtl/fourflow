@@ -19,6 +19,7 @@ import { CSS } from '@dnd-kit/utilities';
 import FlowSpiritPanel from '../components/FlowSpiritPanel';
 import FlowGoalFilter from '../components/FlowGoalFilter';
 import QuickAddAction from '../components/QuickAddAction';
+import SetupBar from '../components/SetupBar';
 
 // Sortable Action Card Component
 const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = false, isNextUp = false }) => {
@@ -266,6 +267,11 @@ const Flow = () => {
             selectedGoalId={selectedGoalId}
             onGoalSelect={handleGoalSelect}
           />
+        </div>
+
+        {/* SETUP Bar */}
+        <div className="-mx-6">
+          <SetupBar />
         </div>
 
         {/* ACTION Panel */}

@@ -3,7 +3,6 @@ import { useStore } from './store/useStore';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Flow from './pages/Flow';
-import Setup from './pages/Setup';
 import Stats from './pages/Stats';
 import About from './pages/About';
 import FocusMode from './pages/FocusMode';
@@ -31,7 +30,6 @@ function App() {
         {/* Main Content */}
         <main className="flex-1">
           {currentPage === 'flow' && <Flow />}
-          {currentPage === 'setup' && <Setup />}
           {currentPage === 'stats' && <Stats />}
           {currentPage === 'about' && <About />}
         </main>

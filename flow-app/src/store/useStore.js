@@ -165,6 +165,7 @@ export const useStore = create((set, get) => ({
     volume: 0.5,
     breathworkBefore: false,
     breathworkAfter: false,
+    backgroundSound: 'silence',
   },
   loadSettings: async () => {
     const settings = await db.getSettings();
