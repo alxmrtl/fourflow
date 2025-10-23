@@ -61,7 +61,7 @@ const SetupBar = () => {
     return option?.emoji || '';
   };
 
-  // Get breathwork text - simplified to Enabled/Disabled
+  // Get breathwork text - simplified to ON/OFF
   const getBreathworkText = () => {
     const { breathworkBefore, breathworkAfter } = settings;
 
@@ -69,7 +69,7 @@ const SetupBar = () => {
     const isEnabled = (breathworkBefore && breathworkBefore !== 'none') ||
                       (breathworkAfter && breathworkAfter !== 'none');
 
-    return isEnabled ? 'Enabled' : 'Disabled';
+    return isEnabled ? 'ON' : 'OFF';
   };
 
   const handleSoundSelect = async (value) => {
