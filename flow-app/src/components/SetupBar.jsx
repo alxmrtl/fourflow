@@ -45,7 +45,7 @@ const SetupBar = () => {
         }}
       >
         {/* Header with Logo and Title */}
-        <div className="px-6 py-2 flex items-center gap-2">
+        <div className="px-6 py-2 flex items-center gap-3">
           <img
             src="/OPTIMIZED TOOLS.png"
             alt="Setup"
