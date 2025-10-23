@@ -79,6 +79,7 @@ const FlowSpiritPanel = () => {
                 className="text-12px flex-1 cursor-pointer px-3 py-1.5 rounded-lg bg-spirit-dark hover:bg-spirit transition-all italic text-white scrollbar-hide overflow-y-auto"
                 style={{
                   fontFamily: 'inherit',
+                  fontSize: '12px',
                   lineHeight: '1.25',
                   height: '32px',
                   maxHeight: '32px',
@@ -109,6 +110,7 @@ const FlowSpiritPanel = () => {
                 rows={1}
                 style={{
                   fontFamily: 'inherit',
+                  fontSize: '12px',
                   lineHeight: '1.25',
                   height: '32px',
                   maxHeight: '32px',
