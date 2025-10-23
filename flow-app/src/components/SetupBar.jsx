@@ -107,16 +107,16 @@ const SetupBar = () => {
         }}
       >
         {/* Header with Logo and Title */}
-        <div className="px-6 py-2 flex items-center gap-2">
+        <div className="px-6 py-2 flex items-center gap-3">
           <img
             src="/OPTIMIZED TOOLS.png"
             alt="Setup"
             className="w-6 h-6 object-contain flex-shrink-0"
           />
-          <h2 className="text-xs font-semibold tracking-wide text-space uppercase">Setup</h2>
+          <h2 className="text-xs font-semibold tracking-wide text-space uppercase flex-shrink-0">Setup</h2>
 
           {/* Configuration Display */}
-          <div className="flex items-center gap-2 ml-2 relative">
+          <div className="flex items-center gap-2 relative">
             {/* Sound Pill - Clickable */}
             <div ref={soundRef} className="relative">
               <button
