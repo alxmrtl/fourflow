@@ -47,7 +47,7 @@ const SetupBar = () => {
   const BREATHWORK_AFTER = [
     { value: 'relaxation-478', label: '4-7-8 Relaxation', pattern: BREATHWORK_PATTERNS.RELAXATION_478 },
     { value: 'coherent-breathing', label: 'Coherent Breathing', pattern: BREATHWORK_PATTERNS.COHERENT_BREATHING },
-    { value: 'extended-exhale', label: 'Extended Exhale', pattern: BREATHWORK_PATTERNS.EXTENDED_EXHALE },
+    { value: 'grounding-breath', label: 'Grounding Breath', pattern: BREATHWORK_PATTERNS.GROUNDING_BREATH },
   ];
 
   // Get background sound text
@@ -218,8 +218,7 @@ const SetupBar = () => {
                             : 'text-gray-700 hover:bg-gray-50'
                         }`}
                       >
-                        <div>{option.label}</div>
-                        <div className="text-[10px] text-gray-500">{option.pattern.description}</div>
+                        <div>{option.pattern.benefit}</div>
                         {settings.breathworkBefore === option.value && (
                           <span className="absolute right-4">✓</span>
                         )}
@@ -255,8 +254,7 @@ const SetupBar = () => {
                             : 'text-gray-700 hover:bg-gray-50'
                         }`}
                       >
-                        <div>{option.label}</div>
-                        <div className="text-[10px] text-gray-500">{option.pattern.description}</div>
+                        <div>{option.pattern.benefit}</div>
                         {settings.breathworkAfter === option.value && (
                           <span className="absolute right-4">✓</span>
                         )}

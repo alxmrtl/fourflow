@@ -15,6 +15,7 @@ export const BREATHWORK_PATTERNS = {
     key: 'box-breathing',
     name: 'Box Breathing',
     description: 'Equal breathing for focus (4-4-4-4)',
+    benefit: 'Calm Focus',
     phases: [
       { type: 'inhale', duration: 4, label: 'Breathe In' },
       { type: 'hold-full', duration: 4, label: 'Hold' },
@@ -29,12 +30,13 @@ export const BREATHWORK_PATTERNS = {
   ENERGIZING_BREATH: {
     key: 'energizing-breath',
     name: 'Energizing Breath',
-    description: 'Quick inhale/exhale for alertness (4-0-4-0)',
+    description: 'Quick inhale/exhale for alertness (2-0-2-0)',
+    benefit: 'High Alert',
     phases: [
-      { type: 'inhale', duration: 4, label: 'Breathe In' },
-      { type: 'exhale', duration: 4, label: 'Breathe Out' },
+      { type: 'inhale', duration: 2, label: 'Breathe In' },
+      { type: 'exhale', duration: 2, label: 'Breathe Out' },
     ],
-    cycles: 4,
+    cycles: 6,
     colorMode: 'cycle',
     timing: 'before',
   },
@@ -42,11 +44,13 @@ export const BREATHWORK_PATTERNS = {
   POWER_BREATH: {
     key: 'power-breath',
     name: 'Power Breath',
-    description: 'Build energy and focus (4-4-8-0)',
+    description: 'Build confidence and readiness (4-4-6-2)',
+    benefit: 'Confidence Boost',
     phases: [
       { type: 'inhale', duration: 4, label: 'Breathe In' },
       { type: 'hold-full', duration: 4, label: 'Hold' },
-      { type: 'exhale', duration: 8, label: 'Breathe Out' },
+      { type: 'exhale', duration: 6, label: 'Breathe Out' },
+      { type: 'hold-empty', duration: 2, label: 'Pause' },
     ],
     cycles: 3,
     colorMode: 'cycle',
@@ -58,6 +62,7 @@ export const BREATHWORK_PATTERNS = {
     key: 'relaxation-478',
     name: '4-7-8 Relaxation',
     description: 'Deep relaxation technique',
+    benefit: 'Deep Relaxation',
     phases: [
       { type: 'inhale', duration: 4, label: 'Breathe In' },
       { type: 'hold-full', duration: 7, label: 'Hold' },
@@ -71,7 +76,8 @@ export const BREATHWORK_PATTERNS = {
   COHERENT_BREATHING: {
     key: 'coherent-breathing',
     name: 'Coherent Breathing',
-    description: 'Calm and center (5-5)',
+    description: 'Balance nervous system (5-5)',
+    benefit: 'Nervous System Reset',
     phases: [
       { type: 'inhale', duration: 5, label: 'Breathe In' },
       { type: 'exhale', duration: 5, label: 'Breathe Out' },
@@ -81,13 +87,16 @@ export const BREATHWORK_PATTERNS = {
     timing: 'after',
   },
 
-  EXTENDED_EXHALE: {
-    key: 'extended-exhale',
-    name: 'Extended Exhale',
-    description: 'Activate parasympathetic nervous system (4-6)',
+  GROUNDING_BREATH: {
+    key: 'grounding-breath',
+    name: 'Grounding Breath',
+    description: 'Integration and centering (4-2-6-2)',
+    benefit: 'Ground & Integrate',
     phases: [
       { type: 'inhale', duration: 4, label: 'Breathe In' },
+      { type: 'hold-full', duration: 2, label: 'Hold' },
       { type: 'exhale', duration: 6, label: 'Breathe Out' },
+      { type: 'hold-empty', duration: 2, label: 'Pause' },
     ],
     cycles: 4,
     colorMode: 'cycle',

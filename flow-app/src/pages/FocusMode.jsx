@@ -103,7 +103,7 @@ const FocusMode = () => {
       'power-breath': BREATHWORK_PATTERNS.POWER_BREATH,
       'relaxation-478': BREATHWORK_PATTERNS.RELAXATION_478,
       'coherent-breathing': BREATHWORK_PATTERNS.COHERENT_BREATHING,
-      'extended-exhale': BREATHWORK_PATTERNS.EXTENDED_EXHALE,
+      'grounding-breath': BREATHWORK_PATTERNS.GROUNDING_BREATH,
     };
     return patternMap[patternKey] || BREATHWORK_PATTERNS.BOX_BREATHING;
   };
