@@ -98,25 +98,31 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
             background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(96, 165, 250, 0.05) 100%)',
           }}
         >
-          {/* Header with Logo and Title */}
-          <div className="px-6 py-2 flex items-center gap-2">
+          {/* Header with Logo, Title and Add Button - Single Row */}
+          <div className="px-6 py-2.5 flex items-center gap-3">
             <img
               src="/WORTHY MISSION.png"
               alt="Goals"
               className="w-6 h-6 object-contain flex-shrink-0"
             />
-            <h2 className="text-xs font-semibold tracking-wide text-story uppercase">Mission</h2>
-          </div>
+            <h2 className="text-xs font-semibold tracking-wide text-story uppercase flex-shrink-0">Mission</h2>
 
-          {/* Content */}
-          <button
-            onClick={() => setShowAddGoal(!showAddGoal)}
-            className="w-full text-left px-6 pb-2"
-          >
-            <span className="text-xs text-gray-500">
-              {showAddGoal ? 'Adding new mission...' : '+ Add your first mission'}
-            </span>
-          </button>
+            {/* Add Button with Text */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setShowAddGoal(!showAddGoal)}
+                className="text-base w-7 h-7 rounded-full bg-story/10 border-2 border-dashed border-story/40 text-story transition-all flex-shrink-0 flex items-center justify-center font-bold hover:border-story hover:bg-story/20 hover:scale-105"
+                title="Add mission"
+              >
+                +
+              </button>
+              {!showAddGoal && (
+                <span className="text-xs text-gray-400 opacity-70">
+                  Add your first mission
+                </span>
+              )}
+            </div>
+          </div>
 
           {/* Expandable Add Goal Form - One Row */}
           {showAddGoal && (
