@@ -242,7 +242,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
                 }}
                 disabled={isEditing || showAddGoal}
                 className={`
-                  text-lg w-9 h-9 rounded-full transition-all flex-shrink-0 flex items-center justify-center
+                  text-base w-7 h-7 rounded-full transition-all flex-shrink-0 flex items-center justify-center
                   ${isSelected
                     ? 'bg-story shadow-md scale-110'
                     : 'bg-white/60 hover:bg-white border border-story/30 hover:scale-105'
@@ -262,7 +262,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
                 if (!isEditing) setShowAddGoal(true);
               }}
               disabled={isEditing}
-              className={`text-lg w-9 h-9 rounded-full bg-story/10 border-2 border-dashed border-story/40 text-story transition-all flex-shrink-0 flex items-center justify-center font-bold ${isEditing ? 'opacity-30 cursor-not-allowed' : 'hover:border-story hover:bg-story/20 hover:scale-105'}`}
+              className={`text-base w-7 h-7 rounded-full bg-story/10 border-2 border-dashed border-story/40 text-story transition-all flex-shrink-0 flex items-center justify-center font-bold ${isEditing ? 'opacity-30 cursor-not-allowed' : 'hover:border-story hover:bg-story/20 hover:scale-105'}`}
               title="Add goal"
             >
               +
