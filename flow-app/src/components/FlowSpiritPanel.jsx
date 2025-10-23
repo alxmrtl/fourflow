@@ -98,10 +98,9 @@ const FlowSpiritPanel = () => {
                 onKeyDown={handleKeyDown}
                 onBlur={handleBlur}
                 placeholder="Your aspirational vision for daily action..."
-                className="flex-1 px-3 py-1.5 leading-tight border border-spirit rounded-lg focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all overflow-y-auto"
+                className="text-12px flex-1 px-3 py-1.5 leading-tight border border-spirit rounded-lg focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all overflow-y-auto"
                 rows={1}
                 style={{
-                  fontSize: '12px !important',
                   fontFamily: 'inherit',
                   lineHeight: '1.25',
                   height: '32px',

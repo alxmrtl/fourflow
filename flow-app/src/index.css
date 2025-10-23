@@ -23,6 +23,11 @@
   select {
     font-size: 16px !important;
   }
+
+  /* Allow specific textareas to override the 16px minimum */
+  textarea.text-12px {
+    font-size: 12px !important;
+  }
 }
 
 @layer utilities {
