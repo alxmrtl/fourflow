@@ -52,7 +52,7 @@ const QuickAddAction = ({ selectedGoalId, onActionAdded }) => {
           value={newAction.title}
           onChange={(e) => setNewAction({ ...newAction, title: e.target.value })}
           placeholder="Quick add action..."
-          className="flex-1 px-2 py-1.5 text-[11px] border border-gray-200 rounded focus:border-self focus:outline-none bg-white"
+          className="flex-1 px-2 py-1.5 text-[10px] border border-gray-200 rounded focus:border-self focus:outline-none bg-white"
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               e.preventDefault();
@@ -66,7 +66,7 @@ const QuickAddAction = ({ selectedGoalId, onActionAdded }) => {
           onChange={(e) => setNewAction({ ...newAction, duration: parseInt(e.target.value) || 25 })}
           min="1"
           max="180"
-          className="w-14 px-2 py-1.5 text-[11px] text-center border border-gray-200 rounded focus:border-self focus:outline-none bg-white"
+          className="w-14 px-2 py-1.5 text-[10px] text-center border border-gray-200 rounded focus:border-self focus:outline-none bg-white"
         />
         <button
           type="submit"

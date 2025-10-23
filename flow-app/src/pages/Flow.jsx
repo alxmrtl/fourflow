@@ -43,7 +43,7 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, showStartButton = fal
       ref={setNodeRef}
       style={style}
       className={`group/item rounded-lg transition-all ${
-        isNextUp ? 'bg-white/90 backdrop-blur-sm border border-self shadow-md shadow-self/20 p-2' : 'py-2 px-3 hover:bg-self/5'
+        isNextUp ? 'bg-white/90 backdrop-blur-sm border border-self shadow-md shadow-self/20 p-2' : 'bg-white/70 border border-gray-200 py-2 px-3 hover:border-self/40 hover:bg-self/5'
       }`}
     >
       <div className="flex items-center gap-3">
@@ -304,7 +304,7 @@ const Flow = () => {
             />
             <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
             {selectedGoalId && goals.find(g => g.id === selectedGoalId) && (
-              <div className="ml-2 px-3 py-1 bg-story text-white rounded-lg text-xs font-medium flex items-center gap-1.5 shadow-sm">
+              <div className="ml-2 px-3 py-1 bg-story text-white rounded-lg text-sm font-semibold flex items-center gap-1.5 shadow-sm">
                 <span>{goals.find(g => g.id === selectedGoalId).emoji}</span>
                 <span>{goals.find(g => g.id === selectedGoalId).title}</span>
               </div>
@@ -321,22 +321,23 @@ const Flow = () => {
                   onActionAdded={loadTasks}
                 />
 
-                {/* Next Up - First in Queue */}
-                {nextUpTask && (
-                  <div>
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
-                      <p className="text-[9px] font-bold text-self uppercase tracking-wider">Next Up</p>
-                    </div>
-                    <DndContext
-                      sensors={sensors}
-                      collisionDetection={closestCenter}
-                      onDragEnd={handleDragEndBacklog}
-                    >
-                      <SortableContext
-                        items={allGoalTasks.map(a => a.id)}
-                        strategy={verticalListSortingStrategy}
-                      >
+                {/* Unified Drag and Drop Context for Next Up and TO-DO */}
+                <DndContext
+                  sensors={sensors}
+                  collisionDetection={closestCenter}
+                  onDragEnd={handleDragEndBacklog}
+                >
+                  <SortableContext
+                    items={allGoalTasks.map(a => a.id)}
+                    strategy={verticalListSortingStrategy}
+                  >
+                    {/* Next Up - First in Queue */}
+                    {nextUpTask && (
+                      <div>
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
+                          <p className="text-[9px] font-bold text-self uppercase tracking-wider">Next Up</p>
+                        </div>
                         <SortableActionCard
                           task={nextUpTask}
                           onStartFlow={() => handleStartFlow(nextUpTask)}
@@ -344,26 +345,15 @@ const Flow = () => {
                           showStartButton={true}
                           isNextUp={true}
                         />
-                      </SortableContext>
-                    </DndContext>
-                  </div>
-                )}
+                      </div>
+                    )}
 
-                {/* Backlog */}
-                {backlogTasks.length > 0 && (
-                  <div>
-                    <div className="flex items-center justify-between mb-1.5">
-                      <p className="text-[9px] font-semibold text-gray-600 uppercase tracking-wider">TODO ({backlogTasks.length})</p>
-                    </div>
-                    <DndContext
-                      sensors={sensors}
-                      collisionDetection={closestCenter}
-                      onDragEnd={handleDragEndBacklog}
-                    >
-                      <SortableContext
-                        items={allGoalTasks.map(a => a.id)}
-                        strategy={verticalListSortingStrategy}
-                      >
+                    {/* Backlog */}
+                    {backlogTasks.length > 0 && (
+                      <div>
+                        <div className="flex items-center justify-between mb-1.5">
+                          <p className="text-[9px] font-semibold text-gray-600 uppercase tracking-wider">TODO ({backlogTasks.length})</p>
+                        </div>
                         <div className="space-y-1.5">
                           {backlogTasks.slice(0, 5).map(task => (
                             <SortableActionCard
@@ -376,18 +366,18 @@ const Flow = () => {
                             />
                           ))}
                         </div>
-                      </SortableContext>
-                    </DndContext>
-                    {backlogTasks.length > 5 && (
-                      <button
-                        onClick={() => setShowBacklog(true)}
-                        className="w-full mt-1.5 py-1.5 text-[10px] text-self/70 hover:text-self font-medium transition-colors"
-                      >
-                        +{backlogTasks.length - 5} more
-                      </button>
+                        {backlogTasks.length > 5 && (
+                          <button
+                            onClick={() => setShowBacklog(true)}
+                            className="w-full mt-1.5 py-1.5 text-[10px] text-self/70 hover:text-self font-medium transition-colors"
+                          >
+                            +{backlogTasks.length - 5} more
+                          </button>
+                        )}
+                      </div>
                     )}
-                  </div>
-                )}
+                  </SortableContext>
+                </DndContext>
               </>
             ) : (
               <div className="text-center py-8">
