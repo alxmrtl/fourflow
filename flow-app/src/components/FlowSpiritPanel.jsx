@@ -15,23 +15,8 @@ const FlowSpiritPanel = () => {
       // Move cursor to end
       textareaRef.current.selectionStart = textareaRef.current.value.length;
       textareaRef.current.selectionEnd = textareaRef.current.value.length;
-      // Auto-resize textarea
-      adjustTextareaHeight();
     }
   }, [isEditing]);
-
-  useEffect(() => {
-    if (isEditing && textareaRef.current) {
-      adjustTextareaHeight();
-    }
-  }, [editedVision, isEditing]);
-
-  const adjustTextareaHeight = () => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto';
-      textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px';
-    }
-  };
 
   const handleEdit = () => {
     setEditedVision(profile?.vision || '');
@@ -113,13 +98,14 @@ const FlowSpiritPanel = () => {
                 onKeyDown={handleKeyDown}
                 onBlur={handleBlur}
                 placeholder="Your aspirational vision for daily action..."
-                className="flex-1 px-3 py-1.5 leading-tight border border-spirit rounded-lg focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all overflow-hidden"
+                className="flex-1 px-3 py-1.5 leading-tight border border-spirit rounded-lg focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all overflow-y-auto"
                 rows={1}
                 style={{
-                  fontSize: '12px',
+                  fontSize: '12px !important',
                   fontFamily: 'inherit',
                   lineHeight: '1.25',
-                  minHeight: '32px',
+                  height: '32px',
+                  maxHeight: '32px',
                 }}
               />
               <button
