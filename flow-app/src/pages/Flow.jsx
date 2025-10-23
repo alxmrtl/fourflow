@@ -271,7 +271,7 @@ const Flow = () => {
         </div>
 
         {/* Content Area with Padding */}
-        <div className="p-6">
+        <div className="px-6 pb-6">
           {/* SPIRIT Panel */}
           <FlowSpiritPanel />
 
