@@ -10,32 +10,120 @@ export const PILLAR_COLORS = {
 export const PILLAR_ORDER = ['SELF', 'SPACE', 'STORY', 'SPIRIT'];
 
 export const BREATHWORK_PATTERNS = {
-  PRE_FLOW: {
-    name: '4-7-8 Breathing',
-    description: 'Activation breath to prepare for focus',
+  // BEFORE FLOW - Activation patterns
+  BOX_BREATHING: {
+    key: 'box-breathing',
+    name: 'Box Breathing',
+    description: 'Equal breathing for focus (4-4-4-4)',
+    phases: [
+      { type: 'inhale', duration: 4, label: 'Breathe In' },
+      { type: 'hold-full', duration: 4, label: 'Hold' },
+      { type: 'exhale', duration: 4, label: 'Breathe Out' },
+      { type: 'hold-empty', duration: 4, label: 'Hold' },
+    ],
+    cycles: 3,
+    colorMode: 'cycle',
+    timing: 'before',
+  },
+
+  ENERGIZING_BREATH: {
+    key: 'energizing-breath',
+    name: 'Energizing Breath',
+    description: 'Quick inhale/exhale for alertness (4-0-4-0)',
+    phases: [
+      { type: 'inhale', duration: 4, label: 'Breathe In' },
+      { type: 'exhale', duration: 4, label: 'Breathe Out' },
+    ],
+    cycles: 4,
+    colorMode: 'cycle',
+    timing: 'before',
+  },
+
+  POWER_BREATH: {
+    key: 'power-breath',
+    name: 'Power Breath',
+    description: 'Build energy and focus (4-4-8-0)',
+    phases: [
+      { type: 'inhale', duration: 4, label: 'Breathe In' },
+      { type: 'hold-full', duration: 4, label: 'Hold' },
+      { type: 'exhale', duration: 8, label: 'Breathe Out' },
+    ],
+    cycles: 3,
+    colorMode: 'cycle',
+    timing: 'before',
+  },
+
+  // AFTER FLOW - Recovery patterns
+  RELAXATION_478: {
+    key: 'relaxation-478',
+    name: '4-7-8 Relaxation',
+    description: 'Deep relaxation technique',
     phases: [
       { type: 'inhale', duration: 4, label: 'Breathe In' },
       { type: 'hold-full', duration: 7, label: 'Hold' },
       { type: 'exhale', duration: 8, label: 'Breathe Out' },
     ],
     cycles: 3,
-    colorMode: 'cycle', // Cycles through all pillar colors
+    colorMode: 'cycle',
+    timing: 'after',
   },
 
-  POST_FLOW: {
-    name: 'Relaxation Breath',
-    description: 'Recovery breath to integrate and release',
+  COHERENT_BREATHING: {
+    key: 'coherent-breathing',
+    name: 'Coherent Breathing',
+    description: 'Calm and center (5-5)',
+    phases: [
+      { type: 'inhale', duration: 5, label: 'Breathe In' },
+      { type: 'exhale', duration: 5, label: 'Breathe Out' },
+    ],
+    cycles: 4,
+    colorMode: 'cycle',
+    timing: 'after',
+  },
+
+  EXTENDED_EXHALE: {
+    key: 'extended-exhale',
+    name: 'Extended Exhale',
+    description: 'Activate parasympathetic nervous system (4-6)',
+    phases: [
+      { type: 'inhale', duration: 4, label: 'Breathe In' },
+      { type: 'exhale', duration: 6, label: 'Breathe Out' },
+    ],
+    cycles: 4,
+    colorMode: 'cycle',
+    timing: 'after',
+  },
+
+  // Legacy patterns for compatibility
+  PRE_FLOW: {
+    key: 'box-breathing',
+    name: 'Box Breathing',
+    description: 'Equal breathing for focus (4-4-4-4)',
     phases: [
       { type: 'inhale', duration: 4, label: 'Breathe In' },
       { type: 'hold-full', duration: 4, label: 'Hold' },
-      { type: 'exhale', duration: 6, label: 'Breathe Out' },
-      { type: 'hold-empty', duration: 2, label: 'Hold' },
+      { type: 'exhale', duration: 4, label: 'Breathe Out' },
+      { type: 'hold-empty', duration: 4, label: 'Hold' },
     ],
     cycles: 3,
-    colorMode: 'cycle', // Cycles through all pillar colors
+    colorMode: 'cycle',
+  },
+
+  POST_FLOW: {
+    key: 'relaxation-478',
+    name: '4-7-8 Relaxation',
+    description: 'Deep relaxation technique',
+    phases: [
+      { type: 'inhale', duration: 4, label: 'Breathe In' },
+      { type: 'hold-full', duration: 7, label: 'Hold' },
+      { type: 'exhale', duration: 8, label: 'Breathe Out' },
+    ],
+    cycles: 3,
+    colorMode: 'cycle',
   },
 
   FOUR_LAYER: {
+    key: 'four-layer',
     name: 'Four Layer Breath',
     description: 'Framework integration breath - align with each layer',
     phases: [

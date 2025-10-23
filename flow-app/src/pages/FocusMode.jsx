@@ -32,7 +32,7 @@ const FocusMode = () => {
 
   // Check if we should show pre-flow breathwork on mount
   useEffect(() => {
-    if (settings.breathworkBefore && !sessionStarted) {
+    if (settings.breathworkBefore && settings.breathworkBefore !== 'none' && !sessionStarted) {
       setShowPreFlowBreathwork(true);
     } else {
       setSessionStarted(true);
@@ -50,7 +50,7 @@ const FocusMode = () => {
         if (newTime <= 0) {
           clearInterval(interval);
           // Check if we should show post-flow breathwork
-          if (settings.breathworkAfter) {
+          if (settings.breathworkAfter && settings.breathworkAfter !== 'none') {
             setShowPostFlowBreathwork(true);
           } else {
             setShowEndModal(true);
@@ -95,12 +95,26 @@ const FocusMode = () => {
     }
   };
 
+  // Get the selected breathwork pattern
+  const getBreathworkPattern = (patternKey) => {
+    const patternMap = {
+      'box-breathing': BREATHWORK_PATTERNS.BOX_BREATHING,
+      'energizing-breath': BREATHWORK_PATTERNS.ENERGIZING_BREATH,
+      'power-breath': BREATHWORK_PATTERNS.POWER_BREATH,
+      'relaxation-478': BREATHWORK_PATTERNS.RELAXATION_478,
+      'coherent-breathing': BREATHWORK_PATTERNS.COHERENT_BREATHING,
+      'extended-exhale': BREATHWORK_PATTERNS.EXTENDED_EXHALE,
+    };
+    return patternMap[patternKey] || BREATHWORK_PATTERNS.BOX_BREATHING;
+  };
+
   // Pre-Flow Breathwork
   if (showPreFlowBreathwork) {
+    const pattern = getBreathworkPattern(settings.breathworkBefore);
     return (
       <div className="min-h-screen bg-black">
         <BreathworkEngine
-          pattern={BREATHWORK_PATTERNS.PRE_FLOW}
+          pattern={pattern}
           onComplete={() => {
             setShowPreFlowBreathwork(false);
             setSessionStarted(true);
@@ -113,10 +127,11 @@ const FocusMode = () => {
 
   // Post-Flow Breathwork
   if (showPostFlowBreathwork) {
+    const pattern = getBreathworkPattern(settings.breathworkAfter);
     return (
       <div className="min-h-screen bg-black">
         <BreathworkEngine
-          pattern={BREATHWORK_PATTERNS.POST_FLOW}
+          pattern={pattern}
           onComplete={() => {
             setShowPostFlowBreathwork(false);
             setShowEndModal(true);
