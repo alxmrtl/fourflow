@@ -56,21 +56,15 @@ const SetupBar = () => {
     return option ? option.label : 'None';
   };
 
-  // Get breathwork text
+  // Get breathwork text - simplified to Enabled/Disabled
   const getBreathworkText = () => {
     const { breathworkBefore, breathworkAfter } = settings;
 
-    if (breathworkBefore !== 'none' && breathworkAfter !== 'none') {
-      return 'Both';
-    } else if (breathworkBefore !== 'none') {
-      const option = BREATHWORK_BEFORE.find(opt => opt.value === breathworkBefore);
-      return option ? option.label : 'Before';
-    } else if (breathworkAfter !== 'none') {
-      const option = BREATHWORK_AFTER.find(opt => opt.value === breathworkAfter);
-      return option ? option.label : 'After';
-    } else {
-      return 'None';
-    }
+    // Check if ANY breathwork is enabled
+    const isEnabled = (breathworkBefore && breathworkBefore !== 'none') ||
+                      (breathworkAfter && breathworkAfter !== 'none');
+
+    return isEnabled ? 'Enabled' : 'Disabled';
   };
 
   const handleSoundSelect = async (value) => {
@@ -82,15 +76,17 @@ const SetupBar = () => {
     }, 600);
   };
 
-  const handleBreathworkSelect = async (timing, value) => {
+  const handleBreathworkToggle = async (timing, value) => {
     if (timing === 'before') {
-      await updateSettings({ breathworkBefore: value });
+      // Toggle: if already selected, set to 'none', otherwise set to the value
+      const newValue = settings.breathworkBefore === value ? 'none' : value;
+      await updateSettings({ breathworkBefore: newValue });
     } else {
-      await updateSettings({ breathworkAfter: value });
+      const newValue = settings.breathworkAfter === value ? 'none' : value;
+      await updateSettings({ breathworkAfter: newValue });
     }
     setSaveAnimation('breathwork');
     setTimeout(() => {
-      setShowBreathworkDropdown(false);
       setSaveAnimation(null);
     }, 600);
   };
@@ -195,32 +191,19 @@ const SetupBar = () => {
                     <p className="text-[10px] font-semibold text-space uppercase tracking-wide">Before Flow</p>
                   </div>
                   <div className="py-1">
-                    <button
-                      onClick={() => handleBreathworkSelect('before', 'none')}
-                      className={`w-full text-left px-4 py-2 text-xs transition-colors ${
-                        settings.breathworkBefore === 'none'
-                          ? 'bg-space/10 text-space font-semibold'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      None
-                      {settings.breathworkBefore === 'none' && (
-                        <span className="ml-2">✓</span>
-                      )}
-                    </button>
                     {BREATHWORK_BEFORE.map((option) => (
                       <button
                         key={option.value}
-                        onClick={() => handleBreathworkSelect('before', option.value)}
-                        className={`w-full text-left px-4 py-2 text-xs transition-colors ${
+                        onClick={() => handleBreathworkToggle('before', option.value)}
+                        className={`w-full text-left px-4 py-2 text-xs transition-colors flex items-center justify-between ${
                           settings.breathworkBefore === option.value
                             ? 'bg-space/10 text-space font-semibold'
                             : 'text-gray-700 hover:bg-gray-50'
                         }`}
                       >
-                        <div>{option.pattern.benefit}</div>
+                        <span>{option.pattern.benefit}</span>
                         {settings.breathworkBefore === option.value && (
-                          <span className="absolute right-4">✓</span>
+                          <span className="text-space">✓</span>
                         )}
                       </button>
                     ))}
@@ -231,32 +214,19 @@ const SetupBar = () => {
                     <p className="text-[10px] font-semibold text-space uppercase tracking-wide">After Flow</p>
                   </div>
                   <div className="py-1">
-                    <button
-                      onClick={() => handleBreathworkSelect('after', 'none')}
-                      className={`w-full text-left px-4 py-2 text-xs transition-colors ${
-                        settings.breathworkAfter === 'none'
-                          ? 'bg-space/10 text-space font-semibold'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      None
-                      {settings.breathworkAfter === 'none' && (
-                        <span className="ml-2">✓</span>
-                      )}
-                    </button>
                     {BREATHWORK_AFTER.map((option) => (
                       <button
                         key={option.value}
-                        onClick={() => handleBreathworkSelect('after', option.value)}
-                        className={`w-full text-left px-4 py-2 text-xs transition-colors ${
+                        onClick={() => handleBreathworkToggle('after', option.value)}
+                        className={`w-full text-left px-4 py-2 text-xs transition-colors flex items-center justify-between ${
                           settings.breathworkAfter === option.value
                             ? 'bg-space/10 text-space font-semibold'
                             : 'text-gray-700 hover:bg-gray-50'
                         }`}
                       >
-                        <div>{option.pattern.benefit}</div>
+                        <span>{option.pattern.benefit}</span>
                         {settings.breathworkAfter === option.value && (
-                          <span className="absolute right-4">✓</span>
+                          <span className="text-space">✓</span>
                         )}
                       </button>
                     ))}
