@@ -217,7 +217,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
       }}
     >
       {/* Header with Logo, Title and Pills - Single Row */}
-      <div className="px-6 py-2.5 flex items-center gap-3">
+      <div className="px-6 py-2.5 flex items-center gap-3 flex-wrap">
         <img
           src="/WORTHY MISSION.png"
           alt="Goals"
@@ -226,7 +226,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
         <h2 className="text-xs font-semibold tracking-wide text-story uppercase flex-shrink-0">Mission</h2>
 
         {/* Pills Section - Emoji only */}
-        <div className="flex items-center gap-2 flex-1 overflow-x-auto">
+        <div className="flex items-center gap-2 flex-wrap">
           {activeGoals.map((goal) => {
             const isSelected = selectedGoalId === goal.id;
             return (
