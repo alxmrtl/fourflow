@@ -297,7 +297,7 @@ const Flow = () => {
         >
           {/* Header with Logo, Title, and Mission */}
           <div className="px-6 py-2.5">
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
               {/* Left: ACTION Header */}
               <div className="flex items-center gap-2 flex-shrink-0">
                 <img
@@ -308,7 +308,7 @@ const Flow = () => {
                 <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
               </div>
 
-              {/* Right: Mission Pill (inline) */}
+              {/* Mission Pill (left-aligned, close to Action) */}
               {selectedGoalId && goals.find(g => g.id === selectedGoalId) && (
                 <div className="inline-flex px-2.5 py-0.5 bg-story rounded-full text-[10px] font-medium flex items-center gap-1.5">
                   <span>{goals.find(g => g.id === selectedGoalId).emoji}</span>

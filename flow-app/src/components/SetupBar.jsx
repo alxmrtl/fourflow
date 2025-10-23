@@ -28,7 +28,7 @@ const SetupBar = () => {
 
   // Sound options
   const SOUND_OPTIONS = [
-    { value: 'none', label: 'None', emoji: '' },
+    { value: 'none', label: 'None', emoji: '🔇' },
     { value: 'white-noise', label: 'White Noise', emoji: '🌫️' },
     { value: 'forest', label: 'Forest', emoji: '🏞️' },
     { value: 'waves', label: 'Waves', emoji: '🌊' },
