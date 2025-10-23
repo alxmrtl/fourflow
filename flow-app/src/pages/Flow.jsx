@@ -289,13 +289,8 @@ const Flow = () => {
           </div>
 
           {/* ACTION Panel */}
-          <div
-            className="overflow-hidden -mx-6 shadow-sm"
-          style={{
-            background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.10) 50%, rgba(234, 88, 12, 0.08) 100%)',
-          }}
-        >
-          {/* Header with Logo, Title, and Quick Add */}
+          <div className="bg-self overflow-hidden -mx-6 shadow-sm">
+          {/* Header with Logo, Title, and Mission */}
           <div className="px-6 py-2.5">
             <div className="flex items-center justify-between gap-3">
               {/* Left: ACTION Header */}
@@ -308,25 +303,23 @@ const Flow = () => {
                 <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
               </div>
 
-              {/* Right: Quick Add Action (inline, compact) */}
-              {selectedGoalId && (
-                <div className="flex-1 max-w-md">
-                  <QuickAddAction
-                    selectedGoalId={selectedGoalId}
-                    onActionAdded={loadTasks}
-                    compact={true}
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Mission Pill - New Row Below */}
-            {selectedGoalId && goals.find(g => g.id === selectedGoalId) && (
-              <div className="mt-2">
+              {/* Right: Mission Pill (inline) */}
+              {selectedGoalId && goals.find(g => g.id === selectedGoalId) && (
                 <div className="inline-flex px-2.5 py-0.5 bg-story/10 border border-story rounded-full text-[10px] font-medium flex items-center gap-1.5">
                   <span>{goals.find(g => g.id === selectedGoalId).emoji}</span>
                   <span className="text-story">{goals.find(g => g.id === selectedGoalId).title}</span>
                 </div>
+              )}
+            </div>
+
+            {/* Quick Add Action - New Row Below */}
+            {selectedGoalId && (
+              <div className="mt-2">
+                <QuickAddAction
+                  selectedGoalId={selectedGoalId}
+                  onActionAdded={loadTasks}
+                  compact={true}
+                />
               </div>
             )}
           </div>
