@@ -76,17 +76,15 @@ const FlowSpiritPanel = () => {
             <>
               <div
                 onClick={handleEdit}
-                className="flex-1 cursor-pointer px-3 py-1.5 rounded-lg bg-spirit-dark hover:bg-spirit transition-all h-[32px] flex items-center overflow-hidden"
+                className="text-12px flex-1 cursor-pointer px-3 py-1.5 rounded-lg bg-spirit-dark hover:bg-spirit transition-all italic text-white scrollbar-hide overflow-y-auto"
+                style={{
+                  fontFamily: 'inherit',
+                  lineHeight: '1.25',
+                  height: '32px',
+                  maxHeight: '32px',
+                }}
               >
-                {hasVision ? (
-                  <p className="text-12px leading-tight text-white italic truncate" style={{ fontFamily: 'inherit', lineHeight: '1.25' }}>
-                    {profile.vision}
-                  </p>
-                ) : (
-                  <p className="text-12px leading-tight text-white/70 italic" style={{ fontFamily: 'inherit', lineHeight: '1.25' }}>
-                    Click to set your vision...
-                  </p>
-                )}
+                {hasVision ? profile.vision : 'Click to set your vision...'}
               </div>
               <button
                 onClick={handleEdit}
@@ -107,7 +105,7 @@ const FlowSpiritPanel = () => {
                 onKeyDown={handleKeyDown}
                 onBlur={handleBlur}
                 placeholder="Your aspirational vision for daily action..."
-                className="text-12px flex-1 px-3 py-1.5 leading-tight border border-spirit rounded-lg focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all scrollbar-hide"
+                className="text-12px flex-1 px-3 py-1.5 border border-spirit rounded-lg focus:border-spirit-dark focus:outline-none resize-none bg-white italic text-black transition-all scrollbar-hide overflow-y-auto"
                 rows={1}
                 style={{
                   fontFamily: 'inherit',
