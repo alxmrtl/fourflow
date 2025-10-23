@@ -302,7 +302,7 @@ const Flow = () => {
             />
             <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
             {selectedGoalId && goals.find(g => g.id === selectedGoalId) && (
-              <div className="ml-2 px-3 py-1 bg-story text-white rounded-full text-xs font-medium flex items-center gap-1.5 shadow-sm">
+              <div className="ml-2 px-3 py-1 bg-story text-white rounded-lg text-xs font-medium flex items-center gap-1.5 shadow-sm">
                 <span>{goals.find(g => g.id === selectedGoalId).emoji}</span>
                 <span>{goals.find(g => g.id === selectedGoalId).title}</span>
               </div>
