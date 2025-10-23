@@ -17,17 +17,8 @@
     @apply m-0 min-h-screen bg-ivory text-charcoal font-sans;
   }
 
-  /* Prevent mobile zoom on inputs - iOS requires minimum 16px font-size */
-  input,
-  textarea,
-  select {
-    font-size: 16px !important;
-  }
-
-  /* Allow specific textareas to override the 16px minimum */
-  textarea.text-12px {
-    font-size: 12px !important;
-  }
+  /* Mobile zoom is prevented via viewport meta tag (maximum-scale=1.0, user-scalable=no)
+     This allows us to use smaller font sizes without triggering iOS auto-zoom */
 }
 
 @layer utilities {
