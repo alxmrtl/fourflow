@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useStore } from '../store/useStore';
 
-const QuickAddAction = ({ selectedGoalId, onActionAdded }) => {
+const QuickAddAction = ({ selectedGoalId, onActionAdded, compact = false }) => {
   const { addTask } = useStore();
   const [newAction, setNewAction] = useState({ title: '', duration: 25 });
   const [isSaving, setIsSaving] = useState(false);
@@ -43,16 +43,25 @@ const QuickAddAction = ({ selectedGoalId, onActionAdded }) => {
     }
   };
 
+  // Styles based on compact mode
+  const containerClass = compact
+    ? "bg-white/70 backdrop-blur-sm rounded border border-self/20 px-2 py-1"
+    : "bg-white/80 backdrop-blur-sm rounded-lg border border-self/20 p-2";
+
+  const inputTextSize = compact ? "text-[10px]" : "text-[10px]";
+  const inputPadding = compact ? "px-1.5 py-1" : "px-2 py-1.5";
+  const placeholder = compact ? "add actions to support mission below..." : "Quick add action...";
+
   return (
-    <form onSubmit={handleAddAction} className="bg-white/80 backdrop-blur-sm rounded-lg border border-self/20 p-2">
-      <div className="flex gap-2 items-center">
+    <form onSubmit={handleAddAction} className={containerClass}>
+      <div className="flex gap-1.5 items-center">
         <input
           ref={titleInputRef}
           type="text"
           value={newAction.title}
           onChange={(e) => setNewAction({ ...newAction, title: e.target.value })}
-          placeholder="Quick add action..."
-          className="flex-1 px-2 py-1.5 text-[10px] border border-gray-200 rounded focus:border-self focus:outline-none bg-white"
+          placeholder={placeholder}
+          className={`flex-1 ${inputPadding} ${inputTextSize} border border-gray-200 rounded focus:border-self focus:outline-none bg-white`}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               e.preventDefault();
@@ -66,12 +75,12 @@ const QuickAddAction = ({ selectedGoalId, onActionAdded }) => {
           onChange={(e) => setNewAction({ ...newAction, duration: parseInt(e.target.value) || 25 })}
           min="1"
           max="180"
-          className="w-14 px-2 py-1.5 text-[10px] text-center border border-gray-200 rounded focus:border-self focus:outline-none bg-white"
+          className={`w-12 ${inputPadding} ${inputTextSize} text-center border border-gray-200 rounded focus:border-self focus:outline-none bg-white`}
         />
         <button
           type="submit"
           disabled={!newAction.title.trim() || isSaving}
-          className="px-3 py-1.5 bg-self text-white rounded text-xs font-semibold hover:bg-self/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+          className={`px-2 ${inputPadding} bg-self text-white rounded ${inputTextSize} font-semibold hover:bg-self/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap`}
         >
           {isSaving ? '...' : '+'}
         </button>

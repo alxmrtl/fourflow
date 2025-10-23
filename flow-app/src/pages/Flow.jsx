@@ -295,18 +295,38 @@ const Flow = () => {
             background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.10) 50%, rgba(234, 88, 12, 0.08) 100%)',
           }}
         >
-          {/* Header with Logo and Title */}
-          <div className="px-6 py-2.5 flex items-center gap-2">
-            <img
-              src="/FOCUSED BODY.png"
-              alt="Action"
-              className="w-6 h-6 object-contain flex-shrink-0"
-            />
-            <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
+          {/* Header with Logo, Title, and Quick Add */}
+          <div className="px-6 py-2.5">
+            <div className="flex items-center justify-between gap-3">
+              {/* Left: ACTION Header */}
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <img
+                  src="/FOCUSED BODY.png"
+                  alt="Action"
+                  className="w-6 h-6 object-contain flex-shrink-0"
+                />
+                <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
+              </div>
+
+              {/* Right: Quick Add Action (inline, compact) */}
+              {selectedGoalId && (
+                <div className="flex-1 max-w-md">
+                  <QuickAddAction
+                    selectedGoalId={selectedGoalId}
+                    onActionAdded={loadTasks}
+                    compact={true}
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* Mission Pill - New Row Below */}
             {selectedGoalId && goals.find(g => g.id === selectedGoalId) && (
-              <div className="ml-2 px-3 py-1 bg-story text-white rounded-lg text-sm font-semibold flex items-center gap-1.5 shadow-sm">
-                <span>{goals.find(g => g.id === selectedGoalId).emoji}</span>
-                <span>{goals.find(g => g.id === selectedGoalId).title}</span>
+              <div className="mt-2">
+                <div className="inline-flex px-2.5 py-0.5 bg-story/10 border border-story rounded-full text-[10px] font-medium flex items-center gap-1.5">
+                  <span>{goals.find(g => g.id === selectedGoalId).emoji}</span>
+                  <span className="text-story">{goals.find(g => g.id === selectedGoalId).title}</span>
+                </div>
               </div>
             )}
           </div>
@@ -315,12 +335,6 @@ const Flow = () => {
           <div className="px-6 pb-3 space-y-3">
             {selectedGoalId ? (
               <>
-                {/* Quick Add Action - Narrow Expandable */}
-                <QuickAddAction
-                  selectedGoalId={selectedGoalId}
-                  onActionAdded={loadTasks}
-                />
-
                 {/* Unified Drag and Drop Context for Next Up and TO-DO */}
                 <DndContext
                   sensors={sensors}
@@ -336,7 +350,7 @@ const Flow = () => {
                       <div>
                         <div className="flex items-center gap-2 mb-1.5">
                           <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
-                          <p className="text-[9px] font-bold text-self uppercase tracking-wider">Next Up</p>
+                          <p className="text-[9px] font-bold text-self uppercase tracking-wider">Move Mission Forward</p>
                         </div>
                         <SortableActionCard
                           task={nextUpTask}
