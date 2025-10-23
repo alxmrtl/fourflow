@@ -258,6 +258,18 @@ const Flow = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 pb-24 md:pb-6">
       <div className="space-y-0">
+        {/* FourFlow Header */}
+        <div className="flex items-center gap-4 mb-6 -mx-6 px-6 py-4">
+          <img
+            src="/logos/FOURFLOW - MAIN LOGO.png"
+            alt="FourFlow"
+            className="w-8 h-8 object-contain flex-shrink-0"
+          />
+          <h1 className="text-sm font-medium text-gray-700 leading-tight">
+            Align <span className="font-semibold text-spirit">VISION</span>, <span className="font-semibold text-story">MISSION</span>, <span className="font-semibold text-space">SETUP</span> and <span className="font-semibold text-self">ACTION</span> into <span className="font-bold text-gray-900">FLOW</span>.
+          </h1>
+        </div>
+
         {/* SPIRIT Panel */}
         <FlowSpiritPanel />
 
