@@ -15,6 +15,7 @@ import {
   useSortable,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
+import { useDroppable } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
 import FlowSpiritPanel from '../components/FlowSpiritPanel';
 import FlowGoalFilter from '../components/FlowGoalFilter';
@@ -94,6 +95,17 @@ const EmptyTodaySlot = ({ slotIndex }) => {
   return (
     <div className="bg-gradient-to-br from-self/5 to-self/10 border-2 border-dashed border-self/30 rounded-lg p-4 min-h-[60px] flex items-center justify-center transition-all hover:border-self/50 hover:bg-self/15">
       <p className="text-xs text-self/60 font-medium">Drag action here</p>
+    </div>
+  );
+};
+
+// Droppable Container Component
+const DroppableContainer = ({ id, children, className = '' }) => {
+  const { setNodeRef } = useDroppable({ id });
+
+  return (
+    <div ref={setNodeRef} className={className}>
+      {children}
     </div>
   );
 };
@@ -219,36 +231,57 @@ const Flow = () => {
     }
   };
 
-  const handleDragEndToday = (event) => {
+  const handleDragEnd = async (event) => {
     const { active, over } = event;
 
     if (!over) return;
 
-    if (active.id !== over.id) {
-      setTodayActions((items) => {
-        const oldIndex = items.findIndex((item) => item.id === active.id);
-        const newIndex = items.findIndex((item) => item.id === over.id);
-        return arrayMove(items, oldIndex, newIndex);
-      });
+    // Get source and destination containers
+    const activeContainer = active.data.current?.sortable?.containerId;
+    const overContainer = over.data.current?.sortable?.containerId || over.id;
+
+    const activeId = active.id;
+    const overId = over.id;
+
+    // Find the dragged task
+    const activeTask = [...todayActions, ...todoTasks].find(t => t.id === activeId);
+    if (!activeTask) return;
+
+    // Case 1: Dragging within TODAY
+    if (activeContainer === 'today' && overContainer === 'today') {
+      if (activeId !== overId) {
+        setTodayActions((items) => {
+          const oldIndex = items.findIndex((item) => item.id === activeId);
+          const newIndex = items.findIndex((item) => item.id === overId);
+          return arrayMove(items, oldIndex, newIndex);
+        });
+      }
     }
-  };
+    // Case 2: Dragging within TO-DO
+    else if (activeContainer === 'todo' && overContainer === 'todo') {
+      if (activeId !== overId) {
+        const oldIndex = todoTasks.findIndex(a => a.id === activeId);
+        const newIndex = todoTasks.findIndex(a => a.id === overId);
+        const reorderedActions = arrayMove(todoTasks, oldIndex, newIndex);
 
-  const handleDragEndTodo = async (event) => {
-    const { active, over } = event;
-
-    if (!over || active.id === over.id) return;
-
-    const oldIndex = todoTasks.findIndex(a => a.id === active.id);
-    const newIndex = todoTasks.findIndex(a => a.id === over.id);
-
-    const reorderedActions = arrayMove(todoTasks, oldIndex, newIndex);
-
-    // Update order for all todo actions
-    for (let i = 0; i < reorderedActions.length; i++) {
-      await updateTask({ ...reorderedActions[i], order: i + todayActions.length });
+        // Update order for all todo actions
+        for (let i = 0; i < reorderedActions.length; i++) {
+          await updateTask({ ...reorderedActions[i], order: i + todayActions.length });
+        }
+        await loadTasks();
+      }
     }
-
-    await loadTasks();
+    // Case 3: Moving from TO-DO to TODAY
+    else if (activeContainer === 'todo' && overContainer === 'today') {
+      if (todayActions.length >= dailyActionCount) {
+        return; // Respect daily action limit
+      }
+      setTodayActions(prev => [...prev, activeTask]);
+    }
+    // Case 4: Moving from TODAY back to TO-DO
+    else if (activeContainer === 'today' && overContainer === 'todo') {
+      setTodayActions(prev => prev.filter(t => t.id !== activeId));
+    }
   };
 
   const handleMoveToToday = (taskId) => {
@@ -298,7 +331,7 @@ const Flow = () => {
 
           {/* ACTION Panel */}
           <div
-            className="overflow-hidden -mx-6 shadow-sm"
+            className="overflow-hidden -mx-6 shadow-sm min-h-[calc(100vh-280px)] flex flex-col"
             style={{
               background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.10) 50%, rgba(234, 88, 12, 0.08) 100%)',
             }}
@@ -360,58 +393,59 @@ const Flow = () => {
             </div>
 
             {/* Content */}
-            <div className="px-6 pb-3">
+            <div className="px-6 pb-3 flex-1">
               {selectedGoalId ? (
-                <div className="space-y-4">
-                  {/* TODAY Section */}
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
-                        <p className="text-[10px] font-bold text-self uppercase tracking-wider">Today</p>
+                <DndContext
+                  sensors={sensors}
+                  collisionDetection={closestCenter}
+                  onDragEnd={handleDragEnd}
+                >
+                  <div className="space-y-4">
+                    {/* TODAY Section */}
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
+                          <p className="text-[10px] font-bold text-self uppercase tracking-wider">Today</p>
+                        </div>
+                        {firstTodayAction && (
+                          <button
+                            onClick={() => handleStartFlow(firstTodayAction)}
+                            className="px-3 py-1 bg-self text-white rounded-lg text-[10px] font-bold hover:bg-self/90 transition-colors uppercase tracking-wide shadow-md"
+                          >
+                            Start Flow
+                          </button>
+                        )}
                       </div>
-                      {firstTodayAction && (
-                        <button
-                          onClick={() => handleStartFlow(firstTodayAction)}
-                          className="px-3 py-1 bg-self text-white rounded-lg text-[10px] font-bold hover:bg-self/90 transition-colors uppercase tracking-wide shadow-md"
+
+                      {/* TODAY Slots with Drag and Drop */}
+                      <DroppableContainer id="today" className="space-y-2">
+                        <SortableContext
+                          items={todayActions.map(a => a.id)}
+                          strategy={verticalListSortingStrategy}
+                          id="today"
                         >
-                          Start Flow
-                        </button>
-                      )}
+                          <div className="space-y-2">
+                            {Array.from({ length: dailyActionCount }).map((_, index) => {
+                              const action = todayActions[index];
+                              return action ? (
+                                <SortableActionCard
+                                  key={action.id}
+                                  task={action}
+                                  onStartFlow={() => handleStartFlow(action)}
+                                  onRemove={() => handleMoveToTodo(action.id)}
+                                  isInToday={true}
+                                />
+                              ) : (
+                                <EmptyTodaySlot key={`empty-${index}`} slotIndex={index} />
+                              );
+                            })}
+                          </div>
+                        </SortableContext>
+                      </DroppableContainer>
                     </div>
 
-                    {/* TODAY Slots with Drag and Drop */}
-                    <DndContext
-                      sensors={sensors}
-                      collisionDetection={closestCenter}
-                      onDragEnd={handleDragEndToday}
-                    >
-                      <SortableContext
-                        items={todayActions.map(a => a.id)}
-                        strategy={verticalListSortingStrategy}
-                      >
-                        <div className="space-y-2">
-                          {Array.from({ length: dailyActionCount }).map((_, index) => {
-                            const action = todayActions[index];
-                            return action ? (
-                              <SortableActionCard
-                                key={action.id}
-                                task={action}
-                                onStartFlow={() => handleStartFlow(action)}
-                                onRemove={() => handleMoveToTodo(action.id)}
-                                isInToday={true}
-                              />
-                            ) : (
-                              <EmptyTodaySlot key={`empty-${index}`} slotIndex={index} />
-                            );
-                          })}
-                        </div>
-                      </SortableContext>
-                    </DndContext>
-                  </div>
-
-                  {/* TO-DO Section */}
-                  {todoTasks.length > 0 && (
+                    {/* TO-DO Section - Always Visible */}
                     <div>
                       <div className="flex items-center gap-2 mb-2 pb-1.5 border-t border-self/20 pt-3">
                         <p className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">
@@ -419,36 +453,39 @@ const Flow = () => {
                         </p>
                       </div>
 
-                      <DndContext
-                        sensors={sensors}
-                        collisionDetection={closestCenter}
-                        onDragEnd={handleDragEndTodo}
-                      >
+                      <DroppableContainer id="todo">
                         <SortableContext
                           items={todoTasks.map(a => a.id)}
                           strategy={verticalListSortingStrategy}
+                          id="todo"
                         >
-                          <div className="space-y-1.5 max-h-[300px] overflow-y-auto pr-1">
-                            {todoTasks.map(task => (
-                              <div
-                                key={task.id}
-                                onClick={() => handleMoveToToday(task.id)}
-                                className={todayActions.length >= dailyActionCount ? 'cursor-not-allowed opacity-60' : 'cursor-pointer'}
-                              >
-                                <SortableActionCard
-                                  task={task}
-                                  onStartFlow={() => handleStartFlow(task)}
-                                  onRemove={() => handleDeleteTask(task.id)}
-                                  isInToday={false}
-                                />
-                              </div>
-                            ))}
-                          </div>
+                          {todoTasks.length > 0 ? (
+                            <div className="space-y-1.5 max-h-[300px] overflow-y-auto pr-1">
+                              {todoTasks.map(task => (
+                                <div
+                                  key={task.id}
+                                  onClick={() => handleMoveToToday(task.id)}
+                                  className={todayActions.length >= dailyActionCount ? 'cursor-not-allowed opacity-60' : 'cursor-pointer'}
+                                >
+                                  <SortableActionCard
+                                    task={task}
+                                    onStartFlow={() => handleStartFlow(task)}
+                                    onRemove={() => handleDeleteTask(task.id)}
+                                    isInToday={false}
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <div className="bg-white/50 border border-dashed border-gray-300 rounded-lg p-6 min-h-[100px] flex items-center justify-center">
+                              <p className="text-xs text-gray-400 font-medium">No actions yet — add one above</p>
+                            </div>
+                          )}
                         </SortableContext>
-                      </DndContext>
+                      </DroppableContainer>
                     </div>
-                  )}
-                </div>
+                  </div>
+                </DndContext>
               ) : (
                 <div className="text-center py-8">
                   <p className="text-sm text-gray-500">← Select a mission to view actions</p>
