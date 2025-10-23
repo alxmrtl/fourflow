@@ -259,7 +259,7 @@ const Flow = () => {
     <div className="max-w-4xl mx-auto p-6 pb-24 md:pb-6">
       <div className="space-y-0">
         {/* FourFlow Header */}
-        <div className="flex items-center gap-4 mb-6 -mx-6 px-6 py-4">
+        <div className="flex items-center gap-4 mb-3 -mx-6 px-6 py-2">
           <img
             src="/logos/FOURFLOW - MAIN LOGO.png"
             alt="FourFlow"
