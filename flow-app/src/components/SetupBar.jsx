@@ -101,7 +101,7 @@ const SetupBar = () => {
   return (
     <>
       <div
-        className="overflow-visible -mx-6 shadow-sm"
+        className="overflow-visible shadow-sm"
         style={{
           background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(22, 163, 74, 0.10) 50%, rgba(21, 128, 61, 0.08) 100%)',
         }}
