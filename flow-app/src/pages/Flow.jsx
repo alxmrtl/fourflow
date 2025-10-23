@@ -150,7 +150,7 @@ const Flow = () => {
 
     if (activeGoals.length === 0) {
       setSelectedGoalId(null);
-      setQueuedActions([]);
+      setTodayActions([]);
       return;
     }
 
