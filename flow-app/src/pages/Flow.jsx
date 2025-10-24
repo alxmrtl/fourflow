@@ -408,14 +408,17 @@ const Flow = () => {
                               </div>
                             </div>
                           )}
-                          {firstTodayAction && (
-                            <button
-                              onClick={() => handleStartFlow(firstTodayAction)}
-                              className="px-3 py-1 bg-self text-white rounded-lg text-[10px] font-bold hover:bg-self/90 transition-colors uppercase tracking-wide shadow-md"
-                            >
-                              Start Flow
-                            </button>
-                          )}
+                          <button
+                            onClick={() => handleStartFlow(firstTodayAction)}
+                            disabled={!firstTodayAction}
+                            className={`px-3 py-1 rounded-lg text-[10px] font-bold transition-colors uppercase tracking-wide shadow-md ${
+                              firstTodayAction
+                                ? 'bg-self text-white hover:bg-self/90 cursor-pointer'
+                                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                            }`}
+                          >
+                            Start Flow
+                          </button>
                         </div>
                       </div>
 
