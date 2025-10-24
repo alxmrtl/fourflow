@@ -69,18 +69,21 @@ const QuickAddAction = ({ selectedGoalId, onActionAdded, compact = false }) => {
             }
           }}
         />
-        <input
-          type="number"
-          value={newAction.duration}
-          onChange={(e) => setNewAction({ ...newAction, duration: parseInt(e.target.value) || 25 })}
-          min="1"
-          max="180"
-          className={`w-12 ${inputPadding} ${inputTextSize} text-center border border-gray-200 rounded focus:border-self focus:outline-none bg-white`}
-        />
+        <div className="flex items-center gap-1">
+          <input
+            type="number"
+            value={newAction.duration}
+            onChange={(e) => setNewAction({ ...newAction, duration: parseInt(e.target.value) || 25 })}
+            min="1"
+            max="180"
+            className={`w-12 ${inputPadding} ${inputTextSize} text-center border border-gray-200 rounded focus:border-self focus:outline-none bg-white`}
+          />
+          <span className={`${inputTextSize} text-gray-500 font-medium`}>min</span>
+        </div>
         <button
           type="submit"
           disabled={!newAction.title.trim() || isSaving}
-          className={`px-2 ${inputPadding} bg-self text-white rounded ${inputTextSize} font-semibold hover:bg-self/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap`}
+          className={`px-3 py-1.5 bg-self text-white rounded ${compact ? 'text-sm' : 'text-base'} font-bold hover:bg-self/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap min-w-[32px] flex items-center justify-center`}
         >
           {isSaving ? '...' : '+'}
         </button>

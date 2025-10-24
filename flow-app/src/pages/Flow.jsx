@@ -353,16 +353,6 @@ const Flow = () => {
                 )}
               </div>
 
-              {/* Quick Add Action */}
-              {selectedGoalId && (
-                <div className="mt-2">
-                  <QuickAddAction
-                    selectedGoalId={selectedGoalId}
-                    onActionAdded={loadTasks}
-                    compact={true}
-                  />
-                </div>
-              )}
             </div>
 
             {/* Content */}
@@ -443,6 +433,17 @@ const Flow = () => {
                         </SortableContext>
                       </DroppableContainer>
                     </div>
+
+                    {/* Quick Add Action - Between TODAY and TO-DO */}
+                    {selectedGoalId && (
+                      <div className="py-3">
+                        <QuickAddAction
+                          selectedGoalId={selectedGoalId}
+                          onActionAdded={loadTasks}
+                          compact={true}
+                        />
+                      </div>
+                    )}
 
                     {/* TO-DO Section - Always Visible */}
                     <div>
