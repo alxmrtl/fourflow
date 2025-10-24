@@ -7,7 +7,7 @@ const Navigation = () => {
   if (isInFocusMode) return null;
 
   const pages = [
-    { id: 'flow', label: 'FLOW', emoji: '⚡' },
+    { id: 'flow', label: 'FLOW', icon: '/logos/FOURFLOW - MAIN LOGO.png' },
     { id: 'stats', label: 'STATS', emoji: '📊' },
     { id: 'about', label: 'ABOUT', emoji: 'ℹ️' },
   ];
@@ -30,7 +30,11 @@ const Navigation = () => {
             aria-label={page.label}
             aria-current={currentPage === page.id ? 'page' : undefined}
           >
-            <span className="text-lg md:text-xl">{page.emoji}</span>
+            {page.icon ? (
+              <img src={page.icon} alt={page.label} className="h-5 md:h-6" />
+            ) : (
+              <span className="text-lg md:text-xl">{page.emoji}</span>
+            )}
             <span className="text-[10px] md:text-xs font-medium">{page.label}</span>
           </button>
         ))}

@@ -8,14 +8,7 @@ const Header = () => {
 
   return (
     <header className="bg-white border-b border-gray-200 px-4 py-2 shadow-sm">
-      <div className="max-w-4xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img
-            src="/logos/FOURFLOW - MAIN LOGO.png"
-            alt="FourFlow"
-            className="h-8"
-          />
-        </div>
+      <div className="max-w-4xl mx-auto">
         <div className="text-xs text-gray-500">
           {new Date().toLocaleDateString('en-US', {
             month: 'short',
