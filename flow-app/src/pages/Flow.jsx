@@ -302,7 +302,7 @@ const Flow = () => {
         {/* FourFlow Header */}
         <div className="flex items-center gap-4 px-6 py-1.5 bg-charcoal shadow-md">
           <h1 className="text-sm font-medium text-ivory leading-tight">
-            Align <span className="font-semibold text-spirit" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(122, 77, 164, 0.4)' }}>VISION</span>, <span className="font-semibold text-story" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(91, 132, 177, 0.4)' }}>MISSION</span>, <span className="font-semibold text-space" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(107, 162, 146, 0.4)' }}>SETUP</span> and <span className="font-semibold text-self" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(255, 111, 97, 0.4)' }}>ACTION</span> into <span className="font-bold text-ivory">FLOW</span>.
+            <span className="font-semibold text-spirit" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(122, 77, 164, 0.4)' }}>VISION</span> → <span className="font-semibold text-story" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(91, 132, 177, 0.4)' }}>MISSION</span> → <span className="font-semibold text-space" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(107, 162, 146, 0.4)' }}>SETUP</span> → <span className="font-semibold text-self" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(255, 111, 97, 0.4)' }}>ACTION</span> → <span className="font-bold"><span className="text-spirit" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(122, 77, 164, 0.4)' }}>F</span><span className="text-story" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(91, 132, 177, 0.4)' }}>L</span><span className="text-space" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(107, 162, 146, 0.4)' }}>O</span><span className="text-self" style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 12px rgba(255, 111, 97, 0.4)' }}>W</span></span>
           </h1>
         </div>
 
@@ -385,7 +385,7 @@ const Flow = () => {
                           {/* Daily Action Count Setting */}
                           {selectedGoalId && (
                             <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/60 rounded-lg border border-space/30 hover:border-space/50 transition-all">
-                              <span className="text-[9px] font-semibold text-space uppercase tracking-wide">Daily</span>
+                              <span className="text-[9px] font-semibold text-space uppercase tracking-wide">Daily Actions</span>
                               <div className="flex gap-0.5">
                                 {[1, 2, 3].map(num => (
                                   <button
