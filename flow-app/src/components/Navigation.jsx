@@ -31,7 +31,7 @@ const Navigation = () => {
             aria-current={currentPage === page.id ? 'page' : undefined}
           >
             {page.icon ? (
-              <img src={page.icon} alt={page.label} className="h-5 md:h-6" />
+              <img src={page.icon} alt={page.label} className="h-7 md:h-8" />
             ) : (
               <span className="text-lg md:text-xl">{page.emoji}</span>
             )}
