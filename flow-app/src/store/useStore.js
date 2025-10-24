@@ -168,7 +168,7 @@ export const useStore = create((set, get) => ({
     timerDuration: 25,
     breakDuration: 5,
     longBreakDuration: 15,
-    sound: 'silence',
+    sound: 'none',
     volume: 0.5,
     breathworkBefore: 'none', // 'none' or breathwork pattern key
     breathworkAfter: 'none',  // 'none' or breathwork pattern key

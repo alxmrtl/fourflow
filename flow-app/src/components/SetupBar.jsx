@@ -30,9 +30,6 @@ const SetupBar = () => {
   const SOUND_OPTIONS = [
     { value: 'none', label: 'None', emoji: '🔇' },
     { value: 'white-noise', label: 'White Noise', emoji: '🌫️' },
-    { value: 'forest', label: 'Forest', emoji: '🏞️' },
-    { value: 'waves', label: 'Waves', emoji: '🌊' },
-    { value: 'rain', label: 'Rain', emoji: '🌧️' },
     { value: 'binaural', label: 'Binaural Beats', emoji: '🎧' },
   ];
 
@@ -52,12 +49,12 @@ const SetupBar = () => {
 
   // Get background sound text and emoji
   const getSoundText = () => {
-    const option = SOUND_OPTIONS.find(opt => opt.value === settings.backgroundSound);
+    const option = SOUND_OPTIONS.find(opt => opt.value === settings.sound);
     return option ? option.label : 'None';
   };
 
   const getSoundEmoji = () => {
-    const option = SOUND_OPTIONS.find(opt => opt.value === settings.backgroundSound);
+    const option = SOUND_OPTIONS.find(opt => opt.value === settings.sound);
     return option?.emoji || '';
   };
 
@@ -73,7 +70,7 @@ const SetupBar = () => {
   };
 
   const handleSoundSelect = async (value) => {
-    await updateSettings({ backgroundSound: value });
+    await updateSettings({ sound: value, volume: 0.5 });
     setSaveAnimation('sound');
     setTimeout(() => {
       setShowSoundDropdown(false);
@@ -148,13 +145,13 @@ const SetupBar = () => {
                         key={option.value}
                         onClick={() => handleSoundSelect(option.value)}
                         className={`w-full text-left px-4 py-2 text-xs transition-colors ${
-                          settings.backgroundSound === option.value
+                          settings.sound === option.value
                             ? 'bg-space/10 text-space font-semibold'
                             : 'text-gray-700 hover:bg-gray-50'
                         }`}
                       >
                         {option.label}
-                        {settings.backgroundSound === option.value && (
+                        {settings.sound === option.value && (
                           <span className="ml-2">✓</span>
                         )}
                       </button>

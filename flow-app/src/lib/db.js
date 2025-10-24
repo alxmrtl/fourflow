@@ -217,13 +217,20 @@ export const db = {
   // Settings
   async getSettings() {
     const database = await initDB();
-    const settings = await database.get('settings', 'app-settings');
+    let settings = await database.get('settings', 'app-settings');
+
+    // Migrate old 'silence' setting to 'none'
+    if (settings && settings.sound === 'silence') {
+      settings.sound = 'none';
+      await this.saveSettings(settings);
+    }
+
     return settings || {
       id: 'app-settings',
       timerDuration: 25,
       breakDuration: 5,
       longBreakDuration: 15,
-      sound: 'silence',
+      sound: 'none',
       volume: 0.5,
       breathworkBefore: false,
       breathworkAfter: false,

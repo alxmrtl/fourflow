@@ -32,10 +32,11 @@ const SetupSpace = () => {
   ];
 
   const SOUND_OPTIONS = [
-    { value: 'silence', label: 'Silence' },
+    { value: 'none', label: 'None' },
     { value: 'white-noise', label: 'White Noise' },
+    { value: 'forest', label: 'Forest' },
+    { value: 'waves', label: 'Waves' },
     { value: 'rain', label: 'Rain' },
-    { value: 'cafe', label: 'Café' },
     { value: 'binaural', label: 'Binaural' },
   ];
 
@@ -144,7 +145,7 @@ const SetupSpace = () => {
           </div>
 
           {/* Volume Control */}
-          {localSettings.sound !== 'silence' && (
+          {localSettings.sound !== 'none' && (
             <div>
               <label className="block text-xs font-medium text-gray-700 mb-1">
                 Volume: {Math.round(localSettings.volume * 100)}%

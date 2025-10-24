@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useStore } from '../store/useStore';
 import Modal from './Modal';
+import { backgroundAudio } from '../utils/backgroundAudio';
 
 const FlowSetupPanel = () => {
   const { settings, updateSettings } = useStore();
@@ -18,6 +19,8 @@ const FlowSetupPanel = () => {
     setEditedSettings({ ...settings });
     setHasChanges(false);
     setIsOpen(false);
+    // Stop any preview sounds when closing
+    backgroundAudio.stop();
   };
 
   const handleSettingChange = async (newSettings) => {
@@ -33,12 +36,19 @@ const FlowSetupPanel = () => {
     }, 500);
   };
 
+  const handleSoundPreview = (soundType) => {
+    if (soundType === 'none') {
+      backgroundAudio.stop();
+    } else {
+      // Play preview with quick fade in (0.5 seconds)
+      backgroundAudio.play(soundType, 0.5, 0.5);
+    }
+  };
+
   const SOUND_OPTIONS = [
-    { value: 'silence', label: 'Silence', icon: '🔇' },
-    { value: 'white-noise', label: 'White Noise', icon: '🌊' },
-    { value: 'rain', label: 'Rain', icon: '🌧️' },
-    { value: 'cafe', label: 'Café', icon: '☕' },
-    { value: 'binaural', label: 'Binaural', icon: '🎧' },
+    { value: 'none', label: 'None', icon: '🔇' },
+    { value: 'white-noise', label: 'White Noise', icon: '🌫️' },
+    { value: 'binaural', label: 'Binaural Beats', icon: '🎧' },
   ];
 
   return (
@@ -82,49 +92,40 @@ const FlowSetupPanel = () => {
           {/* Sound Selection */}
           <div>
             <label className="text-sm text-gray-700 font-semibold block mb-2.5">Background Sound</label>
+            <p className="text-xs text-gray-500 mb-3">Click to select • Adjust volume using your system controls</p>
             <div className="grid grid-cols-3 gap-2">
               {SOUND_OPTIONS.map((option) => (
-                <button
-                  key={option.value}
-                  onClick={() => handleSettingChange({ ...editedSettings, sound: option.value })}
-                  className={`
-                    p-3 rounded-xl border-2 transition-all text-xs font-medium
-                    ${editedSettings.sound === option.value
-                      ? 'border-space bg-space text-white shadow-lg scale-105'
-                      : 'border-gray-200 bg-white hover:border-space/50 hover:shadow-md'
-                    }
-                  `}
-                >
-                  <div className="flex flex-col items-center gap-1.5">
-                    <span className="text-2xl">{option.icon}</span>
-                    <span className="text-[11px]">{option.label}</span>
-                  </div>
-                </button>
+                <div key={option.value} className="relative">
+                  <button
+                    onClick={() => {
+                      handleSettingChange({ ...editedSettings, sound: option.value, volume: 0.5 });
+                      handleSoundPreview(option.value);
+                    }}
+                    className={`
+                      w-full p-3 rounded-xl border-2 transition-all text-xs font-medium
+                      ${editedSettings.sound === option.value
+                        ? 'border-space bg-space text-white shadow-lg scale-105'
+                        : 'border-gray-200 bg-white hover:border-space/50 hover:shadow-md'
+                      }
+                    `}
+                  >
+                    <div className="flex flex-col items-center gap-1.5">
+                      <span className="text-2xl">{option.icon}</span>
+                      <span className="text-[11px]">{option.label}</span>
+                    </div>
+                  </button>
+                </div>
               ))}
             </div>
+            {editedSettings.sound !== 'none' && (
+              <button
+                onClick={() => handleSoundPreview('none')}
+                className="mt-3 w-full py-2 text-xs text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 transition-all"
+              >
+                Stop Preview
+              </button>
+            )}
           </div>
-
-          {/* Volume Control */}
-          {editedSettings.sound !== 'silence' && (
-            <div>
-              <label className="text-sm text-gray-700 font-semibold block mb-2">
-                Volume: {Math.round(editedSettings.volume * 100)}%
-              </label>
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.1"
-                value={editedSettings.volume}
-                onChange={(e) => handleSettingChange({ ...editedSettings, volume: parseFloat(e.target.value) })}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-space"
-              />
-              <div className="flex justify-between text-xs text-gray-500 mt-1">
-                <span>0%</span>
-                <span>100%</span>
-              </div>
-            </div>
-          )}
 
           {/* Breathwork Settings */}
           <div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useStore } from '../store/useStore';
 import BreathworkEngine from '../components/BreathworkEngine';
 import { BREATHWORK_PATTERNS } from '../utils/breathworkPatterns';
+import { backgroundAudio } from '../utils/backgroundAudio';
 
 const FocusMode = () => {
   const {
@@ -39,6 +40,23 @@ const FocusMode = () => {
     }
   }, [settings.breathworkBefore, sessionStarted]);
 
+  // Start background audio when session starts (with fade in)
+  useEffect(() => {
+    if (sessionStarted && settings.sound && settings.sound !== 'none') {
+      // Initialize audio context on user interaction
+      backgroundAudio.init();
+      // Play with 3 second fade in
+      backgroundAudio.play(settings.sound, settings.volume || 0.5, 3);
+    }
+
+    // Cleanup: fade out and stop when component unmounts
+    return () => {
+      if (backgroundAudio.isPlaying) {
+        backgroundAudio.fadeOut(2);
+      }
+    };
+  }, [sessionStarted, settings.sound, settings.volume]);
+
   useEffect(() => {
     if (!currentSession || currentSession.isPaused || !sessionStarted) return;
 
@@ -71,6 +89,11 @@ const FocusMode = () => {
   };
 
   const handleEndSession = async () => {
+    // Fade out audio before ending
+    if (backgroundAudio.isPlaying) {
+      backgroundAudio.fadeOut(1);
+    }
+
     await endSession({ feltFlow });
 
     // Mark task as completed if user indicated so
@@ -90,6 +113,8 @@ const FocusMode = () => {
 
   const handleCancel = () => {
     if (confirm('Cancel this session? Your reps won\'t be saved.')) {
+      // Stop audio immediately
+      backgroundAudio.stop();
       cancelSession();
       exitFocusMode();
     }
@@ -258,13 +283,38 @@ const FocusMode = () => {
         {/* Controls */}
         <div className="flex gap-3">
           <button
-            onClick={() => currentSession.isPaused ? resumeSession() : pauseSession()}
+            onClick={() => {
+              if (currentSession.isPaused) {
+                resumeSession();
+                // Resume audio if it was playing
+                if (settings.sound && settings.sound !== 'none') {
+                  backgroundAudio.play(settings.sound, settings.volume || 0.5, 0.5);
+                }
+              } else {
+                pauseSession();
+                // Fade out audio when pausing
+                if (backgroundAudio.isPlaying) {
+                  backgroundAudio.fadeOut(0.5);
+                }
+              }
+            }}
             className="flex-1 bg-white/10 hover:bg-white/20 text-white py-3 rounded-lg font-semibold transition-colors"
           >
             {currentSession.isPaused ? 'Resume' : 'Pause'}
           </button>
           <button
-            onClick={() => setShowEndModal(true)}
+            onClick={() => {
+              // Fade out audio when ending early
+              if (backgroundAudio.isPlaying) {
+                backgroundAudio.fadeOut(0.5);
+              }
+              // Check if we should show post-flow breathwork
+              if (settings.breathworkAfter && settings.breathworkAfter !== 'none') {
+                setShowPostFlowBreathwork(true);
+              } else {
+                setShowEndModal(true);
+              }
+            }}
             className="flex-1 bg-white/10 hover:bg-white/20 text-white py-3 rounded-lg font-semibold transition-colors"
           >
             End Early
