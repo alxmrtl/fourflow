@@ -93,7 +93,7 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false }) 
 // Empty TODAY Slot Component
 const EmptyTodaySlot = ({ slotIndex }) => {
   return (
-    <div className="bg-gradient-to-br from-self/5 to-self/10 border-2 border-dashed border-self/30 rounded-lg p-4 min-h-[60px] flex items-center justify-center transition-all hover:border-self/50 hover:bg-self/15">
+    <div className="bg-gradient-to-br from-self/5 to-self/10 border-2 border-dashed border-self/30 rounded-lg p-2.5 flex items-center justify-center transition-all hover:border-self/50 hover:bg-self/15">
       <p className="text-xs text-self/60 font-medium">Drag action here</p>
     </div>
   );
