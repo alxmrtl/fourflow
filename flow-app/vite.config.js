@@ -8,12 +8,17 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['logos/*.png'],
+      devOptions: {
+        enabled: true,
+        type: 'module'
+      },
+      includeAssets: ['logos/*.png', '*.png'],
       manifest: {
         name: 'FourFlow - Focus & Flow Tracker',
         short_name: 'FourFlow',
         description: 'Train your focus muscle and cultivate flow states',
-        version: '1.2.0',
+        start_url: '/',
+        scope: '/',
         theme_color: '#333333',
         background_color: '#F5F5F5',
         display: 'standalone',
@@ -23,12 +28,19 @@ export default defineConfig({
             src: '/logos/FOURFLOW - MAIN LOGO.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any maskable'
+            purpose: 'any'
+          },
+          {
+            src: '/logos/FOURFLOW - MAIN LOGO.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
           }
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+        globPatterns: ['**/*.{js,css,html,png,svg,ico,woff,woff2}'],
+        cleanupOutdatedCaches: true,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
