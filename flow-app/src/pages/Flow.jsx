@@ -418,7 +418,7 @@ const Flow = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto h-screen flex flex-col overflow-hidden">
+    <div className="max-w-4xl mx-auto h-[100dvh] flex flex-col overflow-hidden">
       <div className="flex flex-col h-full overflow-hidden">
         {/* FourFlow Header */}
         <div className="flex items-center gap-4 px-6 py-1.5 bg-charcoal shadow-md">
