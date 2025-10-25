@@ -24,15 +24,27 @@ import SetupBar from '../components/SetupBar';
 
 // Toast Notification Component
 const Toast = ({ message, type = 'info', onClose }) => {
+  const [isExiting, setIsExiting] = useState(false);
+
   useEffect(() => {
-    const timer = setTimeout(onClose, 3000);
-    return () => clearTimeout(timer);
+    const exitTimer = setTimeout(() => {
+      setIsExiting(true);
+    }, 2500); // Start fade-out after 2.5s
+
+    const closeTimer = setTimeout(onClose, 3000); // Close after 3s
+
+    return () => {
+      clearTimeout(exitTimer);
+      clearTimeout(closeTimer);
+    };
   }, [onClose]);
 
-  const bgColor = type === 'error' ? 'bg-red-500' : type === 'success' ? 'bg-green-500' : 'bg-blue-500';
+  const bgColor = type === 'error' ? 'bg-red-500' : type === 'success' ? 'bg-self' : 'bg-blue-500';
 
   return (
-    <div className={`fixed bottom-20 md:bottom-8 left-1/2 -translate-x-1/2 ${bgColor} text-white px-4 py-2 rounded-lg shadow-lg z-50 text-sm font-medium animate-fade-in`}>
+    <div className={`fixed bottom-20 md:bottom-8 left-1/2 -translate-x-1/2 ${bgColor} text-white px-3 py-1.5 rounded-lg shadow-lg z-50 text-xs font-medium transition-all duration-300 ${
+      isExiting ? 'opacity-0 scale-95' : 'opacity-100 scale-100 animate-fade-in'
+    }`}>
       {message}
     </div>
   );
