@@ -484,7 +484,7 @@ const Flow = () => {
                   collisionDetection={closestCenter}
                   onDragEnd={handleDragEnd}
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     {/* TODAY Section */}
                     <div>
                       <div className="flex items-center justify-between mb-2">
@@ -561,7 +561,7 @@ const Flow = () => {
 
                     {/* Quick Add Action - Between TODAY and TO-DO */}
                     {selectedGoalId && (
-                      <div className="py-3">
+                      <div className="py-1.5">
                         <QuickAddAction
                           selectedGoalId={selectedGoalId}
                           onActionAdded={loadTasks}
@@ -572,7 +572,7 @@ const Flow = () => {
 
                     {/* TO-DO Section - Always Visible */}
                     <div>
-                      <div className="flex items-center gap-2 mb-2 pb-1.5 border-t border-self/20 pt-3">
+                      <div className="flex items-center gap-2 mb-2 pb-1 border-t border-self/20 pt-2">
                         <p className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">
                           To-Do ({todoTasks.length})
                         </p>
