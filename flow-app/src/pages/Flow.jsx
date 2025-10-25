@@ -418,8 +418,8 @@ const Flow = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto pb-24 md:pb-6">
-      <div className="space-y-0">
+    <div className="max-w-4xl mx-auto h-screen flex flex-col overflow-hidden">
+      <div className="flex flex-col h-full overflow-hidden">
         {/* FourFlow Header */}
         <div className="flex items-center gap-4 px-6 py-1.5 bg-charcoal shadow-md">
           <h1 className="text-xs font-medium text-ivory leading-tight">
@@ -428,12 +428,14 @@ const Flow = () => {
         </div>
 
         {/* Content Area with Padding */}
-        <div className="px-6 pb-6">
-          {/* SPIRIT Panel */}
-          <FlowSpiritPanel />
+        <div className="flex-1 flex flex-col overflow-hidden">
+          <div className="flex-shrink-0 px-6">
+            {/* SPIRIT Panel */}
+            <FlowSpiritPanel />
+          </div>
 
           {/* MISSION Panel */}
-          <div className="-mx-6">
+          <div className="flex-shrink-0 -mx-0">
             <FlowGoalFilter
               selectedGoalId={selectedGoalId}
               onGoalSelect={handleGoalSelect}
@@ -441,13 +443,13 @@ const Flow = () => {
           </div>
 
           {/* SETUP Bar */}
-          <div className="-mx-6">
+          <div className="flex-shrink-0 -mx-0">
             <SetupBar />
           </div>
 
           {/* ACTION Panel */}
           <div
-            className="overflow-hidden -mx-6 shadow-sm min-h-screen flex flex-col animate-gradient-flow"
+            className="flex-1 flex flex-col overflow-hidden -mx-0 shadow-sm animate-gradient-flow"
           >
             {/* Header with Logo, Title, and Mission */}
             <div className="px-6 py-2.5">
@@ -475,16 +477,16 @@ const Flow = () => {
             </div>
 
             {/* Content */}
-            <div className="px-6 pb-3 flex-1">
+            <div className="flex-1 flex flex-col overflow-hidden px-6 pb-6">
               {selectedGoalId ? (
                 <DndContext
                   sensors={sensors}
                   collisionDetection={closestCenter}
                   onDragEnd={handleDragEnd}
                 >
-                  <div className="space-y-2">
+                  <div className="flex-1 flex flex-col overflow-hidden">
                     {/* TODAY Section */}
-                    <div>
+                    <div className="flex-shrink-0 mb-2">
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
@@ -559,7 +561,7 @@ const Flow = () => {
 
                     {/* Quick Add Action - Between TODAY and TO-DO */}
                     {selectedGoalId && (
-                      <div className="py-1.5">
+                      <div className="flex-shrink-0 py-1.5">
                         <QuickAddAction
                           selectedGoalId={selectedGoalId}
                           onActionAdded={loadTasks}
@@ -569,21 +571,21 @@ const Flow = () => {
                     )}
 
                     {/* TO-DO Section - Always Visible */}
-                    <div>
-                      <div className="flex items-center gap-2 mb-2 pb-1 border-t border-self/20 pt-2">
+                    <div className="flex-1 flex flex-col overflow-hidden min-h-0">
+                      <div className="flex-shrink-0 flex items-center gap-2 mb-2 pb-1 border-t border-self/20 pt-2">
                         <p className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">
                           To-Do ({todoTasks.length})
                         </p>
                       </div>
 
-                      <DroppableContainer id="todo">
+                      <DroppableContainer id="todo" className="flex-1 overflow-hidden">
                         <SortableContext
                           items={todoTasks.map(a => a.id)}
                           strategy={verticalListSortingStrategy}
                           id="todo"
                         >
                           {todoTasks.length > 0 ? (
-                            <div className="space-y-1.5 max-h-[300px] overflow-y-auto pr-1">
+                            <div className="h-full overflow-y-auto space-y-1.5 pr-1">
                               {todoTasks.map((task, index) => (
                                 <div
                                   key={task.id}
@@ -604,7 +606,7 @@ const Flow = () => {
                               ))}
                             </div>
                           ) : (
-                            <div className="bg-white/50 border border-dashed border-gray-300 rounded-lg p-6 min-h-[100px] flex items-center justify-center">
+                            <div className="h-full bg-white/50 border border-dashed border-gray-300 rounded-lg p-6 flex items-center justify-center">
                               <p className="text-xs text-gray-400 font-medium">No actions yet — add one above</p>
                             </div>
                           )}
