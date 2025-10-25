@@ -68,7 +68,7 @@ const FlowSetupPanel = () => {
             src="/OPTIMIZED TOOLS.png"
             alt="Setup"
             className="w-4 h-4 object-contain"
-            style={{ filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15))' }}
+            style={{ filter: 'drop-shadow(0 0.5px 1px rgba(0, 0, 0, 0.4))' }}
           />
           <span className="text-[11px] font-semibold tracking-wide uppercase">Setup</span>
           {hasChanges && !isSaving && (
