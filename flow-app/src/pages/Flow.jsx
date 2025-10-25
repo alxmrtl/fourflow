@@ -22,8 +22,24 @@ import FlowGoalFilter from '../components/FlowGoalFilter';
 import QuickAddAction from '../components/QuickAddAction';
 import SetupBar from '../components/SetupBar';
 
+// Toast Notification Component
+const Toast = ({ message, type = 'info', onClose }) => {
+  useEffect(() => {
+    const timer = setTimeout(onClose, 3000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  const bgColor = type === 'error' ? 'bg-red-500' : type === 'success' ? 'bg-green-500' : 'bg-blue-500';
+
+  return (
+    <div className={`fixed bottom-20 md:bottom-8 left-1/2 -translate-x-1/2 ${bgColor} text-white px-4 py-2 rounded-lg shadow-lg z-50 text-sm font-medium animate-fade-in`}>
+      {message}
+    </div>
+  );
+};
+
 // Sortable Action Card Component
-const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false }) => {
+const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false, onMoveUp, onMoveDown, canMoveUp = true, canMoveDown = true }) => {
   const {
     attributes,
     listeners,
@@ -50,11 +66,11 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false }) 
       }`}
     >
       <div className="flex items-center gap-2 p-2.5">
-        {/* Drag Handle */}
+        {/* Drag Handle - Desktop Only */}
         <button
           {...attributes}
           {...listeners}
-          className="flex-shrink-0 text-gray-400 hover:text-gray-600 cursor-grab active:cursor-grabbing opacity-0 group-hover/item:opacity-100 transition-opacity"
+          className="hidden md:flex flex-shrink-0 text-gray-400 hover:text-gray-600 cursor-grab active:cursor-grabbing opacity-0 group-hover/item:opacity-100 transition-opacity"
         >
           <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
             <circle cx="5" cy="3" r="1.5" />
@@ -76,9 +92,58 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false }) 
               <span className={`text-xs font-semibold ${isInToday ? 'text-self' : 'text-self/70'}`}>
                 {task.duration || 25}min
               </span>
+
+              {/* Mobile Reordering Buttons */}
+              {(onMoveUp || onMoveDown) && (
+                <div className="flex md:hidden gap-0.5">
+                  {onMoveUp && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onMoveUp();
+                      }}
+                      disabled={!canMoveUp}
+                      className={`w-6 h-6 flex items-center justify-center rounded transition-colors ${
+                        canMoveUp
+                          ? 'text-gray-500 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-200'
+                          : 'text-gray-300 cursor-not-allowed'
+                      }`}
+                      aria-label="Move up"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 3l-5 5h3v5h4V8h3z" />
+                      </svg>
+                    </button>
+                  )}
+                  {onMoveDown && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onMoveDown();
+                      }}
+                      disabled={!canMoveDown}
+                      className={`w-6 h-6 flex items-center justify-center rounded transition-colors ${
+                        canMoveDown
+                          ? 'text-gray-500 hover:text-gray-700 hover:bg-gray-100 active:bg-gray-200'
+                          : 'text-gray-300 cursor-not-allowed'
+                      }`}
+                      aria-label="Move down"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 13l5-5h-3V3H6v5H3z" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+              )}
+
+              {/* Remove Button - Always visible on mobile, hover on desktop */}
               <button
-                onClick={onRemove}
-                className="text-gray-400 hover:text-red-600 text-xs transition-colors opacity-0 group-hover/item:opacity-100"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onRemove();
+                }}
+                className="text-gray-400 hover:text-red-600 text-xs transition-colors md:opacity-0 md:group-hover/item:opacity-100"
               >
                 ✕
               </button>
@@ -94,7 +159,10 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false }) 
 const EmptyTodaySlot = ({ slotIndex }) => {
   return (
     <div className="bg-gradient-to-br from-self/5 to-self/10 border-2 border-dashed border-self/30 rounded-lg p-2.5 flex items-center justify-center transition-all hover:border-self/50 hover:bg-self/15">
-      <p className="text-xs text-self/60 font-medium">Drag action here</p>
+      <p className="text-xs text-self/60 font-medium">
+        <span className="hidden md:inline">Drag action here</span>
+        <span className="md:hidden">Tap action below to add</span>
+      </p>
     </div>
   );
 };
@@ -134,6 +202,7 @@ const Flow = () => {
   const [selectedGoalId, setSelectedGoalId] = useState(null);
   const [todayActions, setTodayActions] = useState([]);
   const [showBacklog, setShowBacklog] = useState(false);
+  const [toast, setToast] = useState(null);
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -285,15 +354,67 @@ const Flow = () => {
   };
 
   const handleMoveToToday = (taskId) => {
-    if (todayActions.length >= dailyActionCount) return;
+    if (todayActions.length >= dailyActionCount) {
+      setToast({ message: 'Today is full. Remove an action first.', type: 'error' });
+      return;
+    }
     const task = todoTasks.find(t => t.id === taskId);
     if (task) {
       setTodayActions(prev => [...prev, task]);
+      setToast({ message: 'Added to Today', type: 'success' });
     }
   };
 
   const handleMoveToTodo = (taskId) => {
     setTodayActions(prev => prev.filter(t => t.id !== taskId));
+  };
+
+  // Mobile reordering handlers for TODAY section
+  const handleMoveTodayUp = (taskId) => {
+    setTodayActions(prev => {
+      const index = prev.findIndex(t => t.id === taskId);
+      if (index <= 0) return prev;
+      const newArray = [...prev];
+      [newArray[index - 1], newArray[index]] = [newArray[index], newArray[index - 1]];
+      return newArray;
+    });
+  };
+
+  const handleMoveTodayDown = (taskId) => {
+    setTodayActions(prev => {
+      const index = prev.findIndex(t => t.id === taskId);
+      if (index < 0 || index >= prev.length - 1) return prev;
+      const newArray = [...prev];
+      [newArray[index], newArray[index + 1]] = [newArray[index + 1], newArray[index]];
+      return newArray;
+    });
+  };
+
+  // Mobile reordering handlers for TODO section
+  const handleMoveTodoUp = async (taskId) => {
+    const index = todoTasks.findIndex(t => t.id === taskId);
+    if (index <= 0) return;
+
+    const newArray = arrayMove(todoTasks, index, index - 1);
+
+    // Update order for affected tasks
+    for (let i = 0; i < newArray.length; i++) {
+      await updateTask({ ...newArray[i], order: i + todayActions.length });
+    }
+    await loadTasks();
+  };
+
+  const handleMoveTodoDown = async (taskId) => {
+    const index = todoTasks.findIndex(t => t.id === taskId);
+    if (index < 0 || index >= todoTasks.length - 1) return;
+
+    const newArray = arrayMove(todoTasks, index, index + 1);
+
+    // Update order for affected tasks
+    for (let i = 0; i < newArray.length; i++) {
+      await updateTask({ ...newArray[i], order: i + todayActions.length });
+    }
+    await loadTasks();
   };
 
   return (
@@ -424,6 +545,10 @@ const Flow = () => {
                                   onStartFlow={() => handleStartFlow(action)}
                                   onRemove={() => handleMoveToTodo(action.id)}
                                   isInToday={true}
+                                  onMoveUp={() => handleMoveTodayUp(action.id)}
+                                  onMoveDown={() => handleMoveTodayDown(action.id)}
+                                  canMoveUp={index > 0}
+                                  canMoveDown={index < todayActions.length - 1}
                                 />
                               ) : (
                                 <EmptyTodaySlot key={`empty-${index}`} slotIndex={index} />
@@ -461,7 +586,7 @@ const Flow = () => {
                         >
                           {todoTasks.length > 0 ? (
                             <div className="space-y-1.5 max-h-[300px] overflow-y-auto pr-1">
-                              {todoTasks.map(task => (
+                              {todoTasks.map((task, index) => (
                                 <div
                                   key={task.id}
                                   onClick={() => handleMoveToToday(task.id)}
@@ -472,6 +597,10 @@ const Flow = () => {
                                     onStartFlow={() => handleStartFlow(task)}
                                     onRemove={() => handleDeleteTask(task.id)}
                                     isInToday={false}
+                                    onMoveUp={() => handleMoveTodoUp(task.id)}
+                                    onMoveDown={() => handleMoveTodoDown(task.id)}
+                                    canMoveUp={index > 0}
+                                    canMoveDown={index < todoTasks.length - 1}
                                   />
                                 </div>
                               ))}
@@ -496,6 +625,14 @@ const Flow = () => {
         </div>
       </div>
 
+      {/* Toast Notification */}
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
     </div>
   );
 };
