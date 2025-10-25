@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useBreathwork } from '../hooks/useBreathwork';
 import { breathworkAudio } from '../utils/breathworkAudio';
 import { getCurrentLayerLabel } from '../utils/breathworkPatterns';
@@ -7,10 +7,13 @@ import BreathworkAnimation from './BreathworkAnimation';
 /**
  * BreathworkEngine Component
  * Orchestrates the complete breathwork experience with animation, audio, and UI
+ * Features: Smooth auto-start sequence, charcoal background, skip button, minimal layout
  */
-const BreathworkEngine = ({ pattern, onComplete, autoStart = false }) => {
+const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip }) => {
   const breathwork = useBreathwork(pattern);
   const audioInitialized = useRef(false);
+  const [preparationPhase, setPreparationPhase] = useState('initial'); // 'initial' | 'ready' | 'complete'
+  const [showContent, setShowContent] = useState(false);
 
   const {
     isActive,
@@ -52,17 +55,27 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false }) => {
     onBreathworkComplete(() => {
       breathworkAudio.playComplete();
       if (onComplete) {
-        setTimeout(() => onComplete(), 1000); // Brief delay for completion sound
+        setTimeout(() => onComplete(), 1500); // Brief delay for completion sound
       }
     });
   }, [onBreathworkComplete, onComplete]);
 
-  // Auto-start if specified
+  // Smooth preparation sequence with auto-start
   useEffect(() => {
-    if (autoStart && !isActive && !isComplete) {
-      start();
+    if (autoStart && !isActive && !isComplete && preparationPhase === 'initial') {
+      // Fade in content
+      setTimeout(() => setShowContent(true), 100);
+
+      // "Prepare for flow..." phase
+      setTimeout(() => setPreparationPhase('ready'), 2000);
+
+      // "Get ready to breathe" phase and start exercise
+      setTimeout(() => {
+        setPreparationPhase('complete');
+        start();
+      }, 3500);
     }
-  }, [autoStart, isActive, isComplete, start]);
+  }, [autoStart, isActive, isComplete, start, preparationPhase]);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -71,108 +84,112 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false }) => {
     };
   }, []);
 
+  const handleSkip = () => {
+    breathworkAudio.stopCurrent();
+    if (onSkip) {
+      onSkip();
+    } else if (onComplete) {
+      onComplete();
+    }
+  };
+
+  // Completion state - smooth auto-transition
   if (isComplete) {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center space-y-8 text-white">
-        <div className="text-center space-y-4">
-          <div className="text-6xl">✓</div>
-          <h2 className="text-3xl font-bold">Complete</h2>
-          <p className="text-lg text-gray-300">{pattern.name}</p>
+      <div
+        className={`w-full h-full flex flex-col items-center justify-center text-white transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}
+      >
+        <div className="text-center space-y-6 animate-fade-in">
+          <div className="text-7xl">✓</div>
+          <h2 className="text-2xl font-light tracking-wide">Complete</h2>
         </div>
-        <button
-          onClick={onComplete}
-          className="px-8 py-3 bg-white/10 hover:bg-white/20 rounded-lg font-semibold transition-colors"
-        >
-          Continue
-        </button>
       </div>
     );
   }
 
+  // Get preparation message
+  const getPreparationMessage = () => {
+    if (!autoStart || preparationPhase === 'complete') return null;
+    if (preparationPhase === 'initial') return 'Prepare for flow...';
+    if (preparationPhase === 'ready') return 'Get ready to breathe';
+    return null;
+  };
+
+  const preparationMessage = getPreparationMessage();
+  const showAnimation = preparationPhase === 'complete' || !autoStart;
+
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center space-y-8 text-white p-6">
-      {/* Pattern Info */}
-      <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold">{pattern.name}</h2>
-        <p className="text-sm text-gray-300">{pattern.description}</p>
-        <p className="text-xs text-gray-400">
-          Cycle {currentCycle + 1} of {pattern.cycles}
-        </p>
-      </div>
+    <div className="w-full h-full flex flex-col items-center justify-center relative text-white p-6">
+      {/* Skip Button - Top Right */}
+      <button
+        onClick={handleSkip}
+        className="absolute top-6 right-6 px-4 py-2 text-sm text-white/60 hover:text-white transition-all duration-300 hover:bg-white/5 rounded-lg z-10"
+      >
+        Skip
+      </button>
 
-      {/* Animation Container */}
-      <div className="relative w-80 h-80 flex items-center justify-center">
-        <BreathworkAnimation phase={currentPhase} progress={progress} color={color} />
+      {/* Preparation Phase - Centered Messages */}
+      {preparationMessage && (
+        <div
+          className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-800 ${
+            showContent ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <h2 className="text-3xl font-light tracking-wide animate-fade-in">
+            {preparationMessage}
+          </h2>
+          <p className="text-sm text-white/50 mt-4 animate-fade-in">{pattern.name}</p>
+        </div>
+      )}
 
-        {/* Phase Label Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="text-center space-y-2">
-            <p className="text-3xl font-bold drop-shadow-lg">{currentPhase?.label}</p>
-            {currentLayerLabel && (
-              <p className="text-lg text-gray-200 drop-shadow-lg font-semibold">
-                {currentLayerLabel}
-              </p>
-            )}
+      {/* Main Breathwork Content */}
+      {showAnimation && (
+        <div
+          className={`flex flex-col items-center justify-center space-y-8 transition-opacity duration-1000 ${
+            preparationPhase === 'complete' ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          {/* Pattern Name - Top, Minimal */}
+          <div className="text-center">
+            <p className="text-sm text-white/50 font-light">{pattern.name}</p>
           </div>
-        </div>
-      </div>
 
-      {/* Overall Progress Bar */}
-      <div className="w-full max-w-md space-y-2">
-        <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-white/50 transition-all duration-100 ease-linear rounded-full"
-            style={{ width: `${overallProgress * 100}%` }}
-          />
-        </div>
-        <p className="text-xs text-center text-gray-400">
-          {Math.round(overallProgress * 100)}% Complete
-        </p>
-      </div>
+          {/* Animation Container - The Star */}
+          <div className="relative w-80 h-80 sm:w-96 sm:h-96 flex items-center justify-center">
+            <BreathworkAnimation phase={currentPhase} progress={progress} color={color} />
 
-      {/* Controls */}
-      <div className="flex gap-4">
-        {!isActive && (
-          <button
-            onClick={start}
-            className="px-8 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition-colors"
-          >
-            Start
-          </button>
-        )}
+            {/* Phase Label Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="text-center space-y-2">
+                <p className="text-4xl sm:text-5xl font-light tracking-wide drop-shadow-2xl transition-all duration-500">
+                  {currentPhase?.label}
+                </p>
+                {currentLayerLabel && (
+                  <p className="text-xl text-white/80 drop-shadow-lg font-light transition-all duration-500">
+                    {currentLayerLabel}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
 
-        {isActive && (
-          <>
-            <button
-              onClick={pause}
-              className="px-8 py-3 bg-white/10 hover:bg-white/20 rounded-lg font-semibold transition-colors"
-            >
-              Pause
-            </button>
-            <button
-              onClick={stop}
-              className="px-6 py-3 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg font-semibold transition-colors"
-            >
-              Stop
-            </button>
-          </>
-        )}
+          {/* Progress Bar - Thin and Elegant */}
+          <div className="w-full max-w-sm space-y-2">
+            <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-white/40 transition-all duration-300 ease-linear rounded-full"
+                style={{ width: `${overallProgress * 100}%` }}
+              />
+            </div>
+          </div>
 
-        {!isActive && currentCycle > 0 && (
-          <button
-            onClick={resume}
-            className="px-8 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition-colors"
-          >
-            Resume
-          </button>
-        )}
-      </div>
-
-      {/* Instructions */}
-      {!isActive && currentCycle === 0 && (
-        <div className="max-w-md text-center text-sm text-gray-300 space-y-2">
-          <p>Find a comfortable position and prepare to breathe mindfully.</p>
-          <p className="text-xs text-gray-400">Follow the animation and audio cues.</p>
+          {/* Bottom Info - Minimal */}
+          <div className="flex items-center justify-between w-full max-w-sm text-xs text-white/40">
+            <span>Cycle {currentCycle + 1} of {pattern.cycles}</span>
+            <span className="px-2 py-1 bg-white/5 rounded-md">
+              {pattern.phases.map(p => p.duration).join('-')}
+            </span>
+          </div>
         </div>
       )}
     </div>

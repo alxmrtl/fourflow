@@ -137,14 +137,18 @@ const FocusMode = () => {
   if (showPreFlowBreathwork) {
     const pattern = getBreathworkPattern(settings.breathworkBefore);
     return (
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-charcoal">
         <BreathworkEngine
           pattern={pattern}
           onComplete={() => {
             setShowPreFlowBreathwork(false);
             setSessionStarted(true);
           }}
-          autoStart={false}
+          onSkip={() => {
+            setShowPreFlowBreathwork(false);
+            setSessionStarted(true);
+          }}
+          autoStart={true}
         />
       </div>
     );
@@ -154,14 +158,18 @@ const FocusMode = () => {
   if (showPostFlowBreathwork) {
     const pattern = getBreathworkPattern(settings.breathworkAfter);
     return (
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-charcoal">
         <BreathworkEngine
           pattern={pattern}
           onComplete={() => {
             setShowPostFlowBreathwork(false);
             setShowEndModal(true);
           }}
-          autoStart={false}
+          onSkip={() => {
+            setShowPostFlowBreathwork(false);
+            setShowEndModal(true);
+          }}
+          autoStart={true}
         />
       </div>
     );
