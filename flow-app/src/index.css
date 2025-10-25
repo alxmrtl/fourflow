@@ -104,28 +104,19 @@
     animation: slideUp 300ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Animated Action Background - FourFlow Brand Colors */
-  @keyframes fourFlowOrbs {
-    0% {
-      background-position: 0% 50%, 100% 50%, 50% 100%, 50% 0%;
-    }
-    25% {
-      background-position: 100% 50%, 50% 100%, 0% 50%, 100% 100%;
+  /* Animated Action Background - Monochromatic SELF Coral */
+  @keyframes coralFlow {
+    0%, 100% {
+      background-position: 0% 50%;
     }
     50% {
-      background-position: 50% 100%, 0% 50%, 100% 50%, 50% 0%;
-    }
-    75% {
-      background-position: 0% 50%, 50% 0%, 50% 100%, 0% 100%;
-    }
-    100% {
-      background-position: 0% 50%, 100% 50%, 50% 100%, 50% 0%;
+      background-position: 100% 50%;
     }
   }
 
-  @keyframes colorShift {
+  @keyframes coralPulse {
     0%, 100% {
-      opacity: 0.85;
+      opacity: 0.9;
     }
     50% {
       opacity: 1;
@@ -135,11 +126,11 @@
   .animate-gradient-flow {
     position: relative;
     background: linear-gradient(135deg,
-      rgba(122, 77, 164, 0.08) 0%,    /* SPIRIT - purple */
-      rgba(91, 132, 177, 0.10) 25%,   /* STORY - blue */
-      rgba(107, 162, 146, 0.12) 50%,  /* SPACE - teal */
-      rgba(255, 111, 97, 0.14) 75%,   /* SELF - coral (strongest) */
-      rgba(122, 77, 164, 0.08) 100%   /* SPIRIT - purple */
+      rgba(255, 111, 97, 0.08) 0%,     /* SELF - lighter */
+      rgba(255, 111, 97, 0.12) 25%,    /* SELF - light */
+      rgba(255, 111, 97, 0.16) 50%,    /* SELF - medium */
+      rgba(255, 111, 97, 0.20) 75%,    /* SELF - bold */
+      rgba(230, 74, 69, 0.15) 100%     /* SELF dark - deeper coral */
     );
   }
 
@@ -151,12 +142,11 @@
     right: 0;
     bottom: 0;
     background:
-      radial-gradient(ellipse at 0% 50%, rgba(122, 77, 164, 0.30) 0%, transparent 50%),    /* SPIRIT */
-      radial-gradient(ellipse at 100% 50%, rgba(91, 132, 177, 0.30) 0%, transparent 50%),  /* STORY */
-      radial-gradient(ellipse at 50% 100%, rgba(107, 162, 146, 0.30) 0%, transparent 50%), /* SPACE */
-      radial-gradient(ellipse at 50% 0%, rgba(255, 111, 97, 0.35) 0%, transparent 50%);    /* SELF */
-    background-size: 200% 200%, 200% 200%, 200% 200%, 200% 200%;
-    animation: fourFlowOrbs 24s ease-in-out infinite, colorShift 12s ease-in-out infinite;
+      radial-gradient(ellipse at 20% 30%, rgba(255, 111, 97, 0.25) 0%, transparent 60%),   /* lighter coral */
+      radial-gradient(ellipse at 80% 70%, rgba(230, 74, 69, 0.28) 0%, transparent 60%),    /* darker coral */
+      radial-gradient(ellipse at 50% 50%, rgba(255, 111, 97, 0.22) 0%, transparent 70%);   /* medium coral */
+    background-size: 300% 300%;
+    animation: coralFlow 20s ease-in-out infinite, coralPulse 10s ease-in-out infinite;
     pointer-events: none;
     z-index: 0;
   }
@@ -171,11 +161,10 @@
     background-image:
       repeating-linear-gradient(
         45deg,
-        rgba(122, 77, 164, 0.02) 0px,   /* SPIRIT */
-        rgba(91, 132, 177, 0.02) 25px,  /* STORY */
-        rgba(107, 162, 146, 0.02) 50px, /* SPACE */
-        rgba(255, 111, 97, 0.03) 75px,  /* SELF */
-        transparent 100px
+        rgba(255, 111, 97, 0.03) 0px,
+        rgba(255, 111, 97, 0.03) 2px,
+        transparent 2px,
+        transparent 4px
       );
     pointer-events: none;
     z-index: 0;
