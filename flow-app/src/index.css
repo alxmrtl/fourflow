@@ -103,4 +103,31 @@
   .animate-slideUp {
     animation: slideUp 300ms cubic-bezier(0.16, 1, 0.3, 1);
   }
+
+  /* Animated Action Background */
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+      background-size: 200% 200%;
+    }
+    50% {
+      background-position: 100% 50%;
+      background-size: 220% 220%;
+    }
+    100% {
+      background-position: 0% 50%;
+      background-size: 200% 200%;
+    }
+  }
+
+  .animate-gradient-flow {
+    animation: gradientFlow 8s ease-in-out infinite;
+  }
+
+  /* Respects reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-gradient-flow {
+      animation: none;
+    }
+  }
 }
