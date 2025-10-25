@@ -38,6 +38,9 @@ export default {
         'settle': 'settle 2.5s ease-out',
         'ripple': 'ripple 0.6s ease-out',
         'breathe': 'breathe 4s ease-in-out infinite',
+        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+        'flow-line': 'flowLine 1.5s ease-in-out infinite',
+        'gradient-flow': 'gradientFlow 8s ease infinite',
       },
       keyframes: {
         fadeIn: {
@@ -59,6 +62,35 @@ export default {
         breathe: {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.1)' },
+        },
+        pulseGlow: {
+          '0%, 100%': {
+            boxShadow: '0 0 20px rgba(255, 111, 97, 0.3), 0 0 40px rgba(255, 111, 97, 0.1)',
+          },
+          '50%': {
+            boxShadow: '0 0 30px rgba(255, 111, 97, 0.5), 0 0 60px rgba(255, 111, 97, 0.2)',
+          },
+        },
+        flowLine: {
+          '0%': {
+            strokeDashoffset: '0',
+            opacity: '0.4',
+          },
+          '50%': {
+            opacity: '1',
+          },
+          '100%': {
+            strokeDashoffset: '12',
+            opacity: '0.4',
+          },
+        },
+        gradientFlow: {
+          '0%, 100%': {
+            backgroundPosition: '0% 50%',
+          },
+          '50%': {
+            backgroundPosition: '100% 50%',
+          },
         },
       },
       padding: {

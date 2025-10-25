@@ -51,7 +51,7 @@ const Toast = ({ message, type = 'info', onClose }) => {
 };
 
 // Sortable Action Card Component
-const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false, onMoveUp, onMoveDown, canMoveUp = true, canMoveDown = true }) => {
+const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false, isNextInLine = false, onMoveUp, onMoveDown, canMoveUp = true, canMoveDown = true }) => {
   const {
     attributes,
     listeners,
@@ -71,12 +71,23 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false, on
     <div
       ref={setNodeRef}
       style={style}
-      className={`group/item rounded-lg transition-all ${
+      className={`group/item rounded-lg transition-all relative ${
         isInToday
           ? 'bg-white/90 backdrop-blur-sm border-2 border-self/60 shadow-lg shadow-self/10'
           : 'bg-white/70 border border-gray-200 hover:border-self/40 hover:bg-self/5'
+      } ${
+        isNextInLine
+          ? 'ring-2 ring-self/40 shadow-2xl shadow-self/30 animate-pulse-glow'
+          : ''
       }`}
     >
+      {/* UP NEXT Badge - Only for next in line */}
+      {isNextInLine && (
+        <div className="absolute -top-2 -left-2 bg-self text-white text-[8px] font-bold px-2 py-0.5 rounded-full shadow-lg uppercase tracking-wider z-10">
+          ▶ Up Next
+        </div>
+      )}
+
       <div className="flex items-center gap-2 py-1 px-2.5">
         {/* Drag Handle - Desktop Only */}
         <button
@@ -504,7 +515,7 @@ const Flow = () => {
                           <div className="w-1.5 h-1.5 rounded-full bg-self animate-pulse"></div>
                           <p className="text-[10px] font-bold text-self uppercase tracking-wider">Today</p>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 relative">
                           {/* Daily Action Count Setting */}
                           {selectedGoalId && (
                             <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/60 rounded-lg border border-space/30 hover:border-space/50 transition-all">
@@ -527,9 +538,10 @@ const Flow = () => {
                             </div>
                           )}
                           <button
+                            id="start-flow-button"
                             onClick={() => handleStartFlow(firstTodayAction)}
                             disabled={!firstTodayAction}
-                            className={`px-3 py-1 rounded-lg text-[10px] font-bold transition-colors uppercase tracking-wide shadow-md ${
+                            className={`px-3 py-1 rounded-lg text-[10px] font-bold transition-colors uppercase tracking-wide shadow-md relative ${
                               firstTodayAction
                                 ? 'bg-self text-white hover:bg-self/90 cursor-pointer'
                                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
@@ -537,11 +549,32 @@ const Flow = () => {
                           >
                             Start Flow
                           </button>
+
+                          {/* Connection Line - Only when first action exists */}
+                          {firstTodayAction && (
+                            <svg
+                              className="absolute top-full left-1/2 -translate-x-1/2 pointer-events-none z-20"
+                              width="2"
+                              height="16"
+                              style={{ marginTop: '2px' }}
+                            >
+                              <line
+                                x1="1"
+                                y1="0"
+                                x2="1"
+                                y2="16"
+                                stroke="#FF6F61"
+                                strokeWidth="2"
+                                strokeDasharray="3,3"
+                                className="animate-flow-line"
+                              />
+                            </svg>
+                          )}
                         </div>
                       </div>
 
                       {/* TODAY Slots with Drag and Drop */}
-                      <DroppableContainer id="today" className="space-y-2">
+                      <DroppableContainer id="today" className="space-y-2 relative">
                         <SortableContext
                           items={todayActions.map(a => a.id)}
                           strategy={verticalListSortingStrategy}
@@ -557,6 +590,7 @@ const Flow = () => {
                                   onStartFlow={() => handleStartFlow(action)}
                                   onRemove={() => handleMoveToTodo(action.id)}
                                   isInToday={true}
+                                  isNextInLine={index === 0}
                                   onMoveUp={() => handleMoveTodayUp(action.id)}
                                   onMoveDown={() => handleMoveTodayDown(action.id)}
                                   canMoveUp={index > 0}
