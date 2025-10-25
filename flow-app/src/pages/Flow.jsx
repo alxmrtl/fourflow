@@ -546,7 +546,7 @@ const Flow = () => {
                             }`}
                           >
                             <span className="text-xs">▶</span>
-                            <span>Start Flow</span>
+                            <span>Flow</span>
                           </button>
                         </div>
                       </div>
