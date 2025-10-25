@@ -571,14 +571,14 @@ const Flow = () => {
                     )}
 
                     {/* TO-DO Section - Always Visible */}
-                    <div className="flex-1 flex flex-col overflow-hidden min-h-0">
+                    <div className="flex-1 flex flex-col overflow-hidden min-h-0 mb-3">
                       <div className="flex-shrink-0 flex items-center gap-2 mb-2 pb-1 border-t border-self/20 pt-2">
                         <p className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">
                           To-Do ({todoTasks.length})
                         </p>
                       </div>
 
-                      <DroppableContainer id="todo" className="flex-1 overflow-hidden">
+                      <DroppableContainer id="todo" className="flex-1 overflow-hidden bg-white/50 border border-gray-300 rounded-lg p-3">
                         <SortableContext
                           items={todoTasks.map(a => a.id)}
                           strategy={verticalListSortingStrategy}
@@ -606,7 +606,7 @@ const Flow = () => {
                               ))}
                             </div>
                           ) : (
-                            <div className="h-full bg-white/50 border border-dashed border-gray-300 rounded-lg p-6 flex items-center justify-center">
+                            <div className="h-full flex items-center justify-center">
                               <p className="text-xs text-gray-400 font-medium">No actions yet — add one above</p>
                             </div>
                           )}
