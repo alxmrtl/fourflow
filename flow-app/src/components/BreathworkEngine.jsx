@@ -12,8 +12,10 @@ import BreathworkAnimation from './BreathworkAnimation';
 const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, taskTitle }) => {
   const breathwork = useBreathwork(pattern);
   const audioInitialized = useRef(false);
-  const [preparationPhase, setPreparationPhase] = useState('initial'); // 'initial' | 'ready' | 'complete'
+  const [preparationPhase, setPreparationPhase] = useState('initial'); // 'initial' | 'ready' | 'countdown' | 'complete'
   const [showContent, setShowContent] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
+  const [introCountdown, setIntroCountdown] = useState(3);
   const [completionPhase, setCompletionPhase] = useState('complete'); // 'complete' | 'action-display' | 'countdown' | 'done'
   const [countdown, setCountdown] = useState(3);
 
@@ -78,20 +80,62 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
     });
   }, [onBreathworkComplete, onComplete, taskTitle]);
 
-  // Smooth preparation sequence with auto-start
+  // Smooth preparation sequence with auto-start and countdown
   useEffect(() => {
     if (autoStart && !isActive && !isComplete && preparationPhase === 'initial') {
-      // Fade in content
+      // Fade in "Prepare for flow..."
       setTimeout(() => setShowContent(true), 100);
 
-      // "Prepare for flow..." phase
-      setTimeout(() => setPreparationPhase('ready'), 2000);
+      // Fade out "Prepare for flow..."
+      setTimeout(() => setFadeOut(true), 2000);
 
-      // "Get ready to breathe" phase and start exercise
+      // Switch to "Get ready to breathe"
+      setTimeout(() => {
+        setPreparationPhase('ready');
+        setShowContent(false);
+        setFadeOut(false);
+      }, 2800);
+
+      // Fade in "Get ready to breathe"
+      setTimeout(() => setShowContent(true), 2900);
+
+      // Fade out "Get ready to breathe"
+      setTimeout(() => setFadeOut(true), 4900);
+
+      // Switch to countdown
+      setTimeout(() => {
+        setPreparationPhase('countdown');
+        setShowContent(false);
+        setFadeOut(false);
+      }, 5700);
+
+      // Show countdown: 3
+      setTimeout(() => {
+        setShowContent(true);
+        setIntroCountdown(3);
+      }, 5800);
+
+      // Show countdown: 2
+      setTimeout(() => setIntroCountdown(2), 6800);
+
+      // Show countdown: 1
+      setTimeout(() => setIntroCountdown(1), 7800);
+
+      // Fade out countdown
+      setTimeout(() => setFadeOut(true), 8800);
+
+      // Start breathing exercise with gentle fade
       setTimeout(() => {
         setPreparationPhase('complete');
+        setShowContent(false);
+        setFadeOut(false);
+      }, 9300);
+
+      // Fade in breathing animation
+      setTimeout(() => {
+        setShowContent(true);
         start();
-      }, 3500);
+      }, 9400);
     }
   }, [autoStart, isActive, isComplete, start, preparationPhase]);
 
@@ -141,15 +185,16 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
     );
   }
 
-  // Get preparation message
-  const getPreparationMessage = () => {
+  // Get preparation content
+  const getPreparationContent = () => {
     if (!autoStart || preparationPhase === 'complete') return null;
-    if (preparationPhase === 'initial') return 'Prepare for flow...';
-    if (preparationPhase === 'ready') return 'Get ready to breathe';
+    if (preparationPhase === 'initial') return { type: 'text', content: 'Prepare for flow...' };
+    if (preparationPhase === 'ready') return { type: 'text', content: 'Get ready to breathe' };
+    if (preparationPhase === 'countdown') return { type: 'countdown', content: introCountdown };
     return null;
   };
 
-  const preparationMessage = getPreparationMessage();
+  const preparationContent = getPreparationContent();
   const showAnimation = preparationPhase === 'complete' || !autoStart;
 
   return (
@@ -162,17 +207,23 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
         Skip
       </button>
 
-      {/* Preparation Phase - Centered Messages */}
-      {preparationMessage && (
+      {/* Preparation Phase - Centered Messages with Smooth Fades */}
+      {preparationContent && (
         <div
-          className={`flex flex-col items-center justify-center transition-opacity duration-800 ${
-            showContent ? 'opacity-100' : 'opacity-0'
+          className={`flex items-center justify-center transition-opacity duration-700 ${
+            showContent && !fadeOut ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <h2 className="text-3xl font-semibold tracking-wide animate-fade-in">
-            {preparationMessage}
-          </h2>
-          <p className="text-base text-white/60 mt-4 animate-fade-in">{pattern.name}</p>
+          {preparationContent.type === 'text' && (
+            <h2 className="text-xl font-medium tracking-wide">
+              {preparationContent.content}
+            </h2>
+          )}
+          {preparationContent.type === 'countdown' && (
+            <div className="text-6xl font-bold text-white/90">
+              {preparationContent.content}
+            </div>
+          )}
         </div>
       )}
 
@@ -180,13 +231,9 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
       {showAnimation && (
         <div
           className={`flex flex-col items-center justify-center space-y-8 transition-opacity duration-1000 ${
-            preparationPhase === 'complete' ? 'opacity-100' : 'opacity-0'
+            preparationPhase === 'complete' && showContent ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {/* Pattern Name - Top, Minimal */}
-          <div className="text-center">
-            <p className="text-sm text-white/50 font-medium">{pattern.name}</p>
-          </div>
 
           {/* Animation Container - The Star */}
           <div className="relative w-80 h-80 sm:w-96 sm:h-96 flex items-center justify-center">
