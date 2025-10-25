@@ -71,26 +71,22 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false, is
     <div
       ref={setNodeRef}
       style={style}
-      className={`group/item rounded-lg transition-all relative overflow-hidden ${
-        isInToday
+      className={`group/item rounded-lg transition-all relative ${
+        isInToday && !isNextInLine
           ? 'bg-white/90 backdrop-blur-sm border-2 border-self/60 shadow-lg shadow-self/10'
+          : isInToday && isNextInLine
+          ? 'bg-gradient-to-br from-self/10 via-white/90 to-self/5 backdrop-blur-sm border-2 border-self shadow-lg shadow-self/10'
           : 'bg-white/70 border border-gray-200 hover:border-self/40 hover:bg-self/5'
-      } ${
-        isNextInLine
-          ? 'scale-[1.02] shadow-xl'
-          : ''
       }`}
     >
-      {/* Left Indicator Bar - Only for next in line */}
+      {/* Play Icon Indicator - Only for next in line */}
       {isNextInLine && (
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-self animate-pulse-subtle flex items-center justify-center">
-          <div className="absolute left-1 top-1/2 -translate-y-1/2 bg-self text-white text-[7px] font-bold px-1.5 py-0.5 rounded-r shadow-md uppercase tracking-wider whitespace-nowrap">
-            ▶ Next
-          </div>
+        <div className="absolute left-2 top-1/2 -translate-y-1/2 text-self text-sm animate-pulse-subtle flex items-center justify-center">
+          ▶
         </div>
       )}
 
-      <div className={`flex items-center gap-2 py-1 ${isNextInLine ? 'pl-14 pr-2.5' : 'px-2.5'}`}>
+      <div className={`flex items-center gap-2 py-1 ${isNextInLine ? 'pl-8 pr-2.5' : 'px-2.5'}`}>
         {/* Drag Handle - Desktop Only */}
         <button
           {...attributes}
@@ -543,13 +539,14 @@ const Flow = () => {
                             id="start-flow-button"
                             onClick={() => handleStartFlow(firstTodayAction)}
                             disabled={!firstTodayAction}
-                            className={`px-3 py-1 rounded-lg text-[10px] font-bold transition-colors uppercase tracking-wide shadow-md ${
+                            className={`px-3 py-1 rounded-lg text-[10px] font-bold transition-colors uppercase tracking-wide shadow-md flex items-center gap-1.5 ${
                               firstTodayAction
                                 ? 'bg-self text-white hover:bg-self/90 cursor-pointer'
                                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                             }`}
                           >
-                            Start Flow
+                            <span className="text-xs">▶</span>
+                            <span>Start Flow</span>
                           </button>
                         </div>
                       </div>
