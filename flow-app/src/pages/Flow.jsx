@@ -447,7 +447,7 @@ const Flow = () => {
 
           {/* ACTION Panel */}
           <div
-            className="overflow-hidden -mx-6 shadow-sm min-h-[calc(100vh-280px)] flex flex-col"
+            className="overflow-hidden -mx-6 shadow-sm min-h-screen flex flex-col"
             style={{
               background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.10) 50%, rgba(234, 88, 12, 0.08) 100%)',
             }}
