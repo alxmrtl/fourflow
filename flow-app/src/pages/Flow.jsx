@@ -458,6 +458,7 @@ const Flow = () => {
                     src="/FOCUSED BODY.png"
                     alt="Action"
                     className="w-6 h-6 object-contain flex-shrink-0"
+                    style={{ filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15))' }}
                   />
                   <h2 className="text-xs font-semibold tracking-wide text-self uppercase">Action</h2>
                 </div>

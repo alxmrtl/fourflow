@@ -64,6 +64,7 @@ const FlowSpiritPanel = () => {
             src="/VISUALIZED VISION.png"
             alt="Vision"
             className="w-6 h-6 object-contain flex-shrink-0"
+            style={{ filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15))' }}
           />
           <h2 className="text-xs font-semibold tracking-wide text-spirit uppercase">
             Vision

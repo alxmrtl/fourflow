@@ -104,6 +104,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
               src="/WORTHY MISSION.png"
               alt="Goals"
               className="w-6 h-6 object-contain flex-shrink-0"
+              style={{ filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15))' }}
             />
             <h2 className="text-xs font-semibold tracking-wide text-story uppercase flex-shrink-0">Mission</h2>
 
@@ -201,6 +202,7 @@ const FlowGoalFilter = ({ selectedGoalId, onGoalSelect }) => {
           src="/WORTHY MISSION.png"
           alt="Goals"
           className="w-6 h-6 object-contain flex-shrink-0"
+          style={{ filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15))' }}
         />
         <h2 className="text-xs font-semibold tracking-wide text-story uppercase flex-shrink-0">Mission</h2>
 

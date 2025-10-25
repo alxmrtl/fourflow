@@ -91,7 +91,7 @@ const SetupSpirit = () => {
           value={vision}
           onChange={(e) => setVision(e.target.value)}
           placeholder="Your future vision..."
-          className="w-full p-2 text-sm border-2 border-gray-200 rounded-lg focus:border-spirit focus:outline-none min-h-20 resize-none"
+          className="w-full p-2 text-sm border-2 border-gray-200 rounded-lg focus:border-spirit focus:outline-none min-h-20 resize-none bg-spirit/10"
         />
       </div>
 
