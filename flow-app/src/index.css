@@ -171,13 +171,29 @@
       radial-gradient(circle, rgba(255, 111, 97, 0.4) 2px, transparent 2px),
       radial-gradient(circle, rgba(230, 74, 69, 0.3) 3px, transparent 3px),
       radial-gradient(circle, rgba(255, 160, 122, 0.35) 2.5px, transparent 2.5px),
-      radial-gradient(circle, rgba(255, 111, 97, 0.45) 2px, transparent 2px);
-    background-size: 200px 200px, 300px 300px, 250px 250px, 350px 350px;
+      radial-gradient(circle, rgba(255, 111, 97, 0.45) 2px, transparent 2px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.38) 2px, transparent 2px),
+      radial-gradient(circle, rgba(230, 74, 69, 0.35) 2.5px, transparent 2.5px),
+      radial-gradient(circle, rgba(255, 160, 122, 0.4) 2px, transparent 2px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.42) 3px, transparent 3px);
+    background-size:
+      200px 200px,
+      300px 300px,
+      250px 250px,
+      350px 350px,
+      180px 180px,
+      280px 280px,
+      220px 220px,
+      320px 320px;
     background-position:
       0 0,
       50px 60px,
       130px 30px,
-      200px 100px;
+      200px 100px,
+      80px 20px,
+      160px 80px,
+      40px 120px,
+      240px 40px;
     animation: particleFloat1 25s linear infinite;
     pointer-events: none;
     z-index: 0;
@@ -193,12 +209,27 @@
     background-image:
       radial-gradient(circle, rgba(255, 111, 97, 0.35) 2px, transparent 2px),
       radial-gradient(circle, rgba(230, 74, 69, 0.4) 2.5px, transparent 2.5px),
-      radial-gradient(circle, rgba(255, 111, 97, 0.3) 3px, transparent 3px);
-    background-size: 280px 280px, 320px 320px, 400px 400px;
+      radial-gradient(circle, rgba(255, 111, 97, 0.3) 3px, transparent 3px),
+      radial-gradient(circle, rgba(255, 160, 122, 0.38) 2px, transparent 2px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.36) 2.5px, transparent 2.5px),
+      radial-gradient(circle, rgba(230, 74, 69, 0.33) 2px, transparent 2px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.4) 3px, transparent 3px);
+    background-size:
+      280px 280px,
+      320px 320px,
+      400px 400px,
+      240px 240px,
+      360px 360px,
+      260px 260px,
+      340px 340px;
     background-position:
       100px 20px,
       200px 80px,
-      50px 120px;
+      50px 120px,
+      140px 50px,
+      20px 90px,
+      180px 30px,
+      120px 110px;
     animation: particleFloat2 30s linear infinite;
     pointer-events: none;
     z-index: 0;
