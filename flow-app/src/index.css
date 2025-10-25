@@ -106,28 +106,36 @@
 
   /* Animated Action Background */
   @keyframes gradientFlow {
-    0% {
+    0%, 100% {
       background-position: 0% 50%;
-      background-size: 200% 200%;
     }
     50% {
       background-position: 100% 50%;
-      background-size: 220% 220%;
     }
-    100% {
-      background-position: 0% 50%;
-      background-size: 200% 200%;
+  }
+
+  @keyframes gradientBreath {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.95;
+      transform: scale(1.02);
     }
   }
 
   .animate-gradient-flow {
-    animation: gradientFlow 8s ease-in-out infinite;
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.12) 25%, rgba(251, 146, 60, 0.10) 50%, rgba(249, 115, 22, 0.08) 75%, rgba(234, 88, 12, 0.08) 100%);
+    background-size: 200% 200%;
+    animation: gradientFlow 12s ease-in-out infinite, gradientBreath 6s ease-in-out infinite;
   }
 
   /* Respects reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
     .animate-gradient-flow {
       animation: none;
+      background-size: 100% 100%;
     }
   }
 }

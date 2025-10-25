@@ -448,9 +448,6 @@ const Flow = () => {
           {/* ACTION Panel */}
           <div
             className="overflow-hidden -mx-6 shadow-sm min-h-screen flex flex-col animate-gradient-flow"
-            style={{
-              background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.12) 25%, rgba(251, 146, 60, 0.10) 50%, rgba(249, 115, 22, 0.08) 75%, rgba(234, 88, 12, 0.08) 100%)',
-            }}
           >
             {/* Header with Logo, Title, and Mission */}
             <div className="px-6 py-2.5">
