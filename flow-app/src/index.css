@@ -104,7 +104,7 @@
     animation: slideUp 300ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Animated Action Background */
+  /* Animated Action Background - Multi-layer approach */
   @keyframes gradientFlow {
     0%, 100% {
       background-position: 0% 50%;
@@ -114,28 +114,72 @@
     }
   }
 
-  @keyframes gradientBreath {
+  @keyframes colorPulse {
     0%, 100% {
-      opacity: 1;
-      transform: scale(1);
+      opacity: 0.7;
     }
     50% {
-      opacity: 0.95;
-      transform: scale(1.02);
+      opacity: 1;
     }
   }
 
   .animate-gradient-flow {
-    background: linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.12) 25%, rgba(251, 146, 60, 0.10) 50%, rgba(249, 115, 22, 0.08) 75%, rgba(234, 88, 12, 0.08) 100%);
-    background-size: 200% 200%;
-    animation: gradientFlow 12s ease-in-out infinite, gradientBreath 6s ease-in-out infinite;
+    position: relative;
+    background: linear-gradient(135deg,
+      rgba(255, 111, 97, 0.12) 0%,    /* SELF - coral red */
+      rgba(251, 146, 60, 0.18) 20%,   /* orange */
+      rgba(249, 115, 22, 0.15) 40%,   /* amber */
+      rgba(255, 111, 97, 0.20) 60%,   /* SELF - coral red (bolder) */
+      rgba(234, 88, 12, 0.10) 80%,    /* deep orange */
+      rgba(255, 111, 97, 0.08) 100%   /* SELF - coral red */
+    );
+  }
+
+  .animate-gradient-flow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(255, 111, 97, 0.25) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(251, 146, 60, 0.20) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.15) 0%, transparent 60%);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .animate-gradient-flow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(255, 111, 97, 0.03) 0px,
+        rgba(255, 111, 97, 0.03) 2px,
+        transparent 2px,
+        transparent 4px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .animate-gradient-flow > * {
+    position: relative;
+    z-index: 1;
   }
 
   /* Respects reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
-    .animate-gradient-flow {
+    .animate-gradient-flow::before {
       animation: none;
-      background-size: 100% 100%;
     }
   }
 }
