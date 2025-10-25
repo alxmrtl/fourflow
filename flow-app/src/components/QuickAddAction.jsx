@@ -45,8 +45,8 @@ const QuickAddAction = ({ selectedGoalId, onActionAdded, compact = false }) => {
 
   // Styles based on compact mode
   const containerClass = compact
-    ? "bg-white/70 backdrop-blur-sm rounded border border-self/20 px-2 py-1"
-    : "bg-white/80 backdrop-blur-sm rounded-lg border border-self/20 p-2";
+    ? "bg-white/70 backdrop-blur-sm rounded-lg border border-self/20 px-2 py-1"
+    : "bg-white/80 backdrop-blur-sm rounded-lg border border-self/20 py-1 px-2";
 
   const inputTextSize = compact ? "text-[10px]" : "text-xs";
   const inputPadding = compact ? "px-1.5 py-1" : "px-2 py-1.5";

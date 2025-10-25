@@ -65,7 +65,7 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false, on
           : 'bg-white/70 border border-gray-200 hover:border-self/40 hover:bg-self/5'
       }`}
     >
-      <div className="flex items-center gap-2 p-2.5">
+      <div className="flex items-center gap-2 py-1 px-2.5">
         {/* Drag Handle - Desktop Only */}
         <button
           {...attributes}
@@ -158,7 +158,7 @@ const SortableActionCard = ({ task, onStartFlow, onRemove, isInToday = false, on
 // Empty TODAY Slot Component
 const EmptyTodaySlot = ({ slotIndex }) => {
   return (
-    <div className="bg-gradient-to-br from-self/5 to-self/10 border-2 border-dashed border-self/30 rounded-lg p-2.5 flex items-center justify-center transition-all hover:border-self/50 hover:bg-self/15">
+    <div className="bg-gradient-to-br from-self/5 to-self/10 border-2 border-dashed border-self/30 rounded-lg py-1 px-2.5 flex items-center justify-center transition-all hover:border-self/50 hover:bg-self/15">
       <p className="text-xs text-self/60 font-medium">
         <span className="hidden md:inline">Drag action here</span>
         <span className="md:hidden">Tap action below to add</span>
@@ -467,7 +467,7 @@ const Flow = () => {
 
                 {/* Mission Pill */}
                 {selectedGoalId && selectedGoal && (
-                  <div className="inline-flex px-2.5 py-0.5 bg-story rounded-full text-[10px] font-medium flex items-center gap-1.5">
+                  <div className="inline-flex px-2.5 py-0.5 bg-story rounded-lg text-[10px] font-medium flex items-center gap-1.5">
                     <span>{selectedGoal.emoji}</span>
                     <span className="text-white">{selectedGoal.title}</span>
                   </div>
