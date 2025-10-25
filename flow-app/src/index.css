@@ -104,8 +104,42 @@
     animation: slideUp 300ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Animated Action Background - Monochromatic SELF Coral */
-  @keyframes coralFlow {
+  /* Animated Action Background - Particle Flow */
+  @keyframes particleFloat1 {
+    0% {
+      transform: translate(0, 100vh) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(100px, -100vh) scale(1);
+      opacity: 0;
+    }
+  }
+
+  @keyframes particleFloat2 {
+    0% {
+      transform: translate(0, 100vh) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-80px, -100vh) scale(1);
+      opacity: 0;
+    }
+  }
+
+  @keyframes gradientShift {
     0%, 100% {
       background-position: 0% 50%;
     }
@@ -114,39 +148,37 @@
     }
   }
 
-  @keyframes coralPulse {
-    0%, 100% {
-      opacity: 0.9;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-
   .animate-gradient-flow {
     position: relative;
     background: linear-gradient(135deg,
-      rgba(255, 111, 97, 0.08) 0%,     /* SELF - lighter */
-      rgba(255, 111, 97, 0.12) 25%,    /* SELF - light */
-      rgba(255, 111, 97, 0.16) 50%,    /* SELF - medium */
-      rgba(255, 111, 97, 0.20) 75%,    /* SELF - bold */
-      rgba(230, 74, 69, 0.15) 100%     /* SELF dark - deeper coral */
+      rgba(255, 111, 97, 0.05) 0%,
+      rgba(230, 74, 69, 0.08) 50%,
+      rgba(255, 111, 97, 0.06) 100%
     );
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+    overflow: hidden;
   }
 
   .animate-gradient-flow::before {
     content: '';
     position: absolute;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-      radial-gradient(ellipse at 20% 30%, rgba(255, 111, 97, 0.25) 0%, transparent 60%),   /* lighter coral */
-      radial-gradient(ellipse at 80% 70%, rgba(230, 74, 69, 0.28) 0%, transparent 60%),    /* darker coral */
-      radial-gradient(ellipse at 50% 50%, rgba(255, 111, 97, 0.22) 0%, transparent 70%);   /* medium coral */
-    background-size: 300% 300%;
-    animation: coralFlow 20s ease-in-out infinite, coralPulse 10s ease-in-out infinite;
+    background-image:
+      radial-gradient(circle, rgba(255, 111, 97, 0.4) 2px, transparent 2px),
+      radial-gradient(circle, rgba(230, 74, 69, 0.3) 3px, transparent 3px),
+      radial-gradient(circle, rgba(255, 160, 122, 0.35) 2.5px, transparent 2.5px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.45) 2px, transparent 2px);
+    background-size: 200px 200px, 300px 300px, 250px 250px, 350px 350px;
+    background-position:
+      0 0,
+      50px 60px,
+      130px 30px,
+      200px 100px;
+    animation: particleFloat1 25s linear infinite;
     pointer-events: none;
     z-index: 0;
   }
@@ -154,18 +186,20 @@
   .animate-gradient-flow::after {
     content: '';
     position: absolute;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     background-image:
-      repeating-linear-gradient(
-        45deg,
-        rgba(255, 111, 97, 0.03) 0px,
-        rgba(255, 111, 97, 0.03) 2px,
-        transparent 2px,
-        transparent 4px
-      );
+      radial-gradient(circle, rgba(255, 111, 97, 0.35) 2px, transparent 2px),
+      radial-gradient(circle, rgba(230, 74, 69, 0.4) 2.5px, transparent 2.5px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.3) 3px, transparent 3px);
+    background-size: 280px 280px, 320px 320px, 400px 400px;
+    background-position:
+      100px 20px,
+      200px 80px,
+      50px 120px;
+    animation: particleFloat2 30s linear infinite;
     pointer-events: none;
     z-index: 0;
   }
@@ -177,7 +211,9 @@
 
   /* Respects reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
-    .animate-gradient-flow::before {
+    .animate-gradient-flow,
+    .animate-gradient-flow::before,
+    .animate-gradient-flow::after {
       animation: none;
     }
   }
