@@ -50,12 +50,13 @@ const SetupSelf = () => {
   };
 
   return (
-    <div className="space-y-4">
-      {/* Header */}
-      <div>
-        <h2 className="text-xl font-semibold text-self">SELF - Manage Your Actions</h2>
-        <p className="text-sm text-gray-600">Organize your task backlog and execution</p>
-      </div>
+    <div className="min-h-screen bg-self/5 -mx-4 -my-4 px-4 py-4">
+      <div className="space-y-3">
+        {/* Header */}
+        <div>
+          <h2 className="text-xl font-semibold text-self">SELF - Manage Your Actions</h2>
+          <p className="text-sm text-gray-600">Organize your task backlog and execution</p>
+        </div>
 
       {/* Add Task Button */}
       <button
@@ -229,12 +230,13 @@ const SetupSelf = () => {
         )}
       </div>
 
-      {/* Help Text */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-xs text-gray-600">
-        <p className="font-semibold mb-1">Task Flow:</p>
-        <p><strong>Backlog</strong> → Tasks you want to do eventually</p>
-        <p><strong>Today</strong> → Ready to work on in your FLOW page</p>
-        <p><strong>Completed</strong> → Finished tasks (tracked in STATS)</p>
+        {/* Help Text */}
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-xs text-gray-600">
+          <p className="font-semibold mb-1">Task Flow:</p>
+          <p><strong>Backlog</strong> → Tasks you want to do eventually</p>
+          <p><strong>Today</strong> → Ready to work on in your FLOW page</p>
+          <p><strong>Completed</strong> → Finished tasks (tracked in STATS)</p>
+        </div>
       </div>
     </div>
   );
