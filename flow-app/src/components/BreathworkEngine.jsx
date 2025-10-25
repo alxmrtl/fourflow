@@ -9,11 +9,13 @@ import BreathworkAnimation from './BreathworkAnimation';
  * Orchestrates the complete breathwork experience with animation, audio, and UI
  * Features: Smooth auto-start sequence, charcoal background, skip button, minimal layout
  */
-const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip }) => {
+const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, taskTitle }) => {
   const breathwork = useBreathwork(pattern);
   const audioInitialized = useRef(false);
   const [preparationPhase, setPreparationPhase] = useState('initial'); // 'initial' | 'ready' | 'complete'
   const [showContent, setShowContent] = useState(false);
+  const [completionPhase, setCompletionPhase] = useState('complete'); // 'complete' | 'action-display' | 'countdown' | 'done'
+  const [countdown, setCountdown] = useState(3);
 
   const {
     isActive,
@@ -50,15 +52,31 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip }) =>
     });
   }, [onPhaseStart]);
 
-  // Setup completion callback
+  // Setup completion callback with action display and countdown
   useEffect(() => {
     onBreathworkComplete(() => {
       breathworkAudio.playComplete();
-      if (onComplete) {
-        setTimeout(() => onComplete(), 1500); // Brief delay for completion sound
-      }
+
+      // Show completion checkmark
+      setTimeout(() => setCompletionPhase('action-display'), 1500);
+
+      // Show action name
+      setTimeout(() => setCompletionPhase('countdown'), 3500);
+
+      // Start countdown
+      setTimeout(() => setCountdown(3), 3500);
+      setTimeout(() => setCountdown(2), 4500);
+      setTimeout(() => setCountdown(1), 5500);
+
+      // Transition to focus mode
+      setTimeout(() => {
+        setCompletionPhase('done');
+        if (onComplete) {
+          onComplete();
+        }
+      }, 6500);
     });
-  }, [onBreathworkComplete, onComplete]);
+  }, [onBreathworkComplete, onComplete, taskTitle]);
 
   // Smooth preparation sequence with auto-start
   useEffect(() => {
@@ -93,16 +111,32 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip }) =>
     }
   };
 
-  // Completion state - smooth auto-transition
+  // Completion state - smooth auto-transition with action display and countdown
   if (isComplete) {
     return (
-      <div
-        className={`w-full h-full flex flex-col items-center justify-center text-white transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}
-      >
-        <div className="text-center space-y-6 animate-fade-in">
-          <div className="text-7xl">✓</div>
-          <h2 className="text-2xl font-light tracking-wide">Complete</h2>
-        </div>
+      <div className="w-full h-full flex items-center justify-center text-white">
+        {/* Completion Checkmark */}
+        {completionPhase === 'complete' && (
+          <div className="text-center space-y-6 animate-fade-in">
+            <div className="text-7xl">✓</div>
+            <h2 className="text-2xl font-semibold tracking-wide">Complete</h2>
+          </div>
+        )}
+
+        {/* Action Name Display */}
+        {completionPhase === 'action-display' && taskTitle && (
+          <div className="text-center space-y-4 animate-fade-in">
+            <h1 className="text-5xl font-bold text-self tracking-tight">FLOW</h1>
+            <p className="text-2xl font-medium text-white/90 max-w-md px-6">{taskTitle}</p>
+          </div>
+        )}
+
+        {/* Countdown */}
+        {completionPhase === 'countdown' && (
+          <div className="text-center animate-fade-in">
+            <div className="text-8xl font-bold text-self animate-pulse-subtle">{countdown}</div>
+          </div>
+        )}
       </div>
     );
   }
@@ -119,7 +153,7 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip }) =>
   const showAnimation = preparationPhase === 'complete' || !autoStart;
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center relative text-white p-6">
+    <div className="w-full h-full flex items-center justify-center relative text-white p-6">
       {/* Skip Button - Top Right */}
       <button
         onClick={handleSkip}
@@ -131,14 +165,14 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip }) =>
       {/* Preparation Phase - Centered Messages */}
       {preparationMessage && (
         <div
-          className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-800 ${
+          className={`flex flex-col items-center justify-center transition-opacity duration-800 ${
             showContent ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <h2 className="text-3xl font-light tracking-wide animate-fade-in">
+          <h2 className="text-3xl font-semibold tracking-wide animate-fade-in">
             {preparationMessage}
           </h2>
-          <p className="text-sm text-white/50 mt-4 animate-fade-in">{pattern.name}</p>
+          <p className="text-base text-white/60 mt-4 animate-fade-in">{pattern.name}</p>
         </div>
       )}
 
@@ -151,7 +185,7 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip }) =>
         >
           {/* Pattern Name - Top, Minimal */}
           <div className="text-center">
-            <p className="text-sm text-white/50 font-light">{pattern.name}</p>
+            <p className="text-sm text-white/50 font-medium">{pattern.name}</p>
           </div>
 
           {/* Animation Container - The Star */}
@@ -161,11 +195,11 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip }) =>
             {/* Phase Label Overlay */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="text-center space-y-2">
-                <p className="text-4xl sm:text-5xl font-light tracking-wide drop-shadow-2xl transition-all duration-500">
+                <p className="text-4xl sm:text-5xl font-semibold tracking-wide drop-shadow-2xl transition-all duration-500">
                   {currentPhase?.label}
                 </p>
                 {currentLayerLabel && (
-                  <p className="text-xl text-white/80 drop-shadow-lg font-light transition-all duration-500">
+                  <p className="text-xl text-white/80 drop-shadow-lg font-medium transition-all duration-500">
                     {currentLayerLabel}
                   </p>
                 )}
