@@ -196,8 +196,8 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
   // Get preparation content
   const getPreparationContent = () => {
     if (!autoStart || preparationPhase === 'complete') return null;
-    if (preparationPhase === 'initial') return { type: 'text', content: 'Prepare for flow...' };
-    if (preparationPhase === 'ready') return { type: 'text', content: 'Get ready to breathe' };
+    if (preparationPhase === 'initial') return { type: 'text', content: 'Finding your center...' };
+    if (preparationPhase === 'ready') return { type: 'text', content: 'Breathing into flow...' };
     if (preparationPhase === 'countdown') return { type: 'countdown', content: introCountdown };
     return null;
   };
