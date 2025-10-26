@@ -198,7 +198,7 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
   const showAnimation = preparationPhase === 'complete' || !autoStart;
 
   return (
-    <div className="w-full h-full flex items-center justify-center relative text-white p-6">
+    <div className="w-full h-full relative text-white">
       {/* Skip Button - Top Right */}
       <button
         onClick={handleSkip}
@@ -210,17 +210,17 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
       {/* Preparation Phase - Centered Messages with Smooth Fades */}
       {preparationContent && (
         <div
-          className={`flex items-center justify-center transition-opacity duration-700 ${
+          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-700 ${
             showContent && !fadeOut ? 'opacity-100' : 'opacity-0'
           }`}
         >
           {preparationContent.type === 'text' && (
-            <h2 className="text-xl font-medium tracking-wide">
+            <h2 className="text-lg font-medium tracking-wide">
               {preparationContent.content}
             </h2>
           )}
           {preparationContent.type === 'countdown' && (
-            <div className="text-6xl font-bold text-white/90">
+            <div className="text-4xl font-bold text-white/90">
               {preparationContent.content}
             </div>
           )}
@@ -230,7 +230,7 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
       {/* Main Breathwork Content */}
       {showAnimation && (
         <div
-          className={`flex flex-col items-center justify-center space-y-8 transition-opacity duration-1000 ${
+          className={`absolute inset-0 flex flex-col items-center justify-center space-y-8 p-6 transition-opacity duration-1000 ${
             preparationPhase === 'complete' && showContent ? 'opacity-100' : 'opacity-0'
           }`}
         >
