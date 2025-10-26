@@ -25,6 +25,7 @@ const FocusMode = () => {
   const [showPreFlowBreathwork, setShowPreFlowBreathwork] = useState(false);
   const [showPostFlowBreathwork, setShowPostFlowBreathwork] = useState(false);
   const [sessionStarted, setSessionStarted] = useState(false);
+  const [fadeInFlow, setFadeInFlow] = useState(false);
 
   const task = tasks.find(t => t.id === currentSession?.taskId);
   const totalSeconds = currentSession?.duration * 60 || 0;
@@ -39,6 +40,14 @@ const FocusMode = () => {
       setSessionStarted(true);
     }
   }, [settings.breathworkBefore, sessionStarted]);
+
+  // Fade in the flow screen when session starts
+  useEffect(() => {
+    if (sessionStarted && !showPreFlowBreathwork && !showPostFlowBreathwork) {
+      // Small delay before fade in
+      setTimeout(() => setFadeInFlow(true), 100);
+    }
+  }, [sessionStarted, showPreFlowBreathwork, showPostFlowBreathwork]);
 
   // Start background audio when session starts (with fade in)
   useEffect(() => {
@@ -179,7 +188,7 @@ const FocusMode = () => {
 
   if (!currentSession) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="min-h-screen bg-charcoal text-white flex items-center justify-center">
         <p>No active session</p>
       </div>
     );
@@ -187,41 +196,41 @@ const FocusMode = () => {
 
   if (showEndModal) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center p-6">
+      <div className="min-h-screen bg-charcoal text-white flex items-center justify-center p-6">
         <div className="max-w-md w-full space-y-6 text-center">
           <h1 className="text-3xl font-bold text-self">Session Complete</h1>
 
           <div className="space-y-4">
             <div>
               <p className="text-6xl font-bold text-self mb-2">{currentSession.reps}</p>
-              <p className="text-gray-400">reps tracked</p>
+              <p className="text-ivory/60">reps tracked</p>
             </div>
 
             <div>
-              <p className="text-2xl font-semibold mb-2">{task?.title}</p>
-              <p className="text-gray-400">{currentSession.duration} minutes</p>
+              <p className="text-2xl font-semibold mb-2 text-ivory">{task?.title}</p>
+              <p className="text-ivory/60">{currentSession.duration} minutes</p>
             </div>
           </div>
 
           <div className="space-y-3">
-            <label className="flex items-center gap-3 p-4 bg-white/5 rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
+            <label className="flex items-center gap-3 p-4 bg-ivory/5 rounded-lg cursor-pointer hover:bg-ivory/10 transition-colors">
               <input
                 type="checkbox"
                 checked={taskCompleted}
                 onChange={(e) => setTaskCompleted(e.target.checked)}
-                className="w-5 h-5 accent-green-500"
+                className="w-5 h-5 accent-space"
               />
-              <span className="text-left">Was this action completed?</span>
+              <span className="text-left text-ivory">Was this action completed?</span>
             </label>
 
-            <label className="flex items-center gap-3 p-4 bg-white/5 rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
+            <label className="flex items-center gap-3 p-4 bg-ivory/5 rounded-lg cursor-pointer hover:bg-ivory/10 transition-colors">
               <input
                 type="checkbox"
                 checked={feltFlow}
                 onChange={(e) => setFeltFlow(e.target.checked)}
                 className="w-5 h-5 accent-self"
               />
-              <span className="text-left">Did you experience flow state?</span>
+              <span className="text-left text-ivory">Did you experience flow state?</span>
             </label>
 
             <button
@@ -237,12 +246,12 @@ const FocusMode = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center p-6">
+    <div className={`min-h-screen bg-charcoal text-white flex items-center justify-center p-6 transition-opacity duration-1000 ${fadeInFlow ? 'opacity-100' : 'opacity-0'}`}>
       <div className="max-w-md w-full space-y-8 text-center">
         {/* Task Info */}
         <div>
-          <h1 className="text-2xl font-semibold mb-1">{task?.title}</h1>
-          <p className="text-gray-400">{currentSession.duration} min session</p>
+          <h1 className="text-2xl font-semibold mb-1 text-ivory">{task?.title}</h1>
+          <p className="text-ivory/60">{currentSession.duration} min session</p>
         </div>
 
         {/* Circular Timer */}
@@ -255,7 +264,7 @@ const FocusMode = () => {
               stroke="currentColor"
               strokeWidth="8"
               fill="none"
-              className="text-white/10"
+              className="text-ivory/20"
             />
             <circle
               cx="128"
@@ -271,7 +280,7 @@ const FocusMode = () => {
             />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-5xl font-bold">
+            <span className="text-5xl font-bold text-ivory">
               {formatTime(timeRemaining)}
             </span>
           </div>
@@ -285,7 +294,7 @@ const FocusMode = () => {
           >
             + Rep ({currentSession.reps})
           </button>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-ivory/50">
             Press when you resist distraction
           </p>
         </div>
@@ -308,7 +317,7 @@ const FocusMode = () => {
                 }
               }
             }}
-            className="flex-1 bg-white/10 hover:bg-white/20 text-white py-3 rounded-lg font-semibold transition-colors"
+            className="flex-1 bg-ivory/10 hover:bg-ivory/20 text-ivory py-3 rounded-lg font-semibold transition-colors"
           >
             {currentSession.isPaused ? 'Resume' : 'Pause'}
           </button>
@@ -325,13 +334,13 @@ const FocusMode = () => {
                 setShowEndModal(true);
               }
             }}
-            className="flex-1 bg-white/10 hover:bg-white/20 text-white py-3 rounded-lg font-semibold transition-colors"
+            className="flex-1 bg-ivory/10 hover:bg-ivory/20 text-ivory py-3 rounded-lg font-semibold transition-colors"
           >
             End Early
           </button>
           <button
             onClick={handleCancel}
-            className="px-4 bg-red-500/20 hover:bg-red-500/30 text-red-400 py-3 rounded-lg font-semibold transition-colors"
+            className="px-4 bg-self/20 hover:bg-self/30 text-self py-3 rounded-lg font-semibold transition-colors"
           >
             ✕
           </button>

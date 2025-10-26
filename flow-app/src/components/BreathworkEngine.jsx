@@ -18,6 +18,7 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
   const [introCountdown, setIntroCountdown] = useState(3);
   const [completionPhase, setCompletionPhase] = useState('complete'); // 'complete' | 'action-display' | 'countdown' | 'done'
   const [countdown, setCountdown] = useState(3);
+  const [fadeOutToFlow, setFadeOutToFlow] = useState(false);
 
   const {
     isActive,
@@ -62,7 +63,7 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
       // Show completion checkmark
       setTimeout(() => setCompletionPhase('action-display'), 1500);
 
-      // Show action name
+      // Show "FLOW with ACTION" text and start countdown together
       setTimeout(() => setCompletionPhase('countdown'), 3500);
 
       // Start countdown
@@ -70,13 +71,16 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
       setTimeout(() => setCountdown(2), 4500);
       setTimeout(() => setCountdown(1), 5500);
 
-      // Transition to focus mode
+      // Start fade out
+      setTimeout(() => setFadeOutToFlow(true), 6500);
+
+      // Transition to focus mode after fade completes
       setTimeout(() => {
         setCompletionPhase('done');
         if (onComplete) {
           onComplete();
         }
-      }, 6500);
+      }, 7500);
     });
   }, [onBreathworkComplete, onComplete, taskTitle]);
 
@@ -158,7 +162,7 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
   // Completion state - smooth auto-transition with action display and countdown
   if (isComplete) {
     return (
-      <div className="w-full h-full flex items-center justify-center text-white">
+      <div className={`w-full h-full flex items-center justify-center text-white transition-opacity duration-1000 ${fadeOutToFlow ? 'opacity-0' : 'opacity-100'}`}>
         {/* Completion Checkmark */}
         {completionPhase === 'complete' && (
           <div className="text-center space-y-6 animate-fade-in">
@@ -175,9 +179,13 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
           </div>
         )}
 
-        {/* Countdown */}
+        {/* Countdown - Keep "FLOW with ACTION" visible */}
         {completionPhase === 'countdown' && (
-          <div className="text-center animate-fade-in">
+          <div className="text-center space-y-8 animate-fade-in">
+            <div className="space-y-4">
+              <h1 className="text-5xl font-bold text-self tracking-tight">FLOW</h1>
+              {taskTitle && <p className="text-2xl font-medium text-white/90 max-w-md px-6">{taskTitle}</p>}
+            </div>
             <div className="text-8xl font-bold text-self animate-pulse-subtle">{countdown}</div>
           </div>
         )}
