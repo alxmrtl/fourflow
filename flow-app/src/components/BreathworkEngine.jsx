@@ -198,21 +198,26 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
   const showAnimation = preparationPhase === 'complete' || !autoStart;
 
   return (
-    <div className="w-full h-full relative text-white">
-      {/* Skip Button - Top Right */}
+    <div className="w-full h-full relative text-white flex flex-col">
+      {/* Skip Button - Top Right with safe area */}
       <button
         onClick={handleSkip}
-        className="absolute top-6 right-6 px-4 py-2 text-sm text-white/60 hover:text-white transition-all duration-300 hover:bg-white/5 rounded-lg z-10"
+        className="absolute top-6 right-6 px-4 py-2 text-sm text-white/60 hover:text-white transition-all duration-300 hover:bg-white/5 rounded-lg z-10 safe-top"
+        style={{ top: 'max(1.5rem, env(safe-area-inset-top, 1.5rem))' }}
       >
         Skip
       </button>
 
-      {/* Preparation Phase - Centered Messages with Smooth Fades */}
+      {/* Preparation Phase - Centered Messages with Smooth Fades and Safe Area */}
       {preparationContent && (
         <div
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-700 ${
+          className={`flex-1 flex items-center justify-center px-6 transition-opacity duration-700 ${
             showContent && !fadeOut ? 'opacity-100' : 'opacity-0'
           }`}
+          style={{
+            paddingTop: 'max(1.5rem, env(safe-area-inset-top, 1.5rem))',
+            paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom, 1.5rem))'
+          }}
         >
           {preparationContent.type === 'text' && (
             <h2 className="text-lg font-medium tracking-wide">
@@ -230,9 +235,13 @@ const BreathworkEngine = ({ pattern, onComplete, autoStart = false, onSkip, task
       {/* Main Breathwork Content */}
       {showAnimation && (
         <div
-          className={`absolute inset-0 flex flex-col items-center justify-center space-y-8 p-6 transition-opacity duration-1000 ${
+          className={`flex-1 flex flex-col items-center justify-center space-y-8 p-6 transition-opacity duration-1000 ${
             preparationPhase === 'complete' && showContent ? 'opacity-100' : 'opacity-0'
           }`}
+          style={{
+            paddingTop: 'max(1.5rem, env(safe-area-inset-top, 1.5rem))',
+            paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom, 1.5rem))'
+          }}
         >
 
           {/* Animation Container - The Star */}

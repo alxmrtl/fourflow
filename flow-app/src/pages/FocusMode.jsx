@@ -137,7 +137,7 @@ const FocusMode = () => {
   if (showPreFlowBreathwork) {
     const pattern = getBreathworkPattern(settings.breathworkBefore);
     return (
-      <div className="min-h-screen bg-charcoal animate-fade-in">
+      <div className="h-screen bg-charcoal animate-fade-in overflow-hidden">
         <BreathworkEngine
           pattern={pattern}
           taskTitle={task?.title}
@@ -159,7 +159,7 @@ const FocusMode = () => {
   if (showPostFlowBreathwork) {
     const pattern = getBreathworkPattern(settings.breathworkAfter);
     return (
-      <div className="min-h-screen bg-charcoal animate-fade-in">
+      <div className="h-screen bg-charcoal animate-fade-in overflow-hidden">
         <BreathworkEngine
           pattern={pattern}
           taskTitle={task?.title}
