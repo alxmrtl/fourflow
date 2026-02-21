@@ -1,0 +1,138 @@
+import React, { useState, useRef, useEffect } from 'react';
+import { useStore } from '../store/useStore';
+
+const FlowSpiritPanel = () => {
+  const { profile, updateProfile } = useStore();
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedVision, setEditedVision] = useState('');
+  const textareaRef = useRef(null);
+
+  const hasVision = profile?.vision && profile.vision.trim().length > 0;
+
+  useEffect(() => {
+    if (isEditing && textareaRef.current) {
+      textareaRef.current.focus();
+      // Move cursor to end
+      textareaRef.current.selectionStart = textareaRef.current.value.length;
+      textareaRef.current.selectionEnd = textareaRef.current.value.length;
+    }
+  }, [isEditing]);
+
+  const handleEdit = () => {
+    setEditedVision(profile?.vision || '');
+    setIsEditing(true);
+  };
+
+  const handleSave = async () => {
+    await updateProfile({ vision: editedVision });
+    setIsEditing(false);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      setEditedVision('');
+      setIsEditing(false);
+    } else if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
+      handleSave();
+    }
+  };
+
+  const handleBlur = (e) => {
+    // Don't blur if clicking the save button
+    if (e.relatedTarget?.classList.contains('vision-save-btn')) {
+      return;
+    }
+    // Auto-save on blur
+    if (editedVision !== profile?.vision) {
+      handleSave();
+    } else {
+      setIsEditing(false);
+    }
+  };
+
+  return (
+    <div
+      className="overflow-hidden transition-all duration-300 ease-in-out relative group -mx-6 card-glass-spirit border-0 rounded-none"
+    >
+      {/* Ambient spirit glow */}
+      <div className="absolute inset-0 bg-glow-spirit opacity-40 pointer-events-none" />
+
+      {/* Header with Logo, Title, and Vision Pill */}
+      <div className="px-6 py-2.5 flex items-center gap-3 relative z-10">
+        <div className="flex items-center gap-2">
+          <img
+            src="/VISUALIZED VISION.png"
+            alt="Vision"
+            className="w-6 h-6 object-contain flex-shrink-0"
+            style={{ filter: 'drop-shadow(0 0 8px rgba(122, 77, 164, 0.5))' }}
+          />
+          <h2 className="text-xs font-semibold tracking-wide text-spirit uppercase">
+            Vision
+          </h2>
+        </div>
+
+        {/* Vision Pill Container */}
+        <div className="flex-1 min-w-0 flex items-center gap-2">
+          {!isEditing ? (
+            <>
+              <div
+                onClick={handleEdit}
+                className="text-12px flex-1 cursor-pointer px-3 py-1.5 rounded-lg bg-spirit/30 hover:bg-spirit/40 border border-spirit/30 transition-all italic text-ivory scrollbar-hide overflow-y-auto backdrop-blur-sm"
+                style={{
+                  fontFamily: 'inherit',
+                  fontSize: '12px',
+                  lineHeight: '1.25',
+                  minHeight: '40px',
+                  maxHeight: '60px',
+                }}
+              >
+                {hasVision ? profile.vision : 'Click to set your vision...'}
+              </div>
+              <button
+                onClick={handleEdit}
+                className="flex-shrink-0 w-7 h-7 rounded-full bg-spirit hover:bg-spirit-dark transition-all flex items-center justify-center text-white shadow-lg shadow-spirit/30"
+                aria-label="Edit vision"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                  <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                </svg>
+              </button>
+            </>
+          ) : (
+            <>
+              <textarea
+                ref={textareaRef}
+                value={editedVision}
+                onChange={(e) => setEditedVision(e.target.value)}
+                onKeyDown={handleKeyDown}
+                onBlur={handleBlur}
+                placeholder="Your aspirational vision for daily action..."
+                className="text-12px flex-1 px-3 py-1.5 border border-spirit/50 rounded-lg focus:border-spirit focus:outline-none resize-none bg-dark/80 italic text-ivory transition-all scrollbar-hide overflow-y-auto backdrop-blur-sm"
+                rows={1}
+                style={{
+                  fontFamily: 'inherit',
+                  fontSize: '12px',
+                  lineHeight: '1.25',
+                  minHeight: '40px',
+                  maxHeight: '60px',
+                }}
+              />
+              <button
+                onClick={handleSave}
+                onMouseDown={(e) => e.preventDefault()}
+                className="vision-save-btn flex-shrink-0 w-7 h-7 rounded-full bg-spirit hover:bg-spirit-dark transition-all flex items-center justify-center text-white shadow-lg shadow-spirit/30"
+                aria-label="Save vision"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                  <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FlowSpiritPanel;

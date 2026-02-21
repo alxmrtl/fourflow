@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FourFlowOS - The Portal (Mockup 3)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           MOCKUP 3: THE PORTAL
+           Strategy: Immersive Journey
+
+           - Full-bleed color sections as "portals"
+           - Narrative arc: transformation story
+           - Each scroll feels like entering deeper
+           - "You" focused, personal address
+           - From scattered to aligned journey
+           ======================================== */
+
+        :root {
+            --self: #FF6F61;
+            --self-dark: #cc574e;
+            --space: #6BA292;
+            --space-dark: #558275;
+            --story: #5B84B1;
+            --story-dark: #49698e;
+            --spirit: #7A4DA4;
+            --spirit-dark: #623d83;
+
+            --void: #050505;
+            --canvas: #0a0a0a;
+            --surface: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.5);
+
+            --font: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--void);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.08); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            50% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        /* Navigation - Minimal */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: white;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-cta {
+            padding: 12px 28px;
+            background: white;
+            border: none;
+            border-radius: 100px;
+            color: black;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero - The Invitation */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px;
+            position: relative;
+            background: var(--void);
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(255, 111, 97, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(122, 77, 164, 0.1) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 9vw, 6.5rem);
+            font-weight: 300;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            margin-bottom: 40px;
+        }
+
+        .hero-title strong {
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 550px;
+            margin: 0 auto 56px;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 40px;
+            background: white;
+            border: none;
+            border-radius: 100px;
+            color: black;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 60px rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-cta .arrow {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 48px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .scroll-text {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 48px;
+            background: linear-gradient(to bottom, var(--text-muted), transparent);
+        }
+
+        /* Portal Sections - Each dimension is a portal */
+        .portal {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portal-self { background: linear-gradient(135deg, var(--self-dark) 0%, var(--self) 100%); }
+        .portal-space { background: linear-gradient(135deg, var(--space-dark) 0%, var(--space) 100%); }
+        .portal-story { background: linear-gradient(135deg, var(--story-dark) 0%, var(--story) 100%); }
+        .portal-spirit { background: linear-gradient(135deg, var(--spirit-dark) 0%, var(--spirit) 100%); }
+
+        .portal-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .portal-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .portal-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            opacity: 0.8;
+        }
+
+        .portal-label-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .portal-question {
+            font-size: 1.25rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .portal-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 32px;
+        }
+
+        .portal-desc {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .portal-keys {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .portal-key {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .portal-key:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(8px);
+        }
+
+        .portal-key-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portal-key-name {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .portal-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portal-symbol {
+            width: 350px;
+            height: 350px;
+            position: relative;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .portal-symbol svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .portal-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+            animation: breathe 6s ease-in-out infinite;
+        }
+
+        /* Reverse layout for alternating portals */
+        .portal.reverse .portal-content {
+            direction: rtl;
+        }
+
+        .portal.reverse .portal-content > * {
+            direction: ltr;
+        }
+
+        /* Transformation Bridge */
+        .bridge-section {
+            padding: 160px 48px;
+            background: var(--canvas);
+            text-align: center;
+        }
+
+        .bridge-header {
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .bridge-header h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        .bridge-header h2 strong {
+            font-weight: 700;
+        }
+
+        .bridge-header p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .bridge-journey {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .bridge-state {
+            padding: 32px 48px;
+            border-radius: 20px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .bridge-state.from {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .bridge-state.to {
+            background: linear-gradient(135deg, rgba(255, 111, 97, 0.15), rgba(122, 77, 164, 0.15));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .bridge-state-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .bridge-state-word {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .bridge-state.from .bridge-state-word {
+            color: var(--text-muted);
+        }
+
+        .bridge-state.to .bridge-state-word {
+            background: linear-gradient(90deg, var(--self), var(--spirit));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bridge-arrow {
+            font-size: 2rem;
+            color: var(--text-muted);
+        }
+
+        /* Apps Section - Horizontal Scroll */
+        .apps-section {
+            padding: 160px 48px;
+            background: var(--void);
+        }
+
+        .apps-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 80px;
+        }
+
+        .apps-header h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        .apps-header h2 strong {
+            font-weight: 700;
+        }
+
+        .apps-header p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .apps-scroll {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .apps-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .app-card {
+            flex: 0 0 320px;
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 48px 36px;
+            scroll-snap-align: start;
+            transition: all 0.4s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .app-card:nth-child(1) .app-icon { background: linear-gradient(135deg, var(--self), var(--spirit)); }
+        .app-card:nth-child(2) .app-icon { background: linear-gradient(135deg, var(--space), var(--story)); }
+        .app-card:nth-child(3) .app-icon { background: linear-gradient(135deg, var(--story), var(--self)); }
+        .app-card:nth-child(4) .app-icon { background: linear-gradient(135deg, var(--spirit), var(--space)); }
+
+        .app-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        .app-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .app-tagline {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .app-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .app-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Philosophy Ribbon */
+        .philosophy-ribbon {
+            padding: 80px 48px;
+            background: linear-gradient(90deg, var(--self), var(--space), var(--story), var(--spirit));
+            text-align: center;
+        }
+
+        .philosophy-quote {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .philosophy-quote em {
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        /* Final Portal - The Invitation Returns */
+        .final-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px;
+            background: var(--canvas);
+            position: relative;
+        }
+
+        .final-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(122, 77, 164, 0.2) 0%, transparent 60%);
+            animation: breathe 8s ease-in-out infinite;
+        }
+
+        .final-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .final-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 300;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .final-title strong {
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--self), var(--spirit));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .final-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+
+        .final-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            padding: 24px 48px;
+            background: linear-gradient(135deg, var(--self), var(--spirit));
+            border: none;
+            border-radius: 100px;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .final-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 60px rgba(122, 77, 164, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 48px;
+            background: var(--void);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            background: linear-gradient(90deg, var(--self), var(--spirit));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-tagline {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            list-style: none;
+            margin-bottom: 48px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .portal-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .portal.reverse .portal-content {
+                direction: ltr;
+            }
+
+            .portal-visual {
+                order: -1;
+            }
+
+            .portal-symbol {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 16px 24px;
+            }
+
+            .portal {
+                padding: 80px 24px;
+            }
+
+            .portal-keys {
+                gap: 12px;
+            }
+
+            .portal-key {
+                padding: 12px 16px;
+            }
+
+            .bridge-journey {
+                flex-direction: column;
+            }
+
+            .bridge-arrow {
+                transform: rotate(90deg);
+            }
+
+            .apps-section {
+                padding: 80px 24px;
+            }
+
+            .app-card {
+                flex: 0 0 280px;
+            }
+
+            .philosophy-ribbon {
+                padding: 60px 24px;
+            }
+
+            .footer {
+                padding: 60px 24px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">FourFlowOS</div>
+        <button class="nav-cta">Enter</button>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg-pattern"></div>
+
+        <div class="hero-content">
+            <p class="hero-eyebrow">An invitation</p>
+            <h1 class="hero-title">
+                You were not made<br>
+                to <strong>force</strong> your focus.
+            </h1>
+            <p class="hero-subtitle">
+                You were made to flow. To align. To become fully absorbed in what matters most to you.
+            </p>
+            <button class="hero-cta">
+                Begin the Journey
+                <span class="arrow">&rarr;</span>
+            </button>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll to enter</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Portal: Self -->
+    <section class="portal portal-self">
+        <div class="portal-content">
+            <div class="portal-text">
+                <div class="portal-label">
+                    <span class="portal-label-dot"></span>
+                    <span>First Dimension</span>
+                </div>
+                <p class="portal-question">"What am I doing now?"</p>
+                <h2 class="portal-title">Self</h2>
+                <p class="portal-desc">
+                    The present moment. Your body, your mind, your emotions. This is where flow begins - in the attention you bring to now.
+                </p>
+                <div class="portal-keys">
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="12" cy="12" r="8"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Focused Body</span>
+                    </div>
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M12 2L12 22M2 12L22 12"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Open Mind</span>
+                    </div>
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Tuned Emotions</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portal-visual">
+                <div class="portal-glow"></div>
+                <div class="portal-symbol">
+                    <svg viewBox="0 0 200 200" fill="none">
+                        <circle cx="100" cy="100" r="80" stroke="white" stroke-width="2"/>
+                        <circle cx="100" cy="100" r="55" stroke="white" stroke-width="1.5" opacity="0.7"/>
+                        <circle cx="100" cy="100" r="30" stroke="white" stroke-width="1" opacity="0.5"/>
+                        <circle cx="100" cy="100" r="8" fill="white"/>
+                        <!-- Frequency waves -->
+                        <path d="M20 100 Q40 80 60 100 Q80 120 100 100 Q120 80 140 100 Q160 120 180 100" stroke="white" stroke-width="1" opacity="0.4"/>
+                        <path d="M20 100 Q40 120 60 100 Q80 80 100 100 Q120 120 140 100 Q160 80 180 100" stroke="white" stroke-width="1" opacity="0.4"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portal: Space -->
+    <section class="portal portal-space reverse">
+        <div class="portal-content">
+            <div class="portal-text">
+                <div class="portal-label">
+                    <span class="portal-label-dot"></span>
+                    <span>Second Dimension</span>
+                </div>
+                <p class="portal-question">"What supports my flow?"</p>
+                <h2 class="portal-title">Space</h2>
+                <p class="portal-desc">
+                    Your environment shapes your state. Design your physical and digital spaces to serve focus, not steal it.
+                </p>
+                <div class="portal-keys">
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Intentional Space</span>
+                    </div>
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Optimized Tools</span>
+                    </div>
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Feedback Systems</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portal-visual">
+                <div class="portal-glow"></div>
+                <div class="portal-symbol">
+                    <svg viewBox="0 0 200 200" fill="none">
+                        <rect x="30" y="30" width="140" height="140" stroke="white" stroke-width="2"/>
+                        <rect x="55" y="55" width="90" height="90" stroke="white" stroke-width="1.5" opacity="0.7"/>
+                        <rect x="80" y="80" width="40" height="40" stroke="white" stroke-width="1" opacity="0.5"/>
+                        <rect x="95" y="95" width="10" height="10" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portal: Story -->
+    <section class="portal portal-story">
+        <div class="portal-content">
+            <div class="portal-text">
+                <div class="portal-label">
+                    <span class="portal-label-dot"></span>
+                    <span>Third Dimension</span>
+                </div>
+                <p class="portal-question">"What am I building?"</p>
+                <h2 class="portal-title">Story</h2>
+                <p class="portal-desc">
+                    Direction gives meaning. Your mission, your role, the narrative you're part of. This is what makes work feel significant.
+                </p>
+                <div class="portal-keys">
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Generative Story</span>
+                    </div>
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Worthy Mission</span>
+                    </div>
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Empowered Role</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portal-visual">
+                <div class="portal-glow"></div>
+                <div class="portal-symbol">
+                    <svg viewBox="0 0 200 200" fill="none">
+                        <line x1="100" y1="20" x2="100" y2="180" stroke="white" stroke-width="2"/>
+                        <line x1="20" y1="100" x2="180" y2="100" stroke="white" stroke-width="2"/>
+                        <circle cx="100" cy="100" r="25" stroke="white" stroke-width="1.5" opacity="0.7"/>
+                        <circle cx="100" cy="100" r="6" fill="white"/>
+                        <!-- Cross ends -->
+                        <circle cx="100" cy="20" r="4" fill="white" opacity="0.5"/>
+                        <circle cx="100" cy="180" r="4" fill="white" opacity="0.5"/>
+                        <circle cx="20" cy="100" r="4" fill="white" opacity="0.5"/>
+                        <circle cx="180" cy="100" r="4" fill="white" opacity="0.5"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portal: Spirit -->
+    <section class="portal portal-spirit reverse">
+        <div class="portal-content">
+            <div class="portal-text">
+                <div class="portal-label">
+                    <span class="portal-label-dot"></span>
+                    <span>Fourth Dimension</span>
+                </div>
+                <p class="portal-question">"What drives me?"</p>
+                <h2 class="portal-title">Spirit</h2>
+                <p class="portal-desc">
+                    The fire within. Your values, your vision, your curiosity. This is what ignites the rest - the why beneath everything.
+                </p>
+                <div class="portal-keys">
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Grounding Values</span>
+                    </div>
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Visualized Vision</span>
+                    </div>
+                    <div class="portal-key">
+                        <div class="portal-key-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <span class="portal-key-name">Ignited Curiosity</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portal-visual">
+                <div class="portal-glow"></div>
+                <div class="portal-symbol">
+                    <svg viewBox="0 0 200 200" fill="none">
+                        <circle cx="100" cy="100" r="80" stroke="white" stroke-width="2"/>
+                        <path d="M100 20 L100 180 M20 100 L180 100 M35 35 L165 165 M165 35 L35 165" stroke="white" stroke-width="1" opacity="0.5"/>
+                        <circle cx="100" cy="100" r="40" stroke="white" stroke-width="1.5" opacity="0.7"/>
+                        <circle cx="100" cy="100" r="10" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Bridge -->
+    <section class="bridge-section">
+        <div class="bridge-header">
+            <h2>From scattered to <strong>aligned</strong></h2>
+            <p>When the four dimensions tune together, everything shifts.</p>
+        </div>
+
+        <div class="bridge-journey">
+            <div class="bridge-state from">
+                <p class="bridge-state-label">Before</p>
+                <p class="bridge-state-word">Overwhelmed</p>
+            </div>
+            <span class="bridge-arrow">&rarr;</span>
+            <div class="bridge-state to">
+                <p class="bridge-state-label">After</p>
+                <p class="bridge-state-word">Centered</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section class="apps-section">
+        <div class="apps-header">
+            <h2>Tools for the <strong>practice</strong></h2>
+            <p>Each app serves a different dimension of your flow.</p>
+        </div>
+
+        <div class="apps-scroll">
+            <div class="app-card">
+                <div class="app-icon">
+                    <svg viewBox="0 0 24 24" fill="white">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="4" fill="white"/>
+                    </svg>
+                </div>
+                <h3 class="app-name">FlowZone</h3>
+                <p class="app-tagline">The focus companion</p>
+                <p class="app-desc">Train your focus with visible Focus Reps. Make the invisible work of attention measurable and meaningful.</p>
+                <span class="app-badge">iOS & Web</span>
+            </div>
+
+            <div class="app-card">
+                <div class="app-icon">
+                    <svg viewBox="0 0 24 24" fill="white">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" fill="none" stroke="white" stroke-width="2"/>
+                        <polyline points="22 4 12 14.01 9 11.01" fill="none" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="app-name">FlowHabits</h3>
+                <p class="app-tagline">Aligned daily practice</p>
+                <p class="app-desc">Build habits across all four dimensions. Small actions compound into fundamental shifts.</p>
+                <span class="app-badge">iOS</span>
+            </div>
+
+            <div class="app-card">
+                <div class="app-icon">
+                    <svg viewBox="0 0 24 24" fill="white">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" fill="none" stroke="white" stroke-width="2"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="none" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="app-name">FlowRead</h3>
+                <p class="app-tagline">Reading as meditation</p>
+                <p class="app-desc">Speed reading that trains presence. Transform consumption into contemplation.</p>
+                <span class="app-badge">Web</span>
+            </div>
+
+            <div class="app-card">
+                <div class="app-icon">
+                    <svg viewBox="0 0 24 24" fill="white">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1" fill="none" stroke="white" stroke-width="2"/>
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" fill="none" stroke="white" stroke-width="2"/>
+                        <line x1="6" y1="1" x2="6" y2="4" stroke="white" stroke-width="2"/>
+                        <line x1="10" y1="1" x2="10" y2="4" stroke="white" stroke-width="2"/>
+                        <line x1="14" y1="1" x2="14" y2="4" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="app-name">FlowRep</h3>
+                <p class="app-tagline">Movement for clarity</p>
+                <p class="app-desc">Bodyweight training that grounds the mind. Physical practice unlocks mental freedom.</p>
+                <span class="app-badge">Coming Soon</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Ribbon -->
+    <section class="philosophy-ribbon">
+        <p class="philosophy-quote">
+            "The struggle is part of the process &mdash;<br>
+            <em>not a sign you're doing it wrong.</em>"
+        </p>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-section">
+        <div class="final-glow"></div>
+        <div class="final-content">
+            <h2 class="final-title">Ready to enter <strong>flow</strong>?</h2>
+            <p class="final-subtitle">Start with the framework. Build the practice. Align the four dimensions.</p>
+            <button class="final-cta">
+                Begin Your Journey
+                <span>&rarr;</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-logo">FourFlowOS</p>
+        <p class="footer-tagline">Awakening through flow</p>
+        <ul class="footer-links">
+            <li><a href="#">Framework</a></li>
+            <li><a href="#">Apps</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Privacy</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2025 FourFlowOS. All rights reserved.</p>
+    </footer>
+</body>
+</html>

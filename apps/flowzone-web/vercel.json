@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd flowzone-web && npm run build",
+  "outputDirectory": "flowzone-web/dist",
+  "devCommand": "cd flowzone-web && npm run dev",
+  "installCommand": "cd flowzone-web && npm install",
+  "framework": "vite"
+}

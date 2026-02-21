@@ -1,0 +1,550 @@
+{
+  "version": "2.0",
+  "instruction": "Go with your gut. Don't think—just tap.",
+  "questions": [
+    {
+      "id": "mind-state",
+      "text": "Your mind right now...",
+      "pillar": "self_",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "spinning",
+          "text": "Spinning",
+          "iconName": "tornado",
+          "pillarWeights": {"self_": 1.0},
+          "flowKeyWeights": {"openMind": 1.0, "tunedEmotions": 0.3}
+        },
+        {
+          "id": "foggy",
+          "text": "Foggy",
+          "iconName": "cloud.fog",
+          "pillarWeights": {"self_": 0.8},
+          "flowKeyWeights": {"openMind": 0.8, "focusedBody": 0.3}
+        },
+        {
+          "id": "choppy",
+          "text": "Choppy",
+          "iconName": "water.waves",
+          "pillarWeights": {"self_": 0.6},
+          "flowKeyWeights": {"tunedEmotions": 0.7, "openMind": 0.4}
+        },
+        {
+          "id": "clear",
+          "text": "Clear",
+          "iconName": "moon.stars",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "body-state",
+      "text": "Your body feels...",
+      "pillar": "self_",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "drained",
+          "text": "Drained",
+          "iconName": "battery.25",
+          "pillarWeights": {"self_": 1.0},
+          "flowKeyWeights": {"focusedBody": 1.0}
+        },
+        {
+          "id": "wired",
+          "text": "Wired",
+          "iconName": "bolt.trianglebadge.exclamationmark",
+          "pillarWeights": {"self_": 0.7},
+          "flowKeyWeights": {"focusedBody": 0.5, "tunedEmotions": 0.5}
+        },
+        {
+          "id": "stiff",
+          "text": "Stiff",
+          "iconName": "figure.stand",
+          "pillarWeights": {"self_": 0.6},
+          "flowKeyWeights": {"focusedBody": 0.8}
+        },
+        {
+          "id": "ready",
+          "text": "Ready",
+          "iconName": "figure.run",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "emotions-state",
+      "text": "Your emotions...",
+      "pillar": "self_",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "heavy",
+          "text": "Heavy",
+          "iconName": "cloud.rain",
+          "pillarWeights": {"self_": 1.0},
+          "flowKeyWeights": {"tunedEmotions": 1.0}
+        },
+        {
+          "id": "scattered",
+          "text": "Scattered",
+          "iconName": "wind",
+          "pillarWeights": {"self_": 0.8},
+          "flowKeyWeights": {"tunedEmotions": 0.8, "openMind": 0.3}
+        },
+        {
+          "id": "intense",
+          "text": "Intense",
+          "iconName": "flame",
+          "pillarWeights": {"self_": 0.5},
+          "flowKeyWeights": {"tunedEmotions": 0.6}
+        },
+        {
+          "id": "settled",
+          "text": "Settled",
+          "iconName": "leaf",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "space-state",
+      "text": "Your space...",
+      "pillar": "space",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "cluttered",
+          "text": "Cluttered",
+          "iconName": "square.stack.3d.up",
+          "pillarWeights": {"space": 1.0},
+          "flowKeyWeights": {"intentionalSpace": 1.0}
+        },
+        {
+          "id": "noisy",
+          "text": "Noisy",
+          "iconName": "speaker.wave.3",
+          "pillarWeights": {"space": 0.8},
+          "flowKeyWeights": {"intentionalSpace": 0.8}
+        },
+        {
+          "id": "buzzing",
+          "text": "Buzzing",
+          "iconName": "iphone.radiowaves.left.and.right",
+          "pillarWeights": {"space": 0.7},
+          "flowKeyWeights": {"intentionalSpace": 0.5, "optimizedTools": 0.5}
+        },
+        {
+          "id": "sanctuary",
+          "text": "Sanctuary",
+          "iconName": "house",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "tools-state",
+      "text": "Your tools...",
+      "pillar": "space",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "scattered",
+          "text": "Scattered",
+          "iconName": "wrench.and.screwdriver",
+          "pillarWeights": {"space": 0.8},
+          "flowKeyWeights": {"optimizedTools": 1.0}
+        },
+        {
+          "id": "overcomplicated",
+          "text": "Overcomplicated",
+          "iconName": "gearshape.2",
+          "pillarWeights": {"space": 0.7},
+          "flowKeyWeights": {"optimizedTools": 0.8}
+        },
+        {
+          "id": "missing",
+          "text": "Missing",
+          "iconName": "questionmark.folder",
+          "pillarWeights": {"space": 0.6},
+          "flowKeyWeights": {"optimizedTools": 0.7}
+        },
+        {
+          "id": "dialed",
+          "text": "Dialed",
+          "iconName": "checkmark.seal",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "systems-state",
+      "text": "Your systems...",
+      "pillar": "space",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "spinning-wheels",
+          "text": "Spinning wheels",
+          "iconName": "arrow.triangle.2.circlepath",
+          "pillarWeights": {"space": 0.8},
+          "flowKeyWeights": {"feedbackSystems": 1.0}
+        },
+        {
+          "id": "no-feedback",
+          "text": "No feedback",
+          "iconName": "chart.bar.xaxis",
+          "pillarWeights": {"space": 0.7},
+          "flowKeyWeights": {"feedbackSystems": 0.9}
+        },
+        {
+          "id": "overflowing",
+          "text": "Overflowing",
+          "iconName": "tray.full",
+          "pillarWeights": {"space": 0.6},
+          "flowKeyWeights": {"feedbackSystems": 0.6, "intentionalSpace": 0.3}
+        },
+        {
+          "id": "flowing",
+          "text": "Flowing",
+          "iconName": "flowchart",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "direction-state",
+      "text": "Your direction...",
+      "pillar": "story",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "lost",
+          "text": "Lost",
+          "iconName": "questionmark.circle",
+          "pillarWeights": {"story": 1.0, "spirit": 0.3},
+          "flowKeyWeights": {"clearMission": 1.0, "generativeStory": 0.5}
+        },
+        {
+          "id": "vague-map",
+          "text": "Vague map",
+          "iconName": "map",
+          "pillarWeights": {"story": 0.7},
+          "flowKeyWeights": {"clearMission": 0.7}
+        },
+        {
+          "id": "task-list",
+          "text": "Task list",
+          "iconName": "list.bullet",
+          "pillarWeights": {"story": 0.4},
+          "flowKeyWeights": {"clearMission": 0.4, "empoweredRole": 0.3}
+        },
+        {
+          "id": "locked-in",
+          "text": "Locked in",
+          "iconName": "location.north",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "mission-state",
+      "text": "Your mission...",
+      "pillar": "story",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "cant-see",
+          "text": "Can't see it",
+          "iconName": "eye.slash",
+          "pillarWeights": {"story": 1.0},
+          "flowKeyWeights": {"clearMission": 1.0, "visualizedVision": 0.5}
+        },
+        {
+          "id": "searching",
+          "text": "Searching",
+          "iconName": "binoculars",
+          "pillarWeights": {"story": 0.7},
+          "flowKeyWeights": {"clearMission": 0.7}
+        },
+        {
+          "id": "narrowing",
+          "text": "Narrowing in",
+          "iconName": "scope",
+          "pillarWeights": {"story": 0.4},
+          "flowKeyWeights": {"clearMission": 0.4}
+        },
+        {
+          "id": "clear-target",
+          "text": "Clear target",
+          "iconName": "target",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "role-state",
+      "text": "Your role...",
+      "pillar": "story",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "undefined",
+          "text": "Undefined",
+          "iconName": "person.crop.circle.badge.questionmark",
+          "pillarWeights": {"story": 1.0},
+          "flowKeyWeights": {"empoweredRole": 1.0}
+        },
+        {
+          "id": "playing-parts",
+          "text": "Playing parts",
+          "iconName": "theatermasks",
+          "pillarWeights": {"story": 0.7},
+          "flowKeyWeights": {"empoweredRole": 0.7, "generativeStory": 0.3}
+        },
+        {
+          "id": "emerging",
+          "text": "Emerging",
+          "iconName": "person.crop.circle.badge.checkmark",
+          "pillarWeights": {"story": 0.4},
+          "flowKeyWeights": {"empoweredRole": 0.4}
+        },
+        {
+          "id": "owned",
+          "text": "Owned",
+          "iconName": "crown",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "values-state",
+      "text": "Your values...",
+      "pillar": "spirit",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "undefined",
+          "text": "Undefined",
+          "iconName": "square.dashed",
+          "pillarWeights": {"spirit": 1.0},
+          "flowKeyWeights": {"groundingValues": 1.0}
+        },
+        {
+          "id": "conflicted",
+          "text": "Conflicted",
+          "iconName": "arrow.left.arrow.right",
+          "pillarWeights": {"spirit": 0.8},
+          "flowKeyWeights": {"groundingValues": 0.8}
+        },
+        {
+          "id": "felt-not-named",
+          "text": "Felt not named",
+          "iconName": "circle.dotted",
+          "pillarWeights": {"spirit": 0.5},
+          "flowKeyWeights": {"groundingValues": 0.5}
+        },
+        {
+          "id": "solid",
+          "text": "Solid",
+          "iconName": "seal",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "vision-state",
+      "text": "Your vision...",
+      "pillar": "spirit",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "blank",
+          "text": "Blank",
+          "iconName": "eye.slash",
+          "pillarWeights": {"spirit": 1.0},
+          "flowKeyWeights": {"visualizedVision": 1.0}
+        },
+        {
+          "id": "glimpses",
+          "text": "Glimpses",
+          "iconName": "sparkles",
+          "pillarWeights": {"spirit": 0.7},
+          "flowKeyWeights": {"visualizedVision": 0.7}
+        },
+        {
+          "id": "a-picture",
+          "text": "A picture",
+          "iconName": "photo.on.rectangle",
+          "pillarWeights": {"spirit": 0.4},
+          "flowKeyWeights": {"visualizedVision": 0.4}
+        },
+        {
+          "id": "a-movie",
+          "text": "A movie",
+          "iconName": "film",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "curiosity-state",
+      "text": "Your curiosity...",
+      "pillar": "spirit",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "dormant",
+          "text": "Dormant",
+          "iconName": "moon.zzz",
+          "pillarWeights": {"spirit": 1.0},
+          "flowKeyWeights": {"ignitedCuriosity": 1.0}
+        },
+        {
+          "id": "flickering",
+          "text": "Flickering",
+          "iconName": "sparkle",
+          "pillarWeights": {"spirit": 0.6},
+          "flowKeyWeights": {"ignitedCuriosity": 0.6}
+        },
+        {
+          "id": "warming-up",
+          "text": "Warming up",
+          "iconName": "lightbulb",
+          "pillarWeights": {"spirit": 0.3},
+          "flowKeyWeights": {"ignitedCuriosity": 0.3}
+        },
+        {
+          "id": "electric",
+          "text": "Electric",
+          "iconName": "bolt",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "distraction-response",
+      "text": "When distracted, you...",
+      "pillar": "self_",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "spiral",
+          "text": "Spiral",
+          "iconName": "arrow.uturn.backward",
+          "pillarWeights": {"self_": 0.8, "space": 0.3},
+          "flowKeyWeights": {"tunedEmotions": 0.7, "openMind": 0.5}
+        },
+        {
+          "id": "lose-hours",
+          "text": "Lose hours",
+          "iconName": "clock.arrow.circlepath",
+          "pillarWeights": {"space": 0.7, "self_": 0.3},
+          "flowKeyWeights": {"intentionalSpace": 0.6, "feedbackSystems": 0.5}
+        },
+        {
+          "id": "catch-slow",
+          "text": "Catch it slow",
+          "iconName": "hand.raised",
+          "pillarWeights": {"self_": 0.3},
+          "flowKeyWeights": {"openMind": 0.3}
+        },
+        {
+          "id": "snap-back",
+          "text": "Snap back",
+          "iconName": "return",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "morning-state",
+      "text": "Mornings are...",
+      "pillar": "space",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "reactive",
+          "text": "Reactive",
+          "iconName": "alarm",
+          "pillarWeights": {"space": 0.8, "self_": 0.3},
+          "flowKeyWeights": {"intentionalSpace": 0.8, "feedbackSystems": 0.4}
+        },
+        {
+          "id": "random",
+          "text": "Random",
+          "iconName": "dice",
+          "pillarWeights": {"space": 0.6, "story": 0.3},
+          "flowKeyWeights": {"feedbackSystems": 0.6, "generativeStory": 0.3}
+        },
+        {
+          "id": "scheduled",
+          "text": "Scheduled",
+          "iconName": "calendar",
+          "pillarWeights": {"space": 0.2},
+          "flowKeyWeights": {}
+        },
+        {
+          "id": "sacred",
+          "text": "Sacred",
+          "iconName": "sunrise",
+          "pillarWeights": {},
+          "flowKeyWeights": {}
+        }
+      ]
+    },
+    {
+      "id": "time-available",
+      "text": "Time for habits...",
+      "pillar": "meta",
+      "type": "singleChoice",
+      "answers": [
+        {
+          "id": "micro",
+          "text": "Micro-moments",
+          "iconName": "timer",
+          "pillarWeights": {},
+          "flowKeyWeights": {},
+          "habitCount": 3
+        },
+        {
+          "id": "window",
+          "text": "A window",
+          "iconName": "hourglass.bottomhalf.filled",
+          "pillarWeights": {},
+          "flowKeyWeights": {},
+          "habitCount": 5
+        },
+        {
+          "id": "dedicated",
+          "text": "Dedicated time",
+          "iconName": "clock",
+          "pillarWeights": {},
+          "flowKeyWeights": {},
+          "habitCount": 7
+        },
+        {
+          "id": "open",
+          "text": "Open space",
+          "iconName": "infinity",
+          "pillarWeights": {},
+          "flowKeyWeights": {},
+          "habitCount": 9
+        }
+      ]
+    }
+  ]
+}

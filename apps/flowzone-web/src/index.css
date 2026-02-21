@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand CSS Custom Properties */
+:root {
+  --gradient-four-pillars: linear-gradient(90deg, #FF6F61, #6BA292, #5B84B1, #7A4DA4);
+  --gradient-journey: linear-gradient(135deg, #FF6F61, #7A4DA4);
+  --glow-spirit: radial-gradient(circle, rgba(122, 77, 164, 0.15) 0%, transparent 70%);
+  --glow-self: radial-gradient(circle, rgba(255, 111, 97, 0.12) 0%, transparent 70%);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply text-base antialiased;
+  }
+
+  /* Dark Mode First - Observatory Aesthetic */
+  body {
+    @apply m-0 min-h-screen bg-dark text-ivory font-sans;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(122, 77, 164, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(255, 111, 97, 0.04) 0%, transparent 40%),
+      #0a0a0a;
+  }
+
+  /* Brand Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight-brand;
+  }
+
+  p {
+    @apply leading-relaxed-brand;
+  }
+
+  /* Mobile zoom is prevented via viewport meta tag (maximum-scale=1.0, user-scalable=no)
+     This allows us to use smaller font sizes without triggering iOS auto-zoom */
+}
+
+@layer components {
+  /* Glass Card System - Dark Mode */
+  .card-glass {
+    @apply backdrop-blur-md rounded-2xl;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 300ms ease;
+  }
+
+  .card-glass:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Glass Card Variants */
+  .card-glass-self {
+    @apply card-glass;
+    box-shadow: 0 0 40px -10px rgba(255, 111, 97, 0.15);
+  }
+
+  .card-glass-spirit {
+    @apply card-glass;
+    box-shadow: 0 0 40px -10px rgba(122, 77, 164, 0.15);
+  }
+
+  .card-glass-space {
+    @apply card-glass;
+    box-shadow: 0 0 40px -10px rgba(107, 162, 146, 0.15);
+  }
+
+  .card-glass-story {
+    @apply card-glass;
+    box-shadow: 0 0 40px -10px rgba(91, 132, 177, 0.15);
+  }
+
+  /* Primary Button - Journey Gradient */
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, #FF6F61, #7A4DA4);
+  }
+
+  .btn-primary:hover {
+    @apply brightness-110;
+    transform: scale(1.02);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed;
+    transform: none;
+  }
+
+  /* Secondary Button - Glass */
+  .btn-secondary {
+    @apply px-6 py-3 rounded-xl font-semibold text-ivory transition-all duration-300;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+
+  /* Ambient Orbs for Observatory Background */
+  .orb-ambient {
+    @apply absolute rounded-full pointer-events-none;
+    filter: blur(60px);
+  }
+
+  .orb-spirit {
+    @apply orb-ambient bg-spirit/20 animate-float;
+  }
+
+  .orb-self {
+    @apply orb-ambient bg-self/15 animate-float-delayed;
+  }
+
+  .orb-space {
+    @apply orb-ambient bg-space/15 animate-float;
+  }
+
+  .orb-story {
+    @apply orb-ambient bg-story/15 animate-float-delayed;
+  }
+}
+
+@layer utilities {
+  .transition-focus-mode {
+    transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Smooth action card animations */
+  @keyframes slideInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.1);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideInFromTop 300ms ease-out;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 300ms ease-out;
+  }
+
+  /* Modal animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 200ms ease-out;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Animated Action Background - Particle Flow */
+  @keyframes particleFloat1 {
+    0% {
+      transform: translate(0, 100vh) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(100px, -100vh) scale(1);
+      opacity: 0;
+    }
+  }
+
+  @keyframes particleFloat2 {
+    0% {
+      transform: translate(0, 100vh) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-80px, -100vh) scale(1);
+      opacity: 0;
+    }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient-flow {
+    position: relative;
+    background: linear-gradient(135deg,
+      rgba(255, 111, 97, 0.05) 0%,
+      rgba(230, 74, 69, 0.08) 50%,
+      rgba(255, 111, 97, 0.06) 100%
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+    overflow: hidden;
+  }
+
+  .animate-gradient-flow::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image:
+      radial-gradient(circle, rgba(255, 111, 97, 0.4) 2px, transparent 2px),
+      radial-gradient(circle, rgba(230, 74, 69, 0.3) 3px, transparent 3px),
+      radial-gradient(circle, rgba(255, 160, 122, 0.35) 2.5px, transparent 2.5px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.45) 2px, transparent 2px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.38) 2px, transparent 2px),
+      radial-gradient(circle, rgba(230, 74, 69, 0.35) 2.5px, transparent 2.5px),
+      radial-gradient(circle, rgba(255, 160, 122, 0.4) 2px, transparent 2px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.42) 3px, transparent 3px);
+    background-size:
+      200px 200px,
+      300px 300px,
+      250px 250px,
+      350px 350px,
+      180px 180px,
+      280px 280px,
+      220px 220px,
+      320px 320px;
+    background-position:
+      0 0,
+      50px 60px,
+      130px 30px,
+      200px 100px,
+      80px 20px,
+      160px 80px,
+      40px 120px,
+      240px 40px;
+    animation: particleFloat1 25s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .animate-gradient-flow::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image:
+      radial-gradient(circle, rgba(255, 111, 97, 0.35) 2px, transparent 2px),
+      radial-gradient(circle, rgba(230, 74, 69, 0.4) 2.5px, transparent 2.5px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.3) 3px, transparent 3px),
+      radial-gradient(circle, rgba(255, 160, 122, 0.38) 2px, transparent 2px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.36) 2.5px, transparent 2.5px),
+      radial-gradient(circle, rgba(230, 74, 69, 0.33) 2px, transparent 2px),
+      radial-gradient(circle, rgba(255, 111, 97, 0.4) 3px, transparent 3px);
+    background-size:
+      280px 280px,
+      320px 320px,
+      400px 400px,
+      240px 240px,
+      360px 360px,
+      260px 260px,
+      340px 340px;
+    background-position:
+      100px 20px,
+      200px 80px,
+      50px 120px,
+      140px 50px,
+      20px 90px,
+      180px 30px,
+      120px 110px;
+    animation: particleFloat2 30s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .animate-gradient-flow > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Respects reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-gradient-flow,
+    .animate-gradient-flow::before,
+    .animate-gradient-flow::after {
+      animation: none;
+    }
+  }
+}

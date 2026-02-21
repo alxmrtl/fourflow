@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FourFlowOS - The Frequency (Mockup 2)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           MOCKUP 2: THE FREQUENCY
+           Strategy: Dynamic Energy
+
+           - Bold typography as the primary element
+           - Four pillars spectrum prominently displayed
+           - Confident, declarative statements
+           - More content-dense but with rhythm
+           - Strong visual hierarchy with color
+           ======================================== */
+
+        :root {
+            --self: #FF6F61;
+            --space: #6BA292;
+            --story: #5B84B1;
+            --spirit: #7A4DA4;
+
+            --void: #050505;
+            --canvas: #0a0a0a;
+            --surface: #111111;
+            --lift: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.4);
+
+            --font: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--void);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 60px rgba(122, 77, 164, 0.2); }
+            50% { box-shadow: 0 0 100px rgba(122, 77, 164, 0.4); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(60px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes colorShift {
+            0% { color: var(--self); }
+            25% { color: var(--space); }
+            50% { color: var(--story); }
+            75% { color: var(--spirit); }
+            100% { color: var(--self); }
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            background: linear-gradient(90deg, var(--self), var(--space), var(--story), var(--spirit));
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 8s ease infinite;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-pill {
+            padding: 8px 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pill:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--self), var(--spirit));
+            border: none;
+            border-radius: 100px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(122, 77, 164, 0.4);
+        }
+
+        /* Hero - Bold Statement */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.4;
+        }
+
+        .hero-orb.self {
+            width: 500px;
+            height: 500px;
+            background: var(--self);
+            top: 10%;
+            left: -10%;
+        }
+
+        .hero-orb.spirit {
+            width: 600px;
+            height: 600px;
+            background: var(--spirit);
+            bottom: 0;
+            right: -15%;
+        }
+
+        .hero-orb.space {
+            width: 400px;
+            height: 400px;
+            background: var(--space);
+            top: 50%;
+            left: 40%;
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 32px;
+            animation: slideUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-title .line {
+            display: block;
+        }
+
+        .hero-title .gradient {
+            background: linear-gradient(90deg, var(--self), var(--space), var(--story), var(--spirit));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 48px;
+            line-height: 1.5;
+            animation: slideUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            animation: slideUp 0.8s ease-out 0.8s both;
+        }
+
+        .btn-primary {
+            padding: 18px 36px;
+            background: linear-gradient(135deg, var(--self), var(--spirit));
+            border: none;
+            border-radius: 100px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(255, 111, 97, 0.3);
+        }
+
+        .btn-secondary {
+            padding: 18px 36px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Spectrum Bar */
+        .spectrum-section {
+            padding: 0 48px;
+            margin-bottom: 80px;
+        }
+
+        .spectrum-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .spectrum-item {
+            padding: 40px 32px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .spectrum-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .spectrum-item.self { background: rgba(255, 111, 97, 0.08); }
+        .spectrum-item.self::after { background: var(--self); }
+        .spectrum-item.space { background: rgba(107, 162, 146, 0.08); }
+        .spectrum-item.space::after { background: var(--space); }
+        .spectrum-item.story { background: rgba(91, 132, 177, 0.08); }
+        .spectrum-item.story::after { background: var(--story); }
+        .spectrum-item.spirit { background: rgba(122, 77, 164, 0.08); }
+        .spectrum-item.spirit::after { background: var(--spirit); }
+
+        .spectrum-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .spectrum-item:hover::after {
+            opacity: 1;
+        }
+
+        .spectrum-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            opacity: 0.9;
+        }
+
+        .spectrum-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .spectrum-item.self .spectrum-name { color: var(--self); }
+        .spectrum-item.space .spectrum-name { color: var(--space); }
+        .spectrum-item.story .spectrum-name { color: var(--story); }
+        .spectrum-item.spirit .spectrum-name { color: var(--spirit); }
+
+        .spectrum-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Statement Section */
+        .statement-section {
+            padding: 160px 48px;
+            background: var(--canvas);
+        }
+
+        .statement-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .statement-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .statement-text h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 32px;
+        }
+
+        .statement-text h2 .highlight {
+            color: var(--spirit);
+        }
+
+        .statement-text p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .statement-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .flow-rep {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px 28px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: all 0.4s ease;
+        }
+
+        .flow-rep:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(8px);
+        }
+
+        .flow-rep-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .flow-rep.struggle .flow-rep-icon { background: rgba(255, 111, 97, 0.2); }
+        .flow-rep.focus .flow-rep-icon { background: rgba(107, 162, 146, 0.2); }
+        .flow-rep.flow .flow-rep-icon { background: rgba(122, 77, 164, 0.2); }
+
+        .flow-rep-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .flow-rep-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Principles - Bold Cards */
+        .principles-section {
+            padding: 160px 48px;
+            background: var(--void);
+        }
+
+        .principles-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .principles-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .principles-header p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .principle-card {
+            padding: 48px;
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .principle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .principle-card:nth-child(1)::before { background: var(--self); }
+        .principle-card:nth-child(2)::before { background: var(--space); }
+        .principle-card:nth-child(3)::before { background: var(--story); }
+        .principle-card:nth-child(4)::before { background: var(--spirit); }
+
+        .principle-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .principle-card:hover::before {
+            opacity: 1;
+        }
+
+        .principle-number {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 24px;
+            opacity: 0.15;
+        }
+
+        .principle-card:nth-child(1) .principle-number { color: var(--self); }
+        .principle-card:nth-child(2) .principle-number { color: var(--space); }
+        .principle-card:nth-child(3) .principle-number { color: var(--story); }
+        .principle-card:nth-child(4) .principle-number { color: var(--spirit); }
+
+        .principle-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .principle-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Apps Showcase */
+        .apps-section {
+            padding: 160px 48px;
+            background: var(--canvas);
+        }
+
+        .apps-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 80px;
+        }
+
+        .apps-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .apps-header p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .app-card {
+            padding: 40px 28px;
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .app-card:nth-child(1):hover { box-shadow: 0 20px 60px rgba(255, 111, 97, 0.15); }
+        .app-card:nth-child(2):hover { box-shadow: 0 20px 60px rgba(107, 162, 146, 0.15); }
+        .app-card:nth-child(3):hover { box-shadow: 0 20px 60px rgba(91, 132, 177, 0.15); }
+        .app-card:nth-child(4):hover { box-shadow: 0 20px 60px rgba(122, 77, 164, 0.15); }
+
+        .app-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .app-card:nth-child(1) .app-icon { background: linear-gradient(135deg, var(--self), #ff9a8b); }
+        .app-card:nth-child(2) .app-icon { background: linear-gradient(135deg, var(--space), #8bc9b8); }
+        .app-card:nth-child(3) .app-icon { background: linear-gradient(135deg, var(--story), #7ba3d0); }
+        .app-card:nth-child(4) .app-icon { background: linear-gradient(135deg, var(--spirit), #9b6fc5); }
+
+        .app-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .app-tagline {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .app-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Final CTA */
+        .cta-section {
+            padding: 160px 48px;
+            background: var(--void);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(122, 77, 164, 0.15) 0%, transparent 60%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .cta-content h2 .gradient {
+            background: linear-gradient(90deg, var(--self), var(--space), var(--story), var(--spirit));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-content p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 48px;
+            background: var(--canvas);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, var(--self), var(--spirit));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 48px auto 0;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copy {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .principles-grid,
+            .apps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .statement-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 16px 24px;
+            }
+
+            .nav-center {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 24px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .spectrum-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .principles-grid,
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">FourFlowOS</div>
+        <div class="nav-center">
+            <button class="nav-pill">Framework</button>
+            <button class="nav-pill">Apps</button>
+            <button class="nav-pill">About</button>
+            <button class="nav-pill">Blog</button>
+        </div>
+        <button class="nav-cta">Get Started</button>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-orb self"></div>
+            <div class="hero-orb spirit"></div>
+            <div class="hero-orb space"></div>
+        </div>
+
+        <div class="hero-content">
+            <span class="hero-tag">The Operating System for Flow</span>
+            <h1 class="hero-title">
+                <span class="line">Stop forcing.</span>
+                <span class="line gradient">Start flowing.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Align the four dimensions that create focus naturally. Train your flow muscle with deliberate practice.
+            </p>
+            <div class="hero-actions">
+                <button class="btn-primary">Enter the Framework</button>
+                <button class="btn-secondary">Explore Apps</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spectrum Bar -->
+    <section class="spectrum-section">
+        <div class="spectrum-bar">
+            <div class="spectrum-item self">
+                <div class="spectrum-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="16" stroke="#FF6F61" stroke-width="2"/>
+                        <circle cx="24" cy="24" r="8" stroke="#FF6F61" stroke-width="1.5"/>
+                        <circle cx="24" cy="24" r="3" fill="#FF6F61"/>
+                    </svg>
+                </div>
+                <h3 class="spectrum-name">Self</h3>
+                <p class="spectrum-desc">Body, mind, emotions</p>
+            </div>
+            <div class="spectrum-item space">
+                <div class="spectrum-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <rect x="8" y="8" width="32" height="32" stroke="#6BA292" stroke-width="2"/>
+                        <rect x="16" y="16" width="16" height="16" stroke="#6BA292" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3 class="spectrum-name">Space</h3>
+                <p class="spectrum-desc">Environment, tools, systems</p>
+            </div>
+            <div class="spectrum-item story">
+                <div class="spectrum-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <line x1="24" y1="4" x2="24" y2="44" stroke="#5B84B1" stroke-width="2"/>
+                        <line x1="4" y1="24" x2="44" y2="24" stroke="#5B84B1" stroke-width="2"/>
+                        <circle cx="24" cy="24" r="5" stroke="#5B84B1" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3 class="spectrum-name">Story</h3>
+                <p class="spectrum-desc">Mission, role, narrative</p>
+            </div>
+            <div class="spectrum-item spirit">
+                <div class="spectrum-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="16" stroke="#7A4DA4" stroke-width="2"/>
+                        <path d="M24 8 L24 40 M8 24 L40 24 M12 12 L36 36 M36 12 L12 36" stroke="#7A4DA4" stroke-width="1" opacity="0.6"/>
+                    </svg>
+                </div>
+                <h3 class="spectrum-name">Spirit</h3>
+                <p class="spectrum-desc">Values, vision, curiosity</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statement Section -->
+    <section class="statement-section">
+        <div class="statement-container">
+            <div class="statement-grid">
+                <div class="statement-text">
+                    <h2>Focus is a <span class="highlight">muscle</span>. This is the gym.</h2>
+                    <p>
+                        Every time distraction pulls, you have a choice. FourFlowOS makes that invisible work visible through Focus Reps.
+                    </p>
+                    <p>
+                        The struggle phase is real. The first 25% is always the hardest. We normalize that struggle and give you tools to move through it.
+                    </p>
+                </div>
+                <div class="statement-visual">
+                    <div class="flow-rep struggle">
+                        <div class="flow-rep-icon">25%</div>
+                        <div class="flow-rep-content">
+                            <h4>The Struggle Phase</h4>
+                            <p>Starting is the hardest part. This is normal.</p>
+                        </div>
+                    </div>
+                    <div class="flow-rep focus">
+                        <div class="flow-rep-icon">50%</div>
+                        <div class="flow-rep-content">
+                            <h4>Building Momentum</h4>
+                            <p>Each rep strengthens the focus muscle.</p>
+                        </div>
+                    </div>
+                    <div class="flow-rep flow">
+                        <div class="flow-rep-icon">100%</div>
+                        <div class="flow-rep-content">
+                            <h4>Flow State</h4>
+                            <p>Effortless effort. Time disappears.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principles -->
+    <section class="principles-section">
+        <div class="principles-header">
+            <h2>The Four Principles</h2>
+            <p>The philosophy that powers flow, not productivity theater.</p>
+        </div>
+
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-number">01</div>
+                <h3 class="principle-title">Flow Over Force</h3>
+                <p class="principle-desc">Stop pushing. Alignment creates effortless effort. When the four dimensions are tuned, focus emerges naturally.</p>
+            </div>
+            <div class="principle-card">
+                <div class="principle-number">02</div>
+                <h3 class="principle-title">Struggle is the Path</h3>
+                <p class="principle-desc">The first 25% is supposed to be hard. That difficulty is the signal that growth is happening, not that something is wrong.</p>
+            </div>
+            <div class="principle-card">
+                <div class="principle-number">03</div>
+                <h3 class="principle-title">Play, Not Grind</h3>
+                <p class="principle-desc">This is a game, not a guilt machine. Frame development as exploration. Curiosity beats discipline every time.</p>
+            </div>
+            <div class="principle-card">
+                <div class="principle-number">04</div>
+                <h3 class="principle-title">Everything Connects</h3>
+                <p class="principle-desc">Self affects Space. Story shapes Spirit. Tune one dimension and watch the others shift. This is holistic, not fragmented.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps -->
+    <section class="apps-section">
+        <div class="apps-header">
+            <h2>The Tools</h2>
+            <p>Purpose-built apps for each dimension of flow.</p>
+        </div>
+
+        <div class="apps-grid">
+            <div class="app-card">
+                <div class="app-icon">FZ</div>
+                <h3 class="app-name">FlowZone</h3>
+                <p class="app-tagline">The focus companion</p>
+                <p class="app-desc">Train your focus with visible Focus Reps. Make the invisible work of attention measurable.</p>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">FH</div>
+                <h3 class="app-name">FlowHabits</h3>
+                <p class="app-tagline">Aligned practice</p>
+                <p class="app-desc">Build habits across all four dimensions. Small actions, compounding clarity.</p>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">FR</div>
+                <h3 class="app-name">FlowRead</h3>
+                <p class="app-tagline">Reading as meditation</p>
+                <p class="app-desc">Speed reading that trains presence. Words become a path to flow.</p>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">FP</div>
+                <h3 class="app-name">FlowRep</h3>
+                <p class="app-tagline">Movement for clarity</p>
+                <p class="app-desc">Bodyweight training that grounds the mind. Physical practice, mental freedom.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="cta-content">
+            <h2>Ready to <span class="gradient">align</span>?</h2>
+            <p>Start with the framework. Build the practice. Enter flow.</p>
+            <div class="cta-buttons">
+                <button class="btn-primary">Begin the Journey</button>
+                <button class="btn-secondary">Explore the Framework</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>FourFlowOS</h3>
+                <p>Awakening through flow. A framework for finding meaning, focus, and purpose in work and life.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Framework</h4>
+                <ul>
+                    <li><a href="#">Self</a></li>
+                    <li><a href="#">Space</a></li>
+                    <li><a href="#">Story</a></li>
+                    <li><a href="#">Spirit</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Apps</h4>
+                <ul>
+                    <li><a href="#">FlowZone</a></li>
+                    <li><a href="#">FlowHabits</a></li>
+                    <li><a href="#">FlowRead</a></li>
+                    <li><a href="#">FlowRep</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">&copy; 2025 FourFlowOS. Awakening through flow.</p>
+            <div class="footer-social">
+                <a href="#">X</a>
+                <a href="#">YT</a>
+                <a href="#">IG</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
