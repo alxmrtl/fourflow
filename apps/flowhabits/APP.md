@@ -31,11 +31,19 @@ Brings people into the FourFlow ecosystem through daily habit practice. The habi
 
 ---
 
-## ARK Integration (Future)
+## ARK Integration — Agent Data Infrastructure
 
-- Habit data maps directly to Flow Keys: daily SELF habits → Steady Range health; SPIRIT habits → Alignment Gap closure
-- Could feed baseline data into Flow Profile (which pillars are being exercised vs. neglected)
-- Natural on-ramp: habit practice → Flow Profile → FourFlow Agent
+FlowHabits is **Phase 1** of the bidirectional agent data loop. Habit completion data feeds the FourFlow Agent's longitudinal model of the user — which pillars are being exercised vs. neglected, intention vs. execution gaps, streaks and drops over time.
+
+**Direction (Feb 2026):**
+- Add Supabase sync: habit completions write to `habit_completions` table (existing Supabase instance)
+- Add user authentication (Supabase Auth — Apple Sign In or email)
+- `/align` reads habit data via Supabase REST API → infers pillar state → updates Flow Profile
+- Phase 2: agent writes recommendations back to `agent_recommendations` table → app surfaces them
+
+**Why first:** Cleanest data model (pillar labels already built in), lowest iOS complexity, fastest path to a working data loop.
+
+**Natural on-ramp**: habit practice → Flow Profile → FourFlow Agent
 
 ---
 

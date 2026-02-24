@@ -1,6 +1,6 @@
 # FlowZone Web - APP.md
 
-**Status**: Active development | Last updated: 2026-02-17
+**Status**: Active development | Last updated: 2026-02-23
 
 ---
 
@@ -28,15 +28,23 @@ This is the primary digital surface for FourFlow. It already has the four-pillar
 - Breathwork integration
 - Stats and session history
 - Local-first data (IndexedDB), no account required
+- Supabase auth (email/magic link) — optional, enables agent sync
+- Focus sessions sync to `focus_sessions` table when authenticated
 - PWA: installable, offline-capable
 
 ---
 
-## ARK Integration (Future)
+## ARK Integration — Agent Data Infrastructure
 
+FlowZone Web is **Phase 2** of the bidirectional agent data loop. Focus session data (session length, Focus Reps, time of day, completion) feeds the FourFlow Agent's model of SELF and SPACE patterns over time.
+
+**Direction (Feb 2026):**
+- Add Supabase JS client + user authentication (Supabase Auth — email/magic link)
+- Focus sessions write to `focus_sessions` table (existing Supabase instance)
+- `/align` reads session history → infers SELF/SPACE state → updates Flow Profile
+- Phase 2: agent surfaces session insights and SPACE recommendations directly in the UI
 - **Flow Profile Assessment**: Add 12-key diagnostic layer on top of existing pillar setup
-- **FourFlow Agent Interface**: Conversation layer that reads session data and surfaces alignment insights
-- **Longitudinal Tracking**: Pattern history across sessions maps to FourFlow Mechanism states (Steady Range, Mission Lock, etc.)
+- **FourFlow Agent Interface**: Conversation layer that reads session data and surfaces alignment insights using the 12 Flow Keys
 
 ---
 

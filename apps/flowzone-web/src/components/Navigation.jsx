@@ -2,7 +2,7 @@ import React from 'react';
 import { useStore } from '../store/useStore';
 
 const Navigation = () => {
-  const { currentPage, setCurrentPage, isInFocusMode } = useStore();
+  const { currentPage, setCurrentPage, isInFocusMode, user } = useStore();
 
   if (isInFocusMode) return null;
 
@@ -10,6 +10,7 @@ const Navigation = () => {
     { id: 'flow', label: 'FLOW', icon: '/logos/FOURFLOW - MAIN LOGO.png' },
     { id: 'stats', label: 'STATS', emoji: '📊' },
     { id: 'about', label: 'ABOUT', emoji: 'ℹ️' },
+    { id: 'account', label: 'ACCOUNT', emoji: '◉', connected: !!user },
   ];
 
   return (
@@ -30,17 +31,22 @@ const Navigation = () => {
             aria-label={page.label}
             aria-current={currentPage === page.id ? 'page' : undefined}
           >
-            {page.icon ? (
-              <img
-                src={page.icon}
-                alt={page.label}
-                className={`h-7 md:h-8 transition-transform duration-[30000ms] ${
-                  currentPage === page.id ? 'animate-spin-slow' : ''
-                }`}
-              />
-            ) : (
-              <span className="text-lg md:text-xl">{page.emoji}</span>
-            )}
+            <span className="relative">
+              {page.icon ? (
+                <img
+                  src={page.icon}
+                  alt={page.label}
+                  className={`h-7 md:h-8 transition-transform duration-[30000ms] ${
+                    currentPage === page.id ? 'animate-spin-slow' : ''
+                  }`}
+                />
+              ) : (
+                <span className="text-lg md:text-xl">{page.emoji}</span>
+              )}
+              {page.connected && (
+                <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-space border border-darker" />
+              )}
+            </span>
             <span className="text-[10px] md:text-xs font-semibold tracking-wide">{page.label}</span>
           </button>
         ))}

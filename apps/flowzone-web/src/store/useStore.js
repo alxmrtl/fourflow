@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { db } from '../lib/db';
+import { supabase } from '../lib/supabase';
 
 export const useStore = create((set, get) => ({
   // Profile
@@ -148,13 +149,33 @@ export const useStore = create((set, get) => ({
   endSession: async (sessionData) => {
     const session = get().currentSession;
     if (session) {
+      const startedAt = new Date(session.startTime).toISOString();
+      const endedAt = new Date().toISOString();
+      const actualDuration = Math.round((Date.now() - session.startTime) / 1000 / 60);
+
       await db.addSession({
         taskId: session.taskId,
         plannedDuration: session.duration,
-        actualDuration: Math.round((Date.now() - session.startTime) / 1000 / 60),
+        actualDuration,
         reps: session.reps,
         ...sessionData,
       });
+
+      // Sync to Supabase when authenticated
+      const { user } = get();
+      if (user) {
+        supabase.from('focus_sessions').insert({
+          user_id: user.id,
+          duration_minutes: actualDuration,
+          focus_reps: session.reps,
+          completed: sessionData?.completed ?? true,
+          started_at: startedAt,
+          ended_at: endedAt,
+        }).then(({ error }) => {
+          if (error) console.error('Supabase session sync failed:', error.message);
+        });
+      }
+
       await get().loadSessions();
       set({ currentSession: null });
     }
@@ -243,8 +264,34 @@ export const useStore = create((set, get) => ({
     }
   },
 
+  // Auth
+  user: null,
+  authLoading: true,
+  signIn: async (email) => {
+    const { error } = await supabase.auth.signInWithOtp({
+      email,
+      options: { emailRedirectTo: window.location.origin },
+    });
+    if (error) throw error;
+  },
+  signOut: async () => {
+    await supabase.auth.signOut();
+    set({ user: null });
+  },
+  initAuth: () => {
+    // Restore existing session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      set({ user: session?.user ?? null, authLoading: false });
+    });
+    // Listen for future auth changes
+    supabase.auth.onAuthStateChange((_event, session) => {
+      set({ user: session?.user ?? null, authLoading: false });
+    });
+  },
+
   // Initialize all data
   initializeApp: async () => {
+    get().initAuth();
     await Promise.all([
       get().loadProfile(),
       get().loadValues(),

@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import Flow from './pages/Flow';
 import Stats from './pages/Stats';
 import About from './pages/About';
+import Account from './pages/Account';
 import FocusMode from './pages/FocusMode';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           {currentPage === 'flow' && <Flow />}
           {currentPage === 'stats' && <Stats />}
           {currentPage === 'about' && <About />}
+          {currentPage === 'account' && <Account />}
         </main>
       </div>
 
