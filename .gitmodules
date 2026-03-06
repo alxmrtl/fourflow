@@ -1,0 +1,12 @@
+[submodule "website/fourflowos-web"]
+	path = website/fourflowos-web
+	url = https://github.com/alxmrtl/fourflowos.git
+	branch = main
+
+[submodule "apps/flowread"]
+	path = apps/flowread
+	url = https://github.com/alxmrtl/FlowRead.git
+
+[submodule "apps/flowrep"]
+	path = apps/flowrep
+	url = https://github.com/alxmrtl/logr.git
