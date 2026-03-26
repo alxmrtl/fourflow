@@ -1,8 +1,8 @@
 ---
 title: "Neurochemical Reward Test"
-mechanic: "[[subtraction-beats-addition]]"
-pillars: [space]
-flow_keys: [optimized-tools]
+dimension: space
+state: optimized-tools
+quality: "[[lean]]"
 keywords: [pleasure, enjoyment, dopamine, acquisition, Csikszentmihalyi, trade-off]
 tags:
   - type/technique

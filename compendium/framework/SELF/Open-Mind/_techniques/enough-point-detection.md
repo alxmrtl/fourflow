@@ -1,8 +1,8 @@
 ---
 title: "Enough-Point Detection"
-mechanic: "[[ambiguity-control]]"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
+quality: "[[provisional]]"
 keywords: [timing, action-threshold, enough, readiness, over-preparation, information-diminishing-returns]
 tags:
   - type/technique

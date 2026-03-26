@@ -1,8 +1,8 @@
 ---
 title: "Session Handoff Hook"
-mechanic: "[[narrative-momentum]]"
-pillars: [story]
-flow_keys: [generative-story]
+dimension: story
+state: generative-story
+quality: "[[continuous]]"
 keywords: [Zeigarnik, open-loop, cliffhanger, session-close, continuation, re-entry, narrative-hook]
 tags:
   - type/technique

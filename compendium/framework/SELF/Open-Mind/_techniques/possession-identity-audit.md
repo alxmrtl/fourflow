@@ -1,8 +1,8 @@
 ---
 title: "Possession-Identity Audit"
-mechanic: "[[cognitive-load-reduction]]"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
+quality: "[[spacious]]"
 keywords: [identity, possession, ego, attachment, monitoring, emotional-cost, Csikszentmihalyi]
 tags:
   - type/technique

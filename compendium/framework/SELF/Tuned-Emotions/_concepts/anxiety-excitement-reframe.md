@@ -1,7 +1,7 @@
 ---
 title: "Anxiety-Excitement Reframe"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
 keywords: [reframing, anxiety, excitement, arousal, appraisal, somatic anchor, cognitive reappraisal]
 tags:
   - type/concept

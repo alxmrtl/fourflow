@@ -1,8 +1,8 @@
 ---
 title: "Transformational Conflicts Navigation"
-mechanic: "[[growth-orientation]]"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
+quality: "[[provisional]]"
 keywords: [transformation, transition, purgatory, resistance, context-vs-content, polarized-thinking]
 tags:
   - type/technique

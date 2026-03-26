@@ -1,8 +1,8 @@
 ---
 title: "Movement Primer"
-mechanic: "[[energy-sufficiency]]"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
+quality: "[[grounded]]"
 keywords: [exercise, BDNF, aerobic, dopamine, serotonin, norepinephrine, pre-session, Ratey]
 tags:
   - type/technique

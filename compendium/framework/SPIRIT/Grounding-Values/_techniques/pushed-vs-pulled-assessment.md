@@ -1,8 +1,8 @@
 ---
 title: "Pushed vs. Pulled Assessment"
-mechanic: "[[internal-alignment]]"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
+quality: "[[congruent]]"
 keywords: [motivation, fear, obligation, curiosity, meaning, authentic, conditioned, diagnostic]
 tags:
   - type/technique

@@ -1,8 +1,8 @@
 ---
 title: "DMN Weed Model"
-mechanic: "[[cognitive-load-reduction]]"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
+quality: "[[spacious]]"
 keywords: [default-mode-network, possessions, creative-synthesis, background-processing, idle-state]
 tags:
   - type/technique

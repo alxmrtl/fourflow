@@ -1,8 +1,8 @@
 ---
 title: "Interpersonal Safety Audit"
-mechanic: "[[psychological-safety]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [interpersonal, fear, judgment, Edmondson, social, audit, experiment, threat]
 tags:
   - type/technique

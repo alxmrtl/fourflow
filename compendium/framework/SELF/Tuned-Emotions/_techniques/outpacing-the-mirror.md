@@ -1,8 +1,8 @@
 ---
 title: "Outpacing the Mirror"
-mechanic: "[[outcome-detachment]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [mirror, delay, faith, aperture, manifestation, reflection, direction]
 tags:
   - type/technique

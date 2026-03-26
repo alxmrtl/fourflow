@@ -1,8 +1,8 @@
 ---
 title: "Positive Spike Management"
-mechanic: "[[emotional-neutrality]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [excitement, positive-emotion, capture, session-continuity, temporal-sovereignty]
 tags:
   - type/technique

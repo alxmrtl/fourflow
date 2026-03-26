@@ -1,8 +1,8 @@
 ---
 title: "Recognizing Heart State"
-mechanic: "[[psychological-safety]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [diagnostic, heart-state, open, closed, pattern, awareness, real-time]
 tags:
   - type/technique

@@ -1,8 +1,8 @@
 ---
 title: "Excitement as GPS"
-mechanic: "[[intrinsic-reward-signaling]]"
-pillars: [spirit]
-flow_keys: [ignited-curiosity]
+dimension: spirit
+state: ignited-curiosity
+quality: "[[alive]]"
 keywords: [excitement, direction, signal, intrinsic, compass, soul, trust, path, curiosity, alignment]
 tags:
   - type/technique

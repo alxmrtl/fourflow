@@ -1,7 +1,7 @@
 ---
 title: "Values Clarification"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
 keywords: [values, clarification, priorities, rank-ordering, authenticity, self-knowledge]
 tags:
   - type/concept

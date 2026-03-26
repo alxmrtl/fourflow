@@ -1,7 +1,7 @@
 ---
 title: "Transient Hypofrontality"
-pillars: [self]
-flow_keys: [focused-body, tuned-emotions]
+dimension: self
+state: focused-body
 keywords: [prefrontal-cortex, flow-neuroscience, hypofrontality, ego, self-monitoring, Arne-Dietrich]
 tags:
   - type/concept

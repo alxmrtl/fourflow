@@ -1,8 +1,8 @@
 ---
 title: "Aperture Absorption Protocol"
-mechanic: "[[action-awareness-merging]]"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
+quality: "[[unified]]"
 keywords: [monitoring, self-referential, check-in, timer, externalize, aperture, absorption]
 tags:
   - type/technique

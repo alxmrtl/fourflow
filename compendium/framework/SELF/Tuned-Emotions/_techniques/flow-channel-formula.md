@@ -1,8 +1,8 @@
 ---
 title: "Flow Channel Formula"
-mechanic: "[[challenge-skill-calibration]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[calibrated]]"
 keywords: [challenge, skill, ratio, calibration, engagement, flow-channel]
 tags:
   - type/technique

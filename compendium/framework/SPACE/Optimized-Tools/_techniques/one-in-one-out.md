@@ -1,8 +1,8 @@
 ---
 title: "One-In-One-Out Heuristic"
-mechanic: "[[subtraction-beats-addition]]"
-pillars: [space]
-flow_keys: [optimized-tools]
+dimension: space
+state: optimized-tools
+quality: "[[lean]]"
 keywords: [acquisition, maintenance, accumulation, drift, possession-equilibrium]
 tags:
   - type/technique

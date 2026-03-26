@@ -1,8 +1,8 @@
 ---
 title: "Cyclic Sighing"
-mechanic: "[[physiological-regulation]]"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
+quality: "[[grounded]]"
 keywords: [double-inhale, sigh, exhale, alveoli, vagal, Huberman, daily-practice]
 tags:
   - type/technique

@@ -1,7 +1,7 @@
 ---
 title: "Sensory Priming"
-pillars: [space]
-flow_keys: [intentional-space]
+dimension: space
+state: intentional-space
 keywords: [sensory, light, sound, smell, temperature, environment, priming, arousal]
 tags:
   - type/concept

@@ -1,8 +1,8 @@
 ---
 title: "Boredom and Anxiety as Navigation Signals"
-mechanic: "[[challenge-skill-calibration]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[calibrated]]"
 keywords: [boredom, anxiety, signals, navigation, capability-frontier, novelty, growth]
 tags:
   - type/technique

@@ -1,8 +1,8 @@
 ---
 title: "Single Metric Focus"
-mechanic: "[[effort-reward-coupling]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [metric, visibility, real-time, dopamine, progress, counter, reward-prediction]
 tags:
   - type/technique

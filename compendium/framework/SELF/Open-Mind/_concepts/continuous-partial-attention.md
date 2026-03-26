@@ -1,7 +1,7 @@
 ---
 title: "Continuous Partial Attention"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
 keywords: [attention, distraction, multitasking, dopamine, focus, modern-life]
 tags:
   - type/concept

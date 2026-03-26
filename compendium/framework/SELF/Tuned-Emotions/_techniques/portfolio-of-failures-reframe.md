@@ -1,8 +1,8 @@
 ---
 title: "Portfolio of Failures Reframe"
-mechanic: "[[error-tolerance]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [failure, reframe, investment, portfolio, iteration, learning]
 tags:
   - type/technique

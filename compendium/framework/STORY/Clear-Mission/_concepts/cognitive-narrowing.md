@@ -1,7 +1,7 @@
 ---
 title: "Cognitive Narrowing"
-pillars: [story]
-flow_keys: [clear-mission, open-mind]
+dimension: story
+state: clear-mission
 keywords: [cognitive-load, clarity, decision, focus, prefrontal, narrowing, goals]
 tags:
   - type/concept

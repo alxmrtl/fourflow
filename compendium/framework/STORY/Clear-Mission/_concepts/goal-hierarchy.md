@@ -1,7 +1,7 @@
 ---
 title: "Goal Hierarchy"
-pillars: [story]
-flow_keys: [clear-mission]
+dimension: story
+state: clear-mission
 keywords: [goals, hierarchy, cascade, vision, timeframe, alignment, planning]
 tags:
   - type/concept

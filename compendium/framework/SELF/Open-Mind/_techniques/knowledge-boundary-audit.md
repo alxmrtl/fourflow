@@ -1,8 +1,8 @@
 ---
 title: "Knowledge Boundary Audit"
-mechanic: "[[compression-over-expansion]]"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
+quality: "[[spacious]]"
 keywords: [fruitless-knowledge, learning-boundary, knowledge-compression, over-research, diminishing-returns]
 tags:
   - type/technique

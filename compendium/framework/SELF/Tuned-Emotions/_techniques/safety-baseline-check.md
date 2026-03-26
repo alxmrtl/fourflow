@@ -1,8 +1,8 @@
 ---
 title: "Safety Baseline Check"
-mechanic: "[[psychological-safety]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [somatic, contraction, amygdala, threat, body-scan, prefrontal, heart, pre-session]
 tags:
   - type/technique

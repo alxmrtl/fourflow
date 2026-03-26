@@ -1,8 +1,8 @@
 ---
 title: "Micro-Completion Architecture"
-mechanic: "[[effort-reward-coupling]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [sub-goals, completion, wins, momentum, dopamine, task-structure]
 tags:
   - type/technique

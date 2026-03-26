@@ -1,8 +1,8 @@
 ---
 title: "Progress Ledger"
-mechanic: "[[effort-reward-coupling]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [progress, journaling, meaning, motivation, end-of-session, dopamine]
 tags:
   - type/technique

@@ -1,8 +1,8 @@
 ---
 title: "Calibrated Trust Audit (Pistis)"
-mechanic: "[[integrity-loops]]"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
+quality: "[[congruent]]"
 keywords: [pistis, credulity, discernment, commitment, reality-indexed, trust, authority]
 tags:
   - type/technique

@@ -1,7 +1,7 @@
 ---
 title: "Task-Not-Ego Metrics"
-pillars: [space]
-flow_keys: [feedback-systems]
+dimension: space
+state: feedback-systems
 keywords: [metrics, ego, identity, feedback, performance, self-monitoring]
 tags:
   - type/concept

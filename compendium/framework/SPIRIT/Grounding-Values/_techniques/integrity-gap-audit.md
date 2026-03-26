@@ -1,8 +1,8 @@
 ---
 title: "Integrity Gap Audit"
-mechanic: "[[integrity-loops]]"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
+quality: "[[congruent]]"
 keywords: [stated-values, revealed-values, gap, dissonance, audit, calendar, behavior]
 tags:
   - type/technique

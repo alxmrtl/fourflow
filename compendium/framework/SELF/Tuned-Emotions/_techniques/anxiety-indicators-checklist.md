@@ -1,8 +1,8 @@
 ---
 title: "Anxiety Indicators Checklist"
-mechanic: "[[anxiety-suppression]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [diagnostic, closed-heart, pattern-activation, checklist, awareness]
 tags:
   - type/technique

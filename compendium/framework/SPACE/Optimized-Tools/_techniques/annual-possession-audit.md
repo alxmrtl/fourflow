@@ -1,8 +1,8 @@
 ---
 title: "Annual Possession Audit"
-mechanic: "[[subtraction-beats-addition]]"
-pillars: [space]
-flow_keys: [optimized-tools]
+dimension: space
+state: optimized-tools
+quality: "[[lean]]"
 keywords: [audit, recalibration, drift, annual, possession-purge, minimalism-maintenance]
 tags:
   - type/technique

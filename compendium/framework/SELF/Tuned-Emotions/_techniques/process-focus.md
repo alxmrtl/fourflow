@@ -1,8 +1,8 @@
 ---
 title: "Process Focus"
-mechanic: "[[ego-monitoring-removal]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [process, outcome, inner-critic, evaluation, cues, performance, redirect]
 tags:
   - type/technique

@@ -1,7 +1,7 @@
 ---
 title: "Emotional Frequency Scale"
-pillars: [self, spirit]
-flow_keys: [tuned-emotions, grounding-values]
+dimension: self
+state: tuned-emotions
 keywords: [emotional energy, survival emotions, elevated emotions, aperture, frequency, consciousness, baseline state]
 tags:
   - type/concept

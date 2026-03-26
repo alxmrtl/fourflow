@@ -1,8 +1,8 @@
 ---
 title: "Disturbance Log"
-mechanic: "[[anxiety-suppression]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [pattern-literacy, observation, journaling, triggers, awareness]
 tags:
   - type/technique

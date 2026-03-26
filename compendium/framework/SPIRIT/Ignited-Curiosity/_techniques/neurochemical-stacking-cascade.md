@@ -1,8 +1,8 @@
 ---
 title: "Neurochemical Stacking Cascade"
-mechanic: "[[intrinsic-reward-signaling]]"
-pillars: [spirit]
-flow_keys: [ignited-curiosity]
+dimension: spirit
+state: ignited-curiosity
+quality: "[[alive]]"
 keywords: [curiosity, passion, purpose, autonomy, mastery, dopamine, norepinephrine, serotonin, cascade, obsession]
 tags:
   - type/technique

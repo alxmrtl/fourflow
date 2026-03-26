@@ -1,8 +1,8 @@
 ---
 title: "Observer Stance"
-mechanic: "[[emotional-neutrality]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [observer, decentering, ACT, identification, emotion, witness, flexibility]
 tags:
   - type/technique

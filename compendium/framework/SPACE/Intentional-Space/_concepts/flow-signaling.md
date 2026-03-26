@@ -1,7 +1,7 @@
 ---
 title: "Flow Signaling"
-pillars: [space]
-flow_keys: [intentional-space]
+dimension: space
+state: intentional-space
 keywords: [ritual, conditioning, cue, priming, habit, flow-trigger, Pavlov]
 tags:
   - type/concept

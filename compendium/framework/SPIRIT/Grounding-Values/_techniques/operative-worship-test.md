@@ -1,8 +1,8 @@
 ---
 title: "Operative Worship Test"
-mechanic: "[[internal-alignment]]"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
+quality: "[[congruent]]"
 keywords: [worship, operative, simulated, revision, pressure, non-negotiable, authority, load, values]
 tags:
   - type/technique

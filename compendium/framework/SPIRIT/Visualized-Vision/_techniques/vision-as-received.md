@@ -1,8 +1,8 @@
 ---
 title: "Vision as Received"
-mechanic: "[[vision-priming]]"
-pillars: [spirit]
-flow_keys: [visualized-vision]
+dimension: spirit
+state: visualized-vision
+quality: "[[compelling]]"
 keywords: [receiving, conduit, descending, allowance, birthright, potentiality, chosen, doorway, landing-pad, vision, manifestation]
 tags:
   - type/technique

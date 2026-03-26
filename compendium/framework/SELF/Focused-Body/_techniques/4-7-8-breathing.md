@@ -1,8 +1,8 @@
 ---
 title: "4-7-8 Breathing"
-mechanic: "[[physiological-regulation]]"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
+quality: "[[grounded]]"
 keywords: [breath-hold, exhale, parasympathetic, vagal-brake, CO2, stress-reset]
 tags:
   - type/technique

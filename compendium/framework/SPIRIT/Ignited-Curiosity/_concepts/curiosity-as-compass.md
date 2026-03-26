@@ -1,7 +1,7 @@
 ---
 title: "Curiosity as Compass"
-pillars: [spirit]
-flow_keys: [ignited-curiosity]
+dimension: spirit
+state: ignited-curiosity
 keywords: [curiosity, navigation, Elizabeth-Gilbert, breadcrumbs, passion, direction]
 tags:
   - type/concept

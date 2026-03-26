@@ -1,8 +1,8 @@
 ---
 title: "Silence Alignment Signal"
-mechanic: "[[internal-alignment]]"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
+quality: "[[congruent]]"
 keywords: [silence, stillness, alignment, subconscious, intuition, signal, processing, coherence, felt-sense, authentic-direction]
 tags:
   - type/technique

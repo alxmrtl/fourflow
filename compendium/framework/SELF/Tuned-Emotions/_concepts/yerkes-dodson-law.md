@@ -1,7 +1,7 @@
 ---
 title: "Yerkes-Dodson Law"
-pillars: [self, space]
-flow_keys: [tuned-emotions, focused-body]
+dimension: self
+state: tuned-emotions
 keywords: [arousal, performance, optimal stress, cortisol, norepinephrine, inverted-U, eustress]
 tags:
   - type/concept

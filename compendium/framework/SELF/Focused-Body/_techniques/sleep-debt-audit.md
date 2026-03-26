@@ -1,8 +1,8 @@
 ---
 title: "Sleep Debt Audit"
-mechanic: "[[energy-sufficiency]]"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
+quality: "[[grounded]]"
 keywords: [sleep, debt, REM, NREM, ATP, Walker, recovery, cognitive-impairment]
 tags:
   - type/technique

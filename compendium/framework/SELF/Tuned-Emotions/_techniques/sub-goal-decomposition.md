@@ -1,8 +1,8 @@
 ---
 title: "Sub-Goal Decomposition"
-mechanic: "[[challenge-skill-calibration]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[calibrated]]"
 keywords: [overwhelm, decomposition, sub-goals, clarity, anxiety, calibration]
 tags:
   - type/technique

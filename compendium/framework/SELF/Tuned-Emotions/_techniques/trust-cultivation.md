@@ -1,8 +1,8 @@
 ---
 title: "Trust Cultivation"
-mechanic: "[[psychological-safety]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [trust, bold-experimentation, distrust, unconditional-trust, evidence, development]
 tags:
   - type/technique

@@ -1,7 +1,7 @@
 ---
 title: "Intrinsic Motivation"
-pillars: [spirit]
-flow_keys: [ignited-curiosity, empowered-role]
+dimension: spirit
+state: ignited-curiosity
 keywords: [motivation, intrinsic, Deci, Ryan, self-determination, autonomy, mastery]
 tags:
   - type/concept

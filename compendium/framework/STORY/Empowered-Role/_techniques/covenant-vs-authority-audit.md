@@ -1,8 +1,8 @@
 ---
 title: "Covenant vs. Authority Audit"
-mechanic: "[[identity-alignment]]"
-pillars: [story]
-flow_keys: [empowered-role]
+dimension: story
+state: empowered-role
+quality: "[[aligned]]"
 keywords: [covenant, authority, identity, permission, felt-sense, load, level, operating-layer]
 tags:
   - type/technique

@@ -1,8 +1,8 @@
 ---
 title: "Worthiness as Baseline"
-mechanic: "[[psychological-safety]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [worthiness, existence, intrinsic-worth, baseline, deserving, safety, earned-worth, performance, self-worth, being, identity]
 tags:
   - type/technique

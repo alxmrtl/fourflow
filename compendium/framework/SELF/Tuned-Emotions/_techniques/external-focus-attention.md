@@ -1,8 +1,8 @@
 ---
 title: "External Focus of Attention"
-mechanic: "[[ego-monitoring-removal]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [external-focus, Wulf, performance, attention, self-monitoring, effect]
 tags:
   - type/technique

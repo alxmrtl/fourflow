@@ -1,8 +1,8 @@
 ---
 title: "Inside-Out Paradigm Shift"
-mechanic: "[[anxiety-suppression]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [paradigm, reactivity, circumstances, internal-locus, patterns, reframe]
 tags:
   - type/technique

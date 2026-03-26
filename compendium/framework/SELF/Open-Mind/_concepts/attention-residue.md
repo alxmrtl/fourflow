@@ -1,7 +1,7 @@
 ---
 title: "Attention Residue"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
 keywords: [task-switching, multitasking, cognitive-fragmentation, focus, working-memory]
 tags:
   - type/concept

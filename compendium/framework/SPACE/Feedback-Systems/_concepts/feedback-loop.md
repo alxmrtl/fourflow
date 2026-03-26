@@ -1,7 +1,7 @@
 ---
 title: "Feedback Loop"
-pillars: [space]
-flow_keys: [feedback-systems]
+dimension: space
+state: feedback-systems
 keywords: [feedback, self-correction, cybernetics, systems-thinking, iteration, signal]
 tags:
   - type/concept

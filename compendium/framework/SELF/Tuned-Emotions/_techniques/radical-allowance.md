@@ -1,8 +1,8 @@
 ---
 title: "Radical Allowance"
-mechanic: "[[outcome-detachment]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [allowance, surrender, how, pathway, logistics, control, releasing, delivery, want, having, receiving]
 tags:
   - type/technique

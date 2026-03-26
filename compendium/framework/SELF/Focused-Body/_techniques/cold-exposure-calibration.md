@@ -1,8 +1,8 @@
 ---
 title: "Cold Exposure Calibration"
-mechanic: "[[physiological-regulation]]"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
+quality: "[[grounded]]"
 keywords: [cold, adrenaline, Wim-Hof, nervous-system, training, regulation-range, prefrontal]
 tags:
   - type/technique

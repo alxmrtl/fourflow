@@ -1,7 +1,7 @@
 ---
 title: "Behavioral Design"
-pillars: [space]
-flow_keys: [optimized-tools, intentional-space]
+dimension: space
+state: optimized-tools
 keywords: [behavior, defaults, environment-design, nudge, friction, automation]
 tags:
   - type/concept

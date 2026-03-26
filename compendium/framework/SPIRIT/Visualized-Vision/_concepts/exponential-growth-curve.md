@@ -1,7 +1,7 @@
 ---
 title: "Exponential Growth Curve"
-pillars: [spirit]
-flow_keys: [visualized-vision]
+dimension: spirit
+state: visualized-vision
 keywords: [exponential, compounding, growth, learning-curve, patience, long-term]
 tags:
   - type/concept

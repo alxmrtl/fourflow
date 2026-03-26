@@ -1,7 +1,7 @@
 ---
 title: "Challenge-Skills Balance"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
 keywords: [flow channel, 4% rule, optimal challenge, anxiety, boredom, uncertainty, dopamine]
 tags:
   - type/concept

@@ -1,7 +1,7 @@
 ---
 title: "Attention Deficit Trait"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
 keywords: [overwhelm, cognitive-overload, focus, ADT, modern-work, distraction]
 tags:
   - type/concept

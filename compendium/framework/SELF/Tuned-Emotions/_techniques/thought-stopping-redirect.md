@@ -1,8 +1,8 @@
 ---
 title: "Thought Stopping + Redirect"
-mechanic: "[[ego-monitoring-removal]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [inner-critic, interruption, redirect, thought-stopping, wristband, process-cue]
 tags:
   - type/technique

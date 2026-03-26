@@ -1,8 +1,8 @@
 ---
 title: "Self-Driving Car Iteration Model"
-mechanic: "[[error-tolerance]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [iteration, identity, system, data-point, learning, capability-development]
 tags:
   - type/technique

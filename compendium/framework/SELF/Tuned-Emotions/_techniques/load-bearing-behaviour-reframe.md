@@ -1,8 +1,8 @@
 ---
 title: "Load-Bearing Behaviour Reframe"
-mechanic: "[[error-tolerance]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [load-bearing, replacement, function, habit, pressure, stabilisation, load-shedding]
 tags:
   - type/technique

@@ -1,7 +1,7 @@
 ---
 title: "Leverage Ethic"
-pillars: [space]
-flow_keys: [optimized-tools, intentional-space]
+dimension: space
+state: optimized-tools
 keywords: [leverage, productivity, output, efficiency, work-ethic, nonlinear]
 tags:
   - type/concept

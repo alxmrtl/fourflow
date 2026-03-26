@@ -1,7 +1,7 @@
 ---
 title: "Subjective Time"
-pillars: [story]
-flow_keys: [generative-story]
+dimension: story
+state: generative-story
 keywords: [time-perception, flow, time-distortion, experience-density, novelty, clock-time]
 tags:
   - type/concept

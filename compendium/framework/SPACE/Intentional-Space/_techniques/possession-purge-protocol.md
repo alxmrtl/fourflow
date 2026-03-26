@@ -1,8 +1,8 @@
 ---
 title: "Possession Purge Protocol"
-mechanic: "[[environmental-simplicity]]"
-pillars: [space]
-flow_keys: [intentional-space]
+dimension: space
+state: intentional-space
+quality: "[[simplified]]"
 keywords: [purge, declutter, one-day, reset, filtering, minimalism-calibration]
 tags:
   - type/technique

@@ -1,8 +1,8 @@
 ---
 title: "Trajectory Review"
-mechanic: "[[long-horizon-coherence]]"
-pillars: [spirit]
-flow_keys: [visualized-vision]
+dimension: spirit
+state: visualized-vision
+quality: "[[proximate]]"
 keywords: [trajectory, coherence, monthly, consistency, direction, signal, noise, fork]
 tags:
   - type/technique

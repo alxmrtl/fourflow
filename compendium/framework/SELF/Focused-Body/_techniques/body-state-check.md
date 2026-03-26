@@ -1,8 +1,8 @@
 ---
 title: "Body-State Check"
-mechanic: "[[physiological-regulation]]"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
+quality: "[[grounded]]"
 keywords: [arousal, somatic, diagnostic, pre-session, heart-rate, breath, tension, entry-gate]
 tags:
   - type/technique

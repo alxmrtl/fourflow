@@ -1,8 +1,8 @@
 ---
 title: "Status Ego Audit"
-mechanic: "[[ego-monitoring-removal]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [status, ego, blind-spots, expertise, domain, learning, armor, identity, compounding, stagnation]
 tags:
   - type/technique

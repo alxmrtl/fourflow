@@ -1,8 +1,8 @@
 ---
 title: "Abundance-Native Vision Check"
-mechanic: "[[vision-priming]]"
-pillars: [spirit]
-flow_keys: [visualized-vision]
+dimension: spirit
+state: visualized-vision
+quality: "[[compelling]]"
 keywords: [scarcity, abundance, kingdom, mouse-utopia, vocation, calling, threat, pull]
 tags:
   - type/technique

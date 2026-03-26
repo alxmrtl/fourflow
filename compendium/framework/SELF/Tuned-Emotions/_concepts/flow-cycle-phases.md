@@ -1,7 +1,7 @@
 ---
 title: "Flow Cycle Phases"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
 keywords: [struggle, release, flow, recovery, transient hypofrontality, flow cycle, resistance]
 tags:
   - type/concept

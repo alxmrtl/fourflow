@@ -1,7 +1,7 @@
 ---
 title: "Growth Mindset"
-pillars: [self]
-flow_keys: [open-mind, tuned-emotions]
+dimension: self
+state: open-mind
 keywords: [mindset, learning, neuroplasticity, failure, Carol Dweck, growth, fixed-mindset]
 tags:
   - type/concept

@@ -1,8 +1,8 @@
 ---
 title: "Load-Capacity Diagnostic"
-mechanic: "[[challenge-skill-calibration]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[calibrated]]"
 keywords: [load, capacity, descent, pressure, calibration, overload, reduction]
 tags:
   - type/technique

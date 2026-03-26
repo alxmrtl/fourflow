@@ -1,7 +1,7 @@
 ---
 title: "Narrative Identity"
-pillars: [story]
-flow_keys: [generative-story, empowered-role]
+dimension: story
+state: generative-story
 keywords: [identity, autobiography, self-concept, McAdams, narrative, operating-system]
 tags:
   - type/concept

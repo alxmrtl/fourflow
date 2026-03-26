@@ -1,7 +1,7 @@
 ---
 title: "Redemptive Sequence"
-pillars: [story]
-flow_keys: [generative-story]
+dimension: story
+state: generative-story
 keywords: [redemption, McAdams, generativity, narrative, meaning-making, resilience]
 tags:
   - type/concept

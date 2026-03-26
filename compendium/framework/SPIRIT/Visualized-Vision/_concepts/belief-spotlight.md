@@ -1,7 +1,7 @@
 ---
 title: "Belief Spotlight"
-pillars: [spirit]
-flow_keys: [visualized-vision]
+dimension: spirit
+state: visualized-vision
 keywords: [belief, possibility, mindset, limits, spotlight, vision, self-concept]
 tags:
   - type/concept

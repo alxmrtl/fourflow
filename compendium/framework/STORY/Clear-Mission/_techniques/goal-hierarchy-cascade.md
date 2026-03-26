@@ -1,8 +1,8 @@
 ---
 title: "Goal Hierarchy Cascade"
-mechanic: "[[clear-goals]]"
-pillars: [story]
-flow_keys: [clear-mission]
+dimension: story
+state: clear-mission
+quality: "[[singular]]"
 keywords: [hierarchy, 10-year, 1-year, monthly, weekly, daily, lever-moving, direction, clarity]
 tags:
   - type/technique

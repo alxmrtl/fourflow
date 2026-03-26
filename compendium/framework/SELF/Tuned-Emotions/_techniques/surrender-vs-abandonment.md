@@ -1,8 +1,8 @@
 ---
 title: "Surrender vs. Abandonment"
-mechanic: "[[outcome-detachment]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [surrender, control, release, effort, posture, vigorous-action, non-attachment]
 tags:
   - type/technique

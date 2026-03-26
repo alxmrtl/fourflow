@@ -1,8 +1,8 @@
 ---
 title: "Aperture-Horizon Calibration"
-mechanic: "[[outcome-horizon-setting]]"
-pillars: [story]
-flow_keys: [clear-mission]
+dimension: story
+state: clear-mission
+quality: "[[bounded]]"
 keywords: [aperture, horizon, focal-length, state, dynamic, calibration, present, direction]
 tags:
   - type/technique

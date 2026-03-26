@@ -1,8 +1,8 @@
 ---
 title: "Evidence Audit"
-mechanic: "[[long-horizon-coherence]]"
-pillars: [spirit]
-flow_keys: [visualized-vision]
+dimension: spirit
+state: visualized-vision
+quality: "[[proximate]]"
 keywords: [mirror-delay, faith, evidence, internal-clarity, external-validation, trajectory]
 tags:
   - type/technique

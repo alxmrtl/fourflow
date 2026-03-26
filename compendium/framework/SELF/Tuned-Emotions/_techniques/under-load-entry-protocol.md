@@ -1,8 +1,8 @@
 ---
 title: "Under-Load Entry Protocol"
-mechanic: "[[anxiety-suppression]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [load, pressure, micro-intervention, triage, clarity, descent, stabilisation]
 tags:
   - type/technique

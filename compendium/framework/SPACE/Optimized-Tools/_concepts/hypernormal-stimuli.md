@@ -1,7 +1,7 @@
 ---
 title: "Hypernormal Stimuli"
-pillars: [space]
-flow_keys: [optimized-tools, open-mind]
+dimension: space
+state: optimized-tools
 keywords: [stimuli, evolution, dopamine, technology, attention, Tinbergen, superstimulus]
 tags:
   - type/concept

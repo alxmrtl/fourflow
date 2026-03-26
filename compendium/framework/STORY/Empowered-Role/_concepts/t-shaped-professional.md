@@ -1,7 +1,7 @@
 ---
 title: "T-Shaped Professional"
-pillars: [story]
-flow_keys: [empowered-role]
+dimension: story
+state: empowered-role
 keywords: [T-shaped, specialization, generalism, mastery, breadth, depth, expertise]
 tags:
   - type/concept

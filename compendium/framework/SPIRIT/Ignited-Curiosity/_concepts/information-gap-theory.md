@@ -1,7 +1,7 @@
 ---
 title: "Information Gap Theory"
-pillars: [spirit]
-flow_keys: [ignited-curiosity]
+dimension: spirit
+state: ignited-curiosity
 keywords: [curiosity, Loewenstein, information-gap, knowledge, motivation, engagement]
 tags:
   - type/concept

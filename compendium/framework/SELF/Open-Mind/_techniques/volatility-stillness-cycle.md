@@ -1,8 +1,8 @@
 ---
 title: "Volatility-Stillness Cycle"
-mechanic: "[[growth-orientation]]"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
+quality: "[[provisional]]"
 keywords: [high-variance, stillness, processing, subconscious, identity, observation, pattern-visibility, essence, coherence]
 tags:
   - type/technique

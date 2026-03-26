@@ -1,8 +1,8 @@
 ---
 title: "Fear as Excitement Reframe"
-mechanic: "[[anxiety-suppression]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [fear, excitement, edge, breath, reframe, growth, signal, threshold, direction, proceed, arousal]
 tags:
   - type/technique

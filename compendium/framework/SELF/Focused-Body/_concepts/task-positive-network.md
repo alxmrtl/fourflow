@@ -1,7 +1,7 @@
 ---
 title: "Task-Positive Network"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
 keywords: [TPN, attention, external-engagement, sensory-processing, brain-network, flow]
 tags:
   - type/concept

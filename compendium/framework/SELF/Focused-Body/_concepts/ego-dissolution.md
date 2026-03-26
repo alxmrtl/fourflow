@@ -1,7 +1,7 @@
 ---
 title: "Ego Dissolution"
-pillars: [self, spirit]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
 keywords: [self-boundary, ego, flow, absorption, self-transcendence, action-awareness-merging]
 tags:
   - type/concept

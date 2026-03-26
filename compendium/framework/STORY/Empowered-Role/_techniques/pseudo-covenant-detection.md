@@ -1,8 +1,8 @@
 ---
 title: "Pseudo-Covenant Detection"
-mechanic: "[[commitment-escalation]]"
-pillars: [story]
-flow_keys: [empowered-role]
+dimension: story
+state: empowered-role
+quality: "[[owned]]"
 keywords: [pseudo-covenant, commitment, resolution, structure, pressure-test, re-decision, load]
 tags:
   - type/technique

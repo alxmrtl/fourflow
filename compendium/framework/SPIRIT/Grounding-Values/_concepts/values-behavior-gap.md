@@ -1,7 +1,7 @@
 ---
 title: "Values-Behavior Gap"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
 keywords: [values, integrity, gap, dissonance, alignment, authenticity, behavior]
 tags:
   - type/concept

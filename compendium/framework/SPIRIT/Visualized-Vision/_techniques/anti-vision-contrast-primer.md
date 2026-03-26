@@ -1,8 +1,8 @@
 ---
 title: "Anti-Vision Contrast Primer"
-mechanic: "[[vision-priming]]"
-pillars: [spirit]
-flow_keys: [visualized-vision]
+dimension: spirit
+state: visualized-vision
+quality: "[[compelling]]"
 keywords: [anti-vision, contrast, negative, stakes, salience, discomfort, specificity, vision-building]
 tags:
   - type/technique

@@ -1,8 +1,8 @@
 ---
 title: "Attachments as Pattern Signals"
-mechanic: "[[outcome-detachment]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [attachment, patterns, goals, inner-work, transformation, information, spiral]
 tags:
   - type/technique

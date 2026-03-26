@@ -1,8 +1,8 @@
 ---
 title: "Stable Glucose Protocol"
-mechanic: "[[energy-sufficiency]]"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
+quality: "[[grounded]]"
 keywords: [glucose, glycemic, nutrition, pre-session, caffeine, adenosine, fuel, prefrontal]
 tags:
   - type/technique

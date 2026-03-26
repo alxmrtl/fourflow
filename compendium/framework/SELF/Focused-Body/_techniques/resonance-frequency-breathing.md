@@ -1,8 +1,8 @@
 ---
 title: "Resonance Frequency Breathing"
-mechanic: "[[physiological-regulation]]"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
+quality: "[[grounded]]"
 keywords: [HRV, vagus, resonance, 0.1Hz, diaphragm, parasympathetic, balance]
 tags:
   - type/technique

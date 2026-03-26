@@ -1,8 +1,8 @@
 ---
 title: "Consciousness Re-Patterning"
-mechanic: "[[anxiety-suppression]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [heart, pattern-transformation, re-patterning, SOUL, acceptance, open-heart]
 tags:
   - type/technique

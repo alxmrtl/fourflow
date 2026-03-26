@@ -1,7 +1,7 @@
 ---
 title: "Reticular Activating System"
-pillars: [story, spirit]
-flow_keys: [clear-mission, visualized-vision]
+dimension: story
+state: clear-mission
 keywords: [RAS, attention, filter, goals, reticular, brain, relevance, perception]
 tags:
   - type/concept

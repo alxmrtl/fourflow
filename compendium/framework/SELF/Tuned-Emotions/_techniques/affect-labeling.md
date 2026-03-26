@@ -1,8 +1,8 @@
 ---
 title: "Affect Labeling"
-mechanic: "[[emotional-neutrality]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [emotion, labeling, amygdala, prefrontal, naming, regulation, Lieberman]
 tags:
   - type/technique

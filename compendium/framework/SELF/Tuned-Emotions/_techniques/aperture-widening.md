@@ -1,8 +1,8 @@
 ---
 title: "Aperture Widening"
-mechanic: "[[anxiety-suppression]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [aperture, perception, time, sensory, narrowing, constriction, awareness]
 tags:
   - type/technique

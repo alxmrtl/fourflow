@@ -1,8 +1,8 @@
 ---
 title: "DMN Goal Engagement"
-mechanic: "[[anxiety-suppression]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [default-mode-network, DMN, goal, task-engagement, prefrontal-cortex, rumination]
 tags:
   - type/technique

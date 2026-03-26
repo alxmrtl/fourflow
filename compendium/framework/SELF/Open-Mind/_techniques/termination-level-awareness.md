@@ -1,8 +1,8 @@
 ---
 title: "Termination Level Awareness"
-mechanic: "[[cognitive-load-reduction]]"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
+quality: "[[spacious]]"
 keywords: [termination, load, cognitive-overload, decision-quality, descent, premature-resolution, working-memory]
 tags:
   - type/technique

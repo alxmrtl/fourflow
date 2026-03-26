@@ -1,7 +1,7 @@
 ---
 title: "Default Mode Network"
-pillars: [self]
-flow_keys: [focused-body, open-mind]
+dimension: self
+state: focused-body
 keywords: [DMN, self-referential, daydreaming, mental-chatter, mind-wandering, brain-network]
 tags:
   - type/concept

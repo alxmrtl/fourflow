@@ -1,8 +1,8 @@
 ---
 title: "Clean/Dirty Fuel Assessment"
-mechanic: "[[intrinsic-reward-signaling]]"
-pillars: [spirit]
-flow_keys: [ignited-curiosity]
+dimension: spirit
+state: ignited-curiosity
+quality: "[[alive]]"
 keywords: [intrinsic, extrinsic, fear, inadequacy, curiosity, love, ego, fuel, motivation]
 tags:
   - type/technique

@@ -1,8 +1,8 @@
 ---
 title: "Effort-Value Recalibration"
-mechanic: "[[effort-reward-coupling]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [reward, conditioning, intrinsic-motivation, cold-start, contingency, burnout-prevention]
 tags:
   - type/technique

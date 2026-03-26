@@ -1,7 +1,7 @@
 ---
 title: "Dopamine Baseline"
-pillars: [self]
-flow_keys: [open-mind, tuned-emotions]
+dimension: self
+state: open-mind
 keywords: [dopamine, reward, motivation, desensitization, stimulation, focus, novelty]
 tags:
   - type/concept

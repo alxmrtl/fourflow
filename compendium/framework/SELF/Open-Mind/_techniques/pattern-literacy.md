@@ -1,8 +1,8 @@
 ---
 title: "Pattern Literacy"
-mechanic: "[[growth-orientation]]"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
+quality: "[[provisional]]"
 keywords: [patterns, recognition, literacy, fundamental-patterns, re-patterning, awareness]
 tags:
   - type/technique

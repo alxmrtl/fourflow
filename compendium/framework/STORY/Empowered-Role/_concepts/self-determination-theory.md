@@ -1,7 +1,7 @@
 ---
 title: "Self-Determination Theory"
-pillars: [story, spirit]
-flow_keys: [empowered-role, ignited-curiosity]
+dimension: story
+state: empowered-role
 keywords: [SDT, autonomy, competence, relatedness, Deci, Ryan, motivation, needs]
 tags:
   - type/concept

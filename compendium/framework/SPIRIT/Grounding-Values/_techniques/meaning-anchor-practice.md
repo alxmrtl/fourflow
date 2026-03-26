@@ -1,8 +1,8 @@
 ---
 title: "Meaning Anchor Practice"
-mechanic: "[[meaning-stabilization]]"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
+quality: "[[generative]]"
 keywords: [purpose, meaning, motivation-decay, DMN, dopamine, smallest-unit, anchor]
 tags:
   - type/technique

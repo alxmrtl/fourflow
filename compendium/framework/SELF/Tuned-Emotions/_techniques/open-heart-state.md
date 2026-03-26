@@ -1,8 +1,8 @@
 ---
 title: "Open Heart State"
-mechanic: "[[psychological-safety]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [open-heart, trust, openness, love, gratitude, unconditional, well-being, heart]
 tags:
   - type/technique

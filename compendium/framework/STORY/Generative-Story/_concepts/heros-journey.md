@@ -1,7 +1,7 @@
 ---
 title: "Hero's Journey"
-pillars: [story]
-flow_keys: [generative-story, clear-mission]
+dimension: story
+state: generative-story
 keywords: [monomyth, Campbell, narrative-arc, three-act, personal-narrative, agency]
 tags:
   - type/concept

@@ -1,8 +1,8 @@
 ---
 title: "Recovery Accounting"
-mechanic: "[[energy-sufficiency]]"
-pillars: [self]
-flow_keys: [focused-body]
+dimension: self
+state: focused-body
+quality: "[[grounded]]"
 keywords: [periodization, recovery, demand, depletion, weekly, burnout-prevention, knowledge-work]
 tags:
   - type/technique

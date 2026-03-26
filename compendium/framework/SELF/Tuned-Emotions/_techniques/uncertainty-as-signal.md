@@ -1,8 +1,8 @@
 ---
 title: "Uncertainty as Signal"
-mechanic: "[[error-tolerance]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [uncertainty, discomfort, neuroplasticity, growth-edge, reframe, capability-frontier]
 tags:
   - type/technique

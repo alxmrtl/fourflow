@@ -1,8 +1,8 @@
 ---
 title: "Stabilisation Sequence"
-mechanic: "[[psychological-safety]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [stability, rebuild, sequence, grounding, layers, load, safety, enforcement]
 tags:
   - type/technique

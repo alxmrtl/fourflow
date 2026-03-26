@@ -1,7 +1,7 @@
 ---
 title: "Future Self Continuity"
-pillars: [spirit, story]
-flow_keys: [visualized-vision]
+dimension: spirit
+state: visualized-vision
 keywords: [future-self, identity, Hershfield, time-preference, motivation, continuity]
 tags:
   - type/concept

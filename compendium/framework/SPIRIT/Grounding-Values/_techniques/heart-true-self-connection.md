@@ -1,8 +1,8 @@
 ---
 title: "Heart–True Self Connection"
-mechanic: "[[internal-alignment]]"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
+quality: "[[congruent]]"
 keywords: [SOUL, true-self, heart, guidance, alignment, intuition, knowing]
 tags:
   - type/technique

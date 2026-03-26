@@ -1,8 +1,8 @@
 ---
 title: "Coherence Audit"
-mechanic: "[[meaning-coherence]]"
-pillars: [story]
-flow_keys: [generative-story]
+dimension: story
+state: generative-story
+quality: "[[continuous]]"
 keywords: [coherence, story, activities, frame, leak, audit, unity, divergence]
 tags:
   - type/technique

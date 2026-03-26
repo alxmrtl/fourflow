@@ -1,8 +1,8 @@
 ---
 title: "Pre-Session Equanimity Practice"
-mechanic: "[[emotional-neutrality]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [equanimity, pre-session, contemplative, settling, baseline, emotion-clearing]
 tags:
   - type/technique

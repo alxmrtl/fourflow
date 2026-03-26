@@ -1,8 +1,8 @@
 ---
 title: "Attention Math Framework"
-mechanic: "[[cognitive-load-reduction]]"
-pillars: [self]
-flow_keys: [open-mind]
+dimension: self
+state: open-mind
+quality: "[[spacious]]"
 keywords: [possessions, attention-cost, audit, minimalism, cognitive-overhead, subscription]
 tags:
   - type/technique

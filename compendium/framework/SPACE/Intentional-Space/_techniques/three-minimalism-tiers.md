@@ -1,8 +1,8 @@
 ---
 title: "Three Minimalism Tiers"
-mechanic: "[[environmental-simplicity]]"
-pillars: [space]
-flow_keys: [intentional-space]
+dimension: space
+state: intentional-space
+quality: "[[simplified]]"
 keywords: [minimalism, tiers, aggressive, tempered, mild, calibration, trade-off]
 tags:
   - type/technique

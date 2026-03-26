@@ -1,8 +1,8 @@
 ---
 title: "Clarity-Importance-Urgency Stack"
-mechanic: "[[stakes-definition]]"
-pillars: [story]
-flow_keys: [clear-mission]
+dimension: story
+state: clear-mission
+quality: "[[consequential]]"
 keywords: [clarity, importance, urgency, focus, distraction, diagnosis, stack, formula]
 tags:
   - type/technique

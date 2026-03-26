@@ -1,7 +1,7 @@
 ---
 title: "Parkinson's Law"
-pillars: [space, story]
-flow_keys: [intentional-space, clear-mission]
+dimension: space
+state: intentional-space
 keywords: [time, constraint, productivity, deadlines, Parkinson, leverage, focus]
 tags:
   - type/concept

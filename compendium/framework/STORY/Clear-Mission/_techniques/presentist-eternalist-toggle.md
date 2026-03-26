@@ -1,8 +1,8 @@
 ---
 title: "Presentist-Eternalist Toggle"
-mechanic: "[[outcome-horizon-setting]]"
-pillars: [story]
-flow_keys: [clear-mission]
+dimension: story
+state: clear-mission
+quality: "[[bounded]]"
 keywords: [presentism, eternalism, navigation, execution, toggle, session-structure, arc]
 tags:
   - type/technique

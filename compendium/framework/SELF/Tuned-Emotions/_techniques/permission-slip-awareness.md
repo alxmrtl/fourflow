@@ -1,8 +1,8 @@
 ---
 title: "Permission Slip Awareness"
-mechanic: "[[psychological-safety]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [permission, external-tools, scaffolding, internal-access, belief, dependency, authority, capacity, crystals, rituals, gurus, capability]
 tags:
   - type/technique

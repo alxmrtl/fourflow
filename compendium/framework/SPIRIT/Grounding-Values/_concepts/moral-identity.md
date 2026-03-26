@@ -1,7 +1,7 @@
 ---
 title: "Moral Identity"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
 keywords: [identity, morality, integrity, Aquino, Reed, self-concept, values]
 tags:
   - type/concept

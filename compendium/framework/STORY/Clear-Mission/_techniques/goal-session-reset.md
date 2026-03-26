@@ -1,8 +1,8 @@
 ---
 title: "Goal Session Reset"
-mechanic: "[[clear-goals]]"
-pillars: [story]
-flow_keys: [clear-mission]
+dimension: story
+state: clear-mission
+quality: "[[singular]]"
 keywords: [PFC, DMN, dopamine, session-start, one-sentence, neural-reorganization, specificity]
 tags:
   - type/technique

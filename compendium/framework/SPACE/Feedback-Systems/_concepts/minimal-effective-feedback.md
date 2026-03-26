@@ -1,7 +1,7 @@
 ---
 title: "Minimal Effective Feedback"
-pillars: [space]
-flow_keys: [feedback-systems]
+dimension: space
+state: feedback-systems
 keywords: [feedback, calibration, signal-noise, MFF, monitoring, flow]
 tags:
   - type/concept

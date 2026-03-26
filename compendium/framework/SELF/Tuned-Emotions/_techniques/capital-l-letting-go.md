@@ -1,8 +1,8 @@
 ---
 title: "Capital-L Letting Go"
-mechanic: "[[outcome-detachment]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [letting-go, SOUL, re-patterning, attachment, settled, unconditional-trust]
 tags:
   - type/technique

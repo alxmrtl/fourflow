@@ -1,8 +1,8 @@
 ---
 title: "Pre-Session Entry Ritual"
-mechanic: "[[ego-monitoring-removal]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[quiet]]"
 keywords: [ritual, conditioned-state, entry, hypofrontality, routine, transition]
 tags:
   - type/technique

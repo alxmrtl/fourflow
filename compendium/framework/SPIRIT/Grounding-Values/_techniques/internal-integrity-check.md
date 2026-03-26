@@ -1,8 +1,8 @@
 ---
 title: "Internal Integrity Check"
-mechanic: "[[internal-alignment]]"
-pillars: [spirit]
-flow_keys: [grounding-values]
+dimension: spirit
+state: grounding-values
+quality: "[[congruent]]"
 keywords: [alignment, authentic-desire, friction, suppression, integrity, ease]
 tags:
   - type/technique

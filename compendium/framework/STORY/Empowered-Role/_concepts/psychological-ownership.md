@@ -1,7 +1,7 @@
 ---
 title: "Psychological Ownership"
-pillars: [story]
-flow_keys: [empowered-role]
+dimension: story
+state: empowered-role
 keywords: [ownership, autonomy, identity, responsibility, Pierce, engagement, investment]
 tags:
   - type/concept

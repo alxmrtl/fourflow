@@ -1,8 +1,8 @@
 ---
 title: "Acceptance vs. Resignation"
-mechanic: "[[outcome-detachment]]"
-pillars: [self]
-flow_keys: [tuned-emotions]
+dimension: self
+state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [acceptance, resignation, reality, present, action, reactivity, clarity]
 tags:
   - type/technique

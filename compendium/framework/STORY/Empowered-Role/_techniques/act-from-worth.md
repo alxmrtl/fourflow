@@ -1,8 +1,8 @@
 ---
 title: "Act From Worth"
-mechanic: "[[responsibility-without-evaluation-pressure]]"
-pillars: [story]
-flow_keys: [empowered-role]
+dimension: story
+state: empowered-role
+quality: "[[owned]]"
 keywords: [worth, overflow, compensation, proving, intrinsic, baseline, action, identity, decision, wholeness, expression]
 tags:
   - type/technique
