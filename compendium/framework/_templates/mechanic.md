@@ -36,6 +36,15 @@ WHEN to use it (context), WHY it works (mechanism).
 **Key insight**: "[memorable quote or summary]"
 
 Quality check: Could someone DO this without reading the book?
+
+──────────────────────────────────────────────────────
+ATOMIC STRUCTURE NOTE (Phase 3+):
+When this file is converted to a MOC, each technique above
+moves to its own atomic note at:
+  _techniques/[technique-slug].md  (in same key folder)
+Use mechanic-moc.md template for the converted MOC file.
+Use technique.md template for each atomic technique note.
+──────────────────────────────────────────────────────
 -->
 
 
@@ -50,4 +59,10 @@ Quality check: Could someone DO this without reading the book?
 
 ## Related Concepts
 
+<!--
+Concepts are external scientific and philosophical frameworks (from outside FourFlowOS) that
+explain WHY this mechanic works. Examples: Window of Tolerance, Transient Hypofrontality,
+Default Mode Network, SOUL. They validate the mechanic with outside science. Cross-cutting —
+one Concept can ground multiple mechanics. Only link here if it meaningfully explains the mechanism.
+-->
 - [[]]

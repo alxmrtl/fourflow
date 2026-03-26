@@ -1,0 +1,36 @@
+---
+title: "Information Gap Theory"
+pillars: [spirit]
+flow_keys: [ignited-curiosity]
+keywords: [curiosity, Loewenstein, information-gap, knowledge, motivation, engagement]
+tags:
+  - type/concept
+---
+
+# Information Gap Theory
+
+> George Loewenstein's model: curiosity is the motivational response to a perceived gap between what we know and what we want to know. The gap must be felt, not just identified.
+
+## What It Is
+
+Information gap theory, developed by economist George Loewenstein in 1994, proposes that curiosity arises when we become aware of a specific gap in our knowledge — when we know enough to know what we don't know. Curiosity is not a general state of wondering; it's the specific discomfort and pull created by an identified incompleteness.
+
+The key insight: the gap must be at the right scale. Too small and there's no curiosity (you already basically know). Too large and there's anxiety rather than curiosity (you don't know where to start). The sweet spot is a gap that feels bridgeable — you can see the edge of what you don't know, which makes it feel reachable.
+
+This maps directly onto the challenge-skills balance: flow and curiosity share the same calibration logic. A task that's 4% beyond current ability creates a knowledge gap that feels bridgeable. A task that's 50% beyond ability creates anxiety, not curiosity.
+
+## Why It Enables Flow
+
+Curiosity and flow share an entry mechanism: both require a specific kind of incompleteness that creates forward pull. When a task generates ongoing information gaps (each answer produces new questions), curiosity sustains attention through the struggle phase without requiring willpower. The work becomes self-propelling.
+
+This is why interdisciplinary work, novel problems, and personally meaningful questions generate more sustained engagement than repetitive tasks: they generate more gaps. Curiosity is the mechanism by which novelty and challenge translate into sustained focus.
+
+## Application
+
+Design your work to generate information gaps rather than to resolve them too quickly. Ask questions before reading. Define what you don't know before starting. End work sessions at a point of incompleteness (the Zeigarnik effect ensures the unfinished task will pull you back). The goal is not to eliminate the gap — it's to stay in productive relationship with it.
+
+## Related
+
+- [[curiosity-loops]] — the mechanic that manufactures information gaps deliberately
+- [[challenge-skills-balance]] — shares the same calibration logic
+- [[curiosity-as-compass]] — the navigational application of information gap theory

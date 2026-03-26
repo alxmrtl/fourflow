@@ -9,12 +9,12 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 
 | File | When to read |
 |------|-------------|
-| `origin.md` | Personal story behind FourFlow; why flow, why now, the AI age thesis |
-| `vision.md` | Who it's for; the transformation arc; the mission |
-| `model.md` | Framework structure; 4 pillars, 12 keys, signal chain |
-| `resonance.md` | Cross-domain echoes; classical elements, other frameworks |
+| `architecture.md` | **Start here** — complete 5-level stack (SOUL → Dimension → State → Quality → Technique/Concept), all 12 States × 3 Qualities, principle assignments, two reading modes. Primary reference for the full framework. |
+| `first-principles.md` | Five fractal axioms: Default Is Open, Coherence Is the Mechanism, Loops Close Gaps, Compression Concentrates Signal, Direction Precedes Force. Each maps to one level of the architecture. Read when reasoning about WHY something works. |
 | `consciousness-alignment.md` | Core thesis: alignment as the only remaining bottleneck in the agent age |
-| `time-as-aperture.md` | Temporal ontology: time as perceptual aperture width; four pillars as lens controls; flow as the aperture opening |
+| `time-as-aperture.md` | Temporal ontology: time as perceptual aperture width; SOUL as light source; four Dimensions as lens controls; flow as aperture opening |
+| `resonance.md` | Cross-domain echoes; classical elements, other frameworks that independently arrived at the same structure |
+| `grounding.md` | What FourFlowOS is and why it exists; the origin and mission |
 
 ---
 
@@ -22,43 +22,38 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 `compendium/framework/SELF/`
 
 ### Tuned Emotions
-*Emotional navigation — regulating the signal so it doesn't overwhelm or flatline*
+*Emotional coherence — the emotional register is calibrated, quiet, and fueled*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `anxiety-suppression.md` | Reducing performance anxiety and inner critic activation |
-| `challenge-skill-calibration.md` | Matching task difficulty to capability — the flow sweet spot |
-| `effort-reward-coupling.md` | Connecting effort to felt progress so motivation compounds |
-| `ego-monitoring-removal.md` | Dropping self-consciousness so action becomes unselfconscious |
-| `emotional-neutrality.md` | Staying neither elated nor crushed — equanimity as performance substrate |
-| `error-tolerance.md` | Treating mistakes as data, not identity threats |
-| `outcome-detachment.md` | Process over result — releasing grip on how it turns out |
-| `psychological-safety.md` | Internal conditions that let risk-taking feel safe |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `quiet.md` | Restore | Nervous system noise removed — anxiety, ego-monitoring, emotional turbulence cleared |
+| `fueled.md` | Maintain | Effort-reward loop is running — motivation compounds because the gap stays closed |
+| `calibrated.md` | Concentrate | Challenge-skill ratio compressed to the flow sweet spot — neither bored nor overwhelmed |
+
+*Techniques*: `ego-monitoring-removal` · `emotional-neutrality` · `error-tolerance` · `outcome-detachment`
+*Concepts*: `psychological-safety` (Edmondson) · see `_concepts/`
 
 ### Focused Body
-*Somatic readiness — physical coherence as the foundation of attention*
+*Somatic coherence — the body is grounded, attuned, and unified with intent*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `action-awareness-merging.md` | Losing self-consciousness through physical movement and doing; full aperture absorption eliminates self-referential time |
-| `energy-sufficiency.md` | Basic physiological fuel — sleep, food, movement as non-negotiables |
-| `mind-body-coherence.md` | Aligning mental intent with physical state before engaging |
-| `physiological-regulation.md` | Breath, posture, nervous system calibration before work |
-| `rhythm-and-pacing.md` | Working with natural energy rhythms rather than against them |
-| `sensory-coherence.md` | Tuning the senses to reduce ambient noise and sharpen focus |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `grounded.md` | Restore | Physiological baseline stable — breath, regulation, and basic fuel in place |
+| `attuned.md` | Maintain | Sensorimotor feedback loop running — body awareness sharpens rather than distracts |
+| `unified.md` | Concentrate | Mind and body compressed into a single coherent signal — intent and physiology aligned |
+
+*Techniques*: `energy-sufficiency` · `rhythm-and-pacing` · `action-awareness-merging`
 
 ### Open Mind
-*Cognitive clarity — low-friction thinking, fresh perception*
+*Cognitive coherence — the mind is spacious, provisional, and undivided*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `ambiguity-control.md` | Tolerating open questions without premature closure |
-| `attention-residue-elimination.md` | Clearing incomplete loops before starting focused work |
-| `clarity-over-intensity.md` | Calm precision beats urgent effort — slower is often faster |
-| `cognitive-load-reduction.md` | Reducing active mental demands before complex thinking |
-| `compression-over-expansion.md` | Simplify the problem space before diving into solution space |
-| `growth-orientation.md` | Approaching challenges as skill-building, not threat |
-| `overchoice-elimination.md` | Fewer decisions = more cognitive bandwidth for the work that matters |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `spacious.md` | Restore | Cognitive load cleared — bandwidth restored by removing complexity, choices, and noise |
+| `provisional.md` | Maintain | Models held lightly — beliefs update as new information arrives, no stuck loops |
+| `undivided.md` | Concentrate | Attention compressed to one thread — no background processing splitting the signal |
+
+*Techniques*: `compression-over-expansion` · `overchoice-elimination` · `clarity-over-intensity` · `ambiguity-control`
 
 ---
 
@@ -66,37 +61,37 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 `compendium/framework/SPACE/`
 
 ### Feedback Systems
-*Real-time feedback loops — knowing how you're doing as you go*
+*Signal coherence — feedback is honest, immediate, and visible*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `agency-loops.md` | Feedback that confirms your actions are having effect |
-| `feedback-density.md` | How often and how clearly you receive signal from the work |
-| `immediate-feedback.md` | Shortening the gap between action and response |
-| `progress-visibility.md` | Making advancement visible so momentum compounds |
-| `speed-of-consequence.md` | How fast choices produce outcomes you can learn from |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `honest.md` | Restore | Signal is uncorrupted — feedback reflects reality, not ego-filtered or delayed |
+| `immediate.md` | Maintain | Gap between action and consequence is short — loop closes fast enough to inform next action |
+| `visible.md` | Concentrate | Progress compressed into legible signal — advancement is seen so momentum compounds |
+
+*Techniques*: `speed-of-consequence` · `feedback-density`
 
 ### Intentional Space
-*Physical and social field design — environment as alignment infrastructure*
+*Environmental coherence — the context is simplified, protected, and cued*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `constraint-elegance.md` | Strategic limitations that focus rather than restrict |
-| `environmental-simplicity.md` | Removing environmental noise and decision triggers |
-| `interruption-control.md` | Protecting the work period from internal and external breaks |
-| `physical-space-priming.md` | Using space design to cue the brain for specific modes |
-| `social-field-alignment.md` | Being around people whose energy supports the work |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `simplified.md` | Restore | Environmental noise removed — decision triggers and competing stimuli cleared |
+| `protected.md` | Maintain | The work container holds — interruption probability low, loop maintained intact |
+| `cued.md` | Concentrate | Physical arrangement concentrates the right mode — space primes the brain before work begins |
+
+*Techniques*: `constraint-elegance` · `social-field-alignment`
 
 ### Optimized Tools
-*Friction reduction — tools that disappear into the work*
+*Tool coherence — the toolset is lean, matched, and frictionless*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `automation-of-non-creative-steps.md` | Removing rote steps from the creative path |
-| `error-cost-minimization.md` | Reducing the price of mistakes so experimentation flows |
-| `friction-removal.md` | Identifying and eliminating unnecessary resistance in the workflow |
-| `subtraction-beats-addition.md` | Removing complexity beats adding features |
-| `tool-task-alignment.md` | Matching the right tool to the specific type of work |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `lean.md` | Restore | Minimum viable toolset — unnecessary surface area removed, complexity subtracted |
+| `matched.md` | Maintain | Tool-task feedback loop runs cleanly — right instrument for the specific work |
+| `frictionless.md` | Concentrate | High signal, minimal overhead — interface transparent, tool disappears into the work |
+
+*Techniques*: `automation-of-non-creative-steps` · `error-cost-minimization`
 
 ---
 
@@ -104,35 +99,37 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 `compendium/framework/STORY/`
 
 ### Generative Story
-*Narrative momentum — the story you tell about what's happening*
+*Narrative coherence — the story is expansive, continuous, and true*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `identity-immersion.md` | Inhabiting the role fully — being the person who does this work |
-| `meaning-coherence.md` | Keeping daily actions connected to what matters; coherence determines whether time feels continuous or fragmented |
-| `narrative-momentum.md` | Building story arc so each day continues something; time as navigation not weather |
-| `positive-orientation.md` | Framing toward possibility rather than threat or loss |
-| `tension-release-dynamics.md` | Using productive tension as a creative engine, not a stressor |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `expansive.md` | Restore | Story's default is growth-oriented — difficulty is plot, not failure; framing toward possibility |
+| `continuous.md` | Maintain | Narrative loop links sessions — each day continues something, momentum compounds |
+| `true.md` | Concentrate | Story compressed to authentic core — stripped of performance, operating from real identity |
+
+*Techniques*: `tension-release-dynamics` · `meaning-coherence`
 
 ### Clear Mission
-*Singular goals — the felt, specific target*
+*Directional coherence — the mission is consequential, bounded, and singular*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `clear-goals.md` | Unambiguous targets that the brain can orient toward |
-| `outcome-horizon-setting.md` | The right time horizon for each type of work; horizon as aperture focal length |
-| `priority-singularity.md` | One thing at a time — multiplicity fragments attention |
-| `stakes-definition.md` | Why this matters, specifically — stakes create engagement |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `consequential.md` | Restore | Mission rooted in what genuinely matters — authentic stakes, not anxiety-driven targets |
+| `bounded.md` | Maintain | Defined horizon closes the planning loop — specific, time-oriented outcome |
+| `singular.md` | Concentrate | One outcome at a time — attention compressed, no competing priorities |
+
+*Techniques*: `clear-goals`
 
 ### Empowered Role
-*Ownership — shaping the role rather than waiting for permission*
+*Role coherence — the role is aligned, defined, and owned*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `commitment-escalation.md` | Small acts of commitment that build toward full ownership |
-| `identity-alignment.md` | Aligning role with who you actually are, not who you think you should be |
-| `responsibility-without-evaluation-pressure.md` | Owning outcomes without tying them to self-worth |
-| `role-clarity.md` | Knowing exactly what you're here to do in this context |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `aligned.md` | Restore | Role returned to identity fit — who you are matches what the role needs |
+| `defined.md` | Maintain | Role expectations unambiguous — no role-confusion loop consuming bandwidth |
+| `owned.md` | Concentrate | Full agency and responsibility — accountability compressed to one locus |
+
+*Techniques*: `responsibility-without-evaluation-pressure`
 
 ---
 
@@ -140,35 +137,37 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 `compendium/framework/SPIRIT/`
 
 ### Grounding Values
-*Values coherence — actions matching what you actually care about*
+*Values coherence — values are congruent, constant, and generative*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `integrity-loops.md` | Feedback mechanisms that catch values-behavior gaps early |
-| `internal-alignment.md` | Aligning inner state with external action |
-| `meaning-stabilization.md` | Anchoring to sources of meaning that don't depend on outcomes |
-| `values-integration.md` | Weaving values into daily decisions, not just stated principles |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `congruent.md` | Restore | Values and choices aligned — stated and operative values match, gap closed |
+| `constant.md` | Maintain | Values don't shift under pressure — stable reference signal regardless of conditions |
+| `generative.md` | Concentrate | Values compressed into active fuel — energy source and direction, not just a filter |
+
+*Techniques*: `integrity-loops`
 
 ### Ignited Curiosity
-*Intrinsic drive — genuine pull, not obligation*
+*Curiosity coherence — curiosity is exploratory, compounding, and alive*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `curiosity-loops.md` | Questions that open into more questions — self-sustaining engagement |
-| `exploration-bias.md` | Defaulting to discovery over judgment when encountering the new |
-| `intrinsic-reward-signaling.md` | Noticing and amplifying the felt reward of the work itself |
-| `playfulness.md` | Bringing lightness and experimentation to serious work |
-| `strength-activation.md` | Routing work through natural strengths to trigger flow states |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `exploratory.md` | Restore | Default openness to novelty — discovery over judgment, toward the unknown |
+| `compounding.md` | Maintain | Curiosity loops self-generate — each answer opens the next question |
+| `alive.md` | Concentrate | Interest concentrated and undiluted — genuine intrinsic pull, not diffused obligation |
+
+*Techniques*: `playfulness` · `strength-activation`
 
 ### Visualized Vision
-*Long-horizon vision — the future that feels real*
+*Vision coherence — the vision is compelling, proximate, and clear*
 
-| Mechanic | Core idea |
-|----------|-----------|
-| `inspirational-compression.md` | Distilling the vision to its essence — the image that holds everything |
-| `long-horizon-coherence.md` | Keeping short-term moves connected to the long arc; trajectory consistency as manifestation mechanism |
-| `symbolic-meaning.md` | Objects, metaphors, and symbols that make the vision tangible |
-| `vision-priming.md` | Regular contact with the vision so it stays felt, not abstract |
+| Quality | Type | Core idea |
+|---------|------|-----------|
+| `compelling.md` | Restore | Vision restored to natural pull — received, not forced; energy flows toward it |
+| `proximate.md` | Maintain | Long arc looped into today's work — vision connects to the immediate, not floating |
+| `clear.md` | Concentrate | Vision compressed to specific image — high enough resolution to recognize when it arrives |
+
+*Techniques*: `symbolic-meaning`
 
 ---
 
@@ -192,3 +191,4 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `anon-brain-goals-dmn-xpost.md` | X post: default mode network + goal-setting | Clear Mission, Open Mind |
 | `hall-pistis-kingdom-x-post.md` | X post: faith, vision, directed action | Visualized Vision, Grounding Values |
 | `anon-time-aperture-creation-xpost.md` | X post: time as perceptual aperture; flow widens, anxiety narrows; mirror delay as faith test | Generative Story, Clear Mission, Visualized Vision, Tuned Emotions, Focused Body, Grounding Values |
+| `jimmyedgar-permissionmaxx-xpost.md` | X post: everything external is a permission slip; excitement as GPS; radical allowance; worthiness = existence; vision as received | Ignited Curiosity, Tuned Emotions, Visualized Vision, Empowered Role |

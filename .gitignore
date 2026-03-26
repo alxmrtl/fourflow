@@ -44,3 +44,9 @@ media/ai-generated/
 
 # Obsidian
 .obsidian/
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env

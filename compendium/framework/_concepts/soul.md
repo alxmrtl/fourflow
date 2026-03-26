@@ -161,3 +161,4 @@ The heart, in this model, is the aperture mechanism itself — the iris that dil
 | Source | Type | Key Insight |
 |--------|------|-------------|
 | [[anon-time-aperture-creation-xpost]] | x-post | SOUL as the light source; four pillars as lens properties; time as the cost of infinite observer operating through finite aperture; heart as the iris mechanism |
+| [[anon-volmaxxxing-alignment-xpost]] | x-post | "Logic of evolution" image as biological visualization of SOUL's accumulated wisdom architecture — essence can't be planned, only grown through accumulated logic; Volmaxxxing's identity-behavior detachment ("watching yourself without being lost inside yourself") is a practical SOUL access method; armor of life experiences is what buries the signal of authentic essence |
