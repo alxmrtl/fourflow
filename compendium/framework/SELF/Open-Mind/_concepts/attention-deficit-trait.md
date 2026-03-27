@@ -2,6 +2,7 @@
 title: "Attention Deficit Trait"
 dimension: self
 state: open-mind
+quality: "[[spacious]]"
 keywords: [overwhelm, cognitive-overload, focus, ADT, modern-work, distraction]
 tags:
   - type/concept

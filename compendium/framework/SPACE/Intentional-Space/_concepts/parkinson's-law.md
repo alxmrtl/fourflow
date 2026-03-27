@@ -2,6 +2,7 @@
 title: "Parkinson's Law"
 dimension: space
 state: intentional-space
+quality: "[[protected]]"
 keywords: [time, constraint, productivity, deadlines, Parkinson, leverage, focus]
 tags:
   - type/concept

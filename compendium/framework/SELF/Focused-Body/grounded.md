@@ -34,9 +34,15 @@ Flow occupies a specific band on the arousal spectrum. Research by Peifer et al.
 
 ## Techniques
 
-- [[body-state-check]] — 60-second pre-session arousal assessment; identifies state (over/under/regulated) and matches appropriate regulation tool
-- [[breath-regulation]] — three tools matched to arousal state: cyclic sighing (daily baseline + mild reset), resonance frequency breathing (pre-session default), 4-7-8 (acute over-arousal)
-- [[movement-primer]] — brief physical activation to shift under-arousal; what breath can't do for energy, movement does
+- [[body-state-check]] — 60-second pre-session arousal assessment matched to appropriate regulation tool
+- [[breath-regulation]] — three breath tools matched to over/under/regulated arousal states
+- [[movement-primer]] — brief physical activation to shift under-arousal when breath alone is insufficient
+
+## Key Concepts
+
+- [[transient-hypofrontality]] — explains how exercise temporarily reduces prefrontal load to enable flow onset
+- [[autonomic-nervous-system]] — explains the dual-branch balance underlying optimal physiological arousal
+- [[interoception]] — explains how body-signal awareness enables real-time arousal self-regulation
 
 ## Related Mechanics
 

@@ -2,6 +2,7 @@
 title: "Hero's Journey"
 dimension: story
 state: generative-story
+quality: "[[expansive]]"
 keywords: [monomyth, Campbell, narrative-arc, three-act, personal-narrative, agency]
 tags:
   - type/concept

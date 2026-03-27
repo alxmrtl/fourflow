@@ -18,10 +18,16 @@ tags:
 The outcome horizon is how far ahead you're shining your attention — and both extremes fail. Too short a horizon loses direction: actions are disconnected from purpose, effort feels arbitrary. Too long a horizon loses presence: each action feels insignificant against the scale of the vision. The right horizon is where action and meaning overlap, calibrated to your current state. When correctly set, direction and execution fuse — and the time perception of flow (hours feeling like minutes) becomes available because you're neither adrift in abstraction nor blind to direction.
 
 ## Techniques
-- [[aperture-horizon-calibration]] — dynamic calibration of horizon to current state (wide aperture = longer horizon, narrow aperture = next action only)
+
+- [[aperture-horizon-calibration]] — dynamically matches the attention horizon to current state
+- [[goal-session-reset]] — re-states a single bounded goal at the start of each session
+- [[scope-lock]] — explicitly closes off out-of-scope concerns before deep work begins
 
 ## Key Concepts
-- [[goal-hierarchy]] — the horizon operates at multiple levels simultaneously; the cascade ensures each level is appropriately scoped
+
+- [[cognitive-narrowing]] — appropriate scope limits the attention field to what's actionable now
+- [[goal-specification-theory]] — specific, bounded goals outperform vague ones for focus and effort
+- [[constraint-satisfaction]] — bounded constraints reduce decision space and accelerate execution
 
 ## Related Mechanics
 - [[long-horizon-coherence]] — coherence across time is what makes the long horizon sustainable; horizon setting is what makes coherence actionable

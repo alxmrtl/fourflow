@@ -2,6 +2,7 @@
 title: "Flow Cycle Phases"
 dimension: self
 state: tuned-emotions
+quality: "[[fueled]]"
 keywords: [struggle, release, flow, recovery, transient hypofrontality, flow cycle, resistance]
 tags:
   - type/concept

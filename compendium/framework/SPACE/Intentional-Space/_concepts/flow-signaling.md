@@ -2,6 +2,7 @@
 title: "Flow Signaling"
 dimension: space
 state: intentional-space
+quality: "[[cued]]"
 keywords: [ritual, conditioning, cue, priming, habit, flow-trigger, Pavlov]
 tags:
   - type/concept

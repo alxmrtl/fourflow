@@ -2,6 +2,7 @@
 title: "Belief Spotlight"
 dimension: spirit
 state: visualized-vision
+quality: "[[clear]]"
 keywords: [belief, possibility, mindset, limits, spotlight, vision, self-concept]
 tags:
   - type/concept

@@ -2,6 +2,7 @@
 title: "Task-Not-Ego Metrics"
 dimension: space
 state: feedback-systems
+quality: "[[visible]]"
 keywords: [metrics, ego, identity, feedback, performance, self-monitoring]
 tags:
   - type/concept

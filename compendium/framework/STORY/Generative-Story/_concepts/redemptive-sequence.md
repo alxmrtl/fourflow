@@ -2,6 +2,7 @@
 title: "Redemptive Sequence"
 dimension: story
 state: generative-story
+quality: "[[true]]"
 keywords: [redemption, McAdams, generativity, narrative, meaning-making, resilience]
 tags:
   - type/concept

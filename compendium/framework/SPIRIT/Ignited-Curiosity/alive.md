@@ -18,13 +18,16 @@ tags:
 Flow is autotelic — it rewards itself, making the activity inherently satisfying rather than a means to some future payoff. The key variable is the source of motivation: actions fueled by intrinsic interest have natural momentum; actions fueled by fear, obligation, or the need to prove something require constant pushing. Dirty fuel (fear, inadequacy) keeps the protective ego active — monitoring for failure, managing identity stakes — which fragments the attention flow requires. Clean fuel (curiosity, genuine interest, love) quiets the ego because there's nothing to prove; full attention becomes available.
 
 ## Techniques
-- [[clean-dirty-fuel-assessment]] — three diagnostic methods for identifying whether motivation is clean (intrinsic) or dirty (fear-based)
-- [[neurochemical-stacking-cascade]] — five-stage progression from curiosity to mastery, each stage building the biochemical conditions for the next
-- [[excitement-as-gps]] — treats genuine excitement as directional soul-signal and follows it without needing to know the destination
+
+- [[novelty-injection]] — deliberately introduces new elements to reignite intrinsic engagement
+- [[beginner-lens-reset]] — reframes familiar work through a first-time learner's perspective
+- [[open-question-hold]] — sustains engagement by keeping a live question present throughout work
 
 ## Key Concepts
-- [[intrinsic-motivation]] — the underlying psychological concept; autotelic engagement vs. extrinsic reward-seeking
-- [[curiosity-as-compass]] — curiosity is the natural entry point into the cascade; following it is the first stage
+
+- [[intrinsic-motivation]] — autotelic engagement vs. extrinsic reward-seeking; self-reinforcing vs. depleting
+- [[flow-and-curiosity]] — research linking curiosity activation directly to flow onset and depth
+- [[novelty-seeking-neuroscience]] — dopamine-driven novelty response as biological basis of alive engagement
 
 ## Related Mechanics
 - [[effort-reward-coupling]] — intrinsic reward makes the effort itself the reward; effort-reward coupling makes the relationship explicit

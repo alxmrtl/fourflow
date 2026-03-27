@@ -2,6 +2,7 @@
 title: "Yerkes-Dodson Law"
 dimension: self
 state: tuned-emotions
+quality: "[[calibrated]]"
 keywords: [arousal, performance, optimal stress, cortisol, norepinephrine, inverted-U, eustress]
 tags:
   - type/concept

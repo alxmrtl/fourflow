@@ -18,12 +18,16 @@ tags:
 When short actions feel connected to something larger, the brain's reward system reinforces each one as progress on a long-range attractor. Without that connection, each action is an island — Monday's work doesn't connect to Tuesday's, and the brain treats each day as a separate optimization problem, paying the orienting cost fresh each morning. The compound effect isn't just productivity arithmetic: you're building a detailed map of one region of possibility rather than scattered snapshots of many, and that specificity is what makes momentum self-reinforcing rather than self-depleting.
 
 ## Techniques
-- [[trajectory-review]] — monthly audit of major decisions to assess coherence; distinguishes signal-based corrections from noise-based coherence leaks
-- [[evidence-audit]] — distinguishes evaluating direction from the mirror's current state vs. from internal clarity; prevents noise-triggered abandonment of a valid trajectory
+
+- [[trajectory-review]] — monthly audit distinguishing signal-based corrections from noise-based coherence leaks
+- [[90-day-vivid-scene]] — creates a detailed sensory image of the 90-day horizon to make it motivationally proximate
+- [[proof-point-stack]] — assembles evidence of past directional consistency to reinforce current momentum
 
 ## Key Concepts
-- [[future-self-continuity]] — coherence across time requires identifying with a continuous self that persists into the future; discontinuity makes long-horizon action feel disconnected
-- [[exponential-growth-curve]] — long-horizon coherence is required to stay on the curve long enough to reach the exponential region
+
+- [[exponential-growth-curve]] — long-horizon coherence is required to reach the exponential region of the curve
+- [[goal-proximity-effect]] — research showing motivation increases as the goal feels closer and more concrete
+- [[temporal-self-appraisal]] — how people evaluate their past and future selves across time to sustain direction
 
 ## Related Mechanics
 - [[meaning-coherence]] — meaning coherence is the narrative expression; long-horizon coherence is the directional/behavioral expression

@@ -2,6 +2,7 @@
 title: "Behavioral Design"
 dimension: space
 state: optimized-tools
+quality: "[[lean]]"
 keywords: [behavior, defaults, environment-design, nudge, friction, automation]
 tags:
   - type/concept

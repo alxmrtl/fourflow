@@ -2,6 +2,7 @@
 title: "Dopamine Baseline"
 dimension: self
 state: open-mind
+quality: "[[provisional]]"
 keywords: [dopamine, reward, motivation, desensitization, stimulation, focus, novelty]
 tags:
   - type/concept

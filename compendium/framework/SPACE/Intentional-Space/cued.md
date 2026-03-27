@@ -18,11 +18,16 @@ tags:
 The environment is a constant source of behavioral cues — what surrounds us shapes what we do before we consciously decide to do it. When a physical space is consistently associated with deep, focused work — through repeated use, deliberate sensory signals, or identity-reinforcing objects — the brain learns to shift into focus mode upon entering it. The transition from ordinary to deep work becomes conditioned rather than willed, reducing the attentional cost of beginning each session.
 
 ## Techniques
-- [[space-conditioning-protocol]] — *needs content*
+
+- [[constraint-elegance]] — designs productive constraints that shape behavior without requiring willpower
+- [[environmental-trigger-stack]] — layers multiple sensory cues to create a reliable focus-onset signal
+- [[contextual-object-placement]] — positions identity-reinforcing objects to prime the desired mental state
 
 ## Key Concepts
-- [[sensory-priming]] — deliberate sensory cues (light, scent, sound, arrangement) are the primary mechanism for conditioning a space to signal focus
-- [[flow-signaling]] — primed spaces signal to the brain that it's time to go deep; the cue precedes and enables the state
+
+- [[flow-signaling]] — explains how environmental cues prime the brain to shift into focused mode
+- [[context-dependent-memory]] — explains why the same space consistently evokes the same cognitive state
+- [[conditioned-stimulus-response]] — the classical conditioning mechanism behind environment-to-state linkage
 
 ## Related Mechanics
 - [[environmental-simplicity]] — simplicity is the prerequisite; a cluttered space can't be effectively primed because the signal is overwhelmed by noise

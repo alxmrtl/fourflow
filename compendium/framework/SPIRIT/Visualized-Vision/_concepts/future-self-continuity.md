@@ -2,6 +2,7 @@
 title: "Future Self Continuity"
 dimension: spirit
 state: visualized-vision
+quality: "[[compelling]]"
 keywords: [future-self, identity, Hershfield, time-preference, motivation, continuity]
 tags:
   - type/concept

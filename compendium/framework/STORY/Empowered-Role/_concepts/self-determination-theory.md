@@ -2,6 +2,7 @@
 title: "Self-Determination Theory"
 dimension: story
 state: empowered-role
+quality: "[[aligned]]"
 keywords: [SDT, autonomy, competence, relatedness, Deci, Ryan, motivation, needs]
 tags:
   - type/concept

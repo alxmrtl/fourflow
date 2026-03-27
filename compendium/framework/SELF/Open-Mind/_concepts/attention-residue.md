@@ -2,6 +2,7 @@
 title: "Attention Residue"
 dimension: self
 state: open-mind
+quality: "[[undivided]]"
 keywords: [task-switching, multitasking, cognitive-fragmentation, focus, working-memory]
 tags:
   - type/concept

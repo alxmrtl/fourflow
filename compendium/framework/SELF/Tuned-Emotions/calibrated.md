@@ -29,9 +29,15 @@ Flow requires a specific ratio between what the task demands and what the person
 
 ## Techniques
 
-- [[flow-channel-formula]] — pre-session calibration check; ensures challenge is just above current skill before engaging
-- [[sub-goal-decomposition]] — real-time recalibration when overwhelm spikes; finds the smallest executable sub-goal and builds from there
-- [[boredom-anxiety-signals]] — interpretive frame for reading both signals as calibration feedback rather than malfunctions to suppress
+- [[flow-channel-formula]] — pre-session calibration check ensuring challenge sits just above current skill
+- [[boredom-anxiety-signals]] — reads both signals as calibration feedback rather than malfunctions to suppress
+- [[sub-goal-decomposition]] — real-time recalibration when overwhelm spikes; finds smallest executable sub-goal
+
+## Key Concepts
+
+- [[yerkes-dodson-law]] — explains the inverted-U relationship between arousal and performance
+- [[challenge-skill-ratio]] — explains the specific ratio at which flow becomes structurally accessible
+- [[optimal-arousal-theory]] — explains the arousal band where engagement and precision coexist
 
 ## Related Mechanics
 

@@ -2,6 +2,7 @@
 title: "Goal Hierarchy"
 dimension: story
 state: clear-mission
+quality: "[[consequential]]"
 keywords: [goals, hierarchy, cascade, vision, timeframe, alignment, planning]
 tags:
   - type/concept

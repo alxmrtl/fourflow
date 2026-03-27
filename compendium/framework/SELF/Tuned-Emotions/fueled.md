@@ -29,9 +29,15 @@ Flow is intrinsically rewarding — but not automatically. It requires a felt co
 
 ## Techniques
 
-- [[progress-ledger]] — end-of-session log of what *moved* today (not what was done); closes the dopamine loop after each session
-- [[micro-completion-architecture]] — decomposes work into "wins" with clear before/after states; closes the dopamine loop constantly rather than once at session end
-- [[detachment-protocol]] — three-step sequence: accept present reality, surrender control of the uncontrollable while keeping full effort, release the specific delivery pathway — dissolves the monitoring layer that splits focus
+- [[micro-completion-architecture]] — decomposes work into discrete wins with clear before/after states
+- [[progress-ledger]] — end-of-session log of what moved today, closing the dopamine loop
+- [[dmn-goal-engagement]] — activates goal-relevant DMN processing to sustain intrinsic motivation
+
+## Key Concepts
+
+- [[flow-cycle-phases]] — explains the biological stages of flow onset, peak, and recovery
+- [[reward-prediction-error]] — explains how dopamine fires on anticipated progress, not just receipt
+- [[progress-principle]] — explains why small wins on meaningful work are the primary daily motivator
 
 ## Related Mechanics
 

@@ -18,10 +18,16 @@ tags:
 Meaning doesn't just motivate — it reorganizes biology. When someone has a strong sense of purpose, the brain creates self-reinforcing dopamine reward loops around goal-relevant activity and suppresses the DMN's inward cycling, converting ruminative energy into directed energy. Without meaning, that energy stays inward. The same neural wattage that could fuel deep work instead fuels anxiety and self-evaluation. The minimum threshold for this neurochemical reorganization is real meaning, not grand meaning — even a thin strand of genuine purpose is enough to create the reorganization; performed meaning doesn't work.
 
 ## Techniques
-- [[meaning-anchor-practice]] — finding the smallest unit of genuine meaning when motivation decays; re-engaging the neural attractor without requiring renewed inspiration
+
+- [[meaning-anchor-practice]] — finding the smallest genuine meaning unit when motivation decays
+- [[values-stress-test]] — tests whether values hold under pressure or collapse into convenience
+- [[daily-values-touchpoint]] — brief daily ritual reconnecting behavior to core values
 
 ## Key Concepts
-- [[values-clarification]] — meaning is grounded in values; clarity about what matters is the upstream condition
+
+- [[values-clarification]] — meaning is grounded in values; clarity is the upstream condition
+- [[identity-based-habits]] — habits rooted in values identity sustain longer than outcome-based habits
+- [[value-stability-research]] — evidence on how stable values protect against motivational decay
 
 ## Related Mechanics
 - [[long-horizon-coherence]] — meaning is the attractor that sustains direction across time; long-horizon coherence is how that direction is maintained session to session

@@ -24,9 +24,15 @@ When what the mind intends and what the body is doing are misaligned — thinkin
 
 ## Techniques
 
-- [[aperture-absorption]] — *needs content* (externalizing the monitoring creates coherence between what the mind intends and what the body is occupied with)
-- *needs content* — embodied presence practice: scanning and releasing body tension before and during sessions
-- *needs content* — pre-session alignment: briefly aligning stated intention with physical state (posture, breath, physical orientation toward the task)
+- [[action-awareness-merging]] — closes the gap between intention and movement until they operate as one
+- [[physical-anchor-cue]] — uses a repeated physical gesture to signal transition into unified execution mode
+- [[tension-scan-and-release]] — scans held body tension before and during sessions to remove internal friction
+
+## Key Concepts
+
+- [[default-mode-network]] — explains how DMN deactivation during flow eliminates self-referential interference
+- [[proprioception-flow]] — explains how body-position awareness feeds into seamless movement execution
+- [[action-observation-network]] — explains the mirror-neuron system linking intention and physical action
 
 ## Related Mechanics
 

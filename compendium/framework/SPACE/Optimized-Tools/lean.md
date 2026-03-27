@@ -18,13 +18,16 @@ tags:
 The default human bias is additive: when facing a performance problem, the first instinct is to add something — a new tool, a system, a possession, a process. But cognitive load is cumulative and mostly invisible; each addition creates new tracking obligations, maintenance demands, and decision points, gradually raising the baseline overhead the mind must manage before any deep work begins. Subtraction is the counter-move: reduction is permanent and passive — unlike a new tool (which requires learning, maintenance, and integration costs), removing something eliminates cognitive load forever without ongoing effort.
 
 ## Techniques
-- [[neurochemical-reward-test]] — distinguishes pleasure (temporary dopamine spike) from enjoyment (sustained flow reward) before desire-driven acquisitions
-- [[annual-possession-audit]] — once-per-year recalibration that corrects drift before it becomes entrenched; lighter than a full purge
-- [[error-cost-minimization]] — reduce the cost of mistakes by making errors cheap, fast, and reversible; lowers the stakes of trying
+
+- [[annual-possession-audit]] — once-per-year recalibration that corrects tool accumulation drift before it entrenches
+- [[subtraction-test]] — evaluates each tool by what is lost without it, not gained with it
+- [[tool-tax-calculation]] — quantifies the hidden cognitive overhead each tool adds to the system
 
 ## Key Concepts
-- [[behavioral-design]] — subtraction encodes reduced cognitive load into the environment permanently, without ongoing effort
-- [[hypernormal-stimuli]] — accumulation is partly driven by hypernormal stimuli (acquisition dopamine); the neurochemical test counteracts this
+
+- [[behavioral-design]] — explains how subtraction permanently encodes reduced load without ongoing effort
+- [[feature-fatigue]] — explains how excess features create cognitive overhead that outweighs utility
+- [[cognitive-overhead]] — the cumulative mental cost of tracking, maintaining, and deciding across tools
 
 ## Related Mechanics
 - [[friction-removal]] — friction removal is subtraction applied to workflow; removing a friction source is always preferable to working around it

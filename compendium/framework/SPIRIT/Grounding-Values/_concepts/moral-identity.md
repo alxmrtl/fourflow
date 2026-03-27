@@ -2,6 +2,7 @@
 title: "Moral Identity"
 dimension: spirit
 state: grounding-values
+quality: "[[generative]]"
 keywords: [identity, morality, integrity, Aquino, Reed, self-concept, values]
 tags:
   - type/concept

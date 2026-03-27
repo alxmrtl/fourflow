@@ -18,13 +18,16 @@ tags:
 When there's misalignment between what you're doing and your deeper truth, part of your energy goes toward suppressing the dissonance rather than engaging with the task — a silent tax before focused work begins. Internal alignment means your actions, emotions, and authentic desires are congruent; there's no part of you pulling in a different direction. When aligned, the whole system moves together and the work itself becomes the release of energy rather than a fight against it. The key diagnostic: ease within effort signals alignment; persistent friction despite effort signals misalignment.
 
 ## Techniques
-- [[integrity-gap-audit]] — structured review identifying where actions have diverged from stated values; produces a clear gap list to close
-- [[operative-worship-test]] — reveals what you actually treat as non-negotiable by testing what doesn't move under pressure; distinguishes absent, simulated, and operative values
-- [[pushed-vs-pulled-assessment]] — quick motivation-source diagnostic: is this fear-driven (pushed) or meaning-drawn (pulled)?
+
+- [[integrity-gap-audit]] — structured review identifying where actions diverge from stated values
+- [[pushed-vs-pulled-assessment]] — quick diagnostic distinguishing fear-driven vs. meaning-drawn motivation
+- [[values-behavior-delta]] — measures the gap between espoused values and actual behavior patterns
 
 ## Key Concepts
-- [[values-clarification]] — alignment requires knowing what's authentic to align with; this is its prerequisite
-- [[moral-identity]] — alignment maintains the identity of "someone who acts from authentic desire, not conditioned pattern"
+
+- [[values-behavior-gap]] — names the friction source when actions contradict stated values
+- [[moral-disengagement]] — explains how the mind rationalizes acting against its own values
+- [[integrity-psychology]] — research on how congruence between values and actions sustains energy
 
 ## Related Mechanics
 - [[values-integration]] — alignment is the internal state; values integration embeds values into decisions

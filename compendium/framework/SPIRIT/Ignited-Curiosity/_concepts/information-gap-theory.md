@@ -2,6 +2,7 @@
 title: "Information Gap Theory"
 dimension: spirit
 state: ignited-curiosity
+quality: "[[compounding]]"
 keywords: [curiosity, Loewenstein, information-gap, knowledge, motivation, engagement]
 tags:
   - type/concept

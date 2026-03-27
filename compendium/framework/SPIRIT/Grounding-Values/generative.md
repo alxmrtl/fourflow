@@ -18,11 +18,16 @@ tags:
 When values exist only as abstract statements rather than as embedded decision filters, every significant choice requires re-evaluating them from scratch — a hidden cognitive cost that compounds over time. When values are integrated into the decision-making structure, they operate automatically, reducing the cognitive overhead of choice and eliminating the dissonance that arises when behavior drifts from what matters. Integrated values are what make the "right" decision feel obvious rather than effortful.
 
 ## Techniques
-- [[values-integration-practice]] — *needs content*
+
+- [[operative-worship-test]] — reveals what you actually treat as non-negotiable under real pressure
+- [[values-as-creative-constraint]] — uses values as a generative boundary that sharpens decisions
+- [[value-expression-stack]] — builds layered daily expressions of core values into decisions
 
 ## Key Concepts
-- [[values-clarification]] — integration is only possible once values are clear; this is its upstream prerequisite
-- [[values-behavior-gap]] — the gap that integration closes; when values are embedded, the gap doesn't form
+
+- [[moral-identity]] — integration is what makes "person who acts from values" a stable identity
+- [[eudaimonic-wellbeing]] — values-congruent living as the foundation of deep wellbeing
+- [[values-as-motivators]] — research showing embedded values reduce decision fatigue and increase drive
 
 ## Related Mechanics
 - [[internal-alignment]] — alignment is the internal experience of integrated values; when values are truly integrated, alignment is the natural state

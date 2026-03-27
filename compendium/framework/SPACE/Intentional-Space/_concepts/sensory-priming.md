@@ -2,6 +2,7 @@
 title: "Sensory Priming"
 dimension: space
 state: intentional-space
+quality: "[[simplified]]"
 keywords: [sensory, light, sound, smell, temperature, environment, priming, arousal]
 tags:
   - type/concept

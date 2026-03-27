@@ -2,6 +2,7 @@
 title: "Leverage Ethic"
 dimension: space
 state: optimized-tools
+quality: "[[frictionless]]"
 keywords: [leverage, productivity, output, efficiency, work-ethic, nonlinear]
 tags:
   - type/concept

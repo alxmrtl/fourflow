@@ -2,6 +2,7 @@
 title: "Intrinsic Motivation"
 dimension: spirit
 state: ignited-curiosity
+quality: "[[alive]]"
 keywords: [motivation, intrinsic, Deci, Ryan, self-determination, autonomy, mastery]
 tags:
   - type/concept

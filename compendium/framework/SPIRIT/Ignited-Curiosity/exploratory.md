@@ -18,11 +18,16 @@ tags:
 Over-optimization narrows the search space — you refine what's already known rather than discovering what isn't. But flow is most reliably accessed through challenge and novelty; staying in pure optimization eventually eliminates both. An exploration bias keeps the system oriented toward discovery, which is not just intrinsically motivating but is the only mechanism for accessing the genuinely novel skills and challenges that sustain the flow channel long-term.
 
 ## Techniques
-- [[exploration-practice]] — *needs content*
+
+- [[clean-dirty-fuel-assessment]] — identifies whether motivation is intrinsic curiosity or fear-based obligation
+- [[excitement-as-gps]] — treats genuine excitement as a directional signal toward discovery
+- [[rabbit-hole-entry-protocol]] — structured permission to follow a curiosity thread without destination
 
 ## Key Concepts
-- [[curiosity-as-compass]] — exploration bias is following the curiosity compass rather than overriding it with optimization logic
-- [[intrinsic-motivation]] — exploration is primarily intrinsically motivated; optimization often becomes extrinsically driven
+
+- [[curiosity-as-compass]] — curiosity as a navigational signal rather than an override to manage
+- [[exploration-exploitation-tradeoff]] — science of when to explore vs. optimize for peak performance
+- [[openness-to-experience]] — personality research linking dispositional openness to flow frequency
 
 ## Related Mechanics
 - [[curiosity-loops]] — curiosity loops generate the pull; exploration bias is the disposition to follow that pull toward discovery

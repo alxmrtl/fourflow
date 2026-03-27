@@ -2,6 +2,7 @@
 title: "Default Mode Network"
 dimension: self
 state: focused-body
+quality: "[[unified]]"
 keywords: [DMN, self-referential, daydreaming, mental-chatter, mind-wandering, brain-network]
 tags:
   - type/concept

@@ -2,6 +2,7 @@
 title: "Exponential Growth Curve"
 dimension: spirit
 state: visualized-vision
+quality: "[[proximate]]"
 keywords: [exponential, compounding, growth, learning-curve, patience, long-term]
 tags:
   - type/concept

@@ -18,11 +18,16 @@ tags:
 Curiosity is one of the most reliable natural flow triggers — it opens an information gap (Loewenstein's information-gap theory) that the brain is intrinsically motivated to close. Unlike willpower-driven attention, curiosity-sustained attention is self-reinforcing: each partial answer generates new questions, and the brain experiences the progression as intrinsically rewarding. When a task generates curiosity loops, attention doesn't need to be directed at it — it's pulled.
 
 ## Techniques
-- [[curiosity-loop-activation]] — *needs content*
+
+- [[neurochemical-stacking-cascade]] — five-stage progression from curiosity to mastery building biochemical momentum
+- [[curiosity-ledger]] — tracks open questions to maintain active curiosity loops across sessions
+- [[connection-hunt]] — practice of finding unexpected links between domains to sustain interest
 
 ## Key Concepts
-- [[information-gap-theory]] — the foundational model: curiosity = perceived gap between what you know and what you want to know; gaps pull attention toward closure
-- [[curiosity-as-compass]] — curiosity as a navigational signal, not just a state; following it leads toward what's genuinely aligned
+
+- [[information-gap-theory]] — curiosity as a perceived gap between known and desired knowledge that pulls attention
+- [[knowledge-building-theory]] — how each answer generates new questions, making curiosity self-compounding
+- [[spaced-learning-effect]] — returning to open questions at intervals deepens curiosity-driven retention
 
 ## Related Mechanics
 - [[narrative-momentum]] — curiosity loops in STORY; both create forward pull, one from unanswered questions, one from unresolved narrative tension

@@ -18,11 +18,16 @@ tags:
 When the role you inhabit matches who you understand yourself to be, action from that role requires no self-overriding — you're not performing a character, you're being one. The psychological overhead of misaligned roles is substantial: constantly mediating between "who I am" and "who this role requires me to be" consumes attentional capacity before any actual work begins. Identity-aligned roles don't need to be willed; they're inhabited. The distinction between struggling to stay in character and naturally being in character is the difference between effortful and effortless performance.
 
 ## Techniques
-- [[covenant-integrity-test]] — two-part check: which operating layer is the commitment from (L1 authority vs L3 covenant), and does it have structural support to survive pressure?
+
+- [[covenant-integrity-test]] — checks whether a commitment is identity-level covenant or conditional authority
+- [[role-values-map]] — maps current role responsibilities against personal core values
+- [[contribution-trace]] — traces how daily actions connect to meaningful contribution
 
 ## Key Concepts
-- [[psychological-ownership]] — identity-aligned roles generate psychological ownership naturally; the work becomes "mine" when the role is "me"
-- [[self-determination-theory]] — identity alignment satisfies the autonomy and competence needs at the core of SDT
+
+- [[self-determination-theory]] — identity alignment satisfies autonomy and competence needs at the core
+- [[person-role-fit]] — the degree of match between person and role predicts engagement and flow
+- [[role-identity-theory]] — explains how strongly held role identities shape automatic behavior
 
 ## Related Mechanics
 - [[identity-immersion]] — the practice of inhabiting a role; identity alignment is the prerequisite that makes immersion feel natural rather than performed

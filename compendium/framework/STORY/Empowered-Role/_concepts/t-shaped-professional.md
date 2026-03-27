@@ -2,6 +2,7 @@
 title: "T-Shaped Professional"
 dimension: story
 state: empowered-role
+quality: "[[defined]]"
 keywords: [T-shaped, specialization, generalism, mastery, breadth, depth, expertise]
 tags:
   - type/concept

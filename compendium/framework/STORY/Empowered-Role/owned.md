@@ -18,11 +18,16 @@ tags:
 Commitment and motivation have a counterintuitive relationship: motivation doesn't always precede commitment — commitment can precede and generate motivation. Each act of commitment (a public declaration, a financial investment, a burned bridge) raises the stakes and makes disengagement feel more costly than continuing. The escalation creates its own momentum: small commitments build the investment that makes larger commitments feel natural, and larger commitments sustain the effort that small ones couldn't.
 
 ## Techniques
-- [[act-from-worth]] — shifts action from "proving" mode to "expressing" mode; the practice of acting from the assumption of worth rather than toward its proof
-- [[responsibility-without-evaluation-pressure]] — takes full ownership of outcomes without the evaluative layer that converts responsibility into performance anxiety
+
+- [[act-from-worth]] — shifts action from proving mode to expressing mode, removing evaluative overhead
+- [[authority-assumption]] — operates as if one already has the authority required to act decisively
+- [[zero-victim-audit]] — identifies where victim language is substituting for owned agency
 
 ## Key Concepts
-- [[psychological-ownership]] — commitment escalation builds psychological ownership; the more invested, the more "mine" the project feels
+
+- [[psychological-ownership]] — the more one invests and claims, the more the work feels genuinely mine
+- [[locus-of-control]] — internal locus predicts sustained effort; owned role reinforces internal attribution
+- [[agency-theory]] — explains how perceived authorship of outcomes drives engagement and accountability
 
 ## Related Mechanics
 - [[stakes-definition]] — stakes definition sets the importance; commitment escalation raises the cost of non-completion; both increase urgency

@@ -2,6 +2,7 @@
 title: "Values-Behavior Gap"
 dimension: spirit
 state: grounding-values
+quality: "[[congruent]]"
 keywords: [values, integrity, gap, dissonance, alignment, authenticity, behavior]
 tags:
   - type/concept

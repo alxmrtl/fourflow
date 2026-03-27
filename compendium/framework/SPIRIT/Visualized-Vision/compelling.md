@@ -18,13 +18,16 @@ tags:
 Vision provides the long-range attractor that orients action. Without direction, attention scatters — everything competes equally, and every fork requires fresh evaluation. With vision primed, the system has a coordinate that makes moment-to-moment decisions effortless: relevant opportunities become obvious; irrelevant distractions fade. But there's a critical quality variable: a scarcity-derived vision (organized around escaping fear) keeps the threat-detection system partly activated even while pursuing it, creating a mixed state that never fully resolves. Abundance-native vision creates clean pull — complete engagement without the background threat-signal.
 
 ## Techniques
-- [[anti-vision-contrast-primer]] — write what you don't want first, use the contrast to make the positive vision specific and motivationally charged
-- [[abundance-native-vision-check]] — tests whether the vision is organized around genuine aspiration (clean attractor) or fear-flight (mixed signal)
-- [[symbolic-meaning]] — grounds the vision in archetypal and symbolic language that makes it retrievable as a felt sense, not just a concept
+
+- [[abundance-native-vision-check]] — tests whether vision is organized around aspiration or fear-flight
+- [[anti-vision-contrast-primer]] — writes the negative first to sharpen and motivationally charge the positive vision
+- [[symbolic-meaning]] — grounds vision in archetypal language retrievable as felt sense, not concept
 
 ## Key Concepts
-- [[belief-spotlight]] — vision priming focuses the belief spotlight on the target coordinate; what the spotlight illuminates becomes the perceptual filter through which reality is experienced
-- [[future-self-continuity]] — priming works through identification with a future self; continuity with that self is what makes the prime effective
+
+- [[future-self-continuity]] — priming works through identification with a future self whose continuity feels real
+- [[positive-affect-broadening]] — abundance-native vision activates broaden-and-build vs. threat-narrowing
+- [[pull-motivation-theory]] — aspiration-based pull vs. fear-based push as distinct motivational architectures
 
 ## Related Mechanics
 - [[clear-goals]] — vision is the horizon; clear goals are the tactical direction within it; priming is the bridge between them

@@ -18,11 +18,16 @@ tags:
 Every unnecessary step or resistance point between intention and action is a potential exit from the creative state. Friction accumulates invisibly: each small obstacle — an extra click, a slow tool, an unclear process — consumes a unit of motivational momentum needed to begin and sustain deep work. Once that momentum is exhausted, the session collapses. Removing friction converts potential energy into actual work by eliminating the attrition between deciding to do something and doing it.
 
 ## Techniques
-- [[friction-audit]] — *needs content*
+
+- [[automation-of-non-creative-steps]] — removes entire friction categories by making routine steps disappear
+- [[error-cost-minimization]] — makes mistakes cheap and reversible, reducing hesitation-friction before action
+- [[one-click-session-launch]] — compresses session start into a single trigger to eliminate initiation resistance
 
 ## Key Concepts
-- [[behavioral-design]] — friction removal is behavioral design in reverse: instead of encoding desired behavior, it removes obstacles to the behavior that's already desired
-- [[leverage-ethic]] — removing a single friction point that blocks a daily practice has compounding leverage over time
+
+- [[leverage-ethic]] — explains compounding return when a high-frequency friction point is permanently removed
+- [[implementation-intentions]] — shows how pre-decided if-then plans eliminate decision friction at the moment of action
+- [[friction-and-behavior]] — research on how small obstacles produce disproportionately large behavior change
 
 ## Related Mechanics
 - [[subtraction-beats-addition]] — the governing principle; friction removal is subtraction applied to workflow

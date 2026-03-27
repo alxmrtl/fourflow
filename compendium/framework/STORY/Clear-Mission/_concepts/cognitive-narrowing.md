@@ -2,6 +2,7 @@
 title: "Cognitive Narrowing"
 dimension: story
 state: clear-mission
+quality: "[[bounded]]"
 keywords: [cognitive-load, clarity, decision, focus, prefrontal, narrowing, goals]
 tags:
   - type/concept

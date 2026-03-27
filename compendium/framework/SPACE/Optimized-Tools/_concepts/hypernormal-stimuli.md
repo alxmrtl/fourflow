@@ -2,6 +2,7 @@
 title: "Hypernormal Stimuli"
 dimension: space
 state: optimized-tools
+quality: "[[matched]]"
 keywords: [stimuli, evolution, dopamine, technology, attention, Tinbergen, superstimulus]
 tags:
   - type/concept

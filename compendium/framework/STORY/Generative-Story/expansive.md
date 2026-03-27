@@ -18,11 +18,16 @@ tags:
 The brain's default interpretive bias skews negative — threats are registered faster, remembered longer, and weighted more heavily than equivalent positive events. Left uncalibrated, this negativity bias makes the same objective situation (a setback, slow progress, ambiguous feedback) more likely to be interpreted as evidence of failure than evidence of learning. Positive orientation is a deliberate counter-calibration: not denial of difficulty, but a habitual reframe toward what's working, what's been learned, and what's still possible. This bias keeps the narrative of the work generative rather than contracting.
 
 ## Techniques
-- [[progress-framing-practice]] — *needs content*
+
+- [[tension-release-dynamics]] — cycles narrative tension and relief to sustain forward momentum
+- [[reframe-via-arc]] — repositions setbacks as necessary story beats rather than failures
+- [[narrative-zoom-out]] — widens temporal frame to restore progress visibility after obstacles
 
 ## Key Concepts
-- [[redemptive-sequence]] — the narrative structure that reframes setbacks as essential parts of the arc; positive orientation applied to adversity
-- [[narrative-identity]] — positive orientation is partly about what story you tell about what happens; it operates through narrative self-concept
+
+- [[heros-journey]] — archetypal arc that normalizes struggle as essential to transformation
+- [[post-traumatic-growth]] — explains how adversity can strengthen rather than diminish narrative
+- [[narrative-transportation]] — describes immersive story engagement that shapes interpretation
 
 ## Related Mechanics
 - [[growth-orientation]] — the SELF-level version; growth orientation is the cognitive/belief layer, positive orientation is the interpretive/narrative layer

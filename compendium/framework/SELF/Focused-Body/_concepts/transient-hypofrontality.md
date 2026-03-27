@@ -2,6 +2,7 @@
 title: "Transient Hypofrontality"
 dimension: self
 state: focused-body
+quality: "[[grounded]]"
 keywords: [prefrontal-cortex, flow-neuroscience, hypofrontality, ego, self-monitoring, Arne-Dietrich]
 tags:
   - type/concept

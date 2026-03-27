@@ -18,11 +18,16 @@ tags:
 Agency loops close the gap between action and outcome — when users can see the direct consequence of their effort quickly and clearly, the brain treats effort as meaningful rather than arbitrary. Without visible cause-effect, motivation erodes: effort feels disconnected from result, and attention cannot fully commit to a task that may or may not be going anywhere. The experience of personal causation is itself intrinsically motivating and flow-sustaining.
 
 ## Techniques
-- [[agency-loop-design]] — *needs content*
+
+- [[signal-vs-noise-filter]] — separates actionable feedback from irrelevant variance in output measurement
+- [[peer-calibration-check]] — uses external reference points to correct for self-serving perception biases
+- [[baseline-re-anchor]] — resets the comparison baseline to prevent distorted progress readings over time
 
 ## Key Concepts
-- [[feedback-loop]] — the underlying structure that makes agency perceptible
-- [[task-not-ego-metrics]] — agency loops must track task progress, not ego performance, to sustain flow
+
+- [[minimal-effective-feedback]] — explains how less, cleaner feedback outperforms more, noisier feedback
+- [[self-serving-bias]] — explains the perceptual distortion that makes unfiltered self-assessment unreliable
+- [[calibration-research]] — research showing that accurate self-assessment requires deliberate external comparison
 
 ## Related Mechanics
 - [[immediate-feedback]] — provides the raw signal that makes agency loops visible

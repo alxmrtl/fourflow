@@ -18,12 +18,16 @@ tags:
 A clear goal tells you what to do. Stakes tell you why it matters *now*. Without stakes, urgency collapses — goals become optional, effort becomes theoretical, and the present moment loses its weight. The brain doesn't prioritize the future abstractly; it prioritizes based on felt importance and immediacy. Clarity alone doesn't produce focus: clarity + importance + urgency are all three required. Stakes definition is what loads importance and urgency into the structure — and the most reliable entry point is negative contrast, because specifying what you don't want is neurologically easier than imagining what you do want.
 
 ## Techniques
-- [[anti-vision-contrast-primer]] — in `SPIRIT/Visualized-Vision/_techniques/`; write the anti-vision first to load visceral stakes, then write the positive vision from that contrast state
-- [[clarity-importance-urgency-stack]] — the three-ingredient formula and diagnostic: identify which element is missing when engagement collapses
+
+- [[goal-hierarchy-cascade]] — five-level structure that bridges inspiring direction and daily clarity
+- [[stakes-definition]] — specifies the real cost of inaction to load urgency into goals
+- [[why-chain]] — recursively asks why until bedrock motivation is reached
 
 ## Key Concepts
-- [[reticular-activating-system]] — vivid stakes cause the RAS to filter reality toward goal-relevant information; the stakes make what matters visible
-- [[cognitive-narrowing]] — well-defined stakes narrow attention to what's important, preventing distraction penetration
+
+- [[goal-hierarchy]] — the cascade ensures each level has one clearly prioritized outcome
+- [[mortality-salience]] — awareness of finite time amplifies the felt weight of what matters
+- [[meaning-maintenance-model]] — explains how threat to meaning triggers urgent compensatory action
 
 ## Related Mechanics
 - [[meaning-coherence]] — coherence between the work and a larger story gives stakes their durability; surface urgency fades, meaning-anchored urgency doesn't

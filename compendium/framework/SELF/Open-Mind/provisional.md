@@ -29,15 +29,15 @@ Flow requires a mind that can meet challenge without contracting. When difficult
 
 ## Techniques
 
-- [[pattern-literacy]] — builds recognition vocabulary for the fundamental unhealthy patterns; turns reactive responses into named material for transformation
-- [[ambiguity-control]] — structures how to enter uncertain territory without the uncertainty paralyzing action
-- [[clarity-over-intensity]] — when effort increases without progress, the problem is usually clarity, not intensity; diagnostic and redirect protocol
+- [[ambiguity-control]] — structures entry into uncertain territory without paralysis
+- [[clarity-over-intensity]] — redirects from effort escalation to clarity diagnosis when stuck
+- [[pattern-literacy]] — builds recognition vocabulary for reactive patterns, turning triggers into data
 
 ## Key Concepts
 
-- [[SOUL]] — the true self whose wisdom guides transformation; growth orientation orients toward what SOUL already sees
-- [[Pattern Literacy]] — the skill of recognizing patterns; growth-orientation is the stance that makes recognition productive rather than self-critical
-- [[Consciousness Evolution]] — the spiral path of transformation; growth orientation is the cognitive posture that keeps the spiral turning upward
+- [[dopamine-baseline]] — explains how stable baseline dopamine supports openness and learning readiness
+- [[fixed-vs-growth-mindset]] — explains how mindset determines whether difficulty triggers contraction or engagement
+- [[error-positivity-response]] — explains the neural signal that fires when errors are treated as learning data
 
 ## Related Mechanics
 

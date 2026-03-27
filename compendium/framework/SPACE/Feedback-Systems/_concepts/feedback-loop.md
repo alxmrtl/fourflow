@@ -2,6 +2,7 @@
 title: "Feedback Loop"
 dimension: space
 state: feedback-systems
+quality: "[[immediate]]"
 keywords: [feedback, self-correction, cybernetics, systems-thinking, iteration, signal]
 tags:
   - type/concept

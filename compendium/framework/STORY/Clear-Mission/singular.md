@@ -18,12 +18,16 @@ tags:
 Clear goals reorganize the brain around a specific target — but only when the target is singular. When two or more goals compete for primacy, the PFC can't fully commit to either: attention splits, motivation loops fail to lock in, and the focused-action state never fully forms. Priority singularity is the discipline of having one thing that matters most right now — not two, not a list, one. Everything else is either supporting that one thing or waiting.
 
 ## Techniques
-- [[goal-hierarchy-cascade]] — five-level structure (10yr→daily) that bridges inspiring direction and daily clarity; includes 2-week lever-check
-- [[goal-session-reset]] — one-sentence goal before each session; triggers PFC-DMN switch; re-states mid-session when focus fragments
+
+- [[clarity-importance-urgency-stack]] — diagnoses which of the three focus ingredients is missing
+- [[one-thing-card]] — single physical or digital card stating the one priority for the session
+- [[priority-freeze]] — locks a single priority for a defined period, suspending re-prioritization
 
 ## Key Concepts
-- [[goal-hierarchy]] — the cascade provides the architecture for singularity: at each level, there is one priority goal, not several
-- [[cognitive-narrowing]] — singularity enables the narrowing that allows depth; competing priorities prevent it
+
+- [[reticular-activating-system]] — a singular goal directs the RAS to filter for goal-relevant signals
+- [[selective-attention]] — one clear priority allows attentional resources to fully concentrate
+- [[priority-theory]] — explains why competing priorities degrade both depth and output quality
 
 ## Related Mechanics
 - [[clear-goals]] — clear goals are what the singular priority gets specified into; singularity is the upstream condition

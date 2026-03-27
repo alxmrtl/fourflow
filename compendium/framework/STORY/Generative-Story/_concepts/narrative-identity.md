@@ -2,6 +2,7 @@
 title: "Narrative Identity"
 dimension: story
 state: generative-story
+quality: "[[continuous]]"
 keywords: [identity, autobiography, self-concept, McAdams, narrative, operating-system]
 tags:
   - type/concept

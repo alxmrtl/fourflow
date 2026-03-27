@@ -18,11 +18,16 @@ tags:
 Narrative momentum is the felt sense that your current action continues something already in motion. With it, each session is a re-entry — you're picking up a thread, not starting from scratch. This eliminates the enormous activation cost of beginning: the story is already happening; you're stepping back into it. Without momentum, every work block requires a cold start: re-justifying the work, re-finding the motivation, re-orienting the attention. This is where most sustained engagement fails — not during action, but in the gap between actions, where the narrative dissolves and nothing pulls forward.
 
 ## Techniques
-- [[session-handoff-hook]] — end-session sentence that creates an open narrative loop, pulling re-entry without willpower
+
+- [[session-handoff-hook]] — end-session sentence that creates an open narrative loop for re-entry
+- [[incomplete-open-thread]] — deliberately leaves work unfinished to sustain background pull
+- [[momentum-ledger]] — tracks small wins to make narrative progress viscerally visible
 
 ## Key Concepts
-- [[narrative-identity]] — the self-story that makes each session's thread feel like one's own story continuing
-- [[heros-journey]] — the archetypal frame for understanding why the gap between commitment and result is the most important chapter, not evidence of failure
+
+- [[narrative-identity]] — the self-story that makes each session feel like one's own story continuing
+- [[zeigarnik-effect]] — unfinished tasks stay active in working memory, generating forward pull
+- [[serial-position-effect]] — explains why beginnings and endings anchor narrative continuity
 
 ## Related Mechanics
 - [[curiosity-loops]] — both create forward pull; curiosity loops pull through open questions; narrative momentum pulls through open narrative arcs

@@ -2,6 +2,7 @@
 title: "Reticular Activating System"
 dimension: story
 state: clear-mission
+quality: "[[singular]]"
 keywords: [RAS, attention, filter, goals, reticular, brain, relevance, perception]
 tags:
   - type/concept

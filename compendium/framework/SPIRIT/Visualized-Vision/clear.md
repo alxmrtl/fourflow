@@ -18,10 +18,16 @@ tags:
 A complex vision statement requires processing time to access — by the time you've re-read, re-understood, and re-engaged with it, the motivational window may have closed. Simple symbols (a phrase, an image, a single word) can activate the emotional state of the vision in seconds, making motivational re-priming available in the moments before and during work. Compression is not simplification at the expense of depth — it's distillation to the load-bearing essence that carries all the depth in retrievable form.
 
 ## Techniques
-- [[vision-compression-exercise]] — *needs content*
+
+- [[evidence-audit]] — distinguishes evaluating direction from current results vs. internal clarity
+- [[vision-compression]] — distills the vision to a single retrievable phrase, image, or symbol
+- [[resolution-test]] — checks whether the vision is specific enough to orient moment-to-moment decisions
 
 ## Key Concepts
-- [[belief-spotlight]] — compression works by creating a spotlight that illuminates the most motivationally salient aspect of the vision; the symbol focuses the light
+
+- [[belief-spotlight]] — compression focuses the spotlight on the most motivationally salient aspect of the vision
+- [[mental-simulation-research]] — how vivid, specific mental imagery activates the same neural paths as real action
+- [[construal-level-theory]] — why abstract vision must be made concrete to generate proximate motivation
 
 ## Related Mechanics
 - [[symbolic-meaning]] — symbolic meaning is the mechanism by which compressed vision bypasses analytical load; these are tightly coupled

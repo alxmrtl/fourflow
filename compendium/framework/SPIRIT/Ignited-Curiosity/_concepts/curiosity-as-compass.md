@@ -2,6 +2,7 @@
 title: "Curiosity as Compass"
 dimension: spirit
 state: ignited-curiosity
+quality: "[[exploratory]]"
 keywords: [curiosity, navigation, Elizabeth-Gilbert, breadcrumbs, passion, direction]
 tags:
   - type/concept

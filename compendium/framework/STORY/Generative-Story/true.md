@@ -18,11 +18,16 @@ tags:
 Identity shapes behavior from the inside out — not through willpower, but through automatic filtering. When you fully inhabit a role (craftsman, creator, scientist, practitioner), decisions and actions that fit the role happen more naturally than those that don't. The role functions as a perceptual and behavioral filter: what the role does, you do; what the role wouldn't do, you naturally don't. Immersion is the degree to which the role is genuinely occupied rather than performed — and immersion is what makes role-based behavior sustainable rather than effortful.
 
 ## Techniques
-- [[identity-immersion-practice]] — *needs content*
+
+- [[coherence-audit]] — checks whether current behavior matches the identity being claimed
+- [[disconfirmation-check]] — surfaces evidence that challenges the existing self-narrative
+- [[story-vs-data-gap]] — maps the gap between lived story and observable facts
 
 ## Key Concepts
-- [[narrative-identity]] — identity immersion is narrative identity made behavioral; the story you tell about who you are becomes the filter through which action flows
-- [[hero's-journey]] — the hero's journey is the archetypal narrative of identity transformation; immersion is the practice of inhabiting the new identity
+
+- [[redemptive-sequence]] — narrative structure that reframes setbacks as essential arc elements
+- [[cognitive-dissonance]] — explains discomfort when behavior and identity story misalign
+- [[identity-coherence-theory]] — describes the drive to maintain a consistent self-narrative
 
 ## Related Mechanics
 - [[identity-alignment]] — alignment ensures the role matches who you actually are; immersion is the depth to which you inhabit a role that does

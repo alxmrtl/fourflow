@@ -24,9 +24,15 @@ When you switch tasks without fully closing the previous one, a portion of atten
 
 ## Techniques
 
-- *needs content* — task closure ritual: a deliberate end-of-task sequence that closes the previous task before beginning the next (record what's done, note what remains, explicitly release it)
-- *needs content* — open loops capture: externalizing unfinished threads into a trusted system before switching, signaling to the brain that these items are captured and don't need active tracking
-- *needs content* — transition buffer: a brief structured gap between tasks that allows residue to dissipate before full engagement with the next task begins
+- [[open-loop-closure]] — deliberate end-of-task sequence that parks unfinished threads before switching
+- [[single-tab-mind]] — constrains active work to one task at a time, preventing residue accumulation
+- [[transition-ritual]] — brief structured gap between tasks that allows residue to dissipate before re-engagement
+
+## Key Concepts
+
+- [[attention-residue]] — explains the cognitive drag left by incompletely closed prior tasks
+- [[task-switching-cost]] — explains the measurable performance penalty imposed by context shifts
+- [[directed-attention-fatigue]] — explains how voluntary attention depletes over time and requires restoration
 
 ## Related Mechanics
 

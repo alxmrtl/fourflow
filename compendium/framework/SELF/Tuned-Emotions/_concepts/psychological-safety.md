@@ -2,6 +2,7 @@
 title: "Psychological Safety"
 dimension: self
 state: tuned-emotions
+quality: "[[quiet]]"
 keywords:
   - judgment
   - fear

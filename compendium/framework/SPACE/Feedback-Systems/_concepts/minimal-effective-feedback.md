@@ -2,6 +2,7 @@
 title: "Minimal Effective Feedback"
 dimension: space
 state: feedback-systems
+quality: "[[honest]]"
 keywords: [feedback, calibration, signal-noise, MFF, monitoring, flow]
 tags:
   - type/concept

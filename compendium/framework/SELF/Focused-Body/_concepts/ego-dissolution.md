@@ -2,6 +2,7 @@
 title: "Ego Dissolution"
 dimension: self
 state: focused-body
+quality: "[[attuned]]"
 keywords: [self-boundary, ego, flow, absorption, self-transcendence, action-awareness-merging]
 tags:
   - type/concept

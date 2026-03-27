@@ -18,11 +18,16 @@ tags:
 When the boundaries of responsibility are unclear, the attention field expands to include everything that might be one's problem — a constant, exhausting surveillance of undefined scope. Role clarity collapses that field: by precisely defining what is and isn't within one's domain, it frees the attention to go deep within that domain rather than monitoring the entire periphery. The same investment of attention produces dramatically more work when it's directed at a defined space than when it's diffused across an undefined one.
 
 ## Techniques
-- [[role-definition-protocol]] — *needs content*
+
+- [[responsibility-without-evaluation-pressure]] — claims ownership of outcomes without performance anxiety overlay
+- [[role-boundary-declaration]] — explicitly states what is and is not within one's responsibility domain
+- [[task-ownership-matrix]] — maps tasks to owners to eliminate ambiguity about who holds what
 
 ## Key Concepts
-- [[psychological-ownership]] — role clarity defines the territory of psychological ownership; you can't fully own what you can't define
-- [[self-determination-theory]] — clear roles satisfy the competence need in SDT by defining a domain where mastery is possible
+
+- [[t-shaped-professional]] — defines depth-plus-breadth role structure that enables both clarity and collaboration
+- [[role-ambiguity-research]] — documents attention and performance costs of undefined responsibility scope
+- [[job-demands-control-model]] — high demands with high control enables flow; role clarity is the control mechanism
 
 ## Related Mechanics
 - [[ambiguity-control]] — ambiguity is what role clarity resolves; these two mechanics are closely paired

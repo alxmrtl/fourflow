@@ -31,9 +31,15 @@ Flow requires complete present-moment absorption — the action-awareness mergin
 
 ## Techniques
 
-- [[compression-over-expansion]] — systematically compress information, commitments, and inputs before adding more; the default move for cognitive load reduction
-- [[overchoice-elimination]] — eliminate decisions before they need to be made; decision load is a major working-memory drain
-- [[dmn-weed-model]] — maps how possession-based overhead degrades DMN idle-state synthesis; reveals the invisible cost of accumulation
+- [[compression-over-expansion]] — compresses information and commitments before adding more as default move
+- [[overchoice-elimination]] — eliminates decisions before they arise, reducing working-memory drain
+- [[dmn-weed-model]] — maps how accumulation overhead degrades DMN idle-state synthesis and insight
+
+## Key Concepts
+
+- [[attention-deficit-trait]] — explains how chronic overload permanently degrades cognitive performance
+- [[cognitive-load-theory]] — explains the working-memory ceiling that limits available processing bandwidth
+- [[working-memory-limits]] — explains the hard capacity constraint on simultaneous information processing
 
 ## Related Mechanics
 

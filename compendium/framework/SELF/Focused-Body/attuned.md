@@ -24,9 +24,15 @@ The perceptual aperture is a single bandwidth — when multiple sensory channels
 
 ## Techniques
 
-- *needs content* — sensory environment audit: identifying and removing the highest-competition sensory inputs before a session
-- *needs content* — proprioceptive settling: using physical positioning and somatic awareness to reduce body-level sensory noise
-- *needs content* — auditory coherence: choosing or creating audio environments (silence, brown noise, specific music) that support rather than compete with the task
+- [[aperture-absorption]] — narrows perceptual focus to task-relevant sensory channel exclusively
+- [[rhythm-and-pacing]] — uses rhythmic physical cues to synchronize body and task engagement
+- [[sensory-field-narrowing]] — systematically removes highest-competition sensory inputs before a session
+
+## Key Concepts
+
+- [[ego-dissolution]] — explains how reduced self-monitoring frees perceptual bandwidth for absorption
+- [[sensory-gating]] — explains how the brain filters irrelevant inputs to prevent perceptual overload
+- [[attentional-bottleneck]] — explains why competing sensory channels reduce overall processing capacity
 
 ## Related Mechanics
 

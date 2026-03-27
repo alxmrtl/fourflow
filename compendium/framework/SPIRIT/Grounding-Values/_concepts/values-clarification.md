@@ -2,6 +2,7 @@
 title: "Values Clarification"
 dimension: spirit
 state: grounding-values
+quality: "[[constant]]"
 keywords: [values, clarification, priorities, rank-ordering, authenticity, self-knowledge]
 tags:
   - type/concept
