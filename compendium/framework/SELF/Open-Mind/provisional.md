@@ -29,9 +29,9 @@ Flow requires a mind that can meet challenge without contracting. When difficult
 
 ## Techniques
 
-- [[pattern-literacy]] — builds the recognition vocabulary for the 10 fundamental unhealthy patterns; turns reactive responses into named material for transformation
-- [[transformational-conflicts-navigation]] — navigates the "inner purgatory" between old motivations and new ones; keeps the growth spiral moving when transformation creates friction
-- [[volatility-stillness-cycle]] — two-phase practice: enter high-variance environments to make patterns visible, then sit in complete stillness for subconscious integration; the polarity between the two phases is the growth mechanism
+- [[pattern-literacy]] — builds recognition vocabulary for the fundamental unhealthy patterns; turns reactive responses into named material for transformation
+- [[ambiguity-control]] — structures how to enter uncertain territory without the uncertainty paralyzing action
+- [[clarity-over-intensity]] — when effort increases without progress, the problem is usually clarity, not intensity; diagnostic and redirect protocol
 
 ## Key Concepts
 

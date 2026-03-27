@@ -31,10 +31,9 @@ Flow requires complete present-moment absorption — the action-awareness mergin
 
 ## Techniques
 
-- [[attention-math-framework]] — estimates the daily attention cost of possessions in concrete units; converts vague minimalism into a measurable cognitive tax to reduce
-- [[dmn-weed-model]] — maps how possession-based overhead degrades the Default Mode Network's idle-state synthesis, silently blocking the creative insight and intrinsic motivation that feeds flow
-- [[possession-identity-audit]] — identifies which possessions have become ego-extensions whose monitoring cost vastly exceeds their practical value
-- [[termination-level-awareness]] — recognises when cognitive overload causes premature resolution: under load, principle → rule → justification → impulse; the system settles at the first level that can carry the load
+- [[compression-over-expansion]] — systematically compress information, commitments, and inputs before adding more; the default move for cognitive load reduction
+- [[overchoice-elimination]] — eliminate decisions before they need to be made; decision load is a major working-memory drain
+- [[dmn-weed-model]] — maps how possession-based overhead degrades DMN idle-state synthesis; reveals the invisible cost of accumulation
 
 ## Related Mechanics
 
