@@ -30,8 +30,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `fueled.md` | Maintain | Effort-reward loop is running — motivation compounds because the gap stays closed |
 | `calibrated.md` | Concentrate | Challenge-skill ratio compressed to the flow sweet spot — neither bored nor overwhelmed |
 
-*Techniques*: `ego-monitoring-removal` · `emotional-neutrality` · `error-tolerance` · `outcome-detachment`
-*Concepts*: `psychological-safety` (Edmondson) · see `_concepts/`
+*Techniques*: `consciousness-re-patterning` · `disturbance-log` · `dmn-goal-engagement` · `pre-session-clearance` · `observer-redirect` · `progress-ledger` · `micro-completion-architecture` · `detachment-protocol` · `flow-channel-formula` · `sub-goal-decomposition` · `boredom-anxiety-signals`
+*Concepts*: `yerkes-dodson-law` · `flow-cycle-phases` · `psychological-safety`
 
 ### Focused Body
 *Somatic coherence — the body is grounded, attuned, and unified with intent*
@@ -42,7 +42,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `attuned.md` | Maintain | Sensorimotor feedback loop running — body awareness sharpens rather than distracts |
 | `unified.md` | Concentrate | Mind and body compressed into a single coherent signal — intent and physiology aligned |
 
-*Techniques*: `energy-sufficiency` · `rhythm-and-pacing` · `action-awareness-merging`
+*Techniques*: `body-state-check` · `breath-regulation` · `movement-primer` · `rhythm-and-pacing` · `action-awareness-merging` · `aperture-absorption`
+*Concepts*: `transient-hypofrontality` · `default-mode-network` · `ego-dissolution`
 
 ### Open Mind
 *Cognitive coherence — the mind is spacious, provisional, and undivided*
@@ -53,7 +54,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `provisional.md` | Maintain | Models held lightly — beliefs update as new information arrives, no stuck loops |
 | `undivided.md` | Concentrate | Attention compressed to one thread — no background processing splitting the signal |
 
-*Techniques*: `compression-over-expansion` · `overchoice-elimination` · `clarity-over-intensity` · `ambiguity-control`
+*Techniques*: `compression-over-expansion` · `overchoice-elimination` · `dmn-weed-model` · `ambiguity-control` · `clarity-over-intensity` · `pattern-literacy`
+*Concepts*: `attention-residue` · `dopamine-baseline` · `attention-deficit-trait`
 
 ---
 
@@ -80,7 +82,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `protected.md` | Maintain | The work container holds — interruption probability low, loop maintained intact |
 | `cued.md` | Concentrate | Physical arrangement concentrates the right mode — space primes the brain before work begins |
 
-*Techniques*: `constraint-elegance` · `social-field-alignment`
+*Techniques*: `three-minimalism-tiers` · `constraint-elegance` · `social-field-alignment`
+*Concepts*: `flow-signaling` · `parkinson's-law` · `sensory-priming`
 
 ### Optimized Tools
 *Tool coherence — the toolset is lean, matched, and frictionless*
@@ -91,7 +94,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `matched.md` | Maintain | Tool-task feedback loop runs cleanly — right instrument for the specific work |
 | `frictionless.md` | Concentrate | High signal, minimal overhead — interface transparent, tool disappears into the work |
 
-*Techniques*: `automation-of-non-creative-steps` · `error-cost-minimization`
+*Techniques*: `annual-possession-audit` · `neurochemical-reward-test` · `error-cost-minimization` · `automation-of-non-creative-steps`
+*Concepts*: `behavioral-design` · `hypernormal-stimuli` · `leverage-ethic`
 
 ---
 
@@ -107,7 +111,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `continuous.md` | Maintain | Narrative loop links sessions — each day continues something, momentum compounds |
 | `true.md` | Concentrate | Story compressed to authentic core — stripped of performance, operating from real identity |
 
-*Techniques*: `tension-release-dynamics` · `meaning-coherence`
+*Techniques*: `coherence-audit` · `session-handoff-hook` · `tension-release-dynamics`
+*Concepts*: `heros-journey` · `narrative-identity` · `redemptive-sequence`
 
 ### Clear Mission
 *Directional coherence — the mission is consequential, bounded, and singular*
@@ -118,7 +123,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `bounded.md` | Maintain | Defined horizon closes the planning loop — specific, time-oriented outcome |
 | `singular.md` | Concentrate | One outcome at a time — attention compressed, no competing priorities |
 
-*Techniques*: `clear-goals`
+*Techniques*: `goal-hierarchy-cascade` · `goal-session-reset` · `aperture-horizon-calibration` · `clarity-importance-urgency-stack`
+*Concepts*: `reticular-activating-system` · `goal-hierarchy` · `cognitive-narrowing`
 
 ### Empowered Role
 *Role coherence — the role is aligned, defined, and owned*
@@ -129,7 +135,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `defined.md` | Maintain | Role expectations unambiguous — no role-confusion loop consuming bandwidth |
 | `owned.md` | Concentrate | Full agency and responsibility — accountability compressed to one locus |
 
-*Techniques*: `responsibility-without-evaluation-pressure`
+*Techniques*: `covenant-integrity-test` · `act-from-worth` · `responsibility-without-evaluation-pressure`
+*Concepts*: `psychological-ownership` · `self-determination-theory` · `t-shaped-professional`
 
 ---
 
@@ -145,7 +152,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `constant.md` | Maintain | Values don't shift under pressure — stable reference signal regardless of conditions |
 | `generative.md` | Concentrate | Values compressed into active fuel — energy source and direction, not just a filter |
 
-*Techniques*: `integrity-loops`
+*Techniques*: `integrity-gap-audit` · `operative-worship-test` · `pushed-vs-pulled-assessment` · `meaning-anchor-practice`
+*Concepts*: `moral-identity` · `values-behavior-gap` · `values-clarification`
 
 ### Ignited Curiosity
 *Curiosity coherence — curiosity is exploratory, compounding, and alive*
@@ -156,7 +164,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `compounding.md` | Maintain | Curiosity loops self-generate — each answer opens the next question |
 | `alive.md` | Concentrate | Interest concentrated and undiluted — genuine intrinsic pull, not diffused obligation |
 
-*Techniques*: `playfulness` · `strength-activation`
+*Techniques*: `clean-dirty-fuel-assessment` · `excitement-as-gps` · `neurochemical-stacking-cascade`
+*Concepts*: `curiosity-as-compass` · `information-gap-theory` · `intrinsic-motivation`
 
 ### Visualized Vision
 *Vision coherence — the vision is compelling, proximate, and clear*
@@ -167,7 +176,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 | `proximate.md` | Maintain | Long arc looped into today's work — vision connects to the immediate, not floating |
 | `clear.md` | Concentrate | Vision compressed to specific image — high enough resolution to recognize when it arrives |
 
-*Techniques*: `symbolic-meaning`
+*Techniques*: `anti-vision-contrast-primer` · `abundance-native-vision-check` · `symbolic-meaning` · `evidence-audit` · `trajectory-review`
+*Concepts*: `belief-spotlight` · `exponential-growth-curve` · `future-self-continuity`
 
 ---
 
