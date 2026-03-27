@@ -18,8 +18,8 @@ tags:
 Commitment and motivation have a counterintuitive relationship: motivation doesn't always precede commitment — commitment can precede and generate motivation. Each act of commitment (a public declaration, a financial investment, a burned bridge) raises the stakes and makes disengagement feel more costly than continuing. The escalation creates its own momentum: small commitments build the investment that makes larger commitments feel natural, and larger commitments sustain the effort that small ones couldn't.
 
 ## Techniques
-- [[commitment-escalation-protocol]] — *needs content*
-- [[pseudo-covenant-detection]] — identifies commitments that appear fixed but collapse under pressure (resolution without structure); tests whether a commitment is structurally supported before escalating further
+- [[act-from-worth]] — shifts action from "proving" mode to "expressing" mode; the practice of acting from the assumption of worth rather than toward its proof
+- [[responsibility-without-evaluation-pressure]] — takes full ownership of outcomes without the evaluative layer that converts responsibility into performance anxiety
 
 ## Key Concepts
 - [[psychological-ownership]] — commitment escalation builds psychological ownership; the more invested, the more "mine" the project feels

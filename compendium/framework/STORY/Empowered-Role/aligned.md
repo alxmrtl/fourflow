@@ -18,8 +18,7 @@ tags:
 When the role you inhabit matches who you understand yourself to be, action from that role requires no self-overriding — you're not performing a character, you're being one. The psychological overhead of misaligned roles is substantial: constantly mediating between "who I am" and "who this role requires me to be" consumes attentional capacity before any actual work begins. Identity-aligned roles don't need to be willed; they're inhabited. The distinction between struggling to stay in character and naturally being in character is the difference between effortful and effortless performance.
 
 ## Techniques
-- [[identity-alignment-audit]] — *needs content*
-- [[covenant-vs-authority-audit]] — distinguishes whether you're operating from identity-level commitment (covenant/L3) or from what merely feels right (authority/L1); the gap between these is where alignment breaks under pressure
+- [[covenant-integrity-test]] — two-part check: which operating layer is the commitment from (L1 authority vs L3 covenant), and does it have structural support to survive pressure?
 
 ## Key Concepts
 - [[psychological-ownership]] — identity-aligned roles generate psychological ownership naturally; the work becomes "mine" when the role is "me"

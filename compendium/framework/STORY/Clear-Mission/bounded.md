@@ -19,7 +19,6 @@ The outcome horizon is how far ahead you're shining your attention — and both 
 
 ## Techniques
 - [[aperture-horizon-calibration]] — dynamic calibration of horizon to current state (wide aperture = longer horizon, narrow aperture = next action only)
-- [[presentist-eternalist-toggle]] — session structure alternating orientation (eternalist) and execution (presentist) phases
 
 ## Key Concepts
 - [[goal-hierarchy]] — the horizon operates at multiple levels simultaneously; the cascade ensures each level is appropriately scoped

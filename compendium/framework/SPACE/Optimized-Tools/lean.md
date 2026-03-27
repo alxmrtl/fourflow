@@ -18,9 +18,9 @@ tags:
 The default human bias is additive: when facing a performance problem, the first instinct is to add something — a new tool, a system, a possession, a process. But cognitive load is cumulative and mostly invisible; each addition creates new tracking obligations, maintenance demands, and decision points, gradually raising the baseline overhead the mind must manage before any deep work begins. Subtraction is the counter-move: reduction is permanent and passive — unlike a new tool (which requires learning, maintenance, and integration costs), removing something eliminates cognitive load forever without ongoing effort.
 
 ## Techniques
-- [[one-in-one-out]] — maintenance rule that prevents accumulation drift without willpower; before any acquisition, one item from the same category must leave
 - [[neurochemical-reward-test]] — distinguishes pleasure (temporary dopamine spike) from enjoyment (sustained flow reward) before desire-driven acquisitions
 - [[annual-possession-audit]] — once-per-year recalibration that corrects drift before it becomes entrenched; lighter than a full purge
+- [[error-cost-minimization]] — reduce the cost of mistakes by making errors cheap, fast, and reversible; lowers the stakes of trying
 
 ## Key Concepts
 - [[behavioral-design]] — subtraction encodes reduced cognitive load into the environment permanently, without ongoing effort

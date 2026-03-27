@@ -20,7 +20,7 @@ Vision provides the long-range attractor that orients action. Without direction,
 ## Techniques
 - [[anti-vision-contrast-primer]] — write what you don't want first, use the contrast to make the positive vision specific and motivationally charged
 - [[abundance-native-vision-check]] — tests whether the vision is organized around genuine aspiration (clean attractor) or fear-flight (mixed signal)
-- [[vision-as-received]] — shifts relationship from effortful climbing toward the vision to receptive clearing; the vision descends, your job is to clear the landing pad
+- [[symbolic-meaning]] — grounds the vision in archetypal and symbolic language that makes it retrievable as a felt sense, not just a concept
 
 ## Key Concepts
 - [[belief-spotlight]] — vision priming focuses the belief spotlight on the target coordinate; what the spotlight illuminates becomes the perceptual filter through which reality is experienced

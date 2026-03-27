@@ -18,8 +18,8 @@ tags:
 The physical environment is not a neutral container for work — it is a constant source of signals the brain must process, prioritize, and track. A cluttered, object-dense space continuously activates low-level cognitive processing: categorizing, monitoring, maintaining awareness of surrounding objects. This background load persists even when attention is directed at the task, operating as a silent cognitive tax before the first keystroke. Csikszentmihalyi: "The organization of the household can be seen as a pattern of attention and intention made concrete in the artifacts and the ambiance they create." Simplifying the environment simplifies the signal.
 
 ## Techniques
-- [[three-minimalism-tiers]] — calibration framework for choosing the right simplicity level based on goals and life circumstances
-- [[possession-purge-protocol]] — one-day event for reaching a target tier or resetting after significant drift
+- [[three-minimalism-tiers]] — calibration framework for choosing the right simplicity level based on goals and life circumstances; includes filtering question per tier
+- [[constraint-elegance]] — add productive constraints to work structure to reduce decision load and focus creative energy
 
 ## Key Concepts
 - [[sensory-priming]] — a simplified environment is the prerequisite for deliberate sensory priming; clutter fragments the priming signal

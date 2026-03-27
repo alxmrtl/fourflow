@@ -23,7 +23,6 @@ Narrative momentum is the felt sense that your current action continues somethin
 ## Key Concepts
 - [[narrative-identity]] — the self-story that makes each session's thread feel like one's own story continuing
 - [[heros-journey]] — the archetypal frame for understanding why the gap between commitment and result is the most important chapter, not evidence of failure
-- [[subjective-time]] — narrative momentum determines how the gaps between sessions feel; with it they feel like pauses; without it they feel like empty space
 
 ## Related Mechanics
 - [[curiosity-loops]] — both create forward pull; curiosity loops pull through open questions; narrative momentum pulls through open narrative arcs
