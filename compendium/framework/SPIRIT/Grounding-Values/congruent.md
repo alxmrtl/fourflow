@@ -18,11 +18,9 @@ tags:
 When there's misalignment between what you're doing and your deeper truth, part of your energy goes toward suppressing the dissonance rather than engaging with the task — a silent tax before focused work begins. Internal alignment means your actions, emotions, and authentic desires are congruent; there's no part of you pulling in a different direction. When aligned, the whole system moves together and the work itself becomes the release of energy rather than a fight against it. The key diagnostic: ease within effort signals alignment; persistent friction despite effort signals misalignment.
 
 ## Techniques
-- [[internal-integrity-check]] — pre/during-work check distinguishing growth friction from misalignment friction
-- [[pushed-vs-pulled-assessment]] — quick motivation-source diagnostic: is this fear-driven (pushed) or meaning-drawn (pulled)?
-- [[heart-true-self-connection]] — protocol for accessing True Self guidance when analytical assessment isn't producing clarity
-- [[silence-alignment-signal]] — complete internal stillness (no phone, no music) as the primary alignment diagnostic; subconscious synthesizes processed experience into a felt direction before the analytical mind can articulate it
+- [[integrity-gap-audit]] — structured review identifying where actions have diverged from stated values; produces a clear gap list to close
 - [[operative-worship-test]] — reveals what you actually treat as non-negotiable by testing what doesn't move under pressure; distinguishes absent, simulated, and operative values
+- [[pushed-vs-pulled-assessment]] — quick motivation-source diagnostic: is this fear-driven (pushed) or meaning-drawn (pulled)?
 
 ## Key Concepts
 - [[values-clarification]] — alignment requires knowing what's authentic to align with; this is its prerequisite
