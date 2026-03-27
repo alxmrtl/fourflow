@@ -32,7 +32,6 @@ Flow requires a specific ratio between what the task demands and what the person
 - [[flow-channel-formula]] — pre-session calibration check; ensures challenge is just above current skill before engaging
 - [[sub-goal-decomposition]] — real-time recalibration when overwhelm spikes; finds the smallest executable sub-goal and builds from there
 - [[boredom-anxiety-signals]] — interpretive frame for reading both signals as calibration feedback rather than malfunctions to suppress
-- [[load-capacity-diagnostic]] — adds the load dimension to challenge-skill calibration: a well-calibrated task becomes overwhelming when the system is already loaded from other sources; prescribes reduction or descent rather than willpower
 
 ## Related Mechanics
 

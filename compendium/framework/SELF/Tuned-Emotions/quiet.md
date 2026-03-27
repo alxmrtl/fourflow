@@ -33,13 +33,10 @@ Anxiety is resistance to life unfolding as it is — when anticipatory threat pa
 ## Techniques
 
 - [[disturbance-log]] — notates pattern activations throughout the day; builds pattern literacy and creates material for re-patterning sessions
-- [[consciousness-re-patterning]] — 6-step heart-centered sequence that transforms anxiety-producing patterns at the felt level (not the conceptual level); includes the SOUL-guided variant
-- [[anxiety-indicators-checklist]] — diagnostic scan of closed-heart reactions; converts vague discomfort into specific loggable material
-- [[inside-out-paradigm-shift]] — reframes anxiety from "something happening to me" to "a pattern I can work with"; changes the question that drives action
+- [[consciousness-re-patterning]] — 6-step heart-centered sequence that transforms anxiety-producing patterns at the felt level; includes the SOUL-guided variant
 - [[dmn-goal-engagement]] — real-time suppression of the Default Mode Network's rumination loop via specific goal focus; fastest available lever mid-session
-- [[aperture-widening]] — sensory expansion technique that physically dilates the perceptual constriction anxiety produces; creates space for deeper intervention
-- [[fear-as-excitement-reframe]] — reinterprets fear arousal as edge-signal excitement via breath; fastest available intervention for acute fear in active work
-- [[under-load-entry-protocol]] — 5-second triage under pressure: "what problem is being solved?" + "where has the question stopped?" — locates the function and the level before the system settles
+- [[pre-session-clearance]] — 3–10 minute entry sequence: witness emotional weather, then transition nervous system from evaluative to process mode via physical cue, mental orientation, and start signal
+- [[observer-redirect]] — when self-evaluation activates, shift identification to observer ("I notice anxiety"), redirect to process cue, then to effect of work — three moves that crowd out the inner critic
 
 ## Key Concepts
 

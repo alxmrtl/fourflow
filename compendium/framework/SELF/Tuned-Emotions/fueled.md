@@ -30,9 +30,8 @@ Flow is intrinsically rewarding — but not automatically. It requires a felt co
 ## Techniques
 
 - [[progress-ledger]] — end-of-session log of what *moved* today (not what was done); closes the dopamine loop after each session
-- [[single-metric-focus]] — one visible metric tracked in real time during the session; provides continuous reward-prediction signals throughout
-- [[effort-value-recalibration]] — front-loads an external reward contingent on session completion; used during cold-start phases before natural reward is available
 - [[micro-completion-architecture]] — decomposes work into "wins" with clear before/after states; closes the dopamine loop constantly rather than once at session end
+- [[detachment-protocol]] — three-step sequence: accept present reality, surrender control of the uncontrollable while keeping full effort, release the specific delivery pathway — dissolves the monitoring layer that splits focus
 
 ## Related Mechanics
 
