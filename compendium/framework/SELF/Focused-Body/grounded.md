@@ -35,10 +35,8 @@ Flow occupies a specific band on the arousal spectrum. Research by Peifer et al.
 ## Techniques
 
 - [[body-state-check]] — 60-second pre-session arousal assessment; identifies state (over/under/regulated) and matches appropriate regulation tool
-- [[resonance-frequency-breathing]] — slow diaphragmatic breathing at ~5.5 bpm to maximize HRV; the primary pre-session and daily regulation practice
-- [[cyclic-sighing]] — double inhale through nose + long exhale; highest-ROI daily mood and arousal baseline tool (Huberman et al., 2023)
-- [[4-7-8-breathing]] — 4 inhale / 7 hold / 8 exhale; rapid parasympathetic reset for acute over-arousal states
-- [[cold-exposure-calibration]] — deliberate cold exposure + calm breathing; trains the nervous system to maintain regulated function during intense arousal spikes; long-term regulation range expansion
+- [[breath-regulation]] — three tools matched to arousal state: cyclic sighing (daily baseline + mild reset), resonance frequency breathing (pre-session default), 4-7-8 (acute over-arousal)
+- [[movement-primer]] — brief physical activation to shift under-arousal; what breath can't do for energy, movement does
 
 ## Related Mechanics
 
