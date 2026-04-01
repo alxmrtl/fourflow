@@ -1,17 +1,27 @@
 ---
-title: "Lean"
+title: Lean
 dimension: space
 state: optimized-tools
 quality_type: restore
-keywords: [simplification, removal, minimalism, less, reduction, one-in-one-out, accumulation, neurochemical-reward, pleasure-vs-enjoyment, annual-purge]
-definition: "Improves flow by removing rather than adding."
+keywords:
+  - simplification
+  - removal
+  - minimalism
+  - less
+  - reduction
+  - one-in-one-out
+  - accumulation
+  - neurochemical-reward
+  - pleasure-vs-enjoyment
+  - annual-purge
+definition: Improve flow by removing rather than adding.
 tags:
   - type/quality
 ---
 
 # Subtraction Beats Addition
 
-> Improves flow by removing rather than adding.
+> Improve flow by removing rather than adding.
 
 ## Why It Enables Flow
 

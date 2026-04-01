@@ -1,17 +1,22 @@
 ---
-title: "Visible"
+title: Visible
 dimension: space
 state: feedback-systems
 quality_type: concentrate
-keywords: [advancement, tracking, momentum, metrics, visible]
-definition: "Makes advancement perceptible in real time."
+keywords:
+  - advancement
+  - tracking
+  - momentum
+  - metrics
+  - visible
+definition: Make advancement perceptible in real time.
 tags:
   - type/quality
 ---
 
 # Progress Visibility
 
-> Makes advancement perceptible in real time.
+> Make advancement perceptible in real time.
 
 ## Why It Enables Flow
 

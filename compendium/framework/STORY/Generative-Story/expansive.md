@@ -1,17 +1,22 @@
 ---
-title: "Expansive"
+title: Expansive
 dimension: story
 state: generative-story
 quality_type: restore
-keywords: [optimism, framing, interpretation, progress, bias]
-definition: "Biases interpretation toward progress."
+keywords:
+  - optimism
+  - framing
+  - interpretation
+  - progress
+  - bias
+definition: Bias interpretation toward progress.
 tags:
   - type/quality
 ---
 
 # Positive Orientation
 
-> Biases interpretation toward progress.
+> Bias interpretation toward progress.
 
 ## Why It Enables Flow
 

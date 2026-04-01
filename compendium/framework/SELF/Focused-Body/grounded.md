@@ -1,5 +1,5 @@
 ---
-title: "Grounded"
+title: Grounded
 dimension: self
 state: focused-body
 quality_type: restore
@@ -19,14 +19,14 @@ keywords:
   - resonance-frequency
   - coherence
   - somatic
-definition: "Keeps arousal within functional ranges."
+definition: Keep arousal within functional ranges.
 tags:
   - type/quality
 ---
 
 # Physiological Regulation
 
-> Keeps arousal within functional ranges.
+> Keep arousal within functional ranges.
 
 ## Why It Enables Flow
 

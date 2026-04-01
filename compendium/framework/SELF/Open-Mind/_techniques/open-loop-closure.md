@@ -37,3 +37,25 @@ The key insight from the GTD tradition (extended by cognitive science) is that a
 ## Key Insight
 
 > "The mind holds open loops not to annoy you, but because you haven't given it a better place to keep them."
+
+## Sources
+
+- Leroy, S. (2009). Why is it so hard to do my work? The challenge of attention residue when switching between work tasks. *Organizational Behavior and Human Decision Processes*, 109(2), 168–181.
+- Allen, D. (2001). *Getting Things Done*. Viking. (The GTD "trusted system" model — brain releases a loop when it trusts a capture system holds it.)
+- Zeigarnik, B. (1927). Das Behalten erledigter und unerledigter Handlungen. *Psychologische Forschung*, 9, 1–85.
+
+## Related
+
+- [[undivided]] — the quality that open loop closure directly enables
+- [[attention-residue]] — the concept explaining why open loops degrade performance
+- [[cognitive-load-theory]] — the working memory framework that explains the mechanism
+- [[single-tab-mind]] — companion technique for maintaining closure during sessions
+- [[transition-ritual]] — the ritual that completes the pre-session sequence
+
+## What to Remember
+
+- Unfinished tasks keep running as background processes — writing them down lets the brain stop tracking them.
+- A loop doesn't need to be completed to be closed — it needs a trusted next action and a reliable capture system.
+- The 3-minute brain dump before a session is the single highest-leverage pre-work intervention.
+- Tag each item: `→ do later`, `→ decide`, or `→ drop` — only items tagged `→ decide` require action now.
+- A capture surface out of sight physically signals "loop held elsewhere" — don't leave it in your visual field.

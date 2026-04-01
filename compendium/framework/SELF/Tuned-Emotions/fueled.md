@@ -1,5 +1,5 @@
 ---
-title: "Fueled"
+title: Fueled
 dimension: self
 state: tuned-emotions
 quality_type: maintain
@@ -14,14 +14,14 @@ keywords:
   - effort-valuation
   - burnout
   - reward-contingency
-definition: "Links exertion directly to perceived progress."
+definition: Link exertion directly to perceived progress.
 tags:
   - type/quality
 ---
 
 # Effort-Reward Coupling
 
-> Links exertion directly to perceived progress.
+> Link exertion directly to perceived progress.
 
 ## Why It Enables Flow
 

@@ -1,5 +1,5 @@
 ---
-title: "Spacious"
+title: Spacious
 dimension: self
 state: open-mind
 quality_type: restore
@@ -16,14 +16,14 @@ keywords:
   - dmn
   - rumination
   - minimalism
-definition: "Frees working memory for task-relevant processing."
+definition: Free working memory for task-relevant processing.
 tags:
   - type/quality
 ---
 
 # Cognitive Load Reduction
 
-> Frees working memory for task-relevant processing.
+> Free working memory for task-relevant processing.
 
 ## Why It Enables Flow
 

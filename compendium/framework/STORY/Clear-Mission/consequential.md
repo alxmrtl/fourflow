@@ -1,17 +1,27 @@
 ---
-title: "Consequential"
+title: Consequential
 dimension: story
 state: clear-mission
 quality_type: restore
-keywords: [importance, consequences, meaning, why, motivation, urgency, anti-vision, contrast, discomfort, cost-of-inaction]
-definition: "Specifies why the action matters."
+keywords:
+  - importance
+  - consequences
+  - meaning
+  - why
+  - motivation
+  - urgency
+  - anti-vision
+  - contrast
+  - discomfort
+  - cost-of-inaction
+definition: Specify why the action matters.
 tags:
   - type/quality
 ---
 
 # Stakes Definition
 
-> Specifies why the action matters.
+> Specify why the action matters.
 
 ## Why It Enables Flow
 

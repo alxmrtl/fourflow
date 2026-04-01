@@ -11,7 +11,7 @@ tags:
 
 # Values Integration
 
-> Embeds ethics into decision-making.
+> Embed ethics into decision-making.
 
 ## Why It Enables Flow
 

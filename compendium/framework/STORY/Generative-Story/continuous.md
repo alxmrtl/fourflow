@@ -1,17 +1,25 @@
 ---
-title: "Continuous"
+title: Continuous
 dimension: story
 state: generative-story
 quality_type: maintain
-keywords: [pull, forward, story, continuation, drive, Zeigarnik, arc, navigation]
-definition: "Pulls action forward without force."
+keywords:
+  - pull
+  - forward
+  - story
+  - continuation
+  - drive
+  - Zeigarnik
+  - arc
+  - navigation
+definition: Pull action forward without force.
 tags:
   - type/quality
 ---
 
 # Narrative Momentum
 
-> Pulls action forward without force.
+> Pull action forward without force.
 
 ## Why It Enables Flow
 

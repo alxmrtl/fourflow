@@ -11,7 +11,7 @@ tags:
 
 # Exploration Bias
 
-> Encourages discovery over optimization.
+> Encourage discovery over optimization.
 
 ## Why It Enables Flow
 

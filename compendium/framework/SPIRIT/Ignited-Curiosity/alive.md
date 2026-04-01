@@ -11,7 +11,7 @@ tags:
 
 # Intrinsic Reward Signaling
 
-> Makes engagement self-reinforcing.
+> Make engagement self-reinforcing.
 
 ## Why It Enables Flow
 

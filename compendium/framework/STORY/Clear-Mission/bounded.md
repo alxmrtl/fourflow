@@ -1,17 +1,26 @@
 ---
-title: "Bounded"
+title: Bounded
 dimension: story
 state: clear-mission
 quality_type: maintain
-keywords: [timeframe, scope, boundaries, attention, span, aperture, focal-length, direction, presence]
-definition: "Bounds attention to an appropriate timeframe."
+keywords:
+  - timeframe
+  - scope
+  - boundaries
+  - attention
+  - span
+  - aperture
+  - focal-length
+  - direction
+  - presence
+definition: Bound attention to an appropriate timeframe.
 tags:
   - type/quality
 ---
 
 # Outcome Horizon Setting
 
-> Bounds attention to an appropriate timeframe.
+> Bound attention to an appropriate timeframe.
 
 ## Why It Enables Flow
 

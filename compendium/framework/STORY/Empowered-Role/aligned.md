@@ -1,17 +1,22 @@
 ---
-title: "Aligned"
+title: Aligned
 dimension: story
 state: empowered-role
 quality_type: restore
-keywords: [self-concept, fit, congruence, authenticity, match]
-definition: "Matches role to self-concept."
+keywords:
+  - self-concept
+  - fit
+  - congruence
+  - authenticity
+  - match
+definition: Match role to self-concept.
 tags:
   - type/quality
 ---
 
 # Identity Alignment
 
-> Matches role to self-concept.
+> Match role to self-concept.
 
 ## Why It Enables Flow
 

@@ -1,17 +1,22 @@
 ---
-title: "Defined"
+title: Defined
 dimension: story
 state: empowered-role
 quality_type: maintain
-keywords: [responsibility, boundaries, definition, scope, ownership]
-definition: "Defines responsibility boundaries."
+keywords:
+  - responsibility
+  - boundaries
+  - definition
+  - scope
+  - ownership
+definition: Define responsibility boundaries.
 tags:
   - type/quality
 ---
 
 # Role Clarity
 
-> Defines responsibility boundaries.
+> Define responsibility boundaries.
 
 ## Why It Enables Flow
 

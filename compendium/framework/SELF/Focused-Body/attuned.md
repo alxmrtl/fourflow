@@ -1,5 +1,5 @@
 ---
-title: "Attuned"
+title: Attuned
 dimension: self
 state: focused-body
 quality_type: maintain
@@ -9,14 +9,14 @@ keywords:
   - conflict
   - integration
   - inputs
-definition: "Reduces conflicting sensory inputs."
+definition: Reduce conflicting sensory inputs.
 tags:
   - type/quality
 ---
 
 # Sensory Coherence
 
-> Reduces conflicting sensory inputs.
+> Reduce conflicting sensory inputs.
 
 ## Why It Enables Flow
 

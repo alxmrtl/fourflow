@@ -1,17 +1,22 @@
 ---
-title: "Singular"
+title: Singular
 dimension: story
 state: clear-mission
 quality_type: concentrate
-keywords: [one-thing, focus, competition, clarity, single]
-definition: "Prevents goal competition."
+keywords:
+  - one-thing
+  - focus
+  - competition
+  - clarity
+  - single
+definition: Prevent goal competition.
 tags:
   - type/quality
 ---
 
 # Priority Singularity
 
-> Prevents goal competition.
+> Prevent goal competition.
 
 ## Why It Enables Flow
 

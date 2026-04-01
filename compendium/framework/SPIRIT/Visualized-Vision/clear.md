@@ -1,17 +1,22 @@
 ---
-title: "Clear"
+title: Clear
 dimension: spirit
 state: visualized-vision
 quality_type: concentrate
-keywords: [aspiration, symbols, simplicity, essence, condensed]
-definition: "Condenses aspiration into simple symbols."
+keywords:
+  - aspiration
+  - symbols
+  - simplicity
+  - essence
+  - condensed
+definition: Condense aspiration into simple symbols.
 tags:
   - type/quality
 ---
 
 # Inspirational Compression
 
-> Condenses aspiration into simple symbols.
+> Condense aspiration into simple symbols.
 
 ## Why It Enables Flow
 

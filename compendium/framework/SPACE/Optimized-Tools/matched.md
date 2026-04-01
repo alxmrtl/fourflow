@@ -1,17 +1,22 @@
 ---
-title: "Matched"
+title: Matched
 dimension: space
 state: optimized-tools
 quality_type: maintain
-keywords: [fit, capability, matching, appropriate, right-tool]
-definition: "Matches tool capability to task demands."
+keywords:
+  - fit
+  - capability
+  - matching
+  - appropriate
+  - right-tool
+definition: Matche tool capability to task demands.
 tags:
   - type/quality
 ---
 
 # Tool-Task Alignment
 
-> Matches tool capability to task demands.
+> Match tool capability to task demands.
 
 ## Why It Enables Flow
 

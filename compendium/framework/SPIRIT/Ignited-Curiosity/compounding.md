@@ -11,7 +11,7 @@ tags:
 
 # Curiosity Loops
 
-> Pulls attention forward through open questions.
+> Pull attention forward through open questions.
 
 ## Why It Enables Flow
 

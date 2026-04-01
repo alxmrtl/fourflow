@@ -1,5 +1,5 @@
 ---
-title: "Provisional"
+title: Provisional
 dimension: self
 state: open-mind
 quality_type: maintain
@@ -14,14 +14,14 @@ keywords:
   - consciousness
   - evolution
   - transformation
-definition: "Frames difficulty as information rather than failure."
+definition: Frame difficulty as information rather than failure.
 tags:
   - type/quality
 ---
 
 # Growth Orientation
 
-> Frames difficulty as information rather than failure.
+> Frame difficulty as information rather than failure.
 
 ## Why It Enables Flow
 

@@ -1,17 +1,25 @@
 ---
-title: "Proximate"
+title: Proximate
 dimension: spirit
 state: visualized-vision
 quality_type: maintain
-keywords: [future, alignment, distant, trajectory, consistency, coherence, direction, mirror-delay]
-definition: "Aligns short actions with distant outcomes."
+keywords:
+  - future
+  - alignment
+  - distant
+  - trajectory
+  - consistency
+  - coherence
+  - direction
+  - mirror-delay
+definition: Align short actions with distant outcomes.
 tags:
   - type/quality
 ---
 
 # Long-Horizon Coherence
 
-> Aligns short actions with distant outcomes.
+> Align short actions with distant outcomes.
 
 ## Why It Enables Flow
 

@@ -11,7 +11,7 @@ tags:
 
 # Internal Alignment
 
-> Removes value-based friction.
+> Remove value-based friction.
 
 ## Why It Enables Flow
 

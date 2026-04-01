@@ -11,7 +11,7 @@ tags:
 
 # Meaning Stabilization
 
-> Prevents motivational decay over time.
+> Prevent motivational decay over time.
 
 ## Why It Enables Flow
 

@@ -1,5 +1,5 @@
 ---
-title: "Calibrated"
+title: Calibrated
 dimension: self
 state: tuned-emotions
 quality_type: concentrate
@@ -14,14 +14,14 @@ keywords:
   - flow-channel
   - sub-goals
   - skill-challenge-ratio
-definition: "Matches task difficulty to current capability to prevent boredom or overwhelm."
+definition: Match ask difficulty to current capability to prevent boredom or overwhelm.
 tags:
   - type/quality
 ---
 
 # Challenge-Skill Calibration
 
-> Matches task difficulty to current capability to prevent boredom or overwhelm.
+> Match task difficulty to current capability to prevent boredom or overwhelm.
 
 ## Why It Enables Flow
 

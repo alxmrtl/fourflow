@@ -1,17 +1,22 @@
 ---
-title: "Honest"
+title: Honest
 dimension: space
 state: feedback-systems
 quality_type: restore
-keywords: [causation, control, effect, ownership, impact]
-definition: "Reinforces cause-effect understanding."
+keywords:
+  - causation
+  - control
+  - effect
+  - ownership
+  - impact
+definition: Reinforce cause-effect understanding.
 tags:
   - type/quality
 ---
 
 # Agency Loops
 
-> Reinforces cause-effect understanding.
+> Reinforce cause-effect understanding.
 
 ## Why It Enables Flow
 

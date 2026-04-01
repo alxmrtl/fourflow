@@ -1,5 +1,5 @@
 ---
-title: "Quiet"
+title: Quiet
 dimension: self
 state: tuned-emotions
 quality_type: restore
@@ -17,14 +17,14 @@ keywords:
   - re-patterning
   - heart
   - trust
-definition: "Reduces anticipatory threat signals that fragment focus."
+definition: Reduce anticipatory threat signals that fragment focus.
 tags:
   - type/quality
 ---
 
 # Anxiety Suppression
 
-> Reduces anticipatory threat signals that fragment focus.
+> Reduce anticipatory threat signals that fragment focus.
 
 ## Why It Enables Flow
 

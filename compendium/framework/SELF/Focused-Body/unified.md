@@ -1,5 +1,5 @@
 ---
-title: "Unified"
+title: Unified
 dimension: self
 state: focused-body
 quality_type: concentrate
@@ -9,14 +9,14 @@ keywords:
   - execution
   - integration
   - embodiment
-definition: "Aligns intention with physical execution."
+definition: Align intention with physical execution.
 tags:
   - type/quality
 ---
 
 # Mind-Body Coherence
 
-> Aligns intention with physical execution.
+> Align intention with physical execution.
 
 ## Why It Enables Flow
 

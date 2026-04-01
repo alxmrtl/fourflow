@@ -1,17 +1,27 @@
 ---
-title: "Simplified"
+title: Simplified
 dimension: space
 state: intentional-space
 quality_type: restore
-keywords: [minimalism, clutter, noise, background, clean, possessions, purge, tiers, filtering, cognitive-overhead]
-definition: "Reduces background cognitive noise."
+keywords:
+  - minimalism
+  - clutter
+  - noise
+  - background
+  - clean
+  - possessions
+  - purge
+  - tiers
+  - filtering
+  - cognitive-overhead
+definition: Reduce background cognitive noise.
 tags:
   - type/quality
 ---
 
 # Environmental Simplicity
 
-> Reduces background cognitive noise.
+> Reduce background cognitive noise.
 
 ## Why It Enables Flow
 

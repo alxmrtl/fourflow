@@ -1,17 +1,28 @@
 ---
-title: "Compelling"
+title: Compelling
 dimension: spirit
 state: visualized-vision
 quality_type: restore
-keywords: [direction, preload, preparation, orientation, intention, purpose, emergence, clarity, lens, abundance, scarcity]
-definition: "Preloads direction before action begins."
+keywords:
+  - direction
+  - preload
+  - preparation
+  - orientation
+  - intention
+  - purpose
+  - emergence
+  - clarity
+  - lens
+  - abundance
+  - scarcity
+definition: Preload direction before action begins.
 tags:
   - type/quality
 ---
 
 # Vision Priming
 
-> Preloads direction before action begins.
+> Preload direction before action begins.
 
 ## Why It Enables Flow
 

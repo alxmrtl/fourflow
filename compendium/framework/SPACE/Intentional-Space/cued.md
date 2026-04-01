@@ -1,17 +1,22 @@
 ---
-title: "Cued"
+title: Cued
 dimension: space
 state: intentional-space
 quality_type: concentrate
-keywords: [cues, triggers, context, conditioning, environment]
-definition: "Conditions the environment to cue focus."
+keywords:
+  - cues
+  - triggers
+  - context
+  - conditioning
+  - environment
+definition: Condition the environment to cue focus.
 tags:
   - type/quality
 ---
 
 # Physical Space Priming
 
-> Conditions the environment to cue focus.
+> Condition the environment to cue focus.
 
 ## Why It Enables Flow
 

@@ -34,3 +34,25 @@ The gate must also account for the social dynamics of interruption, which are of
 
 ## Key Insight
 > Deciding whether to handle an interruption is itself a focus cost — the gate pre-decides so you never have to evaluate inside a session.
+
+## Sources
+
+- Leroy, S. (2009). Why is it so hard to do my work? The challenge of attention residue when switching between work tasks. *Organizational Behavior and Human Decision Processes*, 109(2), 168–181.
+- Mark, G., Gudith, D., & Klocke, U. (2008). The cost of interrupted work: More speed and stress. *CHI 2008 Proceedings*.
+- Newport, C. (2016). *Deep Work: Rules for Focused Success in a Distracted World*. Grand Central Publishing.
+
+## Related
+
+- [[protected]] — the quality this technique directly enforces
+- [[attention-residue]] — the concept explaining why pre-decided gates prevent residue generation
+- [[time-block-defense]] — the scheduling layer that creates the block the gate defends
+- [[single-surface-rule]] — environmental technique that works alongside the gate protocol
+- [[open-loop-closure]] — pre-session technique that clears residue before the gate activates
+
+## What to Remember
+
+- Evaluating an interruption is itself an interruption — the gate eliminates in-session evaluation entirely.
+- "Emergency" must be defined concretely in advance: vague criteria collapse under social pressure in the moment.
+- Brief people once on the protocol — a one-time investment that eliminates hundreds of future evaluations.
+- The gate works because you're not ignoring people — you're committing to a specific response time.
+- Physical signal + scheduled response window = social contract that makes the gate sustainable long-term.

@@ -3,15 +3,20 @@ title: "True"
 dimension: story
 state: generative-story
 quality_type: concentrate
-keywords: [role, character, becoming, absorption, persona]
-definition: "Aligns behavior with a lived role."
+keywords:
+  - role
+  - character
+  - becoming
+  - absorption
+  - persona
+definition: Align behavior with a lived role.
 tags:
   - type/quality
 ---
 
 # Identity Immersion
 
-> Aligns behavior with a lived role.
+> Align behavior with a lived role.
 
 ## Why It Enables Flow
 

@@ -1,17 +1,22 @@
 ---
-title: "Frictionless"
+title: Frictionless
 dimension: space
 state: optimized-tools
 quality_type: concentrate
-keywords: [resistance, obstacles, ease, streamline, elimination]
-definition: "Eliminates unnecessary steps and resistance."
+keywords:
+  - resistance
+  - obstacles
+  - ease
+  - streamline
+  - elimination
+definition: Eliminate unnecessary steps and resistance.
 tags:
   - type/quality
 ---
 
 # Friction Removal
 
-> Eliminates unnecessary steps and resistance.
+> Eliminate unnecessary steps and resistance.
 
 ## Why It Enables Flow
 

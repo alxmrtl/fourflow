@@ -1,17 +1,22 @@
 ---
-title: "Owned"
+title: Owned
 dimension: story
 state: empowered-role
 quality_type: concentrate
-keywords: [investment, action, stakes, momentum, engagement]
-definition: "Increases investment through action."
+keywords:
+  - investment
+  - action
+  - stakes
+  - momentum
+  - engagement
+definition: Increase investment through action.
 tags:
   - type/quality
 ---
 
 # Commitment Escalation
 
-> Increases investment through action.
+> Increase investment through action.
 
 ## Why It Enables Flow
 

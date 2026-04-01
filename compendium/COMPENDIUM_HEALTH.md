@@ -1,19 +1,21 @@
 # Compendium Health Index
-_Last assessed: 2026-03-18 (enriched: effort-reward-coupling, ego-monitoring-removal, emotional-neutrality, psychological-safety, energy-sufficiency, physiological-regulation)_
+_Last assessed: 2026-04-01 (enriched quality files: undivided, immediate, protected — expanded Why It Enables Flow to 3 paragraphs with neuroscience + aperture model integration + full source citations; fixed stale file references for these three entries from pre-refactor names)_
+
+> **Note on technique/concept tracking**: The health table below tracks the 62 quality files only. Techniques and concepts (~108 techniques + ~110 concepts) are tracked separately. All technique/concept files enriched from 2026-03-27 onward include a `## What to Remember` section for training view compatibility.
 
 ## Summary
 
 | Score | Count | % | Description |
 |-------|-------|---|-------------|
-| 5 | 6 | 10% | Rich handbook — 3+ techniques, neuroscience, examples, multiple sources, deep cross-linking |
+| 5 | 9 | 15% | Rich handbook — 3+ techniques, neuroscience, examples, multiple sources, deep cross-linking |
 | 4 | 12 | 19% | Full content + source citations + related mechanics cross-linked |
 | 3 | 0 | 0% | Full "How It Enables Flow" + 1–2 techniques |
 | 2 | 0 | 0% | Definition + partial "How It Enables Flow" |
-| 1 | 44 | 71% | Definition only — correct structure, awaiting content |
+| 1 | 41 | 66% | Definition only — correct structure, awaiting content |
 | 0 | 0 | 0% | Empty template — no definition |
 | **Total** | **62** | | |
 
-**Overall health: 29% complete at score 4+**
+**Overall health: 34% complete at score 4+**
 
 ---
 
@@ -62,7 +64,7 @@ _Last assessed: 2026-03-18 (enriched: effort-reward-coupling, ego-monitoring-rem
 |----------|------|-------|---------|----------|
 | [cognitive-load-reduction](framework/SELF/Open-Mind/cognitive-load-reduction.md) | `SELF/Open-Mind/cognitive-load-reduction.md` | 4 | additional capture sources | low |
 | [ambiguity-control](framework/SELF/Open-Mind/ambiguity-control.md) | `SELF/Open-Mind/ambiguity-control.md` | 1 | How It Enables Flow, techniques, sources, concepts | medium |
-| [attention-residue-elimination](framework/SELF/Open-Mind/attention-residue-elimination.md) | `SELF/Open-Mind/attention-residue-elimination.md` | 1 | How It Enables Flow, techniques, sources, concepts | **high** |
+| [undivided](framework/SELF/Open-Mind/undivided.md) | `SELF/Open-Mind/undivided.md` | 5 | — | — |
 | [clarity-over-intensity](framework/SELF/Open-Mind/clarity-over-intensity.md) | `SELF/Open-Mind/clarity-over-intensity.md` | 1 | How It Enables Flow, techniques, sources, concepts | medium |
 | [compression-over-expansion](framework/SELF/Open-Mind/compression-over-expansion.md) | `SELF/Open-Mind/compression-over-expansion.md` | 1 | How It Enables Flow, techniques, sources, concepts | medium |
 | [growth-orientation](framework/SELF/Open-Mind/growth-orientation.md) | `SELF/Open-Mind/growth-orientation.md` | 1 | How It Enables Flow, techniques, sources, concepts | low |
@@ -78,7 +80,7 @@ _Last assessed: 2026-03-18 (enriched: effort-reward-coupling, ego-monitoring-rem
 |----------|------|-------|---------|----------|
 | [agency-loops](framework/SPACE/Feedback-Systems/agency-loops.md) | `SPACE/Feedback-Systems/agency-loops.md` | 1 | How It Enables Flow, techniques, sources, concepts | medium |
 | [feedback-density](framework/SPACE/Feedback-Systems/feedback-density.md) | `SPACE/Feedback-Systems/feedback-density.md` | 1 | How It Enables Flow, techniques, sources, concepts | medium |
-| [immediate-feedback](framework/SPACE/Feedback-Systems/immediate-feedback.md) | `SPACE/Feedback-Systems/immediate-feedback.md` | 1 | How It Enables Flow, techniques, sources, concepts | **high** |
+| [immediate](framework/SPACE/Feedback-Systems/immediate.md) | `SPACE/Feedback-Systems/immediate.md` | 5 | — | — |
 | [progress-visibility](framework/SPACE/Feedback-Systems/progress-visibility.md) | `SPACE/Feedback-Systems/progress-visibility.md` | 1 | How It Enables Flow, techniques, sources, concepts | medium |
 | [speed-of-consequence](framework/SPACE/Feedback-Systems/speed-of-consequence.md) | `SPACE/Feedback-Systems/speed-of-consequence.md` | 1 | How It Enables Flow, techniques, sources, concepts | medium |
 
@@ -88,7 +90,7 @@ _Last assessed: 2026-03-18 (enriched: effort-reward-coupling, ego-monitoring-rem
 |----------|------|-------|---------|----------|
 | [environmental-simplicity](framework/SPACE/Intentional-Space/environmental-simplicity.md) | `SPACE/Intentional-Space/environmental-simplicity.md` | 4 | additional capture sources | low |
 | [constraint-elegance](framework/SPACE/Intentional-Space/constraint-elegance.md) | `SPACE/Intentional-Space/constraint-elegance.md` | 1 | How It Enables Flow, techniques, sources, concepts | medium |
-| [interruption-control](framework/SPACE/Intentional-Space/interruption-control.md) | `SPACE/Intentional-Space/interruption-control.md` | 1 | How It Enables Flow, techniques, sources, concepts | **high** |
+| [protected](framework/SPACE/Intentional-Space/protected.md) | `SPACE/Intentional-Space/protected.md` | 5 | — | — |
 | [physical-space-priming](framework/SPACE/Intentional-Space/physical-space-priming.md) | `SPACE/Intentional-Space/physical-space-priming.md` | 1 | How It Enables Flow, techniques, sources, concepts | medium |
 | [social-field-alignment](framework/SPACE/Intentional-Space/social-field-alignment.md) | `SPACE/Intentional-Space/social-field-alignment.md` | 1 | How It Enables Flow, techniques, sources, concepts | medium |
 
@@ -170,13 +172,10 @@ _Last assessed: 2026-03-18 (enriched: effort-reward-coupling, ego-monitoring-rem
 
 ## High-Priority Stubs (Enrich First)
 
-These 9 mechanics are the highest-value targets — either cross-linked frequently from rich files or foundational to their pillar:
+These 6 mechanics are the highest-value remaining targets — either cross-linked frequently from rich files or foundational to their pillar:
 
 | Mechanic | Pillar / Key | Reason |
 |----------|-------------|--------|
-| attention-residue-elimination | SELF / Open Mind | Sophie Leroy's research is one of the most cited in deep work/flow |
-| immediate-feedback | SPACE / Feedback Systems | One of the three canonical flow conditions (Csikszentmihalyi) |
-| interruption-control | SPACE / Intentional Space | Most practical SPACE lever; foundational in deep work research |
 | friction-removal | SPACE / Optimized Tools | Behavioral design cornerstone; highest ROI per implementation effort |
 | outcome-horizon-setting | STORY / Clear Mission | Temporal scope-setting — how far ahead the aperture points |
 | priority-singularity | STORY / Clear Mission | Bottleneck focus; the "one thing" principle operationalized |
