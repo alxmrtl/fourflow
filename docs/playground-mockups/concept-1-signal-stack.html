@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept 1 — Signal Stack</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0a0a0a; color: #F5F5F5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+:root {
+  --coral: #FF6F61; --sage: #6BA292; --steel: #5B84B1; --amethyst: #7A4DA4;
+  --s: #141414; --s2: #111; --dim: #555;
+}
+.badge { padding: 10px 24px; font-size: 11px; color: #555; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid #111; display: flex; justify-content: space-between; }
+.badge span { color: #888; }
+.tabs { display: flex; gap: 8px; padding: 14px 24px; border-bottom: 1px solid #1a1a1a; }
+.tab { padding: 5px 14px; border-radius: 20px; border: 1px solid #2a2a2a; background: transparent; color: #555; font-size: 12px; cursor: pointer; }
+.tab.on { background: #1e1e1e; color: #eee; border-color: #444; }
+.hidden { display: none; }
+
+/* ── TOP BAR ── */
+.topbar { display: flex; align-items: center; gap: 20px; padding: 20px 24px 16px; border-bottom: 1px solid #111; }
+.topbar h1 { font-size: 20px; font-weight: 300; letter-spacing: -.5px; flex: 1; }
+.greeting { font-size: 13px; color: #444; }
+.signal-legend { display: flex; gap: 12px; }
+.sig-pill { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #555; }
+.sig-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+/* ── PILLAR COLUMNS ── */
+.stack { display: grid; grid-template-columns: repeat(4, 1fr); height: calc(100vh - 110px); }
+.col { border-right: 1px solid #111; display: flex; flex-direction: column; overflow-y: auto; }
+.col:last-child { border-right: none; }
+
+.col-header { padding: 16px 16px 12px; border-bottom: 1px solid #111; position: sticky; top: 0; z-index: 1; background: #0a0a0a; }
+.col-name { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px; }
+.col-q { font-size: 11px; color: #444; line-height: 1.4; margin-bottom: 10px; }
+.signal-bar-bg { height: 3px; background: #1a1a1a; border-radius: 2px; }
+.signal-bar { height: 3px; border-radius: 2px; }
+
+.col-self .col-name { color: var(--coral); }
+.col-self .signal-bar { background: var(--coral); width: 42%; }
+.col-space .col-name { color: var(--sage); }
+.col-space .signal-bar { background: var(--sage); width: 74%; }
+.col-story .col-name { color: var(--steel); }
+.col-story .signal-bar { background: var(--steel); width: 55%; }
+.col-spirit .col-name { color: var(--amethyst); }
+.col-spirit .signal-bar { background: var(--amethyst); width: 88%; }
+
+.col-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+
+/* Cards in column */
+.item { background: var(--s); border: 1px solid #1e1e1e; border-radius: 10px; padding: 12px 14px; cursor: pointer; transition: border-color .2s; }
+.item:hover { border-color: #2a2a2a; }
+.item-type { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #444; margin-bottom: 5px; }
+.item-name { font-size: 14px; font-weight: 400; margin-bottom: 3px; }
+.item-sub { font-size: 11px; color: #555; line-height: 1.4; }
+.item-stat { font-size: 12px; color: #777; margin-top: 6px; }
+.item-cta { font-size: 11px; color: #444; margin-top: 8px; display: flex; justify-content: space-between; }
+
+.item-tool .item-type { color: #666; }
+.item-proto { background: var(--s2); }
+.item-proto.rec .item-name { }
+.rec-star { display: inline-block; margin-right: 4px; }
+
+.col-self .item-tool { border-left: 2px solid var(--coral); }
+.col-space .item-tool { border-left: 2px solid var(--sage); }
+.col-story .item-tool { border-left: 2px solid var(--steel); }
+.col-spirit .item-tool { border-left: 2px solid var(--amethyst); }
+
+.col-self .rec-star { color: var(--coral); }
+.col-space .rec-star { color: var(--sage); }
+.col-story .rec-star { color: var(--steel); }
+.col-spirit .rec-star { color: var(--amethyst); }
+
+.section-label { font-size: 10px; color: #333; letter-spacing: .1em; text-transform: uppercase; padding: 8px 2px 4px; }
+.placeholder { border: 1px dashed #181818; border-radius: 10px; padding: 14px; display: flex; align-items: center; justify-content: center; }
+.placeholder span { font-size: 11px; color: #2a2a2a; }
+
+/* DISCOVERY */
+.disc-wrap { padding: 48px 24px; max-width: 560px; margin: 0 auto; text-align: center; }
+.disc-wrap h1 { font-size: 32px; font-weight: 300; letter-spacing: -1px; margin-bottom: 12px; }
+.disc-pitch { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 36px; }
+.disc-btns { display: flex; gap: 10px; justify-content: center; margin-bottom: 56px; }
+.btn-p { padding: 11px 26px; background: #F5F5F5; color: #0a0a0a; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; }
+.btn-s { padding: 11px 26px; background: transparent; color: #777; border: 1px solid #2a2a2a; border-radius: 8px; font-size: 13px; cursor: pointer; }
+.disc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; opacity: .5; }
+.disc-col { border: 1px solid #1e1e1e; border-radius: 10px; padding: 16px 14px; text-align: left; }
+.disc-col-name { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+.disc-col-tags { display: flex; flex-direction: column; gap: 4px; }
+.disc-tag { font-size: 11px; color: #444; background: #111; border-radius: 4px; padding: 3px 8px; }
+.d-self { color: var(--coral); } .d-space { color: var(--sage); } .d-story { color: var(--steel); } .d-spirit { color: var(--amethyst); }
+
+/* ASSESSMENT */
+.assess-note { margin: 12px 14px 4px; padding: 8px 12px; background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 8px; font-size: 11px; color: #444; line-height: 1.5; }
+.assess-note b { color: var(--coral); }
+
+.note { padding: 16px 24px; margin: 0; border-top: 1px solid #111; }
+.note h4 { font-size: 11px; color: #444; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+.note ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 24px; }
+.note li { font-size: 12px; color: #555; padding-left: 14px; position: relative; }
+.note li::before { content: '—'; position: absolute; left: 0; color: #2a2a2a; }
+.note li.p::before { content: '+'; color: var(--sage); }
+.note li.c::before { content: '−'; color: var(--coral); }
+</style>
+</head>
+<body>
+
+<div class="badge">Concept 1 — <span>Signal Stack</span> &nbsp;·&nbsp; "Your 4 dimensions, live. Everything organized by signal layer."</div>
+<div class="tabs">
+  <button class="tab on" onclick="show('authed',this)">Signed in</button>
+  <button class="tab" onclick="show('unauthed',this)">New visitor</button>
+</div>
+
+<!-- AUTHED -->
+<div id="authed">
+  <div class="topbar">
+    <h1>Flow Playground</h1>
+    <div class="greeting">Monday · Good afternoon, Alex</div>
+    <div class="signal-legend">
+      <div class="sig-pill"><div class="sig-dot" style="background:var(--coral)"></div>SELF 42%</div>
+      <div class="sig-pill"><div class="sig-dot" style="background:var(--sage)"></div>SPACE 74%</div>
+      <div class="sig-pill"><div class="sig-dot" style="background:var(--steel)"></div>STORY 55%</div>
+      <div class="sig-pill"><div class="sig-dot" style="background:var(--amethyst)"></div>SPIRIT 88%</div>
+    </div>
+  </div>
+
+  <div class="stack">
+
+    <!-- SELF -->
+    <div class="col col-self">
+      <div class="col-header">
+        <div class="col-name">Self</div>
+        <div class="col-q">"Can I receive signal right now?"</div>
+        <div class="signal-bar-bg"><div class="signal-bar"></div></div>
+      </div>
+      <div class="assess-note"><b>Watch-point</b> — body is the current bottleneck. Start here before anything else.</div>
+      <div class="col-body">
+        <div class="section-label">Tools</div>
+        <div class="item item-tool">
+          <div class="item-type">Tool</div>
+          <div class="item-name">FlowRead</div>
+          <div class="item-sub">Speed reading trainer. Quality inputs at pace.</div>
+          <div class="item-cta"><span>Open →</span></div>
+        </div>
+        <div class="item item-tool">
+          <div class="item-type">Tool</div>
+          <div class="item-name">FlowSpark</div>
+          <div class="item-sub">Curiosity map. 23 sparks · 4 intersections</div>
+          <div class="item-cta"><span>Explore →</span></div>
+        </div>
+        <div class="item item-tool">
+          <div class="item-type">iOS</div>
+          <div class="item-name">FlowReps</div>
+          <div class="item-sub">Daily rep tracker. Focused Body practice.</div>
+          <div class="item-cta"><span>Open app →</span></div>
+        </div>
+        <div class="section-label">Recommended Protocols</div>
+        <div class="item item-proto rec">
+          <div class="item-name"><span class="rec-star">★</span>breath-regulation</div>
+          <div class="item-sub">Regulate state through breathing before work</div>
+        </div>
+        <div class="item item-proto rec">
+          <div class="item-name"><span class="rec-star">★</span>body-state-check</div>
+          <div class="item-sub">Read body signals before deciding</div>
+        </div>
+        <div class="item item-proto">
+          <div class="item-name">movement-primer</div>
+          <div class="item-sub">Activate body before deep work</div>
+        </div>
+        <div class="item item-proto">
+          <div class="item-name">tension-scan-and-release</div>
+          <div class="item-sub">Systematic physical decompression</div>
+        </div>
+        <div class="item-cta" style="padding: 4px 2px; font-size:11px; color:#333; cursor:pointer;">27 SELF protocols →</div>
+      </div>
+    </div>
+
+    <!-- SPACE -->
+    <div class="col col-space">
+      <div class="col-header">
+        <div class="col-name">Space</div>
+        <div class="col-q">"Is my environment supporting signal flow?"</div>
+        <div class="signal-bar-bg"><div class="signal-bar"></div></div>
+      </div>
+      <div class="col-body">
+        <div class="section-label">Tools</div>
+        <div class="item item-tool">
+          <div class="item-type">Tool</div>
+          <div class="item-name">FlowZone</div>
+          <div class="item-sub">Focus session. 12 this week · 3d streak</div>
+          <div class="item-cta"><span>Enter session →</span><span style="color:#6BA292">●</span></div>
+        </div>
+        <div class="placeholder"><span>+ More tools coming</span></div>
+        <div class="section-label">Recommended Protocols</div>
+        <div class="item item-proto rec">
+          <div class="item-name"><span class="rec-star">★</span>interruption-gate-protocol</div>
+          <div class="item-sub">Protect deep work windows</div>
+        </div>
+        <div class="item item-proto">
+          <div class="item-name">one-click-session-launch</div>
+          <div class="item-sub">Eliminate friction from starting</div>
+        </div>
+        <div class="item item-proto">
+          <div class="item-name">physical-space-audit</div>
+          <div class="item-sub">Evaluate environment signal quality</div>
+        </div>
+        <div class="item item-proto">
+          <div class="item-name">single-surface-rule</div>
+          <div class="item-sub">One input, full attention</div>
+        </div>
+        <div class="item-cta" style="padding: 4px 2px; font-size:11px; color:#333; cursor:pointer;">27 SPACE protocols →</div>
+      </div>
+    </div>
+
+    <!-- STORY -->
+    <div class="col col-story">
+      <div class="col-header">
+        <div class="col-name">Story</div>
+        <div class="col-q">"Where am I in the arc? What am I aiming at?"</div>
+        <div class="signal-bar-bg"><div class="signal-bar"></div></div>
+      </div>
+      <div class="col-body">
+        <div class="section-label">Tools</div>
+        <div class="placeholder" style="min-height:70px;"><span>+ Plan Generator coming</span></div>
+        <div class="placeholder"><span>+ More tools coming</span></div>
+        <div class="section-label">Recommended Protocols</div>
+        <div class="item item-proto">
+          <div class="item-name">one-thing-card</div>
+          <div class="item-sub">Isolate the single most important thing</div>
+        </div>
+        <div class="item item-proto">
+          <div class="item-name">why-chain</div>
+          <div class="item-sub">Trace motivation back to root values</div>
+        </div>
+        <div class="item item-proto">
+          <div class="item-name">narrative-zoom-out</div>
+          <div class="item-sub">Recontextualise current struggle</div>
+        </div>
+        <div class="item-cta" style="padding: 4px 2px; font-size:11px; color:#333; cursor:pointer;">27 STORY protocols →</div>
+      </div>
+    </div>
+
+    <!-- SPIRIT -->
+    <div class="col col-spirit">
+      <div class="col-header">
+        <div class="col-name">Spirit</div>
+        <div class="col-q">"What is always true for me?"</div>
+        <div class="signal-bar-bg"><div class="signal-bar"></div></div>
+      </div>
+      <div class="col-body">
+        <div class="section-label">Profile</div>
+        <div class="item item-tool">
+          <div class="item-type">Your Profile · March 2026</div>
+          <div class="item-name">Flow Profile</div>
+          <div class="item-sub">"You move fast when the channel is open — and the channel opens through the body…"</div>
+          <div class="item-cta"><span>Read full →</span><span style="font-size:10px;color:#444">Copy for LLM</span></div>
+        </div>
+        <div class="item item-tool">
+          <div class="item-type">Identity</div>
+          <div class="item-name">Numerology · Etymology</div>
+          <div class="item-sub">Name meaning, life path number, astrology birth chart</div>
+          <div class="item-cta"><span>Set up →</span></div>
+        </div>
+        <div class="section-label">Knowledge</div>
+        <div class="item item-tool">
+          <div class="item-type">Library</div>
+          <div class="item-name">Protocol Library</div>
+          <div class="item-sub">191 cards — browse, filter, study</div>
+          <div class="item-cta"><span>Browse →</span></div>
+        </div>
+        <div class="item item-tool">
+          <div class="item-type">Practice</div>
+          <div class="item-name">Daily Reps</div>
+          <div class="item-sub">Spaced repetition · 6/10 today</div>
+          <div class="item-cta"><span>Continue →</span></div>
+        </div>
+        <div class="section-label">Recommended Protocols</div>
+        <div class="item item-proto rec">
+          <div class="item-name"><span class="rec-star">★</span>excitement-as-gps</div>
+          <div class="item-sub">Use aliveness as a directional signal</div>
+        </div>
+        <div class="item-cta" style="padding: 4px 2px; font-size:11px; color:#333; cursor:pointer;">27 SPIRIT protocols →</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- UNAUTHED -->
+<div id="unauthed" class="hidden">
+  <div class="disc-wrap">
+    <h1>Flow Playground</h1>
+    <div class="disc-pitch">Four dimensions. One signal. See exactly where you're clear — and where you're blocked.</div>
+    <div class="disc-btns">
+      <button class="btn-p">Sign in</button>
+      <button class="btn-s">Take the Flow Profile</button>
+    </div>
+    <div class="disc-grid">
+      <div class="disc-col"><div class="disc-col-name d-self">Self</div><div class="disc-col-tags"><div class="disc-tag">FlowRead</div><div class="disc-tag">FlowSpark</div><div class="disc-tag">27 protocols</div></div></div>
+      <div class="disc-col"><div class="disc-col-name d-space">Space</div><div class="disc-col-tags"><div class="disc-tag">FlowZone</div><div class="disc-tag">27 protocols</div></div></div>
+      <div class="disc-col"><div class="disc-col-name d-story">Story</div><div class="disc-col-tags"><div class="disc-tag">Coming soon</div><div class="disc-tag">27 protocols</div></div></div>
+      <div class="disc-col"><div class="disc-col-name d-spirit">Spirit</div><div class="disc-col-tags"><div class="disc-tag">Flow Profile</div><div class="disc-tag">Numerology</div><div class="disc-tag">Library</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <h4>Concept 1 Assessment</h4>
+  <ul>
+    <li class="p">Signal bars make your current state visible at a glance — FourFlow's thesis made visual</li>
+    <li class="p">SELF watch-point callout adds genuine intelligence to the layout</li>
+    <li class="p">Every tool has a clear pillar home — extensibility is structural</li>
+    <li class="c">Four columns on mobile = unusable without redesign</li>
+    <li class="c">Empty STORY column is conspicuous — signals incompleteness</li>
+    <li class="c">Framework-heavy — requires prior knowledge of the 4 pillars to feel oriented</li>
+  </ul>
+</div>
+
+<script>
+function show(id, btn) {
+  ['authed','unauthed'].forEach(v => document.getElementById(v).classList.toggle('hidden', v !== id));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  btn.classList.add('on');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FourFlowOS — Box Design Proposals</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #080808;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    padding: 48px 32px;
+    min-height: 100vh;
+  }
+
+  .page-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 6px;
+  }
+  .page-title {
+    font-size: 30px;
+    font-weight: 300;
+    color: #eee;
+    margin-bottom: 6px;
+  }
+  .page-sub {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 56px;
+    line-height: 1.5;
+  }
+
+  .proposal {
+    margin-bottom: 72px;
+  }
+  .proposal-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 4px;
+  }
+  .proposal-title {
+    font-size: 20px;
+    font-weight: 400;
+    color: #ccc;
+    margin-bottom: 4px;
+  }
+  .proposal-desc {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 24px;
+    max-width: 640px;
+    line-height: 1.6;
+  }
+
+  .cards-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 900px) {
+    .cards-row { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ── Shared card internals ───────────────────────────────────── */
+  .card-inner {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    padding: 16px;
+  }
+
+  .left-col {
+    width: 130px;
+    flex-shrink: 0;
+    padding-right: 14px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .dim-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .dim-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .dim-name {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .key-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.04);
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .key-btn.active {
+    /* set inline per pillar */
+  }
+
+  .key-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+  }
+
+  .key-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #ccc;
+    line-height: 1.2;
+  }
+
+  .key-chevron {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .right-col {
+    flex: 1;
+    min-width: 0;
+    padding-left: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .q-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .q-text {
+    font-size: 9.5px;
+    color: #555;
+    font-style: italic;
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .close-btn {
+    font-size: 14px;
+    color: #444;
+    cursor: pointer;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 1px;
+  }
+
+  /* New key container (item 1 changes shown in all proposals) */
+  .key-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  .key-icon-wrap {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .key-text {
+    font-size: 11.5px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.45;
+  }
+
+  .insight-text {
+    font-size: 10.5px;
+    color: #777;
+    line-height: 1.6;
+  }
+
+  /* ── SVG Key icon ────────────────────────────────────────────── */
+  .key-svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* ── Wave animation (Proposal C) ────────────────────────────── */
+  @keyframes wave-slide {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .wave-anim {
+    animation: wave-slide 4s linear infinite;
+  }
+
+  /* ── Dot grid animation (Proposal E) ───────────────────────── */
+  @keyframes dot-pulse {
+    0%, 100% { opacity: 0.18; }
+    50% { opacity: 0.36; }
+  }
+  .dot-grid-anim {
+    animation: dot-pulse 3s ease-in-out infinite;
+  }
+
+  /* ── Glyph pulse (Proposal D) ───────────────────────────────── */
+  @keyframes glyph-glow {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.65; }
+  }
+  .glyph-anim {
+    animation: glyph-glow 3s ease-in-out infinite;
+  }
+
+  /* ── Signal dot pulse (Proposal B) ─────────────────────────── */
+  @keyframes dot-on {
+    0%, 100% { box-shadow: 0 0 0 0 transparent; }
+    50% { box-shadow: 0 0 6px 2px var(--pc); }
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.05);
+    margin: 32px 0;
+  }
+
+  .note {
+    font-size: 10px;
+    color: #3a3a3a;
+    margin-top: 14px;
+    line-height: 1.7;
+    max-width: 800px;
+  }
+  .note strong {
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<p class="page-eyebrow">FourFlowOS · Design Lab</p>
+<h1 class="page-title">Box Design Proposals</h1>
+<p class="page-sub">
+  Replacing the generic 3px top bar. Each proposal shown across all 4 pillars.<br>
+  The new key layout (framing question + key container with icon) is shown in all cards.
+</p>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     PROPOSAL A — PILLAR SLASH (Corner Chamfer)
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="proposal">
+  <p class="proposal-eyebrow">Proposal A</p>
+  <h2 class="proposal-title">"Pillar Slash" — Corner Chamfer</h2>
+  <p class="proposal-desc">The top-left corner is geometrically cut (chamfered), revealing the pillar color as a structural notch — like a keyhole or a deck of cards fanned out. No bar, no shadow. Just a precise architectural cut. The colored corner signals which pillar without needing a label.</p>
+  <div class="cards-row" id="row-a"></div>
+  <p class="note"><strong>What's unique:</strong> No other major design system does this. It's angular in a sea of rounded cards, signals the pillar through geometry rather than decoration, and scales perfectly — the chamfer is the brand mark.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     PROPOSAL B — SIGNAL PULSE (Left Spine with Dots)
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="proposal">
+  <p class="proposal-eyebrow">Proposal B</p>
+  <h2 class="proposal-title">"Signal Pulse" — Left Spine</h2>
+  <p class="proposal-desc">A thin vertical colored line on the left edge carries 3 equally-spaced circular nodes — one per Flow Key in the pillar. The active key's node glows full color; others rest at dim. No top bar. The card edge becomes a living mini-legend.</p>
+  <div class="cards-row" id="row-b"></div>
+  <p class="note"><strong>What's unique:</strong> The dots are functional, not decorative — they mirror the 3 keys inside the card. Clicking a key makes a dot glow. Most distinctive on dark bg; communicates "system" without any labels.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     PROPOSAL C — FREQUENCY LINE (SVG Wave)
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="proposal">
+  <p class="proposal-eyebrow">Proposal C</p>
+  <h2 class="proposal-title">"Frequency Line" — Animated Wave</h2>
+  <p class="proposal-desc">A subtle SVG sine wave runs across the top edge in the pillar color — like an EEG readout, a sound wave, a signal trace. At rest it breathes slowly. When a key is active, it flows continuously. Flow as frequency — directly on-brand.</p>
+  <div class="cards-row" id="row-c"></div>
+  <p class="note"><strong>What's unique:</strong> No other wellness/productivity brand uses this. The wave is both visual metaphor (flow = frequency) and subtle animation — it doesn't shout but it moves. Immediately distinctive on scroll.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     PROPOSAL D — GLYPH CORNER (Branded Sigil)
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="proposal">
+  <p class="proposal-eyebrow">Proposal D</p>
+  <h2 class="proposal-title">"Glyph Corner" — Pillar Sigil</h2>
+  <p class="proposal-desc">No bar. No line. A small branded sigil (◈) sits in the top-right corner of every card, glowing softly in the pillar color. Like a wax seal or a classification mark — it says "this belongs to a system." Premium, editorial, quiet.</p>
+  <div class="cards-row" id="row-d"></div>
+  <p class="note"><strong>What's unique:</strong> Maximum restraint. The card is almost barebones — the sigil is the only decoration. Reads as ultra-premium. Works well if the content itself is strong enough to carry the card (which it is).</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     PROPOSAL E — INTERFERENCE GRID (Dotted Mesh)
+═══════════════════════════════════════════════════════════════════════════ -->
+<div class="proposal">
+  <p class="proposal-eyebrow">Proposal E</p>
+  <h2 class="proposal-title">"Interference Grid" — Dot Mesh</h2>
+  <p class="proposal-desc">The top strip of each card shows a tight dot-grid pattern in the pillar color — like a signal broadcast, a circuit board header, or an oscilloscope. The mesh fades into the dark card background. Quietly technical, distinct, patterned.</p>
+  <div class="cards-row" id="row-e"></div>
+  <p class="note"><strong>What's unique:</strong> Textural rather than linear. Every other design in this space uses lines — this uses a field. Suggests "data," "signal density," "something beneath the surface." Works especially well for the /me page context.</p>
+</div>
+
+<script>
+const PILLARS = [
+  {
+    id: 'self',
+    name: 'SELF',
+    color: '#E84535',
+    rgb: '232, 69, 53',
+    icon: '◉',
+    keys: ['Tuned Emotions', 'Focused Body', 'Open Mind'],
+    activeKey: 1,
+    question: 'How does your physical state support or block flow?',
+    personalKey: 'Numbness is not the absence of feeling — it\'s what happens when your body has been moving without a beat to return to.',
+    insight: 'Energy at 5/10. Body running on fumes without a structured return. Rhythm before rest.',
+  },
+  {
+    id: 'space',
+    name: 'SPACE',
+    color: '#4E8C73',
+    rgb: '78, 140, 115',
+    icon: '◎',
+    keys: ['Intentional Space', 'Optimized Tools', 'Feedback Systems'],
+    activeKey: 0,
+    question: 'How does the space around you invite or block flow?',
+    personalKey: 'Your environment is already teaching your nervous system something — the question is whether you designed that lesson.',
+    insight: 'The tools carry friction you\'ve normalized. Subtraction is the move before any addition.',
+  },
+  {
+    id: 'story',
+    name: 'STORY',
+    color: '#3E6FA3',
+    rgb: '62, 111, 163',
+    icon: '◈',
+    keys: ['Generative Story', 'Clear Mission', 'Empowered Role'],
+    activeKey: 1,
+    question: 'How does clarity of direction affect your access to flow?',
+    personalKey: 'You have goals — but the story connecting them is still forming. The mission needs sharpening before the map makes sense.',
+    insight: 'Direction without narrative creates motion without momentum. Story first, tactics second.',
+  },
+  {
+    id: 'spirit',
+    name: 'SPIRIT',
+    color: '#6330A0',
+    rgb: '99, 48, 160',
+    icon: '◇',
+    keys: ['Grounding Values', 'Ignited Curiosity', 'Visualized Vision'],
+    activeKey: 1,
+    question: 'How does genuine interest fuel or deplete flow?',
+    personalKey: 'What you\'re curious about is not random. It\'s the signal your system sends when it\'s aligned — follow it without apology.',
+    insight: 'Curiosity peaking in places that feel "unproductive." That signal is real. The ROI calculation is wrong.',
+  },
+];
+
+// ── Shared: Key SVG icon ──────────────────────────────────────────────────
+function keySVG(color, size = 14) {
+  return `<svg width="${size}" height="${size}" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="6" cy="6" r="4" stroke="${color}" stroke-width="1.5"/>
+    <line x1="9" y1="9" x2="14.5" y2="14.5" stroke="${color}" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="12" y1="12" x2="12" y2="14" stroke="${color}" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="13.5" y1="11" x2="15" y2="11" stroke="${color}" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`;
+}
+
+// ── Shared: right-column content ─────────────────────────────────────────
+function rightCol(p) {
+  return `
+    <div class="right-col">
+      <div class="q-row">
+        <p class="q-text">${p.question}</p>
+        <span class="close-btn">×</span>
+      </div>
+      <div class="key-container" style="
+        background: rgba(${p.rgb}, 0.10);
+        border: 1px solid rgba(${p.rgb}, 0.30);
+      ">
+        <div class="key-icon-wrap">${keySVG(p.color, 15)}</div>
+        <p class="key-text" style="color: ${p.color}">${p.personalKey}</p>
+      </div>
+      <p class="insight-text">${p.insight}</p>
+    </div>
+  `;
+}
+
+// ── Shared: left-column content ──────────────────────────────────────────
+function leftCol(p) {
+  const keys = p.keys.map((k, i) => {
+    const isActive = i === p.activeKey;
+    return `
+      <div class="key-btn ${isActive ? 'active' : ''}" style="${isActive ? `background: rgba(${p.rgb}, 0.18); border-color: rgba(${p.rgb}, 0.45);` : ''}">
+        <div class="key-dot" style="background: rgba(${p.rgb}, ${isActive ? '0.3' : '0.15'})">
+          <span style="font-size:8px; color: ${isActive ? p.color : 'rgba(255,255,255,0.3)'}">●</span>
+        </div>
+        <span class="key-label" style="color: ${isActive ? '#fff' : '#999'}">${k}</span>
+        ${isActive ? `<span class="key-chevron">›</span>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="left-col">
+      <div class="dim-header">
+        <div class="dim-icon" style="background: rgba(${p.rgb}, 0.18)">
+          <span style="color: ${p.color}">${p.icon}</span>
+        </div>
+        <span class="dim-name" style="color: ${p.color}">${p.name}</span>
+      </div>
+      ${keys}
+    </div>
+  `;
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// PROPOSAL A — Corner Chamfer
+// ══════════════════════════════════════════════════════════════════════════
+function cardA(p) {
+  const wrap = document.createElement('div');
+  wrap.style.cssText = `position: relative;`;
+
+  // The colored triangle behind — top-left corner
+  const triangle = document.createElement('div');
+  triangle.style.cssText = `
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 0;
+    border-top: 26px solid ${p.color};
+    border-right: 26px solid transparent;
+    z-index: 1;
+  `;
+
+  // Main card with chamfered top-left corner (clip-path for chamfer, border-radius for other corners)
+  const card = document.createElement('div');
+  card.style.cssText = `
+    background: rgba(18, 18, 18, 0.97);
+    border: 1px solid rgba(${p.rgb}, 0.22);
+    border-radius: 4px 14px 14px 14px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(22px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 22px);
+  `;
+
+  card.innerHTML = `<div class="card-inner">${leftCol(p)}${rightCol(p)}</div>`;
+  wrap.appendChild(triangle);
+  wrap.appendChild(card);
+  return wrap;
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// PROPOSAL B — Left Spine with Signal Dots
+// ══════════════════════════════════════════════════════════════════════════
+function cardB(p) {
+  const wrap = document.createElement('div');
+  wrap.style.cssText = `position: relative; display: flex;`;
+
+  // Left spine
+  const spine = document.createElement('div');
+  spine.style.cssText = `
+    width: 20px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    background: rgba(${p.rgb}, 0.05);
+    border-right: 1px solid rgba(${p.rgb}, 0.15);
+    border-radius: 14px 0 0 14px;
+  `;
+
+  for (let i = 0; i < 3; i++) {
+    const isActive = i === p.activeKey;
+    const dot = document.createElement('div');
+    dot.style.cssText = `
+      width: ${isActive ? 8 : 5}px;
+      height: ${isActive ? 8 : 5}px;
+      border-radius: 50%;
+      background: ${isActive ? p.color : `rgba(${p.rgb}, 0.25)`};
+      transition: all 0.3s;
+      ${isActive ? `box-shadow: 0 0 8px 2px rgba(${p.rgb}, 0.5);` : ''}
+    `;
+    spine.appendChild(dot);
+  }
+
+  // Card
+  const card = document.createElement('div');
+  card.style.cssText = `
+    flex: 1;
+    background: rgba(18, 18, 18, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: none;
+    border-radius: 0 14px 14px 0;
+    overflow: hidden;
+  `;
+
+  card.innerHTML = `<div class="card-inner">${leftCol(p)}${rightCol(p)}</div>`;
+  wrap.appendChild(spine);
+  wrap.appendChild(card);
+  return wrap;
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// PROPOSAL C — Frequency Wave
+// ══════════════════════════════════════════════════════════════════════════
+function wavePathD(width, height = 7, cycles = 8) {
+  // Generate a smooth sine-wave path for SVG
+  const pts = [];
+  const totalW = width * 2; // double width for seamless loop animation
+  const step = totalW / (cycles * 2 * 4);
+  pts.push(`M0,${height / 2}`);
+  for (let x = 0; x <= totalW; x += step) {
+    const y = (height / 2) + (height / 2.5) * Math.sin((x / totalW) * cycles * Math.PI * 2);
+    pts.push(`L${x.toFixed(1)},${y.toFixed(2)}`);
+  }
+  return pts.join(' ');
+}
+
+function cardC(p) {
+  const wrap = document.createElement('div');
+  wrap.style.cssText = `
+    background: rgba(18, 18, 18, 0.97);
+    border: 1px solid rgba(${p.rgb}, 0.20);
+    border-radius: 14px;
+    overflow: hidden;
+  `;
+
+  // Wave strip at top
+  const waveWrap = document.createElement('div');
+  waveWrap.style.cssText = `
+    width: 100%;
+    overflow: hidden;
+    height: 10px;
+    position: relative;
+  `;
+
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('width', '200%');
+  svg.setAttribute('height', '10');
+  svg.setAttribute('viewBox', '0 0 800 10');
+  svg.setAttribute('preserveAspectRatio', 'none');
+  svg.style.cssText = `
+    position: absolute;
+    top: 0; left: 0;
+    animation: wave-slide 5s linear infinite;
+  `;
+
+  const path = document.createElementNS(svgNS, 'path');
+  path.setAttribute('d', wavePathD(400, 9, 12));
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', p.color);
+  path.setAttribute('stroke-width', '1.5');
+  path.setAttribute('opacity', '0.55');
+
+  svg.appendChild(path);
+  waveWrap.appendChild(svg);
+
+  // Content
+  const inner = document.createElement('div');
+  inner.className = 'card-inner';
+  inner.innerHTML = `${leftCol(p)}${rightCol(p)}`;
+
+  wrap.appendChild(waveWrap);
+  wrap.appendChild(inner);
+  return wrap;
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// PROPOSAL D — Glyph Corner Sigil
+// ══════════════════════════════════════════════════════════════════════════
+// Different sigil per pillar
+const SIGILS = { self: '◉', space: '◎', story: '◈', spirit: '◇' };
+
+function cardD(p) {
+  const wrap = document.createElement('div');
+  wrap.style.cssText = `
+    background: rgba(18, 18, 18, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+  `;
+
+  // Sigil top-right — subtle ambient glow circle behind it
+  const glowBg = document.createElement('div');
+  glowBg.style.cssText = `
+    position: absolute;
+    top: -18px; right: -18px;
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(${p.rgb}, 0.18), transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  `;
+
+  const sigil = document.createElement('div');
+  sigil.style.cssText = `
+    position: absolute;
+    top: 9px; right: 11px;
+    font-size: 16px;
+    color: ${p.color};
+    opacity: 0.45;
+    animation: glyph-glow 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+    line-height: 1;
+  `;
+  sigil.textContent = SIGILS[p.id];
+
+  const inner = document.createElement('div');
+  inner.className = 'card-inner';
+  inner.innerHTML = `${leftCol(p)}${rightCol(p)}`;
+
+  wrap.appendChild(glowBg);
+  wrap.appendChild(sigil);
+  wrap.appendChild(inner);
+  return wrap;
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// PROPOSAL E — Interference Dot Grid
+// ══════════════════════════════════════════════════════════════════════════
+function cardE(p) {
+  const wrap = document.createElement('div');
+  wrap.style.cssText = `
+    background: rgba(18, 18, 18, 0.97);
+    border: 1px solid rgba(${p.rgb}, 0.20);
+    border-radius: 14px;
+    overflow: hidden;
+  `;
+
+  // Dot grid header strip
+  const dotStrip = document.createElement('div');
+  dotStrip.style.cssText = `
+    height: 18px;
+    width: 100%;
+    background-image: radial-gradient(circle, rgba(${p.rgb}, 0.55) 1px, transparent 1px);
+    background-size: 8px 8px;
+    background-position: 4px 4px;
+    animation: dot-pulse 3.5s ease-in-out infinite;
+    border-bottom: 1px solid rgba(${p.rgb}, 0.12);
+  `;
+
+  const inner = document.createElement('div');
+  inner.className = 'card-inner';
+  inner.innerHTML = `${leftCol(p)}${rightCol(p)}`;
+
+  wrap.appendChild(dotStrip);
+  wrap.appendChild(inner);
+  return wrap;
+}
+
+// ── Render all rows ───────────────────────────────────────────────────────
+const rows = {
+  a: [cardA, 'row-a'],
+  b: [cardB, 'row-b'],
+  c: [cardC, 'row-c'],
+  d: [cardD, 'row-d'],
+  e: [cardE, 'row-e'],
+};
+
+for (const [, [fn, rowId]] of Object.entries(rows)) {
+  const container = document.getElementById(rowId);
+  for (const pillar of PILLARS) {
+    container.appendChild(fn(pillar));
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept 4 — The Question</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0a0a0a; color: #F5F5F5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+:root { --coral: #FF6F61; --sage: #6BA292; --steel: #5B84B1; --amethyst: #7A4DA4; --s: #141414; --s2: #111; }
+.badge { padding: 10px 24px; font-size: 11px; color: #555; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid #111; display: flex; justify-content: space-between; }
+.badge span { color: #888; }
+.tabs { display: flex; gap: 8px; padding: 14px 24px; border-bottom: 1px solid #1a1a1a; }
+.tab { padding: 5px 14px; border-radius: 20px; border: 1px solid #2a2a2a; background: transparent; color: #555; font-size: 12px; cursor: pointer; }
+.tab.on { background: #1e1e1e; color: #eee; border-color: #444; }
+.hidden { display: none; }
+
+/* ── STATE A: QUESTION (default landing) ── */
+.question-view { min-height: calc(100vh - 86px); display: flex; flex-direction: column; }
+
+.q-header { padding: 24px 28px 0; display: flex; justify-content: space-between; align-items: center; }
+.q-header .site-name { font-size: 16px; font-weight: 300; color: #555; }
+.q-header .user-link { font-size: 12px; color: #444; cursor: pointer; }
+
+.q-center { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; text-align: center; }
+.q-greeting { font-size: 13px; color: #444; margin-bottom: 24px; }
+.q-prompt { font-size: 28px; font-weight: 300; color: #ccc; letter-spacing: -.5px; margin-bottom: 36px; }
+
+/* State chips */
+.state-chips { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+.state-chip { padding: 12px 20px; border-radius: 100px; border: 1px solid #2a2a2a; background: var(--s); font-size: 14px; color: #888; cursor: pointer; transition: all .2s; }
+.state-chip:hover { border-color: #444; color: #F5F5F5; }
+.state-chip.active { color: #F5F5F5; }
+.chip-focus:hover, .chip-focus.active { border-color: var(--sage); background: rgba(107,162,146,.08); color: var(--sage); }
+.chip-explore:hover, .chip-explore.active { border-color: var(--coral); background: rgba(255,111,97,.08); color: var(--coral); }
+.chip-clarify:hover, .chip-clarify.active { border-color: var(--amethyst); background: rgba(122,77,164,.08); color: var(--amethyst); }
+.chip-build:hover, .chip-build.active { border-color: var(--steel); background: rgba(91,132,177,.08); color: var(--steel); }
+.chip-recover:hover, .chip-recover.active { border-color: #888; background: rgba(255,255,255,.04); color: #aaa; }
+
+/* Free text input */
+.q-input-wrap { display: flex; align-items: center; gap: 10px; width: 100%; max-width: 440px; margin-bottom: 16px; }
+.q-input { flex: 1; background: var(--s); border: 1px solid #2a2a2a; border-radius: 10px; padding: 12px 16px; font-size: 14px; color: #F5F5F5; outline: none; }
+.q-input::placeholder { color: #444; }
+.q-input:focus { border-color: #555; }
+.q-go { padding: 12px 20px; background: #1e1e1e; border: 1px solid #333; border-radius: 10px; color: #888; font-size: 13px; cursor: pointer; white-space: nowrap; }
+.q-go:hover { color: #F5F5F5; border-color: #555; }
+.q-hint { font-size: 12px; color: #333; }
+
+/* Profile strip at bottom of question view */
+.q-profile-strip { padding: 16px 28px; border-top: 1px solid #111; display: flex; align-items: center; gap: 16px; }
+.qps-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amethyst); }
+.qps-text { font-size: 12px; color: #555; flex: 1; }
+.qps-link { font-size: 12px; color: #444; cursor: pointer; }
+.qps-link:hover { color: #888; }
+
+/* ── STATE B: RESPONSE (after chip selected) ── */
+.response-view { }
+
+.rv-header { padding: 20px 28px; border-bottom: 1px solid #111; display: flex; align-items: center; gap: 16px; }
+.rv-back { font-size: 13px; color: #444; cursor: pointer; }
+.rv-state { font-size: 18px; font-weight: 400; }
+.rv-sub { font-size: 13px; color: #555; margin-left: auto; font-style: italic; }
+
+.rv-body { padding: 24px 28px; display: grid; grid-template-columns: 1fr 320px; gap: 20px; }
+
+/* Primary tool(s) */
+.rv-tools { display: flex; flex-direction: column; gap: 12px; }
+.rv-tool-primary { background: linear-gradient(135deg, #0d1a16 0%, #0a0a0a 80%); border: 1px solid #1a2a22; border-radius: 14px; padding: 28px; position: relative; overflow: hidden; }
+.rtp-glow { position: absolute; right: -40px; top: -40px; width: 160px; height: 160px; border-radius: 50%; opacity: .05; }
+.rtp-label { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+.rtp-name { font-size: 22px; font-weight: 300; margin-bottom: 6px; }
+.rtp-desc { font-size: 13px; color: #555; margin-bottom: 22px; line-height: 1.5; }
+.rtp-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 10px; font-size: 14px; cursor: pointer; border: none; }
+.rtp-stats { display: flex; gap: 24px; margin-top: 20px; }
+.rtp-stat .n { font-size: 20px; font-weight: 300; }
+.rtp-stat .l { font-size: 11px; color: #555; margin-top: 2px; }
+
+/* Supporting tools */
+.rv-tool-secondary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.rvts-card { background: var(--s); border: 1px solid #1e1e1e; border-radius: 12px; padding: 16px; cursor: pointer; }
+.rvts-card:hover { border-color: #2a2a2a; }
+.rvts-label { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+.rvts-name { font-size: 14px; margin-bottom: 4px; }
+.rvts-sub { font-size: 11px; color: #555; }
+.rvts-cta { font-size: 11px; color: #444; margin-top: 8px; }
+
+/* Protocol sidebar */
+.rv-protocols { background: var(--s); border: 1px solid #1e1e1e; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 10px; height: fit-content; }
+.rvp-label { font-size: 11px; color: #555; letter-spacing: .08em; text-transform: uppercase; }
+.rvp-rec { font-size: 10px; color: #444; text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+.rvp-item { padding: 9px 11px; background: var(--s2); border-radius: 8px; }
+.rvp-item.top { background: #0f0f0f; border: 1px solid #252525; }
+.rvp-name { font-size: 12px; color: #ccc; margin-bottom: 3px; }
+.rvp-desc { font-size: 11px; color: #555; }
+.rvp-star { float: right; font-size: 10px; }
+.rvp-divider { border: none; border-top: 1px solid #1a1a1a; }
+.rvp-all { font-size: 12px; color: #444; cursor: pointer; display: flex; justify-content: space-between; }
+.rvp-all:hover { color: #888; }
+
+/* DISCOVERY */
+.disc { min-height: calc(100vh - 86px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 24px; }
+.disc h1 { font-size: 32px; font-weight: 300; letter-spacing: -1px; margin-bottom: 12px; }
+.disc .q { font-size: 26px; font-weight: 300; color: #444; margin-bottom: 36px; }
+.disc-chips { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; opacity: .4; pointer-events: none; }
+.disc-chip { padding: 11px 20px; border-radius: 100px; border: 1px solid #2a2a2a; font-size: 14px; color: #777; }
+.disc-btns { display: flex; gap: 10px; }
+.btn-p { padding: 12px 28px; background: #F5F5F5; color: #0a0a0a; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; }
+.btn-s { padding: 12px 28px; background: transparent; color: #777; border: 1px solid #2a2a2a; border-radius: 8px; font-size: 13px; cursor: pointer; }
+
+.note { padding: 16px 24px; border-top: 1px solid #111; }
+.note h4 { font-size: 11px; color: #444; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+.note ul { list-style: none; display: flex; flex-wrap: wrap; gap: 5px 24px; }
+.note li { font-size: 12px; color: #555; padding-left: 14px; position: relative; }
+.note li::before { content: '—'; position: absolute; left: 0; color: #2a2a2a; }
+.note li.p::before { content: '+'; color: var(--sage); }
+.note li.c::before { content: '−'; color: var(--coral); }
+</style>
+</head>
+<body>
+
+<div class="badge">Concept 4 — <span>The Question</span> &nbsp;·&nbsp; "One prompt. Tools and protocols surface in response to your state. No menu to navigate."</div>
+<div class="tabs">
+  <button class="tab on" onclick="show('question',this)">State A — Landing question</button>
+  <button class="tab" onclick="show('response',this)">State B — After selecting "Focus"</button>
+  <button class="tab" onclick="show('unauthed',this)">New visitor</button>
+</div>
+
+<!-- QUESTION VIEW -->
+<div id="question" class="question-view">
+  <div class="q-header">
+    <div class="site-name">Flow Playground</div>
+    <div class="user-link">Alex · Your Profile →</div>
+  </div>
+
+  <div class="q-center">
+    <div class="q-greeting">Good afternoon, Alex &nbsp;·&nbsp; Monday</div>
+    <div class="q-prompt">What do you need right now?</div>
+
+    <div class="state-chips">
+      <div class="state-chip chip-focus" onclick="show('response', document.querySelectorAll('.tab')[1])">Focus &nbsp;·&nbsp; I need to do the work</div>
+      <div class="state-chip chip-explore">Explore &nbsp;·&nbsp; I want to follow what pulls me</div>
+      <div class="state-chip chip-clarify">Clarify &nbsp;·&nbsp; I need to understand where I am</div>
+      <div class="state-chip chip-build">Build &nbsp;·&nbsp; I'm ready to plan and execute</div>
+      <div class="state-chip chip-recover">Recover &nbsp;·&nbsp; I'm scattered or depleted</div>
+    </div>
+
+    <div class="q-input-wrap">
+      <input class="q-input" type="text" placeholder="Or describe your state in your own words…">
+      <button class="q-go">→</button>
+    </div>
+    <div class="q-hint">Type anything — "I'm distracted", "I have a big decision", "I feel stuck"</div>
+  </div>
+
+  <div class="q-profile-strip">
+    <div class="qps-dot"></div>
+    <div class="qps-text">Flow Profile active · SELF watch-point · last updated March 2026</div>
+    <div class="qps-link">Protocol Library (191) →</div>
+    <div class="qps-link" style="margin-left:16px">Daily Reps →</div>
+    <div class="qps-link" style="margin-left:16px">Identity Layer →</div>
+  </div>
+</div>
+
+<!-- RESPONSE VIEW: FOCUS -->
+<div id="response" class="response-view hidden">
+  <div class="rv-header">
+    <div class="rv-back">← Change state</div>
+    <div class="rv-state" style="color: var(--sage)">Focus</div>
+    <div class="rv-sub">"Is my environment supporting signal flow?"</div>
+  </div>
+
+  <div class="rv-body">
+    <div class="rv-tools">
+      <!-- Primary: FlowZone -->
+      <div class="rv-tool-primary">
+        <div class="rtp-glow" style="background:var(--sage)"></div>
+        <div class="rtp-label" style="color:var(--sage)">Primary Tool · SPACE</div>
+        <div class="rtp-name">FlowZone</div>
+        <div class="rtp-desc">Your dedicated focus environment. Start a session, make a rep every time distraction pulls you back, watch the work compound.</div>
+        <button class="rtp-btn" style="background:rgba(107,162,146,.15); color:var(--sage)">Enter Flow Space →</button>
+        <div class="rtp-stats">
+          <div class="rtp-stat"><div class="n" style="color:var(--sage)">12</div><div class="l">sessions this week</div></div>
+          <div class="rtp-stat"><div class="n" style="color:var(--sage)">47</div><div class="l">Focus Reps total</div></div>
+          <div class="rtp-stat"><div class="n" style="color:var(--sage)">4d</div><div class="l">streak</div></div>
+        </div>
+      </div>
+
+      <!-- Supporting -->
+      <div class="rv-tool-secondary">
+        <div class="rvts-card">
+          <div class="rvts-label" style="color:var(--coral)">SELF · Before session</div>
+          <div class="rvts-name">Breathwork</div>
+          <div class="rvts-sub">Regulate state before you sit down. Box breathing, 4-7-8, Wim Hof.</div>
+          <div class="rvts-cta">Start now →</div>
+        </div>
+        <div class="rvts-card">
+          <div class="rvts-label" style="color:var(--coral)">SELF · Input quality</div>
+          <div class="rvts-name">FlowRead</div>
+          <div class="rvts-sub">Speed read your source material first. Prime the mind before deep work.</div>
+          <div class="rvts-cta">Open →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Protocol sidebar -->
+    <div class="rv-protocols">
+      <div class="rvp-label">Protocols for Focus</div>
+      <div class="rvp-rec">★ Recommended for you</div>
+
+      <div class="rvp-item top">
+        <span class="rvp-star" style="color:var(--coral)">★</span>
+        <div class="rvp-name">breath-regulation</div>
+        <div class="rvp-desc">Regulate before you start — SELF watch-point</div>
+      </div>
+      <div class="rvp-item top">
+        <span class="rvp-star" style="color:var(--sage)">★</span>
+        <div class="rvp-name">interruption-gate-protocol</div>
+        <div class="rvp-desc">Protect your focus window from breaks</div>
+      </div>
+      <hr class="rvp-divider">
+      <div class="rvp-item">
+        <div class="rvp-name">one-click-session-launch</div>
+        <div class="rvp-desc">Remove friction from starting</div>
+      </div>
+      <div class="rvp-item">
+        <div class="rvp-name">single-surface-rule</div>
+        <div class="rvp-desc">One input, full attention</div>
+      </div>
+      <div class="rvp-item">
+        <div class="rvp-name">body-state-check</div>
+        <div class="rvp-desc">Read body signals before sitting down</div>
+      </div>
+      <div class="rvp-item">
+        <div class="rvp-name">time-block-defense</div>
+        <div class="rvp-desc">Protect your block from external demands</div>
+      </div>
+      <hr class="rvp-divider">
+      <div class="rvp-all">
+        <span>All Focus protocols</span>
+        <span>18 → </span>
+      </div>
+      <div class="rvp-all">
+        <span>Full Library</span>
+        <span>191 →</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCOVERY -->
+<div id="unauthed" class="disc hidden">
+  <h1>Flow Playground</h1>
+  <div class="q">What do you need right now?</div>
+  <div class="disc-chips">
+    <div class="disc-chip">Focus</div>
+    <div class="disc-chip">Explore</div>
+    <div class="disc-chip">Clarify</div>
+    <div class="disc-chip">Build</div>
+    <div class="disc-chip">Recover</div>
+  </div>
+  <div class="disc-btns">
+    <button class="btn-p">Sign in to begin</button>
+    <button class="btn-s">Take the Flow Profile</button>
+  </div>
+</div>
+
+<div class="note">
+  <h4>Concept 4 Assessment</h4>
+  <ul>
+    <li class="p">Most intelligent UX — the state chips mirror what the FourFlow Agent will eventually do</li>
+    <li class="p">Free text input is genuinely forward-thinking — types to the AI layer naturally</li>
+    <li class="p">"Recover" state chip is brilliant — meets users at their worst, not just their best</li>
+    <li class="p">Discovery view is stunning in its simplicity — one question, instant understanding</li>
+    <li class="c">Two-step to reach any tool — power users may find this friction</li>
+    <li class="c">Requires good copy for each state's response view — 5 × curated experiences</li>
+    <li class="c">Without the AI layer, the free text input is a promise the product can't fully keep yet</li>
+  </ul>
+</div>
+
+<script>
+function show(id, btn) {
+  ['question','response','unauthed'].forEach(v => document.getElementById(v).classList.toggle('hidden', v !== id));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  if (btn) btn.classList.add('on');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept 5 — The Studio</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0a0a0a; color: #F5F5F5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+:root { --coral: #FF6F61; --sage: #6BA292; --steel: #5B84B1; --amethyst: #7A4DA4; --s: #141414; }
+.badge { padding: 10px 24px; font-size: 11px; color: #555; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid #111; display: flex; justify-content: space-between; }
+.badge span { color: #888; }
+.tabs { display: flex; gap: 8px; padding: 14px 24px; border-bottom: 1px solid #1a1a1a; }
+.tab { padding: 5px 14px; border-radius: 20px; border: 1px solid #2a2a2a; background: transparent; color: #555; font-size: 12px; cursor: pointer; }
+.tab.on { background: #1e1e1e; color: #eee; border-color: #444; }
+.hidden { display: none; }
+
+/* ── STUDIO CHROME ── */
+.studio-chrome { padding: 20px 28px; display: flex; justify-content: space-between; align-items: center; }
+.studio-wordmark { font-size: 14px; font-weight: 300; letter-spacing: .05em; color: #555; }
+.studio-user { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #444; cursor: pointer; }
+.studio-user-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sage); }
+
+/* ── TILE GRID ── */
+/* Bento-style: each tile is large, immersive, color-defined */
+.studio-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+  padding: 0 20px 20px;
+}
+
+/* Each tile */
+.tile {
+  border-radius: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform .25s, box-shadow .25s;
+  padding: 24px;
+  min-height: 160px;
+}
+.tile:hover { transform: translateY(-2px); }
+
+/* Tile spans */
+.t-5 { grid-column: span 5; }
+.t-4 { grid-column: span 4; }
+.t-3 { grid-column: span 3; }
+.t-6 { grid-column: span 6; }
+.t-7 { grid-column: span 7; }
+
+/* Color variants */
+.tile-sage { background: linear-gradient(135deg, #0d2018 0%, #0a1510 100%); border: 1px solid rgba(107,162,146,.2); }
+.tile-sage:hover { box-shadow: 0 8px 40px rgba(107,162,146,.08); }
+.tile-coral { background: linear-gradient(135deg, #1e0d0b 0%, #130908 100%); border: 1px solid rgba(255,111,97,.18); }
+.tile-coral:hover { box-shadow: 0 8px 40px rgba(255,111,97,.07); }
+.tile-amethyst { background: linear-gradient(135deg, #130d1e 0%, #0d0910 100%); border: 1px solid rgba(122,77,164,.2); }
+.tile-amethyst:hover { box-shadow: 0 8px 40px rgba(122,77,164,.08); }
+.tile-steel { background: linear-gradient(135deg, #0d1220 0%, #090d14 100%); border: 1px solid rgba(91,132,177,.15); }
+.tile-steel:hover { box-shadow: 0 8px 40px rgba(91,132,177,.06); }
+.tile-dark { background: var(--s); border: 1px solid #1e1e1e; }
+.tile-dark:hover { box-shadow: 0 4px 20px rgba(0,0,0,.3); }
+.tile-ghost { background: transparent; border: 1px dashed #1a1a1a; display: flex; align-items: center; justify-content: center; }
+.tile-ghost:hover { border-color: #333; box-shadow: none; transform: none; }
+
+/* Tile content */
+.t-eyebrow { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: auto; }
+.t-name { font-size: 28px; font-weight: 300; letter-spacing: -.5px; line-height: 1.1; }
+.t-name.small { font-size: 20px; }
+.t-sub { font-size: 12px; color: #666; line-height: 1.4; margin-top: 8px; }
+.t-stat { font-size: 13px; margin-top: 10px; }
+.t-cta { font-size: 12px; opacity: .5; margin-top: 8px; }
+
+/* Large data display */
+.t-big-num { font-size: 52px; font-weight: 200; letter-spacing: -2px; line-height: 1; }
+.t-big-label { font-size: 12px; color: #666; margin-top: 4px; }
+
+/* Glow orb */
+.orb { position: absolute; border-radius: 50%; pointer-events: none; }
+
+/* Profile tile — special layout */
+.tile-profile-inner { }
+.tp-excerpt { font-size: 13px; color: #888; line-height: 1.6; margin-top: 10px; font-style: italic; }
+.tp-signal { display: flex; gap: 6px; margin-top: 16px; }
+.tp-bar { flex: 1; height: 3px; border-radius: 2px; }
+
+/* Protocol tile */
+.proto-list { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.proto-row { background: rgba(255,255,255,.03); border-radius: 6px; padding: 7px 10px; }
+.proto-row-name { font-size: 12px; color: #ccc; }
+.proto-row-key { font-size: 10px; color: #444; margin-top: 2px; }
+
+/* Identity tile */
+.id-items { display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+.id-item { }
+.id-val { font-size: 18px; font-weight: 300; }
+.id-label { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: .06em; }
+
+/* Ghost tile */
+.ghost-plus { font-size: 20px; color: #222; margin-bottom: 6px; }
+.ghost-label { font-size: 11px; color: #2a2a2a; text-align: center; }
+
+/* ── DISCOVERY ── */
+.disc-studio { display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: auto; gap: 10px; padding: 20px; min-height: calc(100vh - 86px); }
+.disc-hero-tile { grid-column: span 5; background: linear-gradient(160deg, #0d1a16 0%, #0a0a0a 100%); border: 1px solid #1e1e1e; border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column; justify-content: flex-end; min-height: 300px; }
+.dh-tagline { font-size: 11px; color: #444; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+.dh-h1 { font-size: 36px; font-weight: 300; letter-spacing: -1px; margin-bottom: 12px; }
+.dh-p { font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 24px; }
+.dh-btns { display: flex; gap: 8px; }
+.btn-p { padding: 11px 24px; background: #F5F5F5; color: #0a0a0a; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; }
+.btn-s { padding: 11px 24px; background: transparent; color: #666; border: 1px solid #2a2a2a; border-radius: 8px; font-size: 13px; cursor: pointer; }
+
+.disc-tile { border-radius: 16px; border: 1px solid #1a1a1a; overflow: hidden; position: relative; display: flex; align-items: flex-end; padding: 20px; min-height: 160px; }
+.disc-tile-bg { position: absolute; inset: 0; opacity: .04; }
+.disc-tile-name { font-size: 18px; font-weight: 300; position: relative; }
+.disc-tile-label { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 6px; position: relative; }
+
+.note { padding: 16px 24px; border-top: 1px solid #111; }
+.note h4 { font-size: 11px; color: #444; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+.note ul { list-style: none; display: flex; flex-wrap: wrap; gap: 5px 24px; }
+.note li { font-size: 12px; color: #555; padding-left: 14px; position: relative; }
+.note li::before { content: '—'; position: absolute; left: 0; color: #2a2a2a; }
+.note li.p::before { content: '+'; color: var(--sage); }
+.note li.c::before { content: '−'; color: var(--coral); }
+</style>
+</head>
+<body>
+
+<div class="badge">Concept 5 — <span>The Studio</span> &nbsp;·&nbsp; "The aesthetic is the organization. No nav, no menu — just the space. You feel it before you understand it."</div>
+<div class="tabs">
+  <button class="tab on" onclick="show('authed',this)">Signed in</button>
+  <button class="tab" onclick="show('unauthed',this)">New visitor</button>
+</div>
+
+<!-- AUTHED -->
+<div id="authed">
+  <div class="studio-chrome">
+    <div class="studio-wordmark">Flow Playground</div>
+    <div class="studio-user"><div class="studio-user-dot"></div>Alex &nbsp;·&nbsp; SELF watch-point →</div>
+  </div>
+
+  <div class="studio-grid">
+
+    <!-- FlowZone — largest, dominant -->
+    <div class="tile tile-sage t-7" style="min-height:220px;">
+      <div class="orb" style="width:280px;height:280px;background:var(--sage);opacity:.04;right:-80px;top:-80px;"></div>
+      <div class="t-eyebrow" style="color:var(--sage)">Space · Focus</div>
+      <div>
+        <div class="t-name">FlowZone</div>
+        <div class="t-sub">Dedicated session space. Focus Reps. Streak tracking.</div>
+        <div class="t-stat" style="color:var(--sage)">12 sessions this week &nbsp;·&nbsp; 4-day streak &nbsp;·&nbsp; 47 Focus Reps</div>
+        <div class="t-cta">Enter session →</div>
+      </div>
+    </div>
+
+    <!-- Recommended protocols — vertical, tall -->
+    <div class="tile tile-dark t-5" style="min-height:220px;">
+      <div class="t-eyebrow" style="color:#555">Recommended for you</div>
+      <div class="proto-list">
+        <div class="proto-row">
+          <div class="proto-row-name"><span style="color:var(--coral)">★</span> breath-regulation</div>
+          <div class="proto-row-key">SELF watch-point</div>
+        </div>
+        <div class="proto-row">
+          <div class="proto-row-name"><span style="color:var(--sage)">★</span> interruption-gate-protocol</div>
+          <div class="proto-row-key">SPACE · Intentional Space</div>
+        </div>
+        <div class="proto-row">
+          <div class="proto-row-name"><span style="color:var(--coral)">★</span> body-state-check</div>
+          <div class="proto-row-key">SELF · Focused Body</div>
+        </div>
+      </div>
+      <div style="font-size:12px; color:#333; margin-top:10px; cursor:pointer;">Full library (191) →</div>
+    </div>
+
+    <!-- FlowSpark -->
+    <div class="tile tile-coral t-3">
+      <div class="orb" style="width:120px;height:120px;background:var(--coral);opacity:.05;right:-30px;bottom:-30px;"></div>
+      <div class="t-eyebrow" style="color:var(--coral)">Self · Curiosity</div>
+      <div>
+        <div class="t-big-num" style="color:var(--coral)">23</div>
+        <div class="t-big-label">sparks &nbsp;·&nbsp; 4 intersections</div>
+        <div class="t-name small" style="margin-top:12px">FlowSpark</div>
+        <div class="t-cta">Explore →</div>
+      </div>
+    </div>
+
+    <!-- FlowRead -->
+    <div class="tile tile-coral t-3">
+      <div class="orb" style="width:100px;height:100px;background:var(--coral);opacity:.04;left:-20px;top:-20px;"></div>
+      <div class="t-eyebrow" style="color:var(--coral)">Self · Attention</div>
+      <div>
+        <div class="t-name small">FlowRead</div>
+        <div class="t-sub">Speed reading training. Paste text or YouTube URL.</div>
+        <div class="t-cta">Open →</div>
+      </div>
+    </div>
+
+    <!-- Daily Reps -->
+    <div class="tile tile-amethyst t-3">
+      <div class="orb" style="width:120px;height:120px;background:var(--amethyst);opacity:.05;right:-20px;top:-20px;"></div>
+      <div class="t-eyebrow" style="color:var(--amethyst)">Spirit · Practice</div>
+      <div>
+        <div class="t-big-num" style="color:var(--amethyst)">6</div>
+        <div class="t-big-label">of 10 cards today</div>
+        <div class="t-name small" style="margin-top:12px">Daily Reps</div>
+        <div class="t-cta">Continue →</div>
+      </div>
+    </div>
+
+    <!-- Flow Profile -->
+    <div class="tile tile-amethyst t-5" style="min-height:180px;">
+      <div class="orb" style="width:200px;height:200px;background:var(--amethyst);opacity:.04;right:-60px;top:-60px;"></div>
+      <div class="t-eyebrow" style="color:var(--amethyst)">Spirit · Profile</div>
+      <div>
+        <div class="t-name small">Your Profile</div>
+        <div class="tp-excerpt">"…the channel opens through the body, not through the mind."</div>
+        <div class="tp-signal">
+          <div class="tp-bar" style="background:var(--coral);opacity:.42"></div>
+          <div class="tp-bar" style="background:var(--sage);opacity:.74"></div>
+          <div class="tp-bar" style="background:var(--steel);opacity:.55"></div>
+          <div class="tp-bar" style="background:var(--amethyst);opacity:.88"></div>
+        </div>
+        <div class="t-cta">Read full · Copy for LLM →</div>
+      </div>
+    </div>
+
+    <!-- Identity -->
+    <div class="tile tile-amethyst t-4">
+      <div class="t-eyebrow" style="color:var(--amethyst)">Spirit · Identity</div>
+      <div>
+        <div class="t-name small">Identity Layer</div>
+        <div class="id-items">
+          <div class="id-item"><div class="id-val">7</div><div class="id-label">Life Path</div></div>
+          <div class="id-item"><div class="id-val">Alex</div><div class="id-label">"Defender"</div></div>
+          <div class="id-item" style="opacity:.35"><div class="id-val">+</div><div class="id-label">Astrology</div></div>
+        </div>
+        <div class="t-cta">Expand →</div>
+      </div>
+    </div>
+
+    <!-- iOS apps -->
+    <div class="tile tile-dark t-3">
+      <div class="t-eyebrow" style="color:#555">Mobile</div>
+      <div>
+        <div class="t-name small">iOS Apps</div>
+        <div class="t-sub">FlowReps · FlowHabits</div>
+        <div class="t-cta">Open App Store →</div>
+      </div>
+    </div>
+
+    <!-- Ghost: coming soon -->
+    <div class="tile tile-ghost t-3">
+      <div class="ghost-plus">+</div>
+      <div class="ghost-label">Plan Generator<br>coming soon</div>
+    </div>
+
+    <div class="tile tile-ghost t-3">
+      <div class="ghost-plus">+</div>
+      <div class="ghost-label">More coming</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DISCOVERY -->
+<div id="unauthed" class="hidden">
+  <div class="disc-studio">
+
+    <!-- Hero -->
+    <div class="disc-hero-tile t-5">
+      <div class="dh-tagline">Flow Playground</div>
+      <div class="dh-h1">Your space for conscious performance.</div>
+      <div class="dh-p">Tools, protocols, and a living profile — organized around the four dimensions of alignment. No menu. Just the work.</div>
+      <div class="dh-btns">
+        <button class="btn-p">Sign in</button>
+        <button class="btn-s">Take the Flow Profile</button>
+      </div>
+    </div>
+
+    <!-- Preview tiles -->
+    <div class="disc-tile t-4" style="background: linear-gradient(135deg, #0d2018, #0a0a0a);">
+      <div class="disc-tile-bg" style="background:var(--sage)"></div>
+      <div style="position:relative">
+        <div class="disc-tile-label" style="color:var(--sage)">Space · Focus</div>
+        <div class="disc-tile-name">FlowZone</div>
+      </div>
+    </div>
+    <div class="disc-tile t-3" style="background: linear-gradient(135deg, #1e0d0b, #0a0a0a);">
+      <div class="disc-tile-bg" style="background:var(--coral)"></div>
+      <div style="position:relative">
+        <div class="disc-tile-label" style="color:var(--coral)">Self</div>
+        <div class="disc-tile-name">FlowRead</div>
+      </div>
+    </div>
+
+    <div class="disc-tile t-3" style="background: linear-gradient(135deg, #1e0d0b, #0a0a0a);">
+      <div class="disc-tile-bg" style="background:var(--coral)"></div>
+      <div style="position:relative">
+        <div class="disc-tile-label" style="color:var(--coral)">Self</div>
+        <div class="disc-tile-name">FlowSpark</div>
+      </div>
+    </div>
+    <div class="disc-tile t-4" style="background: linear-gradient(135deg, #130d1e, #0a0a0a);">
+      <div class="disc-tile-bg" style="background:var(--amethyst)"></div>
+      <div style="position:relative">
+        <div class="disc-tile-label" style="color:var(--amethyst)">Spirit</div>
+        <div class="disc-tile-name">Flow Profile</div>
+      </div>
+    </div>
+    <div class="disc-tile t-5" style="background: linear-gradient(135deg, #130d1e, #0a0a0a);">
+      <div class="disc-tile-bg" style="background:var(--amethyst)"></div>
+      <div style="position:relative">
+        <div class="disc-tile-label" style="color:var(--amethyst)">Spirit · Knowledge</div>
+        <div class="disc-tile-name">Protocol Library · 191 cards</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="note">
+  <h4>Concept 5 Assessment</h4>
+  <ul>
+    <li class="p">Most distinctive aesthetic — looks and feels nothing like existing productivity tools</li>
+    <li class="p">Everything visible at once — no navigation step, zero friction to reach any tool</li>
+    <li class="p">Gradient tiles with glow make pillar colors feel alive, not just labeled</li>
+    <li class="p">Ghost tiles (dashed border) signal extensibility elegantly — no "coming soon" awkwardness</li>
+    <li class="p">Discovery view is portfolio-grade — communicates quality before any copy is read</li>
+    <li class="c">No organizing question — user must self-direct. Misses the "meet me where I am" principle</li>
+    <li class="c">Bento grid can feel arbitrary — why is FlowZone big? Needs a logic new users can sense</li>
+    <li class="c">Mobile: bento grids collapse poorly — needs separate mobile layout thinking</li>
+  </ul>
+</div>
+
+<script>
+function show(id, btn) {
+  ['authed','unauthed'].forEach(v => document.getElementById(v).classList.toggle('hidden', v !== id));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  btn.classList.add('on');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept 3 — The Diagnostic</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0a0a0a; color: #F5F5F5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+:root { --coral: #FF6F61; --sage: #6BA292; --steel: #5B84B1; --amethyst: #7A4DA4; --s: #141414; --s2: #111; }
+.badge { padding: 10px 24px; font-size: 11px; color: #555; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid #111; display: flex; justify-content: space-between; }
+.badge span { color: #888; }
+.tabs { display: flex; gap: 8px; padding: 14px 24px; border-bottom: 1px solid #1a1a1a; }
+.tab { padding: 5px 14px; border-radius: 20px; border: 1px solid #2a2a2a; background: transparent; color: #555; font-size: 12px; cursor: pointer; }
+.tab.on { background: #1e1e1e; color: #eee; border-color: #444; }
+.hidden { display: none; }
+
+/* ── PROFILE HERO ── */
+.profile-hero { padding: 32px 28px; border-bottom: 1px solid #111; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: start; }
+.ph-left { }
+.ph-label { font-size: 11px; color: #444; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+.ph-title { font-size: 22px; font-weight: 300; line-height: 1.4; margin-bottom: 16px; color: #ccc; }
+.ph-title em { color: #F5F5F5; font-style: normal; }
+.ph-watch { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: rgba(255,111,97,.08); border: 1px solid rgba(255,111,97,.2); border-radius: 20px; font-size: 12px; color: var(--coral); margin-bottom: 16px; }
+.ph-watch-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); }
+.ph-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.ph-btn { padding: 8px 18px; border-radius: 8px; font-size: 12px; cursor: pointer; border: none; }
+.btn-read { background: rgba(255,255,255,.06); color: #ccc; }
+.btn-copy { background: transparent; color: #555; border: 1px solid #222; }
+.btn-update { background: transparent; color: var(--amethyst); border: 1px solid rgba(122,77,164,.3); }
+
+/* Pillar bars — right side */
+.ph-right { }
+.ph-right-label { font-size: 10px; color: #333; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; text-align: right; }
+.pillar-bars { display: flex; flex-direction: column; gap: 10px; width: 200px; }
+.pb-row { display: flex; align-items: center; gap: 10px; }
+.pb-name { font-size: 11px; width: 50px; text-align: right; }
+.pb-track { flex: 1; height: 4px; background: #1a1a1a; border-radius: 2px; }
+.pb-fill { height: 4px; border-radius: 2px; }
+.pb-val { font-size: 11px; color: #444; width: 28px; text-align: right; }
+
+/* ── RECOMMENDED — full width strip ── */
+.rec-strip { padding: 20px 28px; border-bottom: 1px solid #111; }
+.rs-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.rs-title { font-size: 13px; font-weight: 500; }
+.rs-sub { font-size: 11px; color: #555; margin-top: 2px; }
+.rs-all { font-size: 12px; color: #333; cursor: pointer; }
+.rs-all:hover { color: #888; }
+.rs-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.rs-card { background: var(--s2); border: 1px solid #1e1e1e; border-radius: 10px; padding: 12px 14px; }
+.rs-card.top { border-color: #252525; background: var(--s); }
+.rc-pillar { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 5px; }
+.rc-name { font-size: 13px; color: #ddd; margin-bottom: 4px; }
+.rc-desc { font-size: 11px; color: #555; }
+.rc-star { float: right; font-size: 10px; }
+
+/* ── TOOL GRID ── */
+.tool-section { padding: 20px 28px; border-bottom: 1px solid #111; }
+.ts-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.ts-title { font-size: 13px; font-weight: 500; }
+.ts-sub { font-size: 11px; color: #555; }
+.tool-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.tool-tile { background: var(--s); border: 1px solid #1e1e1e; border-radius: 12px; padding: 16px; cursor: pointer; transition: border-color .2s; position: relative; }
+.tool-tile:hover { border-color: #333; }
+.tool-tile .tt-top { position: absolute; top: 0; left: 0; right: 0; height: 2px; border-radius: 12px 12px 0 0; }
+.tt-label { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 7px; margin-top: 4px; }
+.tt-name { font-size: 14px; font-weight: 400; margin-bottom: 4px; }
+.tt-stat { font-size: 11px; color: #555; }
+.tt-cta { font-size: 11px; color: #444; margin-top: 10px; }
+.tt-soon { background: transparent; border: 1px dashed #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; min-height: 110px; }
+.tt-soon .plus { font-size: 16px; color: #222; }
+.tt-soon span { font-size: 11px; color: #2a2a2a; text-align: center; }
+
+/* ── IDENTITY STRIP ── */
+.id-strip { padding: 20px 28px; border-bottom: 1px solid #111; }
+.id-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.id-title { font-size: 13px; font-weight: 500; }
+.id-sub { font-size: 11px; color: #555; }
+.id-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.id-card { background: var(--s); border: 1px solid #1e1e1e; border-radius: 10px; padding: 14px; position: relative; overflow: hidden; }
+.id-card.empty { border-style: dashed; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80px; gap: 4px; }
+.id-card.empty .plus { font-size: 14px; color: #2a2a2a; }
+.id-card.empty span { font-size: 11px; color: #2a2a2a; }
+.ic-label { font-size: 10px; color: var(--amethyst); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 5px; }
+.ic-val { font-size: 18px; font-weight: 300; margin-bottom: 3px; }
+.ic-sub { font-size: 11px; color: #555; }
+
+/* ── DISCOVERY ── */
+.disc { min-height: calc(100vh - 86px); display: flex; flex-direction: column; }
+.disc-hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 24px; max-width: 600px; margin: 0 auto; }
+.disc-hero h1 { font-size: 32px; font-weight: 300; letter-spacing: -1px; margin-bottom: 10px; }
+.disc-hero .tagline { font-size: 22px; font-weight: 300; color: #444; margin-bottom: 16px; }
+.disc-hero p { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 36px; max-width: 420px; }
+.disc-btns { display: flex; gap: 10px; justify-content: center; margin-bottom: 48px; }
+.btn-p { padding: 13px 32px; background: #F5F5F5; color: #0a0a0a; border: none; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; }
+.btn-s { padding: 13px 32px; background: transparent; color: #777; border: 1px solid #2a2a2a; border-radius: 8px; font-size: 14px; cursor: pointer; }
+.disc-preview { display: flex; gap: 10px; justify-content: center; opacity: .4; flex-wrap: wrap; }
+.dp-card { background: var(--s); border: 1px solid #1e1e1e; border-radius: 10px; padding: 14px 18px; font-size: 12px; color: #555; }
+.dp-card b { display: block; font-size: 16px; font-weight: 300; color: #888; margin-bottom: 4px; }
+
+.note { padding: 16px 24px; border-top: 1px solid #111; }
+.note h4 { font-size: 11px; color: #444; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+.note ul { list-style: none; display: flex; flex-wrap: wrap; gap: 5px 24px; }
+.note li { font-size: 12px; color: #555; padding-left: 14px; position: relative; }
+.note li::before { content: '—'; position: absolute; left: 0; color: #2a2a2a; }
+.note li.p::before { content: '+'; color: var(--sage); }
+.note li.c::before { content: '−'; color: var(--coral); }
+</style>
+</head>
+<body>
+
+<div class="badge">Concept 3 — <span>The Diagnostic</span> &nbsp;·&nbsp; "Your profile is the center of gravity. Everything radiates from what we know about you."</div>
+<div class="tabs">
+  <button class="tab on" onclick="show('authed',this)">Signed in</button>
+  <button class="tab" onclick="show('unauthed',this)">New visitor</button>
+</div>
+
+<div id="authed">
+
+  <!-- Profile hero — always at top -->
+  <div class="profile-hero">
+    <div class="ph-left">
+      <div class="ph-label">Your Flow Profile · March 2026</div>
+      <div class="ph-title">"You move fast when the channel is open — and <em>the channel opens through the body</em>, not through the mind. The years of building weren't warm-up. They were compression."</div>
+      <div class="ph-watch"><div class="ph-watch-dot"></div>SELF is your current watch-point — body first today</div>
+      <div class="ph-actions">
+        <button class="ph-btn btn-read">Read full profile</button>
+        <button class="ph-btn btn-copy">Copy for LLM</button>
+        <button class="ph-btn btn-update">Get new flow comment →</button>
+      </div>
+    </div>
+    <div class="ph-right">
+      <div class="ph-right-label">Signal strength</div>
+      <div class="pillar-bars">
+        <div class="pb-row">
+          <div class="pb-name" style="color:var(--coral)">SELF</div>
+          <div class="pb-track"><div class="pb-fill" style="background:var(--coral);width:42%"></div></div>
+          <div class="pb-val">42%</div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-name" style="color:var(--sage)">SPACE</div>
+          <div class="pb-track"><div class="pb-fill" style="background:var(--sage);width:74%"></div></div>
+          <div class="pb-val">74%</div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-name" style="color:var(--steel)">STORY</div>
+          <div class="pb-track"><div class="pb-fill" style="background:var(--steel);width:55%"></div></div>
+          <div class="pb-val">55%</div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-name" style="color:var(--amethyst)">SPIRIT</div>
+          <div class="pb-track"><div class="pb-fill" style="background:var(--amethyst);width:88%"></div></div>
+          <div class="pb-val">88%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommended: based on watch-point -->
+  <div class="rec-strip">
+    <div class="rs-header">
+      <div>
+        <div class="rs-title">Recommended for your SELF watch-point</div>
+        <div class="rs-sub">Body-first protocols matched to your current diagnostic</div>
+      </div>
+      <div class="rs-all">Full library (191) →</div>
+    </div>
+    <div class="rs-cards">
+      <div class="rs-card top">
+        <span class="rc-star" style="color:var(--coral)">★</span>
+        <div class="rc-pillar" style="color:var(--coral)">SELF · Body</div>
+        <div class="rc-name">breath-regulation</div>
+        <div class="rc-desc">Regulate state through breathing before work begins</div>
+      </div>
+      <div class="rs-card top">
+        <span class="rc-star" style="color:var(--coral)">★</span>
+        <div class="rc-pillar" style="color:var(--coral)">SELF · Body</div>
+        <div class="rc-name">body-state-check</div>
+        <div class="rc-desc">Read body signals before making decisions</div>
+      </div>
+      <div class="rs-card">
+        <div class="rc-pillar" style="color:var(--coral)">SELF · Mind</div>
+        <div class="rc-name">single-tab-mind</div>
+        <div class="rc-desc">One task, one window, no background processing</div>
+      </div>
+      <div class="rs-card">
+        <div class="rc-pillar" style="color:var(--sage)">SPACE</div>
+        <div class="rc-name">interruption-gate-protocol</div>
+        <div class="rc-desc">Protect your focus window from external context breaks</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tools — organized, not hero'd -->
+  <div class="tool-section">
+    <div class="ts-header">
+      <div>
+        <div class="ts-title">Your Tools</div>
+        <div class="ts-sub">Everything in the playground — use what fits today's need</div>
+      </div>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-tile">
+        <div class="tt-top" style="background:var(--sage)"></div>
+        <div class="tt-label" style="color:var(--sage)">Space · Focus</div>
+        <div class="tt-name">FlowZone</div>
+        <div class="tt-stat">12 sessions · 3d streak</div>
+        <div class="tt-cta">Enter session →</div>
+      </div>
+      <div class="tool-tile">
+        <div class="tt-top" style="background:var(--coral)"></div>
+        <div class="tt-label" style="color:var(--coral)">Self · Attention</div>
+        <div class="tt-name">FlowRead</div>
+        <div class="tt-stat">Speed reading trainer</div>
+        <div class="tt-cta">Open →</div>
+      </div>
+      <div class="tool-tile">
+        <div class="tt-top" style="background:var(--coral)"></div>
+        <div class="tt-label" style="color:var(--coral)">Self · Curiosity</div>
+        <div class="tt-name">FlowSpark</div>
+        <div class="tt-stat">23 sparks · 4 intersections</div>
+        <div class="tt-cta">Explore →</div>
+      </div>
+      <div class="tool-tile">
+        <div class="tt-top" style="background:var(--amethyst)"></div>
+        <div class="tt-label" style="color:var(--amethyst)">Spirit · Practice</div>
+        <div class="tt-name">Daily Reps</div>
+        <div class="tt-stat">6/10 today · 62% mastery</div>
+        <div class="tt-cta">Continue →</div>
+      </div>
+      <div class="tool-tile tt-soon">
+        <div class="plus">+</div>
+        <span>Plan Generator<br>coming soon</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Identity -->
+  <div class="id-strip">
+    <div class="id-header">
+      <div>
+        <div class="id-title">Identity Layer</div>
+        <div class="id-sub">Name, numerology, etymology, astrology — mapped to your Flow Profile</div>
+      </div>
+    </div>
+    <div class="id-cards">
+      <div class="id-card">
+        <div class="ic-label">Numerology · Life Path</div>
+        <div class="ic-val">Life Path 7</div>
+        <div class="ic-sub">The Seeker — deep analysis, wisdom, truth. Maps to Ignited Curiosity + Open Mind.</div>
+      </div>
+      <div class="id-card">
+        <div class="ic-label">Etymology · Name Origin</div>
+        <div class="ic-val">Alexander</div>
+        <div class="ic-sub">"Defender of men" — Greek. Leader archetype. Connects to Empowered Role.</div>
+      </div>
+      <div class="id-card empty">
+        <div class="plus">+</div>
+        <span>Add astrology birth chart</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DISCOVERY -->
+<div id="unauthed" class="hidden">
+  <div class="disc">
+    <div class="disc-hero">
+      <h1>Flow Playground</h1>
+      <div class="tagline">Know yourself, then flow.</div>
+      <p>Start with a diagnostic profile that maps your four dimensions of alignment. Every tool, every protocol, every recommendation builds from what we learn about you.</p>
+      <div class="disc-btns">
+        <button class="btn-p">Take the Flow Profile</button>
+        <button class="btn-s">Sign in</button>
+      </div>
+      <div class="disc-preview">
+        <div class="dp-card"><b>Flow Profile</b>Your alignment map</div>
+        <div class="dp-card"><b>191 Protocols</b>Matched to your keys</div>
+        <div class="dp-card"><b>Tools</b>FlowZone, FlowRead, FlowSpark</div>
+        <div class="dp-card"><b>Identity</b>Numerology, etymology, astrology</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <h4>Concept 3 Assessment</h4>
+  <ul>
+    <li class="p">Profile is always the hero — strongest conversion logic for new users</li>
+    <li class="p">"Get new flow comment" keeps the profile feeling alive and current, not static</li>
+    <li class="p">Signal bars + watch-point callout = personalization that's immediately visible and useful</li>
+    <li class="p">Discovery CTA is "Take the Flow Profile" first — direct path to first paid product</li>
+    <li class="c">Users without a profile see an empty hero section — needs graceful fallback</li>
+    <li class="c">Tool grid is lower on page — active FlowZone users may not find it intuitively</li>
+    <li class="c">Identity layer UX (numerology etc.) needs its own design session — placeholder here</li>
+  </ul>
+</div>
+
+<script>
+function show(id, btn) {
+  ['authed','unauthed'].forEach(v => document.getElementById(v).classList.toggle('hidden', v !== id));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  btn.classList.add('on');
+}
+</script>
+</body>
+</html>

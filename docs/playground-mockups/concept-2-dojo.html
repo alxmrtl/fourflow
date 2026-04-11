@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept 2 — The Dojo</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0a0a0a; color: #F5F5F5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+:root { --coral: #FF6F61; --sage: #6BA292; --steel: #5B84B1; --amethyst: #7A4DA4; --s: #141414; --s2: #111; }
+.badge { padding: 10px 24px; font-size: 11px; color: #555; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid #111; display: flex; justify-content: space-between; }
+.badge span { color: #888; }
+.tabs { display: flex; gap: 8px; padding: 14px 24px; border-bottom: 1px solid #1a1a1a; }
+.tab { padding: 5px 14px; border-radius: 20px; border: 1px solid #2a2a2a; background: transparent; color: #555; font-size: 12px; cursor: pointer; }
+.tab.on { background: #1e1e1e; color: #eee; border-color: #444; }
+.hidden { display: none; }
+
+/* ── LAYOUT ── */
+.page { display: grid; grid-template-columns: 240px 1fr; min-height: calc(100vh - 86px); }
+
+/* LEFT RAIL — daily practice */
+.rail { border-right: 1px solid #111; padding: 24px 20px; display: flex; flex-direction: column; gap: 20px; }
+.rail-greeting { }
+.rail-greeting .day { font-size: 11px; color: #444; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px; }
+.rail-greeting .name { font-size: 18px; font-weight: 300; }
+.rail-greeting .sub { font-size: 12px; color: #555; margin-top: 3px; }
+
+.rail-section { }
+.rail-label { font-size: 10px; color: #333; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+
+/* Progress ring (CSS only) */
+.ring-row { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.ring { position: relative; width: 52px; height: 52px; flex-shrink: 0; }
+.ring svg { transform: rotate(-90deg); }
+.ring circle { fill: none; stroke-width: 4; }
+.ring-bg { stroke: #1a1a1a; }
+.ring-fill { stroke-linecap: round; }
+.ring-num { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 300; }
+.ring-info .ri-label { font-size: 13px; font-weight: 400; }
+.ring-info .ri-sub { font-size: 11px; color: #555; margin-top: 2px; }
+.ring-info .ri-cta { font-size: 11px; color: #444; margin-top: 4px; cursor: pointer; }
+.ring-info .ri-cta:hover { color: #888; }
+
+/* Streak */
+.streak-row { display: flex; gap: 5px; margin-top: 4px; }
+.streak-dot { width: 10px; height: 10px; border-radius: 3px; background: #1a1a1a; }
+.streak-dot.done { background: var(--sage); }
+.streak-dot.today { background: var(--sage); box-shadow: 0 0 6px rgba(107,162,146,.4); }
+
+/* Quick links */
+.rail-links { display: flex; flex-direction: column; gap: 6px; margin-top: auto; }
+.rail-link { font-size: 12px; color: #444; padding: 8px 10px; border-radius: 7px; cursor: pointer; display: flex; justify-content: space-between; }
+.rail-link:hover { background: var(--s); color: #aaa; }
+.rail-link .count { font-size: 11px; color: #333; }
+
+/* ── MAIN AREA ── */
+.main { padding: 24px 28px; display: flex; flex-direction: column; gap: 20px; overflow-y: auto; }
+
+/* Today's session — hero */
+.session-hero { background: linear-gradient(135deg, #0d1a16 0%, #0a0a0a 70%); border: 1px solid #1e2e26; border-radius: 14px; padding: 28px; position: relative; overflow: hidden; }
+.session-glow { position: absolute; right: -60px; top: -60px; width: 200px; height: 200px; border-radius: 50%; background: var(--sage); opacity: .04; }
+.sh-label { font-size: 11px; color: var(--sage); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+.sh-title { font-size: 24px; font-weight: 300; margin-bottom: 6px; }
+.sh-sub { font-size: 13px; color: #555; margin-bottom: 24px; }
+.sh-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: rgba(107,162,146,.15); color: var(--sage); border: 1px solid rgba(107,162,146,.25); border-radius: 10px; font-size: 14px; cursor: pointer; }
+.sh-stats { display: flex; gap: 28px; margin-top: 24px; }
+.sh-stat .n { font-size: 22px; font-weight: 300; color: var(--sage); }
+.sh-stat .l { font-size: 11px; color: #555; margin-top: 2px; }
+
+/* Tool row */
+.tool-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.tool-card { background: var(--s); border: 1px solid #1e1e1e; border-radius: 12px; padding: 18px; cursor: pointer; transition: border-color .2s; position: relative; overflow: hidden; }
+.tool-card:hover { border-color: #2a2a2a; }
+.tc-accent { position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+.tc-label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+.tc-name { font-size: 16px; font-weight: 400; margin-bottom: 5px; }
+.tc-desc { font-size: 12px; color: #555; line-height: 1.4; }
+.tc-cta { font-size: 12px; color: #444; margin-top: 12px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.tc-stat { font-size: 11px; color: #333; }
+
+/* Protocol strip */
+.proto-strip { background: var(--s); border: 1px solid #1e1e1e; border-radius: 12px; padding: 18px 20px; }
+.ps-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.ps-title { font-size: 13px; font-weight: 500; }
+.ps-sub { font-size: 11px; color: #555; }
+.ps-all { font-size: 12px; color: #444; cursor: pointer; }
+.ps-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ps-item { background: var(--s2); border: 1px solid #1e1e1e; border-radius: 8px; padding: 10px 12px; }
+.ps-item.rec { border-color: #252525; }
+.ps-name { font-size: 12px; color: #ccc; margin-bottom: 3px; }
+.ps-desc { font-size: 11px; color: #555; }
+.ps-pill { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 10px; margin-top: 5px; }
+.pill-self { background: rgba(255,111,97,.1); color: var(--coral); }
+.pill-space { background: rgba(107,162,146,.1); color: var(--sage); }
+
+/* Knowledge row */
+.know-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.know-card { background: var(--s); border: 1px solid #1e1e1e; border-radius: 12px; padding: 18px; }
+.kc-label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #444; margin-bottom: 8px; }
+.kc-name { font-size: 15px; font-weight: 400; margin-bottom: 6px; }
+.kc-desc { font-size: 12px; color: #555; line-height: 1.4; margin-bottom: 12px; }
+.kc-prog { height: 3px; background: #1a1a1a; border-radius: 2px; }
+.kc-prog-fill { height: 3px; border-radius: 2px; background: var(--amethyst); width: 62%; }
+.kc-cta { font-size: 12px; color: #444; cursor: pointer; margin-top: 10px; display: block; }
+
+/* DISCOVERY */
+.disc { padding: 56px 24px; max-width: 580px; margin: 0 auto; }
+.disc h1 { font-size: 32px; font-weight: 300; letter-spacing: -1px; margin-bottom: 10px; }
+.disc-tagline { font-size: 20px; color: #444; font-weight: 300; margin-bottom: 16px; }
+.disc-p { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 36px; }
+.disc-btns { display: flex; gap: 10px; margin-bottom: 48px; }
+.btn-p { padding: 11px 26px; background: #F5F5F5; color: #0a0a0a; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; }
+.btn-s { padding: 11px 26px; background: transparent; color: #777; border: 1px solid #2a2a2a; border-radius: 8px; font-size: 13px; cursor: pointer; }
+.disc-features { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; opacity:.5; }
+.disc-feat { background: var(--s); border: 1px solid #1e1e1e; border-radius: 10px; padding: 16px; }
+.df-label { font-size: 10px; color: #444; letter-spacing:.08em; text-transform:uppercase; margin-bottom: 6px; }
+.df-name { font-size: 14px; }
+
+.note { padding: 16px 24px; border-top: 1px solid #111; }
+.note h4 { font-size: 11px; color: #444; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+.note ul { list-style: none; display: flex; flex-wrap: wrap; gap: 5px 24px; }
+.note li { font-size: 12px; color: #555; padding-left: 14px; position: relative; }
+.note li::before { content: '—'; position: absolute; left: 0; color: #2a2a2a; }
+.note li.p::before { content: '+'; color: var(--sage); }
+.note li.c::before { content: '−'; color: var(--coral); }
+</style>
+</head>
+<body>
+
+<div class="badge">Concept 2 — <span>The Dojo</span> &nbsp;·&nbsp; "Flow is a practice. Show up, train, track your reps. Everything else is support."</div>
+<div class="tabs">
+  <button class="tab on" onclick="show('authed',this)">Signed in</button>
+  <button class="tab" onclick="show('unauthed',this)">New visitor</button>
+</div>
+
+<div id="authed">
+  <div class="page">
+
+    <!-- LEFT RAIL -->
+    <div class="rail">
+      <div class="rail-greeting">
+        <div class="day">Monday · March 30</div>
+        <div class="name">Good afternoon,<br>Alex</div>
+        <div class="sub">Day 12 in your practice</div>
+      </div>
+
+      <div class="rail-section">
+        <div class="rail-label">Today's Practice</div>
+
+        <div class="ring-row">
+          <div class="ring">
+            <svg viewBox="0 0 52 52" width="52" height="52">
+              <circle class="ring-bg" cx="26" cy="26" r="22"/>
+              <circle class="ring-fill" cx="26" cy="26" r="22" stroke="var(--sage)" stroke-dasharray="138" stroke-dashoffset="55"/>
+            </svg>
+            <div class="ring-num" style="color:var(--sage)">6</div>
+          </div>
+          <div class="ring-info">
+            <div class="ri-label">Daily Reps</div>
+            <div class="ri-sub">6 of 10 cards today</div>
+            <div class="ri-cta">Continue session →</div>
+          </div>
+        </div>
+
+        <div class="ring-row">
+          <div class="ring">
+            <svg viewBox="0 0 52 52" width="52" height="52">
+              <circle class="ring-bg" cx="26" cy="26" r="22"/>
+              <circle class="ring-fill" cx="26" cy="26" r="22" stroke="var(--coral)" stroke-dasharray="138" stroke-dashoffset="80"/>
+            </svg>
+            <div class="ring-num" style="color:var(--coral)">3</div>
+          </div>
+          <div class="ring-info">
+            <div class="ri-label">Breathwork</div>
+            <div class="ri-sub">3 sessions this week</div>
+            <div class="ri-cta">Start now →</div>
+          </div>
+        </div>
+
+        <div class="rail-label" style="margin-top:4px">FlowZone Streak</div>
+        <div class="streak-row">
+          <div class="streak-dot done"></div>
+          <div class="streak-dot done"></div>
+          <div class="streak-dot done"></div>
+          <div class="streak-dot done"></div>
+          <div class="streak-dot today"></div>
+          <div class="streak-dot"></div>
+          <div class="streak-dot"></div>
+        </div>
+        <div style="font-size:11px; color:#444; margin-top:6px;">4-day streak · keep it going</div>
+      </div>
+
+      <div class="rail-links">
+        <div class="rail-link">Protocol Library <span class="count">191</span></div>
+        <div class="rail-link">Flow Profile <span class="count">delivered</span></div>
+        <div class="rail-link">Identity Layer <span class="count">set up →</span></div>
+        <div class="rail-link">FlowReps (iOS) <span class="count">↗</span></div>
+        <div class="rail-link">FlowHabits (iOS) <span class="count">↗</span></div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- Today's primary session -->
+      <div class="session-hero">
+        <div class="session-glow"></div>
+        <div class="sh-label">Flow Space · Primary Tool</div>
+        <div class="sh-title">Enter your session</div>
+        <div class="sh-sub">Distraction will come. The rep is staying with the work when it does.</div>
+        <div class="sh-btn">Start FlowZone →</div>
+        <div class="sh-stats">
+          <div class="sh-stat"><div class="n">12</div><div class="l">sessions this week</div></div>
+          <div class="sh-stat"><div class="n">47</div><div class="l">Focus Reps total</div></div>
+          <div class="sh-stat"><div class="n">2h 20m</div><div class="l">avg session</div></div>
+        </div>
+      </div>
+
+      <!-- Supporting tools -->
+      <div class="tool-row">
+        <div class="tool-card">
+          <div class="tc-accent" style="background:var(--coral)"></div>
+          <div class="tc-label" style="color:var(--coral)">Self · Attention</div>
+          <div class="tc-name">FlowRead</div>
+          <div class="tc-desc">Speed reading training. Paste text or extract from a URL.</div>
+          <div class="tc-cta">Open <span class="tc-stat">→</span></div>
+        </div>
+        <div class="tool-card">
+          <div class="tc-accent" style="background:var(--coral)"></div>
+          <div class="tc-label" style="color:var(--coral)">Self · Curiosity</div>
+          <div class="tc-name">FlowSpark</div>
+          <div class="tc-desc">Map what pulls you. 23 sparks · 4 intersections found.</div>
+          <div class="tc-cta">Explore <span class="tc-stat">23 sparks →</span></div>
+        </div>
+        <div class="tool-card" style="border-style:dashed; border-color:#1a1a1a; background:transparent; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:6px;">
+          <div style="font-size:18px; color:#222">+</div>
+          <div style="font-size:12px; color:#333">Plan Generator coming</div>
+        </div>
+      </div>
+
+      <!-- Recommended protocols for today -->
+      <div class="proto-strip">
+        <div class="ps-header">
+          <div>
+            <div class="ps-title">Today's Recommended Protocols</div>
+            <div class="ps-sub">Based on your SELF watch-point and current session patterns</div>
+          </div>
+          <div class="ps-all">Browse all 191 →</div>
+        </div>
+        <div class="ps-items">
+          <div class="ps-item rec">
+            <div class="ps-name">breath-regulation</div>
+            <div class="ps-desc">Regulate state before deep work</div>
+            <div class="ps-pill pill-self">SELF</div>
+          </div>
+          <div class="ps-item rec">
+            <div class="ps-name">interruption-gate-protocol</div>
+            <div class="ps-desc">Protect your focus window</div>
+            <div class="ps-pill pill-space">SPACE</div>
+          </div>
+          <div class="ps-item rec">
+            <div class="ps-name">body-state-check</div>
+            <div class="ps-desc">Read body signals before deciding</div>
+            <div class="ps-pill pill-self">SELF</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Knowledge -->
+      <div class="know-row">
+        <div class="know-card">
+          <div class="kc-label">Spirit · Practice</div>
+          <div class="kc-name">Daily Reps — Compendium Training</div>
+          <div class="kc-desc">Spaced repetition across all 12 Flow Keys. 6 of 10 cards done today. 62% mastery overall.</div>
+          <div class="kc-prog"><div class="kc-prog-fill"></div></div>
+          <a class="kc-cta">Continue today's session →</a>
+        </div>
+        <div class="know-card">
+          <div class="kc-label" style="color:var(--amethyst)">Spirit · Identity</div>
+          <div class="kc-name">Identity Layer</div>
+          <div class="kc-desc">Name etymology, numerology life path, astrology birth chart — mapped to your Flow Keys.</div>
+          <div class="kc-prog"><div class="kc-prog-fill" style="width:0%; background: var(--amethyst)"></div></div>
+          <a class="kc-cta" style="color: var(--amethyst)">Set up your identity profile →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- DISCOVERY -->
+<div id="unauthed" class="hidden">
+  <div class="disc">
+    <h1>Flow Playground</h1>
+    <div class="disc-tagline">Your daily practice space.</div>
+    <div class="disc-p">Flow isn't a feeling you wait for. It's a practice you build. Show up, do the reps, track what works. The playground is your dojo.</div>
+    <div class="disc-btns">
+      <button class="btn-p">Sign in</button>
+      <button class="btn-s">Take the Flow Profile</button>
+    </div>
+    <div class="disc-features">
+      <div class="disc-feat">
+        <div class="df-label" style="color:var(--sage)">Focus</div>
+        <div class="df-name">FlowZone sessions + streaks</div>
+      </div>
+      <div class="disc-feat">
+        <div class="df-label" style="color:var(--coral)">Explore</div>
+        <div class="df-name">FlowRead · FlowSpark</div>
+      </div>
+      <div class="disc-feat">
+        <div class="df-label" style="color:var(--amethyst)">Know</div>
+        <div class="df-name">191 protocols · Profile · Identity</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <h4>Concept 2 Assessment</h4>
+  <ul>
+    <li class="p">Progress rings + streak = instant sense of your current practice state</li>
+    <li class="p">Left rail + main area = perfect for returning users with an established practice</li>
+    <li class="p">Daily Reps and FlowZone sessions are equally weighted — practice IS the product</li>
+    <li class="c">New users have no practice — the rail feels empty and discouraging on day 1</li>
+    <li class="c">FlowZone hero assumes focus work is always the priority — misses Explore/Clarify states</li>
+    <li class="c">iOS apps relegated to sidebar links — their signal is lost</li>
+  </ul>
+</div>
+
+<script>
+function show(id, btn) {
+  ['authed','unauthed'].forEach(v => document.getElementById(v).classList.toggle('hidden', v !== id));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  btn.classList.add('on');
+}
+</script>
+</body>
+</html>
