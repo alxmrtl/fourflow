@@ -12,7 +12,7 @@ tags:
 
 > Ensures actions fit a unified frame.
 
-## Why It Enables Flow
+## Mechanism
 
 When your actions, your narrative, and your deepest values all point in the same direction, attention doesn't fragment — there's nothing competing. The aperture sweeps a coherent path: each moment illuminates a section adjacent to the last, and time feels continuous. When incoherent, the light jumps between unrelated activities. Each jump costs a perceptual reset, and the subjective experience of time fragments into disconnected, expensive moments. Meaning coherence doesn't just make work feel purposeful — it makes time itself feel continuous.
 

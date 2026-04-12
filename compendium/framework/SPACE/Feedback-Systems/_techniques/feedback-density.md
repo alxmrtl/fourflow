@@ -12,7 +12,7 @@ tags:
 
 > Increases signal frequency without overload.
 
-## Why It Enables Flow
+## Mechanism
 
 Too little feedback and the brain operates blind — unable to calibrate effort, correct direction, or know whether its work is landing. But flooding the system with more signals than it can process collapses the useful information into noise, generating cognitive overhead rather than orientation. Optimal feedback density keeps the loop tight enough to sustain engagement without overwhelming attentional capacity.
 

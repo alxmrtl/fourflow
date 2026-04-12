@@ -12,7 +12,7 @@ tags:
 
 > Defines what success looks like now.
 
-## Why It Enables Flow
+## Mechanism
 
 A specific goal doesn't just guide behavior — it reorganizes the brain. Without a concrete goal, the brain defaults to the Default Mode Network: continuous inward-pointing activity (rumination, self-evaluation, mental simulation) at the same metabolic cost as focused work, but with none of the output. A specific goal triggers the prefrontal cortex to activate as director of attention, fire dopamine neurons around goal-relevant information, and suppress DMN circuitry — creating a self-reinforcing motivation loop. Clear Goals is not a planning tool; it's a neural reorganization trigger.
 

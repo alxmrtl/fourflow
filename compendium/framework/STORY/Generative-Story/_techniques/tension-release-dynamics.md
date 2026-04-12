@@ -12,7 +12,7 @@ tags:
 
 > Uses challenge and relief to maintain engagement.
 
-## Why It Enables Flow
+## Mechanism
 
 All engagement follows a tension-release rhythm: challenge creates tension that demands resolution; resolution creates the satisfaction that makes the next challenge feel worth attempting. Without tension, there's no pull — the work becomes monotonous and motivation decays. Without release, there's no recovery — the work becomes grinding and exhaustion accumulates. The art is in the ratio: enough tension to sustain engagement, enough release to sustain the capacity for tension. Narrative momentum is generated precisely through unresolved tension; meaning is created at the moment of release.
 

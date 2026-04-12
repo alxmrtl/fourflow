@@ -12,7 +12,7 @@ tags:
 
 > Aligns surrounding people with task intent.
 
-## Why It Enables Flow
+## Mechanism
 
 Human attention is highly contagious — the focus states of nearby people directly influence one's own capacity for sustained concentration. When those around you are engaged in shallow, distracted, or conflicting work, maintaining deep focus requires working against a social pressure gradient as well as internal resistance. When the surrounding field is aligned — others are in similar states or explicitly supportive of deep work — that gradient becomes a tailwind rather than a headwind. Social field alignment removes one category of ambient drag on flow accessibility.
 

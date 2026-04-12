@@ -12,7 +12,7 @@ tags:
 
 > Reinforces trust in self-generated action.
 
-## Why It Enables Flow
+## Mechanism
 
 Integrity loops close the gap between stated values and actual behavior in real time — and the gap matters because it compounds. When unexamined, the widening produces a chronic background dissonance that makes flow expensive to enter: part of your attention is spent managing the distance between who you say you are and how you actually behave. When integrity loops are intact, behavior and values stay coherent, and that coherence is what makes sustained deep work feel like authentic expression rather than performance. There are two failure modes: trusting too little (chronic self-doubt) and miscalibrated trust (binding to something that looks reliable but isn't). Reality-indexed trust is the target.
 

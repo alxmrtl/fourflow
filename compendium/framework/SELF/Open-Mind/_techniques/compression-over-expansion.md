@@ -17,7 +17,7 @@ tags:
 
 > Condenses concepts to reduce mental effort.
 
-## Why It Enables Flow
+## Mechanism
 
 Working memory holds a fixed number of chunks — not a fixed amount of information, but a fixed number of units. Compression is the practice of making each chunk larger by encoding more meaning into it: a single phrase that contains a whole framework, a metaphor that instantiates a complex relationship, a symbol that carries an entire context. The person who has compressed their domain knowledge can hold more of it active simultaneously than the person whose knowledge is still in expanded, uncompressed form. This frees working memory for the active problem rather than for the overhead of retrieving and holding basic knowledge. Expansion — adding detail, hedging, elaborating — consumes bandwidth. Compression returns it.
 

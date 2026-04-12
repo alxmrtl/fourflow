@@ -27,7 +27,7 @@ tags:
 
 > Ensures metabolic and nervous system readiness.
 
-## Why It Enables Flow
+## Mechanism
 
 Flow is metabolically expensive. The neural state of flow — transient hypofrontality, dopamine release, heightened sensory processing — requires a nervous system with enough reserve capacity to support sustained high-performance demand. When metabolic reserves are depleted through sleep debt, poor nutrition, or insufficient recovery, the brain's first defense is to reduce cognitive ambition: slower processing, narrower attention, reduced working memory, lower motivation. The aperture narrows not because of emotional patterns but because there is literally insufficient fuel to keep it open. Sleep, nutrition, and movement interact non-additively — optimizing all three produces cognitive performance significantly above what any single factor predicts. Energy sufficiency is the physical prerequisite for the lens to function.
 

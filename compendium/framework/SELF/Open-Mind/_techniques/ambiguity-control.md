@@ -17,7 +17,7 @@ tags:
 
 > Keeps uncertainty within tolerable bounds.
 
-## Why It Enables Flow
+## Mechanism
 
 Excessive ambiguity about what is being done, why, and toward what end generates a constant low-level anxiety that competes with task absorption. The mind cannot fully enter a task when it is simultaneously asking fundamental questions about whether the task is right, what it's for, or what success looks like. Ambiguity control is not the elimination of uncertainty — flow often involves productive not-knowing — but the reduction of ambiguity to the level where it is generative rather than paralyzing. Bounded uncertainty (clear goals, defined scope, knowable success criteria) creates the structure within which creative exploration becomes possible. Unbounded ambiguity produces anxiety that closes the mind rather than opening it.
 

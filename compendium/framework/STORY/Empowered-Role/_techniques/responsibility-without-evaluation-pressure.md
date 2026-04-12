@@ -12,13 +12,14 @@ tags:
 
 > Maintains ownership while suppressing judgment.
 
-## Why It Enables Flow
+## Mechanism
 
 Responsibility and evaluation are often bundled together — you own the outcome, you're also being judged on it. But evaluation pressure is one of the most consistent flow killers: when the ego has stakes in being seen to perform, attention splits between the work and the performance of the work. Responsibility without evaluation pressure decouples ownership from judgment: you care about the outcome because you care about the work, not because your worth is being assessed. This is the structural condition that makes deep work feel like expression rather than audition.
 
 ## Techniques
 - [[evaluation-pressure-reduction]] — *needs content*
 - [[act-from-worth]] — takes every action from the felt position of already being whole; actions as overflow rather than attempts to prove adequacy
+- [[unconditional-self-worth-meditation]] — a 5-statement meditation sequence that directly decouples worth from performance; builds the felt substrate that [[act-from-worth]] acts from
 
 ## Key Concepts
 - [[psychological-ownership]] — ownership without evaluation pressure is psychological ownership at its cleanest; caring about the work, not the grade

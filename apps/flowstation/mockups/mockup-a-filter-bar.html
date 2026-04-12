@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FlowStation — Mockup A: Filter Bar + Single Activity Window</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0a;
+    --text: #f0f0f0;
+    --muted: rgba(255,255,255,0.38);
+    --dim: rgba(255,255,255,0.12);
+    --border: rgba(255,255,255,0.08);
+    --accent: #FF6F61;
+    --ar: 255,111,97;
+    --accent-bg: rgba(255,111,97,0.09);
+    --accent-border: rgba(255,111,97,0.28);
+    --accent-glow: rgba(255,111,97,0.16);
+  }
+
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(rgba(255,255,255,0.022) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .screen { width: 1920px; height: 1080px; display: flex; flex-direction: column; }
+
+  /* TOP BAR */
+  .top-bar {
+    height: 80px; flex-shrink: 0;
+    display: flex; align-items: center;
+    padding: 0 52px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,10,10,0.95);
+  }
+  .back-nav {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--muted); font-size: 12px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; min-width: 200px;
+  }
+  .top-bar h1 {
+    flex: 1; text-align: center;
+    font-size: 24px; font-weight: 800;
+    letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  .top-right {
+    min-width: 200px; display: flex;
+    align-items: center; justify-content: flex-end; gap: 14px;
+  }
+  .badge-pill {
+    padding: 5px 14px;
+    background: var(--accent-bg); border: 1px solid var(--accent-border);
+    border-radius: 20px; color: var(--accent);
+    font-size: 10px; font-weight: 800; letter-spacing: 0.20em; text-transform: uppercase;
+  }
+  .pillar-dot {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: var(--accent-bg); border: 1px solid var(--accent-border);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* QUALITY FILTER BAR */
+  .quality-bar {
+    flex-shrink: 0;
+    display: flex; gap: 16px;
+    padding: 22px 52px 18px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,10,10,0.60);
+  }
+
+  .q-card {
+    flex: 1; border-radius: 16px; padding: 18px 24px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    display: flex; flex-direction: column; gap: 8px;
+    position: relative; overflow: hidden;
+  }
+  .q-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  }
+  .q-card.selected {
+    background: var(--accent-bg); border-color: var(--accent-border);
+    box-shadow: 0 0 40px var(--accent-glow), 0 12px 32px rgba(0,0,0,0.55);
+  }
+  .q-card.selected::before {
+    background: linear-gradient(90deg, transparent, rgba(var(--ar),0.22), transparent);
+  }
+  .q-card.inactive { opacity: 0.28; }
+
+  .q-type-row {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .q-type-icon { width: 16px; height: 16px; color: var(--muted); flex-shrink: 0; }
+  .q-card.selected .q-type-icon { color: var(--accent); }
+  .q-type-label {
+    font-size: 9px; font-weight: 800; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .q-card.selected .q-type-label { color: rgba(var(--ar),0.80); }
+
+  .q-name { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+  .q-card.inactive .q-name { color: var(--muted); }
+
+  .q-def { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .q-card.selected .q-def { color: rgba(255,255,255,0.58); }
+
+  /* CONTENT ROW — list + activity window */
+  .content-row {
+    flex: 1; display: flex; min-height: 0; overflow: hidden;
+  }
+
+  /* LEFT ITEM LIST */
+  .item-list {
+    width: 460px; flex-shrink: 0;
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .list-header {
+    padding: 20px 28px 14px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .list-header-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.20em;
+    text-transform: uppercase; color: rgba(var(--ar),0.70);
+  }
+  .list-header-count {
+    font-size: 11px; color: var(--muted); font-weight: 500;
+  }
+  .list-items {
+    flex: 1; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px;
+    overflow: hidden;
+  }
+
+  /* section label inside list */
+  .list-section-label {
+    font-size: 9px; font-weight: 800; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+    padding: 10px 12px 4px;
+  }
+
+  .list-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 14px 16px; border-radius: 12px;
+    border-left: 3px solid transparent;
+    position: relative;
+  }
+  .list-item.focused {
+    background: rgba(255,255,255,0.07);
+    border-left-color: var(--accent);
+  }
+  .list-item-icon {
+    width: 30px; height: 30px; border-radius: 8px;
+    background: var(--accent-bg); border: 1px solid var(--accent-border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .list-item-icon svg { width: 14px; height: 14px; color: var(--accent); }
+  .list-item-text {}
+  .list-item-title { font-size: 15px; font-weight: 700; line-height: 1.25; }
+  .list-item-def { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+
+  /* ACTIVITY WINDOW */
+  .activity-window {
+    flex: 1; display: flex; flex-direction: column;
+    overflow: hidden; position: relative;
+    padding: 28px 48px 0;
+  }
+
+  .aw-header {
+    flex-shrink: 0; padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .aw-type-row {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 10px;
+  }
+  .aw-type-badge {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 8px;
+    background: var(--accent-bg); border: 1px solid var(--accent-border);
+    color: rgba(var(--ar),0.85);
+  }
+  .aw-breadcrumb {
+    font-size: 11px; color: var(--muted); font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .aw-title {
+    font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;
+  }
+
+  .aw-content {
+    flex: 1; overflow: hidden; position: relative;
+    display: flex; flex-direction: column; gap: 28px;
+  }
+
+  /* fade at bottom */
+  .aw-content::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0; height: 80px;
+    background: linear-gradient(to top, var(--bg), transparent);
+    pointer-events: none;
+  }
+
+  .aw-section {}
+  .aw-section-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.20em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .aw-section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: var(--border);
+  }
+
+  /* Protocol steps */
+  .steps { display: flex; flex-direction: column; gap: 10px; }
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 14px 18px; border-radius: 12px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--border);
+  }
+  .step-num {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.08em;
+    color: var(--accent); min-width: 24px; margin-top: 2px;
+    opacity: 0.80;
+  }
+  .step-text { font-size: 16px; color: var(--text); line-height: 1.5; font-weight: 400; }
+
+  /* bullets */
+  .bullets { display: flex; flex-direction: column; gap: 8px; }
+  .bullet { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .bullet::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 8px; opacity: 0.70; }
+
+  /* insight block */
+  .insight {
+    padding: 18px 22px; border-radius: 12px;
+    background: rgba(var(--ar),0.07);
+    border-left: 3px solid rgba(var(--ar),0.55);
+    font-size: 16px; color: rgba(255,255,255,0.70);
+    line-height: 1.60; font-style: italic;
+  }
+
+  /* HINT BAR */
+  .hint-bar {
+    height: 48px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; gap: 52px;
+    border-top: 1px solid var(--border);
+    background: rgba(10,10,10,0.90);
+  }
+  .hint {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: rgba(255,255,255,0.22);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hint-key {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px; padding: 2px 7px;
+    font-size: 11px; color: rgba(255,255,255,0.50); font-weight: 700; letter-spacing: 0;
+  }
+
+  svg { display: block; }
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <div class="back-nav">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Self
+    </div>
+    <h1>Tuned Emotions</h1>
+    <div class="top-right">
+      <div class="badge-pill">Self</div>
+      <div class="pillar-dot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6F61" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUALITY FILTER BAR (horizontal tabs) -->
+  <div class="quality-bar">
+    <!-- Quiet — RESTORE — selected -->
+    <div class="q-card selected">
+      <div class="q-type-row">
+        <svg class="q-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+        </svg>
+        <span class="q-type-label">Restore</span>
+      </div>
+      <div class="q-name">Quiet</div>
+      <div class="q-def">Reduce anticipatory threat signals that fragment focus.</div>
+    </div>
+    <!-- Fueled — MAINTAIN — inactive -->
+    <div class="q-card inactive">
+      <div class="q-type-row">
+        <svg class="q-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+        </svg>
+        <span class="q-type-label">Maintain</span>
+      </div>
+      <div class="q-name">Fueled</div>
+      <div class="q-def">Sustain motivational signal across the full session arc.</div>
+    </div>
+    <!-- Calibrated — CONCENTRATE — inactive -->
+    <div class="q-card inactive">
+      <div class="q-type-row">
+        <svg class="q-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+        </svg>
+        <span class="q-type-label">Concentrate</span>
+      </div>
+      <div class="q-name">Calibrated</div>
+      <div class="q-def">Compress emotional signal into high-precision state.</div>
+    </div>
+  </div>
+
+  <!-- CONTENT ROW -->
+  <div class="content-row">
+
+    <!-- LEFT: ITEM LIST (filtered to Quiet) -->
+    <div class="item-list">
+      <div class="list-header">
+        <span class="list-header-label">Quiet</span>
+        <span class="list-header-count">2 techniques · 1 concept</span>
+      </div>
+      <div class="list-items">
+        <div class="list-section-label">Techniques</div>
+        <!-- focused item -->
+        <div class="list-item focused">
+          <div class="list-item-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="list-item-text">
+            <div class="list-item-title">Pre-Session Clearance</div>
+            <div class="list-item-def">Release accumulated emotional charge before entering focus.</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="list-item-text">
+            <div class="list-item-title">Detachment Protocol</div>
+            <div class="list-item-def">Step back from outcome attachment before beginning.</div>
+          </div>
+        </div>
+
+        <div class="list-section-label">Concepts</div>
+        <div class="list-item">
+          <div class="list-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg>
+          </div>
+          <div class="list-item-text">
+            <div class="list-item-title">Window of Tolerance</div>
+            <div class="list-item-def">The optimal activation zone between hyper and hypo arousal.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: SINGLE ACTIVITY WINDOW -->
+    <div class="activity-window">
+      <div class="aw-header">
+        <div class="aw-type-row">
+          <span class="aw-type-badge">Technique</span>
+          <span class="aw-breadcrumb">Quiet · Tuned Emotions · Self</span>
+        </div>
+        <div class="aw-title">Pre-Session Clearance</div>
+      </div>
+
+      <div class="aw-content">
+        <!-- The Protocol -->
+        <div class="aw-section">
+          <div class="aw-section-label">The Protocol</div>
+          <div class="steps">
+            <div class="step"><span class="step-num">01</span><span class="step-text">Pause 3–5 minutes before your session begins. Do not open any tools yet.</span></div>
+            <div class="step"><span class="step-num">02</span><span class="step-text">Name what you're carrying — any unresolved emotion, worry, or background distraction.</span></div>
+            <div class="step"><span class="step-num">03</span><span class="step-text">Give it permission to exist. Do not suppress or resolve it — only acknowledge.</span></div>
+            <div class="step"><span class="step-num">04</span><span class="step-text">Set it aside with intention: <em>"I'll return to this after."</em></span></div>
+            <div class="step"><span class="step-num">05</span><span class="step-text">Take 3 slow exhales. Each exhale signals the transition into focus mode.</span></div>
+          </div>
+        </div>
+
+        <!-- When to Use -->
+        <div class="aw-section">
+          <div class="aw-section-label">When to Use</div>
+          <div class="bullets">
+            <div class="bullet">Before any focused work session, especially creative or deep work.</div>
+            <div class="bullet">After emotionally charged conversations or events.</div>
+            <div class="bullet">When you notice mental restlessness or resistance at session start.</div>
+          </div>
+        </div>
+
+        <!-- Key Insight -->
+        <div class="aw-section">
+          <div class="aw-section-label">Key Insight</div>
+          <div class="insight">
+            The goal isn't to eliminate emotion — it's to prevent it from bleeding into focus time. Emotion acknowledged is emotion that doesn't compete for bandwidth.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content-row -->
+
+  <!-- HINT BAR -->
+  <div class="hint-bar">
+    <div class="hint"><span class="hint-key">← →</span> Switch Quality</div>
+    <div class="hint"><span class="hint-key">↑ ↓</span> Navigate Items</div>
+    <div class="hint"><span class="hint-key">A</span> Open Full Card</div>
+    <div class="hint"><span class="hint-key">B</span> Back</div>
+  </div>
+
+</div>
+</body>
+</html>

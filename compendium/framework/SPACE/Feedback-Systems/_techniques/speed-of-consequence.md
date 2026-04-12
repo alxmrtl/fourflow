@@ -12,7 +12,7 @@ tags:
 
 > Accelerates learning through fast outcomes.
 
-## Why It Enables Flow
+## Mechanism
 
 Learning requires a tight loop between action and consequence. When outcomes arrive quickly, the brain can run many iterations in a short time — testing, adjusting, and improving with high fidelity. Slow consequences force the mind to hold context across long gaps, increasing cognitive load and making it impossible to isolate which variable produced which result. Fast iteration is the mechanism of rapid skill acquisition, and rapid skill acquisition is what keeps the challenge-skill ratio in the flow channel.
 

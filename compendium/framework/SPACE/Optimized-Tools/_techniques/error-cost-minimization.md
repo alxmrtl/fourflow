@@ -12,7 +12,7 @@ tags:
 
 > Limits penalty of mistakes to maintain momentum.
 
-## Why It Enables Flow
+## Mechanism
 
 Fear of mistakes is one of the primary flow killers — when errors carry high stakes or severe penalties, the brain's threat-detection systems activate and narrow the perceptual aperture, shifting the practitioner from exploratory to defensive mode. Risk aversion and creative experimentation cannot coexist. Minimizing error costs — through version control, reversibility, rapid recovery systems, or reduced-stakes environments — keeps the mind willing to attempt and iterate, which is the only path to mastery.
 

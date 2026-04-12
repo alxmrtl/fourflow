@@ -12,7 +12,7 @@ tags:
 
 > Leverages natural competencies.
 
-## Why It Enables Flow
+## Mechanism
 
 Flow is significantly more accessible when working from areas of natural competence — not because the work is easy (challenge-skill calibration still applies), but because natural strengths accelerate the feedback loop between effort and mastery. When working against the grain of your natural competencies, achieving the same challenge-skill balance requires vastly more effort per unit of progress, which makes sustained flow harder to sustain. Strength activation doesn't eliminate challenge — it ensures the challenge is in the work, not in fighting the medium.
 

@@ -24,7 +24,7 @@ tags:
 
 > Prevents affective spikes from hijacking attention.
 
-## Why It Enables Flow
+## Mechanism
 
 The attentional system has a hierarchy: high-salience signals override low-salience ones, and emotions — positive or negative — are among the highest-salience signals the nervous system generates. When an emotion spikes, the prefrontal cortex reorients, working memory is commandeered, and the task becomes secondary to the emotional event. Emotional neutrality is not the absence of emotion but a settled groundedness in which emotion is present but not commanding — felt without being hijacked by. Neutral affect (Gasper, 2018) conveys "there is nothing urgent requiring priority attention," which is exactly the condition needed to give full bandwidth to chosen work. The aperture remains pointed at the work while emotions pass at the periphery.
 

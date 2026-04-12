@@ -17,7 +17,7 @@ tags:
 
 > Establishes sustainable action cycles.
 
-## Why It Enables Flow
+## Mechanism
 
 The brain operates on ultradian rhythms — natural 90–120 minute cycles of higher and lower neural activity that alternate throughout the day regardless of what you're doing. Flow is most accessible during the high-activity phase of each cycle; working against these rhythms (pushing through the low phase, cutting the high phase short) produces diminishing returns and accumulates cognitive debt. Sustainable action cycles align work and rest to the body's natural tempo rather than imposing an arbitrary schedule. Without rhythm and pacing, even a well-energized person with good regulation gradually drains — each session drawing down more than it restores.
 

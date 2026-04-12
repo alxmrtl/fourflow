@@ -23,6 +23,9 @@ Two things must happen before focused work can begin: (1) emotional backlog from
 2. Notice whatever emotional weather is already present. Name each without judgment: "There's some anticipation. Some residual tension from the morning. A little restlessness."
 3. Acknowledge each: "That's here. I see it." Not "that needs to go away." Just: witnessed.
 
+**Optional — Hidden-Payoff Check (add 60 seconds when resistance is high)**
+Before proceeding, ask: "Is there any part of me that *wants* the session not to go well, or wants to stay stuck?" Common hidden payoffs include: maintaining a comfortable identity ("I'm someone who struggles with this"), avoiding the vulnerability of producing something visible, preserving the excuse of not having tried. If a hidden payoff surfaces — name it without judgment: "There's a part of me that would rather stay at this level." Witnessing it is usually enough to reduce its pull.
+
 **Part 2 — Enter (3–8 minutes)**
 4. **Physical element**: breathwork, a specific stretch, a brief walk, or a physical transition (sit in the chair, put on headphones).
 5. **Mental element**: silently state what the session is for — what you're here to do, not what result you want. "For the next [time], my attention goes to [specific task]. Whatever arises, arises. The work continues."

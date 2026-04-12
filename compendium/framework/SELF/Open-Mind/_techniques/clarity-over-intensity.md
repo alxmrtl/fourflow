@@ -17,7 +17,7 @@ tags:
 
 > Prioritizes understanding over emotional force.
 
-## Why It Enables Flow
+## Mechanism
 
 High emotional intensity — urgency, pressure, desperate effort — narrows the perceptual aperture. The more intensely you want a result, the more constricted the attention that can find it. Clarity is the calm precision of knowing exactly what you're looking for, why, and how to find it, without the force of emotional investment distorting the search. In creative and cognitively demanding work, understanding the problem well is more productive than trying harder. Clarity creates spaciousness; intensity creates pressure. Flow lives in spaciousness — the relaxed-alert state where pattern recognition, lateral thinking, and insight all operate at their best.
 

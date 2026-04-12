@@ -17,7 +17,7 @@ tags:
 
 > Reduces decision overhead before and during action.
 
-## Why It Enables Flow
+## Mechanism
 
 Every decision made during a work session is a withdrawal from the prefrontal cortex's finite decision-making capacity. When too many options exist at every step — what to work on next, which approach to take, which tool to use — decision overhead accumulates into decision fatigue, where the quality of each subsequent choice degrades. Flow requires the mind to be fully available for the work itself, not for the meta-task of choosing how to do the work. Overchoice elimination structures the environment and systems so that fewer decisions intrude during flow sessions — replacing real-time choice with pre-made decisions, constraints, and defaults.
 

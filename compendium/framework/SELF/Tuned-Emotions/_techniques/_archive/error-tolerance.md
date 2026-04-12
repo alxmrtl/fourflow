@@ -22,7 +22,7 @@ tags:
 
 > Allows rapid correction without identity threat.
 
-## Why It Enables Flow
+## Mechanism
 
 Flow requires full engagement with the task at hand. When errors carry identity threat — when each mistake is evidence of inadequacy rather than information about the path — a fraction of attention is always monitoring for failure. This surveillance is incompatible with absorption. Error tolerance keeps the feedback loop between mistake and correction running cleanly, without the detour through self-evaluation that slows correction and fragments attention. At scale, across a project or a life, error tolerance is the variable that determines how many iterations a person can run — and therefore how capable they ultimately become.
 

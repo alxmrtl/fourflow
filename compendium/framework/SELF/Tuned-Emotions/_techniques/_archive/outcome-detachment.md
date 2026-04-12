@@ -22,7 +22,7 @@ tags:
 
 > Prevents future fixation from degrading present action.
 
-## Why It Enables Flow
+## Mechanism
 
 Attachments are when you expect reality to be a certain way. In flow terms, this creates a monitoring layer — part of attention is checking whether you're heading toward the expected outcome rather than being absorbed in the present action. This splits attention and blocks the action-awareness merging that defines flow. Attachments are also patterns: operating from a belief that well-being depends on an outcome activates the protective ego, which starts managing rather than creating. Outcome detachment is not suppression — it's a genuine shift in relationship where you can want something fully and simultaneously be OK at the deepest level if it doesn't happen. This paradox often improves outcomes: you act without the constraint of fear of not getting them.
 

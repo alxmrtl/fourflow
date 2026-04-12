@@ -12,7 +12,7 @@ tags:
 
 > Uses imagery to bypass analytical load.
 
-## Why It Enables Flow
+## Mechanism
 
 The analytical mind processes vision through words and logic — both of which require active, effortful processing. Symbols, images, and metaphors activate emotional and intuitive processing pathways that operate in parallel to analytical thinking, not through it. When a vision is encoded symbolically, it becomes accessible without cognitive load — the symbol activates the state directly, making the vision available in the moments when analytical capacity is needed for the work rather than for vision recall.
 

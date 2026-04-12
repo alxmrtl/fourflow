@@ -23,7 +23,7 @@ tags:
 
 > Eliminates self-evaluation loops during performance.
 
-## Why It Enables Flow
+## Mechanism
 
 The defining characteristic of flow — more than speed, skill, or output quality — is the *absence of self-consciousness*. Self-evaluation is a competing cognitive process: the brain cannot fully run both task engagement and self-monitoring simultaneously. The mechanism is transient hypofrontality — during flow, the dorsolateral prefrontal cortex (seat of self-referential processing and inner critic activity) temporarily reduces its activity. The inner critic doesn't get quieted by willpower; it gets metabolically out-competed. When ego monitoring remains active, it creates a second-order loop — action → evaluation → emotional response → attention hijack — that functions like a performance tax on every action. Flow cannot coexist with verdicts.
 

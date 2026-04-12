@@ -46,6 +46,29 @@ Most attachment isn't to the outcome but to the specific delivery pathway. Name 
 
 *This isn't passivity. Full effort + released grip = surrender. Half effort + released grip = abandonment.*
 
+## Variant — In-Moment Surrender Cue (Dodson)
+
+For situations that are moving too fast for the full three-step protocol — a presentation already underway, a conversation escalating, a performance where you can't pause — use the single-word cue:
+
+1. In the moment when you notice resistance, forcing, or grip: silently say **"Surrender."**
+2. Let that word land in the body. Drop muscle tension in shoulders, jaw, hands.
+3. Allow what you've prepared to run — trust the preparation rather than managing the execution.
+4. Return full attention to the person or task in front of you.
+
+This is not passive: full effort continues. Surrender means releasing management of the outcome, not releasing engagement with the work.
+
+---
+
+## Variant — Stakes Reduction (Dodson)
+
+When performance anxiety is high before an important situation, deliberately reduce perceived stakes to match the relaxed state you bring to unimportant situations:
+
+1. Remember a situation you treated as critically important (a first date, a client pitch, a significant presentation). Notice how you felt — monitored, guarded, evaluating each move.
+2. Remember a situation you treated as unimportant (catching up with an old friend, a low-stakes meeting, casual conversation). Notice the quality of presence — relaxed, spontaneous, natural.
+3. Identify: the quality of performance was likely better in the unimportant situation, even though less was "on the line."
+4. Before the important situation: write down 3–5 qualities that make it *less* important than it feels. Not denial — genuine reasons why the world doesn't end if it goes imperfectly.
+5. Enter the situation with the same quality of presence you bring to unimportant ones. Bring the craft without the audition.
+
 ## When to Use
 
 - Before high-stakes sessions where the outcome matters significantly (publishing, presenting, pitching)

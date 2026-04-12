@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FlowStation — Mockup C: Quality Stage + Full Activity Window</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0a;
+    --text: #f0f0f0;
+    --muted: rgba(255,255,255,0.38);
+    --dim: rgba(255,255,255,0.12);
+    --border: rgba(255,255,255,0.08);
+    --accent: #FF6F61;
+    --ar: 255,111,97;
+    --accent-bg: rgba(255,111,97,0.09);
+    --accent-border: rgba(255,111,97,0.28);
+    --accent-glow: rgba(255,111,97,0.16);
+  }
+
+  html, body {
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(rgba(255,255,255,0.022) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Ambient quality glow from top */
+  body::before {
+    content: ''; position: fixed; top: -80px; left: 50%; transform: translateX(-50%);
+    width: 1000px; height: 500px;
+    background: radial-gradient(ellipse, rgba(var(--ar),0.055) 0%, transparent 65%);
+    pointer-events: none; z-index: 0;
+  }
+
+  .screen { width: 1920px; height: 1080px; display: flex; flex-direction: column; position: relative; z-index: 1; }
+
+  /* TOP BAR */
+  .top-bar {
+    height: 80px; flex-shrink: 0;
+    display: flex; align-items: center; padding: 0 52px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,10,10,0.95);
+  }
+  .back-nav { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; min-width: 200px; }
+  .top-bar h1 { flex: 1; text-align: center; font-size: 24px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; }
+  .top-right { min-width: 200px; display: flex; align-items: center; justify-content: flex-end; gap: 14px; }
+  .badge-pill { padding: 5px 14px; background: var(--accent-bg); border: 1px solid var(--accent-border); border-radius: 20px; color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: 0.20em; text-transform: uppercase; }
+  .pillar-dot { width: 34px; height: 34px; border-radius: 10px; background: var(--accent-bg); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; }
+
+  /* QUALITY STAGE — compact carousel row */
+  .quality-stage {
+    flex-shrink: 0;
+    height: 260px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 48px;
+    border-bottom: 1px solid var(--border);
+    gap: 0;
+    position: relative; overflow: hidden;
+  }
+  /* bottom fade so it blends into content row */
+  .quality-stage::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(var(--ar),0.18), transparent);
+  }
+
+  .flank-card {
+    width: 260px; height: 180px; flex-shrink: 0;
+    border-radius: 18px; border: 1px solid var(--border);
+    background: rgba(255,255,255,0.015);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
+    opacity: 0.20;
+    position: relative;
+  }
+  .flank-type-icon { width: 24px; height: 24px; color: var(--muted); }
+  .flank-type-lbl { font-size: 9px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .flank-name { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; color: var(--muted); }
+
+  /* ← › nudge arrows */
+  .stage-arrow {
+    font-size: 28px; color: rgba(255,255,255,0.12);
+    padding: 0 20px; flex-shrink: 0;
+  }
+
+  /* HERO QUALITY CARD */
+  .hero-card {
+    flex: 1; max-width: 900px; height: 220px;
+    border-radius: 22px;
+    background: var(--accent-bg); border: 1px solid var(--accent-border);
+    box-shadow:
+      0 0 70px var(--accent-glow),
+      0 0 130px rgba(var(--ar),0.06),
+      0 20px 50px rgba(0,0,0,0.60),
+      inset 0 1px 0 rgba(var(--ar),0.18);
+    padding: 28px 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; overflow: hidden;
+  }
+  .hero-card::before {
+    content: ''; position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
+    width: 500px; height: 180px;
+    background: radial-gradient(ellipse, rgba(var(--ar),0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-top { display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; }
+  .hero-type-icon { width: 24px; height: 24px; color: var(--accent); opacity: 0.85; }
+  .hero-type-label { font-size: 11px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(var(--ar),0.80); }
+  .hero-name { font-size: 68px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; position: relative; z-index: 1; }
+  .hero-def { font-size: 16px; color: rgba(255,255,255,0.60); line-height: 1.5; position: relative; z-index: 1; }
+
+  /* CONTENT ROW — item list + activity window */
+  .content-row {
+    flex: 1; display: flex; min-height: 0; overflow: hidden;
+  }
+
+  /* LEFT: ITEM LIST */
+  .item-list {
+    width: 440px; flex-shrink: 0;
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; overflow: hidden;
+    background: rgba(0,0,0,0.15);
+  }
+  .list-header {
+    padding: 18px 24px 14px; border-bottom: 1px solid var(--border); flex-shrink: 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .list-header-label { font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(var(--ar),0.70); }
+  .list-header-sub { font-size: 11px; color: var(--muted); }
+  .list-items { flex: 1; padding: 12px 14px; display: flex; flex-direction: column; gap: 3px; overflow: hidden; }
+  .list-sec-lbl { font-size: 9px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); padding: 8px 12px 3px; }
+
+  .list-item {
+    display: flex; align-items: flex-start; gap: 11px;
+    padding: 13px 14px; border-radius: 10px;
+    border-left: 3px solid transparent;
+  }
+  .list-item.focused { background: rgba(255,255,255,0.07); border-left-color: var(--accent); }
+  .list-item-icon { width: 28px; height: 28px; border-radius: 7px; background: var(--accent-bg); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .list-item-icon svg { width: 13px; height: 13px; color: var(--accent); }
+  .list-item-title { font-size: 14px; font-weight: 700; line-height: 1.25; }
+  .list-item-def { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+
+  /* RIGHT: ACTIVITY WINDOW (full-height, focused item content) */
+  .activity-window {
+    flex: 1; display: flex; flex-direction: column;
+    overflow: hidden; padding: 28px 52px 0;
+    position: relative;
+  }
+
+  .aw-header { flex-shrink: 0; padding-bottom: 18px; border-bottom: 1px solid var(--border); margin-bottom: 26px; }
+  .aw-type-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .aw-badge { font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; padding: 4px 10px; border-radius: 8px; background: var(--accent-bg); border: 1px solid var(--accent-border); color: rgba(var(--ar),0.85); }
+  .aw-breadcrumb { font-size: 11px; color: var(--muted); }
+  .aw-title { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+
+  .aw-content {
+    flex: 1; overflow: hidden; position: relative;
+    display: flex; flex-direction: column; gap: 26px;
+  }
+  .aw-content::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 70px;
+    background: linear-gradient(to top, var(--bg), transparent);
+    pointer-events: none;
+  }
+
+  .aw-section-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.20em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .aw-section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .steps { display: flex; flex-direction: column; gap: 9px; }
+  .step { display: flex; align-items: flex-start; gap: 16px; padding: 14px 18px; border-radius: 12px; background: rgba(255,255,255,0.025); border: 1px solid var(--border); }
+  .step-num { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; color: var(--accent); min-width: 22px; margin-top: 3px; opacity: 0.80; }
+  .step-text { font-size: 16px; color: var(--text); line-height: 1.5; }
+
+  .bullets { display: flex; flex-direction: column; gap: 8px; }
+  .bullet { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+  .bullet::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 8px; opacity: 0.65; }
+
+  .insight { padding: 18px 22px; border-radius: 12px; background: rgba(var(--ar),0.06); border-left: 3px solid rgba(var(--ar),0.50); font-size: 16px; color: rgba(255,255,255,0.68); line-height: 1.60; font-style: italic; }
+
+  /* HINT BAR */
+  .hint-bar { height: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 52px; border-top: 1px solid var(--border); background: rgba(10,10,10,0.90); }
+  .hint { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.22); display: flex; align-items: center; gap: 8px; }
+  .hint-key { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 2px 7px; font-size: 11px; color: rgba(255,255,255,0.50); font-weight: 700; letter-spacing: 0; }
+
+  svg { display: block; }
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <div class="back-nav">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Self
+    </div>
+    <h1>Tuned Emotions</h1>
+    <div class="top-right">
+      <div class="badge-pill">Self</div>
+      <div class="pillar-dot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6F61" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUALITY STAGE — carousel -->
+  <div class="quality-stage">
+
+    <!-- Left flank: Fueled (prev) -->
+    <div class="stage-arrow">‹</div>
+    <div class="flank-card">
+      <svg class="flank-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      <span class="flank-type-lbl">Maintain</span>
+      <span class="flank-name">Fueled</span>
+    </div>
+
+    <!-- Hero: Quiet (selected) -->
+    <div style="flex:1; display:flex; justify-content:center; padding: 0 32px;">
+      <div class="hero-card">
+        <div class="hero-top">
+          <svg class="hero-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+          </svg>
+          <span class="hero-type-label">Restore</span>
+        </div>
+        <div class="hero-name">Quiet</div>
+        <div class="hero-def">Reduce anticipatory threat signals that fragment focus.</div>
+      </div>
+    </div>
+
+    <!-- Right flank: Calibrated (next) -->
+    <div class="flank-card">
+      <svg class="flank-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+      <span class="flank-type-lbl">Concentrate</span>
+      <span class="flank-name">Calibrated</span>
+    </div>
+    <div class="stage-arrow">›</div>
+
+  </div>
+
+  <!-- CONTENT ROW -->
+  <div class="content-row">
+
+    <!-- LEFT: ITEM LIST (filtered to Quiet) -->
+    <div class="item-list">
+      <div class="list-header">
+        <span class="list-header-label">Quiet</span>
+        <span class="list-header-sub">2 techniques · 1 concept</span>
+      </div>
+      <div class="list-items">
+        <div class="list-sec-lbl">Techniques</div>
+        <div class="list-item focused">
+          <div class="list-item-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div>
+            <div class="list-item-title">Pre-Session Clearance</div>
+            <div class="list-item-def">Release accumulated emotional charge before entering focus.</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="list-item-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div>
+            <div class="list-item-title">Detachment Protocol</div>
+            <div class="list-item-def">Step back from outcome attachment before beginning.</div>
+          </div>
+        </div>
+        <div class="list-sec-lbl">Concepts</div>
+        <div class="list-item">
+          <div class="list-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></div>
+          <div>
+            <div class="list-item-title">Window of Tolerance</div>
+            <div class="list-item-def">The optimal activation zone between hyper and hypo arousal.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: ACTIVITY WINDOW -->
+    <div class="activity-window">
+      <div class="aw-header">
+        <div class="aw-type-row">
+          <span class="aw-badge">Technique</span>
+          <span class="aw-breadcrumb">Quiet · Tuned Emotions · Self</span>
+        </div>
+        <div class="aw-title">Pre-Session Clearance</div>
+      </div>
+
+      <div class="aw-content">
+        <div class="aw-section">
+          <div class="aw-section-label">The Protocol</div>
+          <div class="steps">
+            <div class="step"><span class="step-num">01</span><span class="step-text">Pause 3–5 minutes before your session begins. Do not open any tools yet.</span></div>
+            <div class="step"><span class="step-num">02</span><span class="step-text">Name what you're carrying — any unresolved emotion, worry, or background distraction.</span></div>
+            <div class="step"><span class="step-num">03</span><span class="step-text">Give it permission to exist. Acknowledge without suppressing or resolving.</span></div>
+            <div class="step"><span class="step-num">04</span><span class="step-text">Set it aside with intention: <em>"I'll return to this after."</em></span></div>
+            <div class="step"><span class="step-num">05</span><span class="step-text">Take 3 slow exhales. Each exhale signals the nervous system to transition into focus mode.</span></div>
+          </div>
+        </div>
+
+        <div class="aw-section">
+          <div class="aw-section-label">When to Use</div>
+          <div class="bullets">
+            <div class="bullet">Before any focused work session, especially creative or deep work.</div>
+            <div class="bullet">After emotionally charged conversations or unexpected events.</div>
+            <div class="bullet">When you notice restlessness or resistance at the moment of starting.</div>
+          </div>
+        </div>
+
+        <div class="aw-section">
+          <div class="aw-section-label">Key Insight</div>
+          <div class="insight">
+            The goal isn't to eliminate emotion — it's to prevent it from bleeding into focus time. Emotion acknowledged is emotion that doesn't compete for bandwidth.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content-row -->
+
+  <!-- HINT BAR -->
+  <div class="hint-bar">
+    <div class="hint"><span class="hint-key">← →</span> Cycle Quality</div>
+    <div class="hint"><span class="hint-key">↓</span> Enter Items</div>
+    <div class="hint"><span class="hint-key">↑ ↓</span> Navigate Items</div>
+    <div class="hint"><span class="hint-key">A</span> Open Full Card</div>
+    <div class="hint"><span class="hint-key">B</span> Back</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -12,7 +12,7 @@ tags:
 
 > Preserves attention for high-leverage work.
 
-## Why It Enables Flow
+## Mechanism
 
 Cognitive attention is a finite resource that degrades with expenditure. When routine, low-leverage steps consume attentional capacity — formatting, file management, administrative tasks, repetitive decisions — they deplete the very resource needed for high-quality creative or strategic work. Automating the routine preserves peak attentional capacity for work that actually requires it, making the cognitive load available to deep work larger with no additional willpower.
 

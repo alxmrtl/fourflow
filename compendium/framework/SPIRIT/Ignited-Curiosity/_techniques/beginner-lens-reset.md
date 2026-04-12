@@ -27,6 +27,18 @@ The beginner lens reset works by deliberately suspending the schema. This is not
 5. From your observations, extract at least one genuine question — something you didn't know you didn't know. This question is the reset's output.
 6. Proceed with the session holding that question. The beginner moment has been created; you can now use your expertise while remaining curious.
 
+## Variant — Nature Absorption (Dodson)
+
+When no familiar domain is available, or when the beginner-lens exercise feels too intellectual, use a natural object that is literally new:
+
+1. Find a flowering plant or bush outdoors. If none is available, a single leaf, stone, or body of water works.
+2. Observe it across multiple stages or details — if a flowering bush: find a young unfurling bud, a flower in full bloom, a wilting bloom, and a seed pod in the same plant.
+3. As you look, notice impatience arising — the urge to move on, to check your phone, to "have seen it." When impatience arises: stay longer. Take even more time.
+4. Continue until you genuinely see something you hadn't noticed — a texture, a relationship between stages, a motion, a color gradient.
+5. Contemplate: *What else in my life grows at its own pace? Is my impatience helping or hindering?*
+
+The mechanism differs from the standard protocol: nature bypasses schema entirely because it isn't categorized by expertise. The beginner's mind is automatic here — the reset comes from patience rather than suspension of knowledge.
+
 ## When to Use
 - When work on a long-term project feels mechanical and the engagement signal is gone
 - Before teaching something you know very well — the beginner reset surfaces what has become invisible to you but is opaque to a student

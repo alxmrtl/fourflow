@@ -12,7 +12,7 @@ tags:
 
 > Uses limits to sharpen action.
 
-## Why It Enables Flow
+## Mechanism
 
 Unlimited options and open-ended possibility are cognitively expensive — before any work begins, the mind must survey, evaluate, and compare across an infinite space. Constraints collapse the decision space and direct attention to what matters, paradoxically making creative work faster and more precise by removing the infinite from consideration. The best constraints don't feel like restrictions; they feel like focus — the productive narrowing that allows depth to occur.
 

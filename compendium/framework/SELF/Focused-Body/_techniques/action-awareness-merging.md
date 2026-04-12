@@ -17,13 +17,15 @@ tags:
 
 > Eliminates separation between doing and noticing.
 
-## Why It Enables Flow
+## Mechanism
 
 Action-awareness merging is the defining signature of flow: the separation between the doer and the doing dissolves. The monitoring ego that usually stands apart — evaluating performance, checking progress, managing identity — goes quiet. What remains is pure engagement. This is the subjective experience of the perceptual aperture opening wide: when all available perception is consumed by the task, no bandwidth remains for a separate "observer" to comment on the action. Time disappears because the mechanism that generates the sensation of sequential moments has been fully absorbed. When absent, the monitoring layer creates ticks — check, evaluate, adjust, check again — each one reasserting the experience of time and breaking the absorption that flow requires.
 
 ## Techniques
 
 - [[aperture-absorption]] — externalizes what the monitoring ego would track before starting, then commits to zero check-ins until a designated trigger; dissolves the separation by removing the monitoring's fuel
+- [[attention-mode-toggle]] — deliberately alternates between narrow focused and wide open awareness across visual, auditory, and spatial channels; prevents the over-focus fixation that fragments embodied presence
+- [[subconscious-surrender-protocol]] — compares controlled effort against surrendered trust on a physical task; provides a somatic reference for what releasing the monitoring layer feels like in the body
 
 ## Related Mechanics
 

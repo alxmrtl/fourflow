@@ -12,7 +12,7 @@ tags:
 
 > Reduces threat perception during exploration.
 
-## Why It Enables Flow
+## Mechanism
 
 The brain's threat-detection system and the creative/exploratory system are mutually inhibitory — when one is active, the other is suppressed. Playfulness is the state in which stakes are perceived as low enough for genuine exploration to occur: the brain can experiment, fail cheaply, and try again without activating defensive mode. Without it, even genuinely interesting work gets approached with performance-anxiety, which narrows attention and prevents the expansive absorption that flow requires.
 
