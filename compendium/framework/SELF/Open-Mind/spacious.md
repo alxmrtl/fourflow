@@ -16,18 +16,25 @@ keywords:
   - dmn
   - rumination
   - minimalism
-definition: Free working memory for task-relevant processing.
+definition: "Working memory has room — what's active in attention is the task, not the load around it."
 tags:
   - type/quality
 ---
 
-# Cognitive Load Reduction
+# Spacious
+*The Restore quality of Open Mind*
 
-> Free working memory for task-relevant processing.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the mind has room to work. What's active in attention is the task at hand, not the background hum of everything being managed, tracked, or worried about. When absent, cognitive bandwidth is already occupied before any work begins — and the work happens on top of that load, which is like trying to solve a hard problem in a noisy room where half the noise is coming from inside. The overhead isn't dramatic. It's just always there, taking the edge off everything.
 
-Flow requires complete present-moment absorption — the action-awareness merging that defines peak experience. This is only possible when the prefrontal cortex has sufficient capacity to devote entirely to the task. Cognitive load is the total information held in working memory at any moment; when it exceeds the prefrontal ceiling, mental efficiency collapses — thinking slows, learning degrades, attention fragments. Physical possessions are an underestimated source of baseline cognitive load: every object owned requires ongoing mental processing (tracking, maintaining, worrying, deciding about it) and compounds into measurable hours of daily attention drain. Flow triggers work via two mechanisms — increasing focusing neurochemicals or reducing cognitive load directly. Possessions act as anti-triggers, raising the baseline load that must be overcome before flow becomes accessible. Reduction is permanent and passive: unlike behavioral changes, fewer possessions cost nothing to maintain.
+## Science
+
+Working memory is the system that holds and manipulates information in real time. Cowan (2001) established a hard capacity of roughly 4±1 items — a ceiling that doesn't expand under pressure but degrades under load. Cognitive load theory (Sweller) describes how extraneous load — processing that isn't directly required by the task — consumes working memory slots that would otherwise go to learning and problem-solving.
+
+Physical possessions are an underestimated source of baseline cognitive load: every object owned generates ongoing maintenance processing — tracking location, anticipating repairs, managing identity associations — and compounds into measurable attentional drain. Research shows that physical environment complexity correlates with cortisol levels (Saxbe & Repetti, 2010) — cluttered homes produced higher stress hormone responses throughout the day, independent of what activities were happening inside them.
+
+The Default Mode Network, which mediates insight, creativity, and intrinsic motivation, requires genuine idle-state conditions to function. Chronic cognitive load degrades DMN synthesis — the background processing that surfaces solutions, connections, and the felt sense of meaning in work. The restore path is subtraction: each removed demand is bandwidth returned permanently.
 
 ## Techniques
 
@@ -35,34 +42,8 @@ Flow requires complete present-moment absorption — the action-awareness mergin
 - [[overchoice-elimination]] — eliminates decisions before they arise, reducing working-memory drain
 - [[dmn-weed-model]] — maps how accumulation overhead degrades DMN idle-state synthesis and insight
 
-## Key Concepts
-
-- [[attention-deficit-trait]] — explains how chronic overload permanently degrades cognitive performance
-- [[cognitive-load-theory]] — explains the working-memory ceiling that limits available processing bandwidth
-- [[working-memory-limits]] — explains the hard capacity constraint on simultaneous information processing
-
-## Related Mechanics
-
-- [[overchoice-elimination]] — decision load is a major cognitive overhead source; reducing options directly reduces working memory demand
-- [[environmental-simplicity]] — the spatial practice implementing what this mechanic identifies; possession reduction is the mechanism
-- [[compression-over-expansion]] — compressing information and commitments is cognitive load reduction applied to mental content
-- [[subtraction-beats-addition]] — the same principle applied to tools and systems
-- [[attention-residue-elimination]] — open loops and unfinished tasks generate cognitive load independent of possessions
-- [[ego-monitoring-removal]] — possession-as-identity escalation activates ego monitoring loops; the cognitive overhead and emotional vigilance reinforce each other
-
-## Sources
-
-- [[doris-minimalism-flow-article]] — attention math framework, DMN weed model, possession-as-identity escalation, flow triggers as cognitive load reducers
-
-## Capture Sources
-
-| Source | Type | Key Insight |
-|--------|------|-------------|
-| [[geddes-anti-collapse-field-manual-newsletter]] | newsletter | Termination Level Awareness: cognitive overload causes the decision system to settle for answers at a lower level than the question requires; the descent (principle → rule → justification → impulse) is automatic |
-
 ## Recall
 
 **Hook:** Every possession is a subscription you pay in attention, not money.
-**Mechanism:** Physical possessions generate ongoing cognitive overhead — tracking, maintaining, worrying — raising the baseline load the brain must sustain before any deep work begins; the DMN also degrades, blocking the idle-state synthesis where creative insight and intrinsic motivation resurface.
-**Anchor:** Attention Math — estimate the daily attention cost of your highest-attention possession categories (iPad ≈ 2 min/day; luxury item ≈ 10 min/day). Sum them. The number supplies the motivation to simplify.
-**See also:** [[attention-math-framework]], [[environmental-simplicity]], [[overchoice-elimination]]
+**Mechanism:** Physical possessions generate ongoing cognitive overhead — tracking, maintaining, worrying — raising the baseline load the brain must sustain before any deep work begins; the DMN also degrades, blocking the idle-state synthesis where creative insight resurfaces.
+**Anchor:** Attention Math — estimate the daily attention cost of your highest-attention possession categories. Sum them. The number supplies the motivation to simplify.

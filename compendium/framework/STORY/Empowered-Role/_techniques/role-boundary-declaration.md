@@ -12,13 +12,6 @@ tags:
 
 > Unclear role edges don't just create awkwardness — they split attention between doing the work and monitoring for violations.
 
-## Mechanism
-Role ambiguity is a documented flow blocker for a specific neurological reason. When the boundaries of what you own are unclear, the nervous system cannot fully commit attentional resources to the work itself because a portion of attentional bandwidth must be reserved for ongoing monitoring: "Is this mine to do? Am I overstepping? Should someone else handle this? What happens if I'm wrong?" This monitoring is not a conscious choice — it is an automatic threat-surveillance function activated by the unresolved question of scope.
-
-Clarity research in organizational psychology (Hackman, Oldham) consistently identifies task identity and task significance as core dimensions of meaningful work — but both depend on role clarity. You cannot have task identity (the sense that you own a complete piece of work) if you don't know where your ownership ends. The monitoring overhead drains cognitive resources that could otherwise fund the work itself.
-
-The declaration doesn't require organizational authority to be effective. A self-declared boundary — explicitly stated to yourself and, where relevant, to others — provides enough cognitive resolution to close the monitoring loop. The brain doesn't need perfect certainty about boundaries; it needs a working model it can commit to and revisit if evidence contradicts it.
-
 ## Protocol
 1. Write the declaration header: "I own:" — list every responsibility, decision, output, and domain that is unambiguously yours.
 2. Write: "I do not own:" — list the adjacent responsibilities, decisions, and domains that might seem related but belong to others or to no one.

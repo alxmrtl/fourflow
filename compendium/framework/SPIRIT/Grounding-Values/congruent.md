@@ -4,18 +4,25 @@ dimension: spirit
 state: grounding-values
 quality_type: restore
 keywords: [congruence, friction, integrity, consistency, harmony, internal-integrity, authentic-desire, life-intelligence, trust, ease]
-definition: "Removes value-based friction."
+definition: "When what you're doing matches who you are, the work moves with you instead of against you."
 tags:
   - type/quality
 ---
 
-# Internal Alignment
+# Congruent
+*The Restore quality of Grounding Values*
 
-> Remove value-based friction.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, there's no background tax competing with the work. The part of you that knows what matters isn't pulling against the direction you're moving — it's aligned with it. When absent, you notice it as persistent drag: effort that costs more than it should, motivation that keeps stalling without clear reason, a subtle sense of doing it for someone else even when alone. The diagnostic is simple: ease within effort signals alignment; persistent friction despite effort signals misalignment.
 
-When there's misalignment between what you're doing and your deeper truth, part of your energy goes toward suppressing the dissonance rather than engaging with the task — a silent tax before focused work begins. Internal alignment means your actions, emotions, and authentic desires are congruent; there's no part of you pulling in a different direction. When aligned, the whole system moves together and the work itself becomes the release of energy rather than a fight against it. The key diagnostic: ease within effort signals alignment; persistent friction despite effort signals misalignment.
+## Science
+
+When there's divergence between what you're doing and your deeper values, part of your energy goes toward suppressing the dissonance rather than engaging with the task — a silent tax before any focused work begins. Research on cognitive dissonance shows this happens automatically and below conscious awareness: the nervous system registers the contradiction and allocates resources to managing it, regardless of whether the mind acknowledges it.
+
+The values-behavior gap is the measurable form of this friction. It describes the divergence between stated values and actual daily choices. Crucially, this gap generates load independent of how hard you're working — you can be technically productive while deeply misaligned, and the system still functions. But sustained flow in this state is structurally blocked because the values layer keeps generating resistance against the direction of movement.
+
+The restore path isn't suppression or willpower. It's alignment: returning to actions that the whole system can move toward without internal resistance. The body often signals misalignment before the mind does — a reluctance to start, an absence of the pull that usually accompanies meaningful work. Attending to that signal and tracing it to its source is how congruence is restored.
 
 ## Techniques
 
@@ -23,29 +30,8 @@ When there's misalignment between what you're doing and your deeper truth, part 
 - [[pushed-vs-pulled-assessment]] — quick diagnostic distinguishing fear-driven vs. meaning-drawn motivation
 - [[values-behavior-delta]] — measures the gap between espoused values and actual behavior patterns
 
-## Key Concepts
-
-- [[values-behavior-gap]] — names the friction source when actions contradict stated values
-- [[moral-disengagement]] — explains how the mind rationalizes acting against its own values
-- [[integrity-psychology]] — research on how congruence between values and actions sustains energy
-
-## Related Mechanics
-- [[values-integration]] — alignment is the internal state; values integration embeds values into decisions
-- [[mind-body-coherence]] — the body registers alignment before the mind; mind-body coherence makes the signal accessible
-- [[identity-alignment]] — alignment of desire; identity alignment is alignment of role — complementary levels of the same process
-
-## Sources
-- [[conscious-accomplishment-raw]] — internal integrity check, life's intelligence ease signal, authentic vs conditioned desires, pushed/pulled diagnostic, heart–true self connection
-
-## Capture Sources
-
-| Source | Type | Key Insight |
-|--------|------|-------------|
-| [[anon-volmaxxxing-alignment-xpost]] | x-post | Silence Alignment Signal: complete stillness is the primary alignment diagnostic — the image of "logic of evolution" as biological proof that authentic essence can't be planned, only uncovered through accumulated lived experience |
-| [[geddes-anti-collapse-field-manual-newsletter]] | newsletter | Operative Worship Test: "worship is not what is professed — it is what is not subject to revision"; three states: absent (everything negotiable), simulated (collapses under pressure), operative (resists descent under load) |
-
 ## Recall
+
 **Hook**: When you're pushed by fear or obligation, part of your energy goes toward suppressing the misalignment rather than engaging with the work.
-**Mechanism**: High internal integrity removes the background friction that fragments attention — when aligned, the whole system moves in one direction; ease within effort signals alignment, persistent friction signals misalignment.
+**Mechanism**: Internal alignment removes the background friction that fragments attention — when aligned, the whole system moves in one direction; ease within effort signals alignment, persistent friction signals misalignment.
 **Anchor**: Pushed vs. Pulled — ask: "Am I driven by fear/obligation (pushed) or drawn by interest/meaning (pulled)?" Body check: the body often knows alignment before the mind does.
-**See also**: [[pushed-vs-pulled-assessment]], [[internal-integrity-check]], [[values-integration]]

@@ -24,10 +24,10 @@ The failure mode isn't feeling emotion. It's misreading it: treating anxiety as 
 
 ## Techniques
 
-- [[ego-monitoring-removal]]
-- [[emotional-neutrality]]
-- [[error-tolerance]]
-- [[outcome-detachment]]
+- [[observer-redirect]]
+- [[pre-session-clearance]]
+- [[detachment-protocol]]
+- [[flow-channel-formula]]
 
 ## Concepts
 

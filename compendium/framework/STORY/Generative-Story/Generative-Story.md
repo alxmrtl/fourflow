@@ -25,7 +25,7 @@ The failure mode is a degenerative narrative: setbacks accumulate as evidence of
 ## Techniques
 
 - [[tension-release-dynamics]]
-- [[meaning-coherence]]
+- [[session-handoff-hook]]
 
 ## Concepts
 

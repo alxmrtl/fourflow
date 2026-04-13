@@ -12,13 +12,6 @@ tags:
 
 > A story that only admits supporting evidence isn't a story — it's a fortress.
 
-## Mechanism
-Confirmation bias operates as a selective attention filter: once a narrative is active, the brain preferentially encodes evidence that confirms it and discounts or ignores evidence that contradicts it. This is not a character flaw — it is a standard feature of human cognition, likely evolved to reduce decision-making overhead by maintaining stable models of the world.
-
-The problem is that self-referential narratives — stories about who we are, what we're building, whether we're on track — are especially prone to becoming self-sealing. Positive evidence enters freely; contradictory evidence is explained away, categorized as noise, or simply not noticed. Over time, the story diverges from reality while feeling more confident than ever.
-
-The disconfirmation check is drawn from Karl Popper's falsificationism applied at the personal level: a story is only informative if it could, in principle, be wrong. Actively seeking contradicting evidence keeps the story in contact with reality by forcing the confirmatory filter to open. Neurologically, this requires deliberate prefrontal engagement — the default system doesn't generate disconfirmation spontaneously. It must be explicitly invited.
-
 ## Protocol
 1. State your current operative story in one sentence: "My story is that I am ___" or "My story is that this project is ___."
 2. Ask: "What evidence exists that this story is wrong or incomplete?" Spend at minimum 3 minutes generating this list — do not stop at one or two items.

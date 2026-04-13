@@ -12,13 +12,6 @@ tags:
 
 > Familiarity kills the signal — one unfamiliar element per session keeps the seeking circuit alive.
 
-## Mechanism
-The brain's novelty response is a fundamental feature of the dopaminergic system. When encountering something new, unexpected, or unpredictable, the ventral tegmental area releases dopamine — not as a reward for something achieved, but as a signal to pay attention and engage. This is the neurochemical substrate of feeling alive and interested. Familiarity has the opposite effect: habituation progressively dampens the neural response to repeated stimuli, requiring more input to produce the same engagement signal.
-
-Deliberate novelty injection exploits this mechanism without requiring wholesale change to the work environment (which would disrupt established routines and workflows). The intervention is surgical: introduce one unfamiliar element per session — a new source, a different format, an unfamiliar tool, a constraint you've never used, a question from outside your domain. This is sufficient to trigger the novelty response and refresh engagement, while the familiar context provides the stability needed for deep work.
-
-The one-element limit is important. Novelty-seeking as a general orientation produces scatter — constant stimulus-switching that mimics curiosity but prevents depth. The point is to use novelty to maintain the neurochemical conditions for engaged work, not to replace familiar engagement with novelty for its own sake. One unfamiliar element introduces enough unpredictability to keep the seeking circuit active without disrupting the container.
-
 ## Protocol
 1. Before each work session, identify the session's primary domain and task.
 2. Select one novelty element to introduce — choose from a different category each time to avoid habituating to the injection itself:

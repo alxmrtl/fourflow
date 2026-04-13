@@ -12,13 +12,6 @@ tags:
 
 > Your cognitive state changes every 90 minutes whether you acknowledge it or not — the tools should change with it.
 
-## Mechanism
-The brain operates on ultradian rhythms: cycles of approximately 90-120 minutes that alternate between high-arousal, high-focus states and lower-arousal, diffuse states. During the high phase, the prefrontal cortex is most available for sustained analytical work — working memory capacity is higher, error rates are lower, and the ability to hold complex problem structures in mind is at its peak. During the low phase, this capacity contracts: the brain shifts toward consolidation, pattern recognition, and associative processing rather than sustained generation.
-
-Attempting to continue high-cognitive-demand work during the low phase is not just ineffective — it produces a negative training effect. The brain learns to associate the tools and context of deep work with the experience of effortful, unrewarding struggle rather than flow. This association gradually increases the activation energy required to enter deep work in subsequent sessions. Continuing to force high-demand work against the ultradian low also suppresses the consolidation benefits that the low phase is designed to produce.
-
-The energy-mode tool swap works by acknowledging the rhythm and pre-matching tools to it. When cognitive energy drops, the response is not to push through with the same tools but to execute a pre-defined transition to tools matched to the available cognitive mode. Administrative work, communication, review tasks, and light processing are genuinely appropriate for the low phase — and doing them in their correct mode (with the right tools) produces better outcomes than either forcing deep work or stopping entirely.
-
 ## Protocol
 1. Track your cognitive energy pattern for three days. Every 90 minutes, note your subjective energy level on a 1-5 scale and the quality of your ability to sustain focused thought. Most people have 2-3 high phases per day (often morning, mid-afternoon, and sometimes early evening) with low phases between.
 2. Map your identified high and low phases onto your schedule as approximately recurring windows. These will not be exact but provide a working model.

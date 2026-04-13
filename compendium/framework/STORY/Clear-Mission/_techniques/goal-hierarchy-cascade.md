@@ -12,9 +12,6 @@ tags:
 
 > A five-level goal structure — 10-year direction down to daily lever-moving tasks — that resolves the paradox of inspiring big goals that don't produce daily clarity.
 
-## Mechanism
-Big goals are for direction. Small goals are for clarity. These are different functions and must not be conflated. The 10-year goal tells you which way to walk; the daily task tells you what to do now. Trying to extract daily clarity from a 10-year vision produces paralysis; trying to find directional meaning in a daily task produces emptiness. The cascade bridges them level by level, making each decision at the appropriate scale.
-
 ## Protocol
 
 **The five levels:**

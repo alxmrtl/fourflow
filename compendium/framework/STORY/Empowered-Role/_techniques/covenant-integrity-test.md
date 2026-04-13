@@ -12,20 +12,6 @@ tags:
 
 > A two-part check for whether a commitment is real: (1) which operating layer is it actually coming from, and (2) does it have the structural support to survive pressure?
 
-## Mechanism
-
-Commitments fail in two ways. The first: you believe you're acting from an identity-level commitment (covenant) when you're actually operating from felt-sense or mood (authority). The second: the commitment has been declared at the right level but hasn't been built from the ground up — it's resolution without structure. Both failures produce the same symptom: "I was so clear about this yesterday, why can't I hold it today?" The test combines two diagnostics into one protocol — first locate the operating layer, then check the structural foundation. A commitment that passes both checks is ready to bear weight.
-
-**Two levels to distinguish:**
-- **L1 (authority)** — what feels right or permissible; responsive to conditions (mood, energy, social context); shifts with the felt sense
-- **L3 (covenant)** — identity-level commitment that binds across time; structural, not conditional; holds when it doesn't feel good
-
-**The structural layers (L0→L3):**
-- L0: Behaviour — what you actually do when tested
-- L1: Felt-sense — does it feel right in the body?
-- L2: Rules/structures — is the environment designed to hold this?
-- L3: Identity — is this who you are, or who you wish you were?
-
 ## Protocol
 
 **Part 1 — Operating Layer Check**

@@ -12,13 +12,6 @@ tags:
 
 > Abstract values don't move you — only their behavioral translations do.
 
-## Mechanism
-The gap between holding a value and living it is almost always a translation problem, not a motivation problem. "I value integrity" is an abstract proposition. It specifies nothing about what to do when integrity is called for in a specific situation. Without behavioral translation, values remain inert — they're cited in reflection but absent in action.
-
-The stack solves this through what behavioral scientists call implementation intention specificity: the more precisely you define the behavior that expresses a value, the more likely that behavior is to occur when the relevant situation arises. This works because a pre-specified behavior bypasses the deliberation step — when you see the situation, the response is already loaded.
-
-Limiting to three behaviors per value is important. More than three creates the same optionality problem that makes abstract values ineffective — you have to choose which expression to enact, which reintroduces deliberation. Three is enough to cover different contexts (relational, creative, physical) while remaining small enough to hold in working memory as a complete set.
-
 ## Protocol
 1. Identify your top core value — the one most load-bearing to your identity and work.
 2. Generate candidate behavioral expressions: specific, observable actions that would count as living this value. Aim for 8–10 candidates without filtering. "Integrity" might generate: delivering work before deadline, naming a concern aloud when I sense one, updating someone when plans change, keeping commitments that only I would know about, etc.

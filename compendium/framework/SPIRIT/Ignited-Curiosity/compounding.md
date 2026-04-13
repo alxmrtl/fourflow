@@ -4,18 +4,25 @@ dimension: spirit
 state: ignited-curiosity
 quality_type: maintain
 keywords: [questions, pull, forward, interest, discovery]
-definition: "Pulls attention forward through open questions."
+definition: "Open questions keep pulling attention forward — each answer generates the next question, and engagement becomes self-sustaining."
 tags:
   - type/quality
 ---
 
-# Curiosity Loops
+# Compounding
+*The Maintain quality of Ignited Curiosity*
 
-> Pull attention forward through open questions.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the work pulls rather than pushes. There is a live question — something genuinely unknown — and the brain is intrinsically motivated to close it. Each session advances the question rather than exhausting it, because partial answers generate new ones. The engagement compounds: not because of willpower or habit, but because the curiosity loop itself is rewarding and the reward of one answer generates the next question. When absent, the task is a known quantity to be completed rather than an inquiry to be pursued. Attention must be directed toward it repeatedly rather than pulled into it naturally. The structural difference is whether the session begins with a live question or a defined deliverable.
 
-Curiosity is one of the most reliable natural flow triggers — it opens an information gap (Loewenstein's information-gap theory) that the brain is intrinsically motivated to close. Unlike willpower-driven attention, curiosity-sustained attention is self-reinforcing: each partial answer generates new questions, and the brain experiences the progression as intrinsically rewarding. When a task generates curiosity loops, attention doesn't need to be directed at it — it's pulled.
+## Science
+
+Information-gap theory (Loewenstein, 1994) describes curiosity as the felt experience of a gap between what is known and what one wants to know. The brain treats this gap as an intrinsic motivational state — distinct from goal-seeking, and uniquely resistant to habituation. Unlike reward-based motivation (which requires a payoff to sustain it), curiosity generates its own forward pull: the gap itself is the motivator, and closing it partially only expands the visible territory of what remains unknown.
+
+Knowledge-building theory (Scardamalia & Bereiter, 2006) documents the self-compounding nature of inquiry: each answer surfaces new questions, making genuine learning an expanding rather than a depleting process. Practitioners who operate from active questions rather than defined deliverables systematically access this compounding mechanism; those who operate from task completion exhaust what's known without expanding into what isn't.
+
+Curiosity and flow research (Csikszentmihalyi & Nakamura, 2014) identifies curiosity activation as one of the most reliable natural flow triggers — because the information-gap state is precisely the cognitive configuration that flow requires: attention directed at a specific uncertain target, with genuine stakes around resolution.
 
 ## Techniques
 
@@ -23,22 +30,8 @@ Curiosity is one of the most reliable natural flow triggers — it opens an info
 - [[curiosity-ledger]] — tracks open questions to maintain active curiosity loops across sessions
 - [[connection-hunt]] — practice of finding unexpected links between domains to sustain interest
 
-## Key Concepts
-
-- [[information-gap-theory]] — curiosity as a perceived gap between known and desired knowledge that pulls attention
-- [[knowledge-building-theory]] — how each answer generates new questions, making curiosity self-compounding
-- [[spaced-learning-effect]] — returning to open questions at intervals deepens curiosity-driven retention
-
-## Related Mechanics
-- [[narrative-momentum]] — curiosity loops in STORY; both create forward pull, one from unanswered questions, one from unresolved narrative tension
-- [[growth-orientation]] — curiosity without growth orientation stays diffuse; growth orientation gives curiosity direction
-- [[exploration-bias]] — exploration bias is curiosity expressed as action orientation; the two compound
-
-## Sources
-- *needs sources*
-
 ## Recall
+
 **Hook**: Curiosity doesn't need willpower — it pulls. Build loops that pull rather than tasks that push.
-**Mechanism**: Open questions create information gaps the brain is intrinsically motivated to close; each partial answer generates new questions, making the attention self-sustaining rather than effort-dependent.
-**Anchor**: Ask: "What do I genuinely want to know here?" The presence of a real question is the start of a curiosity loop.
-**See also**: [[information-gap-theory]], [[exploration-bias]], [[intrinsic-reward-signaling]]
+**Mechanism**: Open questions create information gaps the brain is intrinsically motivated to close; each partial answer generates new questions, making attention self-sustaining rather than effort-dependent — the loop compounds rather than depletes.
+**Anchor**: Ask before each session: "What do I genuinely want to know here?" The presence of a real question is the start of a curiosity loop.

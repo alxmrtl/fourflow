@@ -14,18 +14,25 @@ keywords:
   - neurochemical-reward
   - pleasure-vs-enjoyment
   - annual-purge
-definition: Improve flow by removing rather than adding.
+definition: "The tool system has been pruned — what remains is what serves the work, and nothing else."
 tags:
   - type/quality
 ---
 
-# Subtraction Beats Addition
+# Lean
+*The Restore quality of Optimized Tools*
 
-> Improve flow by removing rather than adding.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the toolset is clean. What you use to work is what serves the work — no legacy software running in the background, no tools acquired on impulse and never fully used, no system that requires more management than the work it enables. When absent, the tool layer has accumulated drift: each addition made sense at the time, but collectively they've created overhead that costs more than they return. Maintenance, decisions, context-switching — a slow background tax that raises the floor everything has to get above.
 
-The default human bias is additive: when facing a performance problem, the first instinct is to add something — a new tool, a system, a possession, a process. But cognitive load is cumulative and mostly invisible; each addition creates new tracking obligations, maintenance demands, and decision points, gradually raising the baseline overhead the mind must manage before any deep work begins. Subtraction is the counter-move: reduction is permanent and passive — unlike a new tool (which requires learning, maintenance, and integration costs), removing something eliminates cognitive load forever without ongoing effort.
+## Science
+
+The default human bias is additive: when facing a performance problem, the instinct is to add something — a new tool, a process, a subscription, a system. But cognitive load is cumulative and mostly invisible. Each addition generates ongoing tracking obligations, maintenance demands, and decision points, gradually raising the baseline overhead the brain must sustain before any deep work begins. Research on feature fatigue (Thompson, Hamilton & Rust, 2005) shows that excess features actively harm usability and satisfaction over time — tools with more features are preferred in anticipation but regretted in use.
+
+Subtraction is the counter-move. Unlike adding a tool (which creates learning, maintenance, and integration costs that compound), removing a tool eliminates its cognitive overhead permanently and passively — no ongoing effort required to sustain the reduction. The one-in-one-out heuristic operationalizes this: requiring that something leave before anything enters prevents the accumulation mechanism from restarting after a purge.
+
+The neurochemical trap is acquisition dopamine: the reward signal associated with obtaining something new, which fades immediately after purchase and is replaced by the permanent overhead of ownership. Distinguishing pleasure (acquisition dopamine, temporary) from enjoyment (sustained engagement with a well-matched tool) is the diagnostic skill the restore cycle develops.
 
 ## Techniques
 
@@ -33,24 +40,8 @@ The default human bias is additive: when facing a performance problem, the first
 - [[subtraction-test]] — evaluates each tool by what is lost without it, not gained with it
 - [[tool-tax-calculation]] — quantifies the hidden cognitive overhead each tool adds to the system
 
-## Key Concepts
-
-- [[behavioral-design]] — explains how subtraction permanently encodes reduced load without ongoing effort
-- [[feature-fatigue]] — explains how excess features create cognitive overhead that outweighs utility
-- [[cognitive-overhead]] — the cumulative mental cost of tracking, maintaining, and deciding across tools
-
-## Related Mechanics
-- [[friction-removal]] — friction removal is subtraction applied to workflow; removing a friction source is always preferable to working around it
-- [[environmental-simplicity]] — environmental simplicity is subtraction applied to physical space; the same removal logic, different domain
-- [[cognitive-load-reduction]] — subtraction's primary mechanism; every removal permanently reduces the cognitive overhead the brain must sustain
-- [[overchoice-elimination]] — eliminating options is subtraction applied to decision space; fewer choices reduce load before any choice is made
-- [[outcome-detachment]] — the psychological analogue of subtraction: releasing grip on outcomes frees attentional capacity the same way removing a possession does
-
-## Sources
-- [[doris-minimalism-flow-article]] — one-in-one-out heuristic, pleasure vs. enjoyment distinction, annual audit as drift-correction mechanism
-
 ## Recall
+
 **Hook**: You're not buying the object — you're buying a temporary dopamine hit at the cost of permanent attention overhead.
 **Mechanism**: Reduction is permanent and passive — removing something eliminates cognitive load forever; adding something creates ongoing tracking, maintenance, and decision costs.
 **Anchor**: One-In-One-Out. Before anything enters, something must leave. Ask first: pleasure or enjoyment?
-**See also**: [[one-in-one-out]], [[neurochemical-reward-test]], [[environmental-simplicity]]

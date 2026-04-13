@@ -12,9 +12,6 @@ tags:
 
 > Distinguishes between evaluating your direction based on the mirror's current state (external evidence) vs. internal clarity — preventing noise-triggered abandonment of a valid trajectory.
 
-## Mechanism
-The mirror delay varies: small shifts may reflect in days; large reorientations may take months or years. People who maintain long-horizon coherence don't do so because of external evidence — they do so because they can distinguish the clarity of their internal direction from the lagging current state of the mirror. Evaluating based on the mirror's present state alone causes valid trajectories to be abandoned before the reflection catches up.
-
 ## Protocol
 
 1. Identify your primary current direction (the vision or trajectory you're holding).

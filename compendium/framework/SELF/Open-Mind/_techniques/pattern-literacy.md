@@ -12,9 +12,6 @@ tags:
 
 > Develop the capacity to recognize which of the fundamental unhealthy patterns is activating — so it can be named and brought to Re-Patterning rather than running unexamined.
 
-## Mechanism
-You cannot transform a pattern you haven't recognized. Growth orientation requires pattern literacy: the ability to identify which fixed ways of responding to difficulty are activating, and to treat them as material rather than as truth. Each recognized pattern becomes a Re-Patterning opportunity; unrecognized patterns run the show unconsciously. The 10 fundamental patterns are a recognition vocabulary — learning them makes the invisible architecture of reactivity visible.
-
 ## The 10 Fundamental Patterns (Source: Conscious Accomplishment)
 
 1. **Polarized Thinking** — viewing things in absolutes (black/white, good/bad, right/wrong)

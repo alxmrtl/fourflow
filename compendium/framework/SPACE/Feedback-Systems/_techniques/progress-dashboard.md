@@ -12,13 +12,6 @@ tags:
 
 > Abstract effort is motivationally inert — make the signal tangible and the motivation follows.
 
-## Mechanism
-The brain's motivational system responds to visible progress far more powerfully than to known progress. Understanding intellectually that you are making progress does not activate the same reward circuitry as seeing it. The ventral striatum — the core of the dopaminergic reward system — is most reliably activated by perceptual evidence of goal-directed movement: a number changing, a bar filling, a count increasing. Knowing that you wrote 3,000 words this week produces a fraction of the motivational effect of seeing "3,000 words" displayed in a place you encounter regularly.
-
-This is why invisible progress stalls even when genuine. A researcher who has been reading for weeks without any visible output measure cannot experience the motivational signal that their work deserves — the signal is real, but the display system is absent. The research confirms effort, but the motivational system requires a perceptual display to generate forward momentum. The dashboard is the display system.
-
-The dashboard must update frequently (daily at minimum) and display metrics directly tied to the behaviors you want to reinforce, not lagging outcome metrics. Sessions completed, words produced, decisions logged, reps done — these are leading indicators within your control. Revenue, ranking, audience size — these are outcome metrics with large time lags and attribution uncertainty. A progress dashboard built on lagging outcomes is demotivating because it displays the gap, not the movement. A dashboard built on leading indicators is energizing because every session adds to it.
-
 ## Protocol
 1. Identify one to three behaviors that, performed consistently, will produce your target outcome. These must be completely within your control and observable immediately after doing them. No lagging indicators — sessions, words, reps, captures, calls made. Maximum three metrics to prevent dashboard complexity from becoming its own overhead.
 2. Choose a display medium that lives in your primary work environment. Physical: a whiteboard, a paper tracker on the wall, a notepad on your desk. Digital: a pinned note, a simple spreadsheet open at session start, a widget on your desktop. The medium does not matter; visibility does. You must encounter the display every time you work.

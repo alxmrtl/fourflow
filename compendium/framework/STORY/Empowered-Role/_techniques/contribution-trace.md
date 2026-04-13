@@ -12,13 +12,6 @@ tags:
 
 > Abstract work feels meaningless because the chain from your output to its human impact is invisible — trace it.
 
-## Mechanism
-Much of modern knowledge work is abstract: code, documents, designs, plans. The abstraction creates a perceptual gap between the work being done and any human being served by it. This gap is not psychological weakness — it is a genuine feature of abstracted value chains. The carpenter can see who sits in the chair; the developer cannot directly observe the ten thousand people whose daily experience is shaped by the system they built.
-
-Research on prosocial motivation (Adam Grant) demonstrates consistently that workers who have direct contact with, or vivid mental representation of, the people their work ultimately serves show substantially higher persistence, effort quality, and motivation than those who don't — even when the work is identical. The mechanism is that awareness of downstream impact activates pro-social motivation systems (oxytocin, reward circuitry) that purely task-focused work doesn't engage.
-
-The contribution trace recreates this awareness artificially where direct contact is unavailable. By explicitly constructing the chain — "my output → who receives it → how they use it → who it serves → why that matters" — it restores the felt sense of consequential contribution to work that would otherwise register as abstract production. The chain doesn't need to be long or dramatic; it needs to be specific and real.
-
 ## Protocol
 1. Name your primary current output: what are you actually producing? (Not your role title — the specific thing that comes out of your work.)
 2. Trace step one: who receives this output directly? Name or describe them specifically.

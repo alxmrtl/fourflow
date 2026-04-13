@@ -12,10 +12,6 @@ tags:
 
 > When self-evaluation activates, shift identification from "I am the emotion/performance" to "I am watching it" — then redirect attention to what the work is doing, not how you're doing.
 
-## Mechanism
-
-Self-monitoring creates a second-order loop: action → evaluation → emotional response → attention hijack. This loop can't coexist with flow. Three moves dismantle it simultaneously. First, shift identification: "I am anxious" collapses you into the emotion; "I notice anxiety arising" creates a gap — the emotion is a passing event, not your current identity. ACT research shows this psychological flexibility is the key variable in sustained performance. Second, redirect to process: specific next-action cues ("follow the sentence," "run the test, read the error") occupy the prefrontal cortex with content, leaving the inner critic nothing to evaluate. Third, redirect to effect: Gabriele Wulf's research consistently shows that attending to what the work is *doing in the world* (external focus) outperforms attending to how you're doing it (internal focus), because external focus allows accumulated skill to run without supervision overhead.
-
 ## Protocol
 
 **When an evaluative spike hits mid-session:**

@@ -12,14 +12,6 @@ tags:
 
 > Mental multitasking doesn't split your attention — it multiplies switching costs until there's almost no attention left.
 
-## Mechanism
-
-Cognitive science is unequivocal: the human brain does not actually run tasks in parallel. What feels like multitasking is rapid serial switching between contexts. Each switch carries a measurable cost — the "task-switching cost" or "set-shifting cost" — which includes the time to disengage the previous task's neural configuration, establish the new configuration, and suppress interference from the prior context. The prefrontal cortex manages this switching through inhibitory control, but inhibitory control is a limited resource. The more switches per unit time, and the more contextually distinct the tasks, the faster the resource depletes.
-
-The deeper issue is structural: when multiple contexts are held open simultaneously, the working memory buffer — which holds 4±1 items in active maintenance — must allocate slots to tracking the status of each parallel thread. These maintenance slots compete directly with the slots available for processing the focal task. A person running 3 parallel work contexts is not working at 33% capacity on each; they are working at degraded capacity on all three simultaneously, because the overhead of managing the parallel structure consumes a disproportionate share of the total resource.
-
-Single-context commitment — declaring, before a session, that there is only one active context — reduces this overhead structurally. It is not a matter of willpower during the session; it is a decision made before the session that removes the switching option from consideration. Research on "implementation intentions" (Gollwitzer) shows that pre-committing to a specific behavior in a specific context ("When I am in this session, I will only do X") reduces decision-making load during execution because the decision has already been made.
-
 ## Protocol
 
 1. **Name the one thing** — before the session begins, complete this sentence out loud or in writing: "For the next [time block], I am only working on [specific task or project]." Be precise. "Working on the report" is a context. "Working on the introduction section of the report" is better. Precision reduces boundary ambiguity during the session.

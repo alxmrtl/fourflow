@@ -12,9 +12,6 @@ tags:
 
 > Ensure the challenge you're taking on is just barely above your current skill level — the structural condition for flow, independent of motivation or discipline.
 
-## Mechanism
-The flow channel is the narrow band between two failure modes: challenge too high triggers threat-detection (anxiety, inward focus, self-consciousness), while challenge too low triggers boredom (mind wanders, novelty-seeking, disengagement). When challenge is barely above current skill, the brain has enough to engage fully — novelty, stakes, uncertainty — without activating defensive responses. This is a structural condition, not a motivational one. Getting the ratio right produces focus as an output, not a requirement.
-
 ## Protocol
 
 1. Before starting a work session, explicitly ask: "Is this task slightly above what I can do comfortably, or is it either too easy or too overwhelming?"

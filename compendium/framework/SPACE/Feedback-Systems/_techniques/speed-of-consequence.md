@@ -10,28 +10,30 @@ tags:
 
 # Speed of Consequence
 
-> Accelerates learning through fast outcomes.
+Compress the loop between action and outcome so the brain can run many iterations in a short time — because rapid iteration is how the challenge-skill ratio stays in the flow channel.
 
-## Mechanism
+## Protocol
 
-Learning requires a tight loop between action and consequence. When outcomes arrive quickly, the brain can run many iterations in a short time — testing, adjusting, and improving with high fidelity. Slow consequences force the mind to hold context across long gaps, increasing cognitive load and making it impossible to isolate which variable produced which result. Fast iteration is the mechanism of rapid skill acquisition, and rapid skill acquisition is what keeps the challenge-skill ratio in the flow channel.
+1. Identify the current lag between action and consequence in your work. How long does it take to know whether what you just did worked?
+2. Find one way to compress that lag: a faster test, a smaller scope, a sandbox environment, a faster-feedback collaborator.
+3. Structure work into units small enough to complete and assess within the session — completion of a unit is a consequence.
+4. After each unit: brief explicit assessment (what worked, what didn't, what to try next). This closes the loop and opens the next one.
+5. Track iteration count per session, not just output volume. High iteration count = fast consequence loops = fast calibration.
 
-## Techniques
-- [[iteration-cycle-compression]] — *needs content*
+*Pair with [[error-cost-minimization]] — fast loops only accelerate learning when mistakes are cheap enough to risk.*
 
-## Key Concepts
-- [[feedback-loop]] — speed of consequence is the temporal property of the feedback loop most critical to learning rate
+## When to Use
 
-## Related Mechanics
-- [[immediate-feedback]] — the moment-to-moment expression of fast consequences
-- [[error-cost-minimization]] — fast consequences only accelerate learning when error costs are low enough to allow experimentation
-- [[growth-orientation]] — fast feedback loops only compound when paired with a growth orientation that treats consequences as data
+- When progress feels slow despite sustained effort (often a consequence-lag problem)
+- When learning a new skill and calibration is taking too long
+- When designing a workflow and optimizing for learning rate rather than output volume
 
-## Sources
-- *needs sources*
+## Key Insight
+
+> "The faster the consequence, the faster the calibration — fast loops are how mastery compounds."
 
 ## Recall
+
 **Hook**: The faster the consequence, the faster the calibration — fast loops are how mastery compounds.
 **Mechanism**: Tight action-consequence loops allow many iterations in a short time; slow consequences fragment context and make it impossible to isolate which action produced which result.
 **Anchor**: Compress the loop. More iterations = faster skill acquisition = sustained challenge-skill alignment.
-**See also**: [[immediate-feedback]], [[error-cost-minimization]]

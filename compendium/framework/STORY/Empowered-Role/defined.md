@@ -9,18 +9,25 @@ keywords:
   - definition
   - scope
   - ownership
-definition: Define responsibility boundaries.
+definition: "Responsibility has clear edges — what is yours is fully yours, and what isn't doesn't compete for attention."
 tags:
   - type/quality
 ---
 
-# Role Clarity
+# Defined
+*The Maintain quality of Empowered Role*
 
-> Define responsibility boundaries.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the attention field has a defined perimeter. You know what's yours to own, which means you can go deep within that domain without monitoring the undefined periphery. The scope is collapsed to a size that enables real investment. When absent, the attention field expands to include everything that might be one's problem — a constant, exhausting surveillance mode where undefined responsibility generates ongoing cognitive overhead. The same quality of attention produces dramatically more depth when concentrated on a defined space than when diffused across one with no edges. Role clarity is what makes that concentration possible.
 
-When the boundaries of responsibility are unclear, the attention field expands to include everything that might be one's problem — a constant, exhausting surveillance of undefined scope. Role clarity collapses that field: by precisely defining what is and isn't within one's domain, it frees the attention to go deep within that domain rather than monitoring the entire periphery. The same investment of attention produces dramatically more work when it's directed at a defined space than when it's diffused across an undefined one.
+## Science
+
+Role ambiguity research (Kahn et al., 1964; Jackson & Schuler, 1985) documents consistent performance costs from unclear responsibility scope: heightened anxiety, reduced effort quality, lower satisfaction, and elevated cognitive load. The mechanism is attentional — when responsibility is unclear, the brain maintains vigilant monitoring across an undefined field, which consumes capacity that would otherwise be available for task performance.
+
+Job demands-control model (Karasek, 1979) predicts engagement from the interaction of task demands and perceived control. High demands with high control enable flow; high demands with low control produce chronic strain. Role clarity is a primary control mechanism: knowing precisely what you're responsible for gives you agency over that domain, while insulating you from the paralysis of undefined scope.
+
+Cognitive narrowing as a focus mechanism (Corbetta & Shulman, 2002) describes how attentional resources concentrate when the target field is constrained. Role definition is the structural version of this: by explicitly closing the boundary of responsibility, it narrows the attentional field to a size that supports depth rather than requiring surveillance.
 
 ## Techniques
 
@@ -28,22 +35,8 @@ When the boundaries of responsibility are unclear, the attention field expands t
 - [[role-boundary-declaration]] — explicitly states what is and is not within one's responsibility domain
 - [[task-ownership-matrix]] — maps tasks to owners to eliminate ambiguity about who holds what
 
-## Key Concepts
-
-- [[t-shaped-professional]] — defines depth-plus-breadth role structure that enables both clarity and collaboration
-- [[role-ambiguity-research]] — documents attention and performance costs of undefined responsibility scope
-- [[job-demands-control-model]] — high demands with high control enables flow; role clarity is the control mechanism
-
-## Related Mechanics
-- [[ambiguity-control]] — ambiguity is what role clarity resolves; these two mechanics are closely paired
-- [[identity-alignment]] — role clarity defines the role; identity alignment ensures the role matches the self; both are required
-- [[agency-loops]] — agency requires knowing which actions to own; role clarity is the prerequisite for visible agency
-
-## Sources
-- *needs sources*
-
 ## Recall
+
 **Hook**: Without defined boundaries, attention monitors everything. With them, it can go deep on something.
-**Mechanism**: Undefined responsibility scope causes attention to diffuse across an undefined periphery; clear role boundaries collapse the monitoring field and free attention to go deep within the defined domain.
+**Mechanism**: Undefined responsibility causes attention to diffuse across an undefined periphery; clear role boundaries collapse that monitoring field and free attentional capacity for depth within the defined domain.
 **Anchor**: Define it in two sentences: "I am responsible for ___. I am not responsible for ___." The second sentence is as important as the first.
-**See also**: [[ambiguity-control]], [[identity-alignment]], [[agency-loops]]

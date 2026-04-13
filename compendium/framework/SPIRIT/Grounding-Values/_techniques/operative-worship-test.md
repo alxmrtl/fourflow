@@ -12,9 +12,6 @@ tags:
 
 > Reveals what you actually treat as non-negotiable by testing what doesn't move under pressure — distinguishing operative values from simulated ones.
 
-## Mechanism
-What we profess and what we worship are often different things. "Worship" in the operational sense is not religious — it's whatever the system treats as not subject to revision. What we say we value (health, integrity, creativity) may be revisable under load; what we actually worship is whatever survives the test of pressure. This creates three states: absent (everything is negotiable, self remains sovereign), simulated (declared as fixed, but collapses under pressure), and operative (not revisable, resists descent under load). The gap between simulated and operative is where most value-based friction lives. When you think your values are operative but they're actually simulated, you experience internal contradiction without understanding its source — the "why can't I live my values?" question. The answer: they aren't your operative values yet. Something else is.
-
 ## Protocol
 
 1. **Name your declared values.** What do you say matters most? What would you tell someone defines you? List 3–5.

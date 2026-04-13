@@ -12,9 +12,6 @@ tags:
 
 > Before a desire-driven acquisition, distinguish pleasure (temporary dopamine spike from owning something new) from enjoyment (sustained reward from meaningful work) — and decline acquisitions that trade permanent attention cost for temporary reward.
 
-## Mechanism
-Pleasure and enjoyment feel similar at the point of acquisition but have opposite downstream effects on flow capacity. Pleasure (acquisition-dopamine): a temporary neurochemical spike that degrades within hours to days, provides no skill development or growth, and leaves a permanent ongoing attention cost in the form of the object's cognitive overhead. Enjoyment (flow-derived): the sustained reward from meaningful work and deep engagement that builds skills, increases flow accessibility over time, and reinforces intrinsic motivation. Csikszentmihalyi: pleasure doesn't lead to increased skills, growth, or a better future; enjoyment, through flow, does.
-
 ## Protocol
 
 1. When an acquisition feels compelling, pause before purchasing and ask: "Is this pleasure or enjoyment?"

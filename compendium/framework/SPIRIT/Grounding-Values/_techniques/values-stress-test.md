@@ -12,13 +12,6 @@ tags:
 
 > If a value only holds when it's convenient, it's not a value — it's a preference.
 
-## Mechanism
-Most people carry a mix of genuine core values and socially acquired preferences they've labeled as values. The distinction matters enormously: a genuine core value is load-bearing — it holds under pressure and actually organizes behavior. A conditional value feels like a value when life is easy but dissolves under adversity, creating identity confusion precisely when coherent self-direction is most needed.
-
-The stress test works by activating the same neural circuits that adversity would activate — specifically the threat-appraisal system — without the actual costs. When you vividly imagine a worst-case scenario, your brain simulates the emotional and physiological response with partial fidelity. If you notice the value shifting or softening in the simulation, that's diagnostic: the value is conditional. If it holds, and you can articulate why, you've located something load-bearing.
-
-This technique is particularly valuable before making significant commitments. People routinely commit to values-aligned projects during calm, then violate those values under project pressure — not because they're dishonest, but because they didn't test the values against the likely conditions. The stress test surfaces this mismatch before the investment is made.
-
 ## Protocol
 1. Name the value you want to test. Write it as a one-sentence statement: "I value X."
 2. Construct the worst-case scenario where holding this value costs something real — social approval, money, comfort, a relationship, a professional opportunity. Be specific. The scenario must feel plausible, not cartoon-extreme.

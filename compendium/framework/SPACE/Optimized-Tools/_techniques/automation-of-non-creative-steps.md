@@ -10,29 +10,30 @@ tags:
 
 # Automation of Non-Creative Steps
 
-> Preserves attention for high-leverage work.
+Audit your workflow for steps that repeat without requiring creative judgment, then remove those steps from your active attention — once, permanently.
 
-## Mechanism
+## Protocol
 
-Cognitive attention is a finite resource that degrades with expenditure. When routine, low-leverage steps consume attentional capacity — formatting, file management, administrative tasks, repetitive decisions — they deplete the very resource needed for high-quality creative or strategic work. Automating the routine preserves peak attentional capacity for work that actually requires it, making the cognitive load available to deep work larger with no additional willpower.
+1. For one week, note every non-creative step you perform that repeats: formatting, file organization, repeated decisions, administrative tasks, anything that doesn't require genuine thinking.
+2. For each item, ask: could a tool, template, or system handle this without my attention? If yes, that item is an automation candidate.
+3. Prioritize by frequency × time-per-occurrence. Start with the highest-leverage item first.
+4. Set up the automation. One-time investment. Test it twice to confirm it works reliably.
+5. Remove the automated step from your active workflow. The attention it consumed is now available for deep work.
 
-## Techniques
-- [[workflow-automation-audit]] — *needs content*
+*Audit quarterly — as workflows evolve, new candidates appear and old automations may become obsolete.*
 
-## Key Concepts
-- [[leverage-ethic]] — automation is leverage: one-time setup eliminates recurring attention cost
-- [[behavioral-design]] — automated systems encode optimal behavior into the environment, removing decision from the execution path
+## When to Use
 
-## Related Mechanics
-- [[friction-removal]] — automation is friction removal applied to repeating steps; both reduce the resistance between intention and deep work
-- [[cognitive-load-reduction]] — automation's primary mechanism; removing routine tasks permanently reduces baseline cognitive overhead
-- [[overchoice-elimination]] — automation pre-decides repeating choices, eliminating decision fatigue before it accumulates
+- When pre-session setup or administrative overhead is eating into focused work time
+- When the same low-leverage decision keeps recurring throughout the week
+- When cognitive fatigue arrives earlier in the day than it should
 
-## Sources
-- *needs sources*
+## Key Insight
+
+> "Every routine task you automate is attention you keep for the work that matters."
 
 ## Recall
+
 **Hook**: Every routine task you automate is attention you keep for the work that matters.
 **Mechanism**: Cognitive attention degrades with use; automating non-creative steps permanently removes their drain on the capacity needed for deep, high-leverage work.
 **Anchor**: One setup, zero ongoing cost — automation is the highest-leverage attention investment.
-**See also**: [[friction-removal]], [[leverage-ethic]]

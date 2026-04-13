@@ -12,14 +12,6 @@ tags:
 
 > Moving from one context to another without a deliberate close leaves the previous context running in the background — you arrive in the new one already partially occupied.
 
-## Mechanism
-
-Sophie Leroy's attention residue research (2009, extended 2011) demonstrated that switching from Task A to Task B while Task A is unfinished — even when Task A was intentionally paused — leaves a residue of Task A processing active in working memory. This residue is not conscious rumination; it is background maintenance of the unresolved goal state, running automatically beneath awareness. Subjects with higher attention residue showed significantly lower performance on the new task even when self-reporting full focus.
-
-The mechanism is the same prefrontal goal-maintenance system that drives the Zeigarnik effect. The brain distinguishes between a task that was stopped (goal still active) and a task that was properly closed (goal deactivated). A transition ritual performs goal deactivation by completing a structured closing sequence for the prior context — capturing state, noting next actions, and making an explicit declaration that the prior context is no longer active. This sequence signals to the prefrontal maintenance system that the loop is held and the goal can be released.
-
-There is also a temporal rhythm dimension. The brain's default mode network (DMN) activates during idle periods — transitions, commutes, task switches — and is involved in self-referential processing and consolidation of recent experience. A brief structured ritual at transition points gives the DMN a defined task (consolidate this context, prepare for the next), which reduces the probability that it self-activates around the prior context once the new task has begun. A structured transition is, in effect, a controlled DMN activation rather than an uncontrolled one.
-
 ## Protocol
 
 1. **Close the previous context** — before switching, take 60–90 seconds to complete a brief written handoff note for the prior task. The note contains three things only: (a) where you stopped, in one sentence; (b) the single next action when you return; (c) anything that must not be forgotten. This is not a summary — it is a "safe state" save, like saving a file before closing the application.

@@ -12,13 +12,6 @@ tags:
 
 > Curiosity that can't be followed becomes anxiety — this protocol creates a bounded space to follow it fully.
 
-## Mechanism
-Genuine curiosity is one of the most reliable flow triggers — it focuses attention, sustains motivation, and produces intrinsic reward through dopaminergic activation of the seeking system. But unstructured exploration has a cost: time dissolution, context loss, and the residue of an unfinished thread. These costs make many people suppress rather than follow curiosity, trading a flow trigger for the appearance of productivity.
-
-The protocol resolves this by creating explicit entry and exit structures. The entry defines the container (a fixed time block, a specific question, a capture method) so that following curiosity fully is possible without the risks. The exit ensures the thread isn't lost — the exploration ends cleanly with findings captured and the next question identified. This clean exit is critical: an unclosed rabbit hole leaves an open loop in working memory, which produces the cognitive load that makes curiosity feel expensive rather than generative.
-
-The neuroscience here is about the seeking circuit, not the reward circuit. Curiosity activates dopamine not at discovery but during search — the hunt is the reward, not the finding. The protocol protects the hunt by preventing interruption while ensuring the hunt has a defined shape.
-
 ## Protocol
 1. When genuine curiosity arises — a question you actually want to follow, not an obligation — stop and name it explicitly: "I'm curious about X." Write it down.
 2. Assess: is this worth a dedicated block? If yes, schedule a Rabbit Hole Session (30–90 min) rather than following it spontaneously in whatever you're doing.

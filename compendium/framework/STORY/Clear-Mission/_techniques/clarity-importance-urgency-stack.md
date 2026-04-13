@@ -12,9 +12,6 @@ tags:
 
 > The three-ingredient formula for conditions that prevent distraction from penetrating focus — and a diagnostic for identifying which ingredient is missing when engagement collapses.
 
-## Mechanism
-Clarity, importance, and urgency are co-requisites for sustained deep work. Missing any one collapses the structure. Most attention failures are not discipline failures — they're stack failures: one ingredient is absent, and without it the conditions for flow can't form. The diagnostic function of the stack is its most practical feature.
-
 ## Protocol
 
 **The three ingredients:**

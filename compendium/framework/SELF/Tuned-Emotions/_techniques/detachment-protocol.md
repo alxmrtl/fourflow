@@ -12,10 +12,6 @@ tags:
 
 > A three-step sequence for loosening the grip on outcomes — accept what is, release control of what isn't yours, and drop your attachment to the specific delivery route — while maintaining full effort.
 
-## Mechanism
-
-Attachment creates a monitoring layer: part of attention checks whether reality is tracking toward the expected outcome, splitting focus and blocking the action-awareness merging that defines flow. Attachment is also a pattern — believing well-being depends on an outcome activates the protective ego, which starts managing rather than creating. The practice is not suppression. It's a genuine shift in relationship: you can want something fully and be OK if it doesn't happen. Three distinctions make this operational: (1) accepting *what is* vs. resisting it, (2) surrendering *control* vs. abandoning *effort*, and (3) releasing the specific *how* vs. the want itself. When all three land, the monitoring layer dissolves — and paradoxically, outcomes often improve because you're more present and less constrained by fear.
-
 ## Protocol
 
 **Step 1 — Accept what is (60 seconds)**

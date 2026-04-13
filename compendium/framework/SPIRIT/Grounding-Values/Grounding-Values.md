@@ -24,7 +24,7 @@ The failure mode is the values-behavior gap: the divergence between stated value
 
 ## Techniques
 
-- [[integrity-loops]]
+- [[integrity-gap-audit]]
 
 ## Concepts
 

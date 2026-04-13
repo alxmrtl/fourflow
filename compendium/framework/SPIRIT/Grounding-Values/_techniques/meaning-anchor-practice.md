@@ -12,9 +12,6 @@ tags:
 
 > When motivation decays, identify the smallest unit of genuine meaning in the work to re-engage the neural attractor — without requiring grand purpose or renewed inspiration.
 
-## Mechanism
-A meaningful goal creates self-reinforcing dopamine loops around goal-relevant activity and suppresses the DMN's inward cycling — converting ruminative energy into directed energy. The minimum threshold for this neurochemical reorganization is *real meaning*, not *grand meaning*. Even a thin strand of genuine meaning is enough. Performed meaning doesn't work — the brain needs actual signal, not narrative decoration.
-
 ## Protocol
 
 When motivation is low, the work feels mechanical, or purpose has faded into background noise:

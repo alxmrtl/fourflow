@@ -12,13 +12,6 @@ tags:
 
 > If you need more than one sentence without hedging, you don't yet know what you want.
 
-## Mechanism
-Vague vision is not a motivational problem — it's a cognitive one. When vision remains unspecified ("I want to build something meaningful," "I want to live more freely"), it cannot organize behavior, because behavior requires specificity. The brain's goal-pursuit system operates on concrete representations: a specific end state that can be compared against the current state to generate action. Without that specificity, the system has nothing to compute.
-
-Hedging is the visible symptom of unclear vision. "I'd like to..." "Ideally I'd..." "Somewhere around..." — these qualifiers are not modesty. They're the mind protecting itself from the commitment that clarity requires. Commitment to a specific vision means other visions are rejected. This rejection is psychologically costly, which is why the uncompressed vision accumulates qualifiers that keep multiple options open simultaneously. The cost of this protection is that nothing is actually chosen, and therefore nothing is actually pursued.
-
-The compression protocol works by making the cost of each qualifier explicit. Every time you remove a qualifier and the sentence still holds, the vision becomes more real — more owned, more specific, more actionable. The point at which further compression makes the sentence false is the boundary of the actual vision. What remains is the irreducible core: what you actually want, stripped of the safety padding.
-
 ## Protocol
 1. Write your current vision statement — however long it is, with all qualifiers intact. This is the starting state.
 2. Read it once. Count the qualifiers: words like "maybe," "kind of," "ideally," "somewhat," "a bit," "hopefully," "sort of," "in some way." Also count vague nouns ("something," "things," "aspects," "presence").

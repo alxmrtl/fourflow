@@ -12,13 +12,6 @@ tags:
 
 > Surface missions are proxies. Chase the chain down until you hit bedrock — the reason that needs no further reason.
 
-## Mechanism
-Most missions are instrumental — they are pursued because they are believed to produce something else. "Launch the product" is pursued because of "build the business" which is pursued because of "financial independence" which is pursued because of "time freedom" which is pursued because of "presence with family" — which might be the bedrock, the terminal motivation that is pursued for its own sake and not as a means to anything further.
-
-Self-Determination Theory (Deci and Ryan) distinguishes between intrinsic motivation (acting because the activity or its direct outcome is inherently valued) and extrinsic motivation (acting to obtain a separable outcome). The research is consistent: intrinsic motivation produces greater persistence, higher quality work, and more resilience under difficulty. The why-chain is a method for tracing from extrinsic proxies to the intrinsic bedrock.
-
-The mechanism matters because instrumental missions are fragile: if the expected causal chain breaks (the product fails, the market shifts, the plan changes), the mission loses its reason to exist. Terminal motivations — the bedrocks — are robust to instrumental changes because they don't depend on any specific path. A person who knows their bedrock can reconstitute the mission around new instruments; a person who only knows their surface mission has no ground to stand on when the surface changes.
-
 ## Protocol
 1. State your current mission in one sentence.
 2. Ask: "Why does this matter to me?" Write the first honest answer.

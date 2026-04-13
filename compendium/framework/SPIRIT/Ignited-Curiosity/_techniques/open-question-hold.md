@@ -12,13 +12,6 @@ tags:
 
 > Enter work with an answer to defend and you'll miss everything. Enter with an open question and work becomes a search.
 
-## Mechanism
-There are two fundamentally different modes of cognitive engagement: proving and seeking. The proving mode begins with a conclusion and processes incoming information for confirmation. The seeking mode begins with a genuine question and processes incoming information for relevance. These modes produce different perceptual outcomes: proving mode creates confirmation bias and perceptual narrowing; seeking mode keeps perception wide and responsive.
-
-The difference is neurological. When the brain is in a threat-protection mode (defending a position, maintaining self-consistency), the amygdala's influence on the prefrontal cortex narrows the attentional field. When the brain is in an exploratory mode with low threat (genuine inquiry, open question), the default mode network and the executive network collaborate more fluidly — the mode associated with insight, creativity, and genuine learning.
-
-A genuine open question is not rhetorical. A rhetorical question already contains its answer ("Isn't this obviously the case?"). A genuine open question has an uncertain answer that you actually want to find. The uncertainty is the activation condition — it keeps the seeking circuit running throughout the work session rather than switching off once the conclusion is confirmed.
-
 ## Protocol
 1. Before beginning work, pause for 60 seconds. Do not open files, start typing, or review previous work yet.
 2. Ask: "What is the genuine open question in this work right now?" Not the task ("write section 3"), but the actual question the work is trying to answer ("What is the real reason X doesn't work?"). Write it down.

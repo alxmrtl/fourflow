@@ -9,18 +9,25 @@ keywords:
   - matching
   - appropriate
   - right-tool
-definition: Matche tool capability to task demands.
+definition: "Tool capability matches task demands — the interface disappears into the work."
 tags:
   - type/quality
 ---
 
-# Tool-Task Alignment
+# Matched
+*The Maintain quality of Optimized Tools*
 
-> Match tool capability to task demands.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the tool disappears. You're not using it — you're working through it, and the difference isn't noticeable. When absent, the mismatch itself becomes the problem: attention splits between the work and the workaround. A tool that doesn't fit its task doubles the cognitive cost of every session — you're navigating the medium and the work simultaneously. The craftsman analogy is exact: a carpenter using the wrong size chisel isn't just inconvenienced, they're fighting a second problem on top of the first one.
 
-When the tool doesn't fit the task, the mismatch itself becomes the problem — attention splits between the work and the workaround. A perfectly aligned tool disappears into the action, extending capability without demanding management: the craftsman doesn't think about the hammer, only the nail. Misalignment forces the practitioner to simultaneously navigate the work and fight the medium, doubling the cognitive load of every session.
+## Science
+
+Cognitive fit theory (Vessey, 1991) established that performance peaks when tool design matches task structure — when the representation format a tool uses aligns with the type of processing the task requires. Mismatched tools force translation between the tool's representation and the task's demands, consuming working memory and slowing both speed and quality of output.
+
+Tool embodiment (Merleau-Ponty's phenomenology of perception) describes the state where a tool fully disappears: the practitioner perceives through the tool rather than perceiving the tool. Expert surgeons feel through their instruments; skilled writers feel through their keyboards. This state is the attentional ideal — the tool extends capability without demanding attention. It requires not just familiarity but genuine fit between tool design and task demands.
+
+Hypernormal stimuli (Tinbergen) explain the misalignment trap: feature-rich, notification-dense tools attract acquisition attention by exceeding the stimuli that evolved to signal reward, but actively undermine deep work during use. The tool that feels most powerful in preview often imposes the highest cognitive overhead in execution. Matching requires testing in use, not in anticipation.
 
 ## Techniques
 
@@ -28,22 +35,8 @@ When the tool doesn't fit the task, the mismatch itself becomes the problem — 
 - [[task-tool-fit-matrix]] — maps task type to tool capability to surface mismatches before they drain sessions
 - [[energy-mode-tool-swap]] — matches tool selection to current cognitive energy level for optimal fit
 
-## Key Concepts
-
-- [[hypernormal-stimuli]] — explains why feature-rich tools attract attention while undermining deep work
-- [[tool-embodiment]] — explains the state where a tool disappears and becomes an extension of the practitioner
-- [[cognitive-fit-theory]] — research showing performance peaks when tool design matches task structure
-
-## Related Mechanics
-- [[challenge-skill-calibration]] — tool capability must match both the task demands and the user's current skill level; mismatch in either direction disrupts flow
-- [[friction-removal]] — tool misalignment is a persistent source of friction; alignment removes it at the source
-- [[environmental-simplicity]] — tool excess creates the same cognitive overhead as possession excess; alignment often means owning fewer, better-suited tools
-
-## Sources
-- *needs sources*
-
 ## Recall
+
 **Hook**: A tool that fights you is a competitor for attention, not an extension of it.
 **Mechanism**: Misaligned tools split attention between the work and the workaround; aligned tools disappear into the action and extend capability without demanding management.
 **Anchor**: The right tool is invisible. If you're thinking about the tool, it's the wrong one.
-**See also**: [[friction-removal]], [[leverage-ethic]]

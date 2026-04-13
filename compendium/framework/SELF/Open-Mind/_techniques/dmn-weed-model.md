@@ -12,9 +12,6 @@ tags:
 
 > Understand possessions as weeds in the Default Mode Network garden — occupying idle-state processing that would otherwise produce creative synthesis, narrative coherence, and intrinsic motivation.
 
-## Mechanism
-The Default Mode Network (DMN) is active during idle moments — the pauses between tasks, the walk, the shower, the gap between waking and starting work. This is where breakthrough ideas surface, narrative momentum builds, and intrinsic motivation replenishes. Every possession owned acts like a weed in this mental garden: occupying background processing cycles, competing for the idle-state capacity that would otherwise be available for synthesis and reflection. A possession-heavy environment doesn't just block focused flow sessions — it silently degrades the idle-state processing that feeds Generative Story, Visualized Vision, and Ignited Curiosity. Reducing possessions clears the garden for the work the DMN is designed to do.
-
 ## Protocol
 
 1. Identify times when creative insight or motivation typically surfaces for you (walking, showering, transitional moments between tasks).

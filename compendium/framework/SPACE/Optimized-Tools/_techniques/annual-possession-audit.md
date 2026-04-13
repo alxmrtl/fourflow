@@ -12,9 +12,6 @@ tags:
 
 > Once per year, re-survey all possessions and apply the tier-appropriate filtering question — correcting drift before it becomes entrenched, and maintaining conscious awareness of the attention-cost relationship.
 
-## Mechanism
-Systems drift without maintenance. One-in-one-out discipline slips over time (gifts, unconscious acquisitions, items inherited rather than chosen), and gradual accumulation quietly returns cognitive load to previous levels without any single conscious decision to allow it. The annual audit is the recalibration mechanism that prevents the need for a full Possession Purge reset. It corrects margin, not entire inventory — because previous purge discipline means the baseline is already low. Scheduling it as a fixed annual event (not when things feel bad) prevents the delay that turns margin drift into entrenched accumulation.
-
 ## Protocol
 
 1. Schedule the audit as a recurring annual event (same month each year) — not triggered by feeling bad, which happens after drift is already entrenched.

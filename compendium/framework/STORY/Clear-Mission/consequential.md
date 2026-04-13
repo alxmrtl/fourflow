@@ -14,18 +14,25 @@ keywords:
   - contrast
   - discomfort
   - cost-of-inaction
-definition: Specify why the action matters.
+definition: "The work carries felt weight — it matters now, not in the abstract, and that weight motivates without requiring effort."
 tags:
   - type/quality
 ---
 
-# Stakes Definition
+# Consequential
+*The Restore quality of Clear Mission*
 
-> Specify why the action matters.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the work has gravity. Not urgency manufactured through deadline pressure, but genuine felt importance — the kind that makes inaction uncomfortable rather than neutral. A clear goal tells you what to do; stakes tell you why it matters now. Without stakes, clarity becomes theoretical: the goal is defined but effort stays optional, the present moment loses its weight, and the session ends before real depth is reached. When absent, the restore move is stakes definition — and the most reliable entry point is negative contrast, because the brain registers what it doesn't want more viscerally than what it does.
 
-A clear goal tells you what to do. Stakes tell you why it matters *now*. Without stakes, urgency collapses — goals become optional, effort becomes theoretical, and the present moment loses its weight. The brain doesn't prioritize the future abstractly; it prioritizes based on felt importance and immediacy. Clarity alone doesn't produce focus: clarity + importance + urgency are all three required. Stakes definition is what loads importance and urgency into the structure — and the most reliable entry point is negative contrast, because specifying what you don't want is neurologically easier than imagining what you do want.
+## Science
+
+Self-determination theory (Deci & Ryan, 1985) identifies three intrinsic need satisfiers: autonomy, competence, and relatedness. A fourth dimension — significance, or felt importance — emerges consistently in research on sustained motivation. When work connects to something that genuinely matters to the practitioner, effort becomes self-sustaining rather than requiring constant external reinforcement.
+
+Mortality salience research (Greenberg, Pyszczynski & Solomon, 1986) demonstrates that awareness of finite time amplifies the felt weight of meaningful choices. The anti-vision protocol operationalizes this: by specifying in concrete terms what the life becomes without change, it activates the urgency that abstract positive goals cannot. The brain doesn't prioritize the future in the abstract — it prioritizes based on felt importance and immediacy, and loss-framing is neurologically more activating than gain-framing (Kahneman & Tversky, 1979).
+
+The clarity-importance-urgency stack identifies three co-requisites for deep focus: knowing what to do (clarity), knowing why it matters (importance), and knowing why it matters now (urgency). Motivation collapses when any one is missing. Stakes definition restores importance and urgency when clarity already exists but engagement has dropped.
 
 ## Techniques
 
@@ -33,22 +40,8 @@ A clear goal tells you what to do. Stakes tell you why it matters *now*. Without
 - [[stakes-definition]] — specifies the real cost of inaction to load urgency into goals
 - [[why-chain]] — recursively asks why until bedrock motivation is reached
 
-## Key Concepts
-
-- [[goal-hierarchy]] — the cascade ensures each level has one clearly prioritized outcome
-- [[mortality-salience]] — awareness of finite time amplifies the felt weight of what matters
-- [[meaning-maintenance-model]] — explains how threat to meaning triggers urgent compensatory action
-
-## Related Mechanics
-- [[meaning-coherence]] — coherence between the work and a larger story gives stakes their durability; surface urgency fades, meaning-anchored urgency doesn't
-- [[commitment-escalation]] — once stakes are defined, escalating commitment deepens investment in them
-- [[vision-priming]] — stakes definition is the near-range version of vision work; vision-priming is the longer arc that gives stakes their context
-
-## Sources
-- [[koe-extreme-focus-article]] — Vision & Anti-Vision protocol, Clarity-Importance-Urgency stack as the structural formula for deep work
-
 ## Recall
+
 **Hook**: Clarity alone doesn't produce focus — importance and urgency are co-requisites.
-**Mechanism**: Stakes create the visceral gap between current reality and desired reality that the brain can't ignore; the anti-vision generates felt urgency from lived experience, loading the nervous system in a way that abstract positive goals cannot.
-**Anchor**: Anti-Vision Protocol first (write what your life becomes without change, until genuine discomfort); then Clarity-Importance-Urgency diagnostic when engagement collapses (which ingredient is missing?).
-**See also**: [[anti-vision-contrast-primer]], [[clarity-importance-urgency-stack]], [[meaning-coherence]]
+**Mechanism**: The brain doesn't prioritize future goals abstractly; it responds to felt importance and immediacy; the anti-vision generates genuine urgency from loss-framing in a way that positive goal visualization cannot replicate.
+**Anchor**: Anti-Vision first — write what your life becomes without change until genuine discomfort arrives. Then Clarity-Importance-Urgency diagnostic: which of the three is missing right now?

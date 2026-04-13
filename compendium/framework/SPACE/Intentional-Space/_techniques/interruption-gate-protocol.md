@@ -12,13 +12,6 @@ tags:
 
 > You can't evaluate an interruption without being interrupted by the evaluation — decide the rules in advance.
 
-## Mechanism
-Every in-session evaluation of an incoming request costs focus, regardless of the decision made. When an interruption arrives and you pause to assess whether to handle it, you have already exited the focused state to some degree — the working memory load associated with the current task has been partially displaced by the incoming request and the meta-cognitive process of evaluating it. This is the core failure mode: treating each interruption as a decision point creates a cost even when the decision is "ignore it."
-
-The interruption gate protocol solves this by moving the decision out of the focus session entirely. Pre-decided criteria convert the in-session evaluation from a judgment call (which requires working memory) into a pattern match (which is near-automatic). The brain's ability to apply a learned rule without full attentional engagement is what makes pre-decided protocols effective — they leverage procedural rather than declarative processing, which is faster and consumes far less of the attentional resource you are trying to protect.
-
-The gate must also account for the social dynamics of interruption, which are often the harder problem. Cognitive interruption management (closing notifications, using do-not-disturb) is relatively easy. Social interruption management — colleagues, family, coworkers who can see you physically present — requires a pre-declared external signal and a consistent behavioral response. The gate protocol provides both.
-
 ## Protocol
 1. Define three categories of incoming requests in your context: (a) True emergency — requires immediate response; something irreversible happens without it. (b) Same-day — needs response within the current workday, but not within the current session. (c) Default — can wait for a scheduled response window.
 2. Write explicit criteria for category (a). "Emergency" must be defined concretely, not left to in-session judgment. Example: "A person is in immediate physical danger, a client system is completely down, or a time-locked opportunity expires within the hour." Everything that does not meet these criteria is (b) or (c).

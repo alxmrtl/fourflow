@@ -12,9 +12,6 @@ tags:
 
 > A framework for calibrating *how much* to simplify based on performance goals and life circumstances — not as a moral judgment but as a conscious strategic choice.
 
-## Mechanism
-Environmental simplicity isn't binary. The relevant question isn't "should I be a minimalist?" but "which level of simplicity is optimal given my current goals, situation, and trade-offs I'm willing to make?" This framework makes the choice explicit, preventing the vague aspiration to "simplify" without an actionable target. Each tier has a different filtering question and a different attention-cost profile; knowing which tier you're targeting makes acquisition decisions and purge decisions concrete.
-
 ## The Three Tiers
 
 **Tier 1 — Aggressive Minimalism**

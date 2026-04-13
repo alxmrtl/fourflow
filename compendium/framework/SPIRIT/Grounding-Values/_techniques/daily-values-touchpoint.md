@@ -12,13 +12,6 @@ tags:
 
 > Thirty seconds of contact with what matters most — because values erode through neglect, not attack.
 
-## Mechanism
-Values don't disappear dramatically. They fade through inattention — displaced by urgency, routine, and the accumulated weight of small decisions made without reference to them. The problem is not that people forget their values; it's that values are not active in working memory when most decisions are made. They exist as an inert background belief rather than a live signal.
-
-A brief daily touchpoint interrupts this erosion through a mechanism psychologists call identity priming. When you briefly activate a value — through a word, ritual, physical gesture, or moment of deliberate contact — you increase the accessibility of that identity-relevant content in working memory. This means subsequent decisions are made with the value more readily available, not because you're consulting it consciously, but because it's already active.
-
-The brevity is not a compromise — it's the design. Thirty seconds is enough to activate but not so demanding that it requires motivation to initiate. Longer practices require energy; brief touchpoints can be done on zero energy, which means they happen consistently. Consistency over months produces behavioral encoding: the value becomes structurally integrated into daily rhythm rather than aspirationally held.
-
 ## Protocol
 1. Choose one core value to anchor (start with one; the touchpoint dilutes if you're cycling through a list).
 2. Design a 20–60 second touchpoint ritual that creates genuine contact — not just recitation. Options:

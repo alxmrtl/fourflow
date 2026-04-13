@@ -12,9 +12,6 @@ tags:
 
 > Test whether your vision is organized around what you're called toward (abundance-native) or what you're fleeing from (scarcity-derived) — a critical distinction for whether the vision creates clean pull or a mixed threat-signal that never fully resolves.
 
-## Mechanism
-Scarcity-derived vision keeps the threat-detection system partly activated — you're running toward the goal and away from the fear simultaneously. This dual orientation means the system never fully disengages from vigilance; flow can't emerge cleanly in this state. Abundance-native vision creates pull without the background threat-signal, allowing complete engagement. The vision has to be abundance-native to function as a clean attractor.
-
 ## Protocol
 
 1. State your current vision clearly.

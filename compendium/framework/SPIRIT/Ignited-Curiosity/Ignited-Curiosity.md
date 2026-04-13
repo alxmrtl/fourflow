@@ -24,8 +24,8 @@ The failure mode is extrinsic orientation: working for outcomes (money, status, 
 
 ## Techniques
 
-- [[playfulness]]
-- [[strength-activation]]
+- [[curiosity-ledger]]
+- [[excitement-as-gps]]
 
 ## Concepts
 

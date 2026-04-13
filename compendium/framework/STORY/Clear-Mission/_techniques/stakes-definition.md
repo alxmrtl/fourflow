@@ -12,13 +12,6 @@ tags:
 
 > A mission without stated stakes is a task. Name what breaks if it fails and it becomes something worth protecting.
 
-## Mechanism
-The reticular activating system (RAS) is a brainstem network that functions as an attentional filter — it amplifies inputs the brain has flagged as significant and suppresses noise. The RAS is calibrated primarily by emotional weight: high-stakes situations receive more attentional bandwidth, more perceptual sharpening, and stronger motivational activation than low-stakes ones.
-
-When the consequences of a mission's failure are left unstated, the brain has insufficient data to calibrate the RAS appropriately. The mission registers at whatever ambient significance level the current moment provides — which is typically low. Tasks performed without felt stakes are processed by the cognitive systems as obligatory routine, not meaningful endeavor. This produces the phenomenology of going through the motions.
-
-Explicitly stating what breaks if the mission fails — what is lost, who is affected, what future becomes unavailable — provides the RAS with the emotional signal it needs to treat the mission as high-priority. This is not manipulation; it is restoring an accurate representation of a mission that was already high-stakes but hadn't been stated. The elevation in perceived stakes increases focus, reduces distraction tolerance, and sharpens the signal-to-noise ratio during work.
-
 ## Protocol
 1. Write the mission in one sentence (what you are building or achieving).
 2. Complete this sentence: "If this mission fails, what specifically breaks?" Write at least 3 concrete consequences — for yourself, for others, for the future you're trying to build.

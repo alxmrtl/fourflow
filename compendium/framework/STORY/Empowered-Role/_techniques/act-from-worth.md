@@ -12,10 +12,6 @@ tags:
 
 > Take every action from the felt position of already being whole — so your actions are expressions of fullness rather than attempts to earn, prove, or justify your existence.
 
-## Mechanism
-
-When action is oriented toward worth (I act to become enough, to prove myself, to justify my place), evaluation pressure is baked into the action itself. The performance monitor is active by definition — every output is potential evidence for or against the case of your adequacy. This is the structural cause of evaluation pressure: not the external evaluator, but the internal one embedded in the motivation. Acting from worth removes the evaluation premise: if worth is already established as baseline (not earned by this output), then the action is overflow from fullness, not proof of value. The monitor has nothing to monitor. This is how action becomes expression — unselfconscious, absorbed, fully deployed.
-
 ## Protocol
 
 **Morning Decision** (before the day assigns you a worth-level):

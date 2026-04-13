@@ -12,13 +12,6 @@ tags:
 
 > Expertise creates shortcuts that bypass the thing itself — the reset restores direct contact.
 
-## Mechanism
-Expertise is built on perceptual shortcuts: the brain learns to categorize inputs rapidly, pattern-matching against stored schemas rather than processing raw sensory data. This is metabolically efficient and practically essential — without it, expertise would be impossible. But the same mechanism that makes expertise powerful also makes it deadening. You stop seeing the thing and start seeing your category of the thing. The shortcut routes around direct experience.
-
-This produces a predictable effect: curiosity fades about the familiar. It's not that experts are incurious — it's that their domain has been pre-processed into known categories. The beginner's brain is different: every input is processed more fully because the schema doesn't exist yet. This fuller processing is more metabolically expensive but also more alive. It's the neurological basis of what Zen calls "beginner's mind" (shoshin).
-
-The beginner lens reset works by deliberately suspending the schema. This is not self-deception (pretending you don't know what you know) — it's a perceptual exercise that instructs the brain to process more of the raw input before categorizing. The result is that familiar material yields new observations. Things you've worked with for years become interesting again — not because they changed, but because your processing mode changed.
-
 ## Protocol
 1. Select a domain, skill, or piece of work that has become deeply familiar — something you can do without much conscious attention.
 2. Before your next session with it, write this instruction at the top of a blank page: "I am encountering this for the first time. I notice everything and assume nothing."

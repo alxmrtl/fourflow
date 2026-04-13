@@ -12,13 +12,6 @@ tags:
 
 > The nervous system responds to conditioned sequences — stack enough channels and flow-entry becomes a reflex.
 
-## Mechanism
-Classical conditioning is not limited to pavlovian simplicity. The nervous system builds contextual associations between environmental stimuli and internal states across multiple sensory channels simultaneously. A workspace associated consistently with deep focus acquires cue properties — the visual, auditory, olfactory, and proprioceptive elements of that workspace begin to function as priming signals that move the brain toward the attentional state associated with them. This is the neurological basis of environmental design as flow facilitation.
-
-A single cue has weak priming power. A stack of multiple simultaneous cues from different sensory channels has substantially stronger priming power because it activates the associative memory from multiple angles concurrently. The technical mechanism is pattern completion: when the brain receives multiple elements of a learned context, it automatically generates the cognitive, emotional, and physiological patterns associated with that context. More channels means more complete pattern activation and faster state transition.
-
-The trigger stack also reduces the cognitive overhead of session initiation. When entering flow requires only the presence of a conditioned environment rather than active motivational effort, the warm-up phase shortens. The environment does the priming work that would otherwise require willpower or deliberate attentional direction. Over time, each repetition of the stack in the presence of deep focus deepens the conditioning, making subsequent entries progressively faster.
-
 ## Protocol
 1. Identify five sensory channels to work with: visual (light quality, what you see), auditory (background sound, silence, specific music), olfactory (scent — coffee, specific fragrance, fresh air), proprioceptive (seating position, desk height, specific physical posture), and tactile (specific tool in hand — pen, keyboard, particular notebook).
 2. Choose one specific, consistent stimulus for each channel that you will associate exclusively with deep focus sessions. Exclusivity is critical: if the stimulus appears in non-focus contexts, the conditioning weakens. The scent you use for focus sessions should not be present during non-focus time. The specific music or sound profile should be used only for focus.

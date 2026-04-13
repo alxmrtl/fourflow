@@ -12,9 +12,6 @@ tags:
 
 > Three diagnostic methods for identifying whether motivation is sourced in authentic interest (clean fuel) or fear/inadequacy (dirty fuel) — the distinction that determines whether flow is accessible.
 
-## Mechanism
-Dirty fuel (fear, proving worth, inadequacy) keeps the protective ego active — monitoring for failure, managing identity stakes — which fragments the attention flow requires. Clean fuel (curiosity, genuine interest, love, contribution) quiets the ego because there's nothing to prove; full attention becomes available. Same activity, radically different fuel, radically different outcome.
-
 ## Protocol
 
 **Diagnostic 1 — Pushed vs. Pulled:**

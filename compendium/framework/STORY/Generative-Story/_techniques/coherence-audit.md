@@ -12,9 +12,6 @@ tags:
 
 > A periodic three-activity check to detect meaning coherence leaks — places where your actions are telling different stories instead of one.
 
-## Mechanism
-When actions fit a unified frame, each moment builds on the last — the aperture sweeps a coherent path. When they don't, each activity is a separate starting point, and the perceptual reset between them generates the experience of fragmented, expensive time. The coherence audit makes the frame explicit and visible, so leaks can be identified before they compound into chronic dissonance.
-
 ## Protocol
 
 **Weekly or biweekly:**

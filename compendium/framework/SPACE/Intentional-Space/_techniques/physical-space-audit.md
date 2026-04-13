@@ -12,13 +12,6 @@ tags:
 
 > Every object in your workspace is a claim on your attention — the audit removes the ones that haven't earned it.
 
-## Mechanism
-Visual attention is not fully voluntary. The ventral attention network — a bottom-up system in the parietal and frontal cortex — monitors the visual field for potentially relevant stimuli and generates automatic orienting responses to objects that pattern-match to open loops, unfinished tasks, or familiar contexts. This system operates below conscious awareness. An inbox on the desk, a book you haven't read, a post-it with a task you've deferred — each of these generates a micro-orienting response that adds to cognitive load without producing any useful work. The accumulation of these micro-loads is what makes cluttered workspaces objectively measurable impediments to sustained focus.
-
-Research on environmental psychology confirms that visual complexity degrades performance on tasks requiring sustained attention and working memory. The mechanism is attentional competition: every object that registers as potentially task-relevant competes for the attentional resources needed by the current task. Simplifying the visual environment does not just reduce distraction — it frees attentional bandwidth that was being consumed by objects you weren't consciously noticing.
-
-The audit protocol differs from general tidying. Tidying organizes; the audit removes. The goal is not a neat workspace but a minimal one — where every object present is either actively necessary for the current work or has no associative trigger value. Neutral objects (an empty cup, a clean surface) do not generate orienting responses and cost nothing. Objects with open loops attached do.
-
 ## Protocol
 1. Clear the workspace completely — move everything off the surface and out of the immediate visual field. Begin from zero rather than subtracting from the existing arrangement.
 2. Return only what you will actively use in the current work session. Hold each item for one second before returning it: "Do I need this today?" If no, it does not return to the surface.

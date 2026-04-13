@@ -12,9 +12,6 @@ tags:
 
 > 20 minutes of moderate aerobic exercise 30–60 minutes before a deep work session — manufacturing the neurochemical conditions for flow to occur.
 
-## Mechanism
-Aerobic exercise increases BDNF (brain-derived neurotrophic factor — sometimes called "Miracle-Gro for the brain") and elevates dopamine, serotonin, and norepinephrine — the neurotransmitter triad that supports focus, motivation, and emotional regulation. This is the same neurochemical profile that characterizes flow states. Exercise is one of the few reliable ways to elevate these volitionally. A 20-minute aerobic session before deep work effectively doses the brain with the conditions flow produces — rather than waiting for flow to arrive spontaneously. Research (Frontiers in Psychology, 2022) confirms exercise, diet, and sleep interact non-additively: combined optimization exceeds what any single factor predicts.
-
 ## Protocol
 
 1. **Minimum effective dose**: 20 minutes at moderate intensity — elevated heart rate, able to speak but uncomfortable. Running, cycling, fast walking, rowing — modality matters less than elevation.

@@ -12,9 +12,6 @@ tags:
 
 > A five-stage progression from curiosity to mastery — each stage building the neurochemical conditions for the next, culminating in self-sustaining intrinsic motivation that doesn't require willpower.
 
-## Mechanism
-Each stage scaffolds the next through compounding neurochemistry. Curiosity (dopamine + norepinephrine) creates the entry conditions for passion (sustained dopamine); passion attached to something larger becomes purpose (adding serotonin + oxytocin); purpose with self-direction becomes autonomy (more dopamine, cortisol reduction); autonomy oriented toward growth becomes mastery (sustainable dopamine without external validation). The full cascade produces motivation the brain finds more attractive than stopping — not because of willpower, but because of biology.
-
 ## Protocol
 
 **Stage 1 — Curiosity**: Follow what pulls you without needing to justify it. Don't choose interests rationally; notice what creates forward pull. Biochemistry: dopamine (novelty signal) + norepinephrine (heightened attention). You don't choose your curiosity; you follow it.

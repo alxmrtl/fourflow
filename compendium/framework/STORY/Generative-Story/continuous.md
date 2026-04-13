@@ -12,18 +12,25 @@ keywords:
   - Zeigarnik
   - arc
   - navigation
-definition: Pull action forward without force.
+definition: "Each session is a re-entry into something already in motion — the narrative pulls forward without requiring a fresh start."
 tags:
   - type/quality
 ---
 
-# Narrative Momentum
+# Continuous
+*The Maintain quality of Generative Story*
 
-> Pull action forward without force.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the work picks up. There's a thread already running — some open question, some unfinished turn — and returning to the work feels like continuation rather than initiation. The gap between sessions doesn't require a full restart; the story was left mid-sentence, and the brain has been quietly processing it in the background. When absent, every session begins cold: re-justifying the work, re-finding the why, re-orienting the attention before any real action is possible. Most sustained engagement fails not during sessions but in the space between them, where narrative dissolves and nothing pulls forward.
 
-Narrative momentum is the felt sense that your current action continues something already in motion. With it, each session is a re-entry — you're picking up a thread, not starting from scratch. This eliminates the enormous activation cost of beginning: the story is already happening; you're stepping back into it. Without momentum, every work block requires a cold start: re-justifying the work, re-finding the motivation, re-orienting the attention. This is where most sustained engagement fails — not during action, but in the gap between actions, where the narrative dissolves and nothing pulls forward.
+## Science
+
+The Zeigarnik effect (Bluma Zeigarnik, 1927) established that incomplete tasks remain active in working memory — the brain treats open loops as unresolved obligations, maintaining background processing until they're closed. Applied to creative work, this is why deliberately leaving a session mid-thread sustains motivation across the gap: the unresolved narrative question continues generating forward pull even when you're not consciously working.
+
+Narrative identity research (McAdams, 1993) describes how humans construct coherent self-stories across time. Sessions that feel like chapters in an ongoing story draw on this identity-level architecture — re-entry is easier because the brain understands itself as the same protagonist continuing the same arc. The "cold start" cost is the brain re-constructing that narrative context from scratch rather than continuing it.
+
+Implementation intentions research (Gollwitzer, 1999) shows that if-then structures dramatically reduce activation energy. The session-handoff hook is an implementation intention applied to narrative continuity: "When I return, I will pick up at ___." The decision has already been made; only execution remains.
 
 ## Techniques
 
@@ -31,22 +38,8 @@ Narrative momentum is the felt sense that your current action continues somethin
 - [[incomplete-open-thread]] — deliberately leaves work unfinished to sustain background pull
 - [[momentum-ledger]] — tracks small wins to make narrative progress viscerally visible
 
-## Key Concepts
-
-- [[narrative-identity]] — the self-story that makes each session feel like one's own story continuing
-- [[zeigarnik-effect]] — unfinished tasks stay active in working memory, generating forward pull
-- [[serial-position-effect]] — explains why beginnings and endings anchor narrative continuity
-
-## Related Mechanics
-- [[curiosity-loops]] — both create forward pull; curiosity loops pull through open questions; narrative momentum pulls through open narrative arcs
-- [[progress-visibility]] — visible progress is one mechanism of narrative momentum; feeling that the story is advancing sustains the pull
-- [[tension-release-dynamics]] — tension (unresolved narrative question) is the mechanism of narrative pull; release is the reward; the cycle sustains momentum
-
-## Sources
-- [[anon-time-aperture-creation-xpost]] — time as navigation not weather; mirror delay as narrative fuel; momentum as trajectory through structure
-
 ## Recall
-**Hook**: "Time is the sensation of your trajectory. When you stop moving through your story, time stops feeling like yours."
-**Mechanism**: An open narrative loop generates forward pull — the brain treats unfinished stories as active tasks (Zeigarnik effect), maintaining background processing that makes re-entry feel like continuation rather than initiation.
-**Anchor**: End-session hook — write one sentence: "Tomorrow I pick up at ___." This is a narrative cliffhanger, not a to-do. The unresolved thread does the motivational work.
-**See also**: [[session-handoff-hook]], [[curiosity-loops]], [[meaning-coherence]]
+
+**Hook**: The story keeps running when you're not watching — but only if you left it open.
+**Mechanism**: Incomplete narrative loops stay active in working memory (Zeigarnik effect), generating background pull that makes re-entry feel like continuation rather than cold start; closed sessions require rebuilding context from scratch.
+**Anchor**: End every session with one sentence: "Tomorrow I pick up at ___." Not a to-do — a narrative cliffhanger. The unresolved thread does the motivational work overnight.

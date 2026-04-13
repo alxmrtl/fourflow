@@ -12,9 +12,6 @@ tags:
 
 > A brief end-of-session log of what *moved* today — not what was done, but what is further along than it was this morning.
 
-## Mechanism
-Teresa Amabile's multi-year study of knowledge workers found that making meaningful progress on meaningful work was the single strongest predictor of inner work life (motivation, emotion, and cognition) on any given day. The act of recording progress activates the reward association with the preceding effort — it closes the dopamine loop that was opened at the start of the session. Over time, the anticipation of recording genuine progress becomes a pre-session motivator: the brain expects reward at the end of effort, making it easier to begin.
-
 ## Protocol
 
 1. Immediately after a work session (before the working memory of what happened disperses), open the ledger.

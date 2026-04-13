@@ -12,13 +12,6 @@ tags:
 
 > One insight becomes ten when you force it to make contact with a different domain.
 
-## Mechanism
-Curiosity compounds when insights from one domain illuminate another. This is not accidental — it's how the brain's associative architecture is designed to function. The hippocampus and prefrontal cortex encode new information not in isolation but in relation to existing memories and schemas. The richer the associative network around an idea, the more retrieval cues exist for it — and the more readily it surfaces as relevant in future contexts.
-
-The connection hunt deliberately activates this mechanism. By requiring a cross-domain link at the end of each exploration, you force the brain to search the associative network beyond the immediate domain. This search is cognitively generative: it activates memory structures you weren't consciously thinking about, sometimes producing unexpected syntheses. These syntheses are intrinsically rewarding (the "aha" response involves a burst of dopamine and norepinephrine) — which means they function as a reinforcement mechanism for continued curiosity.
-
-Over time, the connection hunt builds what Arthur Koestler called the bisociation matrix — the associative infrastructure that makes creative leaps possible. The more cross-domain links you've deliberately built, the more readily insights transfer. This is how generalist thinkers produce original work: not by knowing more in a single domain but by having a richer map of connections between domains.
-
 ## Protocol
 1. At the end of any exploration session — a Rabbit Hole Session, a reading block, a learning sprint — stop before closing.
 2. Write one sentence summarizing the core insight or shift in understanding from this session.

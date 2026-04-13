@@ -12,13 +12,6 @@ tags:
 
 > Not all feedback is about you — most of it is about the person giving it.
 
-## Mechanism
-Feedback arrives through two channels that feel identical: signal (information tracking actual performance) and noise (information tracking the feedback-giver's internal state). Social praise reflects the giver's desire to maintain the relationship. Venting reflects frustration that has nothing to do with your output quality. Projection reflects the giver's unresolved patterns. The brain's reward system cannot distinguish between these — dopamine fires for approval regardless of whether that approval is calibrated to reality, which means uncritical consumption of feedback will systematically distort self-assessment over time.
-
-The neurological mechanism is confirmation bias amplified by social reward. When feedback feels good, the prefrontal cortex's skeptical evaluation is suppressed by limbic response. When feedback feels bad, threat response narrows interpretation toward self-blame. Both defaults lead away from accurate calibration. The antidote is a pre-decided classification protocol applied before any emotional weight is assigned.
-
-Honest feedback has two characteristics: it references specific observable behavior or output, and it comes from someone with direct knowledge of the performance criteria. Everything else is input worth noting but not input worth calibrating to.
-
 ## Protocol
 1. After receiving any piece of feedback, pause before internalizing it. Ask: "Is this feedback tracking my actual output, or is it tracking this person's state?"
 2. Apply two filters in sequence. First: did the person have direct observation of the specific output being evaluated? If no, file as anecdote, not signal. Second: is the feedback tied to a specific observable behavior or result? If not, it is general impression — useful as one data point, not as calibration.

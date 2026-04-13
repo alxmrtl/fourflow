@@ -12,14 +12,6 @@ tags:
 
 > Held tension is the body arguing with itself — it cannot act with full commitment when part of it is braced against something.
 
-## Mechanism
-
-Muscular tension is not merely a physical phenomenon — it is stored affect and unresolved motor intent. When the nervous system anticipates threat, initiates an action and then suppresses it, or holds unresolved decisions in the body, it loads tension into specific muscle groups as a kind of standing preparation. The trapezius, jaw, hands, and abdomen are the most common holding sites. This tension does not dissolve automatically when you sit down to work; it persists, constituting a low-level competing signal in the motor system.
-
-From a unified-action standpoint, held tension creates a physiological split: part of the body's motor output is committed to maintaining the tension pattern, which means that fraction is unavailable for the focal task. The body's proprioceptive system continuously reports the tension state to the brain, generating background noise in the sensorimotor feedback loop. This is why people with high baseline muscular tension report difficulty "getting into" work — the body is, in a literal motor sense, not fully present.
-
-Progressive muscle relaxation research (Jacobson, extended through modern autonomic regulation literature) shows that the sequence of deliberate contraction followed by release produces deeper relaxation than passive release alone, because the active contraction exhausts the motor neurons maintaining the tension pattern, and the subsequent release is neurologically complete rather than partial. A 2–3 minute targeted scan before deep work produces measurable reductions in autonomic arousal markers and self-reported mental clarity, with effects comparable to 10 minutes of passive sitting.
-
 ## Protocol
 
 1. **Set a 3-minute timer** before the session begins. This is not optional time — it is preparation, like warming up before a physical performance.

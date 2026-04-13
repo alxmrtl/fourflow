@@ -19,18 +19,25 @@ keywords:
   - resonance-frequency
   - coherence
   - somatic
-definition: Keep arousal within functional ranges.
+definition: "The body's arousal is settled into the band where both clarity and engagement are available."
 tags:
   - type/quality
 ---
 
-# Physiological Regulation
+# Grounded
+*The Restore quality of Focused Body*
 
-> Keep arousal within functional ranges.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the body isn't fighting the work. The nervous system has settled into the band where attention can move freely — neither so activated that it's scanning for threats, nor so depleted that it can't sustain engagement. When absent, you feel it before you consciously name it: a tightness that won't release, a restlessness that won't settle, or a flatness where energy should be. The body is already occupied. There's less of it available for the work.
 
-Flow occupies a specific band on the arousal spectrum. Research by Peifer et al. (2014) confirmed an inverted-U relationship between sympathetic nervous system activation and flow: the highest flow reports occurred at moderate physiological arousal, while both under-arousal (boredom) and over-arousal (stress) produced low flow. The mechanism is the autonomic nervous system: flow requires both branches operating simultaneously but in balance — enough sympathetic activation for engagement, enough parasympathetic tone for calm precision and non-defensive processing. HRV (heart rate variability) is the measurable signature of this balance. When physiological regulation fails in either direction, the aperture cannot open fully: over-arousal fragments attention via threat detection; under-arousal produces thin, dim perception. Physiological regulation is the body finding and maintaining the band where deep engagement becomes available.
+## Science
+
+Research by Peifer et al. (2014) confirmed an inverted-U relationship between sympathetic nervous system activation and flow: the highest flow reports occurred at moderate physiological arousal, with both under-arousal (boredom) and over-arousal (stress) producing low flow. The mechanism is the autonomic nervous system: flow requires both branches operating simultaneously but in balance — enough sympathetic activation for engagement, enough parasympathetic tone for calm precision and non-defensive processing.
+
+Heart rate variability (HRV) is the measurable signature of this balance. High HRV indicates a flexible, regulated system; low HRV indicates rigidity in either direction. Resonance frequency breathing (~5.5 breaths per minute) maximizes HRV by synchronizing cardiac and respiratory cycles — Laborde et al. (2022) confirmed this is the fastest reliable path to the autonomic balance where flow lives. Huberman et al. (2023) found that cyclic sighing outperformed mindfulness and other protocols for acute stress reduction.
+
+The restore path for Grounded is direct physiological intervention: breath tools matched to current arousal state, brief movement for under-arousal, rest and regulation for over-arousal. Unlike behavioral changes, well-applied breath protocols work in under two minutes.
 
 ## Techniques
 
@@ -38,31 +45,8 @@ Flow occupies a specific band on the arousal spectrum. Research by Peifer et al.
 - [[breath-regulation]] — three breath tools matched to over/under/regulated arousal states
 - [[movement-primer]] — brief physical activation to shift under-arousal when breath alone is insufficient
 
-## Key Concepts
-
-- [[transient-hypofrontality]] — explains how exercise temporarily reduces prefrontal load to enable flow onset
-- [[autonomic-nervous-system]] — explains the dual-branch balance underlying optimal physiological arousal
-- [[interoception]] — explains how body-signal awareness enables real-time arousal self-regulation
-
-## Related Mechanics
-
-- [[anxiety-suppression]] — anxiety is the primary cause of chronic over-arousal; physiological regulation manages the arousal output while re-patterning addresses the source
-- [[energy-sufficiency]] — energy sufficiency provides the baseline capacity; regulation navigates within it
-- [[emotional-neutrality]] — the psychological analog to physiological regulation; both aim at the same state from different directions
-- [[mind-body-coherence]] — aligning mental intent and physical state; physiological regulation is the somatic component of coherence
-
-## Sources
-
-- [[Breath]] — James Nestor: nasal vs. mouth breathing, resonance frequency, CO₂ tolerance
-- [[The Oxygen Advantage]] — Patrick McKeown: breath control and performance regulation under pressure
-- Peifer et al. (2014), *Journal of Experimental Social Psychology* — inverted-U between sympathetic arousal and flow
-- Huberman et al. (2023), *Cell Reports Medicine* — cyclic sighing outperforms mindfulness and other protocols
-- Laborde et al. (2022), *Psychophysiology* — resonance frequency breathing maximizes HRV
-- Lehrer & Gevirtz (2014), *Frontiers in Psychology* — 4–8 weeks of HRV biofeedback practice produces durable HRV increases
-
 ## Recall
 
 **Hook:** The breath is the fastest bidirectional lever on the nervous system — everything else takes longer.
 **Mechanism:** Breathing at ~5.5 bpm (resonance frequency) maximizes HRV — the measurable signature of optimal autonomic balance where sympathetic and parasympathetic operate simultaneously at the band where flow lives.
 **Anchor:** Body-State Check → regulation match: over-aroused → 4-7-8 or cyclic sighing; under-aroused → brief aerobic burst or cold water on face; well-regulated → begin immediately.
-**See also:** [[body-state-check]], [[resonance-frequency-breathing]], [[cyclic-sighing]]

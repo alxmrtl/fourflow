@@ -12,9 +12,6 @@ tags:
 
 > Treat boredom and anxiety as calibration feedback, not as malfunctions — each signals a specific relationship between your current challenge and your current capability.
 
-## Mechanism
-Boredom signals that current challenge is below current capability — the brain has more capacity than the task demands, so it seeks novelty elsewhere. Anxiety signals that current challenge exceeds current capability (or that a pattern-level response to evaluation is active — see [[anxiety-suppression]] for that case). Both are accurate readings of the challenge-skill ratio, not character flaws. Treating them as enemies to suppress removes the feedback system that makes calibration possible.
-
 ## Protocol
 
 1. When boredom appears during non-focus time (not mid-session), ask: "What would genuinely challenge my current capability?" Use the boredom as a signal to seek harder problems, new domains, or creative projects that match actual capacity.

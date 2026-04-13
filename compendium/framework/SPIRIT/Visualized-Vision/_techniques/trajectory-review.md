@@ -12,9 +12,6 @@ tags:
 
 > Monthly audit of major decisions and commitments to assess whether action is coherent over time — distinguishing signal-based course corrections from noise-based coherence leaks.
 
-## Mechanism
-Every consistent directional choice is a fork taken toward the same region of possibility. Coherent choices navigate you genuinely somewhere new; incoherent choices (left, right, left) leave you circling the same area. Motivation doesn't decay when each session registers as progress on a long-range attractor — but without trajectory visibility, coherence leaks happen invisibly. The review makes the trajectory visible so it can be maintained or deliberately updated.
-
 ## Protocol
 
 1. Monthly, list the major decisions, focuses, and commitments of the last 30 days. Be specific: what did you actually spend time on, what did you commit to, what did you say no to?

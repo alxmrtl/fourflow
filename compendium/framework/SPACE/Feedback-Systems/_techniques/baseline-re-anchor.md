@@ -12,13 +12,6 @@ tags:
 
 > Without an explicit baseline, improvement becomes invisible and complacency becomes indistinguishable from mastery.
 
-## Mechanism
-The brain's progress-detection system is change-sensitive, not level-sensitive. It registers movement relative to a reference point, not absolute position. When the reference point is never updated, two failure modes emerge simultaneously: genuine improvement stops registering as improvement (because you have adapted to it as the new normal), and plateaus stop registering as stagnation (because the absence of change feels identical to stability). Both failure modes destroy the honest feedback loop that enables deliberate skill development.
-
-This is the hedonic treadmill applied to performance rather than pleasure. Just as the psychological benefits of a raise fade within months as income becomes the new baseline, the motivational signal from skill improvement fades as the improved level becomes normalized. The solution is not to feel more grateful — it is to make the previous baseline explicitly visible so that the change can be directly measured.
-
-Explicit baselines work because they convert the brain's change-detection system into a precision instrument. When you can see where you were at a defined point in the past, the distance to current performance becomes computable rather than felt. This shifts the assessment from "does this feel better?" (easily fooled by adaptation) to "is this measurably different from this specific prior state?" (not fooled by adaptation, because the prior state is externally preserved).
-
 ## Protocol
 1. Choose a measurable output dimension in one skill domain: word count per hour, lines of code per session, number of decisions made before the first break, conversational depth scores on a defined rubric, etc. Quantity is easy; quality requires a defined rubric.
 2. Capture a concrete sample of current performance at a defined date. Store it in a recoverable format: a saved document, a recorded session, a logged data point with timestamp. Label it with the date and the specific parameters.

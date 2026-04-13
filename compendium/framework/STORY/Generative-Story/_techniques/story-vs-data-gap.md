@@ -12,13 +12,6 @@ tags:
 
 > What you say your story is and what your behavior reveals are often two different documents — read both.
 
-## Mechanism
-Humans maintain two distinct self-narratives: the explicit story (what we consciously claim about ourselves and our work) and the revealed story (what our actual behavioral patterns demonstrate). The explicit story is constructed by the prefrontal cortex using language and deliberate reflection. The revealed story is inferred from behavioral data — where time actually goes, what gets done consistently, what gets avoided, where energy flows.
-
-These two stories diverge routinely, and the divergence is not always conscious. The brain's confabulation mechanisms — the same systems that construct post-hoc rationalizations — work to maintain coherence in the explicit story even as behavior accumulates evidence against it. The gap between stated and revealed story is precisely the location of productive self-deception: the places where believing one thing while doing another has become stable and invisible.
-
-Making the gap explicit bypasses confabulation by introducing objective behavioral data as a second input. When the explicit story says "I'm prioritizing deep work" and behavioral data shows 45 minutes of deep work per day on average, the discrepancy cannot be rationalized away. The gap itself becomes the diagnosis — not of character but of system. The question becomes: which story is true, and what needs to change?
-
 ## Protocol
 1. Write your current explicit story in 3–5 sentences: "I am someone who ___, building ___, with a focus on ___."
 2. Gather behavioral data for the past 7–14 days. Sources: calendar records, time logs, task completion data, actual output. Don't estimate — look at what actually happened.

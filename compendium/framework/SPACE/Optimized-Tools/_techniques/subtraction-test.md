@@ -12,13 +12,6 @@ tags:
 
 > Addition is automatic; subtraction requires a protocol — the burden of proof belongs on keeping, not removing.
 
-## Mechanism
-Humans have a documented addition bias: when solving problems, we instinctively generate solutions that add elements rather than remove them. This has been demonstrated across domains from recipe modification to policy design — even when subtraction would produce a better outcome, the default is to add. In tool ecosystems, this bias accumulates over time: tools get added to solve specific problems, remain after those problems are resolved, and accumulate into a system that is harder to navigate than the original problem was to solve.
-
-The cognitive overhead cost of each tool is not just its learning curve. It includes: maintenance cost (updates, configurations, integration failures), context-switch cost (tool-to-tool transitions fragment attention), availability cost (remembering which tool to use for which task), and the opportunity cost of not having a simpler single solution. These costs compound as the tool count grows, and they are largely invisible because each individual tool's overhead is small and each feels justified by the problem it was originally acquired to solve.
-
-The subtraction test inverts the default by requiring justification for retention, not removal. This is structurally important: asking "should I remove this?" is cognitively identical to asking "should I keep this?" — both leave the default as the implicit answer. The subtraction test asks "does removing this make work harder?" — this forces an actual cost-benefit evaluation. If the answer is no (work would not get harder without it), the tool has no justified place in the system, regardless of its features or potential value.
-
 ## Protocol
 1. Generate a complete inventory of every tool in your current work stack — physical and digital. Include everything: apps, hardware devices, physical equipment, recurring subscriptions, saved browser bookmarks that function as tools. This inventory is often longer than expected.
 2. For each tool, apply the single test question: "If I removed this completely from my workflow today, would my ability to produce the work I need to produce measurably degrade within 30 days?" Answer yes or no. Do not answer with "maybe" or "depends" — if the answer is not clearly yes, treat it as no.

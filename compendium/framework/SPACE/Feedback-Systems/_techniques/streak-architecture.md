@@ -12,13 +12,6 @@ tags:
 
 > A visible chain converts each session into the act of not breaking it — loss aversion becomes your consistency engine.
 
-## Mechanism
-Loss aversion is among the most robust findings in behavioral economics: losses register approximately twice as painfully as equivalent gains register pleasurably. Streak architecture deliberately converts this asymmetry into a consistency mechanism. Once a chain of days is established, each new session is not primarily an act of starting — it is an act of not breaking something that already exists. The motivational structure shifts from approach motivation (generating positive affect toward a goal) to avoidance motivation (preventing the loss of a visible streak). Both can produce behavior; avoidance motivation is often more reliable under conditions of low energy or low enthusiasm.
-
-The visual display is not decorative — it is the mechanism. The chain only produces its behavioral effect when it is visible in the environment. A mental record of a streak does not activate loss aversion nearly as effectively as a physical or digital display that shows the count and makes the potential break concrete. The brain needs to see the number at risk.
-
-The repair protocol is structurally necessary to prevent the single most common streak failure mode: the "broken chain = quit" collapse. When a streak breaks — through illness, travel, an unavoidable conflict — the loss of the perfect record creates a strong avoidance response to the habit itself. The display now shows failure rather than progress, and continuing feels like confirming rather than recovering. A pre-defined repair protocol reframes a single break as a structural event (not a character failure) and provides an explicit path back into the chain without requiring the streak to reset to zero.
-
 ## Protocol
 1. Choose one specific behavior for the streak. It must be completable in a defined daily window and have a binary outcome — done or not done. "Wrote something" is too ambiguous; "produced at least one complete paragraph" is trackable.
 2. Define the minimum viable rep — the smallest version of the behavior that still counts as a full day. This is not the target; it is the floor. On hard days, the floor is what keeps the chain alive. Example: "200 words minimum, target 500."

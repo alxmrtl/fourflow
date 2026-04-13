@@ -10,29 +10,30 @@ tags:
 
 # Feedback Density
 
-> Increases signal frequency without overload.
+Increase how often you receive progress signals during a session — but only to the point where more signals would become noise rather than information.
 
-## Mechanism
+## Protocol
 
-Too little feedback and the brain operates blind — unable to calibrate effort, correct direction, or know whether its work is landing. But flooding the system with more signals than it can process collapses the useful information into noise, generating cognitive overhead rather than orientation. Optimal feedback density keeps the loop tight enough to sustain engagement without overwhelming attentional capacity.
+1. Map your current feedback loop: how often do you receive a meaningful signal that your work is moving?
+2. If feedback is sparse (once per session or less), identify one structural way to increase frequency: smaller units of completion, visible progress tracking, a partner who checks in at intervals.
+3. If feedback is frequent but feels overwhelming, reduce channels rather than frequency — one clear signal is worth more than three competing ones.
+4. Test the calibration: after one week of a new density, ask whether you feel oriented (good density), distracted (too dense), or uncertain (too sparse).
+5. Adjust the signal source, not the work itself — the goal is to make progress legible without interrupting absorption.
 
-## Techniques
-- [[feedback-density-calibration]] — *needs content*
+*Different work types need different density. Creative/exploratory work can sustain lower density; skill-building benefits from tighter loops.*
 
-## Key Concepts
-- [[minimal-effective-feedback]] — the principle that feedback should be sufficient, not maximal
-- [[feedback-loop]] — the structural mechanism feedback density operates through
+## When to Use
 
-## Related Mechanics
-- [[immediate-feedback]] — timing is one dimension of density; frequency is another
-- [[progress-visibility]] — making advancement perceptible is the primary use case for feedback density
-- [[cognitive-load-reduction]] — excessive feedback density increases cognitive load; calibration prevents this
+- When sessions feel rudderless — you're working but unclear whether anything is moving
+- When too many feedback channels are generating noise rather than orientation
+- When designing a new workflow and calibrating the feedback structure
 
-## Sources
-- *needs sources*
+## Key Insight
+
+> "Too little and you're blind; too much and you're overwhelmed — density is the calibration between them."
 
 ## Recall
+
 **Hook**: Too little and you're blind; too much and you're overwhelmed — density is the calibration.
 **Mechanism**: Optimal feedback frequency keeps the attention-action loop tight enough to sustain engagement without flooding the attentional system with more signal than it can use.
 **Anchor**: Signal, not noise — calibrate feedback to the minimum effective dose.
-**See also**: [[immediate-feedback]], [[minimal-effective-feedback]]

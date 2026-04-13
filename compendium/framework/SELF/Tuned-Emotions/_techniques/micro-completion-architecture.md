@@ -12,9 +12,6 @@ tags:
 
 > Decompose any project or session into the smallest meaningful units of completion — each one a "win" with a clear before/after — so the dopamine loop closes constantly rather than once at the end.
 
-## Mechanism
-Without sub-goals, a long session feels like one continuous effort event — the dopamine loop only closes once at the end. With sub-goals, the loop closes 5, 10, 20 times during the session. Each closure replenishes motivation for the next segment. The session builds momentum instead of depleting it. Csikszentmihalyi identified that flow requires clear sub-goals — not just a terminal outcome, but a sequence of achievable steps that each generate a completion signal. This is effort-reward coupling built into task structure.
-
 ## Protocol
 
 1. Before starting any project or session, decompose the work into the smallest meaningful units of completion.

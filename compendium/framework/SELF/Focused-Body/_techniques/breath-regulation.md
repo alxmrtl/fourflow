@@ -12,10 +12,6 @@ tags:
 
 > Three breath tools matched to situation: cyclic sighing for daily baseline and mild reset, resonance frequency breathing for sustained pre-session regulation, 4-7-8 for acute over-arousal — all operating through the same vagal mechanism.
 
-## Mechanism
-
-The breath is the fastest bidirectional lever on the nervous system because it's the only autonomic function under voluntary control. Extended exhalation activates the vagal brake — decelerating heart rate and shifting sympathetic/parasympathetic balance. Slow breathing at ~0.1 Hz (5–6 breaths/minute) creates cardiac-respiratory resonance, maximizing HRV — the measurable signature of optimal autonomic balance. Cyclic sighing (double inhale + full exhale) maximizes alveolar inflation on inhale, then maximizes CO₂ offload on exhale, activating vagal pathways more fully than single-inhale patterns. All three techniques work through the same pathway; they differ in depth, duration, and appropriate arousal state.
-
 ## Protocol
 
 **Tool 1 — Cyclic Sighing** (daily baseline + mild in-session reset)

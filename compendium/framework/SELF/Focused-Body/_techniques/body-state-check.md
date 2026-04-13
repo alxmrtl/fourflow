@@ -12,9 +12,6 @@ tags:
 
 > A 60-second arousal assessment before beginning focused work — identifies whether you're over-aroused, under-aroused, or well-regulated, then matches the appropriate tool to the state.
 
-## Mechanism
-Many people begin work sessions in the wrong arousal zone and spend 20–30 minutes of the session "warming up" into regulation. The 60-second check eliminates this waste by externalizing the diagnostic before sitting down. The body announces its state clearly through heart rate, breath quality, muscle tension, and mental activity — reading these signals consciously converts an automatic, unmanaged process into a deliberate one that costs 60 seconds and saves the first 30 minutes of session quality.
-
 ## Protocol
 
 **Step 1 — Scan four signals**:

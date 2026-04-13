@@ -12,13 +12,6 @@ tags:
 
 > A time block without explicit entry and exit conditions is just an intention — the conditions are what make it a defended container.
 
-## Mechanism
-Time blocking as typically practiced treats focus time as a scheduling problem: put deep work on the calendar and protect it from meetings. This is necessary but insufficient. Calendar protection addresses time allocation; it does not address the attentional and behavioral conditions required to actually enter and sustain deep focus within the allocated window. A two-hour block that begins with checking messages, gets derailed by an ambiguous task scope, and ends before full cognitive engagement is a scheduled slot, not a defended focus container.
-
-Focus sessions have a warm-up phase — roughly the first 20-25% of a session — during which the brain is transitioning from default mode network activity (diffuse, self-referential processing) to task-positive network activity (directed, external processing). This transition requires deliberate entry conditions that signal the shift. Without explicit entry conditions, the transition is left to happen organically, which takes longer and is more vulnerable to interruption during the vulnerable warm-up window.
-
-Exit conditions are equally important. Sessions without defined endpoints become chronically extending — "just a few more minutes" bleeds into the recovery time needed before the next session. Defined exit conditions create a clean boundary that enables proper cognitive recovery. Recovery between sessions is not optional: the glymphatic system and memory consolidation processes that support sustained creative work operate during rest, not during work. Exit conditions protect recovery as explicitly as entry conditions protect entry.
-
 ## Protocol
 1. For each time block, define a specific entry condition: a physical or behavioral state you must be in before work begins. Options: five minutes of non-work physical movement, three minutes of review of the session's intended output, completion of a brief workspace reset. The entry condition is not negotiable — if you cannot meet it, you cannot begin the block.
 2. Define the single intended output for the block: the specific deliverable that exits the session with you. Not "work on X" — "complete the outline for X" or "draft section 2 of Y." One output.

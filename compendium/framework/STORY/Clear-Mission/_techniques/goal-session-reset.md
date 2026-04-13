@@ -12,9 +12,6 @@ tags:
 
 > Before each work session (and whenever focus fragments mid-session), write one sentence specifying the single thing you're doing right now — triggering PFC activation and DMN suppression.
 
-## Mechanism
-A specific goal doesn't just guide behavior — it reorganizes the brain. Goal-relevant information enters through the prefrontal cortex, triggers dopamine neurons, and creates a self-reinforcing motivation loop. The PFC activates as director of attention, suppressing the DMN's inward-pointing circuitry. Without a specific goal, the brain defaults to the DMN, which runs at the same metabolic cost but points energy toward rumination and anxiety rather than directed effort.
-
 ## Protocol
 
 **Before starting a session:**

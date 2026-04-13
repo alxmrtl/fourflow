@@ -12,9 +12,6 @@ tags:
 
 > Write what you don't want first — specific, until genuine discomfort — then use that contrast to make the positive vision sharper, more personal, and more motivationally charged than intellectual vision-building can achieve.
 
-## Mechanism
-The salience network activates under stakes. Abstract positive visions often feel motivationally inert because they lack the specificity that makes them real — you're imagining an unrealized future, which is inherently harder than describing current reality. The anti-vision starts at the easier end of the asymmetry: what you don't want is drawn from lived experience and present reality. Once the stakes are vivid and personal, the positive vision becomes a perceptual lens — the brain starts noticing relevant opportunities, resources, and paths that it was filtering out before.
-
 ## Protocol
 
 1. Sit with a notebook. Write everything you don't want your life to look like — specific, grounded in current reality. Include where your life actually lands if you keep taking the same actions as today.

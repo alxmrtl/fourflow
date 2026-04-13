@@ -12,13 +12,6 @@ tags:
 
 > One active surface, one active project — the rest of the world is a different tab you haven't opened yet.
 
-## Mechanism
-Context switching has a well-documented cost: after any interruption or task switch, the brain requires 15–25 minutes to fully re-engage with the previous task. This recovery time is not about re-learning the content — it is about re-establishing the working memory load, the attentional set, and the background processing patterns specific to that task. Even partial context switches — glancing at an open email window, noticing a second project folder on the desk, seeing a notification badge on a different application — trigger attentional reorientation that degrades the depth of engagement with the primary task.
-
-Multiple open surfaces create what is sometimes called ambient task switching pressure: the environment itself is continuously prompting consideration of other contexts without any explicit switch being made. A physical desk with two projects visible, or a digital environment with six open applications, generates a continuous low-level pull between the competing contexts. This pull does not need to be consciously registered to consume attentional resources — the ventral attention network responds to the competing stimuli automatically, and each response is a small tax on the resources available to the primary task.
-
-The single-surface rule enforces environmental singularity — one project visible, one application active, one physical surface in use. By making the environment match the desired singular attentional state, it reduces the environmental-attentional gap that generates ambient task switching pressure. The rule works not by requiring willpower to stay focused, but by removing the stimuli that compete for focus in the first place.
-
 ## Protocol
 1. At session start, identify the single output you are producing in this session. Not the project — the specific deliverable.
 2. Physical surface: have only materials related to that deliverable on the desk. If other projects are physically present, move them to a different surface, a drawer, or a shelf — out of the active visual field.

@@ -24,7 +24,7 @@ The failure mode is missing cascade: vision exists but the road is unmapped. Dai
 
 ## Techniques
 
-- [[clear-goals]]
+- [[goal-session-reset]]
 
 ## Concepts
 

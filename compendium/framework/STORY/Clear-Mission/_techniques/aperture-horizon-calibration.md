@@ -12,9 +12,6 @@ tags:
 
 > Match your outcome horizon to your current aperture width — not a fixed planning decision, but a dynamic calibration to present state.
 
-## Mechanism
-The outcome horizon is the focal length of the perceptual aperture: how deep into the future you're looking with each moment of attention. A short focal length (present-focused) gives high detail, low context; a long focal length (future-focused) gives high context, low detail. Forcing a long horizon through a narrow aperture (when stressed, fatigued, emotionally dysregulated) produces anxiety. Forcing a short horizon through a wide aperture (when clear, rested, stable) produces boredom and aimlessness. The right horizon is dynamic, calibrated to state.
-
 ## Protocol
 
 1. **Check current state** (SELF keys): Am I emotionally regulated? Physically present? Mentally clear?

@@ -12,9 +12,6 @@ tags:
 
 > At the end of each work session, write one sentence: "Tomorrow I pick up at ___." — creating an open narrative loop that pulls re-entry without willpower.
 
-## Mechanism
-The Zeigarnik effect: the brain treats unfinished stories as active tasks, maintaining background processing on open loops between sessions. A session handoff hook deliberately creates an open loop at the end of a session — a cliffhanger in your own story. The next session begins as continuation, not initiation, eliminating the re-justification and re-orientation cost of a cold start.
-
 ## Protocol
 
 **At the end of every work session**, before closing anything:

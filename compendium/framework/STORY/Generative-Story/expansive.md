@@ -9,18 +9,25 @@ keywords:
   - interpretation
   - progress
   - bias
-definition: Bias interpretation toward progress.
+definition: "The interpretive default tilts toward what's working and what's possible — difficulty lands as data, not verdict."
 tags:
   - type/quality
 ---
 
-# Positive Orientation
+# Expansive
+*The Restore quality of Generative Story*
 
-> Bias interpretation toward progress.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the same events read differently. A setback is a story beat, not a signal to stop. Slow progress is evidence the work is hard, not evidence of failure. The narrative of the work stays generative even through difficulty — because the interpretive lens is calibrated to expand possibility rather than contract it. When absent, the brain's default negativity bias runs uncorrected: threats are registered faster, weighted more heavily, and remembered longer than equivalent progress. The story curls inward. Ambiguous feedback becomes evidence of inadequacy; slow progress becomes proof of futility. The restore move is deliberate recalibration — not forced optimism, but a genuine counter-bias toward growth signals.
 
-The brain's default interpretive bias skews negative — threats are registered faster, remembered longer, and weighted more heavily than equivalent positive events. Left uncalibrated, this negativity bias makes the same objective situation (a setback, slow progress, ambiguous feedback) more likely to be interpreted as evidence of failure than evidence of learning. Positive orientation is a deliberate counter-calibration: not denial of difficulty, but a habitual reframe toward what's working, what's been learned, and what's still possible. This bias keeps the narrative of the work generative rather than contracting.
+## Science
+
+Negativity bias (Baumeister et al., 2001) is among the most replicated findings in psychology: negative events carry roughly three times the psychological weight of equivalent positive events. The same objective situation — an unanswered email, a stalled project, a piece of critical feedback — will be interpreted as more significant and more threatening than its positive equivalent. Left uncalibrated, this bias makes the narrative of work chronically contracting.
+
+Post-traumatic growth research (Tedeschi & Calhoun, 1996) documents that adversity, when reframed within a generative narrative, can strengthen rather than diminish engagement. The key variable is not what happens but the interpretive structure applied afterward — specifically, whether difficulty is placed inside a story that includes transformation.
+
+The hero's journey archetype (Campbell, 1949; Vogler, 1992) maps the universal narrative structure in which struggle is not an obstacle to the story but its engine. Practitioners who consciously locate themselves inside this arc — who see the current difficulty as the necessary descent before transformation — access a narrative frame that turns the negativity bias into story material rather than evidence of failure.
 
 ## Techniques
 
@@ -28,22 +35,8 @@ The brain's default interpretive bias skews negative — threats are registered 
 - [[reframe-via-arc]] — repositions setbacks as necessary story beats rather than failures
 - [[narrative-zoom-out]] — widens temporal frame to restore progress visibility after obstacles
 
-## Key Concepts
-
-- [[heros-journey]] — archetypal arc that normalizes struggle as essential to transformation
-- [[post-traumatic-growth]] — explains how adversity can strengthen rather than diminish narrative
-- [[narrative-transportation]] — describes immersive story engagement that shapes interpretation
-
-## Related Mechanics
-- [[growth-orientation]] — the SELF-level version; growth orientation is the cognitive/belief layer, positive orientation is the interpretive/narrative layer
-- [[meaning-coherence]] — positive orientation sustains coherent meaning across difficult passages; without it, setbacks break the frame
-- [[effort-reward-coupling]] — positive orientation makes the reward more perceptible at the interpretive level; the same progress reads as more rewarding
-
-## Sources
-- *needs sources*
-
 ## Recall
-**Hook**: The brain's default is threat-detection. Positive orientation is the deliberate recalibration that keeps the narrative generative.
-**Mechanism**: The negativity bias makes setbacks feel more significant than progress; positive orientation counter-calibrates interpretive default toward what's working and what's possible, keeping the narrative of the work from contracting.
-**Anchor**: Ask: "What did I learn today? What moved?" before "What failed? What didn't?" The first questions prime the generative frame; the second primes the threat frame.
-**See also**: [[growth-orientation]], [[meaning-coherence]], [[redemptive-sequence]]
+
+**Hook**: The brain defaults to threat. Expansive orientation is the deliberate counter-calibration that keeps the narrative open.
+**Mechanism**: Negativity bias weights setbacks 3× more than equivalent progress; the restore move recalibrates the interpretive default toward what's working and what's possible, keeping the story generative rather than contracting.
+**Anchor**: Before logging a setback, ask: "What did I learn? What moved?" first — then "What failed?" The order of questions primes the interpretive frame you carry forward.

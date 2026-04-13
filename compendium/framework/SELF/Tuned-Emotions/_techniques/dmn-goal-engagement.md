@@ -12,9 +12,6 @@ tags:
 
 > Give the brain a single specific goal to suppress the Default Mode Network's anxiety loop in real time.
 
-## Mechanism
-The brain's resting state — the Default Mode Network — is not passive. When not focused on an external task, the DMN runs inner monologue, replays past conversations, simulates future arguments, and loops on embarrassing moments. A 2010 Harvard study tracking 2,250 people found minds wander 47% of waking hours; how often they wandered predicted happiness 2x better than whatever activity the person was doing. When you give the brain a specific goal, the prefrontal cortex takes over, suppresses DMN activity, and redirects energy into reward and motivation loops. Flow states partially quiet the DMN — producing less self-evaluation, less rumination, and lower anxiety (Frontiers in Behavioral Neuroscience, 2026). A twin study of 9,000+ people found those who experienced flow more often had lower rates of depression, anxiety, and ~4% lower risk of heart disease.
-
 ## Protocol
 
 1. When anxiety arises and a full re-patterning session isn't available, identify a single specific task to engage with — not a vague intention ("work on the project") but a concrete action ("write the opening sentence of section 3").

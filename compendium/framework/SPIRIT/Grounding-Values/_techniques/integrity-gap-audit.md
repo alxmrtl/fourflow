@@ -12,9 +12,6 @@ tags:
 
 > A monthly three-column map of stated values vs. revealed values — making visible the gap that generates low-level dissonance when left unexamined.
 
-## Mechanism
-The gap between what you say matters and what you actually do widens silently without feedback. In small doses it's normal; when it compounds unexamined, it produces a chronic background dissonance — a low-level signal that something is off — that makes flow expensive to enter. You're fighting the dissonance while trying to work. Visibility enables choice; invisibility means the gap runs you.
-
 ## Protocol
 
 1. Monthly or quarterly, draw three columns:

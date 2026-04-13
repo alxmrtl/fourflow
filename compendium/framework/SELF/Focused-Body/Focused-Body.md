@@ -24,7 +24,7 @@ The failure mode is disembodiment: mind projected forward into outcomes or backw
 
 ## Techniques
 
-- [[energy-sufficiency]]
+- [[body-state-check]]
 - [[rhythm-and-pacing]]
 - [[action-awareness-merging]]
 

@@ -12,13 +12,6 @@ tags:
 
 > If you can't describe what you see, hear, and feel on the day the vision is realized — you don't have a vision yet.
 
-## Mechanism
-Vision clarity is not a matter of certainty about the future — it's a matter of resolution in the current mental representation. A high-resolution vision can be described in sensory detail: there are specific images, sounds, and felt senses attached to the imagined state. A low-resolution vision has a general direction but no sensory specificity — it's more like a heading than a destination.
-
-The distinction matters because the brain's simulation circuits (the default mode network and the motor cortex's action simulation subsystems) are activated by sensory specificity, not by abstract description. A vision rich in sensory detail produces partial neural rehearsal of the imagined state — the same circuits fire that would fire in the actual experience. This rehearsal is the mechanism behind mental simulation's documented effects on performance and motivation. Abstract visions bypass these circuits entirely.
-
-The resolution test uses multi-sensory specification as a diagnostic. If you can name what you would see (environment, people, objects), hear (sound, words, silence), and feel (body sensation, emotional tone) on the day the vision is realized, the representation has sufficient resolution to function as an attractor. If you can't — if the vision collapses into abstraction when you try to render it sensorially — the vision is aspirational rather than real, and needs further development before it can function motivationally.
-
 ## Protocol
 1. Name your vision in one sentence (use the output of `vision-compression.md` if available).
 2. Identify the day of realization — a specific moment when you would know the vision had become real. Not the ongoing state, but the concrete moment: "The day I [specific thing]."

@@ -12,14 +12,6 @@ tags:
 
 > The nervous system cannot attune to the task when it is simultaneously tracking twelve other signals.
 
-## Mechanism
-
-The thalamus acts as a sensory relay and gating station — it decides which incoming signals reach cortical attention and which are suppressed. Under normal environmental conditions this gating is automatic, but the thalamus has finite filtering capacity. When competing sensory channels are simultaneously active — ambient visual clutter, layered sound sources, irregular tactile input from clothing or temperature — each one draws a slice of the thalamic filter, reducing the portion available for the focal task. The result is a degraded sensory signal: the body is nominally "here" but its attunement is scattered across the room.
-
-Deliberately reducing the number of active sensory channels before deep work lowers the total filtering load. Neurologically, this frees thalamo-cortical resources to reinforce the signal from the task itself — strengthening the feedback loop between action and attention. Studies on selective attention consistently show that reducing irrelevant sensory input improves response speed and error rate on focal tasks more than training attention directly, because the upstream bottleneck is load, not capacity.
-
-There is also a proprioceptive dimension. The body registers environmental coherence. A visually simplified, acoustically consistent, thermally stable environment generates fewer low-level threat or novelty signals — which means the amygdala runs quieter. A quieter amygdala is a direct precondition for the prefrontal engagement that makes deep work possible.
-
 ## Protocol
 
 1. **Audit all active sensory channels** before sitting down — visual, auditory, tactile, olfactory. Run them in sequence: What am I seeing? What am I hearing? What am I feeling on my skin? Spend 30 seconds, no more.

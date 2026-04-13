@@ -9,18 +9,25 @@ keywords:
   - becoming
   - absorption
   - persona
-definition: Align behavior with a lived role.
+definition: "The role is fully inhabited — behavior flows from identity rather than effort, and the work becomes an expression of who you are."
 tags:
   - type/quality
 ---
 
-# Identity Immersion
+# True
+*The Concentrate quality of Generative Story*
 
-> Align behavior with a lived role.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the work feels like an expression of who you are rather than a task you are completing. The role — craftsman, creator, practitioner, scientist — is occupied, not performed. Decisions that fit the role happen naturally; those that don't are filtered out before they require willpower. When absent, there's a gap between "the person doing this" and "who I am," and navigating that gap consumes attentional capacity before any actual work begins. You're performing a character rather than being one. The immersion is what makes the difference — not just knowing the role but living it so fully that the distinction between self and role temporarily dissolves.
 
-Identity shapes behavior from the inside out — not through willpower, but through automatic filtering. When you fully inhabit a role (craftsman, creator, scientist, practitioner), decisions and actions that fit the role happen more naturally than those that don't. The role functions as a perceptual and behavioral filter: what the role does, you do; what the role wouldn't do, you naturally don't. Immersion is the degree to which the role is genuinely occupied rather than performed — and immersion is what makes role-based behavior sustainable rather than effortful.
+## Science
+
+Identity-based behavior (Tajfel & Turner, 1979; Stryker, 1980) describes how strongly held identities shape automatic behavior through a filtering mechanism: what the identity does, we do; what it wouldn't do, we naturally resist. The behavior becomes identity-congruent without requiring deliberate choice. This is why "I am a writer" produces more writing than "I want to write more" — identity activates automatic filtering, motivation activates willpower.
+
+Cognitive dissonance theory (Festinger, 1957) explains the cost of partial immersion: when behavior and identity story misalign, the brain generates discomfort that demands resolution — either through rationalizing the behavior or updating the story. In work contexts, this shows up as the persistent low-level friction of doing things that don't feel "like me," which drains attention even when the work is technically within capability.
+
+Action-awareness merging — one of Csikszentmihalyi's canonical flow conditions — describes the state where actor and action become indistinguishable. This state requires genuine identity immersion as its precondition: you cannot fully lose yourself in the work if you're watching yourself do it.
 
 ## Techniques
 
@@ -28,22 +35,8 @@ Identity shapes behavior from the inside out — not through willpower, but thro
 - [[disconfirmation-check]] — surfaces evidence that challenges the existing self-narrative
 - [[story-vs-data-gap]] — maps the gap between lived story and observable facts
 
-## Key Concepts
-
-- [[redemptive-sequence]] — narrative structure that reframes setbacks as essential arc elements
-- [[cognitive-dissonance]] — explains discomfort when behavior and identity story misalign
-- [[identity-coherence-theory]] — describes the drive to maintain a consistent self-narrative
-
-## Related Mechanics
-- [[identity-alignment]] — alignment ensures the role matches who you actually are; immersion is the depth to which you inhabit a role that does
-- [[role-clarity]] — role clarity defines the role; identity immersion is what it looks and feels like to live it fully
-- [[action-awareness-merging]] — deep identity immersion is a prerequisite for action-awareness merging; you can't fully lose yourself in the work if you're not fully in the role
-
-## Sources
-- *needs sources*
-
 ## Recall
+
 **Hook**: When you're truly immersed in a role, you don't decide to act from it — you just do. That's the difference between performing and being.
-**Mechanism**: A fully inhabited role functions as an automatic behavioral filter; decisions that fit the role become natural, decisions that don't get filtered; no willpower required for the filtering.
+**Mechanism**: A fully inhabited role functions as an automatic behavioral filter; identity-congruent actions happen naturally while identity-incongruent ones are filtered out before they require willpower — no self-overriding needed.
 **Anchor**: Ask: "Who am I being while I do this work?" If the answer is "someone doing a task" rather than "a craftsman at their craft," the immersion isn't full. Step into the role, not just the task.
-**See also**: [[identity-alignment]], [[narrative-identity]], [[action-awareness-merging]]

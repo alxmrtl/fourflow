@@ -12,12 +12,6 @@ tags:
 
 > Treat genuine excitement as directional signal from the soul — not as distraction, indulgence, or noise — and follow it even when the destination isn't visible.
 
-## Mechanism
-
-Excitement isn't random. It's the system signaling that something in this direction is needed — not necessarily what you think is there, but something: a meeting, a realization, a skill, a connection, a transformation. The logical mind evaluates by projected outcome ("how will this help?"). Excitement operates on a different information set — one that can see further than the conscious mind's current vantage point. When you suppress excitement in favor of obligation or "should," you cut off the internal signal most closely aligned with clean fuel. When you follow it — even without knowing where it leads — intrinsic motivation compounds naturally, no willpower required.
-
-The mechanism connects directly to clean/dirty fuel: obligation is dirty fuel (fear-based, ego-active), excitement is clean fuel (curiosity-based, ego-quiet). Following excitement keeps the ego low because there's nothing to prove; the engagement is inherently its own reward.
-
 ## Protocol
 
 1. **Check what's most alive** — At any fork (between tasks, at the start of a session, when stuck), ask: "What genuinely excites me most from the options available right now?" Not what's most logical, most urgent, or most expected. What's actually lit up.

@@ -12,9 +12,6 @@ tags:
 
 > When a task exceeds current skill and anxiety spikes, decompose it to the smallest sub-goal where clarity exists — then execute from there.
 
-## Mechanism
-Overwhelm is accurate information: challenge exceeds current capability. The correct response is not to push through (which sustains the anxiety-overwhelming loop) but to recalibrate by finding the sub-goal within reach. Each completed sub-goal provides a dopamine signal of progress that replenishes engagement and reduces anxiety. Small wins re-enter the flow channel, making the larger goal accessible from the new skill position.
-
 ## Protocol
 
 1. When overwhelm or anxiety spikes mid-task, stop and name it: "Challenge exceeds current skill — I need to decompose."

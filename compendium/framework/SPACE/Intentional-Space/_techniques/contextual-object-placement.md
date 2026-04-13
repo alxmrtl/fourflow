@@ -12,13 +12,6 @@ tags:
 
 > Objects carry the meaning you have assigned them — place the right ones where your eyes land and the environment does the cueing.
 
-## Mechanism
-Associative priming is the process by which exposure to one stimulus increases the accessibility of associated concepts and states in memory. This is typically studied as a cognitive phenomenon, but it operates through perceptual channels — objects encountered in the visual field activate their associative networks automatically, before conscious attention has been directed at them. The mechanism is pre-attentive: the visual system processes objects for meaning before the experience of "noticing" them occurs.
-
-This means the objects present in your visual field are continuously priming the concepts and states associated with them, whether you intend them to or not. A photo of a finished project primes completion and competence. A symbol associated with a specific value primes that value's emotional tone. An artifact from a meaningful experience primes the motivational state associated with it. These priming effects are small individually but cumulative and persistent — they operate throughout the session, continuously re-activating the associated states in background processing.
-
-Contextual object placement is the deliberate design of this ambient priming field. By selecting and positioning objects that encode the current session's mission — its specific intent, its underlying value, its connection to a larger purpose — the visual environment maintains a continuous low-level priming toward the relevant context without requiring conscious attentional investment. The object does the work; attention is free for the task.
-
 ## Protocol
 1. For any extended project or focus session, identify the core intent at two levels: the specific output (what you are producing) and the underlying meaning (why it matters). The specific output drives task selection; the underlying meaning sustains motivation during resistance. You need objects priming both.
 2. Select one physical object for each level. For the specific output: something that represents the deliverable concretely — a printout of the brief, a physical mockup, an index card with the single output statement written on it. For the underlying meaning: something personal that carries the associated value or purpose — a photo, an artifact, a symbol, a handwritten note.

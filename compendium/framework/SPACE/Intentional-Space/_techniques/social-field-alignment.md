@@ -10,28 +10,30 @@ tags:
 
 # Social Field Alignment
 
-> Aligns surrounding people with task intent.
+Arrange who is around you during focused work — and signal your intent to them — so the social field becomes a tailwind to deep absorption rather than a headwind.
 
-## Mechanism
+## Protocol
 
-Human attention is highly contagious — the focus states of nearby people directly influence one's own capacity for sustained concentration. When those around you are engaged in shallow, distracted, or conflicting work, maintaining deep focus requires working against a social pressure gradient as well as internal resistance. When the surrounding field is aligned — others are in similar states or explicitly supportive of deep work — that gradient becomes a tailwind rather than a headwind. Social field alignment removes one category of ambient drag on flow accessibility.
+1. Identify who is physically or digitally present during your focused sessions. Do their states support or disrupt sustained concentration?
+2. For people who disrupt: communicate your session intent before starting. Explicit communication is the first mechanism — it signals what the field needs to accommodate.
+3. For environments where the social field is chronically misaligned (open offices, family spaces during work hours), find a physical solution: different location, designated hours, noise cancellation.
+4. Seek co-working arrangements where others are in aligned states — shared focus sessions, deep work partnerships, communities where sustained attention is the norm.
+5. After each session, note the social field quality. Pattern-tracking reveals which environments reliably support deep work and which reliably disrupt it.
 
-## Techniques
-- [[social-field-design]] — *needs content*
+*The goal isn't isolation — it's alignment. Some people working nearby is often better than total solitude when they're in similar states.*
 
-## Key Concepts
-- [[flow-signaling]] — communicating one's session intent to those in the social field is the first mechanism for alignment; it signals what state the field should accommodate
+## When to Use
 
-## Related Mechanics
-- [[psychological-safety]] — social field alignment supports the open, trusting state that psychological safety enables; a misaligned field activates vigilance
-- [[interruption-control]] — social field alignment is partly about preventing interruptions from the people around you; both protect the same attention window
-- [[identity-immersion]] — being seen by others as someone who does deep work reinforces the identity that makes deep work more accessible
+- When environmental factors are disrupting concentration and the source is social rather than physical
+- When planning a new work environment or changing your location
+- When existing social commitments are encroaching on focused work time
 
-## Sources
-- *needs sources*
+## Key Insight
+
+> "The focus levels of people around you are contagious — align the field or work against it."
 
 ## Recall
+
 **Hook**: The focus levels of people around you are contagious — align the field or work against it.
 **Mechanism**: Social attention is co-regulatory; a misaligned social field requires working against ambient distraction pressure in addition to internal resistance; an aligned field removes that drag.
 **Anchor**: Who is around you while you work? That is part of your environment. Align it.
-**See also**: [[interruption-control]], [[psychological-safety]]

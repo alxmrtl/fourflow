@@ -12,9 +12,6 @@ tags:
 
 > A quick diagnostic for motivation source — distinguishing fear/obligation-driven action (pushed) from interest/meaning-drawn action (pulled).
 
-## Mechanism
-Pushed motivation (driven by fear, obligation, or "or else") often signals misalignment — you're running from something. Pulled motivation (drawn by interest, curiosity, or meaning) suggests authentic engagement. The distinction maps directly onto clean vs. dirty fuel: pushed action requires willpower renewal and generates grinding; pulled action sustains naturally and creates the conditions for flow.
-
 ## Protocol
 
 For any significant project or goal, ask: **"Am I being pushed or pulled here?"**

@@ -12,14 +12,6 @@ tags:
 
 > An open loop is a background process that never gets to close — it keeps running whether you're aware of it or not.
 
-## Mechanism
-
-The Zeigarnik effect is the psychological phenomenon where unfinished tasks continue to intrude on conscious attention more than completed ones. The underlying mechanism is that the prefrontal cortex maintains an active representation of incomplete goals as a form of memory protection — keeping them accessible until they can be resolved. This is adaptive in low-cognitive-load environments but becomes costly during deep work, where working memory is already near capacity. Each open loop occupies a portion of the prefrontal maintenance buffer, reducing the resources available for the focal task.
-
-Critically, open loops operate even when not consciously attended to. Research on attention residue (Sophie Leroy, 2009) demonstrates that people who switch to a new task before fully disengaging from a previous one show measurably impaired performance on the new task — not because they're thinking about the old task consciously, but because the brain's background processing continues tracking it. The mind is, in effect, running parallel threads. Open loop closure is the practice of reducing the number of active background threads before entering deep work.
-
-The key insight from the GTD tradition (extended by cognitive science) is that a loop does not need to be *completed* to be closed — it needs to be *parked with a trusted next action*. The prefrontal cortex's goal-maintenance mechanism responds to the presence of a concrete next step and a reliable capture system. If the system is trusted, the brain releases its grip on the item. This is why externalizing loops into a written list — even a temporary one — reliably reduces intrusive thought frequency.
-
 ## Protocol
 
 1. **Open a capture surface** (paper, notes app, voice memo — whatever is fastest for you) before starting the session. This is your parking lot, not a to-do system.

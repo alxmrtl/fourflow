@@ -10,28 +10,30 @@ tags:
 
 # Constraint Elegance
 
-> Uses limits to sharpen action.
+Design the limits of your work session before starting — one tool, one scope, one duration — so the decision space collapses and what remains is depth, not choice.
 
-## Mechanism
+## Protocol
 
-Unlimited options and open-ended possibility are cognitively expensive — before any work begins, the mind must survey, evaluate, and compare across an infinite space. Constraints collapse the decision space and direct attention to what matters, paradoxically making creative work faster and more precise by removing the infinite from consideration. The best constraints don't feel like restrictions; they feel like focus — the productive narrowing that allows depth to occur.
+1. Before starting, define the session constraints explicitly: one tool, one problem, one deliverable, one time limit.
+2. Make the constraints specific enough to eliminate meaningful decisions during the session. "Write in Obsidian" is a constraint. "Work on writing" is not.
+3. Hold the constraints firm for the duration of the session. If a constraint feels frustrating, note it — but don't adjust mid-session.
+4. After the session, review: did the constraint help or hinder? Adjust the next constraint design based on what you learned.
+5. Over time, build a library of effective constraint sets for different work types. The best constraints become default session structure.
 
-## Techniques
-- [[constraint-design]] — *needs content*
+*Start with time constraints if others feel too foreign — a hard 60-minute window is a constraint most people can apply immediately.*
 
-## Key Concepts
-- [[parkinson's-law]] — work expands to fill available time and space; constraints are the mechanism for preventing this expansion
+## When to Use
 
-## Related Mechanics
-- [[overchoice-elimination]] — overchoice elimination removes options from decision-making; constraint elegance goes further, using limits as a creative forcing function
-- [[priority-singularity]] — the temporal constraint of having one priority at a time is constraint elegance applied to mission
-- [[subtraction-beats-addition]] — constraint elegance is subtraction applied to possibility space; removing options improves rather than limits performance
+- When the blank-canvas feeling before a session is generating paralysis rather than freedom
+- When you find yourself mid-session choosing between approaches rather than executing one
+- When a session is long enough that drift is likely without structural limits
 
-## Sources
-- *needs sources*
+## Key Insight
+
+> "Constraints don't limit creativity — they direct it. Infinite possibility is paralysis."
 
 ## Recall
+
 **Hook**: Constraints don't limit creativity — they direct it. Infinite possibility is paralysis.
 **Mechanism**: Limits collapse the decision space before work begins, concentrating attention on what's available rather than what's imaginable; the narrowing enables the depth.
 **Anchor**: The blank canvas is harder than the constrained brief. Design the limits deliberately.
-**See also**: [[overchoice-elimination]], [[parkinson's-law]]

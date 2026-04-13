@@ -9,18 +9,25 @@ keywords:
   - congruence
   - authenticity
   - match
-definition: Match role to self-concept.
+definition: "The role fits — who you are and what the role requires move together rather than against each other."
 tags:
   - type/quality
 ---
 
-# Identity Alignment
+# Aligned
+*The Restore quality of Empowered Role*
 
-> Match role to self-concept.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, the role doesn't require self-overriding. What the role calls for is what you naturally do — not because the role is easy, but because it fits. The psychological overhead of inhabiting it is low: no constant negotiation between "who I am" and "who this requires me to be." When absent, every session carries that negotiation as background load. Performing a role that doesn't match the self-concept is not just uncomfortable — it's attention-expensive, because the friction between self and role shows up as a persistent ambient drain before any actual work begins. The restore move is alignment audit: does this role match who I understand myself to be?
 
-When the role you inhabit matches who you understand yourself to be, action from that role requires no self-overriding — you're not performing a character, you're being one. The psychological overhead of misaligned roles is substantial: constantly mediating between "who I am" and "who this role requires me to be" consumes attentional capacity before any actual work begins. Identity-aligned roles don't need to be willed; they're inhabited. The distinction between struggling to stay in character and naturally being in character is the difference between effortful and effortless performance.
+## Science
+
+Person-role fit research (Edwards, 1991; Kristof-Brown et al., 2005) establishes that congruence between individual characteristics and role demands predicts engagement, performance, and intrinsic motivation at consistent levels above general job satisfaction. The mechanism is cognitive: alignment removes the translation cost between "what I'm being asked to do" and "what makes sense for me to do."
+
+Self-determination theory (Deci & Ryan, 1985) identifies autonomy as a core psychological need — specifically, the experience of acting from an integrated self rather than from external compulsion. Identity-aligned roles satisfy this need structurally: the work feels self-authored even when externally assigned, because the role itself is congruent with who you are.
+
+Role identity theory (Stryker, 1980) describes how identities differ in salience — the degree to which they shape automatic behavior across contexts. Highly salient role identities (craftsman, creator, scientist) generate behavioral consistency without effort: when the situation activates the identity, the behavior follows automatically. Misaligned roles are low-salience and require willpower to maintain.
 
 ## Techniques
 
@@ -28,27 +35,8 @@ When the role you inhabit matches who you understand yourself to be, action from
 - [[role-values-map]] — maps current role responsibilities against personal core values
 - [[contribution-trace]] — traces how daily actions connect to meaningful contribution
 
-## Key Concepts
-
-- [[self-determination-theory]] — identity alignment satisfies autonomy and competence needs at the core
-- [[person-role-fit]] — the degree of match between person and role predicts engagement and flow
-- [[role-identity-theory]] — explains how strongly held role identities shape automatic behavior
-
-## Related Mechanics
-- [[identity-immersion]] — the practice of inhabiting a role; identity alignment is the prerequisite that makes immersion feel natural rather than performed
-- [[values-integration]] — values integration is identity alignment at the values level; both ensure action flows from the authentic self
-- [[meaning-coherence]] — when role and identity are aligned, actions naturally fit a unified frame; coherence follows from alignment
-
-## Sources
-
-## Capture Sources
-
-| Source | Type | Key Insight |
-|--------|------|-------------|
-| [[geddes-anti-collapse-field-manual-newsletter]] | newsletter | Covenant vs. authority audit: L1 (authority — what feels right) shifts with conditions; L3 (covenant — identity-level) holds across them; most alignment failures are L1 mistaken for L3 |
-
 ## Recall
-**Hook**: When your role matches who you are, you don't perform it — you inhabit it. That's the difference between effortful and effortless.
-**Mechanism**: Identity-misaligned roles require constant self-overriding, consuming attentional capacity that would otherwise be available for the work itself; aligned roles are inhabited without overhead.
-**Anchor**: Ask: "Am I performing this role or being it?" If performing — the identity gap is the cost. Work backward from that gap.
-**See also**: [[identity-immersion]], [[values-integration]], [[psychological-ownership]]
+
+**Hook**: When your role fits who you are, you inhabit it. When it doesn't, you perform it — and performance costs attention.
+**Mechanism**: Identity-misaligned roles require constant self-overriding, consuming attentional capacity before any work begins; aligned roles are inhabited without overhead because the role's demands are congruent with the self-concept.
+**Anchor**: Ask: "Am I performing this role or being it?" If performing — work backward from the gap. What specifically doesn't fit?

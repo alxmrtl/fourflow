@@ -12,13 +12,6 @@ tags:
 
 > Momentum is invisible without a record — the ledger converts movement into evidence you can see.
 
-## Mechanism
-Progress on complex, long-horizon work is genuinely difficult to perceive in real time. Unlike physical tasks where output is visible (the wall is built, the room is clean), cognitive and creative work produces outcomes that are diffuse, incremental, and often invisible on any given day. The absence of visible progress triggers the brain's loss-aversion systems — the perceived gap between current state and goal state feels like stagnation or regression, even when real movement is occurring.
-
-Teresa Amabile's "progress principle" research demonstrates that the single strongest predictor of positive inner work life is making progress on meaningful work — but critically, the effect is contingent on perceiving the progress. Work that happened but wasn't registered doesn't produce the motivational benefit. The ledger is the registration mechanism.
-
-There is also a narrative continuity function: a running record of movement transforms isolated days into a sequence. The brain's story-constructing systems (hippocampus, temporal cortex) can hold a longer arc of cause-and-effect when that arc is externalized. The ledger functions as an external memory that keeps the larger story coherent when day-to-day experience would fragment it.
-
 ## Protocol
 1. Keep a dedicated document or physical notebook — one entry per work day. Title format: date + one word for the day's theme (e.g., "Mar 27 — structure").
 2. At session end, write exactly three entries:

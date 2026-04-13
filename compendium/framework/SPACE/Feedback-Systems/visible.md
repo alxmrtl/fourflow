@@ -9,18 +9,25 @@ keywords:
   - momentum
   - metrics
   - visible
-definition: Make advancement perceptible in real time.
+definition: "Advancement is perceptible — the gap between current state and goal is always legible."
 tags:
   - type/quality
 ---
 
-# Progress Visibility
+# Visible
+*The Concentrate quality of Feedback Systems*
 
-> Make advancement perceptible in real time.
+## What it is
 
-## Why It Enables Flow
+When this quality is present, you can see the work moving. Not just feel it — see it. Something external confirms that the gap is closing. When absent, long-horizon effort becomes structurally demoralizing: progress that isn't perceptible feels like stasis, and stasis is motivationally indistinguishable from futility. You can be moving forward and have no sense of it. The work continues but the fuel that makes it self-reinforcing — the sense of getting somewhere — is gone.
 
-Progress that isn't perceptible feels like stasis, and stasis is motivationally indistinguishable from futility. When advancement becomes visible in real time — through explicit metrics, visual progress indicators, or any external signal of movement — the brain generates the forward-momentum response that keeps effort self-reinforcing. Without this signal, sustained effort in long-horizon work requires willpower alone, which depletes.
+## Science
+
+Teresa Amabile's progress principle research found that small wins on meaningful work were the strongest predictor of positive inner work life — more than recognition, incentives, or clear goals alone. The mechanism is the goal-gradient hypothesis (Hull, 1932; extended by Kivetz et al., 2006): as the visible gap between current and goal state decreases, effort accelerates. Progress visibility is what activates this mechanism — if the gap isn't legible, the gradient cannot operate.
+
+Task-not-ego metrics are the critical distinction here. Research on evaluative threat shows that feedback measuring personal adequacy (ego metrics) activates defensive processing and narrows the perceptual aperture, while feedback measuring task advancement (task metrics) maintains openness and engagement. Progress that is visible but measuring the wrong thing can actively harm flow rather than support it. The concentrate path is designing metrics that answer "how far has the work moved?" rather than "how well am I performing?"
+
+Streak architecture applies a complementary mechanism: loss-aversion (Kahneman & Tversky, 1979) makes continuation of a visible streak more motivating than initiation of a new one. Progress visibility that activates the fear of breaking momentum is among the most reliable structures for sustaining long-horizon effort.
 
 ## Techniques
 
@@ -28,22 +35,8 @@ Progress that isn't perceptible feels like stasis, and stasis is motivationally 
 - [[progress-dashboard]] — centralizes key advancement metrics into a single always-visible reference surface
 - [[streak-architecture]] — structures continuity tracking to leverage loss-aversion as a forward-momentum driver
 
-## Key Concepts
-
-- [[task-not-ego-metrics]] — explains why progress must measure task advancement, not ego performance, to sustain flow
-- [[progress-visibility-effect]] — research showing visible progress is intrinsically motivating independent of reward
-- [[goal-gradient-hypothesis]] — explains accelerating effort as the visible gap between current and goal state closes
-
-## Related Mechanics
-- [[effort-reward-coupling]] — visible progress makes the effort-reward relationship legible and sustaining
-- [[immediate-feedback]] — progress visibility requires feedback mechanisms to be real-time
-- [[narrative-momentum]] — story-level sense of forward movement; progress visibility is its operational expression
-
-## Sources
-- *needs sources*
-
 ## Recall
+
 **Hook**: Progress that can't be seen feels like no progress at all.
 **Mechanism**: Visible advancement generates the forward-momentum signal that makes effort self-reinforcing; without perceptible progress, long-horizon work requires willpower alone.
 **Anchor**: Make the invisible visible — if progress isn't trackable, it isn't sustainable.
-**See also**: [[effort-reward-coupling]], [[task-not-ego-metrics]]

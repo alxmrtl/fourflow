@@ -12,13 +12,6 @@ tags:
 
 > Most focus attempts abort at the entry point — collapse the start to a single trigger and remove the last moment of friction.
 
-## Mechanism
-Session initiation friction is a disproportionate determinant of whether focus sessions happen at all. The decision to begin a focus session does not fail at the motivational level — it typically fails at the transition point: the gap between deciding to work and being in an environment ready to work. This gap is occupied by micro-decisions (which project, which file, which application to open first), setup tasks (clearing the workspace, opening tools, finding the relevant document), and state transitions (closing communication channels, adjusting settings). Each of these is a small cost, but their cumulative effect at a moment when commitment is not yet behaviorally locked creates an escape window.
-
-From a behavioral science perspective, this is a friction problem, not a motivation problem. BJ Fogg's research on behavior design establishes that even highly motivated people do not perform behaviors reliably when activation energy is high. Conversely, behaviors with near-zero activation energy are performed at much higher rates even by people with moderate motivation. Collapsing session launch to a single trigger removes the activation energy from the entry point — when the only action required is one keystroke, click, or physical gesture, the transition from deciding to working becomes effectively frictionless.
-
-The single trigger also functions as a state-change signal. Rituals acquire state-transition properties through repetition — the trigger becomes a conditioned cue that primes the focus state as it executes. Over time, the one-click launch is not just a convenience mechanism; it is a state entry protocol that begins activating the focus state before the first unit of work begins.
-
 ## Protocol
 1. Map your current session-start process: list every distinct action between "I decide to work" and "I am actively working on the target output." This typically includes 5-12 steps. Be granular — include unlocking devices, opening applications, navigating to files, adjusting settings, silencing notifications.
 2. Automate or pre-configure everything on the list that does not require in-the-moment decision. For digital work: create a workspace shortcut, browser profile, or app shortcut that opens your work environment in the correct state. macOS Shortcuts, Windows Task Scheduler, a browser profile with specific tabs, a script that opens specific applications and files — any of these can collapse multiple steps into one.

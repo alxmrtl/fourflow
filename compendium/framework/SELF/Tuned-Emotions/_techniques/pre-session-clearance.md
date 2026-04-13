@@ -12,10 +12,6 @@ tags:
 
 > A consistent 3–10 minute pre-session sequence that witnesses whatever emotional weather is present, then transitions the nervous system from evaluative mode into process mode — conditioning the hypofrontal state over time.
 
-## Mechanism
-
-Two things must happen before focused work can begin: (1) emotional backlog from the day must be acknowledged so it doesn't interrupt mid-session, and (2) the nervous system must cross from evaluative mode ("Am I ready? What if this is bad?") into executive mode ("I do this now"). These aren't separate problems — they share a solution. Unacknowledged emotions push for attention precisely because they haven't been given it. Witnessing them for 60–90 seconds clears the queue. Then a consistent ritual sequence — physical, mental, start signal — conditions the hypofrontal state: over time the ritual itself becomes the trigger, producing the neural conditions for flow automatically. The key: the ritual does not require feeling ready. It requires performing the ritual. State follows action.
-
 ## Protocol
 
 **Part 1 — Witness (90 seconds)**
