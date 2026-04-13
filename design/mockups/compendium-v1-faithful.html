@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Compendium Navigator — V1 Faithful</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #111214; color: white; min-height: 100vh; }
+
+  /* Pillar colors */
+  :root {
+    --self:   #FF6F61;
+    --space:  #6BA292;
+    --story:  #5B84B1;
+    --spirit: #7A4DA4;
+  }
+
+  /* Nav pill states */
+  .state-pill {
+    transition: all 180ms ease;
+    border-bottom: 2px solid transparent;
+  }
+  .state-pill:not(.active):not(:disabled):hover {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.75);
+  }
+  .state-pill.active {
+    color: white;
+  }
+  .state-pill.active.self   { background: rgba(255,111,97,0.18);  border-bottom-color: #FF6F61; box-shadow: 0 4px 16px rgba(255,111,97,0.18); }
+  .state-pill.active.space  { background: rgba(107,162,146,0.18); border-bottom-color: #6BA292; box-shadow: 0 4px 16px rgba(107,162,146,0.18); }
+  .state-pill.active.story  { background: rgba(91,132,177,0.18);  border-bottom-color: #5B84B1; box-shadow: 0 4px 16px rgba(91,132,177,0.18); }
+  .state-pill.active.spirit { background: rgba(122,77,164,0.18);  border-bottom-color: #7A4DA4; box-shadow: 0 4px 16px rgba(122,77,164,0.18); }
+
+  /* Quality tab states */
+  .qual-tab {
+    transition: all 180ms ease;
+    border-bottom: 2px solid transparent;
+  }
+  .qual-tab:not(.active):not(:disabled):hover {
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.65);
+  }
+  .qual-tab.active.spirit {
+    background: rgba(122,77,164,0.20);
+    border-bottom-color: #7A4DA4;
+    color: white;
+  }
+
+  /* Technique list item */
+  .tech-item {
+    transition: all 160ms ease;
+    border-left: 2px solid transparent;
+  }
+  .tech-item:hover {
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.80);
+  }
+  .tech-item.active.spirit {
+    background: rgba(122,77,164,0.14);
+    border-left-color: #7A4DA4;
+    color: white;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+
+  .divider { width: 1px; background: rgba(255,255,255,0.08); align-self: stretch; margin: 0 1px; }
+</style>
+</head>
+<body>
+
+<div style="max-width:1280px; margin:0 auto; padding:20px 24px; display:flex; flex-direction:column; gap:0; height:100vh;">
+
+  <!-- ═══════════════════════════════════════════════════════
+       TOP NAVIGATION BAR
+  ═══════════════════════════════════════════════════════ -->
+  <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:14px 14px 0 0; padding:10px 14px; display:flex; align-items:stretch; gap:6px; flex-shrink:0;">
+
+    <!-- SOUL tab (disabled) -->
+    <div style="display:flex; flex-direction:column; gap:4px; padding:6px 10px; justify-content:center; align-items:center; opacity:0.20; cursor:not-allowed;" title="Coming soon">
+      <span style="font-size:8px; font-weight:900; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.6);">—</span>
+      <span style="font-size:9px; font-weight:900; letter-spacing:0.12em; text-transform:uppercase;">SOUL</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SELF group -->
+    <div style="display:flex; flex-direction:column; gap:2px; flex:1;">
+      <span style="font-size:7px; font-weight:900; letter-spacing:0.20em; text-transform:uppercase; color:#FF6F61; opacity:0.7; padding:0 4px;">SELF</span>
+      <div style="display:flex; gap:3px;">
+        <button class="state-pill self" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Tuned Emotions</button>
+        <button class="state-pill self" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Focused Body</button>
+        <button class="state-pill self" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Open Mind</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SPACE group -->
+    <div style="display:flex; flex-direction:column; gap:2px; flex:1;">
+      <span style="font-size:7px; font-weight:900; letter-spacing:0.20em; text-transform:uppercase; color:#6BA292; opacity:0.7; padding:0 4px;">SPACE</span>
+      <div style="display:flex; gap:3px;">
+        <button class="state-pill space" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Intentional Space</button>
+        <button class="state-pill space" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Optimized Tools</button>
+        <button class="state-pill space" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Feedback Systems</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- STORY group -->
+    <div style="display:flex; flex-direction:column; gap:2px; flex:1;">
+      <span style="font-size:7px; font-weight:900; letter-spacing:0.20em; text-transform:uppercase; color:#5B84B1; opacity:0.7; padding:0 4px;">STORY</span>
+      <div style="display:flex; gap:3px;">
+        <button class="state-pill story" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Generative Story</button>
+        <button class="state-pill story" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Clear Mission</button>
+        <button class="state-pill story" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Empowered Role</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SPIRIT group -->
+    <div style="display:flex; flex-direction:column; gap:2px; flex:1;">
+      <span style="font-size:7px; font-weight:900; letter-spacing:0.20em; text-transform:uppercase; color:#7A4DA4; opacity:0.7; padding:0 4px;">SPIRIT</span>
+      <div style="display:flex; gap:3px;">
+        <button class="state-pill spirit" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Grounding Values</button>
+        <button class="state-pill spirit active" style="flex:1; padding:5px 6px; border-radius:7px; font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Ignited Curiosity</button>
+        <button class="state-pill spirit" style="flex:1; padding:5px 6px; border-radius:7px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.25); font-size:8.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border:none;">Visualized Vision</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       STATE HEADER + INSIGHT COLUMNS
+  ═══════════════════════════════════════════════════════ -->
+  <div style="background:rgba(122,77,164,0.08); border:1px solid rgba(122,77,164,0.18); border-top:none; padding:18px 20px 16px; flex-shrink:0;">
+
+    <!-- State identity row -->
+    <div style="display:flex; align-items:center; gap:14px; margin-bottom:16px;">
+      <!-- Logo placeholder -->
+      <div style="width:42px; height:42px; background:rgba(122,77,164,0.35); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7A4DA4" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+        </svg>
+      </div>
+      <div>
+        <div style="font-size:9px; font-weight:900; letter-spacing:0.20em; text-transform:uppercase; color:#7A4DA4; margin-bottom:2px;">SPIRIT</div>
+        <div style="font-size:22px; font-weight:900; letter-spacing:-0.02em; color:white; line-height:1;">IGNITED CURIOSITY</div>
+      </div>
+    </div>
+
+    <!-- Three insight columns -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:rgba(255,255,255,0.07); border-radius:10px; overflow:hidden;">
+      <div style="background:#111214; padding:14px 16px;">
+        <div style="font-size:7.5px; font-weight:900; letter-spacing:0.18em; text-transform:uppercase; color:#7A4DA4; margin-bottom:7px;">Core Insight</div>
+        <p style="font-size:12px; font-weight:500; line-height:1.55; color:rgba(255,255,255,0.78);">Stay genuinely interested in your work so focus happens without forcing it.</p>
+      </div>
+      <div style="background:#111214; padding:14px 16px;">
+        <div style="font-size:7.5px; font-weight:900; letter-spacing:0.18em; text-transform:uppercase; color:#7A4DA4; margin-bottom:7px;">Flow Connection</div>
+        <p style="font-size:12px; font-weight:500; line-height:1.55; color:rgba(255,255,255,0.78);">Intrinsic curiosity quiets the ego — freeing the full attentional field that flow requires.</p>
+      </div>
+      <div style="background:#111214; padding:14px 16px;">
+        <div style="font-size:7.5px; font-weight:900; letter-spacing:0.18em; text-transform:uppercase; color:#7A4DA4; margin-bottom:7px;">Without This</div>
+        <p style="font-size:12px; font-weight:500; line-height:1.55; color:rgba(255,255,255,0.78);">You'll chase performance instead of presence, fueling anxiety rather than engagement.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       QUALITIES SECTION
+  ═══════════════════════════════════════════════════════ -->
+  <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.07); border-top:none; padding:14px 20px; flex-shrink:0;">
+
+    <!-- Qualities label + tabs row -->
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+      <span style="font-size:7.5px; font-weight:900; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.25);">QUALITIES</span>
+      <div style="display:flex; gap:4px; flex:1;">
+
+        <!-- Restore tab -->
+        <button class="qual-tab spirit" style="display:flex; align-items:center; gap:6px; padding:7px 14px; border-radius:8px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.28); font-size:10px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; border:none; white-space:nowrap;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+          </svg>
+          Exploratory
+        </button>
+
+        <!-- Maintain tab (active) -->
+        <button class="qual-tab spirit active" style="display:flex; align-items:center; gap:6px; padding:7px 14px; border-radius:8px; font-size:10px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; border:none; white-space:nowrap;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+          Alive
+        </button>
+
+        <!-- Concentrate tab -->
+        <button class="qual-tab spirit" style="display:flex; align-items:center; gap:6px; padding:7px 14px; border-radius:8px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.28); font-size:10px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; border:none; white-space:nowrap;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+          </svg>
+          Compounding
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Quality detail: 3-column bar -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:rgba(255,255,255,0.06); border-radius:9px; overflow:hidden;">
+      <div style="background:rgba(255,255,255,0.03); padding:12px 15px;">
+        <div style="font-size:7px; font-weight:900; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.30); margin-bottom:6px;">Definition</div>
+        <p style="font-size:11.5px; font-weight:500; line-height:1.55; color:rgba(255,255,255,0.72);">The engagement is self-reinforcing — the work rewards itself, and attention goes in fully because there's nothing to prove.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.03); padding:12px 15px;">
+        <div style="font-size:7px; font-weight:900; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.30); margin-bottom:6px;">Hook</div>
+        <p style="font-size:11.5px; font-weight:500; line-height:1.55; color:rgba(255,255,255,0.72);">Clean fuel makes the journey the reward. Dirty fuel makes arrival the only relief.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.03); padding:12px 15px;">
+        <div style="font-size:7px; font-weight:900; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.30); margin-bottom:6px;">Mechanism</div>
+        <p style="font-size:11.5px; font-weight:500; line-height:1.55; color:rgba(255,255,255,0.72);">Dirty fuel keeps the protective ego active — monitoring for failure, managing identity stakes — fragmenting the attention flow requires.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TECHNIQUES SECTION
+  ═══════════════════════════════════════════════════════ -->
+  <div style="display:flex; flex:1; min-height:0; border:1px solid rgba(255,255,255,0.07); border-top:none; border-radius:0 0 14px 14px; overflow:hidden;">
+
+    <!-- Left: technique list -->
+    <div style="width:240px; flex-shrink:0; border-right:1px solid rgba(255,255,255,0.07); display:flex; flex-direction:column; overflow-y:auto; background:rgba(255,255,255,0.01);">
+      <div style="padding:12px 14px 8px; flex-shrink:0; border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="font-size:7px; font-weight:900; letter-spacing:0.20em; text-transform:uppercase; color:rgba(255,255,255,0.22);">TECHNIQUES</span>
+      </div>
+      <div style="flex:1; padding:6px 8px; overflow-y:auto;">
+
+        <button class="tech-item spirit active" style="display:flex; align-items:center; gap:8px; width:100%; padding:9px 10px; border-radius:7px; text-align:left; cursor:pointer; border:none; margin-bottom:2px;">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style="flex-shrink:0; color:#7A4DA4;"><path d="M7 1L3 7h3.5L5 11l4-6H5.5L7 1z" fill="currentColor"/></svg>
+          <span style="font-size:10.5px; font-weight:700; line-height:1.3;">Novelty Injection</span>
+        </button>
+
+        <button class="tech-item spirit" style="display:flex; align-items:center; gap:8px; width:100%; padding:9px 10px; border-radius:7px; text-align:left; cursor:pointer; border:none; margin-bottom:2px; background:rgba(255,255,255,0.02); color:rgba(255,255,255,0.35);">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style="flex-shrink:0; opacity:0.4;"><path d="M7 1L3 7h3.5L5 11l4-6H5.5L7 1z" fill="currentColor"/></svg>
+          <span style="font-size:10.5px; font-weight:600; line-height:1.3;">Beginner Lens Reset</span>
+        </button>
+
+        <button class="tech-item spirit" style="display:flex; align-items:center; gap:8px; width:100%; padding:9px 10px; border-radius:7px; text-align:left; cursor:pointer; border:none; margin-bottom:2px; background:rgba(255,255,255,0.02); color:rgba(255,255,255,0.35);">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style="flex-shrink:0; opacity:0.4;"><path d="M7 1L3 7h3.5L5 11l4-6H5.5L7 1z" fill="currentColor"/></svg>
+          <span style="font-size:10.5px; font-weight:600; line-height:1.3;">Open Question Hold</span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Right: technique detail -->
+    <div style="flex:1; overflow-y:auto; padding:24px 28px; background:#111214;">
+      <div style="max-width:640px;">
+
+        <!-- Type label -->
+        <div style="display:flex; align-items:center; gap:6px; margin-bottom:10px;">
+          <div style="width:5px; height:5px; border-radius:50%; background:#7A4DA4; flex-shrink:0;"></div>
+          <span style="font-size:7.5px; font-weight:900; letter-spacing:0.20em; text-transform:uppercase; color:#7A4DA4;">TECHNIQUE</span>
+        </div>
+
+        <!-- Title -->
+        <h2 style="font-size:24px; font-weight:900; letter-spacing:-0.025em; color:white; margin-bottom:10px; line-height:1.1;">Novelty Injection</h2>
+
+        <!-- Definition -->
+        <p style="font-size:13px; font-weight:500; line-height:1.65; color:rgba(255,255,255,0.65); margin-bottom:24px;">Deliberately introduces new elements into familiar work to reignite intrinsic engagement and prevent the boredom that breaks flow.</p>
+
+        <!-- Content sections -->
+        <div style="display:flex; flex-direction:column; gap:20px;">
+
+          <div>
+            <div style="font-size:8px; font-weight:900; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.30); margin-bottom:8px;">Protocol</div>
+            <ol style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+              <li style="display:flex; gap:10px; font-size:12.5px; line-height:1.6; color:rgba(255,255,255,0.68);">
+                <span style="font-size:9px; font-weight:900; color:#7A4DA4; width:16px; text-align:right; padding-top:3px; flex-shrink:0;">1</span>
+                <span>Identify what aspect of the current work has become routine or stale.</span>
+              </li>
+              <li style="display:flex; gap:10px; font-size:12.5px; line-height:1.6; color:rgba(255,255,255,0.68);">
+                <span style="font-size:9px; font-weight:900; color:#7A4DA4; width:16px; text-align:right; padding-top:3px; flex-shrink:0;">2</span>
+                <span>Introduce one variable that changes: format, tool, constraint, collaborator, or environment.</span>
+              </li>
+              <li style="display:flex; gap:10px; font-size:12.5px; line-height:1.6; color:rgba(255,255,255,0.68);">
+                <span style="font-size:9px; font-weight:900; color:#7A4DA4; width:16px; text-align:right; padding-top:3px; flex-shrink:0;">3</span>
+                <span>Proceed with the work under the new condition. Note whether engagement returns.</span>
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <div style="font-size:8px; font-weight:900; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.30); margin-bottom:8px;">When to Use</div>
+            <p style="font-size:12.5px; line-height:1.65; color:rgba(255,255,255,0.62);">When motivation is flagging despite the task being objectively important. When you notice yourself going through the motions. When boredom is causing distraction rather than difficulty.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
