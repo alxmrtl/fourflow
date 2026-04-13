@@ -133,13 +133,13 @@ Every State is composed of exactly three Qualities. The same three principle-typ
 
 ---
 
-## Level 5: Techniques & Concepts
+## Level 5: Techniques
 
-The leaf level. These are not FourFlow-proprietary — they are the practical and explanatory layers that make each Quality actionable and grounded.
+The leaf level. These are not FourFlow-proprietary — they are the practical layer that makes each Quality actionable.
 
 **Techniques** — the HOW. Atomic, repeatable protocols with specific steps, concrete enough to follow without reading the source. Each Technique addresses one Quality within one State. Lives in `_techniques/` within each State's directory.
 
-**Concepts** — the WHY. External scientific and philosophical frameworks imported from outside FourFlowOS that explain why a Quality matters. Examples: Window of Tolerance, Transient Hypofrontality, Default Mode Network, Polyvagal Theory, Challenge-Skill Ratio. Cross-cutting — one Concept can ground multiple Qualities across States. Lives in `_concepts/` within each State's directory, or in `framework/_concepts/` for cross-pillar concepts.
+> **Note on Concepts**: An earlier version of the compendium included a Concepts layer (`_concepts/` folders) — external scientific frameworks explaining why each Quality matters. This layer has been archived. Concept files remain in the repository as source material but are no longer synced to the product or surfaced in the training platform.
 
 ---
 
@@ -181,6 +181,6 @@ This sequence is a heuristic, not architecture. Don't confuse the repair manual 
 | States | `compendium/framework/[PILLAR]/[State-Name]/` |
 | Qualities | Each State folder's root `.md` file |
 | Techniques | `compendium/framework/[PILLAR]/[State]/_techniques/` |
-| Concepts | `compendium/framework/[PILLAR]/[State]/_concepts/` (or `framework/_concepts/` for cross-pillar) |
+| Concepts (archived) | `compendium/framework/[PILLAR]/[State]/_concepts/` — reference only, not synced |
 
 **Related foundations**: `first-principles.md` · `soul.md` · `time-as-aperture.md` · `consciousness-alignment.md`
