@@ -65,7 +65,7 @@ The relationship is mutual and cyclical, not a stack. Direction informs what coh
 
 *Wholeness is the factory setting. All work is restoration, not construction.*
 
-The heart's factory setting is open. SOUL is always shining. Flow is the natural perception rate of an unobstructed consciousness. Humans are whole by nature, not by achievement. Every technique, every mechanic, every key is a removal operation — clearing what blocks, not adding what's missing.
+The heart's factory setting is open. SOUL is always shining. Flow is the natural perception rate of an unobstructed consciousness. Humans are whole by nature, not by achievement. Every technique, every quality, every Key is a removal operation — clearing what blocks, not adding what's missing.
 
 This is the deepest claim in the framework and the one that distinguishes FourFlowOS from every performance system. Performance systems assume you need to build capacity. FourFlowOS assumes capacity is already present — buried under patterns, conditioning, and armor accumulated through experience.
 
@@ -251,7 +251,7 @@ Making something visible changes your relationship to it. The act of measurement
 
 ## Reading the Framework Through First Principles
 
-Any mechanic, technique, or concept in the compendium can be traced to one or more first principles. When studying a mechanic, ask:
+Any quality, technique, or concept in the compendium can be traced to one or more first principles. When studying one, ask:
 
 1. **Is this restoring something or constructing something?** → The Default Is Open
 2. **Is this aligning parts or optimizing a single part?** → Coherence Is the Mechanism
@@ -259,7 +259,7 @@ Any mechanic, technique, or concept in the compendium can be traced to one or mo
 4. **Is this increasing signal density or reducing noise?** → Compression Concentrates Signal
 5. **Is this clarifying direction or increasing force?** → Direction Precedes Force
 
-When the FourFlow Agent observes a user's state, it can reason from these five principles rather than scanning all 62 mechanics:
+When the FourFlow Agent observes a user's state, it can reason from these five principles rather than scanning all 36 qualities:
 - Is the default-is-open assumption being violated? (They're trying to construct instead of restore.)
 - Is coherence broken? (Parts of their system contradict.)
 - Are loops open? (Unresolved gaps consuming bandwidth.)
@@ -270,7 +270,7 @@ When the FourFlow Agent observes a user's state, it can reason from these five p
 
 ## Source Lineage
 
-These principles were distilled from cross-analysis of all 62 mechanics, the SOUL concept, the aperture model of time, the consciousness-alignment thesis, and four external captures (Hall on pistis, Hijazi on AIC, anonymous on volmaxxxing, Edgar on permission). They are not imported from any single source but emerge from the patterns that repeat across all sources when read together.
+These principles were distilled from cross-analysis of the original 62 mechanic files (since reorganized into the 36 Qualities and technique library), the SOUL concept, the aperture model of time, the consciousness-alignment thesis, and four external captures (Hall on pistis, Hijazi on AIC, anonymous on volmaxxxing, Edgar on permission). They are not imported from any single source but emerge from the patterns that repeat across all sources when read together.
 
 Related foundation documents:
 - [[consciousness-alignment]] — the "alignment not performance" thesis (Principles 2 and 5)

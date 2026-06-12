@@ -1,3 +1,5 @@
+> **ARCHIVED June 11, 2026** — superseded by `planning/TRUE-NORTH.md`. The thesis survives inverted (human flourishing first, AI as amplifier); the product layers were restructured to Teach/Diagnose/Equip; the Agent moved to the Horizon (parked). Still-valid reference material here: the per-Key diagnostic spectra and the interaction web. Honored as the seed that crystallized the mission shift from app developer to framework creator.
+
 # The ARK Blueprint: FourFlow as Consciousness Alignment Protocol
 
 **Date**: February 17, 2026 (Aquarius Eclipse / Saturn-Neptune 0° Aries)

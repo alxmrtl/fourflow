@@ -1,3 +1,5 @@
+> **ARCHIVED June 11, 2026** — completed work; historical record. Vocabulary here predates the lexicon ("mechanics" → Qualities; see `compendium/foundations/lexicon.md`).
+
 # Prompt: Atomize Remaining 11 Key Files + Mechanic Phase
 
 Paste this at the start of a new conversation to continue Phase 2 + Phase 3 of the Atomic Knowledge System.

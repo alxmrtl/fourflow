@@ -1,9 +1,11 @@
 # FourFlowOS Brand Guidelines
 
+> Vocabulary note (June 2026): canonical terms live in `compendium/foundations/lexicon.md` — the four are **Dimensions** (not "Pillars"), the twelve are **Keys**. "Pillar" survives only in legacy asset/file names below.
+
 ## 1. Brand Overview
 
 ### Mission
-Helping people discover flow, meaning, and purpose in their work and lives.
+**FourFlow makes flourishing trainable.** Helping people discover flow, meaning, and purpose in their work and lives.
 
 ### Vision
 A world where millions are awakened through flow, discovering their unique role in life's greater synchronicity.
@@ -27,16 +29,16 @@ Moving from **disengaged, overwhelmed, or stuck** → **fully engaged, excited, 
 ## 2. Visual Identity
 
 ### Primary Logo
-The FourFlowOS logo consists of four interlocking elements representing the Four Pillars: SELF (frequencies), SPACE (square), STORY (cross), and SPIRIT (circle).
+The FourFlowOS logo consists of four interlocking elements representing the Four Dimensions: SELF (frequencies), SPACE (square), STORY (cross), and SPIRIT (circle).
 
 **Usage:**
 - Use the full-color logo on dark backgrounds
 - Maintain clear space around the logo (minimum: logo height × 0.5)
 - Never stretch, rotate, or alter the logo proportions
 
-### The Four Pillars
+### The Four Dimensions
 
-| Pillar | Color Name | Hex Code | RGB | Usage |
+| Dimension | Color Name | Hex Code | RGB | Usage |
 |--------|------------|----------|-----|-------|
 | **SELF** | Coral | #FF6F61 | 255, 111, 97 | Inner mastery, body, emotions |
 | **SPACE** | Sage Green | #6BA292 | 107, 162, 146 | Environment, tools, systems |
@@ -100,7 +102,7 @@ font-family: 'Inter', system-ui, -apple-system, sans-serif;
 - Acknowledge struggle as normal and valuable
 - Use "flow" as a verb and state of being
 - Include breathing room in copy (whitespace in writing)
-- Reference the Four Pillars naturally
+- Reference the Four Dimensions naturally
 
 **DON'T:**
 - Use hustle culture language ("grind," "crush it," "hack")
@@ -171,7 +173,7 @@ All FourFlowOS interfaces default to dark mode. Light mode is secondary and shou
 ## 7. Iconography
 
 ### Section Logos
-Each pillar has a dedicated section logo:
+Each dimension has a dedicated section logo:
 - SELF - Section Logo.png
 - SPACE - Section Logo.png
 - STORY - Section Logo.png

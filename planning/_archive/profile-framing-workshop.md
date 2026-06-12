@@ -1,3 +1,5 @@
+> **ARCHIVED June 11, 2026 — decision made**: the Hybrid framing won. Profile prose uses **Your State / Your Setup / Your Arc / Your Why** subheads with plain-language questions; the signal-chain metaphor is retired from all client-facing prose. Canonical: `compendium/foundations/lexicon.md`.
+
 # Profile Framing Workshop
 *Workshopping metaphor alternatives to the signal/reception/transmission language in the Flow Archetype Profile prompt.*
 

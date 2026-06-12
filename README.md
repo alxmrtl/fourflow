@@ -1,58 +1,40 @@
 # FourFlowOS
 
-A personal development ecosystem designed to cultivate flow states and meaningful engagement through the alignment of four life dimensions: **Self, Space, Story, and Spirit**.
+**FourFlow makes flourishing trainable.**
 
-## Vision
+The capacity for flow — full, undivided engagement with what matters — is native to every person and every team. What blocks it is always a condition, and conditions can be diagnosed and trained. **FourFlow** is the framework; **FourFlowOS** is the operating system built around it: the diagnostic, the training, the tools, the knowledge base.
 
-A world where millions are awakened through flow, discovering their unique role in life's greater synchronicity.
+## The Framework
 
-## The Four Pillars
+Four **Dimensions**, each with three **Keys** — twelve conditions that open flow:
 
-| Pillar | Focus | Color |
-|--------|-------|-------|
-| **SPIRIT** | Values, Vision, Curiosity | Amethyst #7A4DA4 |
-| **STORY** | Narrative, Mission, Role | Steel Blue #5B84B1 |
-| **SPACE** | Setting, Systems, Tools | Sage Green #6BA292 |
-| **SELF** | Body, Mind, Emotions | Coral #FF6F61 |
+| Dimension | Keys | Color |
+|-----------|------|-------|
+| **SELF** (inward) | Tuned Emotions · Focused Body · Open Mind | Coral #FF6F61 |
+| **SPACE** (outward) | Intentional Space · Optimized Tools · Feedback Systems | Sage Green #6BA292 |
+| **STORY** (in time) | Generative Story · Clear Mission · Empowered Role | Steel Blue #5B84B1 |
+| **SPIRIT** (beyond time) | Grounding Values · Ignited Curiosity · Visualized Vision | Amethyst #7A4DA4 |
 
-## Applications
+Each Key opens a gate; open gates widen the aperture; full aperture is flow.
 
-### FlowSpace (Web PWA)
-The main productivity app - a flow-inducing PWA with Focus Rep tracking, struggle phase support, and the four-pillar framework.
+## What's Here
 
-```bash
-cd apps/flow-app
-npm install && npm run dev
-```
-
-### FlowRead (Web)
-Speed reading trainer to increase reading speed and comprehension.
-
-### FourFlow Habits (iOS)
-Daily habit tracking organized by the four pillars.
-
-### FlowSpace iOS
-Minimal focus timer with breathing exercises.
-
-## Repository Structure
-
-- `apps/` - Application codebases
-- `brand/` - Logos, icons, brand assets
-- `design/` - Design files and templates
-- `media/` - Audio, video, podcast content
-- `content/` - Social media and marketing assets
-- `docs/` - Documentation and planning
-- `inspiration/` - Reference materials
+- `website/fourflowos-web/` — the live site ([fourflowos.com](https://fourflowos.com)): Flow Profile, tools, training platform
+- `compendium/` — the knowledge base: 12 Keys, 36 Qualities, 100+ techniques, foundations
+- `planning/` — strategy (`TRUE-NORTH.md`) and offers
+- `apps/` — iOS and web apps (FlowZone, FlowHabits, FlowRead, FlowRep, FlowStation)
+- `agents/` — the Flow Council (prototype FourFlow Agent) and AstroAdvisor
+- `brand/`, `design/`, `media/` — brand system and assets
 
 ## Philosophy
 
 This is **not** another productivity grinder or guilt machine.
 
-This **is** a focus muscle trainer, meaning-maker, and flow companion.
+This **is** a conditions diagnostic, a training practice, and a flow companion. Flow isn't forced. It's cultivated.
 
 ## Getting Started
 
-See [CLAUDE.md](CLAUDE.md) for detailed development guide and repository organization.
+See [CLAUDE.md](CLAUDE.md) for the development guide and repository organization. Canonical vocabulary: `compendium/foundations/lexicon.md`.
 
 ---
 

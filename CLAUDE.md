@@ -1,67 +1,86 @@
 # FourFlowOS - Claude Code Guide
 
+## Read First (in order)
+
+1. `planning/TRUE-NORTH.md` — the strategic source of truth (ratified June 11, 2026)
+2. `compendium/foundations/lexicon.md` — canonical vocabulary; when any doc disagrees with it, the lexicon wins
+3. `compendium/foundations/architecture.md` — the framework's five-level structure
+4. `compendium/COMPENDIUM_INDEX.md` — flat retrieval map for all framework knowledge
+
+When an older document conflicts with these, these win — flag the conflict, don't blend.
+
+---
+
 ## Mission
 
-FourFlowOS is a consciousness alignment protocol and personal development ecosystem. The core thesis: **when AI agents handle all execution, the only remaining bottleneck is the quality of human intention. FourFlow measures alignment.**
+**FourFlow makes flourishing trainable.**
 
-The framework aligns four dimensions: **Self, Space, Story, and Spirit** — each a layer in the signal chain between human consciousness and meaningful action.
+The capacity for flow — full, undivided engagement with what matters — is native to every person and every team. What blocks it is always a condition, and conditions can be diagnosed and trained. **FourFlow** is the framework (four Dimensions, twelve Keys); **FourFlowOS** is the operating system built around it — the brand, the site, the tools, the practice.
 
-See `planning/THE-ARK-BLUEPRINT.md` for the full strategic vision.
+Human flourishing first, instinct developed. AI is amplifier and urgency, not the center: as machines absorb execution, the trained human instinct — knowing what you're for, reading your own signal, moving from coherence — becomes the differentiating skill.
 
----
-
-## The Three Product Layers
-
-### 1. Flow Profile (Entry Point + Data Moat)
-Diagnostic across 12 Flow Keys and 4 pillars. Delivered in-person (workshops, coaching) or digitally (API-first self-serve assessment). Output: which layer is stuck, which keys are bottlenecks, the specific cascade that will unlock flow.
-
-### 2. FourFlow Agent (Consciousness Companion)
-An AI observer that knows the FourFlow framework and your Flow Profile. Watches patterns in conversation and behavior, infers your state across the 12 keys, and asks the right question at the right time — in plain language, no jargon. Adapts its presence (proactive when you need pushing, fades when you're flowing). The 12 keys are its internal map, not its vocabulary.
-
-### 3. The Movement (Network Effect)
-Certified FourFlow Practitioners. Shared language (the 12 Flow Keys become vocabulary). Community.
+The four throughline convictions (every product, page, and offer must trace to these):
+1. Flow isn't forced. It's cultivated.
+2. The blocker is always a condition, never a character flaw.
+3. Diagnosis precedes intervention.
+4. Wholeness over fragment — flow emerges from all four dimensions, not one activity.
 
 ---
 
-## The 12 Flow Keys
+## The Business: Three Layers + Horizon
 
-Twelve conditions that determine whether flow is accessible. The science behind each key lives in `compendium/framework/[PILLAR]/[Key]/_source/` — it informs how the FourFlow Agent observes, but stays backstage.
+| Layer | What | Offers |
+|-------|------|--------|
+| **Teach** (the craft) | Framework training for individuals and teams | Workshops, cohorts, corporate training (systems-thinking curriculum) |
+| **Diagnose** (the wedge) | Find the bottleneck condition | Flow Profile (individuals, via Flow Unlock intake or facilitated) · Team Conditions Audit (B2B, 90-min paid diagnostic) |
+| **Equip** (the supplements) | Tools as prescriptions, not products | FlowSpark, FlowZone, FlowRead, FlowBreath, the Compendium — free, prescribed by name from profiles and training |
+| **Horizon** (parked) | The FourFlow Agent — AI companion that knows your profile | Deliberately not now; everything above compounds toward it |
 
-**SELF** (Reception): **Tuned Emotions** · **Focused Body** · **Open Mind**
-**SPACE** (Transmission): **Intentional Space** · **Optimized Tools** · **Feedback Systems**
-**STORY** (Temporal Direction): **Generative Story** · **Clear Mission** · **Empowered Role**
-**SPIRIT** (Timeless Direction): **Grounding Values** · **Ignited Curiosity** · **Visualized Vision**
+**Registers** — one framework, two voices (full rules in TRUE-NORTH.md):
+- **Seeker register** (individuals, website, apps): flow front-stage, curiosity-driven, framework visible.
+- **Buyer register** (B2B, audits, outreach): conditions/bottleneck language front-stage, framework backstage until trust exists. Never lead with "flow state," "consciousness," or untranslated "Spirit."
+- Every artifact declares its register and stays in it.
 
-## Compendium Knowledge Hierarchy
+---
+
+## The Framework
+
+Full structure: `compendium/foundations/architecture.md`. Vocabulary: `compendium/foundations/lexicon.md`.
 
 ```
-SOUL  (Default Is Open — the light source)
-  └── Dimension ×4  (Direction Precedes Force — the four orientations)
-        └── State ×12  (Coherence Is the Mechanism — named coherent configurations)
-              ├── Restore Quality  (Default Is Open echo — return to natural state)
-              ├── Maintain Quality (Loops Close Gaps — keep feedback running)
-              └── Concentrate Quality (Compression — maximize signal density)
-                    ├── Technique  — atomic actionable protocols (the HOW)
-                    └── Concept    — external scientific/philosophical frameworks (the WHY)
+SOUL                      — the light (Default Is Open)
+  └── Dimension ×4        — the four faces the light shines through
+        └── Key ×12       — each Key opens a gate (3 per Dimension)
+              ├── Restore Quality      — clear what's jamming the gate
+              ├── Maintain Quality     — keep its hinge moving (Loops Close Gaps)
+              └── Concentrate Quality  — open it all the way (Compression)
+                    └── Technique      — atomic protocol (the HOW)
 ```
 
-- **States** are FourFlow's proprietary vocabulary — the 12 named coherent configurations (e.g., "Tuned Emotions", "Focused Body"). Each Dimension has 3 States.
-- **Qualities** compose each State — always exactly 3 per State, each expressing one principle (Restore / Maintain / Concentrate). These are what the FourFlow Agent diagnoses.
-- **Techniques** are atomic, teachable protocols. Numbered steps. Concrete enough to follow without reading the source.
-- **Concepts** are external science and philosophy imported from outside FourFlowOS (e.g., `Window of Tolerance`, `Transient Hypofrontality`, `Challenge-Skill Ratio`). They explain WHY a Quality matters. Cross-cutting — one Concept can ground multiple Qualities. Lives in `[State]/_concepts/` or `framework/_concepts/` (cross-pillar).
+**The metaphor chain**: Keys open gates → open gates widen the aperture → full aperture is flow.
 
-**Full architecture reference**: `compendium/foundations/architecture.md`
+### The 12 Keys
 
----
+Twelve conditions that open flow. Each Key names the state it unlocks — the key you turn *and* the configuration that results.
 
-## The Four Pillars
+**SELF** (inward — reception): **Tuned Emotions** · **Focused Body** · **Open Mind**
+**SPACE** (outward — transmission): **Intentional Space** · **Optimized Tools** · **Feedback Systems**
+**STORY** (temporal — direction in time): **Generative Story** · **Clear Mission** · **Empowered Role**
+**SPIRIT** (eternal — direction beyond time): **Grounding Values** · **Ignited Curiosity** · **Visualized Vision**
 
-| Pillar | Color | Hex | Function | Question |
-|--------|-------|-----|----------|---------|
-| SELF | Coral | #FF6F61 | Reception Layer | "Can I receive alignment signals?" |
-| SPACE | Sage Green | #6BA292 | Transmission Layer | "Is my environment supporting signal flow?" |
-| STORY | Steel Blue | #5B84B1 | Temporal Direction | "Where am I in the arc? What am I aiming at?" |
-| SPIRIT | Amethyst | #7A4DA4 | Timeless Direction | "What is always true for me?" |
+- **Qualities** — exactly 3 per Key (Restore / Maintain / Concentrate). What gets diagnosed. (Formerly "mechanics" — deprecated.)
+- **Techniques** — atomic, teachable protocols with numbered steps. Live in `[PILLAR]/[Key]/_techniques/`.
+- **Concepts** — external science (archived layer; reference only, not synced). Live in `_concepts/` folders.
+- Deprecated level names: ~~States~~ (→ Keys), ~~Mechanics~~ (→ Qualities), ~~Pillars~~ in prose (→ Dimensions; "pillar" survives only as a legacy identifier in code/DB/file paths).
+
+### The Four Dimensions
+
+| Dimension | Color | Hex | Orientation | Question |
+|-----------|-------|-----|-------------|----------|
+| SELF | Coral | #FF6F61 | Inward — reception | "Am I clear enough to take this in?" |
+| SPACE | Sage Green | #6BA292 | Outward — transmission | "Is my context amplifying or degrading signal?" |
+| STORY | Steel Blue | #5B84B1 | Temporal — direction in time | "What am I building toward?" |
+| SPIRIT | Amethyst | #7A4DA4 | Eternal — direction beyond time | "What doesn't change regardless of conditions?" |
 | — | Charcoal | #333333 | Neutral | — |
 | — | Ivory | #F5F5F5 | Background | — |
 
@@ -69,15 +88,16 @@ SOUL  (Default Is Open — the light source)
 
 ## App Ecosystem
 
-Apps are active products and community entry points. Each has an `APP.md` with current state, role, and technical reference.
+Apps are supplements to the practice (Equip layer) — prescribed from profiles, audits, and training. Each has an `APP.md` with current state and technical reference.
 
 | App | Tier | Role | Stack |
 |-----|------|------|-------|
-| **FlowZone Web** | 1 — ARK Hub | Primary digital surface; home of Flow Profile + Agent | Next.js + TailwindCSS (live at `website/fourflowos-web/`) |
-| **FlowZone iOS** | 2 — Entry Point | Native focus timer; top-of-funnel mobile product | SwiftUI + SwiftData + AVFoundation |
-| **FlowHabits** | 2 — Entry Point | Four Pillars habit tracker; daily embodiment of framework | SwiftUI + SwiftData |
-| **FlowRead** | 3 — Standalone | Speed reading trainer; loosely connected to Open Mind | Vanilla JS PWA |
-| **FlowRep** | 3 — Standalone | Daily rep tracker; loosely connected to Focused Body | iOS native (Swift) |
+| **FlowZone Web** | 1 — Hub | Primary digital surface; home of Flow Profile + tools | Next.js + TailwindCSS (live at `website/fourflowos-web/`) |
+| **FlowZone iOS** | 2 — Entry Point | Native focus timer | SwiftUI + SwiftData + AVFoundation |
+| **FlowHabits** | 2 — Entry Point | Four-Dimension habit tracker | SwiftUI + SwiftData |
+| **FlowRead** | 3 — Standalone | Speed reading trainer (Open Mind) | Vanilla JS PWA |
+| **FlowRep** | 3 — Standalone | Daily rep tracker (Focused Body) | iOS native (Swift) |
+| **FlowStation** | 3 — Standalone | Always-on office monitor | Single HTML file (`apps/flowstation/`) |
 
 **FlowZone Web dev**:
 ```bash
@@ -100,24 +120,27 @@ FourFlowOS/
 │   ├── flowhabits/        # Tier 2: iOS habit tracker
 │   ├── flowread/          # Tier 3: Speed reading (vanilla JS)
 │   ├── flowrep/           # Tier 3: Rep tracker (iOS)
-│   └── _archive/          # Deprecated apps
+│   ├── flowstation/       # Tier 3: Office monitor (single HTML)
+│   └── _archive/          # Deprecated apps (incl. retired flowzone-web PWA)
 │
-├── website/               # Tier 1 ARK Hub: Next.js + Sanity CMS (deployed to Vercel)
-│   └── fourflowos-web/    # LIVE codebase — build here, not apps/flowzone-web
+├── website/               # Tier 1 Hub: Next.js + Sanity CMS (deployed to Vercel)
+│   └── fourflowos-web/    # LIVE codebase — build here, not apps/_archive/flowzone-web
 │
 ├── planning/              # Strategy + content planning
-│   ├── THE-ARK-BLUEPRINT.md  # Primary strategy document
-│   ├── READY/                # 12 Flow Key articles (ready to publish)
-│   ├── _archive/             # Pre-ARK planning docs
-│   └── [templates + systems] # Content templates, EXECUTION-SYSTEM, etc.
+│   ├── TRUE-NORTH.md         # Strategic source of truth (ratified Jun 11, 2026)
+│   ├── OFFER-team-conditions-audit.md  # The B2B offer (from Profitable Authority work)
+│   ├── systems-thinking-training.md    # Corporate training curriculum
+│   ├── READY/                # 12 Key articles (publishable content)
+│   └── _archive/             # Superseded docs (ARK Blueprint, EXECUTION-SYSTEM, etc.)
 │
 ├── compendium/            # The flow brain — all knowledge, techniques, captures
 │   ├── COMPENDIUM_INDEX.md   # Flat retrieval map for agents
-│   ├── foundations/          # What FourFlow is and why it exists
-│   └── framework/            # 4 pillars → 12 keys → mechanics/techniques/concepts
-│       ├── [PILLAR]/[Key]/[mechanic].md        # 62 mechanics
-│       ├── [PILLAR]/[Key]/_techniques/*.md     # 85 techniques
-│       └── [PILLAR]/[Key]/_concepts/*.md       # 44 concepts
+│   ├── foundations/          # lexicon.md, architecture.md, first-principles.md, …
+│   ├── protocols/            # Multidimensional protocols (e.g., fourflow-fast.md)
+│   └── framework/            # 4 Dimensions → 12 Keys → qualities/_techniques/_concepts
+│       ├── [PILLAR]/[Key]/[quality].md         # 36 Quality files (3 per Key)
+│       ├── [PILLAR]/[Key]/_techniques/*.md     # Technique protocols
+│       └── [PILLAR]/[Key]/_concepts/*.md       # Archived concept references
 │
 ├── agents/                # AI agent systems
 │   ├── flow-council/      # Prototype FourFlow Agent
@@ -157,7 +180,9 @@ The prototype FourFlow Agent, built as Claude skills for daily use.
 
 **Contrast as Interface**: Navigation = vibrant colors; Focus mode = minimalist zen. Transition trains the brain.
 
-**Flow Keys**: The 12 conditions that determine whether flow is accessible. Each names a domain of human experience and its ideal state. Science + techniques documented in `compendium/framework/`.
+**Coherence**: The mechanism in both registers — flow is the experience; coherence is the condition.
+
+**Bottleneck**: The Key (seeker register) or condition (buyer register) currently most blocking flow. Every FourFlow diagnostic is the same move: name the condition, not the symptom.
 
 ---
 
@@ -165,10 +190,10 @@ The prototype FourFlow Agent, built as Claude skills for daily use.
 
 `/train` route (auth-gated, unlisted). Two views via "Reps | Explore" toggle:
 
-- **Daily Reps**: SM-2 spaced repetition. Study phase (full card) → Recall phase (blank slots, reveal, rate). 10 cards/session.
-- **Explore (Compendium Navigator)**: Signal Grid — 4-column visual map of all 191 cards (62 mechanics + 85 techniques + 44 concepts). Bars show mastery dots, enrichment intensity, click-to-expand accordion.
+- **Daily Reps**: SM-2 spaced repetition. Study phase (full card) → Recall phase (blank slots, reveal, rate).
+- **Explore (Compendium Navigator)**: Signal Grid — 4-column visual map of all cards (Qualities + Techniques), mastery dots, click-to-expand accordion.
 
-**Compendium sync**: `scripts/sync-compendium.js` reads `compendium/framework/`, upserts to Supabase `mechanics` table. Run after enrichment sessions.
+**Compendium sync**: `scripts/sync-compendium.js` reads `compendium/framework/`, upserts to Supabase `mechanics` table (table name is a legacy identifier — content is Qualities/Techniques). Run after enrichment sessions.
 **Components**: `src/components/tools/training/` — TrainingApp, CardSession, MechanicCard, ProgressGrid, CompendiumNavigator, useTrainingStore
 **API**: `/api/train/queue`, `/api/train/reviews`, `/api/train/progress`, `/api/train/mechanics`, `/api/train/sessions`
 
@@ -176,11 +201,12 @@ The prototype FourFlow Agent, built as Claude skills for daily use.
 
 ## Working in This Repo
 
+- `planning/TRUE-NORTH.md` is the strategic north star; `compendium/foundations/lexicon.md` settles all naming questions
 - Each app's `APP.md` is the source of truth for that app's current state, role, and technical details
-- `planning/THE-ARK-BLUEPRINT.md` is the strategic north star
-- `planning/READY/` contains the 12 Flow Key articles (published content)
+- New planning docs declare their register (seeker/buyer) and their layer (Teach/Diagnose/Equip/Horizon) at the top
+- `planning/READY/` contains the 12 Key articles (publishable content)
 - `compendium/COMPENDIUM_INDEX.md` is the flat retrieval map for all framework knowledge
-- LIVE website is `website/fourflowos-web/` — do not build features in `apps/flowzone-web/` (retired)
+- LIVE website is `website/fourflowos-web/` — do not build features in the retired `apps/_archive/flowzone-web/`
 - Before adding files: search for existing versions (glob/grep), keep the higher quality version
 - File naming: lowercase with hyphens (`flowzone-web`, `flowhabits`), descriptive names
 

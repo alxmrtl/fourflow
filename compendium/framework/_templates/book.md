@@ -1,8 +1,8 @@
 ---
 title: "{{title}}"
 author:
-pillar: []
-flow_keys: []
+dimension: []
+keys: []
 status: reading
 date_started: {{date}}
 date_completed:
@@ -16,7 +16,7 @@ tags:
 > **Author**: {{author}}
 
 ## Why This Book?
-<!-- Which flow key(s) is this meant to deepen? What drew you to it? -->
+<!-- Which Key(s) is this meant to deepen? What drew you to it? -->
 
 
 ## Core Thesis
@@ -28,8 +28,8 @@ tags:
 
 -
 
-## Mechanics Touched
-<!-- Links to mechanic notes this book informs -->
+## Qualities Touched
+<!-- Links to quality/technique notes this book informs -->
 
 - [[]]
 

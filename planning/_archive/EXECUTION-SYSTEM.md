@@ -1,3 +1,5 @@
+> **ARCHIVED June 11, 2026** — superseded by `planning/TRUE-NORTH.md`. The 2025 targets and quarterly plan are stale. Worth keeping as habit, not doc: binary done/not-done task discipline and the 60–90 min daily execution block.
+
 # FourFlowOS Execution System
 
 > **Operating Principle:** 60-90 minutes of focused daily execution, pulling 1-2 levers that compound. Every task is binary: DONE or NOT DONE. No partial credit.

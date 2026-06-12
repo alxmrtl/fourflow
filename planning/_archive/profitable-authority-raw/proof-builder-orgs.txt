@@ -1,0 +1,488 @@
+PROOF BUILDER — INTAKE
+FourFlowOS / Alex Martel / Team Conditions Audit
+June 2026
+
+Source documents: PROFITABLE AUTHORITY.txt and all prior files in this folder.
+Note: This intake is honest about what exists and what does not.
+The GPT should work with real assets, not invented ones.
+
+---
+
+1. OFFER
+
+Team Conditions Audit — a 90-minute diagnostic session for people leaders,
+founders, and team managers.
+
+Deliverable: a named team bottleneck, a targeted first intervention, one
+observable success indicator, and a one-page written Team Conditions Map.
+
+The diagnostic uses the FourFlow framework, which maps team conditions across
+four layers — Self, Space, Story, Spirit — to identify which specific condition
+is blocking the team's best work.
+
+Larger offer behind it: a full diagnostic engagement (one week to 30 days)
+and a 6-week conditions restoration program. Both currently in design.
+
+
+---
+
+2. BEST CLIENT
+
+People leaders, team managers, and founders of 5–500 person knowledge-work
+organizations — tech, consulting, creative, professional services — who have
+a capable team that is not producing at the level the talent should allow.
+
+Specifically: someone who has already invested in at least one engagement,
+wellness, or culture initiative and found that the output gap did not close.
+
+They have budget, authority to change conditions, and enough self-awareness
+to know their current diagnosis is probably incomplete.
+
+
+---
+
+3. PAINFUL PROBLEM
+
+They are leading a team that looks functional but is underperforming its
+potential. Work ships. Nobody is in crisis. But the output is flat, energy
+is inconsistent, strong people are quietly disengaging or leaving, and
+previous engagement programs produced no lasting change.
+
+The precise pain: they cannot name which condition is actually creating the
+friction. Without a diagnosis, they are choosing between vague interventions.
+They are about to run another program they are not confident will work.
+
+
+---
+
+4. OUTCOME
+
+After the Team Conditions Audit, the leader can answer three questions:
+
+Which condition is blocking the team's best work?
+What do we change first?
+How will we know if the change worked?
+
+The concrete deliverable: a named bottleneck, a targeted action, a 30-day
+success indicator, and a one-page written map.
+
+The 30-day marker: a visible shift in work quality, energy, ownership, or
+retention risk — not survey scores, actual observable change in the work.
+
+The longer-term transformation: conditions actively managed instead of
+passively assumed. The leader can detect friction building before it becomes
+disengagement, burnout, or resignation.
+
+
+---
+
+5. DIRECT RESULTS
+
+Honest inventory of what exists:
+
+Personal application (primary proof):
+The FourFlow framework was built through years of personal application,
+including inside organizational structures. The diagnostic process was
+developed by running it on myself — identifying which conditions were
+creating friction in my own work, naming the layer, designing the
+intervention, observing the result.
+
+This is the most substantial proof available: the framework came from
+solving the problem from the inside, not from reading about it.
+
+The /align system (prototype agent proof):
+The FourFlow diagnostic has been run as a daily practice through the
+/align skill system — a prototype FourFlow agent built as a Claude skill.
+This system reads state across the four layers, identifies bottlenecks,
+and recommends targeted interventions. Dozens of sessions documented in
+`agents/flow-council/sessions/`.
+
+These sessions are the most direct evidence of the diagnostic in action.
+They show the framework applied to a real person's conditions in real time.
+
+Flow Profile intake submissions (demand proof):
+People are actively submitting Flow Profile intakes before a paid product
+exists. This is behavioral proof of demand — people seeking diagnosis
+unprompted.
+
+Compendium depth (intellectual proof):
+338 cards of synthesized flow science, organizational psychology, narrative
+identity, and performance research. This is not a one-page framework.
+The diagnostic infrastructure is documented, deep, and auditable.
+
+Five apps (implementation proof):
+FlowZone (attention patterns), FlowHabits (four-pillar daily tracking),
+FlowStation (ambient conditions monitor), FlowRead (attention training),
+FlowRep (momentum tracking). The framework produces real tools that people
+use. It is not purely conceptual.
+
+What does not yet exist:
+Paid organizational client. Named team with a before/after result.
+Formal case study. Client testimonials for the Team Conditions Audit.
+These are the next proof assets to build.
+
+
+---
+
+6. BEFORE/AFTER
+
+Personal / self-diagnostic (the origin story):
+
+Before: Working inside an organizational structure, aware of the gap between
+capability and output, unable to name the cause with enough precision to close
+it. Trying standard approaches — routines, environment changes, mindset work —
+finding they helped in isolation but did not address the actual pattern.
+
+After: Built a diagnostic framework that named the specific conditions creating
+friction. Applied it systematically. The gap between capability and output
+became manageable — not through willpower or new tools, but through identifying
+and restoring the specific conditions that were blocked.
+
+This is the founding story of FourFlow and the credibility of the lived experience
+angle.
+
+/align sessions (prototype diagnostic in action):
+
+Before each session: a stated situation, a felt state, a set of conditions in
+play across the four pillars. Some sessions show clearly blocked conditions —
+narrative friction, values misalignment, environment creating drag.
+
+After each session: a named condition, a specific recommendation, and in many
+cases a documented change in approach based on the diagnosis.
+
+These sessions exist as session logs in `agents/flow-council/sessions/`.
+They are the most direct before/after evidence available.
+
+For the organizational offer specifically:
+No formal before/after yet. First paid sessions will generate this.
+
+
+---
+
+7. TESTIMONIALS
+
+Formal client testimonials: none yet for the Team Conditions Audit.
+This is the primary proof gap.
+
+Informal signals of resonance:
+
+The "capable team, flat output" framing has been confirmed as recognizable
+by people in the buyer profile when described to them directly.
+
+The core reframe — "most organizations are solving the wrong layer" — produces
+immediate recognition from people leaders and managers who have experienced
+the failure of generic engagement programs.
+
+Flow Profile intake submissions are a form of behavioral testimonial:
+people seeking the diagnosis unprompted signals that the problem-solution
+pairing is landing.
+
+What to collect in first paid sessions:
+
+Structured testimonial prompt for early clients:
+"What was the presenting problem before the audit?
+What was the diagnosis?
+What did you change?
+What did you observe in the 30 days after?"
+
+Even one answer to those four questions is more commercially useful than
+a generic "it was great."
+
+
+---
+
+8. SCREENSHOTS OR ARTIFACTS
+
+What exists:
+
+Compendium files: 338 documented cards across quality files, technique files,
+and concept files. The `compendium/COMPENDIUM_INDEX.md` is an auditable flat
+map of the full framework. This can be shared or excerpted as evidence of
+framework depth.
+
+App store presence / app interfaces: FlowZone, FlowHabits, FlowRead, FlowRep
+are built products that can be shown. Screenshots of the apps in use demonstrate
+that the framework produces real, used tools.
+
+/align session logs: documented diagnostic sessions in
+`agents/flow-council/sessions/`. These show the framework applied to real
+conditions in real time. Identifiable only as personal — can be shared or
+excerpted with context as demonstration of the diagnostic in action.
+
+Flow Profile intake form and pipeline: a live intake-to-delivery pipeline
+at fourflowos.com. Demonstrates that the diagnostic product is real and
+operational, not theoretical.
+
+One-page Team Conditions Map template: does not yet exist as a standalone
+artifact. Should be built before the first paid session. This becomes a
+shareable proof asset — what the buyer gets, shown publicly.
+
+Training platform (compendium navigator): the `/train` route at fourflowos.com
+shows the full 338-card compendium in a visual grid. This is demonstrable
+evidence of framework depth and organization.
+
+What would strengthen the artifact set:
+
+A sample anonymized one-page Team Conditions Map showing the format of a
+real diagnostic output.
+A short written walkthrough of how the diagnostic would apply to a
+recognizable team scenario.
+A framework overview document that translates the four layers into
+organizational language without requiring FourFlow vocabulary to understand.
+
+
+---
+
+9. RELEVANT BACKGROUND
+
+Built FourFlow:
+Created from scratch — framework, compendium, apps, diagnostic pipeline.
+Not a repackaged methodology. Original synthesis built over multiple years.
+
+Lived organizational experience:
+Spent time inside 9-to-5 organizational structures and experienced the
+conditions problem firsthand. The diagnostic was built partly to solve
+this for myself. This is insider credibility, not observer credibility.
+
+Deep research synthesis:
+The 338-card compendium draws from Csikszentmihalyi (flow science),
+Ryan and Deci (Self-Determination Theory), narrative identity research,
+polyvagal theory, transient hypofrontality, psychological safety literature,
+challenge-skill ratio, and dozens of other frameworks. Not a single-source
+framework. A multi-discipline synthesis.
+
+Product builder:
+Five apps built and deployed. Not a speaker with a framework. Someone who
+builds things from the framework. That is a different kind of credibility.
+
+Diagnostic pipeline:
+Flow Profile intake-to-delivery system live at fourflowos.com. Real people
+submitting. Real delivery process. Not vaporware.
+
+AI / systems thinking:
+Built the prototype FourFlow agent as a Claude skill system. Integrated
+diagnostic logic into a working AI agent. Understands how diagnostic
+frameworks translate into operational systems — relevant to organizational
+buyers who want a tool that scales beyond a single consultant.
+
+What is absent from the background:
+
+Organizational consulting credentials or prior engagements at company scale.
+Academic organizational psychology background.
+A named prior employer or consulting firm that provides category credibility.
+Speaking or publication history in the HR/L&D/organizational development space.
+
+These are real gaps. The fastest path to closing them is the first paid
+session and the first published case study.
+
+
+---
+
+10. DEMONSTRATION PROOF
+
+What could be shown publicly to prove how you think:
+
+Teardown — live or written:
+Take a real or anonymized organizational situation — "team of 12, talented,
+flat output, two strong people left in 6 months, manager has run two
+engagement initiatives" — and walk through the FourFlow diagnostic publicly.
+Name which layer the symptoms point to. Explain why Story or Spirit is the
+likely bottleneck. Show what question you would ask first and why.
+
+This demonstrates the diagnostic precision publicly without needing a client.
+
+Sample one-page Team Conditions Map:
+Create an anonymized example showing what the deliverable looks like.
+Name a fictional team's bottleneck condition, the diagnosis, the intervention,
+the success indicator. Format it the way the real deliverable will look.
+This is the "menu" proof — shows the buyer exactly what they are getting.
+
+Framework translation post or article:
+Write one piece that translates the Self/Space/Story/Spirit framework into
+pure organizational language — without using those words — and shows how it
+maps to the engagement problems leaders recognize. Demonstrates the intellectual
+framework without requiring the buyer to learn new vocabulary first.
+
+Session log excerpt (with context):
+Excerpt from a real /align diagnostic session — one that shows the four-layer
+assessment, the named bottleneck, and the recommended intervention. Framed
+as "here is what the diagnostic process looks like in practice."
+
+Short LinkedIn content series:
+A sequence of posts using the words-to-avoid list as a guide — each post
+reframes one standard organizational assumption (culture problem, motivation
+problem, management problem) through the conditions lens. Demonstrates the
+point of view publicly and builds the audience most likely to convert.
+
+Diagnostic question walk:
+A public post or video that poses the question the audit starts with:
+"When your team has more capability than its current output shows, how do
+you currently diagnose what's actually wrong?" — and then shows what a
+conditions-based diagnostic would surface that a standard approach would miss.
+
+
+---
+
+11. BUYER DOUBTS
+
+What a skeptical buyer might doubt:
+
+"Who is this person in an organizational context?"
+The framework was built personally and tested personally. There is no prior
+employer, consulting firm, or client roster that places this in a recognizable
+professional category. The offer may read as a solo practitioner with a
+personal-development framework, not an organizational diagnostic specialist.
+
+"Has this actually worked with a team?"
+The lived experience is real. The organizational case study is not yet built.
+A skeptical buyer will notice this gap if they look.
+
+"The framework sounds interesting but I'm not sure it's different from what
+we've already tried."
+Story and Spirit are the differentiated layers. But a buyer scanning the
+offer quickly may not see the distinction from generic culture or engagement
+work without a specific before/after that shows what changes.
+
+"Is this just flow coaching rebranded as organizational consulting?"
+The word "flow" carries personal-development associations that may create
+category confusion. The buyer needs to hear this as a business diagnostic
+offer, not a consciousness or peak-performance coaching offer.
+
+"Why would 90 minutes be enough to diagnose something that has been unresolved
+for months?"
+The answer is that most organizational problems are already visible in the
+conditions — they have just not been mapped. But this doubt is real and
+needs to be addressed directly in the positioning.
+
+"What do I do with the one-page map after I have it?"
+The offer stops at the diagnosis and the first action. Some buyers will want
+to know there is a path beyond the 90-minute session. The delivery ladder
+(one week, 30 days, 6 weeks) answers this, but it should be easy to find.
+
+
+---
+
+12. MISSING PROOF
+
+Priority order:
+
+1. One organizational case study.
+Named (or carefully anonymized) team. Presenting problem. Diagnosed condition.
+Targeted intervention. Observed change after 30 days. One quote from the leader.
+This is the single most important proof asset missing.
+
+2. A sample one-page Team Conditions Map.
+An anonymized deliverable example that shows exactly what the buyer gets.
+Can be built this week without a client.
+
+3. Discovery interview validation.
+5–7 conversations with people leaders confirming they recognize the problem
+in the words used in the message drafts. Documenting which phrases land.
+This becomes implicit proof of demand in the messaging.
+
+4. A public framework demonstration.
+One teardown or diagnostic walkthrough published publicly — LinkedIn, newsletter,
+or short article — that shows the diagnostic thinking applied to a recognizable
+scenario. Demonstrates capability before the buyer commits.
+
+5. Buyer language collected from conversations.
+The exact phrases people leaders use before they know FourFlow. These go
+into testimonials, case studies, and messaging as proof of problem recognition.
+
+
+---
+
+13. ETHICAL LIMITS
+
+Claims to avoid until the organizational case study exists:
+
+"I've helped teams increase retention / output / engagement by X%."
+Not yet supportable. Do not imply a specific quantitative result.
+
+"My clients have seen [specific result]."
+No organizational clients yet. Cannot use "clients" language for the
+Team Conditions Audit specifically until the first paid session has run.
+
+"Proven framework."
+Proven for personal application and personal flow diagnostics. Not yet proven
+for team-level organizational diagnosis in a paid engagement context. Use
+"developed" or "built from" instead.
+
+"Transform your team's performance."
+Too strong without a case study behind it. "Identify what is blocking your
+team's best work" is what can be promised and delivered.
+
+Claims that are fully supportable:
+
+"Built from [X] years of personal application."
+"Grounded in research across [named fields]."
+"A diagnostic that names the condition before prescribing the fix."
+"Most engagement programs are deployed before diagnosis — this one starts there."
+"In 90 minutes you will have a named bottleneck, a targeted action, and a
+way to tell if it is working."
+
+
+---
+
+14. PERMISSION
+
+Proof assets available for public use without additional permission:
+
+The FourFlow framework itself — fully owned, original work.
+The compendium — fully owned, original synthesis.
+The apps — public products, describable and demonstrable.
+The Flow Profile pipeline — live product, publicly accessible at fourflowos.com.
+Personal story and lived experience — fully owned.
+/align session logs — personal sessions, no third-party privacy concerns.
+Any anonymized or composite examples used for demonstration.
+
+Proof assets that require care:
+
+Flow Profile intake submissions — submitted by real people. Do not name or
+quote without explicit permission. Can reference as "intake submissions are
+arriving" as an aggregate demand signal without quoting individuals.
+
+Future client case studies — will require explicit permission from clients.
+Build the permission conversation into the first paid sessions.
+Offer full anonymization as an option to reduce friction.
+
+Discovery interview participants — if quoted, need permission or anonymization.
+"A VP People at a 200-person tech company said..." is safer than naming them.
+
+
+---
+
+15. FASTEST PROOF-BUILDING MOVE
+
+This week: build the sample one-page Team Conditions Map.
+
+Create one fictional but realistic team scenario:
+"A 15-person product team at a 150-person SaaS company. Two strong IC's left
+in 8 months. Manager has run one engagement survey and one offsite. Output
+is consistent but below what the team's talent level should produce."
+
+Run the FourFlow diagnostic on this scenario.
+Name the bottleneck condition (e.g., Story layer — generative narrative is broken.
+People understand their tasks but cannot connect their individual contribution
+to meaningful direction. Meetings are aligned but the work feels mechanical).
+Define the first intervention.
+Define the 30-day success indicator.
+Format as the one-page deliverable the buyer would receive from a real session.
+
+This single asset does four things simultaneously:
+1. Demonstrates the diagnostic precision publicly.
+2. Shows the buyer exactly what they are getting before they pay.
+3. Becomes the template for every real session going forward.
+4. Can be published as a teardown post — the fastest form of demonstration proof.
+
+Second move this week: reach out to 3–5 people in the buyer profile for
+a 20-minute conversation using this exact framing:
+"I'm developing a diagnostic for leaders of capable but underperforming teams.
+I'd find 20 minutes of your honest reaction to the problem framing extremely
+useful. No pitch. Just a reaction check."
+
+The conversation both validates the problem language and begins building
+the buyer relationship. One of these conversations may become the first
+paid session.
+
+---

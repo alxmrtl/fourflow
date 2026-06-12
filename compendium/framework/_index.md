@@ -1,13 +1,13 @@
 # FourFlow Compendium
 
-One source of encyclopedic truth for the FourFlow framework. Organized by dimension → key → mechanic. New information enters via `_source/` folders and gets processed upward.
+One source of encyclopedic truth for the FourFlow framework. Organized by Dimension → Key → Quality → Technique (canonical vocabulary: `compendium/foundations/lexicon.md`). New information enters via `_source/` folders and gets processed upward.
 
 ## Structure
 
 ```
 compendium/
 ├── _index.md          ← this file
-├── _templates/        ← templates for new mechanics, books, concepts
+├── _templates/        ← templates for new qualities, techniques, books, concepts
 ├── _concepts/         ← cross-cutting concepts and book summaries
 ├── _source/           ← top-level raw input (book raws, etc.)
 │
@@ -17,9 +17,11 @@ compendium/
 └── SPIRIT/            ← Timeless Direction (#7A4DA4)
 ```
 
-Each key folder contains:
-- `Key-Name.md` — living encyclopedia entry (frontmatter + mechanics index + full content)
-- `mechanic-name.md` — individual approved mechanics (flat, at root)
+Each Key folder contains:
+- `Key-Name.md` — living encyclopedia entry (frontmatter + quality index + full content)
+- `[quality].md` — the Key's 3 Quality files (Restore / Maintain / Concentrate)
+- `_techniques/` — atomic technique protocols
+- `_concepts/` — archived external-science references
 - `_source/` — raw research, book extracts, external input (process → promote)
 
 ## The Four Dimensions
@@ -31,7 +33,7 @@ Each key folder contains:
 | [[STORY/STORY]] | Temporal Direction | Where am I in the arc? What am I aiming at? |
 | [[SPIRIT/SPIRIT]] | Timeless Direction | What is always true for me? |
 
-## The 12 Flow Keys
+## The 12 Keys
 
 ### SELF
 - [[SELF/Tuned-Emotions/Tuned-Emotions]] — emotional navigation, challenge-skills balance
@@ -55,7 +57,7 @@ Each key folder contains:
 
 ## Processing Workflow
 
-1. New input (book, article, X thread, research) → drop into the relevant key's `_source/`
-2. Process: extract mechanic → create or update a `mechanic-name.md` at key root
-3. Synthesize: update the key overview `.md` with new insight, add wikilink to mechanic
-4. Cross-link related mechanics across keys where relevant
+1. New input (book, article, X thread, research) → drop into the relevant Key's `_source/`
+2. Process: enrich the relevant Quality file, or add a Technique to `_techniques/`
+3. Synthesize: update the Key overview `.md` with new insight, add wikilinks
+4. Cross-link related Qualities/Techniques across Keys where relevant

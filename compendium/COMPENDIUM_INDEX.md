@@ -9,7 +9,8 @@ Agent-readable flat map. Scan this first, then read only the file(s) you need.
 
 | File | When to read |
 |------|-------------|
-| `architecture.md` | **Start here** — complete 5-level stack (SOUL → Dimension → State → Quality → Technique/Concept), all 12 States × 3 Qualities, principle assignments, two reading modes. Primary reference for the full framework. |
+| `lexicon.md` | Canonical vocabulary — the naming authority. Dimensions / Keys / Qualities / Techniques, the keys→gates→aperture metaphor, registers, deprecated terms. When any doc disagrees with it, the lexicon wins. |
+| `architecture.md` | **Start here** — complete 5-level stack (SOUL → Dimension → Key → Quality → Technique/Concept), all 12 Keys × 3 Qualities, principle assignments, two reading modes. Primary reference for the full framework. |
 | `first-principles.md` | Five fractal axioms: Default Is Open, Coherence Is the Mechanism, Loops Close Gaps, Compression Concentrates Signal, Direction Precedes Force. Each maps to one level of the architecture. Read when reasoning about WHY something works. |
 | `consciousness-alignment.md` | Core thesis: alignment as the only remaining bottleneck in the agent age |
 | `time-as-aperture.md` | Temporal ontology: time as perceptual aperture width; SOUL as light source; four Dimensions as lens controls; flow as aperture opening |

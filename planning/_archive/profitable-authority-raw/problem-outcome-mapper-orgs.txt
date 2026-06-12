@@ -1,0 +1,494 @@
+PROBLEM & OUTCOME MAPPER — INTAKE (V2, REVISED)
+FourFlowOS / Alex Martel / People Leader Buyer
+June 2026
+
+Revision note: Collapsed to single buyer (people leader / team manager).
+Individual employee angle removed from primary answers. See end of file for
+secondary path note only.
+
+---
+
+1. YOUR EXPERTISE
+
+What skill, expertise, lived experience, system, or knowledge do you want to turn
+into paid help?
+
+I know how to look at a capable team that is underperforming its potential and
+identify the specific condition blocking better work — not a vague culture diagnosis,
+a precise one. I built a diagnostic framework called FourFlow that maps the conditions
+across four layers of a team or organization that determine whether high-quality,
+meaningful work is accessible or blocked. The framework tells you which layer to
+intervene in and what specifically to change.
+
+I also have lived experience on the inside. I spent time inside organizational
+structures trying to find flow within them, feeling the gap between what I was capable
+of and what the conditions supported. That combination — lived experience plus a
+built diagnostic system — is what gives this credibility it would not have as a
+purely academic framework.
+
+What do people already ask you for help with?
+
+Why their team has the talent but not the output.
+Why good people keep leaving despite real investment in culture and engagement.
+Why engagement programs, offsites, and wellbeing initiatives are not producing
+visible change in the actual work.
+Why a team looks fine on the surface but the work still feels flat.
+
+What are you unusually good at helping people understand, fix, change, or achieve?
+
+Diagnosing at root cause — identifying which layer is creating friction — instead
+of adding another program that addresses the wrong level. Most organizational
+interventions are deployed before diagnosis. The result is spend without change.
+I can stop that cycle.
+
+
+---
+
+2. THE TOPIC
+
+What topic do you think your course, coaching, consulting, or training would be about?
+
+Why capable teams fail to produce their best work — and how to diagnose and restore
+the specific conditions that make excellent, sustainable output accessible.
+
+Why does this topic matter to you?
+
+I have felt both sides of this problem. I have been inside organizational structures
+that had everything a team should need and still could not access the work everyone
+was capable of. I built FourFlow partly to solve that for myself — to name what was
+actually happening instead of defaulting to vague explanations like "culture" or
+"motivation." The organizational angle is where the lived experience connects directly
+to a documented, expensive, widespread problem that nobody has a diagnostic-level
+answer for.
+
+Why would it matter to someone else?
+
+The talent is already paid for. The engagement investment has already been made.
+The question is whether the conditions let that talent fully show up. If they do not,
+the organization is losing the gap between what it is paying for and what it is
+getting — every single day, compounding quietly. Most leaders know something is
+wrong. Almost none of them have a precise name for it.
+
+
+---
+
+3. THE PROBLEM
+
+What painful problem does your expertise solve?
+
+People leaders are managing capable teams that appear functional on the surface,
+but the team's best work is not reliably coming through.
+
+The team ships work. Meetings happen. People are not in open crisis. But output
+feels flatter than it should. Energy is inconsistent. Good people quietly disengage.
+The leader cannot tell whether the issue is management, culture, process, burnout,
+role fit, or something deeper — so they keep launching initiatives instead of
+running a diagnosis.
+
+What does this problem look like in real life?
+
+The hiring went well. The team is talented. But in practice:
+
+The work is acceptable, not excellent.
+The best thinking in meetings never makes it into the actual output.
+Strong employees start leaving and cite vague reasons: "growth," "alignment,"
+"something missing." The leader cannot counter because they cannot name the cause.
+Engagement scores inch up after each initiative and then drift back down.
+The manager keeps asking what else to try.
+
+What is happening on a bad day for someone with this problem?
+
+A performance conversation where the leader knows the person is capable of more
+but cannot explain why the work is not showing it.
+
+An exit interview where a strong employee gives a polished, generic reason for
+leaving — and the leader suspects it is not the real one but cannot get to it.
+
+A leadership meeting where everyone agrees the team culture needs work but nobody
+can agree on what specifically is broken or what to do about it.
+
+A post-mortem on another failed engagement initiative where the team is visibly
+fatigued by being surveyed and asked to participate in programs that do not change
+their day-to-day experience.
+
+What keeps happening that they want to stop?
+
+Strong people leaving before anyone understood why.
+Programs launched that produce temporary energy and no structural change.
+Managers cycling through interventions — new tools, new meeting cadences, new
+recognition systems — without any improvement in the quality of the actual work.
+Leadership spending more energy managing disengagement than driving direction.
+
+What are they trying to do that is not working?
+
+Running engagement surveys and acting on the results.
+Sending managers to training.
+Launching wellbeing and recognition programs.
+Redesigning the office or shifting to hybrid and back.
+Rewriting the values and culture deck.
+Hiring consultants who run workshops and leave frameworks behind that nobody uses.
+
+All of these may have partial value. The problem is they are deployed before
+diagnosis. They treat symptoms without knowing which layer is actually broken.
+
+
+---
+
+4. THE STAKES
+
+What happens if they do not solve this problem?
+
+The gap between the talent they are paying for and the output they are getting
+compounds. It does not stay flat — it grows. Strong people leave. The people who
+stay grow progressively more disengaged. The culture slowly hardens into something
+nobody explicitly chose and nobody knows how to reverse.
+
+Meanwhile, the organization keeps spending on engagement infrastructure — surveys,
+platforms, programs, trainers — that produces no measurable change in the quality
+of the work. That spend accumulates without return.
+
+What does the problem cost them?
+
+Retention:
+- Replacement cost for one mid-senior knowledge worker: $50k–$200k+
+- Losing two or three strong people per year to preventable attrition is often
+  more expensive than a year of the program that could have prevented it.
+
+Wasted engagement spend:
+- L&D, wellbeing platforms, engagement consultants, and offsites are substantial
+  line items that currently produce survey scores, not output change.
+
+Output quality:
+- The gap between a team operating at genuine capacity versus managed mediocrity
+  is not a marginal difference. It compounds in competitive markets.
+
+Leadership drag:
+- Managers who cannot diagnose conditions spend their capacity managing symptoms.
+  That is a permanent drain on the most expensive resource in the organization.
+
+Why might they want to solve this now instead of later?
+
+Urgency triggers that make this feel immediately necessary:
+
+A recent attrition event — especially losing someone everyone expected to stay.
+Post-RTO friction: teams forced back together that are not flowing together.
+A performance review cycle that shows persistent capability-output gap across the team.
+A leadership change where the new leader wants to establish what is actually wrong
+before committing to a direction.
+A culture crisis — merger integration, rapid growth, public failure — where the
+standard programs clearly are not enough.
+A board or executive conversation where the question has been asked directly:
+why is this team not producing what we expected?
+
+The leader who waits is the leader who eventually has that conversation without
+an answer.
+
+
+---
+
+5. WHAT THEY HAVE ALREADY TRIED
+
+What have they already tried to fix this problem?
+
+Engagement surveys and action planning.
+Employee wellbeing platforms (stipends, apps, counseling access).
+Team offsites and retreats.
+Revised values and culture documentation.
+Leadership development programs and manager training.
+Recognition systems and peer-appreciation tools.
+Flexible work policies and schedule redesigns.
+Personality assessments: StrengthsFinder, MBTI, DiSC.
+Coaching for key individuals.
+New productivity tools and workflow systems.
+
+Why did those approaches not fully work?
+
+They are not useless. The problem is that they were deployed before diagnosis.
+
+An engagement survey measures how people feel about their situation — it does not
+identify which condition is creating that feeling. A wellbeing program improves
+comfort; it does not restore meaning. Manager training changes behavior in one layer
+without knowing whether that layer is where the problem lives. Career coaching
+adjusts the narrative without diagnosing whether the narrative is actually the block.
+
+The result is investment spread across every layer, with no leverage, because nobody
+mapped which layer was actually broken.
+
+What advice do they keep hearing that is incomplete, wrong, or not enough?
+
+"You need better culture." — Culture is an output of conditions, not a diagnosis.
+"You need better management." — Often contributing, but management behavior is
+downstream of conditions that the manager may not control.
+"You need to invest more in wellbeing." — Comfort and meaning are not the same thing.
+Wellbeing programs often address one layer while the real block is in another.
+"Run another survey." — Measures the symptom, does not diagnose the cause.
+"Hire better." — Sometimes true. Usually used to avoid asking why good hires stop
+performing at the level they were hired for.
+
+
+---
+
+6. THE REAL PROBLEM
+
+What do they think the problem is?
+
+A management problem. A compensation problem. A hiring problem. A culture problem.
+An individual fit problem. The wrong answer shifts depending on who is in the room
+and what the last intervention was.
+
+What do you think the real problem is?
+
+The conditions that make high-quality, meaningful work accessible have never been
+diagnosed. More specifically:
+
+Organizations consistently over-invest in two layers: Space (tools, processes,
+workflow, environment) and Self (wellbeing, mental health support, individual
+performance coaching). These are the visible, measurable, purchasable layers.
+
+They almost never diagnose two other layers: Story — whether people have a
+generative narrative about their role, understand how their work connects to direction,
+and feel their contribution has meaning — and Spirit — whether the actual work being
+done is aligned with the stated values and the direction the organization claims
+to be moving toward.
+
+Story and Spirit are the layers most likely to produce disengagement, quiet attrition,
+and the hollow feeling of acceptable-but-not-excellent output. They are also the layers
+that no engagement survey, wellbeing platform, or manager training program addresses.
+
+What are they misreading, misunderstanding, or solving at the wrong layer?
+
+They are treating engagement as a management-style problem and a perks problem.
+It is a conditions problem. And the conditions that are most likely broken are the
+ones they have never measured.
+
+The most expensive misread: that the answer is a new program. Usually the conditions
+can be restored by identifying and removing a specific block — not by adding another
+initiative to a team that is already exhausted by initiatives.
+
+
+---
+
+7. THE DESIRED OUTCOME
+
+What do they want instead?
+
+They want to look at a team that is underperforming its potential and be able to
+answer three questions:
+
+Which condition is blocking the team's best work?
+What do we change first?
+How will we know if the change worked?
+
+Right now they cannot answer any of those with confidence. After working with the
+FourFlow diagnostic, they can.
+
+What can they do afterward that they cannot do now?
+
+Intervene at root cause instead of symptom level.
+Have a shared language with their team for naming what is actually happening —
+not vague language like "culture issue" or "motivation problem," but a specific
+diagnosis of which condition is broken.
+Make targeted decisions about where to invest and where to stop investing.
+Have clearer, more honest retention conversations — because both sides can name
+what is actually wrong.
+Detect friction before it becomes disengagement, burnout, or resignation.
+
+What becomes easier, clearer, faster, more predictable, or less painful?
+
+Performance conversations that do not feel like circular loops.
+Manager coaching that is targeted to the actual bottleneck.
+Onboarding designed to establish conditions from the start rather than hoping
+they emerge.
+Leadership team alignment on what the real problem is and what to do about it.
+
+What pain goes away?
+
+The ambient sense of wasting talent that everyone can feel and nobody can name.
+The exhaustion of investing in engagement infrastructure that does not change
+the actual work.
+The frustration of strong people leaving for reasons that sound vague.
+The quiet drain of leading a team where everyone is doing their job but nobody
+is doing their best work.
+
+What becomes possible?
+
+A team where the leader can look at an underperformance pattern and name the cause
+within a diagnostic conversation — not in three months after another consultant
+engagement. A team where conditions are actively managed, not passively assumed.
+A shared language that makes it possible to talk about what is actually happening
+in the work, not just about output metrics and engagement scores.
+
+
+---
+
+8. PROOF IT WORKED
+
+How would they know your help worked?
+
+They can answer the three questions from section 7 — which condition is broken,
+what to change first, how to tell if it worked — before I answer them.
+The diagnostic language has transferred. That is the first sign.
+
+What would be different after 7 days?
+
+They have a map of their team's conditions. They know which of the four layers
+are strong and which are blocked. The vague sense that "something is off" has
+a specific name. They can explain the problem to someone else without using
+the word "culture."
+
+What would be different after 30 days?
+
+They have run one targeted intervention aimed at the team's highest-friction condition.
+They can observe whether work quality, energy, ownership, or retention risk has
+visibly shifted — not whether people report feeling better on a survey, but whether
+the actual work is different.
+
+The 30-day marker: they know which condition is blocking the team's best work,
+they have changed one thing, and they can tell whether it made a difference.
+
+What would be different after 90 days?
+
+The diagnostic capacity is integrated into how the leader reads their team.
+They can detect a condition breaking down before it becomes a retention risk or
+a performance crisis. Conditions are actively managed, not discovered after the fact.
+The most chronic bottleneck has been meaningfully and observably reduced.
+
+What is the smallest visible win?
+
+A manager looks at a team interaction and can say: "I know exactly which condition
+broke down there — and I know what to adjust."
+
+Predictability replacing guesswork. That is the smallest win.
+
+What is the larger transformation?
+
+A team that produces its best work consistently — not because of a new program or
+a better manager, but because the conditions that make excellent work accessible
+have been diagnosed, restored, and actively maintained. The leader stops managing
+symptoms and starts managing conditions.
+
+
+---
+
+9. VALUE
+
+Why is this outcome valuable enough to pay for?
+
+The organization is already paying for the talent. The hidden loss is that the
+conditions do not let that talent fully show up.
+
+Retention:
+Replacing one mid-senior knowledge worker costs $50k–$200k+. A diagnostic that
+prevents one preventable departure per year pays for itself many times over.
+The more important point: the departures that hurt most are not random. They are
+the people who had options and stopped believing the conditions here would let them
+do their best work.
+
+Wasted spend redirection:
+L&D and engagement budgets spent on the wrong layer are a direct financial loss.
+A diagnosis that redirects that investment to the actual bottleneck is immediate
+and measurable cost efficiency.
+
+Output quality compounding:
+The gap between a team at genuine capacity and a team in managed mediocrity is
+not a percentage point. It is the difference between work that builds a competitive
+position and work that maintains one. That gap compounds.
+
+Leadership leverage:
+A manager who can diagnose conditions rather than manage behavior is a different
+order of effectiveness. At scale, across a team or organization, that multiplier
+is significant.
+
+Does it help them make money? Yes — through retention, output quality, and team output.
+Save money? Yes — L&D spend becomes targeted instead of broad.
+Save time? Yes — less time managing symptoms, more time driving direction.
+Reduce risk? Yes — attrition risk, burnout risk, culture drift risk, and the risk
+of losing your best people before understanding why.
+Improve status and trust? Yes — a leader who can diagnose their team's conditions
+is a different kind of leader than one who keeps launching programs.
+
+
+---
+
+10. DRAFT PROMISE
+
+Primary version:
+
+I help people leaders diagnose why their capable team is not producing its best work,
+so they can fix the actual condition blocking performance instead of launching
+another engagement program that treats the wrong problem.
+
+Outcome-forward version:
+
+I help people leaders close the gap between the talent on their team and the quality
+of work the team actually produces — by identifying the hidden condition blocking
+meaningful, high-quality output.
+
+Founder / team-lead version:
+
+I help founders and team leaders identify the hidden conditions keeping good people
+from doing their best work, so they can improve output, retention, and energy
+without adding another generic culture initiative.
+
+
+---
+
+11. OPEN QUESTIONS
+
+What are you still unsure about?
+
+The buyer decision has been made: organization / people leader.
+What remains open:
+
+PROOF GAP
+The framework has strong theoretical grounding and lived credibility. The direct
+organizational case study — I ran this diagnostic with a team, here is what changed —
+does not yet exist. The first commercial offer needs to be structured so that running
+it generates that proof. A paid diagnostic pilot session is not just about validating
+demand. It is about creating the case evidence the next stage of the offer requires.
+
+SCOPE DEFINITION
+FourFlow is a full framework — four layers, 12 states, hundreds of techniques.
+What is the minimum coherent version that produces the outcome described in section 7
+for a people leader buyer? The offer cannot be "here is the full framework."
+It needs to be "here is a 90-minute diagnostic that tells you which condition is
+blocking your team and what to change first." Scope boundaries are not yet defined.
+
+ENTRY POINT WITHIN THE ORG
+The people leader buyer is the right buyer. But which type of organization, which
+size, which industry? A founder running a 10-person team and a VP of People at a
+200-person tech company are both people leaders. The diagnostic value is similar.
+The sales path, proof requirements, and price point are very different.
+This probably sharpens itself through the first five buyer interviews — but it
+is the live open question.
+
+URGENCY SHARPENING
+Current urgency relies on trigger events: attrition, RTO friction, failed initiative.
+The buyer is not always in an acute trigger moment. What makes this feel urgent
+for a leader who has a capable-but-flat team and has normalized the underperformance?
+That is the harder case and the more common one. The positioning needs language
+that names the normalized version of the problem, not just the crisis version.
+
+What parts feel vague?
+
+The promise of "diagnosing the condition" needs a concrete deliverable attached.
+Right now the outcome is accurate but slightly abstract. The buyer needs to know
+exactly what they will walk away with: a named bottleneck, a specific recommendation,
+and a first action. That deliverable format is not yet specified.
+
+---
+
+NOTE ON SECONDARY PATH (INDIVIDUAL INSIDE ORG)
+
+The individual employee version of this problem is real and emotionally compelling.
+It is a lower-ticket, faster-to-validate path that builds case evidence before
+pursuing the organizational buyer.
+
+Recommended sequence: individual diagnostic pilots first (build proof, refine language,
+generate testimonials), then organizational offer second (case evidence in hand,
+clearer buyer language, higher ticket justified by demonstrated results).
+
+Do not lead with both. Choose the organizational buyer as the primary framing.
+The individual version is a pipeline, not a product.
+
+---

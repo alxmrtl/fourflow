@@ -9,7 +9,7 @@ keywords:
   - model
   - soul
   - dimensions
-  - states
+  - keys
   - qualities
   - principles
 ---
@@ -33,7 +33,7 @@ The framework has five levels. Each level is governed by one of the Five First P
 ```
 SOUL                      — Default Is Open
   └── Dimension ×4        — Direction Precedes Force
-        └── State ×12     — Coherence Is the Mechanism
+        └── Key ×12       — Coherence Is the Mechanism
               ├── Restore Quality ×12    — Default Is Open (echo)
               ├── Maintain Quality ×12   — Loops Close Gaps
               └── Concentrate Quality ×12 — Compression Concentrates Signal
@@ -76,24 +76,26 @@ The four Dimensions are the four orientations of consciousness — the direction
 
 ---
 
-## Level 3: States ×12
+## Level 3: Keys ×12
 
 **Principle**: Coherence Is the Mechanism
 
-Each Dimension contains three States — named coherent configurations that describe what optimal function looks like within that Dimension. A State is not a thing you do; it is a configuration you can be in. Achieving a State means its constituent Qualities are active and aligned.
+Each Dimension contains three Keys. A Key is double-faced: it names the condition you diagnose and train (the key you turn) *and* the coherent configuration that results when it's open (the state it unlocks). Opening a Key means its constituent Qualities are active and aligned.
 
-Flow is not a separate achievement — it is what emerges when all twelve States are simultaneously coherent.
+In the metaphor chain (see `lexicon.md`): each Key opens a gate; open gates widen the aperture; full aperture is flow. Flow is not a separate achievement — it is what emerges when all twelve Keys are simultaneously open.
 
-The State names are FourFlow's primary vocabulary. They are not jargon for external use; they are the internal map the FourFlow Agent uses to observe, diagnose, and ask the right question.
+The Key names are FourFlow's primary vocabulary. They are not jargon for external use; they are the internal map the FourFlow Agent uses to observe, diagnose, and ask the right question.
 
-| Dimension | States |
-|-----------|--------|
+| Dimension | Keys |
+|-----------|------|
 | **SELF** | Tuned Emotions · Focused Body · Open Mind |
 | **SPACE** | Intentional Space · Optimized Tools · Feedback Systems |
 | **STORY** | Generative Story · Clear Mission · Empowered Role |
 | **SPIRIT** | Grounding Values · Ignited Curiosity · Visualized Vision |
 
-**See**: Each State has its own directory within its Dimension folder.
+> Naming note: the March 2026 refactor briefly called this level "States." Reverted June 2026 — "Key" names both the work and the leverage; "state" survives as the plain-English word for the opened configuration. See `lexicon.md`.
+
+**See**: Each Key has its own directory within its Dimension folder.
 
 ---
 
@@ -101,22 +103,22 @@ The State names are FourFlow's primary vocabulary. They are not jargon for exter
 
 **Principles**: Default Is Open · Loops Close Gaps · Compression Concentrates Signal
 
-Every State is composed of exactly three Qualities. The same three principle-types apply to every State — creating a universal diagnostic shorthand.
+Every Key is composed of exactly three Qualities. The same three principle-types apply to every Key — creating a universal diagnostic shorthand.
 
 | Quality Type | Principle | The question it answers |
 |-------------|-----------|------------------------|
-| **Restore** | Default Is Open | What does returning this State to its natural configuration look like? |
-| **Maintain** | Loops Close Gaps | What feedback gap must stay closed for this State to hold? |
+| **Restore** | Default Is Open | What does returning this Key to its natural configuration look like? |
+| **Maintain** | Loops Close Gaps | What feedback gap must stay closed for this Key to hold? |
 | **Concentrate** | Compression Concentrates Signal | What does maximum signal density look like here? |
 
-**Diagnostic shorthand**: If a State is degraded, identify which Quality type is missing.
+**Diagnostic shorthand**: If a Key is degraded, identify which Quality type is missing.
 - Missing **Restore** quality → subtraction problem. Something is present that shouldn't be. Remove it.
 - Missing **Maintain** quality → open loop. A feedback gap is costing bandwidth. Close it.
 - Missing **Concentrate** quality → diffusion problem. Signal is scattered or diluted. Compress it.
 
-### All 12 States × 3 Qualities
+### All 12 Keys × 3 Qualities
 
-| State | Restore (Open) | Maintain (Loops) | Concentrate (Compress) |
+| Key | Restore (Open) | Maintain (Loops) | Concentrate (Compress) |
 |-------|---------------|------------------|----------------------|
 | **Tuned Emotions** | Quiet | Fueled | Calibrated |
 | **Focused Body** | Grounded | Attuned | Unified |
@@ -137,7 +139,7 @@ Every State is composed of exactly three Qualities. The same three principle-typ
 
 The leaf level. These are not FourFlow-proprietary — they are the practical layer that makes each Quality actionable.
 
-**Techniques** — the HOW. Atomic, repeatable protocols with specific steps, concrete enough to follow without reading the source. Each Technique addresses one Quality within one State. Lives in `_techniques/` within each State's directory.
+**Techniques** — the HOW. Atomic, repeatable protocols with specific steps, concrete enough to follow without reading the source. Each Technique addresses one Quality within one Key. Lives in `_techniques/` within each Key's directory.
 
 > **Note on Concepts**: An earlier version of the compendium included a Concepts layer (`_concepts/` folders) — external scientific frameworks explaining why each Quality matters. This layer has been archived. Concept files remain in the repository as source material but are no longer synced to the product or surfaced in the training platform.
 
@@ -149,12 +151,12 @@ The leaf level. These are not FourFlow-proprietary — they are the practical la
 |-------|-----------|-------------------|
 | SOUL | Default Is Open | Ontological ground — consciousness is whole by default |
 | Dimension | Direction Precedes Force | Each Dimension IS a specific orientation of consciousness |
-| State | Coherence Is the Mechanism | A State is achieved through internal alignment of its Qualities |
-| Restore Quality | Default Is Open (echo) | Return this State to its natural resting configuration |
-| Maintain Quality | Loops Close Gaps | Keep the State's characteristic feedback loop closed |
-| Concentrate Quality | Compression Concentrates Signal | Maximize signal density within this State |
+| Key | Coherence Is the Mechanism | A Key opens through internal alignment of its Qualities |
+| Restore Quality | Default Is Open (echo) | Return this Key to its natural resting configuration |
+| Maintain Quality | Loops Close Gaps | Keep the Key's characteristic feedback loop closed |
+| Concentrate Quality | Compression Concentrates Signal | Maximize signal density within this Key |
 
-**The fractal**: Default Is Open appears at both SOUL and the Restore Quality level. This is not redundancy — it is the fractal operating correctly. SOUL is openness as ontological source. Each State's Restore quality is the local echo of that source: returning a specific domain toward its default. Same principle, different scale.
+**The fractal**: Default Is Open appears at both SOUL and the Restore Quality level. This is not redundancy — it is the fractal operating correctly. SOUL is openness as ontological source. Each Key's Restore quality is the local echo of that source: returning a specific domain toward its default. Same principle, different scale.
 
 ---
 
@@ -162,7 +164,7 @@ The leaf level. These are not FourFlow-proprietary — they are the practical la
 
 ### Operational (default): Simultaneous
 
-All four Dimensions are active in every moment. All twelve States are present at some level of coherence. Flow emerges when all twelve are simultaneously coherent. This is the mandala model: SOUL at center, four Dimensions as the cardinal orientations, twelve States arrayed at their intersections. You are always in all of it at once — the question is only which States are currently coherent and which are not.
+All four Dimensions are active in every moment. All twelve Keys are open to some degree. Flow emerges when all twelve are simultaneously open. This is the mandala model: SOUL at center, four Dimensions as the cardinal orientations, twelve Keys arrayed at their intersections. You are always in all of it at once — the question is only which Keys are currently open and which are not.
 
 ### Diagnostic (repair): Sequential
 
@@ -178,9 +180,9 @@ This sequence is a heuristic, not architecture. Don't confuse the repair manual 
 |-------|---------|
 | SOUL | `compendium/framework/_concepts/soul.md` |
 | Dimensions | `compendium/framework/[SELF|SPACE|STORY|SPIRIT]/` |
-| States | `compendium/framework/[PILLAR]/[State-Name]/` |
-| Qualities | Each State folder's root `.md` file |
-| Techniques | `compendium/framework/[PILLAR]/[State]/_techniques/` |
-| Concepts (archived) | `compendium/framework/[PILLAR]/[State]/_concepts/` — reference only, not synced |
+| Keys | `compendium/framework/[PILLAR]/[Key-Name]/` |
+| Qualities | Each Key folder's root `.md` files |
+| Techniques | `compendium/framework/[PILLAR]/[Key]/_techniques/` |
+| Concepts (archived) | `compendium/framework/[PILLAR]/[Key]/_concepts/` — reference only, not synced |
 
-**Related foundations**: `first-principles.md` · `soul.md` · `time-as-aperture.md` · `consciousness-alignment.md`
+**Related foundations**: `lexicon.md` · `first-principles.md` · `soul.md` · `time-as-aperture.md` · `consciousness-alignment.md`

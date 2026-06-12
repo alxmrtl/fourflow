@@ -1,3 +1,5 @@
+> **ARCHIVED June 11, 2026** — completed work; historical record. Vocabulary predates the lexicon ("mechanics" → Qualities). Current platform state: `memory/training-platform.md` + CLAUDE.md Training Platform section.
+
 # Training Platform — Sprint 2 Handoff
 
 _Context for a new session. Read this fully before touching any code._
