@@ -101,12 +101,18 @@ The *transition* between these modes trains the brain. We don't just help people
 
 These aren't just categories. They are **four frequencies of human flourishing** that, when aligned, create flow:
 
+> **Ratified June 12, 2026**: the palette below is the deepened set that
+> evolved on the live site — richer and moodier on the dark ground than the
+> original brighter values (#FF6F61 / #6BA292 / #5B84B1 / #7A4DA4, now retired).
+> Source of truth in code: `website/fourflowos-web/src/styles/brand-colors.ts`
+> (re-exported via `src/styles/tokens.ts`).
+
 | Pillar | Frequency | Color | Hex | Feel |
 |--------|-----------|-------|-----|------|
-| **SELF** | Inner mastery | Coral | #FF6F61 | Warm vitality, the fire within |
-| **SPACE** | Outer support | Sage | #6BA292 | Grounded calm, sanctuary |
-| **STORY** | Direction | Steel Blue | #5B84B1 | Clarity of purpose, depth |
-| **SPIRIT** | Connection | Amethyst | #7A4DA4 | Mystery, meaning, the unseen |
+| **SELF** | Inner mastery | Coral | #E84535 | Warm vitality, the fire within |
+| **SPACE** | Outer support | Sage | #4E8C73 | Grounded calm, sanctuary |
+| **STORY** | Direction | Steel Blue | #3E6FA3 | Clarity of purpose, depth |
+| **SPIRIT** | Connection | Amethyst | #6330A0 | Mystery, meaning, the unseen |
 
 **How to use them:**
 - Each pillar should feel *alive*—never flat, never just a color block
@@ -124,21 +130,25 @@ The Dark Ground
 
 The Living Colors
 ─────────────────────────────────────
-#FF6F61  Self (Coral) — primary at 100%
+#E84535  Self (Coral) — primary at 100%
          at 60%: warmth without intensity
          at 30%: gentle ember glow
+         light #F05A49 · dark #C4311F
 
-#6BA292  Space (Sage) — primary at 100%
+#4E8C73  Space (Sage) — primary at 100%
          at 60%: forest shade
          at 30%: morning mist
+         light #6AAF8E · dark #37634F
 
-#5B84B1  Story (Steel Blue) — primary at 100%
+#3E6FA3  Story (Steel Blue) — primary at 100%
          at 60%: twilight depth
          at 30%: distant horizon
+         light #5A8DC2 · dark #2B5080
 
-#7A4DA4  Spirit (Amethyst) — primary at 100%
+#6330A0  Spirit (Amethyst) — primary at 100%
          at 60%: purple shadow
          at 30%: cosmic dust
+         light #8248C8 · dark #461F78
 
 The Breath (Neutrals)
 ─────────────────────────────────────
@@ -157,52 +167,65 @@ The Breath (Neutrals)
 ```css
 background: linear-gradient(
   90deg,
-  #FF6F61 0%,    /* Self */
-  #6BA292 33%,   /* Space */
-  #5B84B1 66%,   /* Story */
-  #7A4DA4 100%   /* Spirit */
+  #E84535 0%,    /* Self */
+  #4E8C73 33%,   /* Space */
+  #3E6FA3 66%,   /* Story */
+  #6330A0 100%   /* Spirit */
 );
 ```
 *Use for: wholeness, brand moments, the full journey*
 
-**The Journey** (Self to Spirit)
+**The Journey** (primary CTA — Story to Spirit)
 ```css
-background: linear-gradient(135deg, #FF6F61, #7A4DA4);
+background: linear-gradient(135deg, #3E6FA3, #6330A0);
 ```
-*Use for: CTAs, progress, transformation*
+*Use for: main CTAs — steel leads, confident. (Full gradient role set:
+`GRADIENTS` in `src/styles/brand-colors.ts` — primary/secondary/tertiary CTAs,
+text accents, ambient glows.)*
 
 **The Glow** (Spirit radial)
 ```css
 background: radial-gradient(
   circle at center,
-  rgba(122, 77, 164, 0.15) 0%,
+  rgba(99, 48, 160, 0.15) 0%,
   transparent 70%
 );
 ```
 *Use for: ambient presence, soft focus*
 
-### Typography: One Voice
+### Typography: Two Voices
 
-**Inter** — and only Inter.
+> **Ratified June 12, 2026**: supersedes the original Inter-only spec.
 
-Not because we lack imagination, but because we believe in Jony Ive's principle: *"Simplicity is not the absence of clutter—it involves digging through the depth of complexity to understand the essence."*
+**Cormorant Garamond** (display) — the timeless voice. Headlines, hero
+moments, the italic emphasis phrase. It carries the lineage: flow has a
+thousand names across history, and the serif italic sounds like all of them.
 
-Inter speaks. It does not shout. It guides. It does not demand.
+**DM Sans** (body) — the working voice. Everything else: body copy, UI,
+labels, buttons. Clear, warm, unhurried.
 
 ```css
-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+/* display */ font-family: var(--font-cormorant), Georgia, serif;
+/* body    */ font-family: var(--font-dm-sans), system-ui, sans-serif;
 ```
+
+The pairing is the brand move: timeless question (serif italic), practical
+answer (sans). Never use the display face for UI controls or body text.
 
 **The Scale (with intention)**
 
-| Purpose | Desktop | Mobile | Weight | Use |
-|---------|---------|--------|--------|-----|
-| **Proclamation** | 96px | 48px | 700 | Single hero moments only |
-| **Statement** | 64px | 40px | 700 | Page titles |
-| **Heading** | 48px | 32px | 700 | Section anchors |
-| **Subheading** | 32px | 24px | 600 | Content divisions |
-| **Body** | 18px | 16px | 400 | Primary reading |
-| **Whisper** | 14px | 14px | 400 | Meta information |
+| Purpose | Desktop | Mobile | Face | Use |
+|---------|---------|--------|------|-----|
+| **Display** | 60px | 36px | Cormorant 400 | Hero headlines |
+| **Heading** | 48px | 30px | Cormorant 400 | Section anchors |
+| **Subheading** | 30px | 24px | Cormorant 400 / DM Sans 600 | Content divisions |
+| **Body** | 16px | 16px | DM Sans 400 | Primary reading |
+| **Caption** | 13px | 13px | DM Sans 500 | Labels |
+| **Whisper** | 11px | 11px | DM Sans 400 | Meta information |
+
+Token source: `TYPE_SCALE` in `website/fourflowos-web/src/styles/tokens.ts`
+(Tailwind classes `text-display`, `text-h1`, `text-h2`, `text-body`,
+`text-caption`, `text-micro`).
 
 **Spacing Philosophy:**
 - Line height: 1.6 for body (breathing room)
@@ -351,7 +374,7 @@ The Glass Lands are the smooth, frictionless, AI-replicable wastelands of modern
 - Glassmorphism for the sake of trendiness
 - "Floating UI" that serves no function
 - Decorative 3D blobs
-- Sans-serif everything (irony noted: we use Inter, but with *intention*)
+- Sans-serif everything (the Cormorant display voice exists for a reason — use it)
 - Purple/teal gradients (the AI startup palette)
 - Excessive whitespace pretending to be "minimal"
 - Motion for motion's sake
@@ -594,7 +617,7 @@ Despite our dark aesthetic, we maintain WCAG AA compliance:
 
 - System dark mode by default
 - Haptics: Light for acknowledgment, medium for completion
-- Use SF Rounded where Inter isn't available
+- Use system faces (SF Pro / New York for display moments) — web fonts don't ship to iOS
 - Respect Dynamic Type settings
 - Animations: SwiftUI springs with dampingFraction: 0.7
 
